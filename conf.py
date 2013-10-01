@@ -205,6 +205,13 @@ REDIRECTIONS = [
 # And then do a backup, or ping pingomatic.
 # To do manual deployment, set it to []
 # DEPLOY_COMMANDS = []
+DEPLOY_COMMANDS = [
+    "git add .",
+    "git commit -am 'Update'",
+    "git push origin website",
+    "git subtree split --prefix output -b master",
+    "git push -f origin master:master",
+]
 
 # Where the output site should be located
 # If you don't use an absolute path, it will be considered as relative

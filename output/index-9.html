@@ -1,0 +1,450 @@
+<!DOCTYPE html><html lang="en"><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="never is often better than *right* now."><meta name="author" content="Marek Wywiał"><title>marekwywial (old posts page 9) | marekwywial</title><link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="assets/css/rst.css" rel="stylesheet" type="text/css"><link href="assets/css/code.css" rel="stylesheet" type="text/css"><link href="assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="assets/css/theme.css" rel="stylesheet" type="text/css"><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml"></head><body>
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href=".">marekwywial</a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav"><li><a href="blog/archive.html">Archives</a>
+                </li><li><a href="blog/categories/index.html">Tags</a>
+                </li><li><a href="blog/rss.xml">RSS</a>
+
+        </li></ul><span class="navbar-form pull-left">
+<input type="text" id="tipue_search_input"></span>
+
+        <ul class="nav navbar-nav navbar-right"></ul></div><!-- /.navbar-collapse -->
+</nav><!-- End of Menubar --><div class="container">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+        <div class="postbox">
+        <h1><a href="posts/blog20090621fuse-ftp-mount-curlftpfs.html">fuse ftp mount - curlftpfs</a>
+        <small>  
+             Posted: <time class="published" datetime="2009-06-21T19:11:10+02:00">2009-06-21 19:11</time></small></h1>
+        <hr><p></p><div style="text-align: center; border-bottom: solid 1px gray; background: orange">sprawdź najnowszą wersję <a href="http://onjin.net/index.php/category/ftpmount">ftpmount</a></div>
+<p>Do pracy z hostingiem gdzie mamy tylko '''ftp''' przydaje się montowanie dysku poprzez właśnie ftp. Służy do tego program '''curlftpfs''' (np apt-get install curlftpfs).</p>
+<p>Odpalamy go jako:</p>
+<pre>
+
+curlftpfs ftp://user:pass@host/ ./mountpoint
+
+</pre>
+
+<p>Do tego potrzebujemy uprawnienia grupy '''fuse''' więć jako ''root'' musimy sobie ją dodać od naszego użytkownika.</p>
+<p>Jeżeli mamy dużo połączeń do zarządzania przyda się mały skrypt:
+ * <a href="http://onjin.net/files/ftpmount">ftpmount</a></p>
+<p>sterowany konfiguracją w pliku '''config.ini''':</p>
+<pre>
+
+[hostone.pl]
+
+host=ftp.hostone.pl
+
+user=userone
+
+pass=passone # jak nie podamy tego wpisu, program się zapyta o hasło
+
+mountpoint=hostone.pl
+
+
+
+[hosttwo.pl]
+
+host=ftp.hosttwo.pl
+
+user=usertwo
+
+mountpoint=hosttwo.pl
+
+</pre>
+
+<p>Wtedy wystarczy nam:
+ * ./ftpmount hostone.pl   # montujemy połączenie
+ * ./ftpmount -u hostone.pl   #odmontowywujemy połączenie
+ * ./ftpmount -l   # lista dostępnych konfiguracji połączeń</p>
+<p></p>
+            
+        
+    <p>
+        <a href="posts/blog20090621fuse-ftp-mount-curlftpfs.html#disqus_thread" data-disqus-identifier="cache/posts/blog20090621fuse-ftp-mount-curlftpfs.html">Comments</a>
+
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/blog20090605mutt-firefox-by-urlview.html">mutt &amp; firefox (by urlview)</a>
+        <small>  
+             Posted: <time class="published" datetime="2009-06-05T10:53:55+02:00">2009-06-05 10:53</time></small></h1>
+        <hr><p></p><p>w ubuntu wystarczyło:
+</p><pre>
+<p>apt-get install urlview</p>
+</pre>
+
+<p>w ~/.muttrc dodane makro</p>
+<pre>
+
+macro pager \\cb &lt;pipe-entry&gt;urlview&lt;enter&gt; 'Follow links with urlview'
+
+</pre>
+
+<p>orac plik ~/.urlview:</p>
+<pre>
+
+REGEXP ((http|https|ftp|gopher):(//)?[^ &lt;&gt;"\\t]*|www\\.[-a-z0-9.]+)[^ .,;\\t&lt;"&gt;\\):]
+
+COMMAND /usr/bin/nohup firefox -remote "openURL("%s", new-tab)" &gt;/dev/null 2&gt;&amp;1 &amp;
+
+</pre>
+
+<p>teraz ctrl+b zbiera linki z treści wiadomości, które otwieramy w wybranej przeglądarce ;)</p>
+<p></p>
+            
+        
+    <p>
+        <a href="posts/blog20090605mutt-firefox-by-urlview.html#disqus_thread" data-disqus-identifier="cache/posts/blog20090605mutt-firefox-by-urlview.html">Comments</a>
+
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/blog20090526google-apps-gmail-i-mutt.html">google apps (gmail) i mutt</a>
+        <small>  
+             Posted: <time class="published" datetime="2009-05-26T10:31:04+02:00">2009-05-26 10:31</time></small></h1>
+        <hr><p></p><p>Znalezione na sieci i przystosowane do google apps:</p>
+<pre>
+<p>set imap_user = "user@domena.pl"</p>
+<p>set imap_pass = "password"</p>
+<p>set smtp_url = "smtp://users\@domena.pl@smtp.gmail.com:587/"</p>
+<p>set smtp_pass = "password"</p>
+<p>set from = "user@domena.pl"</p>
+<p>set realname = "My ql user"</p>
+<p>set folder = "imaps://imap.gmail.com:993"</p>
+<p>set spoolfile = "+INBOX"</p>
+<p>set postponed="+[Google Mail]/Drafts"</p>
+<p>set header_cache=~/.mutt/cache/headers</p>
+<p>set message_cachedir=~/.mutt/cache/bodies</p>
+<p>set certificate_file=~/.mutt/certificates</p>
+<p>set move = no</p>
+<p></p></pre>
+            
+        
+    <p>
+        <a href="posts/blog20090526google-apps-gmail-i-mutt.html#disqus_thread" data-disqus-identifier="cache/posts/blog20090526google-apps-gmail-i-mutt.html">Comments</a>
+
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/blog20090512porzadki-na-dysku-czyli-mv-ln-mount-i-bind.html">porządki na dysku, czyli mv, ln, mount i bind</a>
+        <small>  
+             Posted: <time class="published" datetime="2009-05-12T22:46:59+02:00">2009-05-12 22:46</time></small></h1>
+        <hr><p></p><p>Robiąc ostatnio trochę miejsca pomiędzy partycjami przeniosłem <em>/usr/lib</em> do <em>/opt/usr/lib</em> i zrobiłem symlink <em>ln -s /opt/usr/lib /usr/lib</em>. Problemem okazało się np <em>/usr/lib/cups/filter/foomatic-rip</em>, który jest linkiem  relatywnym do <em>../../../bin/foomatic-rip</em> i w ten sposób pozbyłem się możliwości drukowania.</p>
+<p>Nie mam miejsca by zrobić/użyć partycji, którą bym zamontował pod <em>/usr/lib</em> ale chwila w necie pozoliła znaleść mi rozwiązanie odpowiednie dla mnie :)</p>
+<p></p><blockquote>
+<p>mount --bind /opt/usr/lib /usr/lib</p>
+</blockquote>
+
+<p>lub w <strong>/etc/fstab</strong></p>
+<blockquote>
+
+/opt/usr/lib /usr/lib none bind
+
+</blockquote>
+
+<p>i teraz jest ok :)</p>
+            
+        
+    <p>
+        <a href="posts/blog20090512porzadki-na-dysku-czyli-mv-ln-mount-i-bind.html#disqus_thread" data-disqus-identifier="cache/posts/blog20090512porzadki-na-dysku-czyli-mv-ln-mount-i-bind.html">Comments</a>
+
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/blog20090511git-pre-commit-hook-symfony-php.html">git pre-commit hook - symfony / php</a>
+        <small>  
+             Posted: <time class="published" datetime="2009-05-11T10:25:43+02:00">2009-05-11 10:25</time></small></h1>
+        <hr><p></p><p>Mam jeszcze tą nieprzyjemnośc pracy z PHP (w tym przypadku z symfony framework) i aby była przyjemniejsza dodałem sobie hook na <strong>pre-commit</strong> do git'a.
+ * <a href="http://dl.getdropbox.com/u/185133/git/pre-commit">http://dl.getdropbox.com/u/185133/git/pre-commit</a></p>
+<p>by zadziałało przerywanie commit'a gdy '<em>symfony unit-test</em>' się nie udadzą, potrzebna jest łatka na symfony (przynajmniej na moją wersję 1.0.17)
+ * <a href="http://dl.getdropbox.com/u/185133/git/symfony_return_code.diff">http://dl.getdropbox.com/u/185133/git/symfony_return_code.diff</a></p>
+<p>Hook zakłada, że commit jest robiony w katalogu projektu (tak mam najczęsciej) i znajduje sie w nim plik 'symfony'</p>
+<p>btw: hook wymaga pythona.</p>
+            
+        
+    <p>
+        <a href="posts/blog20090511git-pre-commit-hook-symfony-php.html#disqus_thread" data-disqus-identifier="cache/posts/blog20090511git-pre-commit-hook-symfony-php.html">Comments</a>
+
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/blog20090226homepl-django-pierwsza-potyczka.html">home.pl &amp; django - pierwsza potyczka</a>
+        <small>  
+             Posted: <time class="published" datetime="2009-02-26T21:59:38+01:00">2009-02-26 21:59</time></small></h1>
+        <hr><p></p><p><em>home.pl</em> obsługuje <strong>pythona</strong> jako <strong>cgi</strong> (pliki .py) więc tego będziemy się trzymać. Instalację wykonamy w katalogu <strong>/py</strong></p>
+<h5>instalacja django</h5>
+
+<p>hardcoded ale działa ;) wrzucamy to do /py i ruchamiamy poprzez www (plik install.py)</p>
+
+<p>[python]</p>
+<h2>!/usr/bin/env python</h2>
+<p>import os</p>
+<p>os.system("wget http://www.djangoproject.com/download/1.0.2/tarball/")</p>
+<p>os.system("tar zxf Django-1.0.2-final.tar.gz")</p>
+<p>os.system("rm Django-1.0.2-final.tar.gz")</p>
+<p>os.system("mv Django-1.0.2-final tmp")</p>
+<p>os.system("mv tmp/django django")</p>
+<p>[/python]</p>
+<h5>nasz projekt</h5>
+
+<p>Lokalnie wołamy</p>
+
+<p>[bash]</p>
+<p>django-admin.py startproject pytest</p>
+<p>[/bash]</p>
+<p>i wrzucamy katalog <em>pytest</em> przez ftp na home do katalogu /py .</p>
+
+<h5>dispatch.py</h5>
+
+<p>[python]</p>
+<h2>!/usr/bin/env python</h2>
+<p>import os, sys</p>
+<p>import django.core.handlers.wsgi</p>
+<p>def run_with_cgi(application):</p>
+<div class="code"><pre><span class="n">environ</span>                      <span class="o">=</span> <span class="n">dict</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">.</span><span class="n">items</span><span class="p">())</span>
+<span class="n">environ</span><span class="p">[</span><span class="err">'</span><span class="n">wsgi</span><span class="p">.</span><span class="n">input</span><span class="err">'</span><span class="p">]</span>        <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">stdin</span>
+<span class="n">environ</span><span class="p">[</span><span class="err">'</span><span class="n">wsgi</span><span class="p">.</span><span class="n">errors</span><span class="err">'</span><span class="p">]</span>       <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">stderr</span>
+<span class="n">environ</span><span class="p">[</span><span class="err">'</span><span class="n">wsgi</span><span class="p">.</span><span class="n">version</span><span class="err">'</span><span class="p">]</span>      <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">environ</span><span class="p">[</span><span class="err">'</span><span class="n">wsgi</span><span class="p">.</span><span class="n">multithread</span><span class="err">'</span><span class="p">]</span>  <span class="o">=</span> <span class="n">False</span>
+<span class="n">environ</span><span class="p">[</span><span class="err">'</span><span class="n">wsgi</span><span class="p">.</span><span class="n">multiprocess</span><span class="err">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">True</span>
+<span class="n">environ</span><span class="p">[</span><span class="err">'</span><span class="n">wsgi</span><span class="p">.</span><span class="n">run_once</span><span class="err">'</span><span class="p">]</span>     <span class="o">=</span> <span class="n">True</span>
+
+<span class="k">if</span> <span class="n">environ</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="err">'</span><span class="n">HTTPS</span><span class="sc">','</span><span class="n">off</span><span class="err">'</span><span class="p">)</span> <span class="n">in</span> <span class="p">(</span><span class="err">'</span><span class="n">on</span><span class="sc">','</span><span class="mi">1</span><span class="err">'</span><span class="p">)</span><span class="o">:</span>
+    <span class="n">environ</span><span class="p">[</span><span class="err">'</span><span class="n">wsgi</span><span class="p">.</span><span class="n">url_scheme</span><span class="err">'</span><span class="p">]</span> <span class="o">=</span> <span class="err">'</span><span class="n">https</span><span class="err">'</span>
+<span class="nl">else:</span>
+    <span class="n">environ</span><span class="p">[</span><span class="err">'</span><span class="n">wsgi</span><span class="p">.</span><span class="n">url_scheme</span><span class="err">'</span><span class="p">]</span> <span class="o">=</span> <span class="err">'</span><span class="n">http</span><span class="err">'</span>
+
+<span class="n">headers_set</span>  <span class="o">=</span> <span class="p">[]</span>
+<span class="n">headers_sent</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">def</span> <span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">:</span>
+    <span class="k">if</span> <span class="n">not</span> <span class="n">headers_set</span><span class="o">:</span>
+         <span class="n">raise</span> <span class="n">AssertionError</span><span class="p">(</span><span class="s">"write() before start_response()"</span><span class="p">)</span>
+
+    <span class="n">elif</span> <span class="n">not</span> <span class="n">headers_sent</span><span class="o">:</span>
+         <span class="err">#</span> <span class="n">Before</span> <span class="n">the</span> <span class="n">first</span> <span class="n">output</span><span class="p">,</span> <span class="n">send</span> <span class="n">the</span> <span class="n">stored</span> <span class="n">headers</span>
+         <span class="n">status</span><span class="p">,</span> <span class="n">response_headers</span> <span class="o">=</span> <span class="n">headers_sent</span><span class="p">[</span><span class="o">:</span><span class="p">]</span> <span class="o">=</span> <span class="n">headers_set</span>
+         <span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="err">'</span><span class="n">Status</span><span class="o">:</span> <span class="o">%</span><span class="n">s</span><span class="err">\\</span><span class="n">r</span><span class="err">\\</span><span class="n">n</span><span class="err">'</span> <span class="o">%</span> <span class="n">status</span><span class="p">)</span>
+         <span class="k">for</span> <span class="n">header</span> <span class="n">in</span> <span class="n">response_headers</span><span class="o">:</span>
+             <span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="err">'</span><span class="o">%</span><span class="n">s</span><span class="o">:</span> <span class="o">%</span><span class="n">s</span><span class="err">\\</span><span class="n">r</span><span class="err">\\</span><span class="n">n</span><span class="err">'</span> <span class="o">%</span> <span class="n">header</span><span class="p">)</span>
+         <span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="err">'\\</span><span class="n">r</span><span class="err">\\</span><span class="n">n</span><span class="err">'</span><span class="p">)</span>
+
+    <span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">.</span><span class="n">flush</span><span class="p">()</span>
+
+<span class="n">def</span> <span class="n">start_response</span><span class="p">(</span><span class="n">status</span><span class="p">,</span><span class="n">response_headers</span><span class="p">,</span><span class="n">exc_info</span><span class="o">=</span><span class="n">None</span><span class="p">)</span><span class="o">:</span>
+    <span class="k">if</span> <span class="n">exc_info</span><span class="o">:</span>
+        <span class="nl">try:</span>
+            <span class="k">if</span> <span class="n">headers_sent</span><span class="o">:</span>
+                <span class="err">#</span> <span class="n">Re</span><span class="o">-</span><span class="n">raise</span> <span class="n">original</span> <span class="n">exception</span> <span class="k">if</span> <span class="n">headers</span> <span class="n">sent</span>
+                <span class="n">raise</span> <span class="n">exc_info</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">exc_info</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">exc_info</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+        <span class="nl">finally:</span>
+            <span class="n">exc_info</span> <span class="o">=</span> <span class="n">None</span>     <span class="err">#</span> <span class="n">avoid</span> <span class="n">dangling</span> <span class="n">circular</span> <span class="n">ref</span>
+    <span class="n">elif</span> <span class="n">headers_set</span><span class="o">:</span>
+        <span class="n">raise</span> <span class="n">AssertionError</span><span class="p">(</span><span class="s">"Headers already set!"</span><span class="p">)</span>
+
+    <span class="n">headers_set</span><span class="p">[</span><span class="o">:</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">status</span><span class="p">,</span><span class="n">response_headers</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">write</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">application</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">)</span>
+<span class="nl">try:</span>
+    <span class="k">for</span> <span class="n">data</span> <span class="n">in</span> <span class="n">result</span><span class="o">:</span>
+        <span class="k">if</span> <span class="n">data</span><span class="o">:</span>    <span class="err">#</span> <span class="n">don</span><span class="err">'</span><span class="n">t</span> <span class="n">send</span> <span class="n">headers</span> <span class="n">until</span> <span class="n">body</span> <span class="n">appears</span>
+            <span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">not</span> <span class="n">headers_sent</span><span class="o">:</span>
+        <span class="n">write</span><span class="p">(</span><span class="err">''</span><span class="p">)</span>   <span class="err">#</span> <span class="n">send</span> <span class="n">headers</span> <span class="n">now</span> <span class="k">if</span> <span class="n">body</span> <span class="n">was</span> <span class="n">empty</span>
+<span class="nl">finally:</span>
+    <span class="k">if</span> <span class="n">hasattr</span><span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="err">'</span><span class="n">close</span><span class="err">'</span><span class="p">)</span><span class="o">:</span>
+        <span class="n">result</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+
+<h2>Change this to the directory above your site code.</h2>
+<p>sys.path.append("/py")</p>
+<h2>Change mysite to the name of your site package</h2>
+<p>os.environ['DJANGO_SETTINGS_MODULE'] = 'pytest.settings'</p>
+<p>run_with_cgi(django.core.handlers.wsgi.WSGIHandler())</p>
+<p>[/python]</p>
+<p>i odpalamy to by www :D na razie tyle ...</p>
+
+<p>Dokładam paczkę z plikami do testu:</p>
+
+<ul><li><a href="http://onjin.net/files/py.zip">py.zip</a></li>
+
+</ul><p>unzip py.zip; ftp na home.pl; open http://server.home.pl/py/dispatch.py/admin</p>
+
+<h5>Dodatkowe moje narzędzia:</h5>
+
+<ul><li><a href="https://github.com/onjin/django-buildout-template" target="_blank">django-buildout-template</a> - szablon startowy dla projektów django z monitoringiem procesów, itp.</li>
+  <li><a href="https://github.com/onjin/vim-startup" target="_blank">vim-startup</a> - vim dostosowany do edycji python'a</li>
+</ul><h5>Dotacje:</h5>
+
+<p>Jeżeli informacje i narzędzia ci się przydały i uważasz, że warto wesprzeć ich utrzymanie, możesz przesłać dowolną sumę na adres <a href="http://bitcoin.org" target="_blank">Bitcoin</a> <a href="bitcoin:19mjD3GhDN23io1WWyQ5c72fqGpXjVifYQ">19mjD3GhDN23io1WWyQ5c72fqGpXjVifYQ</a></p>
+
+<p></p>
+            
+        
+    <p>
+        <a href="posts/blog20090226homepl-django-pierwsza-potyczka.html#disqus_thread" data-disqus-identifier="cache/posts/blog20090226homepl-django-pierwsza-potyczka.html">Comments</a>
+
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/blog20090112git-svn-i-puste-katalogi.html">git, svn i puste katalogi</a>
+        <small>  
+             Posted: <time class="published" datetime="2009-01-12T20:47:59+01:00">2009-01-12 20:47</time></small></h1>
+        <hr><p></p><p>Importując repozytorium svn'a poprzez <strong>git-svn</strong> tracimy puste katalogi, co czasem nie jest przyjemne. W dodatku to przecież nasze katalogi i chcemy je mieć ;)</p>
+<p>Dziś mnie trochę to przycisnęło więc, pogadałem chwilę z google i znalazłem użyteczny skrypt <a href="http://github.com/gma/git-me-up">git-me-up</a>.</p>
+
+<p>Wystarczy pobrać sam plik <strong>git-me-up</strong>, nadać mu prawa wykonywania i wykonać:</p>
+
+<blockquote>
+
+git-me-up http://svn.somerepo.com/path/to/project ./project
+
+</blockquote>
+
+<p>a skrypt sam stworzy repozytorium git, zaimportuje wszystkoz repozytorium svn, utworzy brakujące puste katalogi i stworzy w razie potrzeby plik <strong>.gitignore</strong> na podstawie svn:ignore.</p>
+
+<p>i już...</p>
+
+<p></p>
+            
+        
+    <p>
+        <a href="posts/blog20090112git-svn-i-puste-katalogi.html#disqus_thread" data-disqus-identifier="cache/posts/blog20090112git-svn-i-puste-katalogi.html">Comments</a>
+
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/blog20081019mud-astral-dominion.html">mud Astral Dominion</a>
+        <small>  
+             Posted: <time class="published" datetime="2008-10-19T20:20:03+02:00">2008-10-19 20:20</time></small></h1>
+        <hr><p></p><p>W 1999 roku było kilka popularnych gier typu <a href="http://pl.wikipedia.org/wiki/MUD">mud</a> i wraz ze znajomymi ze studiów także prowadziliśmy jednen o nazwie <a href="astral/"><strong>Astral Dominion</strong></a>.</p>
+<p>Jakiś czas temu odzyskałem kod mud'a i kilka dni temu uruchomiłem go online.</p>
+<p>Jak znajdą się chętni do gry (starzy gracze, których pełny backup także posiadam :) ) to zapraszam:</p>
+
+<blockquote>telnet direct.onjin.net 4000</blockquote>
+
+<p></p>
+            
+        
+    <p>
+        <a href="posts/blog20081019mud-astral-dominion.html#disqus_thread" data-disqus-identifier="cache/posts/blog20081019mud-astral-dominion.html">Comments</a>
+
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/blog20081001git-cheatsheet.html">git cheatsheet</a>
+        <small>  
+             Posted: <time class="published" datetime="2008-10-01T20:14:59+02:00">2008-10-01 20:14</time></small></h1>
+        <hr><p></p><p>Kontynuując serię, kolejny cheatsheet tym razem do systemu kontroli wersji <a href="http://git.or.cz/">git</a>.</p>
+<ul><li><a href="http://git.or.cz/gitwiki/GitCheatSheet">GitCheatSheet</a></li>
+<p></p></ul><p>I jest git ... :)</p>
+            
+        
+    <p>
+        <a href="posts/blog20081001git-cheatsheet.html#disqus_thread" data-disqus-identifier="cache/posts/blog20081001git-cheatsheet.html">Comments</a>
+
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/blog20081001lekkie-gnome-openbox-zamiast-metacity.html">lekkie gnome, openbox zamiast metacity</a>
+        <small>  
+             Posted: <time class="published" datetime="2008-10-01T19:35:16+02:00">2008-10-01 19:35</time></small></h1>
+        <hr><p></p><p>Lubię gnome, choć niektóre rzeczy mogły by być lepsze np:</p>
+<ul><li>szybszy start/działania</li>
+<li>i brakuje mi kombinacji ALT+prawy klawisz myszy do zmiany rozmiarów okien (naleciałość od używania przez lata windowmakera)</li>
+
+<p></p></ul><p>Oba problemy rozwiązał mi <a href="http://icculus.org/openbox/index.php/Main_Page">openbox</a>, który świetnie działa zarówno z Gnome jak i z KDE (oraz samodzielnie :) ).</p>
+<pre>
+
+apt-get install openbox obconf
+
+</pre>
+
+<p>i gotowe. Teraz można się wylogować i zalogować przy pomocy sesji Gnome/obenbox. Obconf ustawia kilka rzeczy, ale brakuje mu skrótów klawiszowych. Skróty te możemy ustawić w pliku</p>
+
+<pre>
+
+~/.config/openbox/rc.xml
+
+</pre>
+
+<p>Można zmienić domyślne przejścia pomiędzy pulpitami z ctrl+F1-x na alt+f1-x (moje ulubione). Trzeba tylko pamiętać by usunąć istniejące już powiązania A-F4 do zamykania okien. Inaczej zostaniemy przeniesieni na pulpit 4, jednak aktywne okno z bieżącego pulpitu zostanie zamknięte ( miałem kilka zdziwionych min ).</p>
+
+<p>Nie udało mi się ustalić kiedy pojawia się plik <em>rc.xml</em>. Czy po użyciu obconf, czy po zamknięciu pierwszej sesji z Gnome/openbox. Jeżeli masz podobny problem to pomoże ci mój plik konfiguracyjny :)</p>
+
+<ul><li><a href="files/rc.xml">rc.xml</a></li>
+
+</ul><p>Wystarczy umieścić go w ~/config/opebox/ i zalogować się do Gnome/openbox. <br><strong>Uwaga:</strong> jeżeli włączycie efekty pulpitu, wtedy openbox zostanie zamieniony na powrót na Metacity (don't do it)</p>
+
+<p></p>
+            
+        
+    <p>
+        <a href="posts/blog20081001lekkie-gnome-openbox-zamiast-metacity.html#disqus_thread" data-disqus-identifier="cache/posts/blog20081001lekkie-gnome-openbox-zamiast-metacity.html">Comments</a>
+
+
+        </p></div>
+    
+<div>
+<ul class="pager"><li class="previous">
+        <a href="index-10.html">← Newer posts</a>
+    </li>
+    <li class="next">
+        <a href="index-8.html">Older posts →</a>
+    </li>
+</ul></div>
+
+    
+        
+       <script type="text/javascript">var disqus_shortname="marekwywial";(function(){var a=document.createElement("script");a.async=true;a.type="text/javascript";a.src="http://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(a)}());</script></div>
+        <!--End of body content-->
+
+        <footer>
+            Contents © 2013         <a href="mailto:onjinx@gmail.com">
+Marek Wywiał</a> - Powered by         <a href="http://getnikola.com">Nikola</a>
+
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">
+<img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png"></a><br>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">
+Creative Commons Attribution 3.0 Unported License</a>.
+
+        </footer></div>
+</div>
+
+
+            <script src="assets/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="assets/js/bootstrap.min.js" type="text/javascript"></script><script src="assets/js/jquery.colorbox-min.js" type="text/javascript"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style
+addthis_default_style addthis_label_style addthis_32x32_style">
+<a class="addthis_button_more">Share</a>
+<ul><li><a class="addthis_button_facebook"></a>
+</li><li><a class="addthis_button_google_plusone_share"></a>
+</li><li><a class="addthis_button_linkedin"></a>
+</li><li><a class="addthis_button_twitter"></a>
+</li></ul></div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798">
+</script><!-- End of social buttons --><script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><script type="text/javascript" src="assets/js/tipuesearch_set.js"></script><script type="text/javascript" src="assets/js/tipuesearch.js"></script><script type="text/javascript">
+$(document).ready(function() {
+  # $('#tipue_search_input').tipuesearch({
+      # 'mode': 'json',
+      # 'contentLocation': '/assets/js/tipuesearch_content.json',
+      # 'showUrl': false
+  # });
+});
+</script></body></html>

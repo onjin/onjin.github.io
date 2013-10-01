@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (webdev)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now.</description><atom:link href="http://marekwywial.name/categories/webdev.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Tue, 01 Oct 2013 22:54:16 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Python SOAP server (flask) + wsdl generation</title><link>http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;h4&gt;Install&lt;/h4&gt;
+[bash]
+&lt;p&gt;$ pip install Flask-Enterprise&lt;/p&gt;
+&lt;p&gt;[/bash]&lt;/p&gt;
+&lt;h4&gt;file: soap.py&lt;/h4&gt;
+
+&lt;p&gt;[python]&lt;/p&gt;
+&lt;p&gt;from time import ctime&lt;/p&gt;
+&lt;p&gt;from flask import Flask&lt;/p&gt;
+&lt;p&gt;from flaskext.enterprise import Enterprise&lt;/p&gt;
+&lt;p&gt;app = Flask(&lt;strong&gt;name&lt;/strong&gt;)&lt;/p&gt;
+&lt;p&gt;enterprise = Enterprise(app)&lt;/p&gt;
+&lt;p&gt;class DemoService(enterprise.SOAPService):
+    &lt;strong&gt;soap_server_address&lt;/strong&gt; = '/soap'
+    &lt;strong&gt;soap_target_namespace&lt;/strong&gt; = 'ns'&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;enterprise&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;soap&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_returns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;enterprise&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;_sp&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;get_time&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;self&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;ctime&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;if &lt;strong&gt;name&lt;/strong&gt; == '&lt;strong&gt;main&lt;/strong&gt;':
+    app.run(host='127.0.0.1', port=5555)
+[/python]&lt;/p&gt;
+&lt;h4&gt;Run service&lt;/h4&gt;
+
+&lt;p&gt;[bash]&lt;/p&gt;
+&lt;p&gt;$ python soap.py&lt;/p&gt;
+&lt;p&gt;[/bash]&lt;/p&gt;
+&lt;h4&gt;file: client.py&lt;/h4&gt;
+
+&lt;p&gt;[python]&lt;/p&gt;
+&lt;p&gt;from suds.client import Client&lt;/p&gt;
+&lt;p&gt;c = Client('http://127.0.0.1:5555/soap?wsdl')&lt;/p&gt;
+&lt;p&gt;print c.service.get_time()&lt;/p&gt;
+&lt;p&gt;[/python]&lt;/p&gt;
+&lt;h4&gt;Run test&lt;/h4&gt;
+
+&lt;p&gt;[bash]&lt;/p&gt;
+&lt;p&gt;$ python client.py&lt;/p&gt;
+&lt;p&gt;Tue Aug 13 19:49:53 2013&lt;/p&gt;
+&lt;p&gt;[/bash]&lt;/p&gt;</description><category>onjin</category><category>programowanie</category><category>python</category><category>webdev</category><guid>http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html</guid><pubDate>Tue, 13 Aug 2013 16:53:49 GMT</pubDate></item><item><title>ftpmount v1.1.0 - github</title><link>http://marekwywial.name/posts/blog20090622ftpmount-v110-github.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;div style="text-align: center; border-bottom: solid 1px gray; background: orange"&gt;sprawdź najnowszą wersję &lt;a href="http://onjin.net/index.php/category/ftpmount"&gt;ftpmount&lt;/a&gt;&lt;/div&gt;
+&lt;p&gt;Przeniosłem skrypt ftpmount do github'a:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href="http://wiki.github.com/onjin/ftpmount"&gt;ftpmount&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;&lt;p&gt;Równocześnie zmieniłem sposób konfiguracji, a raczej tylko domyślną nazwę pliku konfiguracyjnego. Teraz jest szukany plik:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;.ftpmountrc w aktualnym katalogu&lt;/li&gt;
+
+&lt;li&gt;potem .ftpmountrc w katalogu domowym&lt;/li&gt;
+
+&lt;/ul&gt;&lt;p&gt;Wersje &lt;a href="http://github.com/onjin/ftpmount/downloads"&gt;do pobrania&lt;/a&gt;.&lt;/p&gt;</description><category>ftpmount</category><category>git</category><category>linux</category><category>tools</category><category>webdev</category><guid>http://marekwywial.name/posts/blog20090622ftpmount-v110-github.html</guid><pubDate>Mon, 22 Jun 2009 09:30:35 GMT</pubDate></item><item><title>fuse ftp mount - curlftpfs</title><link>http://marekwywial.name/posts/blog20090621fuse-ftp-mount-curlftpfs.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;div style="text-align: center; border-bottom: solid 1px gray; background: orange"&gt;sprawdź najnowszą wersję &lt;a href="http://onjin.net/index.php/category/ftpmount"&gt;ftpmount&lt;/a&gt;&lt;/div&gt;
+&lt;p&gt;Do pracy z hostingiem gdzie mamy tylko '''ftp''' przydaje się montowanie dysku poprzez właśnie ftp. Służy do tego program '''curlftpfs''' (np apt-get install curlftpfs).&lt;/p&gt;
+&lt;p&gt;Odpalamy go jako:&lt;/p&gt;
+&lt;pre&gt;
+
+curlftpfs ftp://user:pass@host/ ./mountpoint
+
+&lt;/pre&gt;
+
+&lt;p&gt;Do tego potrzebujemy uprawnienia grupy '''fuse''' więć jako ''root'' musimy sobie ją dodać od naszego użytkownika.&lt;/p&gt;
+&lt;p&gt;Jeżeli mamy dużo połączeń do zarządzania przyda się mały skrypt:
+ * &lt;a href="http://onjin.net/files/ftpmount"&gt;ftpmount&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;sterowany konfiguracją w pliku '''config.ini''':&lt;/p&gt;
+&lt;pre&gt;
+
+[hostone.pl]
+
+host=ftp.hostone.pl
+
+user=userone
+
+pass=passone # jak nie podamy tego wpisu, program się zapyta o hasło
+
+mountpoint=hostone.pl
+
+
+
+[hosttwo.pl]
+
+host=ftp.hosttwo.pl
+
+user=usertwo
+
+mountpoint=hosttwo.pl
+
+&lt;/pre&gt;
+
+&lt;p&gt;Wtedy wystarczy nam:
+ * ./ftpmount hostone.pl   # montujemy połączenie
+ * ./ftpmount -u hostone.pl   #odmontowywujemy połączenie
+ * ./ftpmount -l   # lista dostępnych konfiguracji połączeń&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;</description><category>ftpmount</category><category>linux</category><category>tools</category><category>webdev</category><guid>http://marekwywial.name/posts/blog20090621fuse-ftp-mount-curlftpfs.html</guid><pubDate>Sun, 21 Jun 2009 17:11:10 GMT</pubDate></item><item><title>home.pl &amp; django - pierwsza potyczka</title><link>http://marekwywial.name/posts/blog20090226homepl-django-pierwsza-potyczka.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;em&gt;home.pl&lt;/em&gt; obsługuje &lt;strong&gt;pythona&lt;/strong&gt; jako &lt;strong&gt;cgi&lt;/strong&gt; (pliki .py) więc tego będziemy się trzymać. Instalację wykonamy w katalogu &lt;strong&gt;/py&lt;/strong&gt;&lt;/p&gt;
+&lt;h5&gt;instalacja django&lt;/h5&gt;
+
+&lt;p&gt;hardcoded ale działa ;) wrzucamy to do /py i ruchamiamy poprzez www (plik install.py)&lt;/p&gt;
+
+&lt;p&gt;[python]&lt;/p&gt;
+&lt;h2&gt;!/usr/bin/env python&lt;/h2&gt;
+&lt;p&gt;import os&lt;/p&gt;
+&lt;p&gt;os.system("wget http://www.djangoproject.com/download/1.0.2/tarball/")&lt;/p&gt;
+&lt;p&gt;os.system("tar zxf Django-1.0.2-final.tar.gz")&lt;/p&gt;
+&lt;p&gt;os.system("rm Django-1.0.2-final.tar.gz")&lt;/p&gt;
+&lt;p&gt;os.system("mv Django-1.0.2-final tmp")&lt;/p&gt;
+&lt;p&gt;os.system("mv tmp/django django")&lt;/p&gt;
+&lt;p&gt;[/python]&lt;/p&gt;
+&lt;h5&gt;nasz projekt&lt;/h5&gt;
+
+&lt;p&gt;Lokalnie wołamy&lt;/p&gt;
+
+&lt;p&gt;[bash]&lt;/p&gt;
+&lt;p&gt;django-admin.py startproject pytest&lt;/p&gt;
+&lt;p&gt;[/bash]&lt;/p&gt;
+&lt;p&gt;i wrzucamy katalog &lt;em&gt;pytest&lt;/em&gt; przez ftp na home do katalogu /py .&lt;/p&gt;
+
+&lt;h5&gt;dispatch.py&lt;/h5&gt;
+
+&lt;p&gt;[python]&lt;/p&gt;
+&lt;h2&gt;!/usr/bin/env python&lt;/h2&gt;
+&lt;p&gt;import os, sys&lt;/p&gt;
+&lt;p&gt;import django.core.handlers.wsgi&lt;/p&gt;
+&lt;p&gt;def run_with_cgi(application):&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="n"&gt;environ&lt;/span&gt;                      &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;items&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;wsgi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;input&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;        &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdin&lt;/span&gt;
+&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;wsgi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;errors&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;       &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stderr&lt;/span&gt;
+&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;wsgi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;version&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;      &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;wsgi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;multithread&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;False&lt;/span&gt;
+&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;wsgi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;multiprocess&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;True&lt;/span&gt;
+&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;wsgi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run_once&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;     &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;True&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;HTTPS&lt;/span&gt;&lt;span class="sc"&gt;','&lt;/span&gt;&lt;span class="n"&gt;off&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="sc"&gt;','&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;wsgi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;url_scheme&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;
+&lt;span class="nl"&gt;else:&lt;/span&gt;
+    &lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;wsgi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;url_scheme&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;
+
+&lt;span class="n"&gt;headers_set&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+&lt;span class="n"&gt;headers_sent&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+
+&lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt; &lt;span class="n"&gt;headers_set&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+         &lt;span class="n"&gt;raise&lt;/span&gt; &lt;span class="n"&gt;AssertionError&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"write() before start_response()"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="n"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt; &lt;span class="n"&gt;headers_sent&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+         &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Before&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;first&lt;/span&gt; &lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;send&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;stored&lt;/span&gt; &lt;span class="n"&gt;headers&lt;/span&gt;
+         &lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;response_headers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;headers_sent&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;headers_set&lt;/span&gt;
+         &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;Status&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="err"&gt;\\&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="err"&gt;\\&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+         &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;header&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;response_headers&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+             &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="err"&gt;\\&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="err"&gt;\\&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;header&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+         &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;'\\&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="err"&gt;\\&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;flush&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;start_response&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;response_headers&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;exc_info&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;None&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;exc_info&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="nl"&gt;try:&lt;/span&gt;
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;headers_sent&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+                &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Re&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;raise&lt;/span&gt; &lt;span class="n"&gt;original&lt;/span&gt; &lt;span class="n"&gt;exception&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;headers&lt;/span&gt; &lt;span class="n"&gt;sent&lt;/span&gt;
+                &lt;span class="n"&gt;raise&lt;/span&gt; &lt;span class="n"&gt;exc_info&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;exc_info&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;exc_info&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="nl"&gt;finally:&lt;/span&gt;
+            &lt;span class="n"&gt;exc_info&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;None&lt;/span&gt;     &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;avoid&lt;/span&gt; &lt;span class="n"&gt;dangling&lt;/span&gt; &lt;span class="n"&gt;circular&lt;/span&gt; &lt;span class="n"&gt;ref&lt;/span&gt;
+    &lt;span class="n"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;headers_set&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;raise&lt;/span&gt; &lt;span class="n"&gt;AssertionError&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Headers already set!"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="n"&gt;headers_set&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;response_headers&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;write&lt;/span&gt;
+
+&lt;span class="n"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;application&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;start_response&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nl"&gt;try:&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;    &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;don&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="n"&gt;send&lt;/span&gt; &lt;span class="n"&gt;headers&lt;/span&gt; &lt;span class="n"&gt;until&lt;/span&gt; &lt;span class="n"&gt;body&lt;/span&gt; &lt;span class="n"&gt;appears&lt;/span&gt;
+            &lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt; &lt;span class="n"&gt;headers_sent&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;''&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;   &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;send&lt;/span&gt; &lt;span class="n"&gt;headers&lt;/span&gt; &lt;span class="n"&gt;now&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;body&lt;/span&gt; &lt;span class="n"&gt;was&lt;/span&gt; &lt;span class="n"&gt;empty&lt;/span&gt;
+&lt;span class="nl"&gt;finally:&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;hasattr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Change this to the directory above your site code.&lt;/h2&gt;
+&lt;p&gt;sys.path.append("/py")&lt;/p&gt;
+&lt;h2&gt;Change mysite to the name of your site package&lt;/h2&gt;
+&lt;p&gt;os.environ['DJANGO_SETTINGS_MODULE'] = 'pytest.settings'&lt;/p&gt;
+&lt;p&gt;run_with_cgi(django.core.handlers.wsgi.WSGIHandler())&lt;/p&gt;
+&lt;p&gt;[/python]&lt;/p&gt;
+&lt;p&gt;i odpalamy to by www :D na razie tyle ...&lt;/p&gt;
+
+&lt;p&gt;Dokładam paczkę z plikami do testu:&lt;/p&gt;
+
+&lt;ul&gt;&lt;li&gt;&lt;a href="http://onjin.net/files/py.zip"&gt;py.zip&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;&lt;p&gt;unzip py.zip; ftp na home.pl; open http://server.home.pl/py/dispatch.py/admin&lt;/p&gt;
+
+&lt;h5&gt;Dodatkowe moje narzędzia:&lt;/h5&gt;
+
+&lt;ul&gt;&lt;li&gt;&lt;a href="https://github.com/onjin/django-buildout-template" target="_blank"&gt;django-buildout-template&lt;/a&gt; - szablon startowy dla projektów django z monitoringiem procesów, itp.&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/onjin/vim-startup" target="_blank"&gt;vim-startup&lt;/a&gt; - vim dostosowany do edycji python'a&lt;/li&gt;
+&lt;/ul&gt;&lt;h5&gt;Dotacje:&lt;/h5&gt;
+
+&lt;p&gt;Jeżeli informacje i narzędzia ci się przydały i uważasz, że warto wesprzeć ich utrzymanie, możesz przesłać dowolną sumę na adres &lt;a href="http://bitcoin.org" target="_blank"&gt;Bitcoin&lt;/a&gt; &lt;a href="bitcoin:19mjD3GhDN23io1WWyQ5c72fqGpXjVifYQ"&gt;19mjD3GhDN23io1WWyQ5c72fqGpXjVifYQ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>hosting</category><category>python</category><category>webdev</category><guid>http://marekwywial.name/posts/blog20090226homepl-django-pierwsza-potyczka.html</guid><pubDate>Thu, 26 Feb 2009 20:59:38 GMT</pubDate></item><item><title>lint dla php</title><link>http://marekwywial.name/posts/blog20080902lint-dla-php.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Za dnia piszę najczęściej w &lt;a href="http://php.net"&gt;php&lt;/a&gt; i zazdroszczę &lt;a href="http://python.org/"&gt;pythonowi&lt;/a&gt; &lt;a href="http://www.logilab.org/857"&gt;pylinta&lt;/a&gt;.&lt;br&gt;
+Z ciekawości zagooglałem i znalazłem rozwiązanie dla PHP sprawdzające Coding Standard:&lt;/p&gt;
+&lt;pre&gt;
+
+pear install PHP_CodeSniffer
+
+phpcs --standard=Zend SomeTest.class.php
+
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;phpcs -i&lt;/em&gt; podaje dostępne standardy:&lt;/p&gt;
+
+&lt;ul&gt;&lt;li&gt;PEAR&lt;/li&gt;
+
+&lt;li&gt;MySource&lt;/li&gt;
+
+&lt;li&gt;PHPCS&lt;/li&gt;
+
+&lt;li&gt;Squiz&lt;/li&gt;
+
+&lt;li&gt;Zend&lt;/li&gt;
+
+&lt;/ul&gt;&lt;p&gt;Mi najbardzie odpowiada Zend co widać po wynikach lintowania, najczęściej 0 ostrzeżeń i błędów ;).&lt;/p&gt;
+
+&lt;p&gt;phpcs pozwala także tworzyć swoje &lt;a href="http://pear.php.net/manual/en/package.php.php-codesniffer.coding-standard-tutorial.php"&gt;własne standardy kodowanie&lt;/a&gt; oraz - co bardzo mnie cieszy - podpiąć go jako &lt;a href="http://pear.php.net/manual/en/package.php.php-codesniffer.svn-pre-commit.php"&gt;precommit hook&lt;/a&gt; do &lt;a href="http://subversion.tigris.org/"&gt;svn'a&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>php</category><category>programowanie</category><category>tools</category><category>webdev</category><guid>http://marekwywial.name/posts/blog20080902lint-dla-php.html</guid><pubDate>Tue, 02 Sep 2008 19:01:02 GMT</pubDate></item><item><title>netbeans 6.5 + php5 + symfony + xdebug</title><link>http://marekwywial.name/posts/blog20080824netbeans-65-php5-symfony-xdebug.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;W &lt;a href="http://www.netbeans.org/community/releases/65/" title="Netbeasn 6.5 features"&gt;Netbeans 6.5&lt;/a&gt; pojawia się support dla &lt;a title="PHP - główna strona" href="http://www.php.net/"&gt;php5&lt;/a&gt;. W/g informacji na stronie netbeans oznacza to:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;PHP Editor (Code completion, syntactic and semantic code highlighting)&lt;/li&gt;
+    &lt;li&gt;Support for heredoc notation and PHTML&lt;/li&gt;
+    &lt;li&gt;Debugging using Xdebug&lt;/li&gt;
+    &lt;li&gt;Generators for MySQL database code snippets&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;Temat, który najbardziej mnie interesował to jak zadziała debugging przy pomocy Xdebug. Postanowiłem sprawdzić to z istniejącym projektem bazującym na frameworku &lt;a href="http://www.symfony-project.com/" title="php5 framework"&gt;Symfony&lt;/a&gt;.&lt;/p&gt;
+&lt;ol&gt;&lt;li&gt;Zainstalowałem netbeans pobierając odpowiednią paczkę ze strony &lt;a title="Netbeans 6.5 beta download" href="http://download.netbeans.org/netbeans/6.5/beta/"&gt;netbeans&lt;/a&gt;.&lt;/li&gt;
+
+&lt;li&gt;Zainstalowałem Xdebug poprzez &lt;strong&gt;pecl install xdebug&lt;/strong&gt; i dodaniu do konfiguracji &lt;em&gt;php&lt;/em&gt; wierszy:
+
+&lt;pre&gt;
+
+# xdebug, jako zend_extension. ścieżke zmienić należy oczywiście na odpowiednią dla Twojej instalacji
+
+zend_extension=/usr/lib/php5/20060613+lfs/xdebug.so
+
+xdebug.remote_enable=on
+
+&lt;/pre&gt;
+
+&lt;/li&gt;
+
+&lt;li&gt;dodałem w netbeans nowy projekt php z istniejącymi źródłami (projekt już mam uruchomiony), podając podaczas konfiguracji:
+
+&lt;ul&gt;&lt;li&gt;ścieżkę do źródeł projektu, &lt;/li&gt;
+&lt;li&gt;adres url do projektu, &lt;/li&gt;
+
+&lt;li&gt;katalog zawierający dane web (dostępne poprzez podany url projektu) w tym przypadku podkatalog 'web' w katalogu  projektu&lt;/li&gt;
+
+&lt;li&gt;punkt startowy czyli domyślny kontroler dla projektu, w tym przypadku 'frontend.php' w podkatalogu 'web'&lt;/li&gt;
+
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;następnie wystarczyło otworzyć plik projektu (np podany wyżej kontroler) z toolbar'a wybrać 'debug project' lub wciśnąć &lt;strong&gt;ctrl+F5&lt;/strong&gt;&lt;/li&gt;
+
+&lt;/ol&gt;&lt;p&gt;W tym momencie w uruchomionej przeglądarce (u mnie &lt;a href="http://www.firefox.pl/"&gt;firefox 3.x&lt;/a&gt; netbeans otwarł główny kontroler projektu wraz z parameterm XDEBUG_SESSION_START=netbeans-xdebug. W tym samym momencie w edytorze netbeans podświetlony został pierwszy wiersz kontrolera ... i już.&lt;/p&gt;
+
+&lt;p&gt;Możemy teraz ustawiać watche, breakpointy, poruszać się step out, step in, step up wybierając opcje z menu 'debug' lub używająć skrótów klawiszowych.&lt;/p&gt;
+
+&lt;p&gt;Dzięki krótkiemu testowi widać, że podstawowy debug działa i można sobie poużywać. Oczywiście jeżeli lubimy php5 i lubimy netbeans lub któreś z nich musimy używać ;)&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>php</category><category>webdev</category><guid>http://marekwywial.name/posts/blog20080824netbeans-65-php5-symfony-xdebug.html</guid><pubDate>Sun, 24 Aug 2008 12:17:12 GMT</pubDate></item></channel></rss>

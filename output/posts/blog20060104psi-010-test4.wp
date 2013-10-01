@@ -1,0 +1,12 @@
+<html><body><p>Pojawiła się czwarta wersja testowa komunikatora <a href="http://psi-im.org/">Psi</a>.  Poza poprawkami znalezionych błędów, zostały też usunięte niektóre zestawy ikon, co do których były wątpliwości w sprawie praw użytkowania.</p>
+<p>Jak tylko wersja <strong>psi 0.10</strong> zostanie wydana, prace mają się skoncentrować na portowaniu aplikacji na Qt4 oraz na współpracy z <a href="http://hedera.linuxnews.pl/_news/2005/12/27/_long/3611.html">Jingle</a>.</p>
+
+<p>Dostępne aktualne pakiety Psi to:</p>
+
+<ul><li><a href="http://prdownloads.sourceforge.net/psi/psi-0.10-test4.tar.bz2?download">źródła (.tar.bz2)</a></li>
+
+<li><a href="http://prdownloads.sourceforge.net/psi/Psi-0.10_test4.dmg?download">Mac (.dmg)</a></li>
+
+<li><a href="http://prdownloads.sourceforge.net/psi/psi-win-0.10-test4.zip?download">Windows (.zip)</a></li>
+
+</ul></body></html>

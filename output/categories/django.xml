@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (django)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now.</description><atom:link href="http://marekwywial.name/categories/django.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Tue, 01 Oct 2013 22:54:16 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>devhelp + django 1.1</title><link>http://marekwywial.name/posts/blog20100426devhelp-django-1-1.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Ostatnio biegałem z lapkiem po centrum handlowym i łapałem wifi, żeby spojrzeć do dokumentacji &lt;a href="http://www.djangoproject.com/"&gt;django&lt;/a&gt;. I tylko się nabiegałem :).&lt;/p&gt;
+&lt;p&gt;Aby drugi raz pracować nie biegać w domu szybko podłączyłem dokumentację django do &lt;a href="http://live.gnome.org/devhelp"&gt;devhelp&lt;/a&gt; i tak na szybko procedura:&lt;/p&gt;
+&lt;p&gt;[bash]
+ apt-get install devhelp&lt;/p&gt;
+&lt;p&gt;mkdir -p ~/bin; cd ~/bin
+ wget http://htmlhelp.googlecode.com/svn/trunk/misc/devhelp-install
+ chmod +x devhelp-install&lt;/p&gt;
+&lt;p&gt;cd ~/; wget http://onjin.net/files/django1.1-doc.tgz 
+ ~/bin/devhelp-install ./django1.1-doc.tgz
+[/bash]&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p&gt;Teraz wystarczy uruchomić devhelp'a i cieszyć się offline :)&lt;/p&gt;
+&lt;p&gt;django1.1-doc jest ściągnięte z &lt;a href="http://charupload.wordpress.com/2007/12/02/django-documentation-chm/"&gt;.chm&lt;/a&gt; i potraktowana &lt;a href="http://code.google.com/p/htmlhelp/source/browse/trunk/pyhtmlhelp/hhconvert.py"&gt;hhconvert.py&lt;/a&gt; do formatu devhelp'a)&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>devhelp</category><category>django</category><category>onjin</category><category>python</category><guid>http://marekwywial.name/posts/blog20100426devhelp-django-1-1.html</guid><pubDate>Mon, 26 Apr 2010 17:51:34 GMT</pubDate></item></channel></rss>

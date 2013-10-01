@@ -1,0 +1,129 @@
+<!DOCTYPE html><html lang="en"><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content=""><meta name="author" content="Marek Wywiał"><title>firefox | marekwywial</title><link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml"></head><body>
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../">marekwywial</a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav"><li><a href="../blog/archive.html">Archives</a>
+                </li><li><a href="../blog/categories/index.html">Tags</a>
+                </li><li><a href="../blog/rss.xml">RSS</a>
+
+        </li></ul><span class="navbar-form pull-left">
+<input type="text" id="tipue_search_input"></span>
+
+        <ul class="nav navbar-nav navbar-right"><li>
+    <a href="blogfirefox.wp" id="sourcelink">Source</a>
+    </li>
+
+        </ul></div><!-- /.navbar-collapse -->
+</nav><!-- End of Menubar --><div class="container">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+    <h1>firefox</h1>
+    <p></p><h4>Co to jest firefox</h4>
+<p>Jest to szybka, bezpieczna i nowoczesna przegląrka internetowa, stanowiąca bezpośrednią konkurencję dla Internet Explorera firmy Microsoft.</p>
+
+<p>Jest jednym z projektów pochodzących od projektu Mozilla.</p>
+
+<h4>Dlaczego firefox.</h4>
+
+<p>Jeśli naprawdę jeszcze nie jesteś przekonany(a) to przeczytaj <a href="http://dobreprogramy.com/index.php?dz=8&amp;a=24">artykuł drobiazgowo opisujący róne przeglądarki</a> lub informacje na stronie <a href="http://browsehappy.pl/">browsehappy.pl</a>.</p>
+
+<h4>Skąd wziąć firefox'a</h4>
+
+<p>Firefox'a w polskiej wersji językowej można pobrać ze strony projektu <a href="http://www.firefox.pl/">www.firefox.pl</a>.</p>
+
+<p>Wybieramy tam posiadany system operacyjny (GNU/Linux, Mac OS X, Windows) i pobieramy odpowiedni plik.</p>
+
+<h4>Jak rozszerzać firefox'a</h4>
+
+<p>Możliwości naszej przeglądarki możemy rozszerzać przy pomocy systemu wtyczek (ang. plugins).</p>
+
+<p>W menu narzędzia wybieramy opcję rozszerzenia. Pojawi się okno gdzie możemy przejrzeć, zaktualizować, skonfigurować lub usunąć nasze wtyczki.<br>
+
+Na dole po prawej stronie znajduje się odnośnik '<strong>Pobierz więcej rozszerzeń</strong>' gdzie możemy znaleść interesujące nas dodatki.</p>
+
+<p>Można także dodawać nowe wyszukiwarki (okienko z google) np. <a title="wyszukiwarki Firefox'a" href="http://onjin.net/ff/">takie</a>.</p>
+
+<h4>Jak upiększyć firefox'a</h4>
+
+<p>Wygląd przeglądarki możemy zmienić poprzez system motywów. Do ich ustawień docieramy poprzez menu Narzędzia-&gt;Motywy.
+
+Obsługujemy je analogicznie do rozszerzeń (punkt wyżej).</p>
+
+<h4>Jak przyśpieszyć firefox'a</h4>
+
+<p>Domyślnie Firefox jest przystosowany do pracy na wolnych i średniej prędkości łączach internetowych. Jeśeli denerwuje nas długi czas oczekiwania na wyświetlenie strony, posiadamy szybkie łącze lub chcemy poeksperymentować z ustawieniami, to czytajcie dalej.</p>
+
+<p>Wpisując w pasku adresu, adres <strong>about:config</strong> przenosimy się do konfiguracji (rejestru) Firefox'a.</p>
+
+<ul><li>odnajdujemy wpis <strong>network.http.pipelining</strong> i zmieniamy wartość z false na <strong>true</strong> [otwieranie równoczesnych połączeń]</li>
+    <li>odnajdujemy wpis <strong>network.http.pipelining.maxrequest</strong> i zwiększamy wartość na <strong>10</strong> [maksymalna ilość jednoczesnych połączeń]</li>
+    <li>klikamy w dowolnym miejscu rejestru prawym klawiszem i wybieramy <strong>dodaj ustawienie typu -&gt; liczba całkowita (integer)</strong> o nazwie <strong>nglayout.initialpaint.delay</strong> i ustawiamy jego wartość na <strong>0</strong> [czas opónienia przed rozpoczęciem wyświetlania strony]</li>
+</ul><p>Można też ustawić opcję <strong>config.trim_on_minimize</strong> na <strong>true</strong> (lub stworzyć taki wpis w razie potrzeby). Powoduje on <strong>zwalnianie pamięci po zminimalizowaniu okna</strong> firefoxa.<br><br>
+
+W Firefox'ie 1.5 w pamięci trzymana jest pewna ilość ostatnio odwiedzanych stron. Przeglądarka sama decyduje ile ich trzymać, przez co zajmuje naszą cenną pamięć. Możemi sami to regulować za pomocą jak zwykle <strong>about:config</strong>.<br>
+
+Znajdujemy opcję <strong>browser.sessionhistory.max_total_viewers</strong> i zmieniamy jej wartość z -1 (sterowane przez przeglądarkę) na np <strong>0</strong>. Oczywiście teraz kliknięcie przycisku <em>wstecz</em> w przeglądarce już nie będzie takie szybkie jak poprzednio.</p>
+
+<p>Teraz na warsztat <strong>start Firefox'a</strong>. Można (czy też należy) zainstalować dodatek <a href="http://sourceforge.net/project/showfiles.php?group_id=129464">Firefox Preloader</a>, który podczas startu systemu uruchamia przeglądarkę "w tle".</p>
+
+<p>Ostatnio znalazłem także rozszerzenie do Firefox'a o nazwie <a href="https://addons.mozilla.org/extensions/moreinfo.php?id=1269&amp;application=firefox">fasterfox</a>, które samo ustawi wymaganą przez nasz szybkość przeglądarki, a także pozwala nam nadal na ręczną modyfikację wszystkich odpowiednich ustawień.</p>
+
+<p>I to tyle. Chętni wrażeń mogą przejrzeć cały rejestr i spróbować pozmienia“ inne opcje (<a href="http://preferential.mozdev.org/preferences.html">dokumentacja</a>).</p>
+
+<h4>Odnośniki</h4>
+
+<ul><li><a title="wyszkiwarki Firefox'a" href="http://onjin.net/ff">dodatkowe wyszukiwarki</a></li>
+    <li><a href="http://dobreprogramy.com/index.php?dz=8&amp;a=24">artykuł porównujący przeglądarki internetowe</a></li>
+    <li><a href="http://www.firefox.pl/">pobierz Firefox'a</a></li>
+    <li><a href="http://preferential.mozdev.org/preferences.html">dokumentacja about:config</a></li>
+    <li><a href="http://www.tweakfactor.com/articles/tweaks/firefoxtweak/4.html">tweak firefox - jeszcze szybciej</a></li>
+    <li><a href="https://addons.mozilla.org/extensions/moreinfo.php?id=1269&amp;application=firefox">FasterFox - szybciej i łatwiej</a></li>
+</ul><p></p>
+
+        </div>
+        <!--End of body content-->
+
+        <footer>
+            Contents © 2013         <a href="mailto:onjinx@gmail.com">
+Marek Wywiał</a> - Powered by         <a href="http://getnikola.com">Nikola</a>
+
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">
+<img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png"></a><br>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">
+Creative Commons Attribution 3.0 Unported License</a>.
+
+        </footer></div>
+</div>
+
+
+            <script src="../assets/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="../assets/js/bootstrap.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style
+addthis_default_style addthis_label_style addthis_32x32_style">
+<a class="addthis_button_more">Share</a>
+<ul><li><a class="addthis_button_facebook"></a>
+</li><li><a class="addthis_button_google_plusone_share"></a>
+</li><li><a class="addthis_button_linkedin"></a>
+</li><li><a class="addthis_button_twitter"></a>
+</li></ul></div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798">
+</script><!-- End of social buttons --><script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><script type="text/javascript" src="../assets/js/tipuesearch_set.js"></script><script type="text/javascript" src="../assets/js/tipuesearch.js"></script><script type="text/javascript">
+$(document).ready(function() {
+  # $('#tipue_search_input').tipuesearch({
+      # 'mode': 'json',
+      # 'contentLocation': '/assets/js/tipuesearch_content.json',
+      # 'showUrl': false
+  # });
+});
+</script></body></html>

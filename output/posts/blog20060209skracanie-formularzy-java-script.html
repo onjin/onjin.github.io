@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="en"><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content=""><meta name="author" content="Marek Wywiał"><title>skracanie formularzy + java script | marekwywial</title><link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml"></head><body>
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../">marekwywial</a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav"><li><a href="../blog/archive.html">Archives</a>
+                </li><li><a href="../blog/categories/index.html">Tags</a>
+                </li><li><a href="../blog/rss.xml">RSS</a>
+
+        </li></ul><span class="navbar-form pull-left">
+<input type="text" id="tipue_search_input"></span>
+
+        <ul class="nav navbar-nav navbar-right"><li>
+    <a href="blog20060209skracanie-formularzy-java-script.wp" id="sourcelink">Source</a>
+    </li>
+
+        </ul></div><!-- /.navbar-collapse -->
+</nav><!-- End of Menubar --><div class="container">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+    <div class="postbox">
+    
+    <h1>skracanie formularzy + java script</h1>
+
+    <hr><small>
+        Posted: <time class="published" datetime="2006-02-09T08:28:54+01:00">2006-02-09 08:28</time>
+        
+
+        
+          |  More posts about
+            <a class="tag" href="../categories/onjin.html"><span class="badge badge-info">onjin</span></a>
+            <a class="tag" href="../categories/www.html"><span class="badge badge-info">www</span></a>
+
+    </small>
+    <hr><p></p><p>Długie formularze, podzielone na kilka sekcji ciągnące się w dół strony, nie są zbyt czytelne. Formularz taki można zmodyfikować dzieląć go na klikalne etapy lub wizualne zakładki. Ale jeżeli mamy wiele takich formularzy napisanych na dodatek w samym HTML'u ?</p>
+<p><img src="http://onjin.net/misc/opanels/normal.jpg" width="273" height="334" alt="widok normalny"></p>
+<p>Możemy to sobie uprościć za pomocą JavaScript. Odpowiednia funkcja wywołana po załadowaniu się strony [<em>body onLoad="funkcja();"</em>] może wyszukać sekcje naszego formularza i zwinąć je do ciekawszych wizualnie zakładek.</p>
+<p><img src="http://onjin.net/misc/opanels/panels.jpg" width="316" height="200" alt="widok z zakładkami"></p>
+<p>Żeby funkcja wiedziała co jest sekcją, należy je odpowiednio oznaczyć np. poprzez odpowiednią klasę <em>CSS</em> 'subpanel'</p>
+<p>Druga ważna rzecz, skrypt musi wiedzieć jak nazwać zakładki. Do tego wykorzystałem atrybut <em>title</em>. Nasz kod wygląda teraz tak:</p>
+<p>[code]</p>
+<p></p><div class="subpanel" title="zakładka 1">
+    <h3>sekcja 1</h3>
+</div>
+<div class="subpanel" title="zakładka 2">
+    <h3>sekcja 2</h3>
+</div>
+
+<p>[/code]</p>
+<p>Teraz za pomocą JavaScript możemy odnaleźć wszystkie znaczniki <em>DIV</em>.</p>
+<p>[code lang="javascript"]</p>
+<p>if (!document.getElementsByTagName
+    || !document.createElement
+    || !document.appendChild) return;</p>
+<p>/<em> pobieramy wszystkie div'y </em>/</p>
+<p>var divs = document.getElementsByTagName("div");</p>
+<p>[/code]</p>
+<p>Następnie przygotowywujemy dodatkowy element <em>DIV</em>, w którym umieścimy stworzone zakładki.</p>
+<p>[code lang="javascript"]</p>
+<p>/<em>  nr. pierwszego div'a z klasą subpanel </em>/</p>
+<p>var firstDiv = -1;</p>
+<p>/<em> tworzymy div na nasze menu </em>/</p>
+<p>var menu = document.createElement("div");</p>
+<p>menu.className = "panels_menu";</p>
+<p>menu.setAttribute("id","panels_menu");</p>
+<p>[/code]</p>
+<p>Pozostaje nam przejść się pętlą po wszystkich znalezionych <em>DIV</em>'ach i wybrać te, które posiadają klasę 'subpanel'. Z każdego z nich pobieramy wartość atrybutu <em>title</em> i naszym 'menu' tworzymy odpowiedni odnośnik:</p>
+<p>[code lang="javascript"]</p>
+<p>var source = divs[i].getAttribute("title");</p>
+<p>if (!source) continue;</p>
+<p>var link = document.createElement("a");</p>
+<p>link.setAttribute("href","#"+source);</p>
+<p>link.setAttribute("onclick","activMenu(this); ");</p>
+<p>link.onclick = new Function('activMenu(this);'); // dla IE</p>
+<p>link.setAttribute("id","menu_"+divs[i].id); // dla wywołań zewnętrznych</p>
+<p>link.appendChild(document.createTextNode(source));</p>
+<p>[/code]</p>
+<p>Aktywujemy pierwszą naszą zakładkę i dodajemy je do naszego nowego menu:</p>
+<p>[code lang="javascript"]</p>
+<p>if(firstDiv == -1) firstDiv = i;</p>
+<p>if(i == firstDiv) {
+    divs[i].style.display='block';
+    link.setAttribute('class','active');
+}</p>
+<p>/<em> dodajemy odnośnik do menu </em>/</p>
+<p>menu.appendChild(link);</p>
+<p>link.className = "active"; // dla IE</p>
+<p>[/code]</p>
+<p>A po zakończeniu całej pętli wklejamy nasze zakładki przed pierwszego <em>DIV</em>'a z klasą 'subpanel':</p>
+<p>[code lang="javascript"]</p>
+<p>/<em> wklejamy stworzone menu nad pierwszym div'em </em>/</p>
+<p>divs[firstDiv].parentNode.insertBefore(menu,divs[firstDiv]);</p>
+<p>[/code]</p>
+<p>Tyle w temacie stworzenia zakładek. Pozostaje nam stworzyć funkcję <em>activeMenu(this)</em>, którą wywołujemy po kliknięciu w odpowiednią zakładkę.</p>
+<p>[code lang="javascript"]</p>
+<p>function activMenu(menu) {
+  menubox = document.getElementById('panels_menu');
+  links = menubox.childNodes;</p>
+<p>/<em> ustalamy clasę 'active' dla naszego
+    odnośnika, a reszcie null </em>/
+  for(x=0;x<links.length x if links menu.classname="active" menu.blur var divs='document.getElementsByTagName("div");' chowamy wszystkie div pr aktualnego for i="0;" menu.innerhtml else return false ca zwie drobny>CSS:</links.length></p>
+<p>[code lang="css"]
+   .panels_menu a {
+        color: #eee;
+        text-decoration: none;
+        background: #666;
+        padding: 0px 5px;
+        margin: 0px 2px;
+        border: solid 1px #333;
+     }
+    .panels_menu a:hover {
+        background: #ccc;
+        color: #f33;
+        border-bottom: solid 1px #ccc;
+    }
+    .panels_menu a.active {
+        background: #eee;
+        color: #333;
+        border-bottom: solid 1px #eee;
+    }
+    .subpanel {
+                border: solid 1px #333;
+        padding: 10px;
+        margin: 0 0 10px;
+    }
+[/code]</p>
+<p>Wystarczy teraz do <em>&lt;body&gt;</em> dodać <strong>onLoad="preparePanels()"</strong> i to już wszystko.</p>
+<p>Poniżej jest pełen kod funkcji preparePanels():</p>
+<p>[code lang="javascript"]</p>
+<p>function preparePanels() {
+  if (!document.getElementsByTagName
+    || !document.createElement
+    || !document.appendChild) return;
+  /<em> pobieramy wszystkie div'y </em>/
+  var divs = document.getElementsByTagName("div");</p>
+<p>/<em> nr. pierwsze div'a z klasą subpanel </em>/
+  var firstDiv = -1;</p>
+<p>/<em> tworzymy div na nasze menu </em>/
+  var menu = document.createElement("div");
+  menu.className = "panels_menu";
+  menu.setAttribute("id","panels_menu");</p>
+<p>for (var i=0; i<divs.length i je klasa div to subpanel to: if firstdiv="i;" sprawdzamy istnienie atrybutu var source='divs[i].getAttribute("title");' continue chowamy divs tworzymi odno do w naszym menu link='document.createElement("a");' link.setattribute link.appendchild jest pierwszym go aktywujemy dodajemy menu.appendchild wklejamy stworzone nad dzia przyk znajduje si href="http://onjin.net/misc/opanels/menu.php">tutaj. Odnośniki w lewym górnym rogu strony uruchamiają wersję kolejno z i bez preparePanels().</divs.length></p>
+<p>Jeżeli komuś się ta wiedza przyda, to miło mi będzie :)</p>
+    
+    <ul class="pager"><li class="previous">
+            <a href="blog20060202ciekawe-gadzety.html">← Previous post</a>
+        </li>
+        <li class="next">
+            <a href="blog20060210slownik-wyrazow-obcych.html">Next post →</a>
+        </li>
+    </ul><div id="disqus_thread"></div>
+        <script type="text/javascript">
+        var disqus_shortname ="marekwywial";
+            var disqus_url="http://marekwywial.name/posts/blog20060209skracanie-formularzy-java-script.html";
+        var disqus_title="skracanie formularzy + java script";
+        var disqus_identifier="cache/posts/blog20060209skracanie-formularzy-java-script.html";
+        var disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    
+
+    </div>
+
+        </div>
+        <!--End of body content-->
+
+        <footer>
+            Contents © 2013         <a href="mailto:onjinx@gmail.com">
+Marek Wywiał</a> - Powered by         <a href="http://getnikola.com">Nikola</a>
+
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">
+<img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png"></a><br>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">
+Creative Commons Attribution 3.0 Unported License</a>.
+
+        </footer></div>
+</div>
+
+
+            <script src="../assets/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="../assets/js/bootstrap.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style
+addthis_default_style addthis_label_style addthis_32x32_style">
+<a class="addthis_button_more">Share</a>
+<ul><li><a class="addthis_button_facebook"></a>
+</li><li><a class="addthis_button_google_plusone_share"></a>
+</li><li><a class="addthis_button_linkedin"></a>
+</li><li><a class="addthis_button_twitter"></a>
+</li></ul></div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798">
+</script><!-- End of social buttons --><script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><script type="text/javascript" src="../assets/js/tipuesearch_set.js"></script><script type="text/javascript" src="../assets/js/tipuesearch.js"></script><script type="text/javascript">
+$(document).ready(function() {
+  # $('#tipue_search_input').tipuesearch({
+      # 'mode': 'json',
+      # 'contentLocation': '/assets/js/tipuesearch_content.json',
+      # 'showUrl': false
+  # });
+});
+</script></body></html>

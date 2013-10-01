@@ -1,0 +1,16 @@
+<html><body><div style="text-align: center; border-bottom: solid 1px gray; background: orange">sprawdź najnowszą wersję <a href="http://onjin.net/index.php/category/ftpmount">ftpmount</a></div>
+
+
+Kilka poprawek do ftpmount:
+
+<ul><li>poprawiony przykładowy .ftpmountrc - w .ini komentrze to ';' a nie '#' :)</li>
+
+<li>tryb 'verbose' (-v) pokazuje teraz jakie parametry zostały przekazane do curlftpfs</li>
+
+<li>do README dodałem informację, że 'curlftpfs' jest potrzebny do działania skryptu</li>
+
+</ul>
+
+
+
+Wersje <a href="http://github.com/onjin/ftpmount/downloads">do pobrania</a>.</body></html>

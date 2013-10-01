@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (onjin)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now.</description><atom:link href="http://marekwywial.name/categories/onjin.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Tue, 01 Oct 2013 22:54:16 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Python SOAP server (flask) + wsdl generation</title><link>http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;h4&gt;Install&lt;/h4&gt;
+[bash]
+&lt;p&gt;$ pip install Flask-Enterprise&lt;/p&gt;
+&lt;p&gt;[/bash]&lt;/p&gt;
+&lt;h4&gt;file: soap.py&lt;/h4&gt;
+
+&lt;p&gt;[python]&lt;/p&gt;
+&lt;p&gt;from time import ctime&lt;/p&gt;
+&lt;p&gt;from flask import Flask&lt;/p&gt;
+&lt;p&gt;from flaskext.enterprise import Enterprise&lt;/p&gt;
+&lt;p&gt;app = Flask(&lt;strong&gt;name&lt;/strong&gt;)&lt;/p&gt;
+&lt;p&gt;enterprise = Enterprise(app)&lt;/p&gt;
+&lt;p&gt;class DemoService(enterprise.SOAPService):
+    &lt;strong&gt;soap_server_address&lt;/strong&gt; = '/soap'
+    &lt;strong&gt;soap_target_namespace&lt;/strong&gt; = 'ns'&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;enterprise&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;soap&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_returns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;enterprise&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;_sp&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;get_time&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;self&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;ctime&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;if &lt;strong&gt;name&lt;/strong&gt; == '&lt;strong&gt;main&lt;/strong&gt;':
+    app.run(host='127.0.0.1', port=5555)
+[/python]&lt;/p&gt;
+&lt;h4&gt;Run service&lt;/h4&gt;
+
+&lt;p&gt;[bash]&lt;/p&gt;
+&lt;p&gt;$ python soap.py&lt;/p&gt;
+&lt;p&gt;[/bash]&lt;/p&gt;
+&lt;h4&gt;file: client.py&lt;/h4&gt;
+
+&lt;p&gt;[python]&lt;/p&gt;
+&lt;p&gt;from suds.client import Client&lt;/p&gt;
+&lt;p&gt;c = Client('http://127.0.0.1:5555/soap?wsdl')&lt;/p&gt;
+&lt;p&gt;print c.service.get_time()&lt;/p&gt;
+&lt;p&gt;[/python]&lt;/p&gt;
+&lt;h4&gt;Run test&lt;/h4&gt;
+
+&lt;p&gt;[bash]&lt;/p&gt;
+&lt;p&gt;$ python client.py&lt;/p&gt;
+&lt;p&gt;Tue Aug 13 19:49:53 2013&lt;/p&gt;
+&lt;p&gt;[/bash]&lt;/p&gt;</description><category>onjin</category><category>programowanie</category><category>python</category><category>webdev</category><guid>http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html</guid><pubDate>Tue, 13 Aug 2013 16:53:49 GMT</pubDate></item><item><title>vim + vundle plugin manager + programming</title><link>http://marekwywial.name/posts/blog20120314vim-vundle-plugin-manager-programming.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Kilku znajomych chciało zacząć używać vim'a. Ale konfigurowanie go na starcie, dobieranie pluginów, instalowanie ich, gdy się jeszcze nic nie wie tylko chce się spróbować zazwyczaj powodowało przełożenie tej próby na 'kiedy indziej'.&lt;/p&gt;
+&lt;p&gt;Niedawno poznałem i zacząłem używać plugin manager'a &lt;a href="https://github.com/gmarik/vundle"&gt;vundle&lt;/a&gt; i sam potrzebowałem szybko przenieść konfigurację na drugi komputer i na laptopa. Zazwyczaj używałem dropbox'a i podlinkowanego pliku .vimrc oraz całego katalogu .vim ze wszystkimi pluginami.&lt;/p&gt;
+&lt;p&gt;Jednak używając plugin managera, którego konfiguracja znajduje się w .vimrc pozwala teraz posługiwać się jedynie plikiem .vimrc. Zgodnie z programistyczną zasadą 'jak masz coś zrobić więcej niż 2 razy, napisz program' powstał mały skrypt + podstawowy .vimrc pozwalający szybko uruchomić vim'a skonfigurowanego pod programowanie w ciągu kilku minut.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/onjin/vim-startup"&gt;https://github.com/onjin/vim-startup&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Jak na razie przydało się mi i kilku innym osobom :) . Plik .vimrc jest oczywiście przykładowy i jak już sobie poużywasz vim'a i zdecydujesz się go poznać lepiej wtedy po kolei skonfigurujesz go pod siebie.&lt;/p&gt;</description><category>onjin</category><category>python</category><category>vim</category><category>vim</category><guid>http://marekwywial.name/posts/blog20120314vim-vundle-plugin-manager-programming.html</guid><pubDate>Wed, 14 Mar 2012 21:50:36 GMT</pubDate></item><item><title>Useful Collection of Cheat-Sheet Desktop Wallpaper for Web Designers</title><link>http://marekwywial.name/posts/blog20111011useful-collection-of-cheat-sheet-desktop-wallpaper-for-web-designers.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Just repost:
+&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="http://reader.benshoemate.com/2010/10/useful-collection-of-cheat-sheet-desktop-wallpaper-for-web-designers/"&gt;http://reader.benshoemate.com/2010/10/useful-collection-of-cheat-sheet-desktop-wallpaper-for-web-designers/&lt;/a&gt;&lt;/li&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/ul&gt;</description><category>onjin</category><guid>http://marekwywial.name/posts/blog20111011useful-collection-of-cheat-sheet-desktop-wallpaper-for-web-designers.html</guid><pubDate>Tue, 11 Oct 2011 06:36:18 GMT</pubDate></item><item><title>git php syntax check pre-commit</title><link>http://marekwywial.name/posts/blog20100504git-php-syntax-check-pre-commit.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Załączam używany przeze mnie i sprawdzający się &lt;strong&gt;pre-commit&lt;/strong&gt; dla &lt;strong&gt;git&lt;/strong&gt;'a sprawdzający commitowane pliki .php.&lt;/p&gt;
+&lt;p&gt;Przy wykonaniu commit w repozytorium skrypt dla każdego commitowanego pliku '&lt;strong&gt;.php&lt;/strong&gt;' wykonuje '&lt;strong&gt;php -l&lt;/strong&gt;' w pętli, aż otrzyma odpowiedź, że składnia jest ok lub nie ok. Przypadku wystąpienia błędy przerywa commit. Sam skrypt napisany jest w &lt;em&gt;python&lt;/em&gt;'ie&lt;/p&gt;
+&lt;p&gt;Dlaczego w pętli? Dlatego, że 'php -l' losowo się urywa zwracając &lt;em&gt;SIGFAULT&lt;/em&gt; i należy wtedy powtórzyć próbę z '-l'&lt;/p&gt;
+&lt;p&gt;Plik do pobrania:&lt;/p&gt;
+&lt;p&gt;» &lt;a href="http://marekwywial.name/files/php-l/pre-commit"&gt;pre-commit&lt;/a&gt;&lt;/p&gt;</description><category>git python php</category><category>onjin</category><guid>http://marekwywial.name/posts/blog20100504git-php-syntax-check-pre-commit.html</guid><pubDate>Tue, 04 May 2010 05:52:53 GMT</pubDate></item><item><title>devhelp + django 1.1</title><link>http://marekwywial.name/posts/blog20100426devhelp-django-1-1.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Ostatnio biegałem z lapkiem po centrum handlowym i łapałem wifi, żeby spojrzeć do dokumentacji &lt;a href="http://www.djangoproject.com/"&gt;django&lt;/a&gt;. I tylko się nabiegałem :).&lt;/p&gt;
+&lt;p&gt;Aby drugi raz pracować nie biegać w domu szybko podłączyłem dokumentację django do &lt;a href="http://live.gnome.org/devhelp"&gt;devhelp&lt;/a&gt; i tak na szybko procedura:&lt;/p&gt;
+&lt;p&gt;[bash]
+ apt-get install devhelp&lt;/p&gt;
+&lt;p&gt;mkdir -p ~/bin; cd ~/bin
+ wget http://htmlhelp.googlecode.com/svn/trunk/misc/devhelp-install
+ chmod +x devhelp-install&lt;/p&gt;
+&lt;p&gt;cd ~/; wget http://onjin.net/files/django1.1-doc.tgz 
+ ~/bin/devhelp-install ./django1.1-doc.tgz
+[/bash]&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p&gt;Teraz wystarczy uruchomić devhelp'a i cieszyć się offline :)&lt;/p&gt;
+&lt;p&gt;django1.1-doc jest ściągnięte z &lt;a href="http://charupload.wordpress.com/2007/12/02/django-documentation-chm/"&gt;.chm&lt;/a&gt; i potraktowana &lt;a href="http://code.google.com/p/htmlhelp/source/browse/trunk/pyhtmlhelp/hhconvert.py"&gt;hhconvert.py&lt;/a&gt; do formatu devhelp'a)&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>devhelp</category><category>django</category><category>onjin</category><category>python</category><guid>http://marekwywial.name/posts/blog20100426devhelp-django-1-1.html</guid><pubDate>Mon, 26 Apr 2010 17:51:34 GMT</pubDate></item><item><title>awesome3 wm mouse/key bindings</title><link>http://marekwywial.name/posts/blog20091019awesome2-wm-mousekey-bindings.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Tak na szybko z manuala do pdf'a do szybkiego wydruku cheatsheet dla window managera awesome 3 (it's awesome ;) ):&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href="http://marekwywial.name/files/awesome3_bindings.pdf"&gt;awesome3_bindings.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/ul&gt;</description><category>desktop</category><category>onjin</category><category>tools</category><category>wmanager</category><guid>http://marekwywial.name/posts/blog20091019awesome2-wm-mousekey-bindings.html</guid><pubDate>Mon, 19 Oct 2009 06:18:27 GMT</pubDate></item><item><title>mud Astral Dominion</title><link>http://marekwywial.name/posts/blog20081019mud-astral-dominion.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;W 1999 roku było kilka popularnych gier typu &lt;a href="http://pl.wikipedia.org/wiki/MUD"&gt;mud&lt;/a&gt; i wraz ze znajomymi ze studiów także prowadziliśmy jednen o nazwie &lt;a href="http://marekwywial.name/astral/"&gt;&lt;strong&gt;Astral Dominion&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Jakiś czas temu odzyskałem kod mud'a i kilka dni temu uruchomiłem go online.&lt;/p&gt;
+&lt;p&gt;Jak znajdą się chętni do gry (starzy gracze, których pełny backup także posiadam :) ) to zapraszam:&lt;/p&gt;
+
+&lt;blockquote&gt;telnet direct.onjin.net 4000&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>games</category><category>mud</category><category>onjin</category><guid>http://marekwywial.name/posts/blog20081019mud-astral-dominion.html</guid><pubDate>Sun, 19 Oct 2008 18:20:03 GMT</pubDate></item><item><title>gwiezdne wojny by telnet</title><link>http://marekwywial.name/posts/blog20080710gwiezdne-wojny-by-telnet.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Episod IV Gwiezdnych Wojen transmitowany przez telnet:
+&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;telnet towel.blinkenlights.nl&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;:D&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;</description><category>onjin</category><guid>http://marekwywial.name/posts/blog20080710gwiezdne-wojny-by-telnet.html</guid><pubDate>Thu, 10 Jul 2008 09:35:17 GMT</pubDate></item><item><title>Remember The Milk &amp; Google Gears</title><link>http://marekwywial.name/posts/blog20071029remember-the-milk-google-gears.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Serwisu &lt;strong&gt;&lt;a href="http://rememberthemilk.com/"&gt;Remember The Milk&lt;/a&gt;&lt;/strong&gt; używam zazwyczaj za pomocą Gadgetu na &lt;a href="http://google.com/ig"&gt;google.com/ig&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Dziś jednak zdażyło mi się zalogować bezpośrednio na stronie i ... zostałem poproszony o pozwolenie użycia pluginu &lt;strong&gt;&lt;a href="http://gears.google.com/"&gt;Google Gears&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Google Gears to testowa technologia &lt;a href="http://google.pl/"&gt;Google&lt;/a&gt; pozwalająca aplikacją webowym na pracę w trybie &lt;strong&gt;offline&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Pierwszy raz z jej użyciem spotkałem się podczas &lt;a href="http://google.com/reader/"&gt;Google Reader'a&lt;/a&gt; ale jak widać już się propaguje poprzez sieć na kolejne serwisy.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>onjin</category><category>tools</category><category>www</category><guid>http://marekwywial.name/posts/blog20071029remember-the-milk-google-gears.html</guid><pubDate>Mon, 29 Oct 2007 19:59:33 GMT</pubDate></item><item><title>Achmed, martwy terrorysta</title><link>http://marekwywial.name/posts/blog20071024achmed-martwy-terrorysta.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;object width="425" height="355"&gt;&lt;param name="movie" value="http://www.youtube.com/v/dRDiPi880CA&amp;amp;rel=1"&gt;&lt;param name="wmode" value="transparent"&gt;&lt;embed src="http://www.youtube.com/v/dRDiPi880CA&amp;amp;rel=1" type="application/x-shockwave-flash" wmode="transparent" width="425" height="355"&gt;&lt;/embed&gt;&lt;/object&gt;
+&lt;p&gt;aj, kil ju :)&lt;/p&gt;</description><category>onjin</category><category>video</category><guid>http://marekwywial.name/posts/blog20071024achmed-martwy-terrorysta.html</guid><pubDate>Wed, 24 Oct 2007 08:19:30 GMT</pubDate></item></channel></rss>

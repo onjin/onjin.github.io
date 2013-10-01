@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="en"><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content=""><meta name="author" content="Marek Wywiał"><title>automatyzacja pracy z svn - svnauto | marekwywial</title><link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml"></head><body>
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../">marekwywial</a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav"><li><a href="../blog/archive.html">Archives</a>
+                </li><li><a href="../blog/categories/index.html">Tags</a>
+                </li><li><a href="../blog/rss.xml">RSS</a>
+
+        </li></ul><span class="navbar-form pull-left">
+<input type="text" id="tipue_search_input"></span>
+
+        <ul class="nav navbar-nav navbar-right"><li>
+    <a href="blog20070107automatyzacja-pracy-z-svn-svnauto.wp" id="sourcelink">Source</a>
+    </li>
+
+        </ul></div><!-- /.navbar-collapse -->
+</nav><!-- End of Menubar --><div class="container">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+    <div class="postbox">
+    
+    <h1>automatyzacja pracy z svn - svnauto</h1>
+
+    <hr><small>
+        Posted: <time class="published" datetime="2007-01-07T00:00:57+01:00">2007-01-07 00:00</time>
+        
+
+        
+          |  More posts about
+            <a class="tag" href="../categories/tools.html"><span class="badge badge-info">tools</span></a>
+
+    </small>
+    <hr><p></p><a href="http://pmade.com/open-source-software/sc/">Svnauto</a> jest wrapperem konsolowej komendy 'svn', który automatyzuje i standaryzuje wykonywanie rozgałęzień (branches) i złączeń (merge).
+<p>SC jest skryptem napisanym w języku <a href="http://www.ruby-lang.org/">Ruby</a> i jest dostępny poprzez <a href="http://rubyforge.org/projects/rubygems/">RubyGems</a>:</p>
+<pre>
+
+gem install svnauto --include-dependencies
+
+</pre>
+
+<h4>Hmm, ale czemu to nie działa?</h4>
+
+<p>Skrypt <strong>sc</strong> bazuje na komunikatach zwracanych przez komendę <strong>svn</strong> w języku angielskim, więc nie będzie działać poprawnie w innych lokalizacjach. Można to rozwiązać np. tak:</p>
+<pre>
+
+mv /usr/bin/sc /usr/bin/sc.orig
+
+</pre>
+
+<p>stworzyć nowy plik /usr/bin/sc:</p>
+<pre>
+
+#!/bin/bash
+
+LC_ALL=C
+
+/usr/bin/sc.orig $*
+
+</pre>
+
+<p>i nadać mu prawa do wykonywania (w przypadku systemów Linux):</p>
+<pre>
+
+chmod 755 /usr/bin/sc
+
+</pre>
+
+<h4>Podstawy na początek</h4>
+
+<p>Standardowa praca z SC wygląda mniej więcej tak:</p>
+<p>Konfigurujemy dostęp do naszego repozytorium (SC obsługuje ich wiele)</p>
+<pre>
+  sc config --add
+</pre>
+
+<p>Tworzymy nowy projekt (zostaniemy zapytani o repozytorium, którego chcemy użyc)</p>
+<pre>
+  sc create my-new-project
+</pre>
+
+<p>W naszym repozytorium zostanie dodany katalog my-new-project wraz ze strukturą:</p>
+<pre>
+ myproject:
+  |
+  +--trunk
+  |   |
+  |   +--project-files
+  |
+  +--branches
+  |   |
+  |   +--rel
+  |   +--bug
+  |   +--exp
+  |
+  +--tags
+      |
+      +--rel
+      +--bug
+      +--exp
+
+</pre>
+
+<p>Do katalogu ze zródłami lokalnymi (domyślnie <strong>~/src</strong>, ale możemy to zmienić podczas konfigurowania repozytorium w SC) zostanie wyciągnięty <strong>trunk</strong> naszego nowego projektu do katalogu <strong>~/src/nazwa_repozytorium/my-new-project-trunk</strong>.</p>
+<p>W przypadku kolejnych pobrań projektu (np, na inną maszynę, dla innego użytkownika) wywołujemy komendę:</p>
+<pre>
+ sc checkout my-new-project
+</pre>
+
+<p>i dostaniemy domyślnie źródła trunk'a do lokalnej kopii. Używając opcji w linii komend (-r, -b, -e) możemy pobrać odpowiednio wybrany release, bug lub eksperymentalną gałąź.</p>
+<p>Tu sobie pracujemy normalnie jak to z SVN'em bywa, add, commit, update.</p>
+<h4>Kolejne wydania</h4>
+
+<p>Aby wydać kolejną wersję naszego projektu wydajemy komendę:</p>
+<pre>
+ sc release 1.0.0
+</pre>
+
+<p>Nasz trunk zostanie skopiowany do <strong>branches/rel/1.0</strong> i <strong>tags/rel/1.0</strong> oraz do <strong>~src/nazwarepozytorium/my-new-project-rel-1.0</strong> zostanie wyciągnięty ten release.</p>
+<h4>Praca z błędami</h4>
+
+<p>Jeżeli znajdziemy błąd, wydajemy komendę:</p>
+<pre>
+ sc bug 1
+</pre>
+
+<p>gdzie <strong>1</strong> to numer błędu (przydzielony np przez <a href="http://trac.edgewall.org/">trac</a>'a). W naszym repozytorium zostanie założony katalog <strong>branches/bug/1</strong> i oczywiście trafi do nas jego lokalna kopia <strong>~/src/nazwarepozytorium/my-new-project-bug-1</strong>.</p>
+<p>Po naprawieniu błędu zamykamy go (i zatwierdzeniu zmian przez 'commit' oczywiście):</p>
+<pre>
+ sc bug --close 1
+</pre>
+
+<p>Zostaniemy zapytani czy zrobić merge naszej poprawki do release 1.0, a następnie czy chcemy też tą poprawkę zmergować do trunk'u, gdzie najczęściej na wszystko się potulnie zgadzamy.</p>
+<h4>Wersje eksperymentalne</h4>
+
+<p>Tworząc nowy eksperymentane rozgałęzienie kodu wydajemy komendę:</p>
+<pre>
+ sc exp new_feature
+</pre>
+
+<p>Podczas pracy z taką gałęzią przyda nam się możliwość złączenia zmian z <strong>trunk'a</strong> do nas:</p>
+<pre>
+ sc expt --up new_feature
+</pre>
+
+<p>oraz na zakończenie prac (lub w miarę potrzeb) złączenie gałęzi eksperymentalnej z trunkiem:</p>
+<pre>
+ sc exp --down new_feature
+</pre>
+
+<h4>Co ja z tego mam</h4>
+
+<p>Dzięki <strong>svnauto</strong> możemy zapomnieć o podawaniu pełnej ścieżki do repozytorium (jest skonfigurowana na początku pracu), więc przeglądanie projektu umożliwia nam prosta komenda</p>
+<pre>
+ sc list my-new-project
+</pre>
+
+<p>Dodatkowo mamy porządek w naszym repozytorium. Nawet jeżeli będziemy potrzebowali złączyć kilka rozgałęzień w jeden niestandardowy projekt z różnymi poprawkami, łatwo nam jest odnaleźć wszystkie potrzebne nam gałęzie i pojedynczo połączyć.</p>
+<p>Praca nad poprawkami i nowymi wersjami jest prosta dzięki automatycznemu łączeniu odpowiednich gałęzi. Oczywiście nie uwolni nas to od rozwiązywania konfliktów, ale operacje, które wykonujemy już prawie automatycznie (prawie robi różnicę, np literówki, błąd w nazwie gałęzi) są robione naprawdę automatycznie.</p>
+<p>Dzięki temu możemy się skupić na pracy nad projektem, zamiast nad prowadzeniem repozytorium do projektu.</p>
+    
+    <ul class="pager"><li class="previous">
+            <a href="blog20061221aardvark-20.html">← Previous post</a>
+        </li>
+        <li class="next">
+            <a href="blog20070117iphone-w-akcji.html">Next post →</a>
+        </li>
+    </ul><div id="disqus_thread"></div>
+        <script type="text/javascript">
+        var disqus_shortname ="marekwywial";
+            var disqus_url="http://marekwywial.name/posts/blog20070107automatyzacja-pracy-z-svn-svnauto.html";
+        var disqus_title="automatyzacja pracy z svn - svnauto";
+        var disqus_identifier="cache/posts/blog20070107automatyzacja-pracy-z-svn-svnauto.html";
+        var disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    
+
+    </div>
+
+        </div>
+        <!--End of body content-->
+
+        <footer>
+            Contents © 2013         <a href="mailto:onjinx@gmail.com">
+Marek Wywiał</a> - Powered by         <a href="http://getnikola.com">Nikola</a>
+
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">
+<img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png"></a><br>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">
+Creative Commons Attribution 3.0 Unported License</a>.
+
+        </footer></div>
+</div>
+
+
+            <script src="../assets/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="../assets/js/bootstrap.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style
+addthis_default_style addthis_label_style addthis_32x32_style">
+<a class="addthis_button_more">Share</a>
+<ul><li><a class="addthis_button_facebook"></a>
+</li><li><a class="addthis_button_google_plusone_share"></a>
+</li><li><a class="addthis_button_linkedin"></a>
+</li><li><a class="addthis_button_twitter"></a>
+</li></ul></div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798">
+</script><!-- End of social buttons --><script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><script type="text/javascript" src="../assets/js/tipuesearch_set.js"></script><script type="text/javascript" src="../assets/js/tipuesearch.js"></script><script type="text/javascript">
+$(document).ready(function() {
+  # $('#tipue_search_input').tipuesearch({
+      # 'mode': 'json',
+      # 'contentLocation': '/assets/js/tipuesearch_content.json',
+      # 'showUrl': false
+  # });
+});
+</script></body></html>

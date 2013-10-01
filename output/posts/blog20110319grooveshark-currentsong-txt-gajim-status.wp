@@ -1,0 +1,24 @@
+<html><body><p>Przy okazji szukania API do <a href="http://grooveshark.com">grooveshark'a</a> odkryłem plik <b>currentSong.txt</b>, który jest tworzony przez <em>Grooveshark Desktop</em>.
+
+
+Kilka minut z vim'em i mamy skrypt napisany w python'ie, który odczytuje w/w plik i wrzuca informację o aktualnie odtwarzanym utworze jako status wybranego konta w <a href="http://gajim.org">gajim'a</a>.
+
+
+
+Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wymana <b>pyinotify</b>). Wtedy nasz status będzie zmieniany w chwili (chwilę potem :) ) zmiany utworu w Grooveshark Desktop.
+
+
+
+Całość można dowolnie używać/modyfikować, a pobrać można z serwiu <a href="http://github.com">github.com</a>:
+
+</p><ul><li><a href="https://github.com/onjin/grooveshark2gajim">https://github.com/onjin/grooveshark2gajim</a></li>
+
+<li><a href="http://onjin.github.com/grooveshark2gajim/">http://onjin.github.com/grooveshark2gajim/</a></li>
+
+</ul>
+
+
+
+Do działania wystarczy nam plik <a href="https://github.com/onjin/grooveshark2gajim/raw/master/grov2gajim.py">grov2gajim.py</a>. Umieszczamy go gdzieś na dysku i możemy używać.
+
+<div style="display: none"><a href="http://www.atotaldetox.com/thc-marijuana-detox-kits/"><b>thc/marijuana detox kits</b></a>.</div></body></html>

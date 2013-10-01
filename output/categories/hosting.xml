@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (hosting)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now.</description><atom:link href="http://marekwywial.name/categories/hosting.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Tue, 01 Oct 2013 22:54:16 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>extend lvm2 filesystem</title><link>http://marekwywial.name/posts/blog20120427extend-lvm2-filesystem.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Just self memo&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;# Added new physical partition /dev/sda3&lt;/span&gt;
+
+&lt;span class="c"&gt;# create a physical volume out of it&lt;/span&gt;
+
+&amp;amp;gt; pvcreate /dev/sda3
+
+
+
+&lt;span class="c"&gt;# Now, add it to the volume group&lt;/span&gt;
+
+&lt;span class="c"&gt;#that my logical volume is on&lt;/span&gt;
+
+&amp;amp;gt; vgextend VolGroup00 /dev/sda3
+
+
+
+&lt;span class="c"&gt;# Now that the volume group has more&lt;/span&gt;
+
+&lt;span class="c"&gt;# disk space, the logical volume can grow&lt;/span&gt;
+
+&amp;amp;gt; lvextend -L+11G /dev/VolGroup00/LogVol00
+
+
+
+&lt;span class="c"&gt;# Ok, last of all, I want to filesystem to&lt;/span&gt;
+
+&lt;span class="c"&gt;# recognize that more space is available&lt;/span&gt;
+
+&amp;amp;gt; fsadm resize /dev/VolGroup00/LogVol00
+
+
+
+&lt;span class="c"&gt;# sweet, I have more space now&lt;/span&gt;
+
+&amp;amp;gt; df -h
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;/p&gt;</description><category>hosting</category><category>tools</category><guid>http://marekwywial.name/posts/blog20120427extend-lvm2-filesystem.html</guid><pubDate>Fri, 27 Apr 2012 08:30:44 GMT</pubDate></item><item><title>home.pl &amp; django - pierwsza potyczka</title><link>http://marekwywial.name/posts/blog20090226homepl-django-pierwsza-potyczka.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;em&gt;home.pl&lt;/em&gt; obsługuje &lt;strong&gt;pythona&lt;/strong&gt; jako &lt;strong&gt;cgi&lt;/strong&gt; (pliki .py) więc tego będziemy się trzymać. Instalację wykonamy w katalogu &lt;strong&gt;/py&lt;/strong&gt;&lt;/p&gt;
+&lt;h5&gt;instalacja django&lt;/h5&gt;
+
+&lt;p&gt;hardcoded ale działa ;) wrzucamy to do /py i ruchamiamy poprzez www (plik install.py)&lt;/p&gt;
+
+&lt;p&gt;[python]&lt;/p&gt;
+&lt;h2&gt;!/usr/bin/env python&lt;/h2&gt;
+&lt;p&gt;import os&lt;/p&gt;
+&lt;p&gt;os.system("wget http://www.djangoproject.com/download/1.0.2/tarball/")&lt;/p&gt;
+&lt;p&gt;os.system("tar zxf Django-1.0.2-final.tar.gz")&lt;/p&gt;
+&lt;p&gt;os.system("rm Django-1.0.2-final.tar.gz")&lt;/p&gt;
+&lt;p&gt;os.system("mv Django-1.0.2-final tmp")&lt;/p&gt;
+&lt;p&gt;os.system("mv tmp/django django")&lt;/p&gt;
+&lt;p&gt;[/python]&lt;/p&gt;
+&lt;h5&gt;nasz projekt&lt;/h5&gt;
+
+&lt;p&gt;Lokalnie wołamy&lt;/p&gt;
+
+&lt;p&gt;[bash]&lt;/p&gt;
+&lt;p&gt;django-admin.py startproject pytest&lt;/p&gt;
+&lt;p&gt;[/bash]&lt;/p&gt;
+&lt;p&gt;i wrzucamy katalog &lt;em&gt;pytest&lt;/em&gt; przez ftp na home do katalogu /py .&lt;/p&gt;
+
+&lt;h5&gt;dispatch.py&lt;/h5&gt;
+
+&lt;p&gt;[python]&lt;/p&gt;
+&lt;h2&gt;!/usr/bin/env python&lt;/h2&gt;
+&lt;p&gt;import os, sys&lt;/p&gt;
+&lt;p&gt;import django.core.handlers.wsgi&lt;/p&gt;
+&lt;p&gt;def run_with_cgi(application):&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="n"&gt;environ&lt;/span&gt;                      &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;items&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;wsgi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;input&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;        &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdin&lt;/span&gt;
+&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;wsgi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;errors&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;       &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stderr&lt;/span&gt;
+&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;wsgi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;version&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;      &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;wsgi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;multithread&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;False&lt;/span&gt;
+&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;wsgi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;multiprocess&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;True&lt;/span&gt;
+&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;wsgi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run_once&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;     &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;True&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;HTTPS&lt;/span&gt;&lt;span class="sc"&gt;','&lt;/span&gt;&lt;span class="n"&gt;off&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="sc"&gt;','&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;wsgi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;url_scheme&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;
+&lt;span class="nl"&gt;else:&lt;/span&gt;
+    &lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;wsgi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;url_scheme&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;
+
+&lt;span class="n"&gt;headers_set&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+&lt;span class="n"&gt;headers_sent&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+
+&lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt; &lt;span class="n"&gt;headers_set&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+         &lt;span class="n"&gt;raise&lt;/span&gt; &lt;span class="n"&gt;AssertionError&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"write() before start_response()"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="n"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt; &lt;span class="n"&gt;headers_sent&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+         &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Before&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;first&lt;/span&gt; &lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;send&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;stored&lt;/span&gt; &lt;span class="n"&gt;headers&lt;/span&gt;
+         &lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;response_headers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;headers_sent&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;headers_set&lt;/span&gt;
+         &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;Status&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="err"&gt;\\&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="err"&gt;\\&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+         &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;header&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;response_headers&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+             &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="err"&gt;\\&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="err"&gt;\\&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;header&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+         &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;'\\&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="err"&gt;\\&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;flush&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;start_response&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;response_headers&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;exc_info&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;None&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;exc_info&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="nl"&gt;try:&lt;/span&gt;
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;headers_sent&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+                &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Re&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;raise&lt;/span&gt; &lt;span class="n"&gt;original&lt;/span&gt; &lt;span class="n"&gt;exception&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;headers&lt;/span&gt; &lt;span class="n"&gt;sent&lt;/span&gt;
+                &lt;span class="n"&gt;raise&lt;/span&gt; &lt;span class="n"&gt;exc_info&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;exc_info&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;exc_info&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="nl"&gt;finally:&lt;/span&gt;
+            &lt;span class="n"&gt;exc_info&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;None&lt;/span&gt;     &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;avoid&lt;/span&gt; &lt;span class="n"&gt;dangling&lt;/span&gt; &lt;span class="n"&gt;circular&lt;/span&gt; &lt;span class="n"&gt;ref&lt;/span&gt;
+    &lt;span class="n"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;headers_set&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;raise&lt;/span&gt; &lt;span class="n"&gt;AssertionError&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Headers already set!"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="n"&gt;headers_set&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;response_headers&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;write&lt;/span&gt;
+
+&lt;span class="n"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;application&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;start_response&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nl"&gt;try:&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;    &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;don&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="n"&gt;send&lt;/span&gt; &lt;span class="n"&gt;headers&lt;/span&gt; &lt;span class="n"&gt;until&lt;/span&gt; &lt;span class="n"&gt;body&lt;/span&gt; &lt;span class="n"&gt;appears&lt;/span&gt;
+            &lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt; &lt;span class="n"&gt;headers_sent&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;''&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;   &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;send&lt;/span&gt; &lt;span class="n"&gt;headers&lt;/span&gt; &lt;span class="n"&gt;now&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;body&lt;/span&gt; &lt;span class="n"&gt;was&lt;/span&gt; &lt;span class="n"&gt;empty&lt;/span&gt;
+&lt;span class="nl"&gt;finally:&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;hasattr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Change this to the directory above your site code.&lt;/h2&gt;
+&lt;p&gt;sys.path.append("/py")&lt;/p&gt;
+&lt;h2&gt;Change mysite to the name of your site package&lt;/h2&gt;
+&lt;p&gt;os.environ['DJANGO_SETTINGS_MODULE'] = 'pytest.settings'&lt;/p&gt;
+&lt;p&gt;run_with_cgi(django.core.handlers.wsgi.WSGIHandler())&lt;/p&gt;
+&lt;p&gt;[/python]&lt;/p&gt;
+&lt;p&gt;i odpalamy to by www :D na razie tyle ...&lt;/p&gt;
+
+&lt;p&gt;Dokładam paczkę z plikami do testu:&lt;/p&gt;
+
+&lt;ul&gt;&lt;li&gt;&lt;a href="http://onjin.net/files/py.zip"&gt;py.zip&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;&lt;p&gt;unzip py.zip; ftp na home.pl; open http://server.home.pl/py/dispatch.py/admin&lt;/p&gt;
+
+&lt;h5&gt;Dodatkowe moje narzędzia:&lt;/h5&gt;
+
+&lt;ul&gt;&lt;li&gt;&lt;a href="https://github.com/onjin/django-buildout-template" target="_blank"&gt;django-buildout-template&lt;/a&gt; - szablon startowy dla projektów django z monitoringiem procesów, itp.&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/onjin/vim-startup" target="_blank"&gt;vim-startup&lt;/a&gt; - vim dostosowany do edycji python'a&lt;/li&gt;
+&lt;/ul&gt;&lt;h5&gt;Dotacje:&lt;/h5&gt;
+
+&lt;p&gt;Jeżeli informacje i narzędzia ci się przydały i uważasz, że warto wesprzeć ich utrzymanie, możesz przesłać dowolną sumę na adres &lt;a href="http://bitcoin.org" target="_blank"&gt;Bitcoin&lt;/a&gt; &lt;a href="bitcoin:19mjD3GhDN23io1WWyQ5c72fqGpXjVifYQ"&gt;19mjD3GhDN23io1WWyQ5c72fqGpXjVifYQ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>hosting</category><category>python</category><category>webdev</category><guid>http://marekwywial.name/posts/blog20090226homepl-django-pierwsza-potyczka.html</guid><pubDate>Thu, 26 Feb 2009 20:59:38 GMT</pubDate></item><item><title>rośnie prezent ... na gmailu</title><link>http://marekwywial.name/posts/blog20071025rosnie-prezent-na-gmailu.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Bezpłatne konta pocztowe &lt;a href="http://gmail.com/"&gt;Gmail&lt;/a&gt; w ostatnich dniach trochę spuchły i teraz mają ok &lt;strong&gt;4,3GB&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://marekwywial.name/img/gmail_4.jpg" alt="gmail"&gt;&lt;/p&gt;
+&lt;p&gt;Skrzynki w &lt;a href="http://google.com/a/"&gt;Google Apps&lt;/a&gt; także mają urosnąć. Można o tym przeczytać na &lt;a href="http://googlepolska.blogspot.com/2007/10/gmail-ronie-jak-na-drodach.html"&gt;blogu Google Polska&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>hosting</category><category>tools</category><guid>http://marekwywial.name/posts/blog20071025rosnie-prezent-na-gmailu.html</guid><pubDate>Thu, 25 Oct 2007 19:20:37 GMT</pubDate></item><item><title>Sprzątanie internetu</title><link>http://marekwywial.name/posts/blog20070401sprzatanie-internetu.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Dostałem własnie informację o sprzątaniu nieaktualnych danych z zasobów internetu.&lt;/p&gt;
+&lt;p&gt;Nie będę się rozpisywał tylko zamieszczę otrzymaną od NASK wiadomość (wiadomość otrzymałem dzięki uprzejmości administratorów &lt;a href="http://chrome.pl"&gt;chrome.pl&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;blockquote&gt;
+&lt;p&gt;--- Forwarded message ---&lt;/p&gt;
+&lt;p&gt;From: NASK Polska &lt;nask&gt;&lt;/nask&gt;&lt;/p&gt;
+&lt;p&gt;To: postmaster@xiaoka.com&lt;/p&gt;
+&lt;p&gt;Message-Id: &lt;e1hvuz&gt;&lt;/e1hvuz&gt;&lt;/p&gt;
+&lt;p&gt;Date: Sun, 30 Mar 2007 23:12:66 +0200&lt;/p&gt;
+&lt;p&gt;Subject: Ważna informacja&lt;/p&gt;
+&lt;p&gt;NASK POLSKA&lt;/p&gt;
+&lt;p&gt;Informacja Poufna&lt;/p&gt;
+&lt;p&gt;UWAGA! NIE ŁĄCZ SIĘ Z INTERNETEM MIĘDZY  23:59 31 MARCA 2007 (GMT) AŻ DO &lt;/p&gt;
+&lt;p&gt;00:01 2 KWIETNIA 2007 (GMT) &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt; Uwaga &lt;/em&gt;&lt;/strong&gt; Uwaga &lt;strong&gt;&lt;em&gt; Uwaga &lt;/em&gt;&lt;/strong&gt; Uwaga *** &lt;/p&gt;
+&lt;p&gt;Jak wszyscy wiemy internet jest coraz bardziej wypełniony śmieciami. &lt;/p&gt;
+&lt;p&gt;Każdego dnia jest tego coraz więcej - spam, nieczynne domeny, stare &lt;/p&gt;
+&lt;p&gt;serwisy ftp,  opuszczone serwisy www, bezpańskie roboty i wędrujące &lt;/p&gt;
+&lt;p&gt;skrypty. Proces czyszczenia ma jeden cel, dzięki niemu internet będzie &lt;/p&gt;
+&lt;p&gt;szybszy, czystszy i dużo bezpieczniejszy.&lt;/p&gt;
+&lt;p&gt;W tym roku czyszczenie zaczyna się 31 marca o 23:59 (GMT) i będzie trwać &lt;/p&gt;
+&lt;p&gt;aż do 00:01 (GMT) drugiego kwietnia. Podczas tego 24 godzinnego okresu, &lt;/p&gt;
+&lt;p&gt;pięć potężnych robotów stworzonych przez Google, Microsoft, Amazon oraz &lt;/p&gt;
+&lt;p&gt;Pentagon i CERN, umieszczonych w różnych miejsca świata zacznie &lt;/p&gt;
+&lt;p&gt;przeczesywać internet i kasować wszystkie dane, które znajdą.&lt;/p&gt;
+&lt;p&gt;W celu ochrony swoich cennych danych przed usunięcie, prosimy o &lt;/p&gt;
+&lt;p&gt;dokonanie następujących czynności:&lt;/p&gt;
+&lt;ol&gt;&lt;li&gt;
+&lt;p&gt;Odłącz wszystkie terminale i sieci LAN od internetu.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Wyłącz wszystkie swoje serwery internetowe albo odłącz kabel 
+łączący je z internetem.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Odłącz wszystkie dyski, pendrivy, mp3 playery oraz dyski 
+przenośne od jakichkolwiek urządzeń, które mogą mieć styczność z &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;&lt;p&gt;internetem.&lt;/p&gt;
+&lt;ol&gt;&lt;li&gt;Unikaj połączenia jakiegokolwiek komputera czy komórki z 
+internetem.&lt;/li&gt;
+&lt;/ol&gt;&lt;p&gt;Zdajemy sobie sprawę, jak wielką niewygodę może to sprawić wielu &lt;/p&gt;
+&lt;p&gt;użytkownikom internetu, bardzo przepraszamy za to. Jednakże jesteśmy &lt;/p&gt;
+&lt;p&gt;pewnie, że wszystkie te dolegliwości, co najmniej wynagrodzone zostaną &lt;/p&gt;
+&lt;p&gt;przez zwiększenie prędkości i efektywności Internetu, jak tylko zostanie &lt;/p&gt;
+&lt;p&gt;on oczyszczony z internetowego śmiecia.&lt;/p&gt;
+&lt;p&gt;Dziękujemy za współpracę.&lt;/p&gt;
+&lt;p&gt;Krystian Silirpa-Amir P&lt;/p&gt;
+&lt;p&gt;Dyrektor d/s Utrzymania Sieci NASK &lt;/p&gt;
+&lt;p&gt;Centrala Naukowo Akademickich Sieci Komputerowych Polska&lt;/p&gt;
+&lt;p&gt;Administratorzy i inni: Od czasu ostatniego czyszczenia Internetu ilość &lt;/p&gt;
+&lt;p&gt;użytkowników internetu wzrosła dramatycznie. Prosimy o pomoc w &lt;/p&gt;
+&lt;p&gt;ostrzeżeniu tak dużej ilości osób, jak tylko się da. &lt;/p&gt;
+&lt;p&gt;Jeśli możesz, proszę przekaż tą informację swoim współpracownikom, &lt;/p&gt;
+&lt;p&gt;szefowi oraz administratorowi sieci.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/blockquote&gt;</description><category>hosting</category><category>onjin</category><category>www</category><guid>http://marekwywial.name/posts/blog20070401sprzatanie-internetu.html</guid><pubDate>Sun, 01 Apr 2007 10:43:20 GMT</pubDate></item><item><title>Dreamhost + dodatkowy adres ip</title><link>http://marekwywial.name/posts/blog20070314dreamhost-dodatkowy-adres-ip.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;W trakcie ostatnich zmian &lt;a href="http://www.dreamhost.com/r.cgi?235192onjin1ip"&gt;Dreamhost&lt;/a&gt; umożliwił tworzenie kodów promocyjnych, które oprócz zniżki na zakup planu hostingowego, dają także:
+&lt;/p&gt;&lt;ul&gt;&lt;li&gt;dodatkowe miejsce na dysku (10-100% więcej)&lt;/li&gt;
+&lt;li&gt;dodatkowy transfer miesięczny (10-100% więcej)&lt;/li&gt;
+
+&lt;li&gt;dodatkowe bezpłatne domeny (1-5 domen)&lt;/li&gt;
+
+&lt;li&gt;dodatkowe adresy ip (1-3 adresów, oprócz standardowego)&lt;/li&gt;
+
+&lt;/ul&gt;&lt;p&gt;Tworząc kod promocyjny masz teraz większe pole do popisu. Na przykład kod &lt;strong&gt;onjin50&lt;/strong&gt; daje zniżkę $50 na dowolny plan hostingowy, natomiast kod &lt;strong&gt;onjin1ip&lt;/strong&gt; łączy &lt;strong&gt;dodatkowy adres ip&lt;/strong&gt; wraz ze zniżką $20.&lt;/p&gt;</description><category>hosting</category><guid>http://marekwywial.name/posts/blog20070314dreamhost-dodatkowy-adres-ip.html</guid><pubDate>Tue, 13 Mar 2007 23:22:11 GMT</pubDate></item><item><title>Picasa Web Albums puchnie</title><link>http://marekwywial.name/posts/blog20070312picasa-web-albums-puchnie.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Dzień prezentów dziś się jeszcze nie skończył. Tym razem &lt;strong&gt;Google&lt;/strong&gt; w &lt;a href="http://picasaweb.google.pl/"&gt;Picasa Web Albums&lt;/a&gt; zwiekszyła pojemność konta (na fotki oczywiście)  z 250MB do 1GB oraz dodana została wyszukiwarka by łatwiej odnajdywać albumy.&lt;/p&gt;
+&lt;p&gt;Picasa Web Albums - jeżeli jeszcze ktoś nie wiem - jest bezpłatną, internetową galerią zdjęć zintegrowaną z programem &lt;a href="http://picasa.google.pl/"&gt;Picasa&lt;/a&gt; do katalogowania i obróbki zdjęć dostarczanym (tu niespodzianka: także bezpłatnie :) ) przez Google.&lt;/p&gt;
+&lt;p&gt;Picasa integruje się także z &lt;a href="http://blogger.com/"&gt;Bloggerem&lt;/a&gt; oraz &lt;a href="http://gmail.com"&gt;Gmailem&lt;/a&gt;.&lt;/p&gt;</description><category>hosting</category><category>tools</category><category>www</category><guid>http://marekwywial.name/posts/blog20070312picasa-web-albums-puchnie.html</guid><pubDate>Mon, 12 Mar 2007 11:45:53 GMT</pubDate></item><item><title>Dreamhost szybciej</title><link>http://marekwywial.name/posts/blog20070312dreamhost-szybciej.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;9-tego marca &lt;a href="http://www.dreamhost.com/r.cgi?235192onjin50"&gt;Dreamhost&lt;/a&gt; poinformował o wykonanym upgrade ich sieci, co zaowocowało około 3-krotym przyśpieszeniem komunikacji z ich serwerami.&lt;/p&gt;
+&lt;p&gt;Właśnie połączenie z dreamhost oraz ich panel były jak dla mnie elementami odstającymi od reszty ich oferty. Na początku miesiąca panel także doświadczył upgrade (choć wiele mu jeszcze brakuje do ideału) i wraz ze zwiększeniem prędkości połączenia stanowi to o tym, że Dreamhost nie śpi i ciągle się rozwija.&lt;/p&gt;</description><category>hosting</category><category>www</category><guid>http://marekwywial.name/posts/blog20070312dreamhost-szybciej.html</guid><pubDate>Mon, 12 Mar 2007 07:27:22 GMT</pubDate></item></channel></rss>

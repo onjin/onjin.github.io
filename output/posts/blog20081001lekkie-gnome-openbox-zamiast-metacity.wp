@@ -1,0 +1,28 @@
+<html><body><p>Lubię gnome, choć niektóre rzeczy mogły by być lepsze np:</p>
+<ul><li>szybszy start/działania</li>
+
+<li>i brakuje mi kombinacji ALT+prawy klawisz myszy do zmiany rozmiarów okien (naleciałość od używania przez lata windowmakera)</li>
+
+</ul><p>Oba problemy rozwiązał mi <a href="http://icculus.org/openbox/index.php/Main_Page">openbox</a>, który świetnie działa zarówno z Gnome jak i z KDE (oraz samodzielnie :) ).</p>
+
+<pre>
+
+apt-get install openbox obconf
+
+</pre>
+
+<p>i gotowe. Teraz można się wylogować i zalogować przy pomocy sesji Gnome/obenbox. Obconf ustawia kilka rzeczy, ale brakuje mu skrótów klawiszowych. Skróty te możemy ustawić w pliku</p>
+
+<pre>
+
+~/.config/openbox/rc.xml
+
+</pre>
+
+<p>Można zmienić domyślne przejścia pomiędzy pulpitami z ctrl+F1-x na alt+f1-x (moje ulubione). Trzeba tylko pamiętać by usunąć istniejące już powiązania A-F4 do zamykania okien. Inaczej zostaniemy przeniesieni na pulpit 4, jednak aktywne okno z bieżącego pulpitu zostanie zamknięte ( miałem kilka zdziwionych min ).</p>
+
+<p>Nie udało mi się ustalić kiedy pojawia się plik <em>rc.xml</em>. Czy po użyciu obconf, czy po zamknięciu pierwszej sesji z Gnome/openbox. Jeżeli masz podobny problem to pomoże ci mój plik konfiguracyjny :)</p>
+
+<ul><li><a href="/files/rc.xml">rc.xml</a></li>
+
+</ul><p>Wystarczy umieścić go w ~/config/opebox/ i zalogować się do Gnome/openbox. <br><strong>Uwaga:</strong> jeżeli włączycie efekty pulpitu, wtedy openbox zostanie zamieniony na powrót na Metacity (don't do it)</p></body></html>

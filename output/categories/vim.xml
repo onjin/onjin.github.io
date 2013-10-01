@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (vim)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now.</description><atom:link href="http://marekwywial.name/categories/vim.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Tue, 01 Oct 2013 22:54:16 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>quiet please !! disable audio bell in gvim</title><link>http://marekwywial.name/posts/blog20120730quiet-please-disable-audio-bell-in-gvim.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;I don't want to hear it any more, so I've put this into .vimrc&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;" quiet pleeeeeease&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; has&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'autocmd'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  autocmd &lt;span class="nb"&gt;GUIEnter&lt;/span&gt; * &lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="nb"&gt;visualbell&lt;/span&gt; &lt;span class="nb"&gt;t_vb&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;
+&lt;span class="k"&gt;endif&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;/p&gt;</description><category>vim</category><guid>http://marekwywial.name/posts/blog20120730quiet-please-disable-audio-bell-in-gvim.html</guid><pubDate>Mon, 30 Jul 2012 19:27:26 GMT</pubDate></item><item><title>vim + vundle plugin manager + programming</title><link>http://marekwywial.name/posts/blog20120314vim-vundle-plugin-manager-programming.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Kilku znajomych chciało zacząć używać vim'a. Ale konfigurowanie go na starcie, dobieranie pluginów, instalowanie ich, gdy się jeszcze nic nie wie tylko chce się spróbować zazwyczaj powodowało przełożenie tej próby na 'kiedy indziej'.&lt;/p&gt;
+&lt;p&gt;Niedawno poznałem i zacząłem używać plugin manager'a &lt;a href="https://github.com/gmarik/vundle"&gt;vundle&lt;/a&gt; i sam potrzebowałem szybko przenieść konfigurację na drugi komputer i na laptopa. Zazwyczaj używałem dropbox'a i podlinkowanego pliku .vimrc oraz całego katalogu .vim ze wszystkimi pluginami.&lt;/p&gt;
+&lt;p&gt;Jednak używając plugin managera, którego konfiguracja znajduje się w .vimrc pozwala teraz posługiwać się jedynie plikiem .vimrc. Zgodnie z programistyczną zasadą 'jak masz coś zrobić więcej niż 2 razy, napisz program' powstał mały skrypt + podstawowy .vimrc pozwalający szybko uruchomić vim'a skonfigurowanego pod programowanie w ciągu kilku minut.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/onjin/vim-startup"&gt;https://github.com/onjin/vim-startup&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Jak na razie przydało się mi i kilku innym osobom :) . Plik .vimrc jest oczywiście przykładowy i jak już sobie poużywasz vim'a i zdecydujesz się go poznać lepiej wtedy po kolei skonfigurujesz go pod siebie.&lt;/p&gt;</description><category>onjin</category><category>python</category><category>vim</category><category>vim</category><guid>http://marekwywial.name/posts/blog20120314vim-vundle-plugin-manager-programming.html</guid><pubDate>Wed, 14 Mar 2012 21:50:36 GMT</pubDate></item><item><title>vim snippetsemu i liquibase</title><link>http://marekwywial.name/posts/blog20100811vim-snippetsemu-i-liquibase.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;W &lt;a href="http://onjin.net/blog/2010/07/29/best-vim-plugins/"&gt;ostatnim wpisie&lt;/a&gt; pisałem o &lt;a href="http://www.vim.org/scripts/script.php?script_id=1318"&gt;snippetsEmu&lt;/a&gt; dla &lt;a href="http://www.vim.org/"&gt;vim&lt;/a&gt;'a, a dziś załączam &lt;a href="http://marekwywial.name/files/xml_snippets.vim"&gt;zestaw snippetów&lt;/a&gt;, których używam przy pracy z &lt;a href="http://www.liquibase.org/"&gt;liquibase&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Liquibase&lt;/strong&gt; to całkiem miłe narzędzie napisane w Javie do śledzenia, zarządzania i wprowadzania zmian w bazach danych. Zmiany opisuje się w pliku (plikach) xml i wpisywanie oraz pamiętanie tej składni można sobie uprościć przy pomocy vim'a i snippetów.&lt;/p&gt;
+
+&lt;p&gt;Snippet umieszczamy razem z pozostałymi, najczęściej w &lt;strong&gt;.vim/after/ftplugin/&lt;/strong&gt;.
+
+Najprościej zacząć otwierając np. &lt;em&gt;migration.xml&lt;/em&gt;, wpisując &lt;em&gt;lhelp&lt;/em&gt; i wcisnąć &lt;em&gt;TAB&lt;/em&gt;. Otrzymamy małą pomoc i możemy zaczynać wpisywać kolejną migrację :)&lt;/p&gt;
+
+&lt;p&gt; » &lt;a href="http://marekwywial.name/files/xml_snippets.vim"&gt;xml_snippets.vim&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>programowanie</category><category>tools</category><category>vim</category><guid>http://marekwywial.name/posts/blog20100811vim-snippetsemu-i-liquibase.html</guid><pubDate>Wed, 11 Aug 2010 16:45:35 GMT</pubDate></item><item><title>best vim plugins</title><link>http://marekwywial.name/posts/blog20100729best-vim-plugins.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Dziś robiłem porządki w ~/.vim/ . Aktualizacje do nowych wersji pluginów, wyrzucanie nieużywanych, porządki w ~/.vimrc. W trakcie tej pracy powstała lista pluginów, dzięki którym miło mi się pracuje&lt;/p&gt;
+&lt;h4&gt;vimball&lt;/h4&gt;
+
+&lt;p&gt;Plugin zajmujący się pluginami dostarczanymi w paczkach .vba i pozwalający też takie paczki tworzyć, w praktyce potrzeby mi by instalować paczki .vba&lt;br&gt;
+
+ » &lt;a href="http://www.vim.org/scripts/script.php?script_id=1502"&gt;vimball&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h4&gt;snippetsEmu&lt;/h4&gt;
+
+&lt;p&gt;Emuluje zachowanie snippetów z TextMate. Na przykład w pliku sometest.py wpisujesz 'for&amp;lt;tab&amp;gt;', uzupełniasz brakujące miejsca poruszając się klawiszem &amp;lt;tab&amp;gt; i otrzymujesz pełną pętle. Inne użyteczne snippety dla pythona to: &lt;strong&gt;prop&lt;/strong&gt; - property, &lt;strong&gt;get&lt;/strong&gt; - def get_.., &lt;strong&gt;set&lt;/strong&gt; - def set_.., &lt;strong&gt;def&lt;/strong&gt; - def .., &lt;strong&gt;cm&lt;/strong&gt; - classmethod, &lt;strong&gt;cl&lt;/strong&gt; - class .. oraz &lt;strong&gt;ifn, ifmain, sb, sbu, sbl1, trye, tryf, tryef, unittest&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Domyślnie dostarczone są 32 zestawy snippetów dla wielu języków programowania, opisu oraz frameworków (django, rails, symfony).&lt;br&gt;
+
+ » &lt;a href="http://www.vim.org/scripts/script.php?script_id=1318"&gt;snippetsEmu&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h4&gt;neocomplcache&lt;/h4&gt;
+
+&lt;p&gt;System tzw 'dopełniania' (podpowiadania) i to właśnie robi. Dopełnia nazwy metod, funkcji, atrybuty html, nazwy plików, itp. Trzeba po prostu zobaczyć i używać.&lt;br&gt;
+
+ » &lt;a href="http://www.vim.org/scripts/script.php?script_id=2620"&gt;neocomplcache&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h4&gt;project&lt;/h4&gt;
+
+&lt;p&gt;Bardzo prosty i skuteczny system pozwalający w bocznym oknie przeglądać wybrane lub wszystkie pliki z jednego lub wielu projektów. Każdy projekt ma zdefiniowany katalog, dzięki czemu otwarcie pliku z projektu (wciskamy 'enter' bedąc 'nad' plikiem) nastąpi równocześnie z przejściem do katalogu projektu. W ten sposób pliki projektu jak np 'tags' (ctags) zostaną poprawnie wczytane.&lt;br&gt;
+
+ » &lt;a href="http://www.vim.org/scripts/script.php?script_id=69"&gt;project&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h4&gt;simple pairs&lt;/h4&gt;
+
+&lt;p&gt;Proste dopełnianie dla ", ', {, (, [ . Wpisanie znaku otwierającego powoduje automatyczne dopisanie znaku zamykającego. W przypadku {, (, [ gdy sami wpiszemy znak zamykający, nie zostanie on zdublowany. Kursor po prostu przesunie się dalej. Dla ", ' zostanie jednak stworzona kolejna para. Krótkie i skuteczne.&lt;br&gt;
+
+ » &lt;a href="http://www.vim.org/scripts/script.php?script_id=2339"&gt;simple pairs&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h4&gt;vcscommand&lt;/h4&gt;
+
+&lt;p&gt;Plugin pozwalający wykonywać komendy dla CVS, SVN, SVK, git, bzr, and hg przy pomocy vim'a. Jeden zestaw komend bez względy na system kontroli wersji.&lt;br&gt;
+
+ » &lt;a href="http://www.vim.org/scripts/script.php?script_id=90"&gt;vcscommand&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Niewiele tego, ale te pluginy, git (post/pre hooki), bash + zestaw skryptów wystarcza mi do pracy :)&lt;/p&gt;</description><category>programowanie</category><category>python</category><category>tools</category><category>vim</category><guid>http://marekwywial.name/posts/blog20100729best-vim-plugins.html</guid><pubDate>Thu, 29 Jul 2010 18:34:19 GMT</pubDate></item></channel></rss>

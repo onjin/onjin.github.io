@@ -1,0 +1,341 @@
+<!DOCTYPE html><html lang="en"><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="never is often better than *right* now."><meta name="author" content="Marek Wywiał"><title>marekwywial (old posts page 6) | marekwywial</title><link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="assets/css/rst.css" rel="stylesheet" type="text/css"><link href="assets/css/code.css" rel="stylesheet" type="text/css"><link href="assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="assets/css/theme.css" rel="stylesheet" type="text/css"><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml"></head><body>
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href=".">marekwywial</a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav"><li><a href="blog/archive.html">Archives</a>
+                </li><li><a href="blog/categories/index.html">Tags</a>
+                </li><li><a href="blog/rss.xml">RSS</a>
+
+        </li></ul><span class="navbar-form pull-left">
+<input type="text" id="tipue_search_input"></span>
+
+        <ul class="nav navbar-nav navbar-right"></ul></div><!-- /.navbar-collapse -->
+</nav><!-- End of Menubar --><div class="container">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+        <div class="postbox">
+        <h1><a href="posts/blog20070223jamendo-gra.html">Jamendo gra</a>
+        <small>  
+             Posted: <time class="published" datetime="2007-02-23T08:29:20+01:00">2007-02-23 08:29</time></small></h1>
+        <hr><p></p><p>W sam raz na poranek przed kodowaniem.</p>
+<div align="center"><object width="350" height="170" style="border:0;" align="middle" data="http://www.jamendo.com/pl/get/track/id/album/id/playerpage/50/?item_o=track_no_asc&amp;n=all&amp;player_height=170&amp;player_type=xspfplayer_extended&amp;player_width=350&amp;playercode_type=generic" type="text/html"> </object></div>
+
+<p></p>
+            
+        
+    <p>
+        <a href="posts/blog20070223jamendo-gra.html#disqus_thread" data-disqus-identifier="cache/posts/blog20070223jamendo-gra.html">Comments</a>
+
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/blog20070117iphone-w-akcji.html">iPhone w akcji</a>
+        <small>  
+             Posted: <time class="published" datetime="2007-01-17T08:42:59+01:00">2007-01-17 08:42</time></small></h1>
+        <hr><p></p><object width="425" height="350"><param name="movie" value="http://www.youtube.com/v/6x2_ZARmeUk"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/6x2_ZARmeUk" type="application/x-shockwave-flash" wmode="transparent" width="425" height="350"></embed></object>
+<p>Nawet nic nie będę pisał, zobaczcie sami jak działa.</p>
+
+<p></p>
+            
+        
+    <p>
+        <a href="posts/blog20070117iphone-w-akcji.html#disqus_thread" data-disqus-identifier="cache/posts/blog20070117iphone-w-akcji.html">Comments</a>
+
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/blog20070107automatyzacja-pracy-z-svn-svnauto.html">automatyzacja pracy z svn - svnauto</a>
+        <small>  
+             Posted: <time class="published" datetime="2007-01-07T00:00:57+01:00">2007-01-07 00:00</time></small></h1>
+        <hr><p></p><a href="http://pmade.com/open-source-software/sc/">Svnauto</a> jest wrapperem konsolowej komendy 'svn', który automatyzuje i standaryzuje wykonywanie rozgałęzień (branches) i złączeń (merge).
+<p>SC jest skryptem napisanym w języku <a href="http://www.ruby-lang.org/">Ruby</a> i jest dostępny poprzez <a href="http://rubyforge.org/projects/rubygems/">RubyGems</a>:</p>
+<pre>
+
+gem install svnauto --include-dependencies
+
+</pre>
+
+<h4>Hmm, ale czemu to nie działa?</h4>
+
+<p>Skrypt <strong>sc</strong> bazuje na komunikatach zwracanych przez komendę <strong>svn</strong> w języku angielskim, więc nie będzie działać poprawnie w innych lokalizacjach. Można to rozwiązać np. tak:</p>
+<pre>
+
+mv /usr/bin/sc /usr/bin/sc.orig
+
+</pre>
+
+<p>stworzyć nowy plik /usr/bin/sc:</p>
+<pre>
+
+#!/bin/bash
+
+LC_ALL=C
+
+/usr/bin/sc.orig $*
+
+</pre>
+
+<p>i nadać mu prawa do wykonywania (w przypadku systemów Linux):</p>
+<pre>
+
+chmod 755 /usr/bin/sc
+
+</pre>
+
+<h4>Podstawy na początek</h4>
+
+<p>Standardowa praca z SC wygląda mniej więcej tak:</p>
+<p>Konfigurujemy dostęp do naszego repozytorium (SC obsługuje ich wiele)</p>
+<pre>
+  sc config --add
+</pre>
+
+<p>Tworzymy nowy projekt (zostaniemy zapytani o repozytorium, którego chcemy użyc)</p>
+<pre>
+  sc create my-new-project
+</pre>
+
+<p>W naszym repozytorium zostanie dodany katalog my-new-project wraz ze strukturą:</p>
+<pre>
+ myproject:
+  |
+  +--trunk
+  |   |
+  |   +--project-files
+  |
+  +--branches
+  |   |
+  |   +--rel
+  |   +--bug
+  |   +--exp
+  |
+  +--tags
+      |
+      +--rel
+      +--bug
+      +--exp
+
+</pre>
+
+<p>Do katalogu ze zródłami lokalnymi (domyślnie <strong>~/src</strong>, ale możemy to zmienić podczas konfigurowania repozytorium w SC) zostanie wyciągnięty <strong>trunk</strong> naszego nowego projektu do katalogu <strong>~/src/nazwa_repozytorium/my-new-project-trunk</strong>.</p>
+<p>W przypadku kolejnych pobrań projektu (np, na inną maszynę, dla innego użytkownika) wywołujemy komendę:</p>
+<pre>
+ sc checkout my-new-project
+</pre>
+
+<p>i dostaniemy domyślnie źródła trunk'a do lokalnej kopii. Używając opcji w linii komend (-r, -b, -e) możemy pobrać odpowiednio wybrany release, bug lub eksperymentalną gałąź.</p>
+<p>Tu sobie pracujemy normalnie jak to z SVN'em bywa, add, commit, update.</p>
+<h4>Kolejne wydania</h4>
+
+<p>Aby wydać kolejną wersję naszego projektu wydajemy komendę:</p>
+<pre>
+ sc release 1.0.0
+</pre>
+
+<p>Nasz trunk zostanie skopiowany do <strong>branches/rel/1.0</strong> i <strong>tags/rel/1.0</strong> oraz do <strong>~src/nazwarepozytorium/my-new-project-rel-1.0</strong> zostanie wyciągnięty ten release.</p>
+<h4>Praca z błędami</h4>
+
+<p>Jeżeli znajdziemy błąd, wydajemy komendę:</p>
+<pre>
+ sc bug 1
+</pre>
+
+<p>gdzie <strong>1</strong> to numer błędu (przydzielony np przez <a href="http://trac.edgewall.org/">trac</a>'a). W naszym repozytorium zostanie założony katalog <strong>branches/bug/1</strong> i oczywiście trafi do nas jego lokalna kopia <strong>~/src/nazwarepozytorium/my-new-project-bug-1</strong>.</p>
+<p>Po naprawieniu błędu zamykamy go (i zatwierdzeniu zmian przez 'commit' oczywiście):</p>
+<pre>
+ sc bug --close 1
+</pre>
+
+<p>Zostaniemy zapytani czy zrobić merge naszej poprawki do release 1.0, a następnie czy chcemy też tą poprawkę zmergować do trunk'u, gdzie najczęściej na wszystko się potulnie zgadzamy.</p>
+<h4>Wersje eksperymentalne</h4>
+
+<p>Tworząc nowy eksperymentane rozgałęzienie kodu wydajemy komendę:</p>
+<pre>
+ sc exp new_feature
+</pre>
+
+<p>Podczas pracy z taką gałęzią przyda nam się możliwość złączenia zmian z <strong>trunk'a</strong> do nas:</p>
+<pre>
+ sc expt --up new_feature
+</pre>
+
+<p>oraz na zakończenie prac (lub w miarę potrzeb) złączenie gałęzi eksperymentalnej z trunkiem:</p>
+<pre>
+ sc exp --down new_feature
+</pre>
+
+<h4>Co ja z tego mam</h4>
+
+<p>Dzięki <strong>svnauto</strong> możemy zapomnieć o podawaniu pełnej ścieżki do repozytorium (jest skonfigurowana na początku pracu), więc przeglądanie projektu umożliwia nam prosta komenda</p>
+<pre>
+ sc list my-new-project
+</pre>
+
+<p>Dodatkowo mamy porządek w naszym repozytorium. Nawet jeżeli będziemy potrzebowali złączyć kilka rozgałęzień w jeden niestandardowy projekt z różnymi poprawkami, łatwo nam jest odnaleźć wszystkie potrzebne nam gałęzie i pojedynczo połączyć.</p>
+<p>Praca nad poprawkami i nowymi wersjami jest prosta dzięki automatycznemu łączeniu odpowiednich gałęzi. Oczywiście nie uwolni nas to od rozwiązywania konfliktów, ale operacje, które wykonujemy już prawie automatycznie (prawie robi różnicę, np literówki, błąd w nazwie gałęzi) są robione naprawdę automatycznie.</p>
+<p>Dzięki temu możemy się skupić na pracy nad projektem, zamiast nad prowadzeniem repozytorium do projektu.</p>
+            
+        
+    <p>
+        <a href="posts/blog20070107automatyzacja-pracy-z-svn-svnauto.html#disqus_thread" data-disqus-identifier="cache/posts/blog20070107automatyzacja-pracy-z-svn-svnauto.html">Comments</a>
+
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/blog20061221aardvark-20.html">aardvark 2.0</a>
+        <small>  
+             Posted: <time class="published" datetime="2006-12-21T09:21:03+01:00">2006-12-21 09:21</time></small></h1>
+        <hr><p></p><p>Może jestem spóźniony ale znalazłem nowego <a href="https://addons.mozilla.org/firefox/4111/">aardvark'a</a> na http://addons.mozilla.org/ w wersji 2.0 działający z firefox'em 2, więc mój <a href="http://onjin.net/index.php/2006/11/03/aardvark-i-firefox20/">fix na wersję 1.1</a> dla firefox'a 2 przestał być potrzebny. </p>
+            
+        
+    <p>
+        <a href="posts/blog20061221aardvark-20.html#disqus_thread" data-disqus-identifier="cache/posts/blog20061221aardvark-20.html">Comments</a>
+
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/blog20061103aardvark-i-firefox20.html">aardvark i firefox2.0</a>
+        <small>  
+             Posted: <time class="published" datetime="2006-11-03T08:36:30+01:00">2006-11-03 08:36</time></small></h1>
+        <hr><p></p><a href="http://karmatics.com/aardvark/" title="aardvark">Aardvark</a> to świetne narzędzia dla developera stron internetowych.
+<p>Niestety po aktualizacji firefox'a do wersji 2.0 przestało się instalować, zgłaszając, że najwyższa wersja firefox'a, z którą współpracuje to 1.6.</p>
+<p>Unzip -&gt; vim -&gt; zip i mamy wersję działającą w firefox'ie 2.0 :)</p>
+<p>» <del datetime="2006-12-21T08:24:18+00:00"><a href="http://onjin.net/files/aardvark-2.0.xpi" title="aardvark dla firefox'a 2.0">aardvark dla firefox'a 2.0</a></del></p>
+<p><strong>aktualizacja:</strong> jest juz oficjalna wersja dla firefox'a 2</p>
+<p>» <a href="https://addons.mozilla.org/firefox/4111/" title="aardvark dla firefox'a 2.0">aardvark dla firefox'a 2.0</a></p>
+            
+        
+    <p>
+        <a href="posts/blog20061103aardvark-i-firefox20.html#disqus_thread" data-disqus-identifier="cache/posts/blog20061103aardvark-i-firefox20.html">Comments</a>
+
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/blog20061019linux-flash-player-9.html">linux flash player 9</a>
+        <small>  
+             Posted: <time class="published" datetime="2006-10-19T10:27:36+02:00">2006-10-19 10:27</time></small></h1>
+        <hr><p></p><p>Czyżby 'ktoś' w końcu zainteresował się zdesperowanymi użytkownikami Linuksa ? I dobrze, bo choć <em>beta</em> to mamy już <a href="http://labs.adobe.com/technologies/flashplayer9/" title="Flash Player 9 dla linuksa (beta)">flash player'a 9</a>.</p>
+<p>I co tu więcej pisać :) pozostaje potestować.</p>
+            
+        
+    <p>
+        <a href="posts/blog20061019linux-flash-player-9.html#disqus_thread" data-disqus-identifier="cache/posts/blog20061019linux-flash-player-9.html">Comments</a>
+
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/blog20060928muzyka-sluchanie-promocja.html">muzyka, słuchanie, promocja</a>
+        <small>  
+             Posted: <time class="published" datetime="2006-09-28T07:33:05+02:00">2006-09-28 07:33</time></small></h1>
+        <hr><p></p><a href="http://www.jamendo.com/">Jamendo</a> to serwis internetowy pozwalający artystom na udostępnianie swojej twórczości w internecie na zasasach licencji <a href="http://www.creativecommons.pl/">Creative Commons</a>. W ten sposób można zaistnieć, dotrzeć do szerokiego grona słuchaczy, informować ich o koncertach.
+<p>Słuchacze udostępnione utwory mogą odsłuchać (w praktycznie dowolnych odtwarzaczu muzyki w formacie Ogg lub MP3), legalnie pobrać za pomocą BitTorrenta lub eMula (programy P2P), napisać rezencję. Jeżeli artysta nam się spodoba możemy kupić jego płytę lub wpłacić dla niego pieniądzę.</p>
+<p>Podczas słuchania, dzięki systemowi <a href="http://www.irateradio.com/">iRATE</a> system będzie dobierał dla nas muzykę wegług naszych gustów.</p>
+<p>Cała platforma jest oczywiście bezpłatna.</p>
+            
+        
+    <p>
+        <a href="posts/blog20060928muzyka-sluchanie-promocja.html#disqus_thread" data-disqus-identifier="cache/posts/blog20060928muzyka-sluchanie-promocja.html">Comments</a>
+
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/blog20060809prototype-cheat-sheet.html">prototype cheat sheet</a>
+        <small>  
+             Posted: <time class="published" datetime="2006-08-09T07:38:08+02:00">2006-08-09 07:38</time></small></h1>
+        <hr><p></p><p>Kolejna tablica informatyczna, tym razem dla frameworka JavaScript <a href="http://prototype.conio.net/">prototype</a>.</p>
+<p></p><ul><li><a href="http://www.snook.ca/archives/prototype1440w.png">prototype cheat sheet</a></li>
+<p></p></ul><p>
+        <a href="posts/blog20060809prototype-cheat-sheet.html#disqus_thread" data-disqus-identifier="cache/posts/blog20060809prototype-cheat-sheet.html">Comments</a>
+
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/blog20060731gentoo-dbf2csv-ebuild.html">gentoo dbf2csv ebuild</a>
+        <small>  
+             Posted: <time class="published" datetime="2006-07-31T19:56:49+02:00">2006-07-31 19:56</time></small></h1>
+        <hr><p></p><p>Potrzebowałem zamienić .dbf na .csv. Znalazłem odpowiedni skrypt ale ... aby był porządek w dystrybucji zmontowałem do niego <a href="files/portage/app-text/dbf2csv/dbf2csv-5.0.ebuild">.ebuild</a> (gdyż takowego nie znalazłem).</p>
+<p>Może komuś też się przyda (wersja dbf2csv to 5.0).</p>
+            
+        
+    <p>
+        <a href="posts/blog20060731gentoo-dbf2csv-ebuild.html#disqus_thread" data-disqus-identifier="cache/posts/blog20060731gentoo-dbf2csv-ebuild.html">Comments</a>
+
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/blog20060728google-code-free-hosting.html">Google Code Free Hosting</a>
+        <small>  
+             Posted: <time class="published" datetime="2006-07-28T21:39:10+02:00">2006-07-28 21:39</time></small></h1>
+        <hr><p></p><a href="http://www.google.com/">Google</a> jak zawsze do przodu i w kierunku OpenSource (czy też raczej w kierunku programistów, z którymi stara się żyć dobrze) otwarło wczoraj <a href="http://code.google.com/hosting">hosting projektów</a>.
+<p>W prezencie dostajemy <em>Issue Tracker</em> nie odbiegający zbytnio od przyjętych standardów funkcjonalności tego typo programów, dostęp do repozytorium <em>SVN</em> poprzez <em>HTTPS</em> z dostępem anonimowym (tylko do odczytu) oraz dla nas (za pomocą wygenerowanego hasła).</p>
+<p>W części administracyjnej możemy zmienić nazwę projektu, jego opis, licencję (od Apache, Artistic, GNU General/Lesser, MIT, Mozilla Public oraz BSD) oraz pola dodatkowe (dowolne), zestaw odnośników do strony projektu, forum i bloga. Możemy też podać adresy email, na które zostaną wysłane powiadomienia o zmianach w repozytorium kodu.</p>
+<p>Kolejne opcje administracyjne to zarządzanie właścicielami i członkami zespołu projektowego, ustawienia Issue Trackera oraz opcja usunięcia projektu.</p>
+<p>Z poziomu przeglądarki mamy też możliwość przeglądania zasobów repozytorium.</p>
+<p>Dziś serwis choci powoooli, lecz zapewnie spowodowane jest to obciążeniem wywołanym przez rzesze zainteresowanych ;)</p>
+<p></p>
+            
+        
+    <p>
+        <a href="posts/blog20060728google-code-free-hosting.html#disqus_thread" data-disqus-identifier="cache/posts/blog20060728google-code-free-hosting.html">Comments</a>
+
+
+        </p></div>
+    
+<div>
+<ul class="pager"><li class="previous">
+        <a href="index-7.html">← Newer posts</a>
+    </li>
+    <li class="next">
+        <a href="index-5.html">Older posts →</a>
+    </li>
+</ul></div>
+
+    
+        
+       <script type="text/javascript">var disqus_shortname="marekwywial";(function(){var a=document.createElement("script");a.async=true;a.type="text/javascript";a.src="http://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(a)}());</script></div>
+        <!--End of body content-->
+
+        <footer>
+            Contents © 2013         <a href="mailto:onjinx@gmail.com">
+Marek Wywiał</a> - Powered by         <a href="http://getnikola.com">Nikola</a>
+
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">
+<img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png"></a><br>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">
+Creative Commons Attribution 3.0 Unported License</a>.
+
+        </footer></div>
+</div>
+
+
+            <script src="assets/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="assets/js/bootstrap.min.js" type="text/javascript"></script><script src="assets/js/jquery.colorbox-min.js" type="text/javascript"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style
+addthis_default_style addthis_label_style addthis_32x32_style">
+<a class="addthis_button_more">Share</a>
+<ul><li><a class="addthis_button_facebook"></a>
+</li><li><a class="addthis_button_google_plusone_share"></a>
+</li><li><a class="addthis_button_linkedin"></a>
+</li><li><a class="addthis_button_twitter"></a>
+</li></ul></div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798">
+</script><!-- End of social buttons --><script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><script type="text/javascript" src="assets/js/tipuesearch_set.js"></script><script type="text/javascript" src="assets/js/tipuesearch.js"></script><script type="text/javascript">
+$(document).ready(function() {
+  # $('#tipue_search_input').tipuesearch({
+      # 'mode': 'json',
+      # 'contentLocation': '/assets/js/tipuesearch_content.json',
+      # 'showUrl': false
+  # });
+});
+</script></body></html>

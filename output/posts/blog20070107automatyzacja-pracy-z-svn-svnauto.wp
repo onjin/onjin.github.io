@@ -1,0 +1,194 @@
+<html><body><a href="http://pmade.com/open-source-software/sc/">Svnauto</a> jest wrapperem konsolowej komendy 'svn', który automatyzuje i standaryzuje wykonywanie rozgałęzień (branches) i złączeń (merge).
+
+
+SC jest skryptem napisanym w języku <a href="http://www.ruby-lang.org/">Ruby</a> i jest dostępny poprzez <a href="http://rubyforge.org/projects/rubygems/">RubyGems</a>:
+
+<pre>
+
+gem install svnauto --include-dependencies
+
+</pre>
+
+
+
+<h3>Hmm, ale czemu to nie działa?</h3>
+
+Skrypt <strong>sc</strong> bazuje na komunikatach zwracanych przez komendę <strong>svn</strong> w języku angielskim, więc nie będzie działać poprawnie w innych lokalizacjach. Można to rozwiązać np. tak:
+
+<pre>
+
+mv /usr/bin/sc /usr/bin/sc.orig
+
+</pre>
+
+stworzyć nowy plik /usr/bin/sc:
+
+<pre>
+
+#!/bin/bash
+
+LC_ALL=C
+
+/usr/bin/sc.orig $*
+
+</pre>
+
+i nadać mu prawa do wykonywania (w przypadku systemów Linux):
+
+<pre>
+
+chmod 755 /usr/bin/sc
+
+</pre>
+
+
+
+<h3>Podstawy na początek</h3>
+
+Standardowa praca z SC wygląda mniej więcej tak:
+
+
+
+Konfigurujemy dostęp do naszego repozytorium (SC obsługuje ich wiele)
+
+<pre>
+  sc config --add
+</pre>
+
+
+
+Tworzymy nowy projekt (zostaniemy zapytani o repozytorium, którego chcemy użyc)
+
+<pre>
+  sc create my-new-project
+</pre>
+
+
+
+W naszym repozytorium zostanie dodany katalog my-new-project wraz ze strukturą:
+
+<pre>
+ myproject:
+  |
+  +--trunk
+  |   |
+  |   +--project-files
+  |
+  +--branches
+  |   |
+  |   +--rel
+  |   +--bug
+  |   +--exp
+  |
+  +--tags
+      |
+      +--rel
+      +--bug
+      +--exp
+
+
+</pre>
+
+
+
+Do katalogu ze zródłami lokalnymi (domyślnie <strong>~/src</strong>, ale możemy to zmienić podczas konfigurowania repozytorium w SC) zostanie wyciągnięty <strong>trunk</strong> naszego nowego projektu do katalogu <strong>~/src/nazwa_repozytorium/my-new-project-trunk</strong>.
+
+
+
+W przypadku kolejnych pobrań projektu (np, na inną maszynę, dla innego użytkownika) wywołujemy komendę:
+
+<pre>
+ sc checkout my-new-project
+</pre>
+
+i dostaniemy domyślnie źródła trunk'a do lokalnej kopii. Używając opcji w linii komend (-r, -b, -e) możemy pobrać odpowiednio wybrany release, bug lub eksperymentalną gałąź.
+
+
+
+Tu sobie pracujemy normalnie jak to z SVN'em bywa, add, commit, update.
+
+
+
+<h3>Kolejne wydania</h3>
+
+Aby wydać kolejną wersję naszego projektu wydajemy komendę:
+
+<pre>
+ sc release 1.0.0
+</pre>
+
+
+
+Nasz trunk zostanie skopiowany do <strong>branches/rel/1.0</strong> i <strong>tags/rel/1.0</strong> oraz do <strong>~src/nazwarepozytorium/my-new-project-rel-1.0</strong> zostanie wyciągnięty ten release.
+
+
+
+<h3>Praca z błędami</h3>
+
+Jeżeli znajdziemy błąd, wydajemy komendę:
+
+<pre>
+ sc bug 1
+</pre>
+
+gdzie <strong>1</strong> to numer błędu (przydzielony np przez <a href="http://trac.edgewall.org/">trac</a>'a). W naszym repozytorium zostanie założony katalog <strong>branches/bug/1</strong> i oczywiście trafi do nas jego lokalna kopia <strong>~/src/nazwarepozytorium/my-new-project-bug-1</strong>.
+
+
+
+Po naprawieniu błędu zamykamy go (i zatwierdzeniu zmian przez 'commit' oczywiście):
+
+<pre>
+ sc bug --close 1
+</pre>
+
+
+
+Zostaniemy zapytani czy zrobić merge naszej poprawki do release 1.0, a następnie czy chcemy też tą poprawkę zmergować do trunk'u, gdzie najczęściej na wszystko się potulnie zgadzamy.
+
+
+
+<h3>Wersje eksperymentalne</h3>
+
+Tworząc nowy eksperymentane rozgałęzienie kodu wydajemy komendę:
+
+<pre>
+ sc exp new_feature
+</pre>
+
+
+
+Podczas pracy z taką gałęzią przyda nam się możliwość złączenia zmian z <strong>trunk'a</strong> do nas:
+
+<pre>
+ sc expt --up new_feature
+</pre>
+
+
+
+oraz na zakończenie prac (lub w miarę potrzeb) złączenie gałęzi eksperymentalnej z trunkiem:
+
+<pre>
+ sc exp --down new_feature
+</pre>
+
+
+
+<h3>Co ja z tego mam</h3>
+
+Dzięki <strong>svnauto</strong> możemy zapomnieć o podawaniu pełnej ścieżki do repozytorium (jest skonfigurowana na początku pracu), więc przeglądanie projektu umożliwia nam prosta komenda
+
+<pre>
+ sc list my-new-project
+</pre>
+
+
+
+Dodatkowo mamy porządek w naszym repozytorium. Nawet jeżeli będziemy potrzebowali złączyć kilka rozgałęzień w jeden niestandardowy projekt z różnymi poprawkami, łatwo nam jest odnaleźć wszystkie potrzebne nam gałęzie i pojedynczo połączyć.
+
+
+
+Praca nad poprawkami i nowymi wersjami jest prosta dzięki automatycznemu łączeniu odpowiednich gałęzi. Oczywiście nie uwolni nas to od rozwiązywania konfliktów, ale operacje, które wykonujemy już prawie automatycznie (prawie robi różnicę, np literówki, błąd w nazwie gałęzi) są robione naprawdę automatycznie.
+
+
+
+Dzięki temu możemy się skupić na pracy nad projektem, zamiast nad prowadzeniem repozytorium do projektu.</body></html>

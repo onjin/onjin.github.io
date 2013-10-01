@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial</title><link>http://marekwywial.name/</link><description>never is often better than *right* now.</description><atom:link href="http://marekwywial.name/rss.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Tue, 01 Oct 2013 22:54:16 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Fast sentry instance using docker</title><link>http://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;You need docker and postgresql database
+&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="http://docker.io/"&gt;docker.io&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;If you have docker installed and postgres database created you can:&lt;/p&gt;
+&lt;pre&gt;
+
+# pull sentry image
+
+docker pull onjin/sentry
+
+
+
+# install sentry database
+
+docker run  -e SENTRY_DBHOST=your.db.address -e SENTRY_DBNAME=sentrydbname -e SENTRY_DBUSER=dbuser -e SENTRY_DBPASS=dbpass -p :7365 onjin/sentry upgrade
+
+
+
+# run sentry instance
+
+docker run -d -e SENTRY_DBHOST=your.db.address -e SENTRY_DBNAME=sentrydbname -e SENTRY_DBUSER=dbuser -e SENTRY_DBPASS=dbpass -p :7365 onjin/sentry start
+
+&lt;/pre&gt;
+
+&lt;p&gt;and open browser at address:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href="http://localhost:7365/"&gt;http://localhost:7365&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;</description><category>develop</category><category>docker</category><category>linux</category><guid>http://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker.html</guid><pubDate>Wed, 18 Sep 2013 11:36:39 GMT</pubDate></item><item><title>Python SOAP server (flask) + wsdl generation</title><link>http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;h4&gt;Install&lt;/h4&gt;
+[bash]
+&lt;p&gt;$ pip install Flask-Enterprise&lt;/p&gt;
+&lt;p&gt;[/bash]&lt;/p&gt;
+&lt;h4&gt;file: soap.py&lt;/h4&gt;
+
+&lt;p&gt;[python]&lt;/p&gt;
+&lt;p&gt;from time import ctime&lt;/p&gt;
+&lt;p&gt;from flask import Flask&lt;/p&gt;
+&lt;p&gt;from flaskext.enterprise import Enterprise&lt;/p&gt;
+&lt;p&gt;app = Flask(&lt;strong&gt;name&lt;/strong&gt;)&lt;/p&gt;
+&lt;p&gt;enterprise = Enterprise(app)&lt;/p&gt;
+&lt;p&gt;class DemoService(enterprise.SOAPService):
+    &lt;strong&gt;soap_server_address&lt;/strong&gt; = '/soap'
+    &lt;strong&gt;soap_target_namespace&lt;/strong&gt; = 'ns'&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;enterprise&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;soap&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_returns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;enterprise&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;_sp&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;get_time&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;self&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;ctime&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;if &lt;strong&gt;name&lt;/strong&gt; == '&lt;strong&gt;main&lt;/strong&gt;':
+    app.run(host='127.0.0.1', port=5555)
+[/python]&lt;/p&gt;
+&lt;h4&gt;Run service&lt;/h4&gt;
+
+&lt;p&gt;[bash]&lt;/p&gt;
+&lt;p&gt;$ python soap.py&lt;/p&gt;
+&lt;p&gt;[/bash]&lt;/p&gt;
+&lt;h4&gt;file: client.py&lt;/h4&gt;
+
+&lt;p&gt;[python]&lt;/p&gt;
+&lt;p&gt;from suds.client import Client&lt;/p&gt;
+&lt;p&gt;c = Client('http://127.0.0.1:5555/soap?wsdl')&lt;/p&gt;
+&lt;p&gt;print c.service.get_time()&lt;/p&gt;
+&lt;p&gt;[/python]&lt;/p&gt;
+&lt;h4&gt;Run test&lt;/h4&gt;
+
+&lt;p&gt;[bash]&lt;/p&gt;
+&lt;p&gt;$ python client.py&lt;/p&gt;
+&lt;p&gt;Tue Aug 13 19:49:53 2013&lt;/p&gt;
+&lt;p&gt;[/bash]&lt;/p&gt;</description><category>onjin</category><category>programowanie</category><category>python</category><category>webdev</category><guid>http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html</guid><pubDate>Tue, 13 Aug 2013 16:53:49 GMT</pubDate></item><item><title>quiet please !! disable audio bell in gvim</title><link>http://marekwywial.name/posts/blog20120730quiet-please-disable-audio-bell-in-gvim.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;I don't want to hear it any more, so I've put this into .vimrc&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;" quiet pleeeeeease&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; has&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'autocmd'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  autocmd &lt;span class="nb"&gt;GUIEnter&lt;/span&gt; * &lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="nb"&gt;visualbell&lt;/span&gt; &lt;span class="nb"&gt;t_vb&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;
+&lt;span class="k"&gt;endif&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;/p&gt;</description><category>vim</category><guid>http://marekwywial.name/posts/blog20120730quiet-please-disable-audio-bell-in-gvim.html</guid><pubDate>Mon, 30 Jul 2012 19:27:26 GMT</pubDate></item><item><title>Rescan SCSI bus (no reboot)</title><link>http://marekwywial.name/posts/blog20120705rescan-scsi-bus-no-reboot.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Just self memo. How to attach new SCSI disk without reboot (debian):&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;# check what hosts do you have&lt;/span&gt;
+
+ls /sys/class/scsi_host
+  host0 host1 host2 host3
+
+
+&lt;span class="c"&gt;# choose your host f.e. 'host0', &lt;/span&gt;
+
+&lt;span class="c"&gt;# change 'host0' to 'host1' or any next number that you need&lt;/span&gt;
+
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"- - -"&lt;/span&gt; &amp;amp;gt; /sys/class/scsi_host/host0/scan
+
+
+
+&lt;span class="c"&gt;# and done&lt;/span&gt;
+
+fdisk -l
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;/p&gt;</description><category>linux</category><category>tools</category><guid>http://marekwywial.name/posts/blog20120705rescan-scsi-bus-no-reboot.html</guid><pubDate>Thu, 05 Jul 2012 06:16:42 GMT</pubDate></item><item><title>extend lvm2 filesystem</title><link>http://marekwywial.name/posts/blog20120427extend-lvm2-filesystem.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Just self memo&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;# Added new physical partition /dev/sda3&lt;/span&gt;
+
+&lt;span class="c"&gt;# create a physical volume out of it&lt;/span&gt;
+
+&amp;amp;gt; pvcreate /dev/sda3
+
+
+
+&lt;span class="c"&gt;# Now, add it to the volume group&lt;/span&gt;
+
+&lt;span class="c"&gt;#that my logical volume is on&lt;/span&gt;
+
+&amp;amp;gt; vgextend VolGroup00 /dev/sda3
+
+
+
+&lt;span class="c"&gt;# Now that the volume group has more&lt;/span&gt;
+
+&lt;span class="c"&gt;# disk space, the logical volume can grow&lt;/span&gt;
+
+&amp;amp;gt; lvextend -L+11G /dev/VolGroup00/LogVol00
+
+
+
+&lt;span class="c"&gt;# Ok, last of all, I want to filesystem to&lt;/span&gt;
+
+&lt;span class="c"&gt;# recognize that more space is available&lt;/span&gt;
+
+&amp;amp;gt; fsadm resize /dev/VolGroup00/LogVol00
+
+
+
+&lt;span class="c"&gt;# sweet, I have more space now&lt;/span&gt;
+
+&amp;amp;gt; df -h
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;/p&gt;</description><category>hosting</category><category>tools</category><guid>http://marekwywial.name/posts/blog20120427extend-lvm2-filesystem.html</guid><pubDate>Fri, 27 Apr 2012 08:30:44 GMT</pubDate></item><item><title>vim + vundle plugin manager + programming</title><link>http://marekwywial.name/posts/blog20120314vim-vundle-plugin-manager-programming.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Kilku znajomych chciało zacząć używać vim'a. Ale konfigurowanie go na starcie, dobieranie pluginów, instalowanie ich, gdy się jeszcze nic nie wie tylko chce się spróbować zazwyczaj powodowało przełożenie tej próby na 'kiedy indziej'.&lt;/p&gt;
+&lt;p&gt;Niedawno poznałem i zacząłem używać plugin manager'a &lt;a href="https://github.com/gmarik/vundle"&gt;vundle&lt;/a&gt; i sam potrzebowałem szybko przenieść konfigurację na drugi komputer i na laptopa. Zazwyczaj używałem dropbox'a i podlinkowanego pliku .vimrc oraz całego katalogu .vim ze wszystkimi pluginami.&lt;/p&gt;
+&lt;p&gt;Jednak używając plugin managera, którego konfiguracja znajduje się w .vimrc pozwala teraz posługiwać się jedynie plikiem .vimrc. Zgodnie z programistyczną zasadą 'jak masz coś zrobić więcej niż 2 razy, napisz program' powstał mały skrypt + podstawowy .vimrc pozwalający szybko uruchomić vim'a skonfigurowanego pod programowanie w ciągu kilku minut.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/onjin/vim-startup"&gt;https://github.com/onjin/vim-startup&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Jak na razie przydało się mi i kilku innym osobom :) . Plik .vimrc jest oczywiście przykładowy i jak już sobie poużywasz vim'a i zdecydujesz się go poznać lepiej wtedy po kolei skonfigurujesz go pod siebie.&lt;/p&gt;</description><category>onjin</category><category>python</category><category>vim</category><category>vim</category><guid>http://marekwywial.name/posts/blog20120314vim-vundle-plugin-manager-programming.html</guid><pubDate>Wed, 14 Mar 2012 21:50:36 GMT</pubDate></item><item><title>Useful Collection of Cheat-Sheet Desktop Wallpaper for Web Designers</title><link>http://marekwywial.name/posts/blog20111011useful-collection-of-cheat-sheet-desktop-wallpaper-for-web-designers.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Just repost:
+&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="http://reader.benshoemate.com/2010/10/useful-collection-of-cheat-sheet-desktop-wallpaper-for-web-designers/"&gt;http://reader.benshoemate.com/2010/10/useful-collection-of-cheat-sheet-desktop-wallpaper-for-web-designers/&lt;/a&gt;&lt;/li&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/ul&gt;</description><category>onjin</category><guid>http://marekwywial.name/posts/blog20111011useful-collection-of-cheat-sheet-desktop-wallpaper-for-web-designers.html</guid><pubDate>Tue, 11 Oct 2011 06:36:18 GMT</pubDate></item><item><title>Grooveshark currentSong.txt + gajim status</title><link>http://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Przy okazji szukania API do &lt;a href="http://grooveshark.com"&gt;grooveshark'a&lt;/a&gt; odkryłem plik &lt;b&gt;currentSong.txt&lt;/b&gt;, który jest tworzony przez &lt;em&gt;Grooveshark Desktop&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Kilka minut z vim'em i mamy skrypt napisany w python'ie, który odczytuje w/w plik i wrzuca informację o aktualnie odtwarzanym utworze jako status wybranego konta w &lt;a href="http://gajim.org"&gt;gajim'a&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wymana &lt;b&gt;pyinotify&lt;/b&gt;). Wtedy nasz status będzie zmieniany w chwili (chwilę potem :) ) zmiany utworu w Grooveshark Desktop.&lt;/p&gt;
+&lt;p&gt;Całość można dowolnie używać/modyfikować, a pobrać można z serwiu &lt;a href="http://github.com"&gt;github.com&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="https://github.com/onjin/grooveshark2gajim"&gt;https://github.com/onjin/grooveshark2gajim&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://onjin.github.com/grooveshark2gajim/"&gt;http://onjin.github.com/grooveshark2gajim/&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;&lt;p&gt;Do działania wystarczy nam plik &lt;a href="https://github.com/onjin/grooveshark2gajim/raw/master/grov2gajim.py"&gt;grov2gajim.py&lt;/a&gt;. Umieszczamy go gdzieś na dysku i możemy używać.&lt;/p&gt;
+&lt;div style="display: none"&gt;&lt;a href="http://www.atotaldetox.com/thc-marijuana-detox-kits/"&gt;&lt;b&gt;thc/marijuana detox kits&lt;/b&gt;&lt;/a&gt;.&lt;/div&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>desktop</category><category>linux</category><category>muzyka</category><category>python</category><category>tools</category><guid>http://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</guid><pubDate>Sat, 19 Mar 2011 12:03:04 GMT</pubDate></item><item><title>vim snippetsemu i liquibase</title><link>http://marekwywial.name/posts/blog20100811vim-snippetsemu-i-liquibase.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;W &lt;a href="http://onjin.net/blog/2010/07/29/best-vim-plugins/"&gt;ostatnim wpisie&lt;/a&gt; pisałem o &lt;a href="http://www.vim.org/scripts/script.php?script_id=1318"&gt;snippetsEmu&lt;/a&gt; dla &lt;a href="http://www.vim.org/"&gt;vim&lt;/a&gt;'a, a dziś załączam &lt;a href="http://marekwywial.name/files/xml_snippets.vim"&gt;zestaw snippetów&lt;/a&gt;, których używam przy pracy z &lt;a href="http://www.liquibase.org/"&gt;liquibase&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Liquibase&lt;/strong&gt; to całkiem miłe narzędzie napisane w Javie do śledzenia, zarządzania i wprowadzania zmian w bazach danych. Zmiany opisuje się w pliku (plikach) xml i wpisywanie oraz pamiętanie tej składni można sobie uprościć przy pomocy vim'a i snippetów.&lt;/p&gt;
+
+&lt;p&gt;Snippet umieszczamy razem z pozostałymi, najczęściej w &lt;strong&gt;.vim/after/ftplugin/&lt;/strong&gt;.
+
+Najprościej zacząć otwierając np. &lt;em&gt;migration.xml&lt;/em&gt;, wpisując &lt;em&gt;lhelp&lt;/em&gt; i wcisnąć &lt;em&gt;TAB&lt;/em&gt;. Otrzymamy małą pomoc i możemy zaczynać wpisywać kolejną migrację :)&lt;/p&gt;
+
+&lt;p&gt; » &lt;a href="http://marekwywial.name/files/xml_snippets.vim"&gt;xml_snippets.vim&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>programowanie</category><category>tools</category><category>vim</category><guid>http://marekwywial.name/posts/blog20100811vim-snippetsemu-i-liquibase.html</guid><pubDate>Wed, 11 Aug 2010 16:45:35 GMT</pubDate></item><item><title>best vim plugins</title><link>http://marekwywial.name/posts/blog20100729best-vim-plugins.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Dziś robiłem porządki w ~/.vim/ . Aktualizacje do nowych wersji pluginów, wyrzucanie nieużywanych, porządki w ~/.vimrc. W trakcie tej pracy powstała lista pluginów, dzięki którym miło mi się pracuje&lt;/p&gt;
+&lt;h4&gt;vimball&lt;/h4&gt;
+
+&lt;p&gt;Plugin zajmujący się pluginami dostarczanymi w paczkach .vba i pozwalający też takie paczki tworzyć, w praktyce potrzeby mi by instalować paczki .vba&lt;br&gt;
+
+ » &lt;a href="http://www.vim.org/scripts/script.php?script_id=1502"&gt;vimball&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h4&gt;snippetsEmu&lt;/h4&gt;
+
+&lt;p&gt;Emuluje zachowanie snippetów z TextMate. Na przykład w pliku sometest.py wpisujesz 'for&amp;lt;tab&amp;gt;', uzupełniasz brakujące miejsca poruszając się klawiszem &amp;lt;tab&amp;gt; i otrzymujesz pełną pętle. Inne użyteczne snippety dla pythona to: &lt;strong&gt;prop&lt;/strong&gt; - property, &lt;strong&gt;get&lt;/strong&gt; - def get_.., &lt;strong&gt;set&lt;/strong&gt; - def set_.., &lt;strong&gt;def&lt;/strong&gt; - def .., &lt;strong&gt;cm&lt;/strong&gt; - classmethod, &lt;strong&gt;cl&lt;/strong&gt; - class .. oraz &lt;strong&gt;ifn, ifmain, sb, sbu, sbl1, trye, tryf, tryef, unittest&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Domyślnie dostarczone są 32 zestawy snippetów dla wielu języków programowania, opisu oraz frameworków (django, rails, symfony).&lt;br&gt;
+
+ » &lt;a href="http://www.vim.org/scripts/script.php?script_id=1318"&gt;snippetsEmu&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h4&gt;neocomplcache&lt;/h4&gt;
+
+&lt;p&gt;System tzw 'dopełniania' (podpowiadania) i to właśnie robi. Dopełnia nazwy metod, funkcji, atrybuty html, nazwy plików, itp. Trzeba po prostu zobaczyć i używać.&lt;br&gt;
+
+ » &lt;a href="http://www.vim.org/scripts/script.php?script_id=2620"&gt;neocomplcache&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h4&gt;project&lt;/h4&gt;
+
+&lt;p&gt;Bardzo prosty i skuteczny system pozwalający w bocznym oknie przeglądać wybrane lub wszystkie pliki z jednego lub wielu projektów. Każdy projekt ma zdefiniowany katalog, dzięki czemu otwarcie pliku z projektu (wciskamy 'enter' bedąc 'nad' plikiem) nastąpi równocześnie z przejściem do katalogu projektu. W ten sposób pliki projektu jak np 'tags' (ctags) zostaną poprawnie wczytane.&lt;br&gt;
+
+ » &lt;a href="http://www.vim.org/scripts/script.php?script_id=69"&gt;project&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h4&gt;simple pairs&lt;/h4&gt;
+
+&lt;p&gt;Proste dopełnianie dla ", ', {, (, [ . Wpisanie znaku otwierającego powoduje automatyczne dopisanie znaku zamykającego. W przypadku {, (, [ gdy sami wpiszemy znak zamykający, nie zostanie on zdublowany. Kursor po prostu przesunie się dalej. Dla ", ' zostanie jednak stworzona kolejna para. Krótkie i skuteczne.&lt;br&gt;
+
+ » &lt;a href="http://www.vim.org/scripts/script.php?script_id=2339"&gt;simple pairs&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h4&gt;vcscommand&lt;/h4&gt;
+
+&lt;p&gt;Plugin pozwalający wykonywać komendy dla CVS, SVN, SVK, git, bzr, and hg przy pomocy vim'a. Jeden zestaw komend bez względy na system kontroli wersji.&lt;br&gt;
+
+ » &lt;a href="http://www.vim.org/scripts/script.php?script_id=90"&gt;vcscommand&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Niewiele tego, ale te pluginy, git (post/pre hooki), bash + zestaw skryptów wystarcza mi do pracy :)&lt;/p&gt;</description><category>programowanie</category><category>python</category><category>tools</category><category>vim</category><guid>http://marekwywial.name/posts/blog20100729best-vim-plugins.html</guid><pubDate>Thu, 29 Jul 2010 18:34:19 GMT</pubDate></item></channel></rss>

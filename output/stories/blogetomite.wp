@@ -1,0 +1,112 @@
+<html><body><h3>Co to jest</h3>
+
+
+<p>Etomite jest to CMS (System Zarządzania Treścią) jakiego zawsze szukałem.
+			W paru punktach można wymienić, niektóre jego mocne strony (opis ze strony <a href="http://www.etomite.org/">www.etomite.org</a>).</p>
+
+
+
+
+
+
+<h3>Edytor wizualny WYSIWYG</h3>
+
+
+
+<p>(What You See Is What You Get - czyli dostaniesz to co widzisz)</p>
+
+<p>Etomite wykorzystuje gotowe, darmowe i sprawdzone edytory WYSIWYG jak <a href="http://www.dynarch.com/projects/htmlarea/"><strong>HTMLArea</strong></a> i <a href="http://tinymce.moxiecode.com/"><strong>TinyMCE</strong></a>.</p>
+
+
+
+<p>W konfiguracji wybieramy, którego chcemy używać i zawartość naszego portalu edytujemy jak zwykły dokument w procesorze tekstu.</p>
+
+
+
+
+
+<h3>Bezpieczeństwo / dostępność</h3>
+
+
+
+<p>Etomite pozwala nadawać uprawnienia do odpowiednich częci serwisu lub rodzaju dokumentów wybranym przez Ciebie użytkownikom
+			w sposób nader elastyczny.</p>
+
+
+
+
+<h3>Automatyczna publikacja</h3>
+
+
+
+<p>Zawartość strony (podstrony) może zostać automatycznie opublikowana w określonym terminie (np 31-12-2006 00:00), oraz
+
+automatycznie odpublikowana (brr) także w zadanym terminie.</p>
+
+
+
+
+
+<h3>Nowoczesny i intuicyjny interfejs</h3>
+
+
+
+<p>Rzeczywiście interfejs jest bardzo wygodny. W pasku po lewej stronie mamy w dwóch ramkach kolejno menu systemu Etomite (administracja CMS'em), a następnie zarządzanie oraz widok struktury (drzewa) naszego serwisu. Po prawej stronie tych ramek znajduje się czść główna gdzie dokonujemy edycji wybranych elementów.</p>
+
+
+
+<p>Jeśli na elementach drzewa (druga ramka po lewej stronie) przyciśniemy prawy klawisz (w Mozilli/Forefox'ie w zależności od ustawień JScript należy przytrzymać prawy klawisz) otrzymamy dodatkowe menu podręczne.</p>
+
+
+
+
+
+<h3>Bezpłatne wsparcie</h3>
+
+
+
+<p>Wsparcie otrzymujemy w postaci <a href="http://www.etomite.org/forums/">aktywnego forum</a> z odpowiedziami na wasze pytania oraz gotowymi rozwiązaniami wielu problemów.</p>
+
+
+
+
+
+<h3>Mała objętość</h3>
+
+
+
+<p>Domyślna instalacja Etomite zajmuje ok <strong>2MB na dysku</strong> oraz dodatkowo ok 350kB w bazie danych (MySQL).</p>
+
+
+
+
+
+<h3>Nieograniczona funkcjonalność</h3>
+
+
+
+<p>To jest właśnie to co tygrysy lubią najbardziej. Przy pomocy wstawek w PHP (<strong>snippets</strong>) i w HTML (<strong>chunks</strong>) oraz szablonów (<strong>templates</strong>) możemy w nieograniczonym zakresie powiększać funkcjonalność naszego serwisu. Wiele użytecznych wstawek w PHP (snippets) możemy znaleść na stronie domowej Etomite.</p>
+
+<p>Napisanie własnych wstawek nie będzie jednak sprawiać trudności nawet początkującemu programiście PHP.</p>
+
+
+
+
+
+<h3>Zgodność ze standartami sieciowymi</h3>
+
+
+
+<p>Etomite CMS utrzymuje zgodność generowanych stron ze standardami organizacji W3C. Kod strony domowej Etomite jest całkowicie zgodny ze standardem <a href="http://www.w3.org/TR/xhtml1/">XHTML 1.0.</a></p>
+
+
+
+<h3>Odnośniki</h3>
+
+
+
+<ul><li><a href="http://www.etomite.org/">strona domowa Etomite</a></li>
+
+<li><a href="http://www.etomite.org/forums/">forum Etomite</a></li>
+
+<li><a href="http://www.w3c.org/">organizacja W3C</a></li></ul></body></html>

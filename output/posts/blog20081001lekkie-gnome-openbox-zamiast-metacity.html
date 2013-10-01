@@ -1,0 +1,139 @@
+<!DOCTYPE html><html lang="en"><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content=""><meta name="author" content="Marek Wywiał"><title>lekkie gnome, openbox zamiast metacity | marekwywial</title><link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml"></head><body>
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../">marekwywial</a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav"><li><a href="../blog/archive.html">Archives</a>
+                </li><li><a href="../blog/categories/index.html">Tags</a>
+                </li><li><a href="../blog/rss.xml">RSS</a>
+
+        </li></ul><span class="navbar-form pull-left">
+<input type="text" id="tipue_search_input"></span>
+
+        <ul class="nav navbar-nav navbar-right"><li>
+    <a href="blog20081001lekkie-gnome-openbox-zamiast-metacity.wp" id="sourcelink">Source</a>
+    </li>
+
+        </ul></div><!-- /.navbar-collapse -->
+</nav><!-- End of Menubar --><div class="container">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+    <div class="postbox">
+    
+    <h1>lekkie gnome, openbox zamiast metacity</h1>
+
+    <hr><small>
+        Posted: <time class="published" datetime="2008-10-01T19:35:16+02:00">2008-10-01 19:35</time>
+        
+
+        
+          |  More posts about
+            <a class="tag" href="../categories/desktop.html"><span class="badge badge-info">desktop</span></a>
+            <a class="tag" href="../categories/gnome.html"><span class="badge badge-info">gnome</span></a>
+            <a class="tag" href="../categories/ubuntu.html"><span class="badge badge-info">ubuntu</span></a>
+            <a class="tag" href="../categories/wmanager.html"><span class="badge badge-info">wmanager</span></a>
+
+    </small>
+    <hr><p></p><p>Lubię gnome, choć niektóre rzeczy mogły by być lepsze np:</p>
+<ul><li>szybszy start/działania</li>
+<li>i brakuje mi kombinacji ALT+prawy klawisz myszy do zmiany rozmiarów okien (naleciałość od używania przez lata windowmakera)</li>
+
+<p></p></ul><p>Oba problemy rozwiązał mi <a href="http://icculus.org/openbox/index.php/Main_Page">openbox</a>, który świetnie działa zarówno z Gnome jak i z KDE (oraz samodzielnie :) ).</p>
+<pre>
+
+apt-get install openbox obconf
+
+</pre>
+
+<p>i gotowe. Teraz można się wylogować i zalogować przy pomocy sesji Gnome/obenbox. Obconf ustawia kilka rzeczy, ale brakuje mu skrótów klawiszowych. Skróty te możemy ustawić w pliku</p>
+
+<pre>
+
+~/.config/openbox/rc.xml
+
+</pre>
+
+<p>Można zmienić domyślne przejścia pomiędzy pulpitami z ctrl+F1-x na alt+f1-x (moje ulubione). Trzeba tylko pamiętać by usunąć istniejące już powiązania A-F4 do zamykania okien. Inaczej zostaniemy przeniesieni na pulpit 4, jednak aktywne okno z bieżącego pulpitu zostanie zamknięte ( miałem kilka zdziwionych min ).</p>
+
+<p>Nie udało mi się ustalić kiedy pojawia się plik <em>rc.xml</em>. Czy po użyciu obconf, czy po zamknięciu pierwszej sesji z Gnome/openbox. Jeżeli masz podobny problem to pomoże ci mój plik konfiguracyjny :)</p>
+
+<ul><li><a href="../files/rc.xml">rc.xml</a></li>
+
+</ul><p>Wystarczy umieścić go w ~/config/opebox/ i zalogować się do Gnome/openbox. <br><strong>Uwaga:</strong> jeżeli włączycie efekty pulpitu, wtedy openbox zostanie zamieniony na powrót na Metacity (don't do it)</p>
+
+<p></p>
+    
+    <ul class="pager"><li class="previous">
+            <a href="blog20080902lint-dla-php.html">← Previous post</a>
+        </li>
+        <li class="next">
+            <a href="blog20081001git-cheatsheet.html">Next post →</a>
+        </li>
+    </ul><div id="disqus_thread"></div>
+        <script type="text/javascript">
+        var disqus_shortname ="marekwywial";
+            var disqus_url="http://marekwywial.name/posts/blog20081001lekkie-gnome-openbox-zamiast-metacity.html";
+        var disqus_title="lekkie gnome, openbox zamiast metacity";
+        var disqus_identifier="cache/posts/blog20081001lekkie-gnome-openbox-zamiast-metacity.html";
+        var disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    
+
+    </div>
+
+        </div>
+        <!--End of body content-->
+
+        <footer>
+            Contents © 2013         <a href="mailto:onjinx@gmail.com">
+Marek Wywiał</a> - Powered by         <a href="http://getnikola.com">Nikola</a>
+
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">
+<img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png"></a><br>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">
+Creative Commons Attribution 3.0 Unported License</a>.
+
+        </footer></div>
+</div>
+
+
+            <script src="../assets/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="../assets/js/bootstrap.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style
+addthis_default_style addthis_label_style addthis_32x32_style">
+<a class="addthis_button_more">Share</a>
+<ul><li><a class="addthis_button_facebook"></a>
+</li><li><a class="addthis_button_google_plusone_share"></a>
+</li><li><a class="addthis_button_linkedin"></a>
+</li><li><a class="addthis_button_twitter"></a>
+</li></ul></div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798">
+</script><!-- End of social buttons --><script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><script type="text/javascript" src="../assets/js/tipuesearch_set.js"></script><script type="text/javascript" src="../assets/js/tipuesearch.js"></script><script type="text/javascript">
+$(document).ready(function() {
+  # $('#tipue_search_input').tipuesearch({
+      # 'mode': 'json',
+      # 'contentLocation': '/assets/js/tipuesearch_content.json',
+      # 'showUrl': false
+  # });
+});
+</script></body></html>

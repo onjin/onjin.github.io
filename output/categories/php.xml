@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (php)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now.</description><atom:link href="http://marekwywial.name/categories/php.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Tue, 01 Oct 2013 22:54:17 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>git pre-commit hook - symfony / php</title><link>http://marekwywial.name/posts/blog20090511git-pre-commit-hook-symfony-php.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Mam jeszcze tą nieprzyjemnośc pracy z PHP (w tym przypadku z symfony framework) i aby była przyjemniejsza dodałem sobie hook na &lt;strong&gt;pre-commit&lt;/strong&gt; do git'a.
+ * &lt;a href="http://dl.getdropbox.com/u/185133/git/pre-commit"&gt;http://dl.getdropbox.com/u/185133/git/pre-commit&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;by zadziałało przerywanie commit'a gdy '&lt;em&gt;symfony unit-test&lt;/em&gt;' się nie udadzą, potrzebna jest łatka na symfony (przynajmniej na moją wersję 1.0.17)
+ * &lt;a href="http://dl.getdropbox.com/u/185133/git/symfony_return_code.diff"&gt;http://dl.getdropbox.com/u/185133/git/symfony_return_code.diff&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hook zakłada, że commit jest robiony w katalogu projektu (tak mam najczęsciej) i znajduje sie w nim plik 'symfony'&lt;/p&gt;
+&lt;p&gt;btw: hook wymaga pythona.&lt;/p&gt;</description><category>git</category><category>php</category><category>python</category><category>tools</category><guid>http://marekwywial.name/posts/blog20090511git-pre-commit-hook-symfony-php.html</guid><pubDate>Mon, 11 May 2009 08:25:43 GMT</pubDate></item><item><title>lint dla php</title><link>http://marekwywial.name/posts/blog20080902lint-dla-php.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Za dnia piszę najczęściej w &lt;a href="http://php.net"&gt;php&lt;/a&gt; i zazdroszczę &lt;a href="http://python.org/"&gt;pythonowi&lt;/a&gt; &lt;a href="http://www.logilab.org/857"&gt;pylinta&lt;/a&gt;.&lt;br&gt;
+Z ciekawości zagooglałem i znalazłem rozwiązanie dla PHP sprawdzające Coding Standard:&lt;/p&gt;
+&lt;pre&gt;
+
+pear install PHP_CodeSniffer
+
+phpcs --standard=Zend SomeTest.class.php
+
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;phpcs -i&lt;/em&gt; podaje dostępne standardy:&lt;/p&gt;
+
+&lt;ul&gt;&lt;li&gt;PEAR&lt;/li&gt;
+
+&lt;li&gt;MySource&lt;/li&gt;
+
+&lt;li&gt;PHPCS&lt;/li&gt;
+
+&lt;li&gt;Squiz&lt;/li&gt;
+
+&lt;li&gt;Zend&lt;/li&gt;
+
+&lt;/ul&gt;&lt;p&gt;Mi najbardzie odpowiada Zend co widać po wynikach lintowania, najczęściej 0 ostrzeżeń i błędów ;).&lt;/p&gt;
+
+&lt;p&gt;phpcs pozwala także tworzyć swoje &lt;a href="http://pear.php.net/manual/en/package.php.php-codesniffer.coding-standard-tutorial.php"&gt;własne standardy kodowanie&lt;/a&gt; oraz - co bardzo mnie cieszy - podpiąć go jako &lt;a href="http://pear.php.net/manual/en/package.php.php-codesniffer.svn-pre-commit.php"&gt;precommit hook&lt;/a&gt; do &lt;a href="http://subversion.tigris.org/"&gt;svn'a&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>php</category><category>programowanie</category><category>tools</category><category>webdev</category><guid>http://marekwywial.name/posts/blog20080902lint-dla-php.html</guid><pubDate>Tue, 02 Sep 2008 19:01:02 GMT</pubDate></item><item><title>netbeans 6.5 + php5 + symfony + xdebug</title><link>http://marekwywial.name/posts/blog20080824netbeans-65-php5-symfony-xdebug.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;W &lt;a href="http://www.netbeans.org/community/releases/65/" title="Netbeasn 6.5 features"&gt;Netbeans 6.5&lt;/a&gt; pojawia się support dla &lt;a title="PHP - główna strona" href="http://www.php.net/"&gt;php5&lt;/a&gt;. W/g informacji na stronie netbeans oznacza to:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;PHP Editor (Code completion, syntactic and semantic code highlighting)&lt;/li&gt;
+    &lt;li&gt;Support for heredoc notation and PHTML&lt;/li&gt;
+    &lt;li&gt;Debugging using Xdebug&lt;/li&gt;
+    &lt;li&gt;Generators for MySQL database code snippets&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;Temat, który najbardziej mnie interesował to jak zadziała debugging przy pomocy Xdebug. Postanowiłem sprawdzić to z istniejącym projektem bazującym na frameworku &lt;a href="http://www.symfony-project.com/" title="php5 framework"&gt;Symfony&lt;/a&gt;.&lt;/p&gt;
+&lt;ol&gt;&lt;li&gt;Zainstalowałem netbeans pobierając odpowiednią paczkę ze strony &lt;a title="Netbeans 6.5 beta download" href="http://download.netbeans.org/netbeans/6.5/beta/"&gt;netbeans&lt;/a&gt;.&lt;/li&gt;
+
+&lt;li&gt;Zainstalowałem Xdebug poprzez &lt;strong&gt;pecl install xdebug&lt;/strong&gt; i dodaniu do konfiguracji &lt;em&gt;php&lt;/em&gt; wierszy:
+
+&lt;pre&gt;
+
+# xdebug, jako zend_extension. ścieżke zmienić należy oczywiście na odpowiednią dla Twojej instalacji
+
+zend_extension=/usr/lib/php5/20060613+lfs/xdebug.so
+
+xdebug.remote_enable=on
+
+&lt;/pre&gt;
+
+&lt;/li&gt;
+
+&lt;li&gt;dodałem w netbeans nowy projekt php z istniejącymi źródłami (projekt już mam uruchomiony), podając podaczas konfiguracji:
+
+&lt;ul&gt;&lt;li&gt;ścieżkę do źródeł projektu, &lt;/li&gt;
+&lt;li&gt;adres url do projektu, &lt;/li&gt;
+
+&lt;li&gt;katalog zawierający dane web (dostępne poprzez podany url projektu) w tym przypadku podkatalog 'web' w katalogu  projektu&lt;/li&gt;
+
+&lt;li&gt;punkt startowy czyli domyślny kontroler dla projektu, w tym przypadku 'frontend.php' w podkatalogu 'web'&lt;/li&gt;
+
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;następnie wystarczyło otworzyć plik projektu (np podany wyżej kontroler) z toolbar'a wybrać 'debug project' lub wciśnąć &lt;strong&gt;ctrl+F5&lt;/strong&gt;&lt;/li&gt;
+
+&lt;/ol&gt;&lt;p&gt;W tym momencie w uruchomionej przeglądarce (u mnie &lt;a href="http://www.firefox.pl/"&gt;firefox 3.x&lt;/a&gt; netbeans otwarł główny kontroler projektu wraz z parameterm XDEBUG_SESSION_START=netbeans-xdebug. W tym samym momencie w edytorze netbeans podświetlony został pierwszy wiersz kontrolera ... i już.&lt;/p&gt;
+
+&lt;p&gt;Możemy teraz ustawiać watche, breakpointy, poruszać się step out, step in, step up wybierając opcje z menu 'debug' lub używająć skrótów klawiszowych.&lt;/p&gt;
+
+&lt;p&gt;Dzięki krótkiemu testowi widać, że podstawowy debug działa i można sobie poużywać. Oczywiście jeżeli lubimy php5 i lubimy netbeans lub któreś z nich musimy używać ;)&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>php</category><category>webdev</category><guid>http://marekwywial.name/posts/blog20080824netbeans-65-php5-symfony-xdebug.html</guid><pubDate>Sun, 24 Aug 2008 12:17:12 GMT</pubDate></item></channel></rss>

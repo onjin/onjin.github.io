@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (docker)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now.</description><atom:link href="http://marekwywial.name/categories/docker.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Tue, 01 Oct 2013 22:54:16 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Fast sentry instance using docker</title><link>http://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;You need docker and postgresql database
+&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="http://docker.io/"&gt;docker.io&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;If you have docker installed and postgres database created you can:&lt;/p&gt;
+&lt;pre&gt;
+
+# pull sentry image
+
+docker pull onjin/sentry
+
+
+
+# install sentry database
+
+docker run  -e SENTRY_DBHOST=your.db.address -e SENTRY_DBNAME=sentrydbname -e SENTRY_DBUSER=dbuser -e SENTRY_DBPASS=dbpass -p :7365 onjin/sentry upgrade
+
+
+
+# run sentry instance
+
+docker run -d -e SENTRY_DBHOST=your.db.address -e SENTRY_DBNAME=sentrydbname -e SENTRY_DBUSER=dbuser -e SENTRY_DBPASS=dbpass -p :7365 onjin/sentry start
+
+&lt;/pre&gt;
+
+&lt;p&gt;and open browser at address:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href="http://localhost:7365/"&gt;http://localhost:7365&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;</description><category>develop</category><category>docker</category><category>linux</category><guid>http://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker.html</guid><pubDate>Wed, 18 Sep 2013 11:36:39 GMT</pubDate></item></channel></rss>

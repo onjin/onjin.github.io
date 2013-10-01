@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (linux)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now.</description><atom:link href="http://marekwywial.name/categories/linux.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Tue, 01 Oct 2013 22:54:17 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Fast sentry instance using docker</title><link>http://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;You need docker and postgresql database
+&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="http://docker.io/"&gt;docker.io&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;If you have docker installed and postgres database created you can:&lt;/p&gt;
+&lt;pre&gt;
+
+# pull sentry image
+
+docker pull onjin/sentry
+
+
+
+# install sentry database
+
+docker run  -e SENTRY_DBHOST=your.db.address -e SENTRY_DBNAME=sentrydbname -e SENTRY_DBUSER=dbuser -e SENTRY_DBPASS=dbpass -p :7365 onjin/sentry upgrade
+
+
+
+# run sentry instance
+
+docker run -d -e SENTRY_DBHOST=your.db.address -e SENTRY_DBNAME=sentrydbname -e SENTRY_DBUSER=dbuser -e SENTRY_DBPASS=dbpass -p :7365 onjin/sentry start
+
+&lt;/pre&gt;
+
+&lt;p&gt;and open browser at address:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href="http://localhost:7365/"&gt;http://localhost:7365&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;</description><category>develop</category><category>docker</category><category>linux</category><guid>http://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker.html</guid><pubDate>Wed, 18 Sep 2013 11:36:39 GMT</pubDate></item><item><title>Rescan SCSI bus (no reboot)</title><link>http://marekwywial.name/posts/blog20120705rescan-scsi-bus-no-reboot.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Just self memo. How to attach new SCSI disk without reboot (debian):&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;# check what hosts do you have&lt;/span&gt;
+
+ls /sys/class/scsi_host
+  host0 host1 host2 host3
+
+
+&lt;span class="c"&gt;# choose your host f.e. 'host0', &lt;/span&gt;
+
+&lt;span class="c"&gt;# change 'host0' to 'host1' or any next number that you need&lt;/span&gt;
+
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"- - -"&lt;/span&gt; &amp;amp;gt; /sys/class/scsi_host/host0/scan
+
+
+
+&lt;span class="c"&gt;# and done&lt;/span&gt;
+
+fdisk -l
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;/p&gt;</description><category>linux</category><category>tools</category><guid>http://marekwywial.name/posts/blog20120705rescan-scsi-bus-no-reboot.html</guid><pubDate>Thu, 05 Jul 2012 06:16:42 GMT</pubDate></item><item><title>Grooveshark currentSong.txt + gajim status</title><link>http://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Przy okazji szukania API do &lt;a href="http://grooveshark.com"&gt;grooveshark'a&lt;/a&gt; odkryłem plik &lt;b&gt;currentSong.txt&lt;/b&gt;, który jest tworzony przez &lt;em&gt;Grooveshark Desktop&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Kilka minut z vim'em i mamy skrypt napisany w python'ie, który odczytuje w/w plik i wrzuca informację o aktualnie odtwarzanym utworze jako status wybranego konta w &lt;a href="http://gajim.org"&gt;gajim'a&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wymana &lt;b&gt;pyinotify&lt;/b&gt;). Wtedy nasz status będzie zmieniany w chwili (chwilę potem :) ) zmiany utworu w Grooveshark Desktop.&lt;/p&gt;
+&lt;p&gt;Całość można dowolnie używać/modyfikować, a pobrać można z serwiu &lt;a href="http://github.com"&gt;github.com&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="https://github.com/onjin/grooveshark2gajim"&gt;https://github.com/onjin/grooveshark2gajim&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://onjin.github.com/grooveshark2gajim/"&gt;http://onjin.github.com/grooveshark2gajim/&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;&lt;p&gt;Do działania wystarczy nam plik &lt;a href="https://github.com/onjin/grooveshark2gajim/raw/master/grov2gajim.py"&gt;grov2gajim.py&lt;/a&gt;. Umieszczamy go gdzieś na dysku i możemy używać.&lt;/p&gt;
+&lt;div style="display: none"&gt;&lt;a href="http://www.atotaldetox.com/thc-marijuana-detox-kits/"&gt;&lt;b&gt;thc/marijuana detox kits&lt;/b&gt;&lt;/a&gt;.&lt;/div&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>desktop</category><category>linux</category><category>muzyka</category><category>python</category><category>tools</category><guid>http://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</guid><pubDate>Sat, 19 Mar 2011 12:03:04 GMT</pubDate></item><item><title>ftpmount v1.2.0</title><link>http://marekwywial.name/posts/blog20090625ftpmount-v120.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;div style="text-align: center; border-bottom: solid 1px gray; background: orange"&gt;sprawdź najnowszą wersję &lt;a href="http://onjin.net/index.php/category/ftpmount"&gt;ftpmount&lt;/a&gt;&lt;/div&gt;
+&lt;p&gt;Kilka poprawek do ftpmount:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;poprawiony przykładowy .ftpmountrc - w .ini komentrze to ';' a nie '#' :)&lt;/li&gt;
+
+&lt;li&gt;tryb 'verbose' (-v) pokazuje teraz jakie parametry zostały przekazane do curlftpfs&lt;/li&gt;
+
+&lt;li&gt;do README dodałem informację, że 'curlftpfs' jest potrzebny do działania skryptu&lt;/li&gt;
+
+&lt;/ul&gt;&lt;p&gt;Wersje &lt;a href="http://github.com/onjin/ftpmount/downloads"&gt;do pobrania&lt;/a&gt;.&lt;/p&gt;</description><category>develop</category><category>ftpmount</category><category>linux</category><category>python</category><guid>http://marekwywial.name/posts/blog20090625ftpmount-v120.html</guid><pubDate>Thu, 25 Jun 2009 10:44:36 GMT</pubDate></item><item><title>ftpmount v1.1.0 - github</title><link>http://marekwywial.name/posts/blog20090622ftpmount-v110-github.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;div style="text-align: center; border-bottom: solid 1px gray; background: orange"&gt;sprawdź najnowszą wersję &lt;a href="http://onjin.net/index.php/category/ftpmount"&gt;ftpmount&lt;/a&gt;&lt;/div&gt;
+&lt;p&gt;Przeniosłem skrypt ftpmount do github'a:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href="http://wiki.github.com/onjin/ftpmount"&gt;ftpmount&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;&lt;p&gt;Równocześnie zmieniłem sposób konfiguracji, a raczej tylko domyślną nazwę pliku konfiguracyjnego. Teraz jest szukany plik:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;.ftpmountrc w aktualnym katalogu&lt;/li&gt;
+
+&lt;li&gt;potem .ftpmountrc w katalogu domowym&lt;/li&gt;
+
+&lt;/ul&gt;&lt;p&gt;Wersje &lt;a href="http://github.com/onjin/ftpmount/downloads"&gt;do pobrania&lt;/a&gt;.&lt;/p&gt;</description><category>ftpmount</category><category>git</category><category>linux</category><category>tools</category><category>webdev</category><guid>http://marekwywial.name/posts/blog20090622ftpmount-v110-github.html</guid><pubDate>Mon, 22 Jun 2009 09:30:35 GMT</pubDate></item><item><title>fuse ftp mount - curlftpfs</title><link>http://marekwywial.name/posts/blog20090621fuse-ftp-mount-curlftpfs.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;div style="text-align: center; border-bottom: solid 1px gray; background: orange"&gt;sprawdź najnowszą wersję &lt;a href="http://onjin.net/index.php/category/ftpmount"&gt;ftpmount&lt;/a&gt;&lt;/div&gt;
+&lt;p&gt;Do pracy z hostingiem gdzie mamy tylko '''ftp''' przydaje się montowanie dysku poprzez właśnie ftp. Służy do tego program '''curlftpfs''' (np apt-get install curlftpfs).&lt;/p&gt;
+&lt;p&gt;Odpalamy go jako:&lt;/p&gt;
+&lt;pre&gt;
+
+curlftpfs ftp://user:pass@host/ ./mountpoint
+
+&lt;/pre&gt;
+
+&lt;p&gt;Do tego potrzebujemy uprawnienia grupy '''fuse''' więć jako ''root'' musimy sobie ją dodać od naszego użytkownika.&lt;/p&gt;
+&lt;p&gt;Jeżeli mamy dużo połączeń do zarządzania przyda się mały skrypt:
+ * &lt;a href="http://onjin.net/files/ftpmount"&gt;ftpmount&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;sterowany konfiguracją w pliku '''config.ini''':&lt;/p&gt;
+&lt;pre&gt;
+
+[hostone.pl]
+
+host=ftp.hostone.pl
+
+user=userone
+
+pass=passone # jak nie podamy tego wpisu, program się zapyta o hasło
+
+mountpoint=hostone.pl
+
+
+
+[hosttwo.pl]
+
+host=ftp.hosttwo.pl
+
+user=usertwo
+
+mountpoint=hosttwo.pl
+
+&lt;/pre&gt;
+
+&lt;p&gt;Wtedy wystarczy nam:
+ * ./ftpmount hostone.pl   # montujemy połączenie
+ * ./ftpmount -u hostone.pl   #odmontowywujemy połączenie
+ * ./ftpmount -l   # lista dostępnych konfiguracji połączeń&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;</description><category>ftpmount</category><category>linux</category><category>tools</category><category>webdev</category><guid>http://marekwywial.name/posts/blog20090621fuse-ftp-mount-curlftpfs.html</guid><pubDate>Sun, 21 Jun 2009 17:11:10 GMT</pubDate></item><item><title>mutt &amp; firefox (by urlview)</title><link>http://marekwywial.name/posts/blog20090605mutt-firefox-by-urlview.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;w ubuntu wystarczyło:
+&lt;/p&gt;&lt;pre&gt;
+&lt;p&gt;apt-get install urlview&lt;/p&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;w ~/.muttrc dodane makro&lt;/p&gt;
+&lt;pre&gt;
+
+macro pager \\cb &amp;lt;pipe-entry&amp;gt;urlview&amp;lt;enter&amp;gt; 'Follow links with urlview'
+
+&lt;/pre&gt;
+
+&lt;p&gt;orac plik ~/.urlview:&lt;/p&gt;
+&lt;pre&gt;
+
+REGEXP ((http|https|ftp|gopher):(//)?[^ &amp;lt;&amp;gt;"\\t]*|www\\.[-a-z0-9.]+)[^ .,;\\t&amp;lt;"&amp;gt;\\):]
+
+COMMAND /usr/bin/nohup firefox -remote "openURL("%s", new-tab)" &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 &amp;amp;
+
+&lt;/pre&gt;
+
+&lt;p&gt;teraz ctrl+b zbiera linki z treści wiadomości, które otwieramy w wybranej przeglądarce ;)&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;</description><category>linux</category><category>tools</category><guid>http://marekwywial.name/posts/blog20090605mutt-firefox-by-urlview.html</guid><pubDate>Fri, 05 Jun 2009 08:53:55 GMT</pubDate></item><item><title>google apps (gmail) i mutt</title><link>http://marekwywial.name/posts/blog20090526google-apps-gmail-i-mutt.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Znalezione na sieci i przystosowane do google apps:&lt;/p&gt;
+&lt;pre&gt;
+&lt;p&gt;set imap_user = "user@domena.pl"&lt;/p&gt;
+&lt;p&gt;set imap_pass = "password"&lt;/p&gt;
+&lt;p&gt;set smtp_url = "smtp://users\@domena.pl@smtp.gmail.com:587/"&lt;/p&gt;
+&lt;p&gt;set smtp_pass = "password"&lt;/p&gt;
+&lt;p&gt;set from = "user@domena.pl"&lt;/p&gt;
+&lt;p&gt;set realname = "My ql user"&lt;/p&gt;
+&lt;p&gt;set folder = "imaps://imap.gmail.com:993"&lt;/p&gt;
+&lt;p&gt;set spoolfile = "+INBOX"&lt;/p&gt;
+&lt;p&gt;set postponed="+[Google Mail]/Drafts"&lt;/p&gt;
+&lt;p&gt;set header_cache=~/.mutt/cache/headers&lt;/p&gt;
+&lt;p&gt;set message_cachedir=~/.mutt/cache/bodies&lt;/p&gt;
+&lt;p&gt;set certificate_file=~/.mutt/certificates&lt;/p&gt;
+&lt;p&gt;set move = no&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/pre&gt;</description><category>linux</category><category>tools</category><guid>http://marekwywial.name/posts/blog20090526google-apps-gmail-i-mutt.html</guid><pubDate>Tue, 26 May 2009 08:31:04 GMT</pubDate></item><item><title>porządki na dysku, czyli mv, ln, mount i bind</title><link>http://marekwywial.name/posts/blog20090512porzadki-na-dysku-czyli-mv-ln-mount-i-bind.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Robiąc ostatnio trochę miejsca pomiędzy partycjami przeniosłem &lt;em&gt;/usr/lib&lt;/em&gt; do &lt;em&gt;/opt/usr/lib&lt;/em&gt; i zrobiłem symlink &lt;em&gt;ln -s /opt/usr/lib /usr/lib&lt;/em&gt;. Problemem okazało się np &lt;em&gt;/usr/lib/cups/filter/foomatic-rip&lt;/em&gt;, który jest linkiem  relatywnym do &lt;em&gt;../../../bin/foomatic-rip&lt;/em&gt; i w ten sposób pozbyłem się możliwości drukowania.&lt;/p&gt;
+&lt;p&gt;Nie mam miejsca by zrobić/użyć partycji, którą bym zamontował pod &lt;em&gt;/usr/lib&lt;/em&gt; ale chwila w necie pozoliła znaleść mi rozwiązanie odpowiednie dla mnie :)&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;blockquote&gt;
+&lt;p&gt;mount --bind /opt/usr/lib /usr/lib&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;lub w &lt;strong&gt;/etc/fstab&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+
+/opt/usr/lib /usr/lib none bind
+
+&lt;/blockquote&gt;
+
+&lt;p&gt;i teraz jest ok :)&lt;/p&gt;</description><category>linux</category><guid>http://marekwywial.name/posts/blog20090512porzadki-na-dysku-czyli-mv-ln-mount-i-bind.html</guid><pubDate>Tue, 12 May 2009 20:46:59 GMT</pubDate></item><item><title>virtualbox brakujący vboxdrv kernel + ubuntu</title><link>http://marekwywial.name/posts/blog20080829virtualbox-brakujacy-vboxdrv-kernel-ubuntu.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Czasem w &lt;a href="http://www.ubuntu.pl/"&gt;Ubuntu&lt;/a&gt; (np przy pakietach proposal) przychodzi wyższa wersja kernela bez upgrade drivera do &lt;a href="http://www.virtualbox.org/"&gt;virtualbox'a&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Wtedy pomaga mi taka kombinacja&lt;/p&gt;
+&lt;pre&gt;
+
+sudo apt-get install virtualbox-ose-source
+
+sudo m-a update
+
+sudo m-a prepare
+
+sudo m-a a-i virtualbox-ose
+
+sudo /etc/init.d/vboxdrv restart
+
+&lt;/pre&gt;
+
+&lt;p&gt;Restart &lt;a href="http://www.virtualbox.org/"&gt;virtualbox'a&lt;/a&gt; i gotow. Back to work.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>linux</category><category>tools</category><category>ubuntu</category><guid>http://marekwywial.name/posts/blog20080829virtualbox-brakujacy-vboxdrv-kernel-ubuntu.html</guid><pubDate>Fri, 29 Aug 2008 06:26:16 GMT</pubDate></item></channel></rss>

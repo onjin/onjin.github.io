@@ -1,0 +1,664 @@
+{
+  "pages": [
+    {
+      "text": "You need docker and postgresql database\ndocker.io\nIf you have docker installed and postgres database created you can:\n\n\n# pull sentry image\n\ndocker pull onjin/sentry\n\n\n\n# install sentry database\n\ndocker run  -e SENTRY_DBHOST=your.db.address -e SENTRY_DBNAME=sentrydbname -e SENTRY_DBUSER=dbuser -e SENTRY_DBPASS=dbpass -p :7365 onjin/sentry upgrade\n\n\n\n# run sentry instance\n\ndocker run -d -e SENTRY_DBHOST=your.db.address -e SENTRY_DBNAME=sentrydbname -e SENTRY_DBUSER=dbuser -e SENTRY_DBPASS=dbpass -p :7365 onjin/sentry start\n\n\n\nand open browser at address:\nhttp://localhost:7365", 
+      "tags": "develop,docker,linux", 
+      "loc": "/posts/blog20130918fast-sentry-instance-using-docker.html", 
+      "title": "Fast sentry instance using docker"
+    }, 
+    {
+      "text": "Install\n[bash]\n$ pip install Flask-Enterprise\n[/bash]\nfile: soap.py\n\n[python]\nfrom time import ctime\nfrom flask import Flask\nfrom flaskext.enterprise import Enterprise\napp = Flask(name)\nenterprise = Enterprise(app)\nclass DemoService(enterprise.SOAPService):\n    soap_server_address = '/soap'\n    soap_target_namespace = 'ns'\n@enterprise.soap(_returns=enterprise._sp.String)\ndef get_time(self):\n    return ctime()\n\n\n\nif name == 'main':\n    app.run(host='127.0.0.1', port=5555)\n[/python]\nRun service\n\n[bash]\n$ python soap.py\n[/bash]\nfile: client.py\n\n[python]\nfrom suds.client import Client\nc = Client('http://127.0.0.1:5555/soap?wsdl')\nprint c.service.get_time()\n[/python]\nRun test\n\n[bash]\n$ python client.py\nTue Aug 13 19:49:53 2013\n[/bash]", 
+      "tags": "onjin,programowanie,python,webdev", 
+      "loc": "/posts/blog20130813python-soap-server-flask-wsdl-generation.html", 
+      "title": "Python SOAP server (flask) + wsdl generation"
+    }, 
+    {
+      "text": "I don't want to hear it any more, so I've put this into .vimrc\n\" quiet pleeeeeease\n\nif has('autocmd')\n  autocmd GUIEnter * set visualbell t_vb=\nendif", 
+      "tags": "vim", 
+      "loc": "/posts/blog20120730quiet-please-disable-audio-bell-in-gvim.html", 
+      "title": "quiet please !! disable audio bell in gvim"
+    }, 
+    {
+      "text": "Just self memo. How to attach new SCSI disk without reboot (debian):\n# check what hosts do you have\n\nls /sys/class/scsi_host\n  host0 host1 host2 host3\n\n\n# choose your host f.e. 'host0', \n\n# change 'host0' to 'host1' or any next number that you need\n\necho \"- - -\" &gt; /sys/class/scsi_host/host0/scan\n\n\n\n# and done\n\nfdisk -l", 
+      "tags": "linux,tools", 
+      "loc": "/posts/blog20120705rescan-scsi-bus-no-reboot.html", 
+      "title": "Rescan SCSI bus (no reboot)"
+    }, 
+    {
+      "text": "Just self memo\n# Added new physical partition /dev/sda3\n\n# create a physical volume out of it\n\n&gt; pvcreate /dev/sda3\n\n\n\n# Now, add it to the volume group\n\n#that my logical volume is on\n\n&gt; vgextend VolGroup00 /dev/sda3\n\n\n\n# Now that the volume group has more\n\n# disk space, the logical volume can grow\n\n&gt; lvextend -L+11G /dev/VolGroup00/LogVol00\n\n\n\n# Ok, last of all, I want to filesystem to\n\n# recognize that more space is available\n\n&gt; fsadm resize /dev/VolGroup00/LogVol00\n\n\n\n# sweet, I have more space now\n\n&gt; df -h", 
+      "tags": "hosting,tools", 
+      "loc": "/posts/blog20120427extend-lvm2-filesystem.html", 
+      "title": "extend lvm2 filesystem"
+    }, 
+    {
+      "text": "Kilku znajomych chcia\u0142o zacz\u0105\u0107 u\u017cywa\u0107 vim'a. Ale konfigurowanie go na starcie, dobieranie plugin\u00f3w, instalowanie ich, gdy si\u0119 jeszcze nic nie wie tylko chce si\u0119 spr\u00f3bowa\u0107 zazwyczaj powodowa\u0142o prze\u0142o\u017cenie tej pr\u00f3by na 'kiedy indziej'.\nNiedawno pozna\u0142em i zacz\u0105\u0142em u\u017cywa\u0107 plugin manager'a vundle i sam potrzebowa\u0142em szybko przenie\u015b\u0107 konfiguracj\u0119 na drugi komputer i na laptopa. Zazwyczaj u\u017cywa\u0142em dropbox'a i podlinkowanego pliku .vimrc oraz ca\u0142ego katalogu .vim ze wszystkimi pluginami.\nJednak u\u017cywaj\u0105c plugin managera, kt\u00f3rego konfiguracja znajduje si\u0119 w .vimrc pozwala teraz pos\u0142ugiwa\u0107 si\u0119 jedynie plikiem .vimrc. Zgodnie z programistyczn\u0105 zasad\u0105 'jak masz co\u015b zrobi\u0107 wi\u0119cej ni\u017c 2 razy, napisz program' powsta\u0142 ma\u0142y skrypt + podstawowy .vimrc pozwalaj\u0105cy szybko uruchomi\u0107 vim'a skonfigurowanego pod programowanie w ci\u0105gu kilku minut.\nhttps://github.com/onjin/vim-startup\nJak na razie przyda\u0142o si\u0119 mi i kilku innym osobom :) . Plik .vimrc jest oczywi\u015bcie przyk\u0142adowy i jak ju\u017c sobie pou\u017cywasz vim'a i zdecydujesz si\u0119 go pozna\u0107 lepiej wtedy po kolei skonfigurujesz go pod siebie.", 
+      "tags": "onjin,python,vim,vim", 
+      "loc": "/posts/blog20120314vim-vundle-plugin-manager-programming.html", 
+      "title": "vim + vundle plugin manager + programming"
+    }, 
+    {
+      "text": "Just repost:\nhttp://reader.benshoemate.com/2010/10/useful-collection-of-cheat-sheet-desktop-wallpaper-for-web-designers/", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20111011useful-collection-of-cheat-sheet-desktop-wallpaper-for-web-designers.html", 
+      "title": "Useful Collection of Cheat-Sheet Desktop Wallpaper for Web Designers"
+    }, 
+    {
+      "text": "Przy okazji szukania API do grooveshark'a odkry\u0142em plik currentSong.txt, kt\u00f3ry jest tworzony przez Grooveshark Desktop.\nKilka minut z vim'em i mamy skrypt napisany w python'ie, kt\u00f3ry odczytuje w/w plik i wrzuca informacj\u0119 o aktualnie odtwarzanym utworze jako status wybranego konta w gajim'a.\nSkrypt umo\u017cliwia tak\u017ce uruchomienie go w trybie monitorowania w/w pliku (wymana pyinotify). Wtedy nasz status b\u0119dzie zmieniany w chwili (chwil\u0119 potem :) ) zmiany utworu w Grooveshark Desktop.\nCa\u0142o\u015b\u0107 mo\u017cna dowolnie u\u017cywa\u0107/modyfikowa\u0107, a pobra\u0107 mo\u017cna z serwiu github.com:\nhttps://github.com/onjin/grooveshark2gajim\nhttp://onjin.github.com/grooveshark2gajim/\n\nDo dzia\u0142ania wystarczy nam plik grov2gajim.py. Umieszczamy go gdzie\u015b na dysku i mo\u017cemy u\u017cywa\u0107.\nthc/marijuana detox kits.", 
+      "tags": "desktop,linux,muzyka,python,tools", 
+      "loc": "/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html", 
+      "title": "Grooveshark currentSong.txt + gajim status"
+    }, 
+    {
+      "text": "W ostatnim wpisie pisa\u0142em o snippetsEmu dla vim'a, a dzi\u015b za\u0142\u0105czam zestaw snippet\u00f3w, kt\u00f3rych u\u017cywam przy pracy z liquibase.\nLiquibase to ca\u0142kiem mi\u0142e narz\u0119dzie napisane w Javie do \u015bledzenia, zarz\u0105dzania i wprowadzania zmian w bazach danych. Zmiany opisuje si\u0119 w pliku (plikach) xml i wpisywanie oraz pami\u0119tanie tej sk\u0142adni mo\u017cna sobie upro\u015bci\u0107 przy pomocy vim'a i snippet\u00f3w.\n\nSnippet umieszczamy razem z pozosta\u0142ymi, najcz\u0119\u015bciej w .vim/after/ftplugin/.\n\nNajpro\u015bciej zacz\u0105\u0107 otwieraj\u0105c np. migration.xml, wpisuj\u0105c lhelp i wcisn\u0105\u0107 TAB. Otrzymamy ma\u0142\u0105 pomoc i mo\u017cemy zaczyna\u0107 wpisywa\u0107 kolejn\u0105 migracj\u0119 :)\n\n\u00a0\u00bb xml_snippets.vim.", 
+      "tags": "programowanie,tools,vim", 
+      "loc": "/posts/blog20100811vim-snippetsemu-i-liquibase.html", 
+      "title": "vim snippetsemu i liquibase"
+    }, 
+    {
+      "text": "Dzi\u015b robi\u0142em porz\u0105dki w ~/.vim/ . Aktualizacje do nowych wersji plugin\u00f3w, wyrzucanie nieu\u017cywanych, porz\u0105dki w ~/.vimrc. W trakcie tej pracy powsta\u0142a lista plugin\u00f3w, dzi\u0119ki kt\u00f3rym mi\u0142o mi si\u0119 pracuje\nvimball\n\nPlugin zajmuj\u0105cy si\u0119 pluginami dostarczanymi w paczkach .vba i pozwalaj\u0105cy te\u017c takie paczki tworzy\u0107, w praktyce potrzeby mi by instalowa\u0107 paczki .vba\n\n\u00a0\u00bb vimball\n\nsnippetsEmu\n\nEmuluje zachowanie snippet\u00f3w z TextMate. Na przyk\u0142ad w pliku sometest.py wpisujesz 'for<tab>', uzupe\u0142niasz brakuj\u0105ce miejsca poruszaj\u0105c si\u0119 klawiszem <tab> i otrzymujesz pe\u0142n\u0105 p\u0119tle. Inne u\u017cyteczne snippety dla pythona to: prop - property, get - def get_.., set - def set_.., def - def .., cm - classmethod, cl - class .. oraz ifn, ifmain, sb, sbu, sbl1, trye, tryf, tryef, unittest.\n\nDomy\u015blnie dostarczone s\u0105 32 zestawy snippet\u00f3w dla wielu j\u0119zyk\u00f3w programowania, opisu oraz framework\u00f3w (django, rails, symfony).\n\n\u00a0\u00bb snippetsEmu\n\nneocomplcache\n\nSystem tzw 'dope\u0142niania' (podpowiadania) i to w\u0142a\u015bnie robi. Dope\u0142nia nazwy metod, funkcji, atrybuty html, nazwy plik\u00f3w, itp. Trzeba po prostu zobaczy\u0107 i u\u017cywa\u0107.\n\n\u00a0\u00bb neocomplcache\n\nproject\n\nBardzo prosty i skuteczny system pozwalaj\u0105cy w bocznym oknie przegl\u0105da\u0107 wybrane lub wszystkie pliki z jednego lub wielu projekt\u00f3w. Ka\u017cdy projekt ma zdefiniowany katalog, dzi\u0119ki czemu otwarcie pliku z projektu (wciskamy 'enter' bed\u0105c 'nad' plikiem) nast\u0105pi r\u00f3wnocze\u015bnie z przej\u015bciem do katalogu projektu. W ten spos\u00f3b pliki projektu jak np 'tags' (ctags) zostan\u0105 poprawnie wczytane.\n\n\u00a0\u00bb project\n\nsimple pairs\n\nProste dope\u0142nianie dla \", ', {, (, [ . Wpisanie znaku otwieraj\u0105cego powoduje automatyczne dopisanie znaku zamykaj\u0105cego. W przypadku {, (, [ gdy sami wpiszemy znak zamykaj\u0105cy, nie zostanie on zdublowany. Kursor po prostu przesunie si\u0119 dalej. Dla \", ' zostanie jednak stworzona kolejna para. Kr\u00f3tkie i skuteczne.\n\n\u00a0\u00bb simple pairs\n\nvcscommand\n\nPlugin pozwalaj\u0105cy wykonywa\u0107 komendy dla CVS, SVN, SVK, git, bzr, and hg przy pomocy vim'a. Jeden zestaw komend bez wzgl\u0119dy na system kontroli wersji.\n\n\u00a0\u00bb vcscommand\n\nNiewiele tego, ale te pluginy, git (post/pre hooki), bash + zestaw skrypt\u00f3w wystarcza mi do pracy :)", 
+      "tags": "programowanie,python,tools,vim", 
+      "loc": "/posts/blog20100729best-vim-plugins.html", 
+      "title": "best vim plugins"
+    }, 
+    {
+      "text": "Za\u0142\u0105czam u\u017cywany przeze mnie i sprawdzaj\u0105cy si\u0119 pre-commit dla git'a sprawdzaj\u0105cy commitowane pliki .php.\nPrzy wykonaniu commit w repozytorium skrypt dla ka\u017cdego commitowanego pliku '.php' wykonuje 'php -l' w p\u0119tli, a\u017c otrzyma odpowied\u017a, \u017ce sk\u0142adnia jest ok lub nie ok. Przypadku wyst\u0105pienia b\u0142\u0119dy przerywa commit. Sam skrypt napisany jest w python'ie\nDlaczego w p\u0119tli? Dlatego, \u017ce 'php -l' losowo si\u0119 urywa zwracaj\u0105c SIGFAULT i nale\u017cy wtedy powt\u00f3rzy\u0107 pr\u00f3b\u0119 z '-l'\nPlik do pobrania:\n\u00bb\u00a0pre-commit", 
+      "tags": "git python php,onjin", 
+      "loc": "/posts/blog20100504git-php-syntax-check-pre-commit.html", 
+      "title": "git php syntax check pre-commit"
+    }, 
+    {
+      "text": "Ostatnio biega\u0142em z lapkiem po centrum handlowym i \u0142apa\u0142em wifi, \u017ceby spojrze\u0107 do dokumentacji django. I tylko si\u0119 nabiega\u0142em :).\nAby drugi raz pracowa\u0107 nie biega\u0107 w domu szybko pod\u0142\u0105czy\u0142em dokumentacj\u0119 django do devhelp i tak na szybko procedura:\n[bash]\n apt-get install devhelp\nmkdir -p ~/bin; cd ~/bin\n wget http://htmlhelp.googlecode.com/svn/trunk/misc/devhelp-install\n chmod +x devhelp-install\ncd ~/; wget http://onjin.net/files/django1.1-doc.tgz \n ~/bin/devhelp-install ./django1.1-doc.tgz\n[/bash]\nTeraz wystarczy uruchomi\u0107 devhelp'a i cieszy\u0107 si\u0119 offline :)\ndjango1.1-doc jest \u015bci\u0105gni\u0119te z .chm i potraktowana hhconvert.py do formatu devhelp'a)", 
+      "tags": "devhelp,django,onjin,python", 
+      "loc": "/posts/blog20100426devhelp-django-1-1.html", 
+      "title": "devhelp + django 1.1"
+    }, 
+    {
+      "text": "... zamie\u015bci\u0142 mekk\nnie tylko top", 
+      "tags": "server linux,tools", 
+      "loc": "/posts/blog20100103przydatne-narzedzia-do-monitoringu-obciazenia-serwera.html", 
+      "title": "Przydatne narz\u0119dzia do monitoringu obci\u0105\u017cenia serwera ..."
+    }, 
+    {
+      "text": "var wave =\n    new WavePanel('https://wave.google.com/wave/');\n  wave.setUIConfig('white', 'black', 'Arial', '13px');\n  wave.loadWave('googlewave.com!w+iYp8HmpCE');\n  wave.init(document.getElementById('wave'));", 
+      "tags": "develop,google,www", 
+      "loc": "/posts/blog20091021public-google-wave-test.html", 
+      "title": "public google wave - test ;)"
+    }, 
+    {
+      "text": "Tak na szybko z manuala do pdf'a do szybkiego wydruku cheatsheet dla window managera awesome 3 (it's awesome ;) ):\nawesome3_bindings.pdf", 
+      "tags": "desktop,onjin,tools,wmanager", 
+      "loc": "/posts/blog20091019awesome2-wm-mousekey-bindings.html", 
+      "title": "awesome3 wm mouse/key bindings"
+    }, 
+    {
+      "text": "Gdy zwyk\u0142y repair nie pomaga mo\u017cna zarzuci\u0107:\nrepair table TABLENAME use_frm;", 
+      "tags": "memo", 
+      "loc": "/posts/blog20090810memo-mysql-incorrect-file-format-dla-tabeli.html", 
+      "title": "memo: mysql + Incorrect file format dla tabeli"
+    }, 
+    {
+      "text": "sprawd\u017a najnowsz\u0105 wersj\u0119 ftpmount\nKilka poprawek do ftpmount:\npoprawiony przyk\u0142adowy .ftpmountrc - w .ini komentrze to ';' a nie '#' :)\n\ntryb 'verbose' (-v) pokazuje teraz jakie parametry zosta\u0142y przekazane do curlftpfs\n\ndo README doda\u0142em informacj\u0119, \u017ce 'curlftpfs' jest potrzebny do dzia\u0142ania skryptu\n\nWersje do pobrania.", 
+      "tags": "develop,ftpmount,linux,python", 
+      "loc": "/posts/blog20090625ftpmount-v120.html", 
+      "title": "ftpmount v1.2.0"
+    }, 
+    {
+      "text": "sprawd\u017a najnowsz\u0105 wersj\u0119 ftpmount\nPrzenios\u0142em skrypt ftpmount do github'a:\nftpmount\n\nR\u00f3wnocze\u015bnie zmieni\u0142em spos\u00f3b konfiguracji, a raczej tylko domy\u015bln\u0105 nazw\u0119 pliku konfiguracyjnego. Teraz jest szukany plik:\n.ftpmountrc w aktualnym katalogu\n\npotem .ftpmountrc w katalogu domowym\n\nWersje do pobrania.", 
+      "tags": "ftpmount,git,linux,tools,webdev", 
+      "loc": "/posts/blog20090622ftpmount-v110-github.html", 
+      "title": "ftpmount v1.1.0 - github"
+    }, 
+    {
+      "text": "sprawd\u017a najnowsz\u0105 wersj\u0119 ftpmount\nDo pracy z hostingiem gdzie mamy tylko '''ftp''' przydaje si\u0119 montowanie dysku poprzez w\u0142a\u015bnie ftp. S\u0142u\u017cy do tego program '''curlftpfs''' (np apt-get install curlftpfs).\nOdpalamy go jako:\n\n\ncurlftpfs ftp://user:pass@host/ ./mountpoint\n\n\n\nDo tego potrzebujemy uprawnienia grupy '''fuse''' wi\u0119\u0107 jako ''root'' musimy sobie j\u0105 doda\u0107 od naszego u\u017cytkownika.\nJe\u017celi mamy du\u017co po\u0142\u0105cze\u0144 do zarz\u0105dzania przyda si\u0119 ma\u0142y skrypt:\n * ftpmount\nsterowany konfiguracj\u0105 w pliku '''config.ini''':\n\n\n[hostone.pl]\n\nhost=ftp.hostone.pl\n\nuser=userone\n\npass=passone # jak nie podamy tego wpisu, program si\u0119 zapyta o has\u0142o\n\nmountpoint=hostone.pl\n\n\n\n[hosttwo.pl]\n\nhost=ftp.hosttwo.pl\n\nuser=usertwo\n\nmountpoint=hosttwo.pl\n\n\n\nWtedy wystarczy nam:\n * ./ftpmount hostone.pl   # montujemy po\u0142\u0105czenie\n * ./ftpmount -u hostone.pl   #odmontowywujemy po\u0142\u0105czenie\n * ./ftpmount -l   # lista dost\u0119pnych konfiguracji po\u0142\u0105cze\u0144", 
+      "tags": "ftpmount,linux,tools,webdev", 
+      "loc": "/posts/blog20090621fuse-ftp-mount-curlftpfs.html", 
+      "title": "fuse ftp mount - curlftpfs"
+    }, 
+    {
+      "text": "w ubuntu wystarczy\u0142o:\n\napt-get install urlview\n\n\nw ~/.muttrc dodane makro\n\n\nmacro pager \\\\cb <pipe-entry>urlview<enter> 'Follow links with urlview'\n\n\n\norac plik ~/.urlview:\n\n\nREGEXP ((http|https|ftp|gopher):(//)?[ <>\"\\\\t]*|www\\\\.[-a-z0-9.]+)[ .,;\\\\t<\">\\\\):]\n\nCOMMAND /usr/bin/nohup firefox -remote \"openURL(\"%s\", new-tab)\" >/dev/null 2>&1 &\n\n\n\nteraz ctrl+b zbiera linki z tre\u015bci wiadomo\u015bci, kt\u00f3re otwieramy w wybranej przegl\u0105darce ;)", 
+      "tags": "linux,tools", 
+      "loc": "/posts/blog20090605mutt-firefox-by-urlview.html", 
+      "title": "mutt & firefox (by urlview)"
+    }, 
+    {
+      "text": "Znalezione na sieci i przystosowane do google apps:\n\nset imap_user = \"user@domena.pl\"\nset imap_pass = \"password\"\nset smtp_url = \"smtp://users\\@domena.pl@smtp.gmail.com:587/\"\nset smtp_pass = \"password\"\nset from = \"user@domena.pl\"\nset realname = \"My ql user\"\nset folder = \"imaps://imap.gmail.com:993\"\nset spoolfile = \"+INBOX\"\nset postponed=\"+[Google Mail]/Drafts\"\nset header_cache=~/.mutt/cache/headers\nset message_cachedir=~/.mutt/cache/bodies\nset certificate_file=~/.mutt/certificates\nset move = no", 
+      "tags": "linux,tools", 
+      "loc": "/posts/blog20090526google-apps-gmail-i-mutt.html", 
+      "title": "google apps (gmail) i mutt"
+    }, 
+    {
+      "text": "Robi\u0105c ostatnio troch\u0119 miejsca pomi\u0119dzy partycjami przenios\u0142em /usr/lib do /opt/usr/lib i zrobi\u0142em symlink ln -s /opt/usr/lib /usr/lib. Problemem okaza\u0142o si\u0119 np /usr/lib/cups/filter/foomatic-rip, kt\u00f3ry jest linkiem  relatywnym do ../../../bin/foomatic-rip i w ten spos\u00f3b pozby\u0142em si\u0119 mo\u017cliwo\u015bci drukowania.\nNie mam miejsca by zrobi\u0107/u\u017cy\u0107 partycji, kt\u00f3r\u0105 bym zamontowa\u0142 pod /usr/lib ale chwila w necie pozoli\u0142a znale\u015b\u0107 mi rozwi\u0105zanie odpowiednie dla mnie :)\n\nmount --bind /opt/usr/lib /usr/lib\n\n\nlub w /etc/fstab\n\n\n/opt/usr/lib /usr/lib none bind\n\n\n\ni teraz jest ok :)", 
+      "tags": "linux", 
+      "loc": "/posts/blog20090512porzadki-na-dysku-czyli-mv-ln-mount-i-bind.html", 
+      "title": "porz\u0105dki na dysku, czyli mv, ln, mount i bind"
+    }, 
+    {
+      "text": "Mam jeszcze t\u0105 nieprzyjemno\u015bc pracy z PHP (w tym przypadku z symfony framework) i aby by\u0142a przyjemniejsza doda\u0142em sobie hook na pre-commit do git'a.\n * http://dl.getdropbox.com/u/185133/git/pre-commit\nby zadzia\u0142a\u0142o przerywanie commit'a gdy 'symfony unit-test' si\u0119 nie udadz\u0105, potrzebna jest \u0142atka na symfony (przynajmniej na moj\u0105 wersj\u0119 1.0.17)\n * http://dl.getdropbox.com/u/185133/git/symfony_return_code.diff\nHook zak\u0142ada, \u017ce commit jest robiony w katalogu projektu (tak mam najcz\u0119sciej) i znajduje sie w nim plik 'symfony'\nbtw: hook wymaga pythona.", 
+      "tags": "git,php,python,tools", 
+      "loc": "/posts/blog20090511git-pre-commit-hook-symfony-php.html", 
+      "title": "git pre-commit hook - symfony / php"
+    }, 
+    {
+      "text": "home.pl obs\u0142uguje pythona jako cgi (pliki .py) wi\u0119c tego b\u0119dziemy si\u0119 trzyma\u0107. Instalacj\u0119 wykonamy w katalogu /py\ninstalacja django\n\nhardcoded ale dzia\u0142a ;) wrzucamy to do /py i ruchamiamy poprzez www (plik install.py)\n\n[python]\n!/usr/bin/env python\nimport os\nos.system(\"wget http://www.djangoproject.com/download/1.0.2/tarball/\")\nos.system(\"tar zxf Django-1.0.2-final.tar.gz\")\nos.system(\"rm Django-1.0.2-final.tar.gz\")\nos.system(\"mv Django-1.0.2-final tmp\")\nos.system(\"mv tmp/django django\")\n[/python]\nnasz projekt\n\nLokalnie wo\u0142amy\n\n[bash]\ndjango-admin.py startproject pytest\n[/bash]\ni wrzucamy katalog pytest przez ftp na home do katalogu /py .\n\ndispatch.py\n\n[python]\n!/usr/bin/env python\nimport os, sys\nimport django.core.handlers.wsgi\ndef run_with_cgi(application):\nenviron                      = dict(os.environ.items())\nenviron['wsgi.input']        = sys.stdin\nenviron['wsgi.errors']       = sys.stderr\nenviron['wsgi.version']      = (1,0)\nenviron['wsgi.multithread']  = False\nenviron['wsgi.multiprocess'] = True\nenviron['wsgi.run_once']     = True\n\nif environ.get('HTTPS','off') in ('on','1'):\n    environ['wsgi.url_scheme'] = 'https'\nelse:\n    environ['wsgi.url_scheme'] = 'http'\n\nheaders_set  = []\nheaders_sent = []\n\ndef write(data):\n    if not headers_set:\n         raise AssertionError(\"write() before start_response()\")\n\n    elif not headers_sent:\n         # Before the first output, send the stored headers\n         status, response_headers = headers_sent[:] = headers_set\n         sys.stdout.write('Status: %s\\\\r\\\\n' % status)\n         for header in response_headers:\n             sys.stdout.write('%s: %s\\\\r\\\\n' % header)\n         sys.stdout.write('\\\\r\\\\n')\n\n    sys.stdout.write(data)\n    sys.stdout.flush()\n\ndef start_response(status,response_headers,exc_info=None):\n    if exc_info:\n        try:\n            if headers_sent:\n                # Re-raise original exception if headers sent\n                raise exc_info[0], exc_info[1], exc_info[2]\n        finally:\n            exc_info = None     # avoid dangling circular ref\n    elif headers_set:\n        raise AssertionError(\"Headers already set!\")\n\n    headers_set[:] = [status,response_headers]\n    return write\n\nresult = application(environ, start_response)\ntry:\n    for data in result:\n        if data:    # don't send headers until body appears\n            write(data)\n    if not headers_sent:\n        write('')   # send headers now if body was empty\nfinally:\n    if hasattr(result,'close'):\n        result.close()\n\n\n\nChange this to the directory above your site code.\nsys.path.append(\"/py\")\nChange mysite to the name of your site package\nos.environ['DJANGO_SETTINGS_MODULE'] = 'pytest.settings'\nrun_with_cgi(django.core.handlers.wsgi.WSGIHandler())\n[/python]\ni odpalamy to by www :D na razie tyle ...\n\nDok\u0142adam paczk\u0119 z plikami do testu:\n\npy.zip\n\nunzip py.zip; ftp na home.pl; open http://server.home.pl/py/dispatch.py/admin\n\nDodatkowe moje narz\u0119dzia:\n\ndjango-buildout-template - szablon startowy dla projekt\u00f3w django z monitoringiem proces\u00f3w, itp.\n  vim-startup - vim dostosowany do edycji python'a\nDotacje:\n\nJe\u017celi informacje i narz\u0119dzia ci si\u0119 przyda\u0142y i uwa\u017casz, \u017ce warto wesprze\u0107 ich utrzymanie, mo\u017cesz przes\u0142a\u0107 dowoln\u0105 sum\u0119 na adres Bitcoin 19mjD3GhDN23io1WWyQ5c72fqGpXjVifYQ", 
+      "tags": "hosting,python,webdev", 
+      "loc": "/posts/blog20090226homepl-django-pierwsza-potyczka.html", 
+      "title": "home.pl & django - pierwsza potyczka"
+    }, 
+    {
+      "text": "Importuj\u0105c repozytorium svn'a poprzez git-svn tracimy puste katalogi, co czasem nie jest przyjemne. W dodatku to przecie\u017c nasze katalogi i chcemy je mie\u0107 ;)\nDzi\u015b mnie troch\u0119 to przycisn\u0119\u0142o wi\u0119c, pogada\u0142em chwil\u0119 z google i znalaz\u0142em u\u017cyteczny skrypt git-me-up.\n\nWystarczy pobra\u0107 sam plik git-me-up, nada\u0107 mu prawa wykonywania i wykona\u0107:\n\n\n\ngit-me-up http://svn.somerepo.com/path/to/project ./project\n\n\n\na skrypt sam stworzy repozytorium git, zaimportuje wszystkoz repozytorium svn, utworzy brakuj\u0105ce puste katalogi i stworzy w razie potrzeby plik .gitignore na podstawie svn:ignore.\n\ni ju\u017c...", 
+      "tags": "git,tools", 
+      "loc": "/posts/blog20090112git-svn-i-puste-katalogi.html", 
+      "title": "git, svn i puste katalogi"
+    }, 
+    {
+      "text": "W 1999 roku by\u0142o kilka popularnych gier typu mud i wraz ze znajomymi ze studi\u00f3w tak\u017ce prowadzili\u015bmy jednen o nazwie Astral Dominion.\nJaki\u015b czas temu odzyska\u0142em kod mud'a i kilka dni temu uruchomi\u0142em go online.\nJak znajd\u0105 si\u0119 ch\u0119tni do gry (starzy gracze, kt\u00f3rych pe\u0142ny backup tak\u017ce posiadam :) ) to zapraszam:\n\ntelnet direct.onjin.net 4000", 
+      "tags": "games,mud,onjin", 
+      "loc": "/posts/blog20081019mud-astral-dominion.html", 
+      "title": "mud Astral Dominion"
+    }, 
+    {
+      "text": "Kontynuuj\u0105c seri\u0119, kolejny cheatsheet tym razem do systemu kontroli wersji git.\nGitCheatSheet\nI jest git ... :)", 
+      "tags": "develop", 
+      "loc": "/posts/blog20081001git-cheatsheet.html", 
+      "title": "git cheatsheet"
+    }, 
+    {
+      "text": "Lubi\u0119 gnome, cho\u0107 niekt\u00f3re rzeczy mog\u0142y by by\u0107 lepsze np:\nszybszy start/dzia\u0142ania\ni brakuje mi kombinacji ALT+prawy klawisz myszy do zmiany rozmiar\u00f3w okien (nalecia\u0142o\u015b\u0107 od u\u017cywania przez lata windowmakera)\n\nOba problemy rozwi\u0105za\u0142 mi openbox, kt\u00f3ry \u015bwietnie dzia\u0142a zar\u00f3wno z Gnome jak i z KDE (oraz samodzielnie :) ).\n\n\napt-get install openbox obconf\n\n\n\ni gotowe. Teraz mo\u017cna si\u0119 wylogowa\u0107 i zalogowa\u0107 przy pomocy sesji Gnome/obenbox. Obconf ustawia kilka rzeczy, ale brakuje mu skr\u00f3t\u00f3w klawiszowych. Skr\u00f3ty te mo\u017cemy ustawi\u0107 w pliku\n\n\n\n~/.config/openbox/rc.xml\n\n\n\nMo\u017cna zmieni\u0107 domy\u015blne przej\u015bcia pomi\u0119dzy pulpitami z ctrl+F1-x na alt+f1-x (moje ulubione). Trzeba tylko pami\u0119ta\u0107 by usun\u0105\u0107 istniej\u0105ce ju\u017c powi\u0105zania A-F4 do zamykania okien. Inaczej zostaniemy przeniesieni na pulpit 4, jednak aktywne okno z bie\u017c\u0105cego pulpitu zostanie zamkni\u0119te ( mia\u0142em kilka zdziwionych min ).\n\nNie uda\u0142o mi si\u0119 ustali\u0107 kiedy pojawia si\u0119 plik rc.xml. Czy po u\u017cyciu obconf, czy po zamkni\u0119ciu pierwszej sesji z Gnome/openbox. Je\u017celi masz podobny problem to pomo\u017ce ci m\u00f3j plik konfiguracyjny :)\n\nrc.xml\n\nWystarczy umie\u015bci\u0107 go w ~/config/opebox/ i zalogowa\u0107 si\u0119 do Gnome/openbox. Uwaga: je\u017celi w\u0142\u0105czycie efekty pulpitu, wtedy openbox zostanie zamieniony na powr\u00f3t na Metacity (don't do it)", 
+      "tags": "desktop,gnome,ubuntu,wmanager", 
+      "loc": "/posts/blog20081001lekkie-gnome-openbox-zamiast-metacity.html", 
+      "title": "lekkie gnome, openbox zamiast metacity"
+    }, 
+    {
+      "text": "Za dnia pisz\u0119 najcz\u0119\u015bciej w php i zazdroszcz\u0119 pythonowi pylinta.\nZ ciekawo\u015bci zagoogla\u0142em i znalaz\u0142em rozwi\u0105zanie dla PHP sprawdzaj\u0105ce Coding Standard:\n\n\npear install PHP_CodeSniffer\n\nphpcs --standard=Zend SomeTest.class.php\n\n\n\nphpcs -i podaje dost\u0119pne standardy:\n\nPEAR\n\nMySource\n\nPHPCS\n\nSquiz\n\nZend\n\nMi najbardzie odpowiada Zend co wida\u0107 po wynikach lintowania, najcz\u0119\u015bciej 0 ostrze\u017ce\u0144 i b\u0142\u0119d\u00f3w ;).\n\nphpcs pozwala tak\u017ce tworzy\u0107 swoje w\u0142asne standardy kodowanie oraz - co bardzo mnie cieszy - podpi\u0105\u0107 go jako precommit hook do svn'a.", 
+      "tags": "php,programowanie,tools,webdev", 
+      "loc": "/posts/blog20080902lint-dla-php.html", 
+      "title": "lint dla php"
+    }, 
+    {
+      "text": "Czasem w Ubuntu (np przy pakietach proposal) przychodzi wy\u017csza wersja kernela bez upgrade drivera do virtualbox'a\nWtedy pomaga mi taka kombinacja\n\n\nsudo apt-get install virtualbox-ose-source\n\nsudo m-a update\n\nsudo m-a prepare\n\nsudo m-a a-i virtualbox-ose\n\nsudo /etc/init.d/vboxdrv restart\n\n\n\nRestart virtualbox'a i gotow. Back to work.", 
+      "tags": "linux,tools,ubuntu", 
+      "loc": "/posts/blog20080829virtualbox-brakujacy-vboxdrv-kernel-ubuntu.html", 
+      "title": "virtualbox brakuj\u0105cy vboxdrv kernel + ubuntu"
+    }, 
+    {
+      "text": "W Netbeans 6.5 pojawia si\u0119 support dla php5. W/g informacji na stronie netbeans oznacza to:\nPHP Editor (Code completion, syntactic and semantic code highlighting)\n    Support for heredoc notation and PHTML\n    Debugging using Xdebug\n    Generators for MySQL database code snippets\nTemat, kt\u00f3ry najbardziej mnie interesowa\u0142 to jak zadzia\u0142a debugging przy pomocy Xdebug. Postanowi\u0142em sprawdzi\u0107 to z istniej\u0105cym projektem bazuj\u0105cym na frameworku Symfony.\nZainstalowa\u0142em netbeans pobieraj\u0105c odpowiedni\u0105 paczk\u0119 ze strony netbeans.\n\nZainstalowa\u0142em Xdebug poprzez pecl install xdebug i dodaniu do konfiguracji php wierszy:\n\n\n\n# xdebug, jako zend_extension. \u015bcie\u017cke zmieni\u0107 nale\u017cy oczywi\u015bcie na odpowiedni\u0105 dla Twojej instalacji\n\nzend_extension=/usr/lib/php5/20060613+lfs/xdebug.so\n\nxdebug.remote_enable=on\n\n\n\n\n\ndoda\u0142em w netbeans nowy projekt php z istniej\u0105cymi \u017ar\u00f3d\u0142ami (projekt ju\u017c mam uruchomiony), podaj\u0105c podaczas konfiguracji:\n\n\u015bcie\u017ck\u0119 do \u017ar\u00f3de\u0142 projektu, \nadres url do projektu, \n\nkatalog zawieraj\u0105cy dane web (dost\u0119pne poprzez podany url projektu) w tym przypadku podkatalog 'web' w katalogu  projektu\n\npunkt startowy czyli domy\u015blny kontroler dla projektu, w tym przypadku 'frontend.php' w podkatalogu 'web'\n\n\n\nnast\u0119pnie wystarczy\u0142o otworzy\u0107 plik projektu (np podany wy\u017cej kontroler) z toolbar'a wybra\u0107 'debug project' lub wci\u015bn\u0105\u0107 ctrl+F5\n\nW tym momencie w uruchomionej przegl\u0105darce (u mnie firefox 3.x netbeans otwar\u0142 g\u0142\u00f3wny kontroler projektu wraz z parameterm XDEBUG_SESSION_START=netbeans-xdebug. W tym samym momencie w edytorze netbeans pod\u015bwietlony zosta\u0142 pierwszy wiersz kontrolera ... i ju\u017c.\n\nMo\u017cemy teraz ustawia\u0107 watche, breakpointy, porusza\u0107 si\u0119 step out, step in, step up wybieraj\u0105c opcje z menu 'debug' lub u\u017cywaj\u0105\u0107 skr\u00f3t\u00f3w klawiszowych.\n\nDzi\u0119ki kr\u00f3tkiemu testowi wida\u0107, \u017ce podstawowy debug dzia\u0142a i mo\u017cna sobie pou\u017cywa\u0107. Oczywi\u015bcie je\u017celi lubimy php5 i lubimy netbeans lub kt\u00f3re\u015b z nich musimy u\u017cywa\u0107 ;)", 
+      "tags": "php,webdev", 
+      "loc": "/posts/blog20080824netbeans-65-php5-symfony-xdebug.html", 
+      "title": "netbeans 6.5 + php5 + symfony + xdebug"
+    }, 
+    {
+      "text": "Episod IV Gwiezdnych Wojen transmitowany przez telnet:\ntelnet towel.blinkenlights.nl\n:D", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20080710gwiezdne-wojny-by-telnet.html", 
+      "title": "gwiezdne wojny by telnet"
+    }, 
+    {
+      "text": "", 
+      "tags": "video", 
+      "loc": "/posts/blog20080320ahmed-powraca.html", 
+      "title": "Ahmed powraca ;)"
+    }, 
+    {
+      "text": "Google Maps on FunnyOrDie.com", 
+      "tags": "tools,video", 
+      "loc": "/posts/blog20080127nowe-google-maps.html", 
+      "title": "nowe google maps"
+    }, 
+    {
+      "text": "Ten wyst\u0119p naprawd\u0119 warto zobaczy\u0107 :)", 
+      "tags": "video", 
+      "loc": "/posts/blog20071030gwiazdy-tancza-na-lodzie-umbrella.html", 
+      "title": "gwiazdy ta\u0144cz\u0105 na lodzie & umbrella"
+    }, 
+    {
+      "text": "Serwisu Remember The Milk u\u017cywam zazwyczaj za pomoc\u0105 Gadgetu na google.com/ig.\nDzi\u015b jednak zda\u017cy\u0142o mi si\u0119 zalogowa\u0107 bezpo\u015brednio na stronie i ... zosta\u0142em poproszony o pozwolenie u\u017cycia pluginu Google Gears.\nGoogle Gears to testowa technologia Google pozwalaj\u0105ca aplikacj\u0105 webowym na prac\u0119 w trybie offline.\n\nPierwszy raz z jej u\u017cyciem spotka\u0142em si\u0119 podczas Google Reader'a ale jak wida\u0107 ju\u017c si\u0119 propaguje poprzez sie\u0107 na kolejne serwisy.", 
+      "tags": "onjin,tools,www", 
+      "loc": "/posts/blog20071029remember-the-milk-google-gears.html", 
+      "title": "Remember The Milk & Google Gears"
+    }, 
+    {
+      "text": "Bezp\u0142atne konta pocztowe Gmail w ostatnich dniach troch\u0119 spuch\u0142y i teraz maj\u0105 ok 4,3GB\n\nSkrzynki w Google Apps tak\u017ce maj\u0105 urosn\u0105\u0107. Mo\u017cna o tym przeczyta\u0107 na blogu Google Polska", 
+      "tags": "hosting,tools", 
+      "loc": "/posts/blog20071025rosnie-prezent-na-gmailu.html", 
+      "title": "ro\u015bnie prezent ... na gmailu"
+    }, 
+    {
+      "text": "aj, kil ju :)", 
+      "tags": "onjin,video", 
+      "loc": "/posts/blog20071024achmed-martwy-terrorysta.html", 
+      "title": "Achmed, martwy terrorysta"
+    }, 
+    {
+      "text": "PBS DGA dla TVN24: frekwencja wynios\u0142a 54,9%. To najlepszy wynik po 1989 roku\nTNS OBOP dla TVP: stosunkowo wysoka frekwencja najm\u0142odszych wyborc\u00f3w - 52,4% g\u0142osuj\u0105ych w wieku 18-24 lat.\n\nDodajmy do tego akcj\u0119 z zabieraniem dowod\u00f3w ;) i zaraz wida\u0107 kto na kogo g\u0142osowa\u0142 :D", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20071021wyniki-wyborow-sondaz.html", 
+      "title": "wyniki wybor\u00f3w - sonda\u017c"
+    }, 
+    {
+      "text": "W zamkni\u0119tym pokoju umie\u015bci\u0107 400 cegie\u0142.\nWpu\u015bci\u0107 nowo zatrudnionych do pokoju z ceg\u0142ami, zamkn\u0105\u0107 drzwi\n\nZostawi\u0107 ich samych sobie, wr\u00f3ci\u0107 po 6 godzinach. \n\nOceni\u0107 sytuacj\u0119:\n\nJe\u017celi licz\u0105 ceg\u0142y, da\u0107 ich do ksi\u0119gowo\u015bci.\n\nJak licz\u0105 po raz drugi, da\u0107 ich do audytu.\n\n Jak porozrzucali ceg\u0142y po ca\u0142ym pokoju, da\u0107 ich do dzia\u0142u in\u017cynieryjnego. \n\nJak uk\u0142adaj\u0105 ceg\u0142y w przedziwnym porz\u0105dku, da\u0107 ich do planowania. \n\n Jak rzucaj\u0105 w siebie ceg\u0142ami, da\u0107 ich do dzia\u0142u obs\u0142ugi.\n\nJak \u015bpi\u0105, da\u0107 ich do dzia\u0142u zabezpiecze\u0144. \n\nJak pokruszyli ceg\u0142y na gruz, da\u0107 ich do dzia\u0142u informatyki. \n\nJak siedz\u0105 bezczynnie, da\u0107 ich do kadr. \n\nJak m\u00f3wi\u0105, \u017ce przetestowali r\u00f3\u017cne kombinacje i szukaj\u0105 dalszych, ale nie ruszyli ani jednej ceg\u0142y, da\u0107 ich do sprzeda\u017cy. \n\nJak ju\u017c wyszli do domu, da\u0107 ich do marketingu. \n\nJak si\u0119 gapi\u0105 przez okno, da\u0107 ich do planowania strategicznego. \n\nJak gadaj\u0105 mi\u0119dzy sob\u0105, a nie prze\u0142o\u017cyli ani jednej ceg\u0142y, pogratulowa\u0107 im i da\u0107 ich do zarz\u0105du. \n\nJak si\u0119 ob\u0142o\u017cyli ceg\u0142ami w taki spos\u00f3b, \u017ceby nie by\u0142o ich wida\u0107 ani s\u0142ycha\u0107 - da\u0107 ich na listy wyborcze do parlamentu.", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20070827jak-prawidlowo-przydzielic-obowiazki-nowym-pracownikom.html", 
+      "title": "Jak prawid\u0142owo przydzieli\u0107 obowi\u0105zki nowym pracownikom"
+    }, 
+    {
+      "text": "Animator vs. Animation by *alanbecker on deviantART", 
+      "tags": "sztuki walki,tools", 
+      "loc": "/posts/blog20070707macromedia-flash-problem.html", 
+      "title": "macromedia flash problem"
+    }, 
+    {
+      "text": "Poka\u017c sw\u00f3j XHTML jak si\u0119 nie wstydzisz. Na stronie potnij.com mo\u017cesz dowiedzie\u015b si\u0119 wi\u0119cej o akcji \"go\u0142ych stron\" oraz si\u0119 do niej przy\u0142\u0105czy\u0107.\nPrzy okazji mo\u017ce si\u0119 dowiesz jak widz\u0105 Twoj\u0105 stron\u0119 wyszukiwarki oraz szcz\u0119\u015bliwi posiadacze przegl\u0105darki Lynx.", 
+      "tags": "css,www", 
+      "loc": "/posts/blog20070405goly-i-wesoly.html", 
+      "title": "go\u0142y i weso\u0142y"
+    }, 
+    {
+      "text": "Dosta\u0142em w\u0142asnie informacj\u0119 o sprz\u0105taniu nieaktualnych danych z zasob\u00f3w internetu.\nNie b\u0119d\u0119 si\u0119 rozpisywa\u0142 tylko zamieszcz\u0119 otrzyman\u0105 od NASK wiadomo\u015b\u0107 (wiadomo\u015b\u0107 otrzyma\u0142em dzi\u0119ki uprzejmo\u015bci administrator\u00f3w chrome.pl).\n\n--- Forwarded message ---\nFrom: NASK Polska \nTo: postmaster@xiaoka.com\nMessage-Id: \nDate: Sun, 30 Mar 2007 23:12:66 +0200\nSubject: Wa\u017cna informacja\nNASK POLSKA\nInformacja Poufna\nUWAGA! NIE \u0141\u0104CZ SI\u0118 Z INTERNETEM MI\u0118DZY  23:59 31 MARCA 2007 (GMT) A\u017b DO \n00:01 2 KWIETNIA 2007 (GMT) \n Uwaga  Uwaga  Uwaga  Uwaga *** \nJak wszyscy wiemy internet jest coraz bardziej wype\u0142niony \u015bmieciami. \nKa\u017cdego dnia jest tego coraz wi\u0119cej - spam, nieczynne domeny, stare \nserwisy ftp,  opuszczone serwisy www, bezpa\u0144skie roboty i w\u0119druj\u0105ce \nskrypty. Proces czyszczenia ma jeden cel, dzi\u0119ki niemu internet b\u0119dzie \nszybszy, czystszy i du\u017co bezpieczniejszy.\nW tym roku czyszczenie zaczyna si\u0119 31 marca o 23:59 (GMT) i b\u0119dzie trwa\u0107 \na\u017c do 00:01 (GMT) drugiego kwietnia. Podczas tego 24 godzinnego okresu, \npi\u0119\u0107 pot\u0119\u017cnych robot\u00f3w stworzonych przez Google, Microsoft, Amazon oraz \nPentagon i CERN, umieszczonych w r\u00f3\u017cnych miejsca \u015bwiata zacznie \nprzeczesywa\u0107 internet i kasowa\u0107 wszystkie dane, kt\u00f3re znajd\u0105.\nW celu ochrony swoich cennych danych przed usuni\u0119cie, prosimy o \ndokonanie nast\u0119puj\u0105cych czynno\u015bci:\n\nOd\u0142\u0105cz wszystkie terminale i sieci LAN od internetu.\n\n\nWy\u0142\u0105cz wszystkie swoje serwery internetowe albo od\u0142\u0105cz kabel \n\u0142\u0105cz\u0105cy je z internetem.\n\n\nOd\u0142\u0105cz wszystkie dyski, pendrivy, mp3 playery oraz dyski \nprzeno\u015bne od jakichkolwiek urz\u0105dze\u0144, kt\u00f3re mog\u0105 mie\u0107 styczno\u015b\u0107 z \n\ninternetem.\nUnikaj po\u0142\u0105czenia jakiegokolwiek komputera czy kom\u00f3rki z \ninternetem.\nZdajemy sobie spraw\u0119, jak wielk\u0105 niewygod\u0119 mo\u017ce to sprawi\u0107 wielu \nu\u017cytkownikom internetu, bardzo przepraszamy za to. Jednak\u017ce jeste\u015bmy \npewnie, \u017ce wszystkie te dolegliwo\u015bci, co najmniej wynagrodzone zostan\u0105 \nprzez zwi\u0119kszenie pr\u0119dko\u015bci i efektywno\u015bci Internetu, jak tylko zostanie \non oczyszczony z internetowego \u015bmiecia.\nDzi\u0119kujemy za wsp\u00f3\u0142prac\u0119.\nKrystian Silirpa-Amir P\nDyrektor d/s Utrzymania Sieci NASK \nCentrala Naukowo Akademickich Sieci Komputerowych Polska\nAdministratorzy i inni: Od czasu ostatniego czyszczenia Internetu ilo\u015b\u0107 \nu\u017cytkownik\u00f3w internetu wzros\u0142a dramatycznie. Prosimy o pomoc w \nostrze\u017ceniu tak du\u017cej ilo\u015bci os\u00f3b, jak tylko si\u0119 da. \nJe\u015bli mo\u017cesz, prosz\u0119 przeka\u017c t\u0105 informacj\u0119 swoim wsp\u00f3\u0142pracownikom, \nszefowi oraz administratorowi sieci.", 
+      "tags": "hosting,onjin,www", 
+      "loc": "/posts/blog20070401sprzatanie-internetu.html", 
+      "title": "Sprz\u0105tanie internetu"
+    }, 
+    {
+      "text": "Kto\u015b widzia\u0142 pulpit Visty ? (ja sie nie skusi\u0142em) To popatrzy niech teraz na Beryla:", 
+      "tags": "onjin,tools", 
+      "loc": "/posts/blog20070320beryl-vs-vista.html", 
+      "title": "Beryl vs Vista"
+    }, 
+    {
+      "text": "Ostatnio wpad\u0142 mi do Firefox'a ciekawie zapowiadaj\u0105cy si\u0119 plugin SamePlace. U\u017cywaj\u0105c sieci Jabber (wi\u0119c tak\u017ce Google Talk) pozwala on opr\u00f3cz komunikacji tekstowej (zwyk\u0142y chat) na:\nu\u017cywanie wsp\u00f3lnej tablicy do rysowania (Whiteboard),\nwsp\u00f3lnego widoku wska\u017anika myszy (po otwarciu tej samej strony przez obie strony konwersacji mo\u017cna wskazywa\u0107 r\u00f3zne elementy na ekranie)\n\nwsp\u00f3\u0142dzieli\u0107 ogl\u0105danie prezentacji,\n\nzsynchronizowanych map Google,\nwys\u0142a\u0107 link do aktualnie ogl\u0105danej strony przy pomocy funkcji 'Send link to...',\n\nprzeci\u0105ga\u0107 obrazki z ogl\u0105danej strony bezpo\u015brednio do okna rozmowy,\n\notwiera\u0107 odno\u015bniki na stronach w formacie xmpp:,\n\ngra\u0107 w szachy (wersja alfa ;) ),\n\nWersja stabilna to w tej chwili 0.6.0 ale ju\u017c teraz pozwala na przyspieszenie wsp\u00f3\u0142pracy z naszymi znajomymi/ wsp\u00f3\u0142pracownikami.\nCo do samego Google Talk to do swojej strony startowej http://www.google.pl/ig mo\u017cna doda\u0107 sobie odpowiedni Google Talk Gadget.", 
+      "tags": "jabber,tools", 
+      "loc": "/posts/blog20070315jabber-google-firefox-itp.html", 
+      "title": "Jabber google firefox itp"
+    }, 
+    {
+      "text": "W trakcie ostatnich zmian Dreamhost umo\u017cliwi\u0142 tworzenie kod\u00f3w promocyjnych, kt\u00f3re opr\u00f3cz zni\u017cki na zakup planu hostingowego, daj\u0105 tak\u017ce:\ndodatkowe miejsce na dysku (10-100% wi\u0119cej)\ndodatkowy transfer miesi\u0119czny (10-100% wi\u0119cej)\n\ndodatkowe bezp\u0142atne domeny (1-5 domen)\n\ndodatkowe adresy ip (1-3 adres\u00f3w, opr\u00f3cz standardowego)\n\nTworz\u0105c kod promocyjny masz teraz wi\u0119ksze pole do popisu. Na przyk\u0142ad kod onjin50 daje zni\u017ck\u0119 $50 na dowolny plan hostingowy, natomiast kod onjin1ip \u0142\u0105czy dodatkowy adres ip wraz ze zni\u017ck\u0105 $20.", 
+      "tags": "hosting", 
+      "loc": "/posts/blog20070314dreamhost-dodatkowy-adres-ip.html", 
+      "title": "Dreamhost + dodatkowy adres ip"
+    }, 
+    {
+      "text": "Dzie\u0144 prezent\u00f3w dzi\u015b si\u0119 jeszcze nie sko\u0144czy\u0142. Tym razem Google w Picasa Web Albums zwiekszy\u0142a pojemno\u015b\u0107 konta (na fotki oczywi\u015bcie)  z 250MB do 1GB oraz dodana zosta\u0142a wyszukiwarka by \u0142atwiej odnajdywa\u0107 albumy.\nPicasa Web Albums - je\u017celi jeszcze kto\u015b nie wiem - jest bezp\u0142atn\u0105, internetow\u0105 galeri\u0105 zdj\u0119\u0107 zintegrowan\u0105 z programem Picasa do katalogowania i obr\u00f3bki zdj\u0119\u0107 dostarczanym (tu niespodzianka: tak\u017ce bezp\u0142atnie :) ) przez Google.\nPicasa integruje si\u0119 tak\u017ce z Bloggerem oraz Gmailem.", 
+      "tags": "hosting,tools,www", 
+      "loc": "/posts/blog20070312picasa-web-albums-puchnie.html", 
+      "title": "Picasa Web Albums puchnie"
+    }, 
+    {
+      "text": "9-tego marca Dreamhost poinformowa\u0142 o wykonanym upgrade ich sieci, co zaowocowa\u0142o oko\u0142o 3-krotym przy\u015bpieszeniem komunikacji z ich serwerami.\nW\u0142a\u015bnie po\u0142\u0105czenie z dreamhost oraz ich panel by\u0142y jak dla mnie elementami odstaj\u0105cymi od reszty ich oferty. Na pocz\u0105tku miesi\u0105ca panel tak\u017ce do\u015bwiadczy\u0142 upgrade (cho\u0107 wiele mu jeszcze brakuje do idea\u0142u) i wraz ze zwi\u0119kszeniem pr\u0119dko\u015bci po\u0142\u0105czenia stanowi to o tym, \u017ce Dreamhost nie \u015bpi i ci\u0105gle si\u0119 rozwija.", 
+      "tags": "hosting,www", 
+      "loc": "/posts/blog20070312dreamhost-szybciej.html", 
+      "title": "Dreamhost szybciej"
+    }, 
+    {
+      "text": "W sam raz na poranek przed kodowaniem.", 
+      "tags": "muzyka", 
+      "loc": "/posts/blog20070223jamendo-gra.html", 
+      "title": "Jamendo gra"
+    }, 
+    {
+      "text": "Nawet nic nie b\u0119d\u0119 pisa\u0142, zobaczcie sami jak dzia\u0142a.", 
+      "tags": "onjin,tools", 
+      "loc": "/posts/blog20070117iphone-w-akcji.html", 
+      "title": "iPhone w akcji"
+    }, 
+    {
+      "text": "Svnauto jest wrapperem konsolowej komendy 'svn', kt\u00f3ry automatyzuje i standaryzuje wykonywanie rozga\u0142\u0119zie\u0144 (branches) i z\u0142\u0105cze\u0144 (merge).\nSC jest skryptem napisanym w j\u0119zyku Ruby i jest dost\u0119pny poprzez RubyGems:\n\n\ngem install svnauto --include-dependencies\n\n\n\nHmm, ale czemu to nie dzia\u0142a?\n\nSkrypt sc bazuje na komunikatach zwracanych przez komend\u0119 svn w j\u0119zyku angielskim, wi\u0119c nie b\u0119dzie dzia\u0142a\u0107 poprawnie w innych lokalizacjach. Mo\u017cna to rozwi\u0105za\u0107 np. tak:\n\n\nmv /usr/bin/sc /usr/bin/sc.orig\n\n\n\nstworzy\u0107 nowy plik /usr/bin/sc:\n\n\n#!/bin/bash\n\nLC_ALL=C\n\n/usr/bin/sc.orig $*\n\n\n\ni nada\u0107 mu prawa do wykonywania (w przypadku system\u00f3w Linux):\n\n\nchmod 755 /usr/bin/sc\n\n\n\nPodstawy na pocz\u0105tek\n\nStandardowa praca z SC wygl\u0105da mniej wi\u0119cej tak:\nKonfigurujemy dost\u0119p do naszego repozytorium (SC obs\u0142uguje ich wiele)\n\n  sc config --add\n\n\nTworzymy nowy projekt (zostaniemy zapytani o repozytorium, kt\u00f3rego chcemy u\u017cyc)\n\n  sc create my-new-project\n\n\nW naszym repozytorium zostanie dodany katalog my-new-project wraz ze struktur\u0105:\n\n myproject:\n  |\n  +--trunk\n  |   |\n  |   +--project-files\n  |\n  +--branches\n  |   |\n  |   +--rel\n  |   +--bug\n  |   +--exp\n  |\n  +--tags\n      |\n      +--rel\n      +--bug\n      +--exp\n\n\n\nDo katalogu ze zr\u00f3d\u0142ami lokalnymi (domy\u015blnie ~/src, ale mo\u017cemy to zmieni\u0107 podczas konfigurowania repozytorium w SC) zostanie wyci\u0105gni\u0119ty trunk naszego nowego projektu do katalogu ~/src/nazwa_repozytorium/my-new-project-trunk.\nW przypadku kolejnych pobra\u0144 projektu (np, na inn\u0105 maszyn\u0119, dla innego u\u017cytkownika) wywo\u0142ujemy komend\u0119:\n\n sc checkout my-new-project\n\n\ni dostaniemy domy\u015blnie \u017ar\u00f3d\u0142a trunk'a do lokalnej kopii. U\u017cywaj\u0105c opcji w linii komend (-r, -b, -e) mo\u017cemy pobra\u0107 odpowiednio wybrany release, bug lub eksperymentaln\u0105 ga\u0142\u0105\u017a.\nTu sobie pracujemy normalnie jak to z SVN'em bywa, add, commit, update.\nKolejne wydania\n\nAby wyda\u0107 kolejn\u0105 wersj\u0119 naszego projektu wydajemy komend\u0119:\n\n sc release 1.0.0\n\n\nNasz trunk zostanie skopiowany do branches/rel/1.0 i tags/rel/1.0 oraz do ~src/nazwarepozytorium/my-new-project-rel-1.0 zostanie wyci\u0105gni\u0119ty ten release.\nPraca z b\u0142\u0119dami\n\nJe\u017celi znajdziemy b\u0142\u0105d, wydajemy komend\u0119:\n\n sc bug 1\n\n\ngdzie 1 to numer b\u0142\u0119du (przydzielony np przez trac'a). W naszym repozytorium zostanie za\u0142o\u017cony katalog branches/bug/1 i oczywi\u015bcie trafi do nas jego lokalna kopia ~/src/nazwarepozytorium/my-new-project-bug-1.\nPo naprawieniu b\u0142\u0119du zamykamy go (i zatwierdzeniu zmian przez 'commit' oczywi\u015bcie):\n\n sc bug --close 1\n\n\nZostaniemy zapytani czy zrobi\u0107 merge naszej poprawki do release 1.0, a nast\u0119pnie czy chcemy te\u017c t\u0105 poprawk\u0119 zmergowa\u0107 do trunk'u, gdzie najcz\u0119\u015bciej na wszystko si\u0119 potulnie zgadzamy.\nWersje eksperymentalne\n\nTworz\u0105c nowy eksperymentane rozga\u0142\u0119zienie kodu wydajemy komend\u0119:\n\n sc exp new_feature\n\n\nPodczas pracy z tak\u0105 ga\u0142\u0119zi\u0105 przyda nam si\u0119 mo\u017cliwo\u015b\u0107 z\u0142\u0105czenia zmian z trunk'a do nas:\n\n sc expt --up new_feature\n\n\noraz na zako\u0144czenie prac (lub w miar\u0119 potrzeb) z\u0142\u0105czenie ga\u0142\u0119zi eksperymentalnej z trunkiem:\n\n sc exp --down new_feature\n\n\nCo ja z tego mam\n\nDzi\u0119ki svnauto mo\u017cemy zapomnie\u0107 o podawaniu pe\u0142nej \u015bcie\u017cki do repozytorium (jest skonfigurowana na pocz\u0105tku pracu), wi\u0119c przegl\u0105danie projektu umo\u017cliwia nam prosta komenda\n\n sc list my-new-project\n\n\nDodatkowo mamy porz\u0105dek w naszym repozytorium. Nawet je\u017celi b\u0119dziemy potrzebowali z\u0142\u0105czy\u0107 kilka rozga\u0142\u0119zie\u0144 w jeden niestandardowy projekt z r\u00f3\u017cnymi poprawkami, \u0142atwo nam jest odnale\u017a\u0107 wszystkie potrzebne nam ga\u0142\u0119zie i pojedynczo po\u0142\u0105czy\u0107.\nPraca nad poprawkami i nowymi wersjami jest prosta dzi\u0119ki automatycznemu \u0142\u0105czeniu odpowiednich ga\u0142\u0119zi. Oczywi\u015bcie nie uwolni nas to od rozwi\u0105zywania konflikt\u00f3w, ale operacje, kt\u00f3re wykonujemy ju\u017c prawie automatycznie (prawie robi r\u00f3\u017cnic\u0119, np liter\u00f3wki, b\u0142\u0105d w nazwie ga\u0142\u0119zi) s\u0105 robione naprawd\u0119 automatycznie.\nDzi\u0119ki temu mo\u017cemy si\u0119 skupi\u0107 na pracy nad projektem, zamiast nad prowadzeniem repozytorium do projektu.", 
+      "tags": "tools", 
+      "loc": "/posts/blog20070107automatyzacja-pracy-z-svn-svnauto.html", 
+      "title": "automatyzacja pracy z svn - svnauto"
+    }, 
+    {
+      "text": "Mo\u017ce jestem sp\u00f3\u017aniony ale znalaz\u0142em nowego aardvark'a na http://addons.mozilla.org/ w wersji 2.0 dzia\u0142aj\u0105cy z firefox'em 2, wi\u0119c m\u00f3j fix na wersj\u0119 1.1 dla firefox'a 2 przesta\u0142 by\u0107 potrzebny.", 
+      "tags": "tools,www", 
+      "loc": "/posts/blog20061221aardvark-20.html", 
+      "title": "aardvark 2.0"
+    }, 
+    {
+      "text": "Aardvark to \u015bwietne narz\u0119dzia dla developera stron internetowych.\nNiestety po aktualizacji firefox'a do wersji 2.0 przesta\u0142o si\u0119 instalowa\u0107, zg\u0142aszaj\u0105c, \u017ce najwy\u017csza wersja firefox'a, z kt\u00f3r\u0105 wsp\u00f3\u0142pracuje to 1.6.\nUnzip -> vim -> zip i mamy wersj\u0119 dzia\u0142aj\u0105c\u0105 w firefox'ie 2.0 :)\n\u00bb aardvark dla firefox'a 2.0\naktualizacja: jest juz oficjalna wersja dla firefox'a 2\n\u00bb aardvark dla firefox'a 2.0", 
+      "tags": "tools,www", 
+      "loc": "/posts/blog20061103aardvark-i-firefox20.html", 
+      "title": "aardvark i firefox2.0"
+    }, 
+    {
+      "text": "Czy\u017cby 'kto\u015b' w ko\u0144cu zainteresowa\u0142 si\u0119 zdesperowanymi u\u017cytkownikami Linuksa ? I dobrze, bo cho\u0107 beta to mamy ju\u017c flash player'a 9.\nI co tu wi\u0119cej pisa\u0107 :) pozostaje potestowa\u0107.", 
+      "tags": "tools,www", 
+      "loc": "/posts/blog20061019linux-flash-player-9.html", 
+      "title": "linux flash player 9"
+    }, 
+    {
+      "text": "Jamendo to serwis internetowy pozwalaj\u0105cy artystom na udost\u0119pnianie swojej tw\u00f3rczo\u015bci w internecie na zasasach licencji Creative Commons. W ten spos\u00f3b mo\u017cna zaistnie\u0107, dotrze\u0107 do szerokiego grona s\u0142uchaczy, informowa\u0107 ich o koncertach.\nS\u0142uchacze udost\u0119pnione utwory mog\u0105 ods\u0142ucha\u0107 (w praktycznie dowolnych odtwarzaczu muzyki w formacie Ogg lub MP3), legalnie pobra\u0107 za pomoc\u0105 BitTorrenta lub eMula (programy P2P), napisa\u0107 rezencj\u0119. Je\u017celi artysta nam si\u0119 spodoba mo\u017cemy kupi\u0107 jego p\u0142yt\u0119 lub wp\u0142aci\u0107 dla niego pieni\u0105dz\u0119.\nPodczas s\u0142uchania, dzi\u0119ki systemowi iRATE system b\u0119dzie dobiera\u0142 dla nas muzyk\u0119 weg\u0142ug naszych gust\u00f3w.\nCa\u0142a platforma jest oczywi\u015bcie bezp\u0142atna.", 
+      "tags": "onjin,tools", 
+      "loc": "/posts/blog20060928muzyka-sluchanie-promocja.html", 
+      "title": "muzyka, s\u0142uchanie, promocja"
+    }, 
+    {
+      "text": "Kolejna tablica informatyczna, tym razem dla frameworka JavaScript prototype.\nprototype cheat sheet", 
+      "tags": "tools,www", 
+      "loc": "/posts/blog20060809prototype-cheat-sheet.html", 
+      "title": "prototype cheat sheet"
+    }, 
+    {
+      "text": "Potrzebowa\u0142em zamieni\u0107 .dbf na .csv. Znalaz\u0142em odpowiedni skrypt ale ... aby by\u0142 porz\u0105dek w dystrybucji zmontowa\u0142em do niego .ebuild (gdy\u017c takowego nie znalaz\u0142em).\nMo\u017ce komu\u015b te\u017c si\u0119 przyda (wersja dbf2csv to 5.0).", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20060731gentoo-dbf2csv-ebuild.html", 
+      "title": "gentoo dbf2csv ebuild"
+    }, 
+    {
+      "text": "Google jak zawsze do przodu i w kierunku OpenSource (czy te\u017c raczej w kierunku programist\u00f3w, z kt\u00f3rymi stara si\u0119 \u017cy\u0107 dobrze) otwar\u0142o wczoraj hosting projekt\u00f3w.\nW prezencie dostajemy Issue Tracker nie odbiegaj\u0105cy zbytnio od przyj\u0119tych standard\u00f3w funkcjonalno\u015bci tego typo program\u00f3w, dost\u0119p do repozytorium SVN poprzez HTTPS z dost\u0119pem anonimowym (tylko do odczytu) oraz dla nas (za pomoc\u0105 wygenerowanego has\u0142a).\nW cz\u0119\u015bci administracyjnej mo\u017cemy zmieni\u0107 nazw\u0119 projektu, jego opis, licencj\u0119 (od Apache, Artistic, GNU General/Lesser, MIT, Mozilla Public oraz BSD) oraz pola dodatkowe (dowolne), zestaw odno\u015bnik\u00f3w do strony projektu, forum i bloga. Mo\u017cemy te\u017c poda\u0107 adresy email, na kt\u00f3re zostan\u0105 wys\u0142ane powiadomienia o zmianach w repozytorium kodu.\nKolejne opcje administracyjne to zarz\u0105dzanie w\u0142a\u015bcicielami i cz\u0142onkami zespo\u0142u projektowego, ustawienia Issue Trackera oraz opcja usuni\u0119cia projektu.\nZ poziomu przegl\u0105darki mamy te\u017c mo\u017cliwo\u015b\u0107 przegl\u0105dania zasob\u00f3w repozytorium.\nDzi\u015b serwis choci powoooli, lecz zapewnie spowodowane jest to obci\u0105\u017ceniem wywo\u0142anym przez rzesze zainteresowanych ;)", 
+      "tags": "tools", 
+      "loc": "/posts/blog20060728google-code-free-hosting.html", 
+      "title": "Google Code Free Hosting"
+    }, 
+    {
+      "text": "Istniej\u0105 dwa sposoby projektowania oprogramowania. Mo\u017cna napisa\u0107 je tak prosto, \u017ce w oczywisty spos\u00f3b nie b\u0119dzie w nim niedoskona\u0142o\u015bci; mo\u017cna te\u017c uczyni\u0107 je tak skomplikowanym, \u017ce nie bedzie w nim \u017cadnych oczywistych niedoci\u0105gni\u0119\u0107. Pierwsza metoda jest znacznie trudniejsza.The Emperor's Old Clothes. CACM luty 1981 - C.A.R Hoare", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20060628zrozumiec-czyjas-droge.html", 
+      "title": "Zrozumie\u0107 czyj\u0105\u015b drog\u0119"
+    }, 
+    {
+      "text": "Google Browser Sync jest rozszerzeniem dla Firefox'a, kt\u00f3re synchronizuje ustawienia przegl\u0105darki (bookmarki, histori\u0119, ciasteczka, zapisane has\u0142a) pomi\u0119dzy komputerami (np. Tw\u00f3j Firefox w domu i pracy). Pozwala tak\u017ce odtworzy\u0107 otwarte panele i okna przegl\u0105darki.\nRozszerzenie to wymaga posiadania konta w Google (GMail). Po zainstalowaniu mamy do wyboru  konfiguracj\u0119 standardow\u0105 (synchronizacja wszystkiego i szyfrowanie przechowywanych hase\u0142 oraz ciasteczek) oraz zaawansowan\u0105, w kt\u00f3rej sami wybieramy co ma by\u0107 synchronizowane czy te\u017c szyfrowane. Podajemy PIN chroni\u0105cy dodatkowo nasze dane i zaczyna si\u0119 proces synchronizacji.\nStart przegl\u0105darki b\u0119dzie spowolniony o czas potrzebny do synchronizacji danych z sewerami google. Ale za to po otwarciu kilku ciekawych stron w panelach, za\u0142o\u017ceniu kilku kont z zapami\u0119taniem hase\u0142 i zamkni\u0119ciu przegl\u0105darki w pracy ... wracamy do domu, otwieramy przegl\u0105dark\u0119 i mamy stan przegl\u0105darki z chwili zamkni\u0119cia jej w pracy (has\u0142a, panele, itp)", 
+      "tags": "tools,www", 
+      "loc": "/posts/blog20060609firefox-google-synchronizacja.html", 
+      "title": "firefox & google = synchronizacja"
+    }, 
+    {
+      "text": "Kto by si\u0119 spodziewa\u0142 ;). Ale ze strony Sony BMG nie by\u0142 to krok \u015bwiadomy.\nNie b\u0119d\u0119 si\u0119 rozpisywa\u0142. Wszystkie konkrety s\u0105 w artykule na nowej stronie http://www.hack.pl/", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20060606darmowe-mp3-od-sony-bmg.html", 
+      "title": "darmowe mp3 od ... Sony BMG"
+    }, 
+    {
+      "text": "Dynamika, technika, taktyka i psychika. Nic doda\u0107 nic uj\u0105\u0107. Mia\u0142em okazj\u0119 bra\u0107 udzia\u0142 w treningu prowadzonym przez Narujime (Ob\u00f3z Letni Krak\u00f3w - Karate Kyokushin). Robi wra\u017cenie, niezapomniane.", 
+      "tags": "sztuki walki", 
+      "loc": "/posts/blog20060525ruy-narujima.html", 
+      "title": "Ryu Narujima"
+    }, 
+    {
+      "text": "Jak ju\u017c jestem przy tym temacie do podobny zestaw dla fan\u00f3w VIM'a (m.in. mnie ;) )\nhttp://viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html", 
+      "tags": "tools", 
+      "loc": "/posts/blog20060523vim-cheat-sheet.html", 
+      "title": "vim - cheat sheet"
+    }, 
+    {
+      "text": "Swego czasu pojawi\u0142y si\u0119 'tablice informatyczne', b\u0119d\u0105ce kilkustronicowym skr\u00f3tem dokumentacji oraz indeksem poj\u0119\u0107 / funkcji, mi\u0119dzy innymi dla PHP (i nie pami\u0119tam czego jeszcze).\nPodobne zestawy mo\u017cemy pobra\u0107 za darmo (PNG, PDF) ze strony http://www.ilovejackdaniels.com/cheat-sheets/\nW momencie gdy to pisz\u0119 dost\u0119pne s\u0105 zestawy dla:\ncolor\u00f3w RGB zapisanych heksadecymalnie\nPHP\n\nCSS\n\nmod_rewrite\n\nMySQL\n\nJavaScript\n\nHTML entities\n\nASP / VBScript\n\nRuby on Rails\n\nWorld of Warcraft\n\nMa\u0142a rzecz, a cieszy.", 
+      "tags": "css,tools,www", 
+      "loc": "/posts/blog20060523cheat-sheets.html", 
+      "title": "Cheat sheets"
+    }, 
+    {
+      "text": "Wykryte na YouTube.", 
+      "tags": "sztuki walki", 
+      "loc": "/posts/blog20060511urban-ninja.html", 
+      "title": "Urban Ninja"
+    }, 
+    {
+      "text": "15-16 czerwca w Londynie odbedzie si\u0119 kolejna konferencja @media.\nJej celem jest skupienie w jednym miejscu najbardziej znane osoby trudni\u0105ce si\u0119 tworzeniem stron internetowych.\nPoruszane b\u0119dzie wiele zagadnie\u0144 dotycz\u0105cych web design'u jak:\n\nprojektowanie interfejsu u\u017cytkownika\n\nstandardy projektowania stron\n\nCSS\n\nprogramowanie DOM\n\noraz dost\u0119pno\u015b\u0107\n\nAby do\u0142\u0105czy\u0107 do konferencji nale\u017cy si\u0119 zarejestrowa\u0107 na stronie konferencji oraz ui\u015bci\u0107 z g\u00f3ry op\u0142at\u0119 w wysoko\u015bci \u00a3395 + VAT.\n\nOp\u0142ata obejmuje dwudniowy bilet na konferencj\u0119, bufet, wy\u017cywienie oraz program i torb\u0119 (??) konferencji.", 
+      "tags": "css,www", 
+      "loc": "/posts/blog20060407media-2006.html", 
+      "title": "@media 2006"
+    }, 
+    {
+      "text": "Czy zda\u017ca Wam si\u0119 szuka\u0107 jakiej\u015b wolnej konsoli, na kt\u00f3rym\u015b pulpicie ? Mo\u017cna te\u017c do paska w Gnome lub KDE przypi\u0105\u0107 minikonsole (brr).\nWygodnym rozwi\u0105zaniem by\u0142aby podr\u0119czna konsola, pojawiaj\u0105ca si\u0119 kiedy jest potrzebna - podobnie jak w grach typu Quake.\nOsobi\u015bcie znam trzy tego typu rozwi\u0105zania:\nyakuake - konsola z KDE (dzia\u0142a we fluxboxie, wi\u0119c inne WM pewnie te\u017c dadz\u0105 rad\u0119\n        kuake - tak\u017ce konsola z KDE\n        tilda - samodzielna konsola\nMi osobi\u015bcie najmniej podoba\u0142a si\u0119 tilda, za\u015b na biurku ci\u0105gle u\u017cywam yakuake. Domy\u015blny skr\u00f3t klawiszowy dla yakuake to F12, kt\u00f3ry szybko zamieni\u0142em na CTRL+~. Do tego kolory zwyk\u0142ej konsoli, mniejsze fonty i gotowe. Jak to w KDE mo\u017cliwe jest uruchamianie w ramach Yakuake kilku zak\u0142adek. Konsola \u0142adnie si\u0119 chowa gdy na pulpicie wyskoczy na okienko, lub wyst\u0105pi inna akcja pragn\u0105ca focusa.", 
+      "tags": "tools", 
+      "loc": "/posts/blog20060404konsola-jak-w-quake.html", 
+      "title": "Konsola jak w Quake"
+    }, 
+    {
+      "text": "Znalezione w stopce:\n\nPracownik jest zb\u0119dny w firmie gdy prosi o\npodwy\u017ck\u0119, lecz niezast\u0105piony gdy prosi o urlop", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20060330teoria-wzglednosci.html", 
+      "title": "Teoria wzgl\u0119dno\u015bci"
+    }, 
+    {
+      "text": "Po co tworzymy stron\u0119 ? By pisa\u0107 blog. Umieszcza\u0107 informacje o sobie, o naszych zainteresowaniach, itp. Co by to nie by\u0142o, strona nasza b\u0119dzie zawiera\u0107 tre\u015b\u0107 i z jej uwzgl\u0119dnieniem powinna zosta\u0107 ona zbudowana.\nUkierunkowanie na tre\u015b\u0107 oznacza prawid\u0142owe stosowanie znacznik\u00f3w <h1>, <h2> dla odpowiednich nag\u0142\u00f3wk\u00f3w, <ul>, <ol> dla list w tym tak\u017ce menu, <p> dla naszej tre\u015bci oraz <div> dla podzia\u0142u logicznego strony (np. budowy layout).\nOczywi\u015bcie znaczniki te nie wyczerpuj\u0105 listy mo\u017cliwych i potrzebnych do zastosowania w naszym przypadku.\nNa stronie http://www.latenightrabbit.com/ znajduje si\u0119 proste i skuteczne wprowadzenie do prawid\u0142owej budowy strony internetowej przy pomocy oczywi\u015bcie HTML oraz CSS i PHP\nPolecam t\u0105 lektur\u0119 ka\u017cdemu. Materia\u0142 jest napisany w j\u0119zyku angielskim ale najwa\u017cniejszy i tak jest kod. Wi\u0119c je\u015bli widzia\u0142e\u015b kiedy\u015b HTML, CSS lub przypadkiem PHP to powinno wystarczy\u0107.", 
+      "tags": "www", 
+      "loc": "/posts/blog20060322tworzenie-strony-internetowej.html", 
+      "title": "Tworzenie strony internetowej."
+    }, 
+    {
+      "text": "Popularne (cho\u0107 chyba powoli) staj\u0105 si\u0119 serwisy oferuj\u0105ce osobiste strony startowe. Strona taka zawiera cz\u0119sto newsy z interesuj\u0105cych nas serwis\u00f3w, okienko logowanie si\u0119 do naszego serwisu pocztowego, pogod\u0119, kursy walut, notatki i wiele innych.\nZ polskich serwis\u00f3w kojarz\u0119 jedynie startowy.com. Ostatnio du\u017co s\u0142ycha\u0107 tak\u017ce o witrynie Microsoftu live.com. Wczoraj natomiast wpad\u0142 mi do Firefox'a taki adres jak www.netvibes.com/.\nCech\u0105 wsp\u00f3ln\u0105 tych serwis\u00f3w jest wygodna edycja swojej strony oraz wygodnie przemieszczanie jej element\u00f3w. Aby korzysta\u0107 z startowy.com nale\u017cy si\u0119 zarejestrowa\u0107. Otrzymujemy wtedy sw\u00f3j osobisty adres np. mojastrona.startowy.com, kt\u00f3ry mo\u017cemy propagowa\u0107 w\u015br\u00f3d naszych znajomych (dok\u0142adaj\u0105c np. do niej w\u0142asny blog). Serwis ten odbiega wi\u0119c od funkcji tylko naszej osobistej strony startowej.\nlive.com oraz www.netvibes.com natomiast nie daj\u0105 mo\u017cliwo\u015bci stworzenia w\u0142asnego zewn\u0119trznego adresu. Zapami\u0119tuj\u0105 Twoje ustawienia za pomoc\u0105 ciasteczek (cookies) lub po zarejestrowaniu swojego adresu email i ustawieniu has\u0142a, mo\u017cemy uzyska\u0107 dost\u0119p do swojej strony z dowolnego komputera i przegl\u0105darki.\nPod wzgl\u0119dem r\u00f3\u017cnorodno\u015bci box'\u00f3w (funkcji) www.netvibes.com pozostaje na topie, natomiast live.com umo\u017cliwia nam dodatkowo sterowanie layoutem (ilo\u015b\u0107 kolumn, j\u0119zyk strony).\nOczywi\u015bcie live.com (domy\u015blnie) oraz www.netvibes.com s\u0105 serwisami angloj\u0119zycznymi.", 
+      "tags": "onjin,www", 
+      "loc": "/posts/blog20060223wlasna-strona-startowa.html", 
+      "title": "W\u0142asna strona startowa"
+    }, 
+    {
+      "text": "Do strony z wyszukiwarkami dla Firefox'a doda\u0142em wyszukiwark\u0119 do S\u0142ownika Wyraz\u00f3w Obcych Kopali\u0144skiego\nWystarczy klikn\u0105\u0107 na dodaj obok opisu w tabelce, prze\u0142\u0105czy\u0107 w prawym g\u00f3rnym rogu Firefox'a wyszukiwark\u0119 z Google na Kopali\u0144ski i szuka\u0107 :D", 
+      "tags": "onjin,www", 
+      "loc": "/posts/blog20060210slownik-wyrazow-obcych.html", 
+      "title": "s\u0142ownik wyraz\u00f3w obcych"
+    }, 
+    {
+      "text": "D\u0142ugie formularze, podzielone na kilka sekcji ci\u0105gn\u0105ce si\u0119 w d\u00f3\u0142 strony, nie s\u0105 zbyt czytelne. Formularz taki mo\u017cna zmodyfikowa\u0107 dziel\u0105\u0107 go na klikalne etapy lub wizualne zak\u0142adki. Ale je\u017celi mamy wiele takich formularzy napisanych na dodatek w samym HTML'u ?\n\nMo\u017cemy to sobie upro\u015bci\u0107 za pomoc\u0105 JavaScript. Odpowiednia funkcja wywo\u0142ana po za\u0142adowaniu si\u0119 strony [body onLoad=\"funkcja();\"] mo\u017ce wyszuka\u0107 sekcje naszego formularza i zwin\u0105\u0107 je do ciekawszych wizualnie zak\u0142adek.\n\n\u017beby funkcja wiedzia\u0142a co jest sekcj\u0105, nale\u017cy je odpowiednio oznaczy\u0107 np. poprzez odpowiedni\u0105 klas\u0119 CSS 'subpanel'\nDruga wa\u017cna rzecz, skrypt musi wiedzie\u0107 jak nazwa\u0107 zak\u0142adki. Do tego wykorzysta\u0142em atrybut title. Nasz kod wygl\u0105da teraz tak:\n[code]\n\n    sekcja 1\n\n\n    sekcja 2\n\n\n[/code]\nTeraz za pomoc\u0105 JavaScript mo\u017cemy odnale\u017a\u0107 wszystkie znaczniki DIV.\n[code lang=\"javascript\"]\nif (!document.getElementsByTagName\n    || !document.createElement\n    || !document.appendChild) return;\n/ pobieramy wszystkie div'y /\nvar divs = document.getElementsByTagName(\"div\");\n[/code]\nNast\u0119pnie przygotowywujemy dodatkowy element DIV, w kt\u00f3rym umie\u015bcimy stworzone zak\u0142adki.\n[code lang=\"javascript\"]\n/  nr. pierwszego div'a z klas\u0105 subpanel /\nvar firstDiv = -1;\n/ tworzymy div na nasze menu /\nvar menu = document.createElement(\"div\");\nmenu.className = \"panels_menu\";\nmenu.setAttribute(\"id\",\"panels_menu\");\n[/code]\nPozostaje nam przej\u015b\u0107 si\u0119 p\u0119tl\u0105 po wszystkich znalezionych DIV'ach i wybra\u0107 te, kt\u00f3re posiadaj\u0105 klas\u0119 'subpanel'. Z ka\u017cdego z nich pobieramy warto\u015b\u0107 atrybutu title i naszym 'menu' tworzymy odpowiedni odno\u015bnik:\n[code lang=\"javascript\"]\nvar source = divs[i].getAttribute(\"title\");\nif (!source) continue;\nvar link = document.createElement(\"a\");\nlink.setAttribute(\"href\",\"#\"+source);\nlink.setAttribute(\"onclick\",\"activMenu(this); \");\nlink.onclick = new Function('activMenu(this);'); // dla IE\nlink.setAttribute(\"id\",\"menu_\"+divs[i].id); // dla wywo\u0142a\u0144 zewn\u0119trznych\nlink.appendChild(document.createTextNode(source));\n[/code]\nAktywujemy pierwsz\u0105 nasz\u0105 zak\u0142adk\u0119 i dodajemy je do naszego nowego menu:\n[code lang=\"javascript\"]\nif(firstDiv == -1) firstDiv = i;\nif(i == firstDiv) {\n    divs[i].style.display='block';\n    link.setAttribute('class','active');\n}\n/ dodajemy odno\u015bnik do menu /\nmenu.appendChild(link);\nlink.className = \"active\"; // dla IE\n[/code]\nA po zako\u0144czeniu ca\u0142ej p\u0119tli wklejamy nasze zak\u0142adki przed pierwszego DIV'a z klas\u0105 'subpanel':\n[code lang=\"javascript\"]\n/ wklejamy stworzone menu nad pierwszym div'em /\ndivs[firstDiv].parentNode.insertBefore(menu,divs[firstDiv]);\n[/code]\nTyle w temacie stworzenia zak\u0142adek. Pozostaje nam stworzy\u0107 funkcj\u0119 activeMenu(this), kt\u00f3r\u0105 wywo\u0142ujemy po klikni\u0119ciu w odpowiedni\u0105 zak\u0142adk\u0119.\n[code lang=\"javascript\"]\nfunction activMenu(menu) {\n  menubox = document.getElementById('panels_menu');\n  links = menubox.childNodes;\n/ ustalamy clas\u0119 'active' dla naszego\n    odno\u015bnika, a reszcie null /\n  for(x=0;xCSS:\n[code lang=\"css\"]\n   .panels_menu a {\n        color: #eee;\n        text-decoration: none;\n        background: #666;\n        padding: 0px 5px;\n        margin: 0px 2px;\n        border: solid 1px #333;\n     }\n    .panels_menu a:hover {\n        background: #ccc;\n        color: #f33;\n        border-bottom: solid 1px #ccc;\n    }\n    .panels_menu a.active {\n        background: #eee;\n        color: #333;\n        border-bottom: solid 1px #eee;\n    }\n    .subpanel {\n                border: solid 1px #333;\n        padding: 10px;\n        margin: 0 0 10px;\n    }\n[/code]\nWystarczy teraz do <body> doda\u0107 onLoad=\"preparePanels()\" i to ju\u017c wszystko.\nPoni\u017cej jest pe\u0142en kod funkcji preparePanels():\n[code lang=\"javascript\"]\nfunction preparePanels() {\n  if (!document.getElementsByTagName\n    || !document.createElement\n    || !document.appendChild) return;\n  / pobieramy wszystkie div'y /\n  var divs = document.getElementsByTagName(\"div\");\n/ nr. pierwsze div'a z klas\u0105 subpanel /\n  var firstDiv = -1;\n/ tworzymy div na nasze menu /\n  var menu = document.createElement(\"div\");\n  menu.className = \"panels_menu\";\n  menu.setAttribute(\"id\",\"panels_menu\");\nfor (var i=0; itutaj. Odno\u015bniki w lewym g\u00f3rnym rogu strony uruchamiaj\u0105 wersj\u0119 kolejno z i bez preparePanels().\nJe\u017celi komu\u015b si\u0119 ta wiedza przyda, to mi\u0142o mi b\u0119dzie :)", 
+      "tags": "onjin,www", 
+      "loc": "/posts/blog20060209skracanie-formularzy-java-script.html", 
+      "title": "skracanie formularzy + java script"
+    }, 
+    {
+      "text": "Skarbnic\u0105 dziwnych i ciekawych gad\u017cet\u00f3w jak dla mnie jest ThinkGeek. Serwis dzia\u0142a ju\u017c par\u0119 \u0142adnych lat i jak na razie nie znalaz\u0142em jego polskiego odpowiednika (cho\u0107 specjalnie go te\u017c nie szuka\u0142em).\nNiedawno w Firefox'a wpad\u0142 mi link do Gadzet.net - katalog rzeczy fajnych. Jak pisz\u0105 sami autorzy serwisu, jest on \"[...] magazynem/blogiem/(zwij jak chcesz) wypatruj\u0105cym wszelkiej ma\u015bci nowinek gad\u017cetowych, ale tak\u017ce tych starych, ma\u0142o znanych.[...]\" i jest polskim projektem.\nMi spodoba\u0142 si\u0119 lataj\u0105cy budzik ;)", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20060202ciekawe-gadzety.html", 
+      "title": "Ciekawe gad\u017cety"
+    }, 
+    {
+      "text": "Tworzenie strony internetowej jest procesem wymagaj\u0105cym odpowiedniego projektu oraz zarz\u0105dzania.\nZanim napiszemy setki linii wspania\u0142ego kodu HTML, CSS czy PHP nale\u017cy si\u0119 upewni\u0107:\nczego naprawd\u0119 chce klient\n\nczy mo\u017cemy sprosta\u0107 jego oczekiwaniom terminu wykonania, kosztu oraz dzia\u0142ania ostatecznego produktu\n\nczy sta\u0107 nas na wykonanie projektu na zadanych warunkach\n\nczy klienta sta\u0107 na postawione przez nas warunki (np. cenowe)\n\nKlienci cz\u0119sto nie do ko\u0144ca wiedz\u0105 czego potrzebuj\u0105 i dlaczego. Mo\u017cemy otrzyma\u0107  zlecenie na 'zwyk\u0142\u0105 statyczn\u0105 stron\u0119', materia\u0142y pode\u015bl\u0105 nam p\u00f3\u017aniej, jak przygotujemy szablony, itp. Potem otrzymujemy  materia\u0142y w formie listy 200 produkt\u00f3w, kt\u00f3re powinny by\u0107 na stronie podzielone na grupy towarowe, edytowalne z panelu administratora, z mo\u017cliwo\u015bci\u0105 ich zamawiania przez r\u00f3\u017cne grupy klient\u00f3w (detalista, partner, dystrybutor), przyda\u0142a by si\u0119 mo\u017cliwo\u015b\u0107 importu oraz exportu danych z XLS (CSV) i oczywi\u015bcie system news\u00f3w tak\u017ce by\u0142by wskazany.\n\nJe\u017celi w tym momencie jeste\u015bmy na etapie gotowych szablon\u00f3w (X)HTML/CSS oraz zaplanowali\u015bmy 5 dni roboczych na z\u0142o\u017cenie za ich pomoc\u0105 dostarczonych tre\u015bci ... to mo\u017ce by\u0107 \u017ale. Nie m\u00f3wi\u0105c ju\u017c na ile wycenili\u015bmy nasze statyczne strony.\n\nKr\u00f3tka historia obrazuj\u0105ca prosty, modelowy przebieg procesu tworzenie strony, przedstawiona jest na stronie PingMan'a.\n\nJest kr\u00f3tka, wyrazista i ... cz\u0119sto jedynie modelowa :D", 
+      "tags": "www", 
+      "loc": "/posts/blog20060123proces-tworzenia-strony-internetowej.html", 
+      "title": "Proces tworzenia strony internetowej"
+    }, 
+    {
+      "text": "Dzi\u015b dosta\u0142em linka do historii o Chuck'u Norris'ie. Po przeczytaniu odpowiedniej ilo\u015bci ubaw zapewniony :D.\nPodpowied\u017a: w Firefox'ie w menu widok->kodowanie znak\u00f3w pomaga ustawienie na WINDOWS-CP-1250.\nI jeszcze kilka w tym temacie:\nhttp://www.joemonster.org/article.php?sid=5534\n    http://www.joemonster.org/article.php?sid=5525\n    http://www.chucknorrisfacts.com/\n    http://www.4q.cc/chuck/\nMi\u0142ego weekendu.", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20060120troche-smiechu-na-weekend.html", 
+      "title": "Troch\u0119 \u015bmiechu na weekend"
+    }, 
+    {
+      "text": "17 stycznia Google otworzy\u0142o po\u0142\u0105czenia mi\u0119dzy serwerowe pomi\u0119dzy swoim serwisem Google Talk, a reszt\u0105 \u015bwiata XMPP. Tak wi\u0119c ka\u017cdy kto posiada konto pocztowe w domenie @gmail.com, mo\u017ce teraz komunikowa\u0107 si\u0119 u\u017cywaj\u0105c identycznego JID.\nDo pe\u0142ni szcz\u0119\u015bcia mog\u0142oby brakowa\u0107 jedynie komunikatora Google Talk dost\u0119pnego na inne platformy ni\u017c Windows. Ale udost\u0119pnienie przez Google libjingle oraz ich wsp\u00f3\u0142praca z tw\u00f3rcami komunikatora Psi wr\u00f3\u017cy na dobre.", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20060118google-talk.html", 
+      "title": "Google Talk"
+    }, 
+    {
+      "text": "Niedawno pojawi\u0142 si\u0119 Wordpress 2.0. Jest znacznie szybszy od poprzednich wersji (wysy\u0142anie, edytowanie, ogl\u0105danie), wykorzystuje technologi\u0119 AJAX i ma nowy panel admina.\nI z racji tych i innych onjin.net te\u017c posiada ju\u017c wersj\u0119 2.0. Witamy, witamy ;)", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20060112aktualizacja.html", 
+      "title": "aktualizacja"
+    }, 
+    {
+      "text": "Jak mo\u017cemy przeczyta\u0107 na blogu Kevina, pojawi\u0142a si\u0119 wersja Psi sygnowana numerem 0.10.\nZmiany nast\u0105pi\u0142y g\u0142\u00f3wnie w interfejscie komunikatora. Pojawi\u0142y si\u0119 m.in. rozmowy w zak\u0142adkach, automatycznie zmieniaj\u0105cy si\u0119 rozmiar listy kontakt\u00f3w, ustawienia prze\u017aroczysto\u015bci dla okien programu, itp.\nMac binary\n\nSource tarball \n\nWindows binary (with installer)\n\nWindows binary (zipped)", 
+      "tags": "jabber", 
+      "loc": "/posts/blog20060112psi-010.html", 
+      "title": "Psi-0.10"
+    }, 
+    {
+      "text": "Leglock - czyli blokowanie nogi (nogami). Brzmi zwyczajnie ale jak wygl\u0105da. Nic doda\u0107 nic uj\u0105\u0107.\n\nDzi\u0119ki BratQ za podes\u0142anie.", 
+      "tags": "sztuki walki", 
+      "loc": "/posts/blog20060111masakazu-imanari.html", 
+      "title": "Masakazu Imanari"
+    }, 
+    {
+      "text": "Chyba ka\u017cdy wyrzuci\u0142 kiedy\u015b na ekran tabelk\u0119 w HTML'u. Je\u015bli danych du\u017co i dynamiczne, to u\u017cy\u0142 do tego PHP. Aby lepiej ogarn\u0105\u0107 dane, nag\u0142\u00f3wki kolumn zosta\u0142y odno\u015bnikami z ko\u0144c\u00f3wk\u0105 mniej wi\u0119cej tak\u0105:\n[code]\ndata\nilo\u015b\u0107\n\n[/code]\nTa sama tabelka, te same dane. Ale aby j\u0105 posortowa\u0107 trzeba zn\u00f3w odwo\u0142ywa\u0107 si\u0119 do serwera. Wygodniej by by\u0142o gdyby tabelka mog\u0142a si\u0119 sortowa\u0107 po stronie klienta (np. JavaScript). Tu z pomoca przychodzi nam biblioteka sorttable napisana w\u0142a\u015bnie w JavaScript. Skuteczna i prosta w u\u017cyciu. Sp\u00f3jrzcie na ma\u0142y przyk\u0142ad z opisem.\nI nie lepiej tak ?", 
+      "tags": "onjin,www", 
+      "loc": "/posts/blog20060110sortowanie-tabel.html", 
+      "title": "Sortowanie tabel"
+    }, 
+    {
+      "text": "Pojawi\u0142a si\u0119 czwarta wersja testowa komunikatora Psi.  Poza poprawkami znalezionych b\u0142\u0119d\u00f3w, zosta\u0142y te\u017c usuni\u0119te niekt\u00f3re zestawy ikon, co do kt\u00f3rych by\u0142y w\u0105tpliwo\u015bci w sprawie praw u\u017cytkowania.\nJak tylko wersja psi 0.10 zostanie wydana, prace maj\u0105 si\u0119 skoncentrowa\u0107 na portowaniu aplikacji na Qt4 oraz na wsp\u00f3\u0142pracy z Jingle.\nDost\u0119pne aktualne pakiety Psi to:\n\n\u017ar\u00f3d\u0142a (.tar.bz2)\n\nMac (.dmg)\n\nWindows (.zip)", 
+      "tags": "jabber", 
+      "loc": "/posts/blog20060104psi-010-test4.html", 
+      "title": "psi-0.10-test4"
+    }, 
+    {
+      "text": "Kilka dni temu mo\u017cna by\u0142o przeczyta\u0107 o bibliotece libjingle (VoIP dla Jabber/XMPP) wydan\u0105 przez Google.\nA zaraz potem okazuje si\u0119, \u017ce Psi nie \u015bpi lecz te\u017c pracuje czy te\u017c wsp\u00f3\u0142pracuje  z libjingle o czym mo\u017cemy przeczyta\u0107 na PsiWiki.\nWkr\u00f3tce sobie pogadamy :D", 
+      "tags": "jabber", 
+      "loc": "/posts/blog20051229psi-jingle.html", 
+      "title": "psi & jingle"
+    }, 
+    {
+      "text": "Przez te kilka \u015bwi\u0105tecznych dni, postaram si\u0119 zapomnie\u0107 kim jestem - w te zwyk\u0142e dni.\nUciekn\u0119 z mej mr\u00f3wczej \u015bcie\u017cki wij\u0105cej si\u0119 mi\u0119dzy zm\u0119czonymi ludzmi, zmasowanymi w \u015brodkach komunikacji.\nZobacz\u0119 niebo, s\u0142o\u0144ce. Poczuj\u0119 wiatr. Przez g\u0142owe przemknie mgliste wspomnienie cz\u0142owiecze\u0144stwa.\n\nI si\u0119 u\u015bmiechn\u0119. Szeroko, prawdziwie, tak po prostu. Zacisn\u0119 d\u0142onie by zatrzyma\u0107 ten czas jak najd\u0142u\u017cej.\n\nA za kilka dni zn\u00f3w stan\u0119 si\u0119 maszyn\u0105, z rzadkimi przeb\u0142yskami \u015bwiadomo\u015bci.\n\nZ najlepszymi \u017cyczeniami pi\u0119knych, d\u0142ugich chwil dla wszystkich.", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20051223swinteczne-chwile.html", 
+      "title": "\u015awi\u0105teczne chwile"
+    }, 
+    {
+      "text": "Pracuj\u0105c, mo\u017cna wiele dowiedzie\u0107 si\u0119 o ludziach, a szczeg\u00f3lnie o klientach. Jacy s\u0105, czego chc\u0105, itp. Z czasem wiemy coraz wi\u0119cej, a czasem wystarczy przeczyta\u0107 kilka praw Murphy'ego i wszystko staje si\u0119 jasne.\nOsiem praw szanownego klienta.\nKlientowi nigdy nie przyjdzie na my\u015bl ile kosztuje projekt, tylko ile mo\u017cna na tym projekcie zaoszcz\u0119dzi\u0107.\n\nJe\u017celi uda\u0142o Ci si\u0119 wprowadzi\u0107 w programie, wymagane przez klienta poprawki, wtedy on z nich zrezygnuje.\n\n\u017baden klient nie wie czego w\u0142a\u015bciwie chce.\n\nKa\u017cdy klient wie dok\u0142adnie czego nie chce.\n\n\u017baden klient nie chce tego co masz ju\u017c gotowe.\n\nNie wie tak\u017ce co chcia\u0142by mie\u0107 zamiast tego.\n\nKlient, kt\u00f3ry najmniej p\u0142aci marudzi najwi\u0119cej.\n\nKlient \u017c\u0105da najwi\u0119kszych zmian dok\u0142adnie wtedy, kiedy produkt jest ju\u017c gotowy.\n\n\n\nPrawa og\u00f3lne.\n\nNa polecenie \"Napisz Tak lub Nie\" u\u017cytkownik wpisuje \"Tak lub Nie\".\n\nNa polecenie \"Wci\u015bnij ENTER\" u\u017cytkownik wpisuje \"ENTER\".\n\nNa polecenie \"Naci\u015bnij dowolny klawisz\" u\u017cytkownik naciska klawisz SHIFT, ESCAPE, albo przycisk zasilania.\n\nJe\u017celi napiszesz procedur\u0119, kt\u00f3ra zapobiega pojawianiu si\u0119 b\u0142\u0119dnych warto\u015bci, to zawsze znajdzie si\u0119 u\u017cytkownik, kt\u00f3ry j\u0105 pominie.\n\nJe\u017celi istniej\u0105 4 r\u00f3\u017cne mo\u017cliwo\u015bci doprowadzenia programu do krachu i wszystkie 4 zablokujesz, wtedy u\u017cytkownik znajdzie pi\u0105t\u0105 metod\u0119.\n\nNie ma program\u00f3w ca\u0142kowicie idiotoodpornych.\n\nProgram oddany u\u017cytkownikowi w pi\u0105tek wraca do autora w poniedzia\u0142ek.\n\nNa pierwsze 90% programu potrzeba 10% przeznaczonego na jego realizacj\u0119 czasu.\n\n\n\nPozosta\u0142e 10% programu wymaga 90% przeznaczonego na jego realizacj\u0119 czasu.\n\nRozpoczynasz zawsze od pozosta\u0142ych 10%.\n\n10%, od kt\u00f3rych rozpoczynasz prac\u0119 stanowi\u0105 te procedury, kt\u00f3re w ostatecznym rozrachunku zostan\u0105 usuni\u0119te na \u017cyczenie klienta.\n\nJe\u017celi nie wiesz co czynisz, r\u00f3b to w spos\u00f3b elegancki.\n\nW zespole programist\u00f3w ka\u017cdy ma genialny plan rozwi\u0105zania problemu. Wszystkie plany si\u0119 wzajemnie wykluczaj\u0105 i \u017caden nie prowadzi do poprawnego rozwi\u0105zania.\n\nLiczba os\u00f3b w zespole programistycznym ma tendencje wzrastaj\u0105ce niezale\u017cnie od ilo\u015bci pracy.\n\nW ka\u017cdym programie b\u0142\u0119dy wykazuj\u0105 sk\u0142onno\u015b\u0107 do wyst\u0119powania w tym miejscu, kt\u00f3re sprawdzasz jako ostatnie.\n\nKa\u017cdy program, kt\u00f3ry si\u0119 dobrze zaczyna, ko\u0144czy si\u0119 \u017ale.\n\nProgram, kt\u00f3ry zaczyna si\u0119 \u017ale, ko\u0144czy si\u0119 przera\u017caj\u0105co.\n\n\n\nTo co wygl\u0105da \u0142atwo jest trudne.\n\nTo co wygl\u0105da trudno jest niemo\u017cliwe.\n\nTo co wygl\u0105da na niemo\u017cliwe potrafi rozwi\u0105za\u0107 nawet twoja te\u015bciowa i to bez pomocy komputera.\n\nKa\u017cdy programista przybywaj\u0105cy z innego miasta jest fachowcem.\n\nIdealny fachowiec wie absolutnie wszystko o niczym.\n\nNie wierz w cuda - zdaj si\u0119 na nie.\n\nKa\u017cda formu\u0142a i ka\u017cda sta\u0142a musz\u0105 by\u0107 traktowane jako zmienne.\n\nPrawdopodobie\u0144stwo wydarzenia jest odwrotnie proporcjonalne do \u017cyczenia.", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20051219murphy-ma-racje-niestety.html", 
+      "title": "Murphy ma racj\u0119 ... niestety"
+    }, 
+    {
+      "text": "Carson Williams z Ohio, in\u017cynier elektroniki troch\u0119 zaszala\u0142. Do dekoracji domu u\u017cy\u0142 w 2004 roku 16.000 lampek, a w 2005 zwi\u0119kszy\u0142 ich ilo\u015b\u0107 do 25.000. Montowanie o\u015bwietlenia zaje\u0142o mu blisko 2 miesi\u0105ce. Udekorowany jest dom, ogr\u00f3dek i gara\u017c.\nMa\u0142o tego, b\u0142yskaniem lamp zarz\u0105dza oprogramowanie Light-o-rama. Synchronizuje ono efekty \u015bwietlne wraz z muzyk\u0105. W tym przypadku jest to  \"Wizard in Winter\" w wykonaniu Orkiestry Trans-Syberyjskiej (z albumu The Lost Christmas Eve).\nEfekt mo\u017cna zobaczy\u0107 na videoclipie. Pan Williams udost\u0119pni\u0142 te\u017c poradnik przydatny przy tworzeniu tego typu efekt\u00f3w oraz jeszcze jeden videoclip prezentuj\u0105cy mo\u017cliwo\u015bci jego systemu.\n\nPrzeczyta\u0107, poogl\u0105da\u0107, potem po lampki do sklepu i jazda na dach :D", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20051208swinteczne-szalenstwo.html", 
+      "title": "\u015awi\u0105teczne szale\u0144stwo"
+    }, 
+    {
+      "text": "PO kontra PiS. Ka\u017cdy wie jakie jest jego zdanie i wszyscy wiemy jak to si\u0119 sko\u0144czy\u0142o. Ale co na to google?\nNa stronie Google Fight mo\u017cemy sprawdzi\u0107 wyniki pojedynku PO vs. PiS :D\nWygrywa ten (to s\u0142owo lub fraza) kto ma wi\u0119ksz\u0105 ilo\u015b\u0107 rezultat\u00f3w w Google. Proste i prawdziwe.", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20051207google-i-polityka.html", 
+      "title": "Google i polityka"
+    }, 
+    {
+      "text": "W opisie Firefox'a pisa\u0142em o tym jak mo\u017cna t\u0105 przegl\u0105dark\u0119 jeszcze bardziej przy\u015bpieszy\u0107. Troch\u0119 opcji, ustawie\u0144, r\u0119cznego wpisywania danych, itp.\nAle nie ka\u017cdy lubi (i nie musi) grzeba\u0107 w plikach, zaawansowanych opcjach i innych takich 'czarach'. Instaluj\u0105c rozszerzenie fasterfox mo\u017cemy wszystkie odpowiednie opcje wybra\u0107 z predefiniowanych zestaw\u00f3w ( domy\u015blnie, szybciej, turbo) lub nadal ustawia\u0107 je r\u0119cznie. Przy czym pomaga nam w tym opis ka\u017cdej opcji, kt\u00f3r\u0105 mo\u017cemy  zmieni\u0107.\nTak wi\u0119c, instalujmy i przy\u015b\u015b\u015b\u015b\u015b\u015b\u015b\u015b\u015bpieszajmy...", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20051206przyspieszyn-firefoxa-fasterfox.html", 
+      "title": "Przy\u015bpieszy\u0107 firefox'a - fasterfox"
+    }, 
+    {
+      "text": "Bdanaia na agnilesikm uiwnerstyecie dodowz\u0105, i\u017c nie ma zanczinea w jikaej kelojno\u015bci znujdaj\u0105 si\u0119 ltiery w wyazrie, wna\u017ce jest jydenie aby pirwesza i ostitana ltiera by\u0142a na w\u0142i\u015bcawym miejscu. Rszeta mo\u017ce by\u0107 zepu\u0142nie pozemianiana ale wc\u0105i\u017c m\u017cona cztya\u0107 bez \u017cydnach preblom\u00f3w.\nDzeije si\u0119 tak dletago, \u017ce nie czatymy kelojno letiry po letirze, ale od razu ca\u0142e so\u0142wo.\n:D", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20051201i-co-ty-na-to.html", 
+      "title": "I co ty na to ?"
+    }, 
+    {
+      "text": "Skype coraz szerzej i mocniej rozchodzi si\u0119 po \u015bwiecie. Ale konkurencja jak zwykle nie \u015bpi ;)\nJako pierwszy niech b\u0119dzie Gizmo Project. Program ten posiada podobn\u0105 funkcjonalno\u015b\u0107 jak Skype, a dodatkowo\nz Gizmo mo\u017cna po\u0142\u0105czy\u0107 si\u0119 z dowolnego telefonu SIPowego w sieci VOIP\n\nod razu mo\u017cna do nas dzwoni\u0107 z tradycyjnych telefon\u00f3w ( numer-dost\u0119powy + nasz numer), minusem jest i\u017c numer dost\u0119powy jest w stanach ...\n\nstatusom mo\u017cna nadawa\u0107 opisy ;)\n\ndzwoni\u0105\u0107 do kogo\u015b mo\u017cna nada\u0107 rozmowie temat ( np. dzwoni\u0119 bo mi si\u0119 nudzi ), na podstawie kt\u00f3rego mo\u017cemy zadecydowa\u0107 czy warto odebra\u0107 ten telefon\n\njednym klikni\u0119ciem mo\u017cemy nagra\u0107 rozmow\u0119 lub zGEOlokalizowa\u0107 dzwoni\u0105cego\n\ndostajemy od razu poczt\u0119 g\u0142osow\u0105 ( email z plikiem .wav na wasz\u0105 skrzynk\u0119 [?] )\n\ninformacj\u0119 SMS o nieodebranych po\u0142\u0105czeniach ( po zalogowaniu si\u0119 na stronie http://www.sipphone.com/ )\n\njest dost\u0119pny dla Windows, MacOs oraz Linux ( cho\u0107 linux nie tak do ko\u0144ca [alpha] )\n\n\u0142adny interfejs :D\n\ndro\u017csze rozmowy callout ni\u017c w Skype :( .\n\nSzczeg\u00f3\u0142owy opis r\u00f3\u017cnic i dzia\u0142ania mo\u017cna przeczyta\u0107 w artykule Piotra  Koniecznego. Polecam przeczyta\u0107\n\nOpenWengo natomiast, w por\u00f3wnaniu ze Skype i Gizmo, b\u0119d\u0105c wsp\u00f3lnym projektem firm Wengo i Neuf Telecom jest wydawany na licencji GPL co mo\u017ce stanowi\u0107 o jego szybkim rozwoju gdy zawi\u0105\u017ce si\u0119 wok\u00f3\u0142 niego odpowiednio du\u017ca spo\u0142eczno\u015b\u0107 programist\u00f3w i sympatyk\u00f3w.\n\nG\u0142\u00f3wne jego cechy to:\n\noparcie o og\u00f3lnodost\u0119pne standardy\n\nzgodno\u015b\u0107 z protoko\u0142em SIP\n\nw pe\u0142ni darmowe rozmowy i wideokonferencje PC-PC\n\nkoszt rozm\u00f3w telefonicznych utrzymany na mo\u017cliwie niskim poziomie\n\nwydawanie na licencji GPL (bezp\u0142atnie oraz z kodem \u017ar\u00f3d\u0142owym)\n\ndost\u0119pno\u015b\u0107 na wiele platform systemowych ( Windows i Linux, w przygotowaniu Max OS X orac PocketPC\n\nW sumie projekt wart zainteresowania.", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20051125skype-koledzy.html", 
+      "title": "Skype & koledzy"
+    }, 
+    {
+      "text": "Od 1 listopada 2005 do 31 stycznia 2006 r. w serwisie euroDNS istnieje mo\u017cliwo\u015b\u0107 rejestracji domen z ko\u0144c\u00f3wk\u0105 .be (belgia) bezp\u0142atnie.\nKoszt rocznego utrzymania wynosi 20 \u20ac a op\u0142ata rejestracyjna -20 \u20ac, w sumie wi\u0119c 0 \u20ac. Nazw\u0119 domeny mo\u017cemy wybra\u0107 dowoln\u0105 ( z jeszcze nie zarejestrowanych oczywi\u015bcie ). Kto pierwszy ten lepszy ;)", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20051125to_nie_jestbe.html", 
+      "title": "to_nie_jest.be"
+    }, 
+    {
+      "text": "RoboMatic X11 jest chatbotem, z kt\u00f3rym mo\u017cna porozumiewa\u0107 si\u0119 przy pomocy klawiatury lub g\u0142osu (Text to Speech).  Posiada wygl\u0105d (twarz), kt\u00f3ry mo\u017cesz zmieni\u0107. Mo\u017cesz uzupe\u0142nia\u0107 jego wiedz\u0119. \nNazwa tego modelu to \"Operating System Assistant\" (Asystent Systemu Operacyjnego).  Dlaczego ? Ot\u00f3\u017c X11 ma zaimplementowanych ponad 80 funcji systemowych, mi\u0119dzy innymi:\nprzegl\u0105danie i zarz\u0105dzanie folderami oraz plikami\n\n zatrzymywanie, usypianie i restartowanie systemu\n\nodtwarzanie muzyki\n\nX11 dzia\u0142a jedynia na platformie Windows XP z zainstalowanym frameworkiem .NET. U\u017cywa technologi Microsoft Text to Speech dla obs\u0142ugi rozm\u00f3w g\u0142osowych.\n\nWymaga procesora klasy 1.6GHz Pentium 4 oraz 256MB pami\u0119ci RAM.\n\nChatbot jest sprzedawany przez firm\u0119 InfraDrive 18 dolar\u00f3w. Mo\u017cna pobra\u0107 wersj\u0119 demo z ich dzia\u0142u download.", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20051118robomatic-x11.html", 
+      "title": "RoboMatic X11"
+    }, 
+    {
+      "text": "Z Rozporz\u0105dzenia Rady Ministr\u00f3w w sprawie minimalnych wymaga\u0144 dla system\u00f3w teleinformatycznych (Dz. U. Nr 212, poz. 1766) dowiadujemy si\u0119, \u017ce format OpenDocument zosta\u0142 oficjalnie uznany jako obowi\u0105zuj\u0105cy standard do wymiany dokument\u00f3w tekstowych lub tekstowo-graficznych pomi\u0119dzy systemami informatycznymi u\u017cywanymi przez podmioty publiczne.\nOpenDocument jest oczywi\u015bcie obs\u0142ugiwany przez znany ju\u017c, bezp\u0142atny pakiet OpenOffice. Jego polsk\u0105 wersj\u0119 2.0 mo\u017cna pobra\u0107 ze strony firmy Ux Systems w dziale download.\nZnajdziemy tu wersj\u0119 zar\u00f3wna dla systemu Windows jaki i Linux (tgz, rpm, deb).", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20051117pozegnanie-z-docem.html", 
+      "title": "Po\u017cegnanie z doc'em ?"
+    }, 
+    {
+      "text": "Je\u017celi interesuj\u0105 Ci\u0119 r\u00f3\u017cnego typu badania naukowe, ich wyniki, itp, a literatura fachowa w tym temacie jest zbyt \"ci\u0119\u017cka\", poza tym wolisz przegl\u0105da\u0107 internet (google), ... to powiniene\u015b wpisa\u0107 w swojej przegl\u0105darce adres badania.net.\nbadania.net jest niekomercyjn\u0105 witryn\u0105 internetow\u0105 prowadzon\u0105 przez psychologa Micha\u0142a Parzuchowskiego. Strona zawiera \"[...] szczeg\u00f3lnie bogate archiwum materia\u0142\u00f3w na temat metodologii i rezultat\u00f3w bada\u0144 empirycznych prowadzonych w Polsce i na \u015awiecie\". Wszystko pisane w mo\u017cliwie przyst\u0119pnym j\u0119zyku.\nJe\u017celi sam posiadasz odpowiedni\u0105 wiedz\u0119, mo\u017cesz tak\u017ce zosta\u0107 autorem. Na pewno warto tam zaj\u017ce\u0107.", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20051116badanianet.html", 
+      "title": "badania.net"
+    }, 
+    {
+      "text": "Wraz z nowym Firefox'em w \u015bwiecie stron internetowych pojawi si\u0119 wiele ciekawych udogodnie\u0144.\nJednym z nich jest obs\u0142uga znacznika <canvas> czyli grafiki bitmapowej. Za jego pomoc\u0105 mo\u017cemy wstawi\u0107 do tre\u015bci strony pole graficzne, na kt\u00f3rym mo\u017cna operowa\u0107 przy pomocy JavaScript'u\nMo\u017cemy rysowa\u0107 linie, prostok\u0105ty, \u0142uki, krzywe Beizera, gradienty, regulowa\u0107 szereko\u015b\u0107, styl i kolor lini, kolor wype\u0142nienia (mo\u017cna u\u017cy\u0107 do tego gradientu), wstawia\u0107 oraz manipulowa\u0107 obrazkami (gif, jpg, png) i wiele innych.\n\nKr\u00f3tkie zestawienie podstawowych operacji zebra\u0142em na odpowiedniej podstronce. Polecam te\u017c oryginalny tutorial ze strony developer\u00f3w Mozilli.", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20051115canvas-i-firefox-15.html", 
+      "title": "Canvas i Firefox 1.5"
+    }, 
+    {
+      "text": "Ostatnio wielu (??) u\u017cytkownik\u00f3w komputer\u00f3w, pr\u00f3buje przesi\u0105\u015b\u0107 si\u0119 z systemu MS Windows na Linuksa. Maj\u0105 przy tym mniejsze lub wi\u0119ksze problemy. Wynikaja one cz\u0119sto z niech\u0119ci do zmiany przyzwyczaje\u0144, z\u0142ym wyobra\u017caniu sobie system\u00f3w typu Linux i pracy z nimi, braku czasu na zdobycie dodatkowej wiedzy, z powodu u\u017cywania specjalistycznego oprogramowania nie dzia\u0142aj\u0105cego w tym systemie, itp.\nStron i tre\u015bci opisuj\u0105cych te problemy oraz jak sobie z nimi radzi\u0107 jest wiele (google)\nAle czy kto\u015b pr\u00f3bowa\u0142 kiedys w drug\u0105 stron\u0119 ? Praktycznie nie u\u017cywam systemu Windows od ok 9 lat. Pracuj\u0119, ucz\u0119 si\u0119 i bawi\u0119 przy pomocy Linuksa.\n\nIs MS Windows ready for the desktop? jest odpowiedzi\u0105 na problemy, kt\u00f3re spotka\u0107 mo\u017ce osoba, pr\u00f3buj\u0105ca przesi\u0105\u015b\u0107 si\u0119 z Linuxa na Windows ;)", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20051110is-ms-windows-ready-for-the-desktop.html", 
+      "title": "Is MS Windows ready for the desktop?"
+    }, 
+    {
+      "text": "Sprzedawanie powierzchni reklamowej na stronach internetowych - liczonej w pikselach - wydaje si\u0119 w jaki\u015b spos\u00f3b prosperowa\u0107 ca\u0142kiem dobrze. Powsta\u0142y ju\u017c sieci takich rozwi\u0105za\u0144, dedykowane skrypty (np. phpMyPixelpage).\nTo kilka pierwszych link\u00f3w z google:\nwww.milliondollarhomepage.com\nwww.milliondollarwebpage.com\n\nwww.millionpenny.com\n\nNie jestem pewien pobudek jakie kieruj\u0105 zamawiaj\u0105cymi te reklamy. Cena jedengo piksela to 1 dolar ( waluta zmienia si\u0119 w zale\u017cno\u015bci od kraju danej strony ), ale miminalny rozmiar zam\u00f3wienia - c\u00f3\u017c nam po jednym piskelu - to 10 x 10 pikseli. Co daje nam 10 x 10 dolar\u00f3w czyli 100 dolar\u00f3w.\n\n;)", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20051108pixele-na-sprzedarz.html", 
+      "title": "Pixele na sprzedarz"
+    }, 
+    {
+      "text": "Jak przeczyta\u0142em dzis na linuxnews.pl\nW o\u015bwiadczeniu prasowym \nz 1 listopada Free Standards Group og\u0142osi\u0142a, \u017ce komitety normalizacyjne ISO i IEC zaakceptowa\u0142y Linux Standard Base Core Specification 2.0.1 \ni opublikuj\u0105 t\u0105 specyfikacj\u0119 jako standard ISO 23360.\nCzy b\u0119dzie to prawdziwy standard ? Czy tylko wizyt\u00f3wka dla firm by m\u00f3wi\u0107 \"my si\u0119 na tym znamy, mamy to na pi\u015bmie\".Czy sko\u0144czy si\u0119 jak w pewnej firmie, kt\u00f3ra \"oferowa\u0142a\" wsparcie dla system\u00f3w Linux, a dzia\u0142 techniczny pr\u00f3bowa\u0142 postawi\u0107 RedHat'a (byle tylko chodzi\u0142) przez 1-2 tygodni ?\n\nZobaczymy ...", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20051104linux-standard-base.html", 
+      "title": "Linux Standard Base"
+    }, 
+    {
+      "text": "Kevin Smith  og\u0142osi\u0142 na li\u015bcie dyskusyjne i\u017c mamy wersj\u0119 test3.\n\u0179r\u00f3d\u0142a (tar.bz2, zip oraz dmg) mo\u017cna pobra\u017a z serwera sourceforge.net\n\n\nPrzy okazji: zmieni\u0142 si\u0119 adres strony projektu z psi.affinix.com na psi-im.org.", 
+      "tags": "jabber", 
+      "loc": "/posts/blog20051103psi-010-test3.html", 
+      "title": "Psi-0.10-test3"
+    }, 
+    {
+      "text": "CSS Reboot (Fall 2005) nast\u0105pi\u0142 ( bo jak\u017ce by inaczej ;) ). Je\u015bli wiesz o co chodzi to przegl\u0105daj, przegl\u0105daj i czekaj na nast\u0119pny ( czemu sam si\u0119 nie przy\u0142\u0105czysz ? )   Tu kr\u00f3tkie wprowadzenie, naprawd\u0119 kr\u00f3tkie. Pozdrowionka.", 
+      "tags": "css,onjin", 
+      "loc": "/posts/blog20051102css-reboot.html", 
+      "title": "Css Reboot"
+    }, 
+    {
+      "text": "Ju\u017c za 4 dni nast\u0105pi kolejny CssReboot. Jest to wydarzenie polegaj\u0105ce na zbiorowym i masowym reboocie design'u swojej strony internetowej.Ka\u017cdy mo\u017ce zosta\u0107 uczestnikem. Firma, osoba lub grupa os\u00f3b zajmuj\u0105ca si\u0119 webdesignem, kto\u015b prowadz\u0105cy w\u0142asny portal lub stronk\u0119.Nie ma nagr\u00f3d, nie ma zwyci\u0119zc\u00f3w. Celem jest rozw\u00f3j i propagacja nowych technologi internetowych (CSS) oraz dobra zabawa.", 
+      "tags": "css,onjin", 
+      "loc": "/posts/blog20051028cssreboot.html", 
+      "title": "cssReboot"
+    }, 
+    {
+      "text": "Tak, kto u\u017cywa Vim'a, ten zazwyczaj do szcz\u0119\u015bcia wiele nie potrzebuje. Ale by sobie troch\u0119 os\u0142odzi\u0107 prac\u0119, mo\u017cna zainstalowa\u0107 sobie Cream.\nJest to zestaw gotowej, \u0142atwej w u\u017cyciu i rozbudowanej konfiguracji dla Vim'a ( czy te\u017c raczej dla GVim'a ). Tak wygl\u0105da to cudo w akcji. W domy\u015blnej konfiguracji brakowa\u0142o mi trybu wprowadzania komend, ale po prze\u0142\u0105czeniu w tryb eksperta tryb ten sta\u0142 si\u0119 dost\u0119pny.\nTroch\u0119 irituj\u0105cy jest fakt, i\u017c klawisz ESCAPE dzia\u0142a w tym przypadku jak prze\u0142\u0105cznik. Raz tryb komend, raz tryb wprowadzania. Mam zwyczaj wciska\u0107 ESC prawie przed ka\u017cd\u0105 komend\u0105 (tak dla pewno\u015bci) i w przypadku Cream'a cz\u0119sto wprowadzam te komendy do tre\u015bci pliku ;). Zapewne mo\u017cna zmieni\u0107 przypisania klawiszy i b\u0119dzie OK. Poza tym u\u017cywa si\u0119 ca\u0142kiem przyjemnie.\n\n \u00bb cream.sourceforge.net", 
+      "tags": "tools", 
+      "loc": "/posts/blog20051011osodziae-sobie-ycie.html", 
+      "title": "Os\u0142odzi\u0107 sobie \u017cycie"
+    }, 
+    {
+      "text": "Konkurs SEO zosta\u0142 rozstrzygni\u0119ty. 22 pa\u017adziernika w Warszawie nast\u0105pi rozdanie prezent\u00f3w ( tym co si\u0119 nale\u017c\u0105 ;) ). \nMoja kariera sko\u0144czy\u0142a si\u0119 na zrobieniu stronki gdzie\u015b w lipcu, dodanie AdGoogle + linkor. Potem by\u0142 urlop (Kanada, 4 tygodnie), po powrocie kilka projekt\u00f3w w pracy i .... zd\u0105\u017cy\u0142em ju\u017c tylko zobaczy\u0107 i\u017c pozycja ma to 91 w\u015br\u00f3d uczestnik\u00f3w ( w google 150 ). Pozdrawiam zwyci\u0119zc\u00f3w i uczestnik\u00f3w.", 
+      "tags": "pozycjonowanie", 
+      "loc": "/posts/blog20051005msnbetter-thangoogle-2.html", 
+      "title": "Msnbetter Thangoogle"
+    }, 
+    {
+      "text": "Migrowa\u0142em ostatnio pomi\u0119dzy dwoma serwerami Jabber'a. Pr\u00f3bowa\u0142em przenie\u015b\u0107  kontakty przy pomocy Jabber Tools, niestety strony oferuj\u0105ce t\u0105 us\u0142ug\u0119 nie by\u0142y dost\u0119pne, lub po podaniu danych do pierwszego formularza 'zacina\u0142y si\u0119'.\nChc\u0105c, nie chc\u0105c by\u0142em zmuszony zmajstrowa\u0107 szybko jakie\u015b narz\u0119dzie. Na razie tylko dzia\u0142a ;) . Jak znajd\u0119 czas, oczyszcz\u0119 kod, dodam troch\u0119 komentarzy i takie tam. Jak kto\u015b si\u0119 nie boi mo\u017cna spr\u00f3bowa\u0107 pou\u017cywa\u0107 lub pobra\u0107 kod \u017ar\u00f3d\u0142owy w celach w\u0142asnych. Na pewno si\u0119 nie obra\u017c\u0119 :)\nJabber import / export", 
+      "tags": "jabber,onjin", 
+      "loc": "/posts/blog20050907jabber-roster.html", 
+      "title": "Jabber roster"
+    }, 
+    {
+      "text": "12 wrze\u015bnia 2005 rozpoczyna si\u0119 rejestracja uczestnik\u00f3w do trzeciej edycji og\u00f3lnopolskiego Turnieju SECURITY DAYS organizowanego przez M\u0142odzie\u017cowe Towarzystwo Informatyczne.", 
+      "tags": "security", 
+      "loc": "/posts/blog20050907security-days.html", 
+      "title": "Security Days"
+    }, 
+    {
+      "text": "Dzi\u015b, czyli 29 lipca wypada Dzie\u0144 Administratora. Je\u015bli znasz jakiego\u015b mo\u017cesz z\u0142o\u017cyc mu \u017cyczenia lub nawet kupi\u0107 prezent ;).Wi\u0119cej o tym szczeg\u00f3lnym dniu oraz o zwyczajach i ulubionych prezentach Administrator\u00f3w mo\u017cecie przeczyta\u0107 na stronie http://www.sysadminday.com/", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20050729dzien-administratora.html", 
+      "title": "Dzie\u0144 Administratora"
+    }, 
+    {
+      "text": "Dwa programiki (skrypty) do download. Mo\u017ce si\u0119 komu\u015b przyda.", 
+      "tags": "onjin", 
+      "loc": "/posts/blog20050718download.html", 
+      "title": "download"
+    }, 
+    {
+      "text": "SEO pl og\u0142osi\u0142o konkurs na pozycjonowanie stron\nKonkurs ma jasne, przejrzyste zasady. Wygra ten z Uczestnik\u00f3w, kt\u00f3rego strona zajmie pierwsz\u0105 lokat\u0119 w wynikach wyszukiwania na fraz\u0119\nmsnbetter thangoogle w wyszukiwarce google.pl w dniu 1 pa\u017adziernika 2005 o godzinie 14.00.\nWarto sprawdzi\u0107 co cz\u0142owiek wie o \u015bwiecie dlatego z\u0142o\u017cy\u0142em w par\u0119 minut mikro stronk\u0119 ( zanim DNS'y si\u0119 rozpropaguj\u0105 jest te\u017c dost\u0119pna tutaj). Je\u017celi pragniecie nowych do\u015bwiadcze\u0144 te\u017c spr\u00f3bujcie :)", 
+      "tags": "pozycjonowanie", 
+      "loc": "/posts/blog20050708msnbetter-thangoogle.html", 
+      "title": "msnbetter thangoogle"
+    }, 
+    {
+      "text": "... ka\u017cdy widzi. Ale nie ka\u017cdy wie co z nim (i jak) zrobic [n.p. ja]. W\u0119druj\u0105c po sieci znalaz\u0142em wiele stron opisuj\u0105cych ten temat. Jedne bardziej inne mniej ciekawe [patrz: warto zobaczy\u0107]. Ale naprawd\u0119 du\u017ce wra\u017cenie zrobi\u0142a na mnie strona Stu Nicholls'a CSS Playground. Wiele ciekawych rozwi\u0105za\u0144 przedstawionych w spos\u00f3b klarowny (z przyk\u0142adami) i zwi\u0119z\u0142y. Naprawd\u0119 polecam.", 
+      "tags": "css", 
+      "loc": "/posts/blog20050707css-jaki-jest.html", 
+      "title": "CSS jaki jest ..."
+    }, 
+    {
+      "text": "Co to jest\nEtomite jest to CMS (System Zarz\u0105dzania Tre\u015bci\u0105) jakiego zawsze szuka\u0142em.\n            W\u00a0paru punktach mo\u017cna wymieni\u0107, niekt\u00f3re jego mocne strony (opis ze strony www.etomite.org).\n\nEdytor wizualny WYSIWYG\n\n(What You See Is What You Get - czyli dostaniesz to co widzisz)\n\nEtomite wykorzystuje gotowe, darmowe i sprawdzone edytory WYSIWYG jak HTMLArea i TinyMCE.\n\nW konfiguracji wybieramy, kt\u00f3rego chcemy u\u017cywa\u0107 i zawarto\u015b\u0107 naszego portalu edytujemy jak zwyk\u0142y dokument w procesorze tekstu.\n\nBezpiecze\u0144stwo / dost\u0119pno\u015b\u0107\n\nEtomite pozwala nadawa\u0107 uprawnienia do odpowiednich cz\u0119ci serwisu lub rodzaju dokument\u00f3w wybranym przez Ciebie u\u017cytkownikom\n            w spos\u00f3b nader elastyczny.\n\nAutomatyczna publikacja\n\nZawarto\u015b\u0107 strony (podstrony) mo\u017ce zosta\u0107 automatycznie opublikowana w okre\u015blonym terminie (np 31-12-2006 00:00), oraz\n\nautomatycznie odpublikowana (brr) tak\u017ce w zadanym terminie.\n\nNowoczesny i intuicyjny interfejs\n\nRzeczywi\u015bcie interfejs jest bardzo wygodny. W pasku po lewej stronie mamy w dw\u00f3ch ramkach kolejno menu systemu Etomite (administracja CMS'em), a nast\u0119pnie zarz\u0105dzanie oraz widok struktury (drzewa) naszego serwisu. Po prawej stronie tych ramek znajduje si\u0119 cz\u015b\u0107 g\u0142\u00f3wna gdzie dokonujemy edycji wybranych element\u00f3w.\n\nJe\u015bli na elementach drzewa (druga ramka po lewej stronie) przyci\u015bniemy prawy klawisz (w Mozilli/Forefox'ie w zale\u017cno\u015bci od ustawie\u0144 JScript nale\u017cy przytrzyma\u0107 prawy klawisz) otrzymamy dodatkowe menu podr\u0119czne.\n\nBezp\u0142atne wsparcie\n\nWsparcie otrzymujemy w postaci aktywnego forum z odpowiedziami na wasze pytania oraz gotowymi rozwi\u0105zaniami wielu problem\u00f3w.\n\nMa\u0142a obj\u0119to\u015b\u0107\n\nDomy\u015blna instalacja Etomite zajmuje ok 2MB na dysku oraz dodatkowo ok 350kB w bazie danych (MySQL).\n\nNieograniczona funkcjonalno\u015b\u0107\n\nTo jest w\u0142a\u015bnie to co tygrysy lubi\u0105 najbardziej. Przy pomocy wstawek w PHP (snippets) i w HTML (chunks) oraz szablon\u00f3w (templates) mo\u017cemy w nieograniczonym zakresie powi\u0119ksza\u0107 funkcjonalno\u015b\u0107 naszego serwisu. Wiele u\u017cytecznych wstawek w PHP (snippets) mo\u017cemy znale\u015b\u0107 na stronie domowej Etomite.\n\nNapisanie w\u0142asnych wstawek nie b\u0119dzie jednak sprawia\u0107 trudno\u015bci nawet pocz\u0105tkuj\u0105cemu programi\u015bcie PHP.\n\nZgodno\u015b\u0107 ze standartami sieciowymi\n\nEtomite CMS utrzymuje zgodno\u015b\u0107 generowanych stron ze standardami organizacji W3C. Kod strony domowej Etomite jest ca\u0142kowicie zgodny ze standardem XHTML 1.0.\n\nOdno\u015bniki\n\nstrona domowa Etomite\n\nforum Etomite\n\norganizacja W3C", 
+      "tags": "", 
+      "loc": "/stories/blogetomite.html", 
+      "title": "etomite"
+    }, 
+    {
+      "text": "Co to jest firefox\nJest to szybka, bezpieczna i nowoczesna przegl\u0105rka internetowa, stanowi\u0105ca bezpo\u015bredni\u0105 konkurencj\u0119 dla Internet Explorera firmy Microsoft.\n\nJest jednym z projekt\u00f3w pochodz\u0105cych od projektu Mozilla.\n\nDlaczego firefox.\n\nJe\u015bli naprawd\u0119 jeszcze nie jeste\u015b przekonany(a) to przeczytaj artyku\u0142 drobiazgowo opisuj\u0105cy r\u00f3ne przegl\u0105darki lub informacje na stronie browsehappy.pl.\n\nSk\u0105d wzi\u0105\u0107 firefox'a\n\nFirefox'a w polskiej wersji j\u0119zykowej mo\u017cna pobra\u0107 ze strony projektu www.firefox.pl.\n\nWybieramy tam posiadany system operacyjny (GNU/Linux, Mac OS X, Windows) i pobieramy odpowiedni plik.\n\nJak rozszerza\u0107 firefox'a\n\nMo\u017cliwo\u015bci naszej przegl\u0105darki mo\u017cemy rozszerza\u0107 przy pomocy systemu wtyczek (ang. plugins).\n\nW menu narz\u0119dzia wybieramy opcj\u0119 rozszerzenia. Pojawi si\u0119 okno gdzie mo\u017cemy przejrze\u0107, zaktualizowa\u0107, skonfigurowa\u0107 lub usun\u0105\u0107 nasze wtyczki.\n\nNa dole po prawej stronie znajduje si\u0119 odno\u015bnik 'Pobierz wi\u0119cej rozszerze\u0144' gdzie mo\u017cemy znale\u015b\u0107 interesuj\u0105ce nas dodatki.\n\nMo\u017cna tak\u017ce dodawa\u0107 nowe wyszukiwarki (okienko z google) np. takie.\n\nJak upi\u0119kszy\u0107 firefox'a\n\nWygl\u0105d przegl\u0105darki mo\u017cemy zmieni\u0107 poprzez system motyw\u00f3w. Do ich ustawie\u0144 docieramy poprzez menu Narz\u0119dzia->Motywy.\n\nObs\u0142ugujemy je analogicznie do rozszerze\u0144 (punkt wy\u017cej).\n\nJak przy\u015bpieszy\u0107 firefox'a\n\nDomy\u015blnie Firefox jest przystosowany do pracy na wolnych i \u015bredniej pr\u0119dko\u015bci \u0142\u0105czach internetowych. Je\u015beli denerwuje nas d\u0142ugi czas oczekiwania na wy\u015bwietlenie strony, posiadamy szybkie \u0142\u0105cze lub chcemy poeksperymentowa\u0107 z ustawieniami, to czytajcie dalej.\n\nWpisuj\u0105c w pasku adresu, adres about:config przenosimy si\u0119 do konfiguracji (rejestru) Firefox'a.\n\nodnajdujemy wpis network.http.pipelining i zmieniamy warto\u015b\u0107 z false na true [otwieranie r\u00f3wnoczesnych po\u0142\u0105cze\u0144]\n    odnajdujemy wpis network.http.pipelining.maxrequest i zwi\u0119kszamy warto\u015b\u0107 na 10 [maksymalna ilo\u015b\u0107 jednoczesnych po\u0142\u0105cze\u0144]\n    klikamy w dowolnym miejscu rejestru prawym klawiszem i wybieramy dodaj ustawienie typu -> liczba ca\u0142kowita (integer) o nazwie nglayout.initialpaint.delay i ustawiamy jego warto\u015b\u0107 na 0 [czas op\u00f3nienia przed rozpocz\u0119ciem wy\u015bwietlania strony]\nMo\u017cna te\u017c ustawi\u0107 opcj\u0119 config.trim_on_minimize na true (lub stworzy\u0107 taki wpis w razie potrzeby). Powoduje on zwalnianie pami\u0119ci po zminimalizowaniu okna firefoxa.\n\nW Firefox'ie 1.5 w pami\u0119ci trzymana jest pewna ilo\u015b\u0107 ostatnio odwiedzanych stron. Przegl\u0105darka sama decyduje ile ich trzyma\u0107, przez co zajmuje nasz\u0105 cenn\u0105 pami\u0119\u0107. Mo\u017cemi sami to regulowa\u0107 za pomoc\u0105 jak zwykle about:config.\n\nZnajdujemy opcj\u0119 browser.sessionhistory.max_total_viewers i zmieniamy jej warto\u015b\u0107 z -1 (sterowane przez przegl\u0105dark\u0119) na np 0. Oczywi\u015bcie teraz klikni\u0119cie przycisku wstecz w przegl\u0105darce ju\u017c nie b\u0119dzie takie szybkie jak poprzednio.\n\nTeraz na warsztat start Firefox'a. Mo\u017cna (czy te\u017c nale\u017cy) zainstalowa\u0107 dodatek Firefox Preloader, kt\u00f3ry podczas startu systemu uruchamia przegl\u0105dark\u0119 \"w tle\".\n\nOstatnio znalaz\u0142em tak\u017ce rozszerzenie do Firefox'a o nazwie fasterfox, kt\u00f3re samo ustawi wymagan\u0105 przez nasz szybko\u015b\u0107 przegl\u0105darki, a tak\u017ce pozwala nam nadal na r\u0119czn\u0105 modyfikacj\u0119 wszystkich odpowiednich ustawie\u0144.\n\nI to tyle. Ch\u0119tni wra\u017ce\u0144 mog\u0105 przejrze\u0107 ca\u0142y rejestr i spr\u00f3bowa\u0107 pozmienia\u201c inne opcje (dokumentacja).\n\nOdno\u015bniki\n\ndodatkowe wyszukiwarki\n    artyku\u0142 por\u00f3wnuj\u0105cy przegl\u0105darki internetowe\n    pobierz Firefox'a\n    dokumentacja about:config\n    tweak firefox - jeszcze szybciej\n    FasterFox - szybciej i \u0142atwiej", 
+      "tags": "", 
+      "loc": "/stories/blogfirefox.html", 
+      "title": "firefox"
+    }
+  ]
+}

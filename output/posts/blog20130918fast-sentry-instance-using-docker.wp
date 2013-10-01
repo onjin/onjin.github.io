@@ -1,0 +1,33 @@
+<html><body><p>You need docker and postgresql database
+</p><ul><li><a href="http://docker.io/">docker.io</a></li>
+</ul>
+
+
+
+If you have docker installed and postgres database created you can:
+
+<pre>
+
+# pull sentry image
+
+docker pull onjin/sentry
+
+
+
+# install sentry database
+
+docker run  -e SENTRY_DBHOST=your.db.address -e SENTRY_DBNAME=sentrydbname -e SENTRY_DBUSER=dbuser -e SENTRY_DBPASS=dbpass -p :7365 onjin/sentry upgrade
+
+
+
+# run sentry instance
+
+docker run -d -e SENTRY_DBHOST=your.db.address -e SENTRY_DBNAME=sentrydbname -e SENTRY_DBUSER=dbuser -e SENTRY_DBPASS=dbpass -p :7365 onjin/sentry start
+
+</pre>
+
+and open browser at address:
+
+<ul><li><a href="http://localhost:7365/">http://localhost:7365</a></li>
+
+</ul></body></html>

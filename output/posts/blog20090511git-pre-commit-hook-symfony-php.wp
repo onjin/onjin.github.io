@@ -1,0 +1,13 @@
+<html><body><p>Mam jeszcze tą nieprzyjemnośc pracy z PHP (w tym przypadku z symfony framework) i aby była przyjemniejsza dodałem sobie hook na <strong>pre-commit</strong> do git'a.
+ * <a href="http://dl.getdropbox.com/u/185133/git/pre-commit">http://dl.getdropbox.com/u/185133/git/pre-commit</a>
+
+
+by zadziałało przerywanie commit'a gdy '<em>symfony unit-test</em>' się nie udadzą, potrzebna jest łatka na symfony (przynajmniej na moją wersję 1.0.17)
+ * <a href="http://dl.getdropbox.com/u/185133/git/symfony_return_code.diff">http://dl.getdropbox.com/u/185133/git/symfony_return_code.diff</a>
+
+
+Hook zakłada, że commit jest robiony w katalogu projektu (tak mam najczęsciej) i znajduje sie w nim plik 'symfony'
+
+
+
+btw: hook wymaga pythona.</p></body></html>

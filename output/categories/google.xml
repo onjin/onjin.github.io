@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (google)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now.</description><atom:link href="http://marekwywial.name/categories/google.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Tue, 01 Oct 2013 22:54:16 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>public google wave - test ;)</title><link>http://marekwywial.name/posts/blog20091021public-google-wave-test.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;div id="wave" style="width: 450px;height: 800px;padding-bottom:20px; margin-bottom:20px;"&gt;&lt;/div&gt;
+&lt;script type="text/javascript" src="http://wave-api.appspot.com/public/embed.js"&gt;
+&lt;/script&gt;&lt;script type="text/javascript"&gt;
+  var wave =
+    new WavePanel('https://wave.google.com/wave/');
+  wave.setUIConfig('white', 'black', 'Arial', '13px');
+  wave.loadWave('googlewave.com!w+iYp8HmpCE');
+  wave.init(document.getElementById('wave'));
+&lt;/script&gt;</description><category>develop</category><category>google</category><category>www</category><guid>http://marekwywial.name/posts/blog20091021public-google-wave-test.html</guid><pubDate>Wed, 21 Oct 2009 07:25:33 GMT</pubDate></item></channel></rss>

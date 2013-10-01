@@ -1,0 +1,22 @@
+<html><body><div style="text-align: center; border-bottom: solid 1px gray; background: orange">sprawdź najnowszą wersję <a href="http://onjin.net/index.php/category/ftpmount">ftpmount</a></div>
+
+
+Przeniosłem skrypt ftpmount do github'a:
+
+<ul><li><a href="http://wiki.github.com/onjin/ftpmount">ftpmount</a></li>
+
+</ul>
+
+
+
+Równocześnie zmieniłem sposób konfiguracji, a raczej tylko domyślną nazwę pliku konfiguracyjnego. Teraz jest szukany plik:
+
+<ul><li>.ftpmountrc w aktualnym katalogu</li>
+
+<li>potem .ftpmountrc w katalogu domowym</li>
+
+</ul>
+
+
+
+Wersje <a href="http://github.com/onjin/ftpmount/downloads">do pobrania</a>.</body></html>

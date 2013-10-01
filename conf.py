@@ -211,6 +211,7 @@ DEPLOY_COMMANDS = [
     "git push origin website",
     "git subtree split --prefix output -b master",
     "git push -f origin master:master",
+    "git branch -D master",
 ]
 
 # Where the output site should be located

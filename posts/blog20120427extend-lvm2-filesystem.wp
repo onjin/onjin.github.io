@@ -1,0 +1,46 @@
+<html><body><p>Just self memo
+
+
+
+~~~~~~~~~~~~{.bash}
+
+
+# Added new physical partition /dev/sda3
+
+# create a physical volume out of it
+
+&gt; pvcreate /dev/sda3
+
+
+
+# Now, add it to the volume group
+
+#that my logical volume is on
+
+&gt; vgextend VolGroup00 /dev/sda3
+
+
+
+# Now that the volume group has more
+
+# disk space, the logical volume can grow
+
+&gt; lvextend -L+11G /dev/VolGroup00/LogVol00
+
+
+
+# Ok, last of all, I want to filesystem to
+
+# recognize that more space is available
+
+&gt; fsadm resize /dev/VolGroup00/LogVol00
+
+
+
+# sweet, I have more space now
+
+&gt; df -h
+
+
+~~~~~~~~~~~~
+</p></body></html>

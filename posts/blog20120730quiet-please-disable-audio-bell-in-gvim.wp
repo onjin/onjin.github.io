@@ -1,0 +1,14 @@
+<html><body><p>I don't want to hear it any more, so I've put this into .vimrc
+
+~~~~~~~~~~~~{.vim}
+
+
+" quiet pleeeeeease
+
+if has('autocmd')
+  autocmd GUIEnter * set visualbell t_vb=
+endif
+
+
+~~~~~~~~~~~~
+</p></body></html>

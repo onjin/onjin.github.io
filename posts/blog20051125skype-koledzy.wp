@@ -1,0 +1,42 @@
+<html><body><p><a href="http://www.skype.com/">Skype</a> coraz szerzej i mocniej rozchodzi się po świecie. Ale konkurencja jak zwykle nie śpi ;)</p>
+<p>Jako pierwszy niech będzie <a href="http://www.gizmoproject.com/">Gizmo Project</a>. Program ten posiada podobną <a href="http://www.gizmoproject.com/screen-shots.html">funkcjonalność</a> jak Skype, a dodatkowo</p>
+
+<ul><li>z Gizmo można połączyć się z dowolnego telefonu SIPowego w sieci VOIP</li>
+
+<li>od razu można do nas dzwonić z tradycyjnych telefonów ( numer-dostępowy + nasz numer), minusem jest iż numer dostępowy jest w stanach ...</li>
+
+<li>statusom można nadawać opisy ;)</li>
+
+<li>dzwoniąć do kogoś można nadać rozmowie temat ( np. dzwonię bo mi się nudzi ), na podstawie którego możemy zadecydować czy warto odebrać ten telefon</li>
+
+<li>jednym kliknięciem możemy nagrać rozmowę lub zGEOlokalizować dzwoniącego</li>
+
+<li>dostajemy od razu pocztę głosową ( email z plikiem .wav na waszą skrzynkę [?] )</li>
+
+<li>informację SMS o nieodebranych połączeniach ( po zalogowaniu się na stronie http://www.sipphone.com/ )</li>
+
+<li>jest dostępny dla Windows, MacOs oraz Linux ( choć linux nie tak do końca [alpha] )</li>
+
+<li>ładny interfejs :D</li>
+
+<li>droższe rozmowy callout niż w Skype :( .</li>
+
+</ul><p>Szczegółowy opis różnic i działania można przeczytać w artykule <a href="http://piko.jogger.pl/comment.php?eid=143749">Piotra  Koniecznego</a>. Polecam przeczytać</p>
+
+<p><a href="http://www.openwengo.com/">OpenWengo</a> natomiast, w porównaniu ze Skype i Gizmo, będąc wspólnym projektem firm Wengo i Neuf Telecom jest wydawany na licencji <strong>GPL</strong> co może stanowić o jego szybkim rozwoju gdy zawiąże się wokół niego odpowiednio duża społeczność programistów i sympatyków.</p>
+
+<p>Główne jego cechy to:</p>
+
+<ul><li>oparcie o ogólnodostępne standardy</li>
+
+<li>zgodność z protokołem SIP</li>
+
+<li>w pełni darmowe rozmowy i wideokonferencje PC-PC</li>
+
+<li>koszt rozmów telefonicznych utrzymany na możliwie niskim poziomie</li>
+
+<li>wydawanie na licencji GPL (bezpłatnie oraz z kodem źródłowym)</li>
+
+<li>dostępność na wiele platform systemowych ( Windows i Linux, w przygotowaniu Max OS X orac PocketPC</li>
+
+</ul><p>W sumie projekt wart zainteresowania.</p></body></html>

@@ -1,0 +1,9 @@
+<html><body><div id="wave" style="width: 450px;height: 800px;padding-bottom:20px; margin-bottom:20px;"></div>
+<script type="text/javascript" src="http://wave-api.appspot.com/public/embed.js">
+</script><script type="text/javascript">
+  var wave =
+    new WavePanel('https://wave.google.com/wave/');
+  wave.setUIConfig('white', 'black', 'Arial', '13px');
+  wave.loadWave('googlewave.com!w+iYp8HmpCE');
+  wave.init(document.getElementById('wave'));
+</script></body></html>

@@ -1,0 +1,58 @@
+<html><body><p>Dziś robiłem porządki w ~/.vim/ . Aktualizacje do nowych wersji pluginów, wyrzucanie nieużywanych, porządki w ~/.vimrc. W trakcie tej pracy powstała lista pluginów, dzięki którym miło mi się pracuje</p>
+
+
+<h3>vimball</h3>
+
+<p>Plugin zajmujący się pluginami dostarczanymi w paczkach .vba i pozwalający też takie paczki tworzyć, w praktyce potrzeby mi by instalować paczki .vba<br>
+
+ » <a href="http://www.vim.org/scripts/script.php?script_id=1502">vimball</a><br><br></p>
+
+
+
+<h3>snippetsEmu</h3>
+
+<p>Emuluje zachowanie snippetów z TextMate. Na przykład w pliku sometest.py wpisujesz 'for&lt;tab&gt;', uzupełniasz brakujące miejsca poruszając się klawiszem &lt;tab&gt; i otrzymujesz pełną pętle. Inne użyteczne snippety dla pythona to: <strong>prop</strong> - property, <strong>get</strong> - def get_.., <strong>set</strong> - def set_.., <strong>def</strong> - def .., <strong>cm</strong> - classmethod, <strong>cl</strong> - class .. oraz <strong>ifn, ifmain, sb, sbu, sbl1, trye, tryf, tryef, unittest</strong>.</p>
+
+
+
+<p>Domyślnie dostarczone są 32 zestawy snippetów dla wielu języków programowania, opisu oraz frameworków (django, rails, symfony).<br>
+
+ » <a href="http://www.vim.org/scripts/script.php?script_id=1318">snippetsEmu</a><br><br></p>
+
+
+
+<h3>neocomplcache</h3>
+
+<p>System tzw 'dopełniania' (podpowiadania) i to właśnie robi. Dopełnia nazwy metod, funkcji, atrybuty html, nazwy plików, itp. Trzeba po prostu zobaczyć i używać.<br>
+
+ » <a href="http://www.vim.org/scripts/script.php?script_id=2620">neocomplcache</a><br><br></p>
+
+
+
+<h3>project</h3>
+
+<p>Bardzo prosty i skuteczny system pozwalający w bocznym oknie przeglądać wybrane lub wszystkie pliki z jednego lub wielu projektów. Każdy projekt ma zdefiniowany katalog, dzięki czemu otwarcie pliku z projektu (wciskamy 'enter' bedąc 'nad' plikiem) nastąpi równocześnie z przejściem do katalogu projektu. W ten sposób pliki projektu jak np 'tags' (ctags) zostaną poprawnie wczytane.<br>
+
+ » <a href="http://www.vim.org/scripts/script.php?script_id=69">project</a><br><br></p>
+
+
+
+<h3>simple pairs</h3>
+
+<p>Proste dopełnianie dla ", ', {, (, [ . Wpisanie znaku otwierającego powoduje automatyczne dopisanie znaku zamykającego. W przypadku {, (, [ gdy sami wpiszemy znak zamykający, nie zostanie on zdublowany. Kursor po prostu przesunie się dalej. Dla ", ' zostanie jednak stworzona kolejna para. Krótkie i skuteczne.<br>
+
+ » <a href="http://www.vim.org/scripts/script.php?script_id=2339">simple pairs</a><br></p>
+
+
+
+<h3>vcscommand</h3>
+
+<p>Plugin pozwalający wykonywać komendy dla CVS, SVN, SVK, git, bzr, and hg przy pomocy vim'a. Jeden zestaw komend bez względy na system kontroli wersji.<br>
+
+ » <a href="http://www.vim.org/scripts/script.php?script_id=90">vcscommand</a><br></p>
+
+
+
+
+
+Niewiele tego, ale te pluginy, git (post/pre hooki), bash + zestaw skryptów wystarcza mi do pracy :)</body></html>

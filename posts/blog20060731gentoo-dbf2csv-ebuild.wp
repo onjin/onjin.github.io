@@ -1,0 +1,4 @@
+<html><body><p>Potrzebowałem zamienić .dbf na .csv. Znalazłem odpowiedni skrypt ale ... aby był porządek w dystrybucji zmontowałem do niego <a href="/files/portage/app-text/dbf2csv/dbf2csv-5.0.ebuild">.ebuild</a> (gdyż takowego nie znalazłem).
+
+
+Może komuś też się przyda (wersja dbf2csv to 5.0).</p></body></html>

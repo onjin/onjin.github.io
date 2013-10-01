@@ -1,0 +1,74 @@
+<html><body><h3>Install</h3>
+[bash]
+
+$ pip install Flask-Enterprise
+
+[/bash]
+
+
+
+<h3>file: soap.py</h3>
+
+[python]
+
+from time import ctime
+
+from flask import Flask
+
+from flaskext.enterprise import Enterprise
+ 
+app = Flask(__name__)
+
+enterprise = Enterprise(app)
+ 
+
+
+class DemoService(enterprise.SOAPService):
+    __soap_server_address__ = '/soap'
+    __soap_target_namespace__ = 'ns'
+
+    @enterprise.soap(_returns=enterprise._sp.String)
+    def get_time(self):
+        return ctime()
+ 
+if __name__ == '__main__':
+    app.run(host='127.0.0.1', port=5555)
+[/python]
+
+
+
+<h3>Run service</h3>
+
+[bash]
+
+$ python soap.py
+
+[/bash]
+
+
+
+<h3>file: client.py</h3>
+
+[python]
+
+from suds.client import Client
+
+
+
+c = Client('http://127.0.0.1:5555/soap?wsdl')
+
+print c.service.get_time()
+
+[/python]
+
+
+
+<h3>Run test</h3>
+
+[bash]
+
+$ python client.py
+
+Tue Aug 13 19:49:53 2013
+
+[/bash]</body></html>

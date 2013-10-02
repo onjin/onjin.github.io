@@ -61,9 +61,9 @@ TRANSLATIONS = {
 # You should provide a key-value pair for each used language.
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('/blog/archive.html', 'Archives'),
-        ('/blog/categories/index.html', 'Tags'),
-        ('/blog/rss.xml', 'RSS'),
+        ('/archive.html', 'Archives'),
+        ('/categories/index.html', 'Tags'),
+        ('/rss.xml', 'RSS'),
     ),
 }
 

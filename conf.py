@@ -351,12 +351,12 @@ CONTENT_FOOTER = CONTENT_FOOTER.format(email=BLOG_EMAIL,
 # To use comments, you can choose between different third party comment
 # systems, one of "disqus", "livefyre", "intensedebate", "moot",
 #                 "googleplus" or "facebook"
-COMMENT_SYSTEM = "intensedebate"
+COMMENT_SYSTEM = "disqus"
 # And you also need to add your COMMENT_SYSTEM_ID which
 # depends on what comment system you use. The default is
 # "nikolademo" which is a test account for Disqus. More information
 # is in the manual.
-COMMENT_SYSTEM_ID = "59bc8adf7068475d6be9f3a80a0d1e0f"
+COMMENT_SYSTEM_ID = "marekwywial"
 
 # Create index.html for story folders?
 # STORY_INDEX = False

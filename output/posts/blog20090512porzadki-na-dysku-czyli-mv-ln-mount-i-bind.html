@@ -1,47 +1,63 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="description" content=""><meta name="author" content="Marek Wywiał"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>porządki na dysku, czyli mv, ln, mount i bind | marekwywial</title><link href="../assets/css/bitter.css" rel="stylesheet" type="text/css"><link href="../assets/css/main.css" rel="stylesheet" type="text/css"><!--[if lt IE 9]>
+<!DOCTYPE html><html lang="en"><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><meta name="description" content=""><meta name="author" content="Marek Wywiał"><title>porządki na dysku, czyli mv, ln, mount i bind | marekwywial</title><link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml"></head><body>
-    <section class="social"><ul><!--        <h1 id="blog-title">
-            <a href="/" title="marekwywial">marekwywial</a>
-        </h1>
-        
-         --><li><a href="../index.html" title="Home"><i class="icon-home"></i></a></li>
-            <li><a href="../archive.html" title="Archives"><i class="icon-folder-open-alt"></i></a></li>
-            <li><a href="../categories/index.html" title="Tags"><i class="icon-tags"></i></a></li>
-            <li><a href="../rss.xml" title="RSS"><i class="icon-rss"></i></a></li>
-            <li><a href="http://marekwywial.name" title="About me"><i class="icon-user"></i></a></li>
-            <li><a href="https://twitter.com/onjin" title="My Twitter"><i class="icon-twitter"></i></a></li>
-            <li><a href="https://github.com/onjin" title="My Github"><i class="icon-github"></i></a></li>
+<!-- Menubar -->
+<div class="navbar navbar-fixed-top" id="navbar">
+    <div class="navbar-inner">
+        <div class="container">
 
-<!--        
-<span class="navbar-form pull-left">
-<input type="text" id="tipue_search_input">
-</span> -->
-        </ul></section><section class="page-content"><div class="content" rel="main">
-            
-    <div class="post">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+            <a class="brand" href="../">
+            marekwywial
+            </a>
+            <!-- Everything you want hidden at 940px or less, place within here -->
+            <div class="nav-collapse collapse">
+                <ul class="nav"><li><a href="../index.html">Home</a>
+                </li><li><a href="../archive.html">Archives</a>
+                </li><li><a href="../categories/index.html">Tags</a>
+                </li><li><a href="../rss.xml">RSS</a>
+                </li><li><a href="http://marekwywial.name">About me</a>
+                </li><li><a href="https://twitter.com/onjin">My Twitter</a>
+                </li><li><a href="https://github.com/onjin">My Github</a>
+
+                </li></ul><span class="navbar-form pull-left">
+<input type="text" id="tipue_search_input"></span>
+                <ul class="nav pull-right"><li>
+			<a href="blog20090512porzadki-na-dysku-czyli-mv-ln-mount-i-bind.wp" id="sourcelink">Source</a>
+		</li>
+                </ul></div>
+        </div>
+    </div>
+</div>
+<!-- End of Menubar -->
+<div class="container-fluid" id="container-fluid">
+    <!--Body content-->
+    <div class="row-fluid">
+    <div class="span2"></div>
+    <div class="span8">
+    
+    <div class="postbox">
     
     <h1>porządki na dysku, czyli mv, ln, mount i bind</h1>
 
-        <div class="meta">
-            <div class="authordate">
-                <time class="timeago" datetime="2009-05-12T22:46:59+02:00">2009-05-12 22:46</time></div>
-            
+    <hr><small>
+        Posted: <time class="published" datetime="2009-05-12T22:46:59+02:00">2009-05-12 22:46</time>
+        
 
-            
+		
+          |  More posts about
+            <a class="tag" href="../categories/linux.html"><span class="badge badge-info">linux</span></a>
+
           |  
-        <a href="blog20090512porzadki-na-dysku-czyli-mv-ln-mount-i-bind.wp" id="sourcelink">Source</a>
-
-            
-    <div class="tags">
-        <ul>
-        More posts about:  
-            <li><a class="tag" href="../categories/linux.html">linux</a></li>
-        </ul></div>
-
-        </div>
-        <div class="body">
-            <p></p><p>Robiąc ostatnio trochę miejsca pomiędzy partycjami przeniosłem <em>/usr/lib</em> do <em>/opt/usr/lib</em> i zrobiłem symlink <em>ln -s /opt/usr/lib /usr/lib</em>. Problemem okazało się np <em>/usr/lib/cups/filter/foomatic-rip</em>, który jest linkiem  relatywnym do <em>../../../bin/foomatic-rip</em> i w ten sposób pozbyłem się możliwości drukowania.</p>
+		
+    </small>
+    <hr><p></p><p>Robiąc ostatnio trochę miejsca pomiędzy partycjami przeniosłem <em>/usr/lib</em> do <em>/opt/usr/lib</em> i zrobiłem symlink <em>ln -s /opt/usr/lib /usr/lib</em>. Problemem okazało się np <em>/usr/lib/cups/filter/foomatic-rip</em>, który jest linkiem  relatywnym do <em>../../../bin/foomatic-rip</em> i w ten sposób pozbyłem się możliwości drukowania.</p>
 <p>Nie mam miejsca by zrobić/użyć partycji, którą bym zamontował pod <em>/usr/lib</em> ale chwila w necie pozoliła znaleść mi rozwiązanie odpowiednie dla mnie :)</p>
 <p></p><blockquote>
 <p>mount --bind /opt/usr/lib /usr/lib</p>
@@ -55,8 +71,7 @@
 </blockquote>
 
 <p>i teraz jest ok :)</p>
-        </div>
-        
+    
     <ul class="pager"><li class="previous">
             <a href="blog20090511git-pre-commit-hook-symfony-php.html">← Previous post</a>
         </li>
@@ -81,11 +96,16 @@
     <a href="http://disqus.com" class="dsq-brlink">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        
+    
 
     </div>
 
-            Contents © 2013         <a href="mailto:onjinx@gmail.com">
+    </div>
+    </div>
+    <!--End of body content-->
+</div>
+<div class="footerbox">
+    Contents © 2013         <a href="mailto:onjinx@gmail.com">
 Marek Wywiał</a> - Powered by         <a href="http://getnikola.com">Nikola</a>
 
 <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">
@@ -93,10 +113,9 @@ Marek Wywiał</a> - Powered by         <a href="http://getnikola.com">Nikola</a>
 This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">
 Creative Commons Attribution 3.0 Unported License</a>.
 
-            
-	
-<!-- Social buttons -->
-<div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style
+</div>
+
+            <script src="../assets/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="../assets/js/bootstrap.min.js" type="text/javascript"></script><script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style
 addthis_default_style addthis_label_style addthis_32x32_style">
 <a class="addthis_button_more">Share</a>
 <ul><li><a class="addthis_button_facebook"></a>
@@ -105,12 +124,14 @@ addthis_default_style addthis_label_style addthis_32x32_style">
 </li><li><a class="addthis_button_twitter"></a>
 </li></ul></div>
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798">
-</script><!-- End of social buttons --></div>
-    </section><script src="../assets/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="../assets/js/jquery.timeago.js" type="text/javascript"></script><script type="text/javascript">
-            $(function(){
-                $('.timeago').timeago();
-            });
-        </script><script type="text/javascript">
+</script><!-- End of social buttons --><script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});
+    $(window).on('hashchange', function(){
+        if (location.hash && $(location.hash)[0]) {
+            $('body').animate({scrollTop: $(location.hash).offset().top - $('#navbar').outerHeight(true)*1.2 }, 1);
+        }
+    });
+    $(document).ready(function(){$(window).trigger('hashchange')});
+    </script><script type="text/javascript">
 /* <![CDATA[ */
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-151457-1']);

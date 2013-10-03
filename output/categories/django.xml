@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (django)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now</description><atom:link href="http://marekwywial.name/categories/django.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Thu, 03 Oct 2013 21:44:36 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>devhelp + django 1.1</title><link>http://marekwywial.name/posts/blog20100426devhelp-django-1-1.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Ostatnio biegałem z lapkiem po centrum handlowym i łapałem wifi, żeby spojrzeć do dokumentacji &lt;a href="http://www.djangoproject.com/"&gt;django&lt;/a&gt;. I tylko się nabiegałem :).&lt;/p&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (django)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now</description><atom:link href="http://marekwywial.name/categories/django.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Thu, 03 Oct 2013 23:09:52 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>devhelp + django 1.1</title><link>http://marekwywial.name/posts/blog20100426devhelp-django-1-1.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Ostatnio biegałem z lapkiem po centrum handlowym i łapałem wifi, żeby spojrzeć do dokumentacji &lt;a href="http://www.djangoproject.com/"&gt;django&lt;/a&gt;. I tylko się nabiegałem :).&lt;/p&gt;
 &lt;p&gt;Aby drugi raz pracować nie biegać w domu szybko podłączyłem dokumentację django do &lt;a href="http://live.gnome.org/devhelp"&gt;devhelp&lt;/a&gt; i tak na szybko procedura:&lt;/p&gt;
 &lt;p&gt;[bash]
  apt-get install devhelp&lt;/p&gt;
@@ -12,114 +12,122 @@
 &lt;p&gt;&lt;/p&gt;&lt;p&gt;Teraz wystarczy uruchomić devhelp'a i cieszyć się offline :)&lt;/p&gt;
 &lt;p&gt;django1.1-doc jest ściągnięte z &lt;a href="http://charupload.wordpress.com/2007/12/02/django-documentation-chm/"&gt;.chm&lt;/a&gt; i potraktowana &lt;a href="http://code.google.com/p/htmlhelp/source/browse/trunk/pyhtmlhelp/hhconvert.py"&gt;hhconvert.py&lt;/a&gt; do formatu devhelp'a)&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description><category>devhelp</category><category>django</category><category>onjin</category><category>python</category><guid>http://marekwywial.name/posts/blog20100426devhelp-django-1-1.html</guid><pubDate>Mon, 26 Apr 2010 17:51:34 GMT</pubDate></item><item><title>home.pl &amp; django - pierwsza potyczka</title><link>http://marekwywial.name/posts/blog20090226homepl-django-pierwsza-potyczka.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;em&gt;home.pl&lt;/em&gt; obsługuje &lt;strong&gt;pythona&lt;/strong&gt; jako &lt;strong&gt;cgi&lt;/strong&gt; (pliki .py) więc tego będziemy się trzymać. Instalację wykonamy w katalogu &lt;strong&gt;/py&lt;/strong&gt;&lt;/p&gt;
-&lt;h5&gt;instalacja django&lt;/h5&gt;
-
+&lt;p&gt;&lt;/p&gt;</description><category>devhelp</category><category>django</category><category>onjin</category><category>python</category><guid>http://marekwywial.name/posts/blog20100426devhelp-django-1-1.html</guid><pubDate>Mon, 26 Apr 2010 17:51:34 GMT</pubDate></item><item><title>home.pl &amp; django - pierwsza potyczka</title><link>http://marekwywial.name/posts/blog20090226homepl-django-pierwsza-potyczka.html</link><description>&lt;p&gt;&lt;em&gt;home.pl&lt;/em&gt; obsługuje &lt;strong&gt;pythona&lt;/strong&gt; jako &lt;strong&gt;cgi&lt;/strong&gt; (pliki .py) więc tego będziemy się trzymać. Instalację wykonamy w katalogu &lt;strong&gt;/py&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="section" id="instalacja-django"&gt;
+&lt;h2&gt;instalacja django&lt;/h2&gt;
 &lt;p&gt;hardcoded ale działa ;) wrzucamy to do /py i ruchamiamy poprzez www (plik install.py)&lt;/p&gt;
-
-&lt;p&gt;[python]&lt;/p&gt;
-&lt;h2&gt;!/usr/bin/env python&lt;/h2&gt;
-&lt;p&gt;import os&lt;/p&gt;
-&lt;p&gt;os.system("wget http://www.djangoproject.com/download/1.0.2/tarball/")&lt;/p&gt;
-&lt;p&gt;os.system("tar zxf Django-1.0.2-final.tar.gz")&lt;/p&gt;
-&lt;p&gt;os.system("rm Django-1.0.2-final.tar.gz")&lt;/p&gt;
-&lt;p&gt;os.system("mv Django-1.0.2-final tmp")&lt;/p&gt;
-&lt;p&gt;os.system("mv tmp/django django")&lt;/p&gt;
-&lt;p&gt;[/python]&lt;/p&gt;
-&lt;h5&gt;nasz projekt&lt;/h5&gt;
-
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="ln"&gt; 1 &lt;/span&gt; &lt;span class="c"&gt;#!/usr/bin/env python&lt;/span&gt;
+&lt;span class="ln"&gt; 2 &lt;/span&gt;
+&lt;span class="ln"&gt; 3 &lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+&lt;span class="ln"&gt; 4 &lt;/span&gt;
+&lt;span class="ln"&gt; 5 &lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;system&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"wget http://www.djangoproject.com/download/1.0.2/tarball/"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="ln"&gt; 6 &lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;system&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"tar zxf Django-1.0.2-final.tar.gz"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="ln"&gt; 7 &lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;system&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"rm Django-1.0.2-final.tar.gz"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="ln"&gt; 8 &lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;system&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"mv Django-1.0.2-final tmp"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="ln"&gt; 9 &lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;system&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"mv tmp/django django"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="nasz-projekt"&gt;
+&lt;h2&gt;nasz projekt&lt;/h2&gt;
 &lt;p&gt;Lokalnie wołamy&lt;/p&gt;
-
-&lt;p&gt;[bash]&lt;/p&gt;
-&lt;p&gt;django-admin.py startproject pytest&lt;/p&gt;
-&lt;p&gt;[/bash]&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;django-admin.py startproject pytest
+&lt;/pre&gt;
 &lt;p&gt;i wrzucamy katalog &lt;em&gt;pytest&lt;/em&gt; przez ftp na home do katalogu /py .&lt;/p&gt;
-
-&lt;h5&gt;dispatch.py&lt;/h5&gt;
-
-&lt;p&gt;[python]&lt;/p&gt;
-&lt;h2&gt;!/usr/bin/env python&lt;/h2&gt;
-&lt;p&gt;import os, sys&lt;/p&gt;
-&lt;p&gt;import django.core.handlers.wsgi&lt;/p&gt;
-&lt;p&gt;def run_with_cgi(application):&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="n"&gt;environ&lt;/span&gt;                      &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;items&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
-&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;wsgi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;input&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;        &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdin&lt;/span&gt;
-&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;wsgi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;errors&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;       &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stderr&lt;/span&gt;
-&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;wsgi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;version&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;      &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;wsgi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;multithread&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;False&lt;/span&gt;
-&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;wsgi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;multiprocess&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;True&lt;/span&gt;
-&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;wsgi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run_once&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;     &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;True&lt;/span&gt;
-
-&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;HTTPS&lt;/span&gt;&lt;span class="sc"&gt;','&lt;/span&gt;&lt;span class="n"&gt;off&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="sc"&gt;','&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-    &lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;wsgi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;url_scheme&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;
-&lt;span class="nl"&gt;else:&lt;/span&gt;
-    &lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;wsgi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;url_scheme&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;
-
-&lt;span class="n"&gt;headers_set&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
-&lt;span class="n"&gt;headers_sent&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
-
-&lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt; &lt;span class="n"&gt;headers_set&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-         &lt;span class="n"&gt;raise&lt;/span&gt; &lt;span class="n"&gt;AssertionError&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"write() before start_response()"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-    &lt;span class="n"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt; &lt;span class="n"&gt;headers_sent&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-         &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Before&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;first&lt;/span&gt; &lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;send&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;stored&lt;/span&gt; &lt;span class="n"&gt;headers&lt;/span&gt;
-         &lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;response_headers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;headers_sent&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;headers_set&lt;/span&gt;
-         &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;Status&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="err"&gt;\\&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="err"&gt;\\&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-         &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;header&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;response_headers&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-             &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="err"&gt;\\&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="err"&gt;\\&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;header&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-         &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;'\\&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="err"&gt;\\&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-    &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;flush&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-
-&lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;start_response&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;response_headers&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;exc_info&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;None&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;exc_info&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-        &lt;span class="nl"&gt;try:&lt;/span&gt;
-            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;headers_sent&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-                &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Re&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;raise&lt;/span&gt; &lt;span class="n"&gt;original&lt;/span&gt; &lt;span class="n"&gt;exception&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;headers&lt;/span&gt; &lt;span class="n"&gt;sent&lt;/span&gt;
-                &lt;span class="n"&gt;raise&lt;/span&gt; &lt;span class="n"&gt;exc_info&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;exc_info&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;exc_info&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-        &lt;span class="nl"&gt;finally:&lt;/span&gt;
-            &lt;span class="n"&gt;exc_info&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;None&lt;/span&gt;     &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;avoid&lt;/span&gt; &lt;span class="n"&gt;dangling&lt;/span&gt; &lt;span class="n"&gt;circular&lt;/span&gt; &lt;span class="n"&gt;ref&lt;/span&gt;
-    &lt;span class="n"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;headers_set&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-        &lt;span class="n"&gt;raise&lt;/span&gt; &lt;span class="n"&gt;AssertionError&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Headers already set!"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-    &lt;span class="n"&gt;headers_set&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;response_headers&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;write&lt;/span&gt;
-
-&lt;span class="n"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;application&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;start_response&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="nl"&gt;try:&lt;/span&gt;
-    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;    &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;don&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="n"&gt;send&lt;/span&gt; &lt;span class="n"&gt;headers&lt;/span&gt; &lt;span class="n"&gt;until&lt;/span&gt; &lt;span class="n"&gt;body&lt;/span&gt; &lt;span class="n"&gt;appears&lt;/span&gt;
-            &lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt; &lt;span class="n"&gt;headers_sent&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-        &lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;''&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;   &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;send&lt;/span&gt; &lt;span class="n"&gt;headers&lt;/span&gt; &lt;span class="n"&gt;now&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;body&lt;/span&gt; &lt;span class="n"&gt;was&lt;/span&gt; &lt;span class="n"&gt;empty&lt;/span&gt;
-&lt;span class="nl"&gt;finally:&lt;/span&gt;
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;hasattr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-        &lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;Change this to the directory above your site code.&lt;/h2&gt;
-&lt;p&gt;sys.path.append("/py")&lt;/p&gt;
-&lt;h2&gt;Change mysite to the name of your site package&lt;/h2&gt;
-&lt;p&gt;os.environ['DJANGO_SETTINGS_MODULE'] = 'pytest.settings'&lt;/p&gt;
-&lt;p&gt;run_with_cgi(django.core.handlers.wsgi.WSGIHandler())&lt;/p&gt;
-&lt;p&gt;[/python]&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="dispatch-py"&gt;
+&lt;h2&gt;dispatch.py&lt;/h2&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="ln"&gt; 1 &lt;/span&gt; &lt;span class="c"&gt;#!/usr/bin/env python&lt;/span&gt;
+&lt;span class="ln"&gt; 2 &lt;/span&gt;
+&lt;span class="ln"&gt; 3 &lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+&lt;span class="ln"&gt; 4 &lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;django.core.handlers.wsgi&lt;/span&gt;
+&lt;span class="ln"&gt; 5 &lt;/span&gt;
+&lt;span class="ln"&gt; 6 &lt;/span&gt; &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;run_with_cgi&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;application&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="ln"&gt; 7 &lt;/span&gt;
+&lt;span class="ln"&gt; 8 &lt;/span&gt;     &lt;span class="n"&gt;environ&lt;/span&gt;                      &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;items&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;span class="ln"&gt; 9 &lt;/span&gt;     &lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'wsgi.input'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;        &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdin&lt;/span&gt;
+&lt;span class="ln"&gt;10 &lt;/span&gt;     &lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'wsgi.errors'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;       &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stderr&lt;/span&gt;
+&lt;span class="ln"&gt;11 &lt;/span&gt;     &lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'wsgi.version'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;      &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="ln"&gt;12 &lt;/span&gt;     &lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'wsgi.multithread'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
+&lt;span class="ln"&gt;13 &lt;/span&gt;     &lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'wsgi.multiprocess'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+&lt;span class="ln"&gt;14 &lt;/span&gt;     &lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'wsgi.run_once'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;     &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+&lt;span class="ln"&gt;15 &lt;/span&gt;
+&lt;span class="ln"&gt;16 &lt;/span&gt;     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'HTTPS'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;'off'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'on'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;'1'&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="ln"&gt;17 &lt;/span&gt;         &lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'wsgi.url_scheme'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'https'&lt;/span&gt;
+&lt;span class="ln"&gt;18 &lt;/span&gt;     &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="ln"&gt;19 &lt;/span&gt;         &lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'wsgi.url_scheme'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'http'&lt;/span&gt;
+&lt;span class="ln"&gt;20 &lt;/span&gt;
+&lt;span class="ln"&gt;21 &lt;/span&gt;     &lt;span class="n"&gt;headers_set&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+&lt;span class="ln"&gt;22 &lt;/span&gt;     &lt;span class="n"&gt;headers_sent&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+&lt;span class="ln"&gt;23 &lt;/span&gt;
+&lt;span class="ln"&gt;24 &lt;/span&gt;     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="ln"&gt;25 &lt;/span&gt;         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;headers_set&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="ln"&gt;26 &lt;/span&gt;             &lt;span class="k"&gt;raise&lt;/span&gt; &lt;span class="ne"&gt;AssertionError&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"write() before start_response()"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="ln"&gt;27 &lt;/span&gt;
+&lt;span class="ln"&gt;28 &lt;/span&gt;         &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;headers_sent&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="ln"&gt;29 &lt;/span&gt;             &lt;span class="c"&gt;# Before the first output, send the stored headers&lt;/span&gt;
+&lt;span class="ln"&gt;30 &lt;/span&gt;             &lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;response_headers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;headers_sent&lt;/span&gt;&lt;span class="p"&gt;[:]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;headers_set&lt;/span&gt;
+&lt;span class="ln"&gt;31 &lt;/span&gt;             &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'Status: &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;r&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;n'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="ln"&gt;32 &lt;/span&gt;             &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;header&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;response_headers&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="ln"&gt;33 &lt;/span&gt;                 &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s"&gt;: &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;r&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;n'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;header&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="ln"&gt;34 &lt;/span&gt;             &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;r&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;n'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="ln"&gt;35 &lt;/span&gt;
+&lt;span class="ln"&gt;36 &lt;/span&gt;         &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="ln"&gt;37 &lt;/span&gt;         &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;flush&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="ln"&gt;38 &lt;/span&gt;
+&lt;span class="ln"&gt;39 &lt;/span&gt;     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;start_response&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;response_headers&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;exc_info&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="ln"&gt;40 &lt;/span&gt;         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;exc_info&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="ln"&gt;41 &lt;/span&gt;             &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="ln"&gt;42 &lt;/span&gt;                 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;headers_sent&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="ln"&gt;43 &lt;/span&gt;                     &lt;span class="c"&gt;# Re-raise original exception if headers sent&lt;/span&gt;
+&lt;span class="ln"&gt;44 &lt;/span&gt;                     &lt;span class="k"&gt;raise&lt;/span&gt; &lt;span class="n"&gt;exc_info&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;exc_info&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;exc_info&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="ln"&gt;45 &lt;/span&gt;             &lt;span class="k"&gt;finally&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="ln"&gt;46 &lt;/span&gt;                 &lt;span class="n"&gt;exc_info&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;     &lt;span class="c"&gt;# avoid dangling circular ref&lt;/span&gt;
+&lt;span class="ln"&gt;47 &lt;/span&gt;         &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;headers_set&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="ln"&gt;48 &lt;/span&gt;             &lt;span class="k"&gt;raise&lt;/span&gt; &lt;span class="ne"&gt;AssertionError&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Headers already set!"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="ln"&gt;49 &lt;/span&gt;
+&lt;span class="ln"&gt;50 &lt;/span&gt;         &lt;span class="n"&gt;headers_set&lt;/span&gt;&lt;span class="p"&gt;[:]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;response_headers&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="ln"&gt;51 &lt;/span&gt;         &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;write&lt;/span&gt;
+&lt;span class="ln"&gt;52 &lt;/span&gt;
+&lt;span class="ln"&gt;53 &lt;/span&gt;     &lt;span class="n"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;application&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;start_response&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="ln"&gt;54 &lt;/span&gt;     &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="ln"&gt;55 &lt;/span&gt;         &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="ln"&gt;56 &lt;/span&gt;             &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;    &lt;span class="c"&gt;# don't send headers until body appears&lt;/span&gt;
+&lt;span class="ln"&gt;57 &lt;/span&gt;                 &lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="ln"&gt;58 &lt;/span&gt;         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;headers_sent&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="ln"&gt;59 &lt;/span&gt;             &lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;''&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;   &lt;span class="c"&gt;# send headers now if body was empty&lt;/span&gt;
+&lt;span class="ln"&gt;60 &lt;/span&gt;     &lt;span class="k"&gt;finally&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="ln"&gt;61 &lt;/span&gt;         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;hasattr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;'close'&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="ln"&gt;62 &lt;/span&gt;         &lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="ln"&gt;63 &lt;/span&gt;
+&lt;span class="ln"&gt;64 &lt;/span&gt;
+&lt;span class="ln"&gt;65 &lt;/span&gt; &lt;span class="c"&gt;# Change this to the directory above your site code.&lt;/span&gt;
+&lt;span class="ln"&gt;66 &lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"/py"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="ln"&gt;67 &lt;/span&gt;
+&lt;span class="ln"&gt;68 &lt;/span&gt; &lt;span class="c"&gt;# Change mysite to the name of your site package&lt;/span&gt;
+&lt;span class="ln"&gt;69 &lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'DJANGO_SETTINGS_MODULE'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'pytest.settings'&lt;/span&gt;
+&lt;span class="ln"&gt;70 &lt;/span&gt;
+&lt;span class="ln"&gt;71 &lt;/span&gt; &lt;span class="n"&gt;run_with_cgi&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;django&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;core&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;handlers&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;wsgi&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;WSGIHandler&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;/pre&gt;
 &lt;p&gt;i odpalamy to by www :D na razie tyle ...&lt;/p&gt;
-
+&lt;/div&gt;
+&lt;div class="section" id="do-pobrania"&gt;
+&lt;h2&gt;do pobrania&lt;/h2&gt;
 &lt;p&gt;Dokładam paczkę z plikami do testu:&lt;/p&gt;
-
-&lt;ul&gt;&lt;li&gt;&lt;a href="http://onjin.net/files/py.zip"&gt;py.zip&lt;/a&gt;&lt;/li&gt;
-
-&lt;/ul&gt;&lt;p&gt;unzip py.zip; ftp na home.pl; open http://server.home.pl/py/dispatch.py/admin&lt;/p&gt;
-
-&lt;h5&gt;Dodatkowe moje narzędzia:&lt;/h5&gt;
-
-&lt;ul&gt;&lt;li&gt;&lt;a href="https://github.com/onjin/django-buildout-template" target="_blank"&gt;django-buildout-template&lt;/a&gt; - szablon startowy dla projektów django z monitoringiem procesów, itp.&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://github.com/onjin/vim-startup" target="_blank"&gt;vim-startup&lt;/a&gt; - vim dostosowany do edycji python'a&lt;/li&gt;
-&lt;/ul&gt;&lt;h5&gt;Dotacje:&lt;/h5&gt;
-
-&lt;p&gt;Jeżeli informacje i narzędzia ci się przydały i uważasz, że warto wesprzeć ich utrzymanie, możesz przesłać dowolną sumę na adres &lt;a href="http://bitcoin.org" target="_blank"&gt;Bitcoin&lt;/a&gt; &lt;a href="bitcoin:19mjD3GhDN23io1WWyQ5c72fqGpXjVifYQ"&gt;19mjD3GhDN23io1WWyQ5c72fqGpXjVifYQ&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description><category>hosting</category><category>python</category><category>webdev</category><category>django</category><category>home.pl</category><guid>http://marekwywial.name/posts/blog20090226homepl-django-pierwsza-potyczka.html</guid><pubDate>Thu, 26 Feb 2009 20:59:38 GMT</pubDate></item></channel></rss>
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;&lt;li&gt;&lt;a class="reference external" href="http://marekwywial.name/files/py.zip"&gt;pyzip&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;unzip py.zip
+&lt;/pre&gt;
+&lt;p&gt;ftp na home.pl; open &lt;a class="reference external" href="http://server.home.pl/py/dispatch.py/admin"&gt;http://server.home.pl/py/dispatch.py/admin&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="dodatkowe-moje-narzedzia"&gt;
+&lt;h2&gt;Dodatkowe moje narzędzia&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;&lt;li&gt;&lt;a class="reference external" href="https://github.com/onjin/django-buildout-template"&gt;django-buildout-template&lt;/a&gt; - szablon startowy dla projektów django z monitoringiem procesów, itp.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/onjin/vim-startup"&gt;vim-startup&lt;/a&gt; - vim dostosowany do edycji python'a&lt;/li&gt;
+&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;/div&gt;</description><category>hosting</category><category>python</category><category>webdev</category><category>django</category><category>home.pl</category><guid>http://marekwywial.name/posts/blog20090226homepl-django-pierwsza-potyczka.html</guid><pubDate>Thu, 26 Feb 2009 20:59:38 GMT</pubDate></item></channel></rss>

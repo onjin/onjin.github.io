@@ -1,150 +1,138 @@
-<html><body><p><em>home.pl</em> obsługuje <strong>pythona</strong> jako <strong>cgi</strong> (pliki .py) więc tego będziemy się trzymać. Instalację wykonamy w katalogu <strong>/py</strong></p>
+<!--
+.. title: home.pl & django - pierwsza potyczka
+.. slug: blog20090226homepl-django-pierwsza-potyczka
+.. date: 2009-02-26 21:59:38
+.. tags: hosting,python,webdev,django,home.pl
+.. link: http://marekwywial.name/posts/blog20090226homepl-django-pierwsza-potyczka.html
+.. description: 
+-->
+
+*home.pl* obsługuje **pythona** jako **cgi** (pliki .py) więc tego będziemy się trzymać. Instalację wykonamy w katalogu **/py**</p>
 
 
-<h4>instalacja django</h4>
+## instalacja django
 
-<p>hardcoded ale działa ;) wrzucamy to do /py i ruchamiamy poprzez www (plik install.py)</p>
-
-[python]
-
-#!/usr/bin/env python
-
-import os
+hardcoded ale działa ;) wrzucamy to do /py i ruchamiamy poprzez www (plik install.py)
 
 
+```python
+    :number-lines:
 
-os.system("wget http://www.djangoproject.com/download/1.0.2/tarball/")
+    #!/usr/bin/env python
 
-os.system("tar zxf Django-1.0.2-final.tar.gz")
+    import os
 
-os.system("rm Django-1.0.2-final.tar.gz")
+    os.system("wget http://www.djangoproject.com/download/1.0.2/tarball/")
+    os.system("tar zxf Django-1.0.2-final.tar.gz")
+    os.system("rm Django-1.0.2-final.tar.gz")
+    os.system("mv Django-1.0.2-final tmp")
+    os.system("mv tmp/django django")
+```
 
-os.system("mv Django-1.0.2-final tmp")
+## nasz projekt
 
-os.system("mv tmp/django django")
+Lokalnie wołamy
 
-[/python]
+.. code:: bash
+    :number-lines
 
+    django-admin.py startproject pytest
 
-
-<h4>nasz projekt</h4>
-
-<p>Lokalnie wołamy</p>
-
-[bash]
-
-django-admin.py startproject pytest
-
-[/bash]
-
-<p>i wrzucamy katalog <em>pytest</em> przez ftp na home do katalogu /py .</p>
-
-
-
-<h4>dispatch.py</h4>
-
-[python]
-
-#!/usr/bin/env python
+i wrzucamy katalog *pytest* przez ftp na home do katalogu /py .
 
 
 
-import os, sys
+## dispatch.py
 
-import django.core.handlers.wsgi
+.. code:: python
+   :number-lines
 
+    #!/usr/bin/env python
 
+    import os, sys
+    import django.core.handlers.wsgi
 
-def run_with_cgi(application):
+    def run_with_cgi(application):
 
+        environ                      = dict(os.environ.items())
+        environ['wsgi.input']        = sys.stdin
+        environ['wsgi.errors']       = sys.stderr
+        environ['wsgi.version']      = (1,0)
+        environ['wsgi.multithread']  = False
+        environ['wsgi.multiprocess'] = True
+        environ['wsgi.run_once']     = True
 
-    environ                      = dict(os.environ.items())
-    environ['wsgi.input']        = sys.stdin
-    environ['wsgi.errors']       = sys.stderr
-    environ['wsgi.version']      = (1,0)
-    environ['wsgi.multithread']  = False
-    environ['wsgi.multiprocess'] = True
-    environ['wsgi.run_once']     = True
+        if environ.get('HTTPS','off') in ('on','1'):
+            environ['wsgi.url_scheme'] = 'https'
+        else:
+            environ['wsgi.url_scheme'] = 'http'
 
-    if environ.get('HTTPS','off') in ('on','1'):
-        environ['wsgi.url_scheme'] = 'https'
-    else:
-        environ['wsgi.url_scheme'] = 'http'
+        headers_set  = []
+        headers_sent = []
 
-    headers_set  = []
-    headers_sent = []
+        def write(data):
+            if not headers_set:
+                raise AssertionError("write() before start_response()")
 
-    def write(data):
-        if not headers_set:
-             raise AssertionError("write() before start_response()")
+            elif not headers_sent:
+                # Before the first output, send the stored headers
+                status, response_headers = headers_sent[:] = headers_set
+                sys.stdout.write('Status: %s\\r\\n' % status)
+                for header in response_headers:
+                    sys.stdout.write('%s: %s\\r\\n' % header)
+                sys.stdout.write('\\r\\n')
 
-        elif not headers_sent:
-             # Before the first output, send the stored headers
-             status, response_headers = headers_sent[:] = headers_set
-             sys.stdout.write('Status: %s\\r\\n' % status)
-             for header in response_headers:
-                 sys.stdout.write('%s: %s\\r\\n' % header)
-             sys.stdout.write('\\r\\n')
+            sys.stdout.write(data)
+            sys.stdout.flush()
 
-        sys.stdout.write(data)
-        sys.stdout.flush()
+        def start_response(status,response_headers,exc_info=None):
+            if exc_info:
+                try:
+                    if headers_sent:
+                        # Re-raise original exception if headers sent
+                        raise exc_info[0], exc_info[1], exc_info[2]
+                finally:
+                    exc_info = None     # avoid dangling circular ref
+            elif headers_set:
+                raise AssertionError("Headers already set!")
 
-    def start_response(status,response_headers,exc_info=None):
-        if exc_info:
-            try:
-                if headers_sent:
-                    # Re-raise original exception if headers sent
-                    raise exc_info[0], exc_info[1], exc_info[2]
-            finally:
-                exc_info = None     # avoid dangling circular ref
-        elif headers_set:
-            raise AssertionError("Headers already set!")
+            headers_set[:] = [status,response_headers]
+            return write
 
-        headers_set[:] = [status,response_headers]
-        return write
-
-    result = application(environ, start_response)
-    try:
-        for data in result:
-            if data:    # don't send headers until body appears
-                write(data)
-        if not headers_sent:
-            write('')   # send headers now if body was empty
-    finally:
-        if hasattr(result,'close'):
+        result = application(environ, start_response)
+        try:
+            for data in result:
+                if data:    # don't send headers until body appears
+                    write(data)
+            if not headers_sent:
+                write('')   # send headers now if body was empty
+        finally:
+            if hasattr(result,'close'):
             result.close()
 
 
-# Change this to the directory above your site code.
+    # Change this to the directory above your site code.
+    sys.path.append("/py")
 
-sys.path.append("/py")
+    # Change mysite to the name of your site package
+    os.environ['DJANGO_SETTINGS_MODULE'] = 'pytest.settings'
 
-# Change mysite to the name of your site package
-
-os.environ['DJANGO_SETTINGS_MODULE'] = 'pytest.settings'
-
-
-
-run_with_cgi(django.core.handlers.wsgi.WSGIHandler())
-
-[/python]
-
-<p>i odpalamy to by www :D na razie tyle ...</p>
+    run_with_cgi(django.core.handlers.wsgi.WSGIHandler())
 
 
-
-<p>Dokładam paczkę z plikami do testu:</p>
-
-<ul><li><a href="http://onjin.net/files/py.zip">py.zip</a></li>
-
-</ul><p>unzip py.zip; ftp na home.pl; open http://server.home.pl/py/dispatch.py/admin</p>
+i odpalamy to by www :D na razie tyle ...
 
 
+## do pobrania
 
-<h4>Dodatkowe moje narzędzia:</h4>
+Dokładam paczkę z plikami do testu:
 
-<ul><li><a href="https://github.com/onjin/django-buildout-template" target="_blank">django-buildout-template</a> - szablon startowy dla projektów django z monitoringiem procesów, itp.</li>
-  <li><a href="https://github.com/onjin/vim-startup" target="_blank">vim-startup</a> - vim dostosowany do edycji python'a</li>
-</ul><h4>Dotacje:</h4>
+ * [py.zip](/files/py.zip)
 
-<p>Jeżeli informacje i narzędzia ci się przydały i uważasz, że warto wesprzeć ich utrzymanie, możesz przesłać dowolną sumę na adres <a href="http://bitcoin.org" target="_blank">Bitcoin</a> <a href="bitcoin:19mjD3GhDN23io1WWyQ5c72fqGpXjVifYQ">19mjD3GhDN23io1WWyQ5c72fqGpXjVifYQ</a></p></body></html>
+unzip py.zip; ftp na home.pl; open http://server.home.pl/py/dispatch.py/admin
+
+
+## Dodatkowe moje narzędzia
+
+ * <a href="https://github.com/onjin/django-buildout-template" target="_blank">django-buildout-template</a> - szablon startowy dla projektów django z monitoringiem procesów, itp.
+ * <a href="https://github.com/onjin/vim-startup" target="_blank">vim-startup</a> - vim dostosowany do edycji python'a

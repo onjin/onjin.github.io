@@ -61,13 +61,13 @@ TRANSLATIONS = {
 # You should provide a key-value pair for each used language.
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('/index.html', 'Home', 'icon-home'),
-        ('/archive.html', 'Archives', 'icon-folder-open-alt'),
-        ('/categories/index.html', 'Tags', 'icon-tags'),
-        ('/rss.xml', 'RSS', 'icon-rss'),
-        ('http://marekwywial.name', 'About me', 'icon-user'),
-        ('https://twitter.com/onjin', 'My Twitter', 'icon-twitter'),
-        ('https://github.com/onjin', 'My Github', 'icon-github'),
+        ('/index.html', 'Home'),
+        ('/archive.html', 'Archives'),
+        ('/categories/index.html', 'Tags'),
+        ('/rss.xml', 'RSS'),
+        ('http://marekwywial.name', 'About me'),
+        ('https://twitter.com/onjin', 'My Twitter'),
+        ('https://github.com/onjin', 'My Github'),
     )
 }
 
@@ -98,6 +98,7 @@ NAVIGATION_LINKS = {
 
 POSTS = (
     ("posts/*.wp", "posts", "post.tmpl"),
+    ("posts/*.rst", "posts", "post.tmpl"),
 )
 PAGES = (
     ("stories/*.wp", "stories", "story.tmpl"),
@@ -282,8 +283,7 @@ OUTPUT_FOLDER = 'output'
 
 # Name of the theme to use.
 THEME = "bootstrap3"
-THEME = "blogtxt"
-THEME = "zen"
+THEME = "zen-ipython"
 
 # Color scheme to be used for code blocks. If your theme provides
 # "assets/css/code.css" this is ignored.

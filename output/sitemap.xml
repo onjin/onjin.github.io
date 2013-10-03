@@ -1990,6 +1990,11 @@
   <priority>0.5000</priority>
  </url>
  <url>
+  <loc>http://marekwywial.name/posts/test.html</loc>
+  <lastmod>2013-10-03</lastmod>
+  <priority>0.5000</priority>
+ </url>
+ <url>
   <loc>http://marekwywial.name/stories/blogetomite.html</loc>
   <lastmod>2013-10-03</lastmod>
   <priority>0.5000</priority>

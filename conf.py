@@ -521,11 +521,11 @@ BODY_END = """
 <script type="text/javascript" src="/assets/js/tipuesearch.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-  # $('#tipue_search_input').tipuesearch({
-      # 'mode': 'json',
-      # 'contentLocation': '/assets/js/tipuesearch_content.json',
-      # 'showUrl': false
-  # });
+   $('#tipue_search_input').tipuesearch({
+       'mode': 'json',
+       'contentLocation': '/assets/js/tipuesearch_content.json',
+       'showUrl': false
+   });
 });
 </script>
 """

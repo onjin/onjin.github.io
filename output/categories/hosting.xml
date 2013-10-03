@@ -1,44 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (hosting)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now</description><atom:link href="http://marekwywial.name/categories/hosting.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Thu, 03 Oct 2013 23:09:52 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>extend lvm2 filesystem</title><link>http://marekwywial.name/posts/blog20120427extend-lvm2-filesystem.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Just self memo&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;# Added new physical partition /dev/sda3&lt;/span&gt;
-
-&lt;span class="c"&gt;# create a physical volume out of it&lt;/span&gt;
-
-&amp;amp;gt; pvcreate /dev/sda3
-
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (hosting)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now</description><atom:link href="http://marekwywial.name/categories/hosting.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Thu, 03 Oct 2013 23:50:20 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>extend lvm2 filesystem</title><link>http://marekwywial.name/posts/blog20120427extend-lvm2-filesystem.html</link><description>&lt;p&gt;Just self memo&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="c"&gt;# Added new physical partition /dev/sda3
+# create a physical volume out of it
+&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pvcreate /dev/sda3
 
 
-&lt;span class="c"&gt;# Now, add it to the volume group&lt;/span&gt;
-
-&lt;span class="c"&gt;#that my logical volume is on&lt;/span&gt;
-
-&amp;amp;gt; vgextend VolGroup00 /dev/sda3
+&lt;span class="c"&gt;# Now, add it to the volume group
+#that my logical volume is on
+&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;vgextend VolGroup00 /dev/sda3
 
 
-
-&lt;span class="c"&gt;# Now that the volume group has more&lt;/span&gt;
-
-&lt;span class="c"&gt;# disk space, the logical volume can grow&lt;/span&gt;
-
-&amp;amp;gt; lvextend -L+11G /dev/VolGroup00/LogVol00
+&lt;span class="c"&gt;# Now that the volume group has more
+# disk space, the logical volume can grow
+&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;lvextend -L+11G /dev/VolGroup00/LogVol00
 
 
+&lt;span class="c"&gt;# Ok, last of all, I want to filesystem to
+# recognize that more space is available
+&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;fsadm resize /dev/VolGroup00/LogVol00
 
-&lt;span class="c"&gt;# Ok, last of all, I want to filesystem to&lt;/span&gt;
-
-&lt;span class="c"&gt;# recognize that more space is available&lt;/span&gt;
-
-&amp;amp;gt; fsadm resize /dev/VolGroup00/LogVol00
-
-
-
-&lt;span class="c"&gt;# sweet, I have more space now&lt;/span&gt;
-
-&amp;amp;gt; df -h
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;/p&gt;</description><category>hosting</category><category>tools</category><guid>http://marekwywial.name/posts/blog20120427extend-lvm2-filesystem.html</guid><pubDate>Fri, 27 Apr 2012 08:30:44 GMT</pubDate></item><item><title>home.pl &amp; django - pierwsza potyczka</title><link>http://marekwywial.name/posts/blog20090226homepl-django-pierwsza-potyczka.html</link><description>&lt;p&gt;&lt;em&gt;home.pl&lt;/em&gt; obsługuje &lt;strong&gt;pythona&lt;/strong&gt; jako &lt;strong&gt;cgi&lt;/strong&gt; (pliki .py) więc tego będziemy się trzymać. Instalację wykonamy w katalogu &lt;strong&gt;/py&lt;/strong&gt;&lt;/p&gt;
+&lt;span class="c"&gt;# sweet, I have more space now
+&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;df -h
+&lt;/pre&gt;</description><category>hosting</category><category>tools</category><guid>http://marekwywial.name/posts/blog20120427extend-lvm2-filesystem.html</guid><pubDate>Fri, 27 Apr 2012 08:30:44 GMT</pubDate></item><item><title>home.pl &amp; django - pierwsza potyczka</title><link>http://marekwywial.name/posts/blog20090226homepl-django-pierwsza-potyczka.html</link><description>&lt;p&gt;&lt;em&gt;home.pl&lt;/em&gt; obsługuje &lt;strong&gt;pythona&lt;/strong&gt; jako &lt;strong&gt;cgi&lt;/strong&gt; (pliki .py) więc tego będziemy się trzymać. Instalację wykonamy w katalogu &lt;strong&gt;/py&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="section" id="instalacja-django"&gt;
 &lt;h2&gt;instalacja django&lt;/h2&gt;
 &lt;p&gt;hardcoded ale działa ;) wrzucamy to do /py i ruchamiamy poprzez www (plik install.py)&lt;/p&gt;

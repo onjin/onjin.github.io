@@ -44,33 +44,25 @@
         <h1><a href="posts/blog20130918fast-sentry-instance-using-docker.html">Fast sentry instance using docker</a>
         <small>  
              Posted: <time class="published" datetime="2013-09-18T13:36:39+02:00">2013-09-18 13:36</time></small></h1>
-        <hr><p></p><p>You need docker and postgresql database
-</p><ul><li><a href="http://docker.io/">docker.io</a></li>
-</ul><p>If you have docker installed and postgres database created you can:</p>
-<pre>
+        <hr><p>You need docker and postgresql database</p>
+<blockquote>
+<ul class="simple"><li><a class="reference external" href="http://docker.io/">docker.io</a></li>
+</ul></blockquote>
+<p>If you have docker installed and postgres database created you can:</p>
+<pre class="code bash literal-block">
+<span class="c"># pull sentry image
+</span>docker pull onjin/sentry
 
-# pull sentry image
+<span class="c"># install sentry database
+</span>docker run  -e <span class="nv">SENTRY_DBHOST</span><span class="o">=</span>your.db.address -e <span class="nv">SENTRY_DBNAME</span><span class="o">=</span>sentrydbname -e <span class="nv">SENTRY_DBUSER</span><span class="o">=</span>dbuser -e <span class="nv">SENTRY_DBPASS</span><span class="o">=</span>dbpass -p :7365 onjin/sentry upgrade
 
-docker pull onjin/sentry
-
-
-
-# install sentry database
-
-docker run  -e SENTRY_DBHOST=your.db.address -e SENTRY_DBNAME=sentrydbname -e SENTRY_DBUSER=dbuser -e SENTRY_DBPASS=dbpass -p :7365 onjin/sentry upgrade
-
-
-
-# run sentry instance
-
-docker run -d -e SENTRY_DBHOST=your.db.address -e SENTRY_DBNAME=sentrydbname -e SENTRY_DBUSER=dbuser -e SENTRY_DBPASS=dbpass -p :7365 onjin/sentry start
-
+<span class="c"># run sentry instance
+</span>docker run -d -e <span class="nv">SENTRY_DBHOST</span><span class="o">=</span>your.db.address -e <span class="nv">SENTRY_DBNAME</span><span class="o">=</span>sentrydbname -e <span class="nv">SENTRY_DBUSER</span><span class="o">=</span>dbuser -e <span class="nv">SENTRY_DBPASS</span><span class="o">=</span>dbpass -p :7365 onjin/sentry start
 </pre>
-
 <p>and open browser at address:</p>
-<ul><li><a href="http://localhost:7365/">http://localhost:7365</a></li>
-
-</ul><p></p>
+<blockquote>
+<ul class="simple"><li><a class="reference external" href="http://localhost:7365/">localhost</a></li>
+</ul></blockquote>
             
         
     <p>
@@ -82,48 +74,58 @@ docker run -d -e SENTRY_DBHOST=your.db.address -e SENTRY_DBNAME=sentrydbname -e 
         <h1><a href="posts/blog20130813python-soap-server-flask-wsdl-generation.html">Python SOAP server (flask) + wsdl generation</a>
         <small>  
              Posted: <time class="published" datetime="2013-08-13T18:53:49+02:00">2013-08-13 18:53</time></small></h1>
-        <hr><p></p><h4>Install</h4>
-[bash]
-<p>$ pip install Flask-Enterprise</p>
-<p>[/bash]</p>
-<h4>file: soap.py</h4>
-
-<p>[python]</p>
-<p>from time import ctime</p>
-<p>from flask import Flask</p>
-<p>from flaskext.enterprise import Enterprise</p>
-<p>app = Flask(<strong>name</strong>)</p>
-<p>enterprise = Enterprise(app)</p>
-<p>class DemoService(enterprise.SOAPService):
-    <strong>soap_server_address</strong> = '/soap'
-    <strong>soap_target_namespace</strong> = 'ns'</p>
-<div class="code"><pre><span class="err">@</span><span class="n">enterprise</span><span class="p">.</span><span class="n">soap</span><span class="p">(</span><span class="n">_returns</span><span class="o">=</span><span class="n">enterprise</span><span class="p">.</span><span class="n">_sp</span><span class="p">.</span><span class="n">String</span><span class="p">)</span>
-<span class="n">def</span> <span class="n">get_time</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="o">:</span>
-    <span class="k">return</span> <span class="n">ctime</span><span class="p">()</span>
-</pre></div>
-
-
-<p>if <strong>name</strong> == '<strong>main</strong>':
-    app.run(host='127.0.0.1', port=5555)
-[/python]</p>
-<h4>Run service</h4>
-
-<p>[bash]</p>
-<p>$ python soap.py</p>
-<p>[/bash]</p>
-<h4>file: client.py</h4>
-
-<p>[python]</p>
-<p>from suds.client import Client</p>
-<p>c = Client('http://127.0.0.1:5555/soap?wsdl')</p>
-<p>print c.service.get_time()</p>
-<p>[/python]</p>
-<h4>Run test</h4>
-
-<p>[bash]</p>
-<p>$ python client.py</p>
-<p>Tue Aug 13 19:49:53 2013</p>
-<p>[/bash]</p>
+        <hr><div class="section" id="install">
+<h2>Install</h2>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>pip install Flask-Enterprise
+</pre>
+</div>
+<div class="section" id="file-soap-py">
+<h2>file: soap.py</h2>
+<pre class="code python literal-block">
+<span class="ln"> 1 </span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">ctime</span>
+<span class="ln"> 2 </span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="ln"> 3 </span><span class="kn">from</span> <span class="nn">flaskext.enterprise</span> <span class="kn">import</span> <span class="n">Enterprise</span>
+<span class="ln"> 4 </span>
+<span class="ln"> 5 </span><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="ln"> 6 </span>
+<span class="ln"> 7 </span><span class="n">enterprise</span> <span class="o">=</span> <span class="n">Enterprise</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<span class="ln"> 8 </span>
+<span class="ln"> 9 </span>
+<span class="ln">10 </span><span class="k">class</span> <span class="nc">DemoService</span><span class="p">(</span><span class="n">enterprise</span><span class="o">.</span><span class="n">SOAPService</span><span class="p">):</span>
+<span class="ln">11 </span>    <span class="n">__soap_server_address__</span> <span class="o">=</span> <span class="s">'/soap'</span>
+<span class="ln">12 </span>    <span class="n">__soap_target_namespace__</span> <span class="o">=</span> <span class="s">'ns'</span>
+<span class="ln">13 </span>
+<span class="ln">14 </span>    <span class="nd">@enterprise.soap</span><span class="p">(</span><span class="n">_returns</span><span class="o">=</span><span class="n">enterprise</span><span class="o">.</span><span class="n">_sp</span><span class="o">.</span><span class="n">String</span><span class="p">)</span>
+<span class="ln">15 </span>    <span class="k">def</span> <span class="nf">get_time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ln">16 </span>        <span class="k">return</span> <span class="n">ctime</span><span class="p">()</span>
+<span class="ln">17 </span>
+<span class="ln">18 </span><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+<span class="ln">19 </span>    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s">'127.0.0.1'</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5555</span><span class="p">)</span>
+</pre>
+</div>
+<div class="section" id="run-service">
+<h2>Run service</h2>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>python soap.py
+</pre>
+</div>
+<div class="section" id="file-client-py">
+<h2>file: client.py</h2>
+<pre class="code python literal-block">
+<span class="ln">1 </span><span class="kn">from</span> <span class="nn">suds.client</span> <span class="kn">import</span> <span class="n">Client</span>
+<span class="ln">2 </span>
+<span class="ln">3 </span><span class="n">c</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="s">'http://127.0.0.1:5555/soap?wsdl'</span><span class="p">)</span>
+<span class="ln">4 </span><span class="k">print</span> <span class="n">c</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">get_time</span><span class="p">()</span>
+</pre>
+</div>
+<div class="section" id="run-test">
+<h2>Run test</h2>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>python client.py
+Tue Aug 13 19:49:53 2013
+</pre>
+</div>
             
         
     <p>
@@ -135,16 +137,14 @@ docker run -d -e SENTRY_DBHOST=your.db.address -e SENTRY_DBNAME=sentrydbname -e 
         <h1><a href="posts/blog20120730quiet-please-disable-audio-bell-in-gvim.html">quiet please !! disable audio bell in gvim</a>
         <small>  
              Posted: <time class="published" datetime="2012-07-30T21:27:26+02:00">2012-07-30 21:27</time></small></h1>
-        <hr><p></p><p>I don't want to hear it any more, so I've put this into .vimrc</p>
-<div class="code"><pre><span class="c">" quiet pleeeeeease</span>
+        <hr><p>I don't want to hear it any more, so I've put this into <strong>.vimrc</strong></p>
+<pre class="code vim literal-block">
+<span class="c">" quiet pleeeeeease</span>
 
 <span class="k">if</span> has<span class="p">(</span><span class="s1">'autocmd'</span><span class="p">)</span>
-  autocmd <span class="nb">GUIEnter</span> * <span class="k">set</span> <span class="nb">visualbell</span> <span class="nb">t_vb</span><span class="p">=</span>
+autocmd <span class="nb">GUIEnter</span> * <span class="k">set</span> <span class="nb">visualbell</span> <span class="nb">t_vb</span><span class="p">=</span>
 <span class="k">endif</span>
-</pre></div>
-
-
-<p></p>
+</pre>
             
         
     <p>
@@ -156,28 +156,19 @@ docker run -d -e SENTRY_DBHOST=your.db.address -e SENTRY_DBNAME=sentrydbname -e 
         <h1><a href="posts/blog20120705rescan-scsi-bus-no-reboot.html">Rescan SCSI bus (no reboot)</a>
         <small>  
              Posted: <time class="published" datetime="2012-07-05T08:16:42+02:00">2012-07-05 08:16</time></small></h1>
-        <hr><p></p><p>Just self memo. How to attach new SCSI disk without reboot (debian):</p>
-<div class="code"><pre><span class="c"># check what hosts do you have</span>
+        <hr><p>Just self memo. How to attach new SCSI disk without reboot (debian):</p>
+<pre class="code bash literal-block">
+<span class="c"># check what hosts do you have
+</span>ls /sys/class/scsi_host
+host0 host1 host2 host3
 
-ls /sys/class/scsi_host
-  host0 host1 host2 host3
-
-
-<span class="c"># choose your host f.e. 'host0', </span>
-
-<span class="c"># change 'host0' to 'host1' or any next number that you need</span>
-
-<span class="nb">echo</span> <span class="s2">"- - -"</span> &amp;gt; /sys/class/scsi_host/host0/scan
-
-
-
-<span class="c"># and done</span>
-
+<span class="c"># change 'host0' to 'host1' or any next number that you need
+</span><span class="nb">echo</span> <span class="s2">"- - -"</span> &amp;gt; /sys/class/scsi_host/host0/scan
+</pre>
+<p># and done</p>
+<pre class="code bash literal-block">
 fdisk -l
-</pre></div>
-
-
-<p></p>
+</pre>
             
         
     <p>
@@ -189,46 +180,30 @@ fdisk -l
         <h1><a href="posts/blog20120427extend-lvm2-filesystem.html">extend lvm2 filesystem</a>
         <small>  
              Posted: <time class="published" datetime="2012-04-27T10:30:44+02:00">2012-04-27 10:30</time></small></h1>
-        <hr><p></p><p>Just self memo</p>
-<div class="code"><pre><span class="c"># Added new physical partition /dev/sda3</span>
-
-<span class="c"># create a physical volume out of it</span>
-
-&amp;gt; pvcreate /dev/sda3
-
+        <hr><p>Just self memo</p>
+<pre class="code bash literal-block">
+<span class="c"># Added new physical partition /dev/sda3
+# create a physical volume out of it
+</span><span class="nv">$ </span>pvcreate /dev/sda3
 
 
-<span class="c"># Now, add it to the volume group</span>
-
-<span class="c">#that my logical volume is on</span>
-
-&amp;gt; vgextend VolGroup00 /dev/sda3
+<span class="c"># Now, add it to the volume group
+#that my logical volume is on
+</span><span class="nv">$ </span>vgextend VolGroup00 /dev/sda3
 
 
-
-<span class="c"># Now that the volume group has more</span>
-
-<span class="c"># disk space, the logical volume can grow</span>
-
-&amp;gt; lvextend -L+11G /dev/VolGroup00/LogVol00
+<span class="c"># Now that the volume group has more
+# disk space, the logical volume can grow
+</span><span class="nv">$ </span>lvextend -L+11G /dev/VolGroup00/LogVol00
 
 
+<span class="c"># Ok, last of all, I want to filesystem to
+# recognize that more space is available
+</span><span class="nv">$ </span>fsadm resize /dev/VolGroup00/LogVol00
 
-<span class="c"># Ok, last of all, I want to filesystem to</span>
-
-<span class="c"># recognize that more space is available</span>
-
-&amp;gt; fsadm resize /dev/VolGroup00/LogVol00
-
-
-
-<span class="c"># sweet, I have more space now</span>
-
-&amp;gt; df -h
-</pre></div>
-
-
-<p></p>
+<span class="c"># sweet, I have more space now
+</span><span class="nv">$ </span>df -h
+</pre>
             
         
     <p>

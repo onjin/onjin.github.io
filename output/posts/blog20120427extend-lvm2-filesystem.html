@@ -29,7 +29,7 @@
                 </li></ul><span class="navbar-form pull-left">
 <input type="text" id="tipue_search_input"></span>
                 <ul class="nav pull-right"><li>
-			<a href="blog20120427extend-lvm2-filesystem.wp" id="sourcelink">Source</a>
+			<a href="blog20120427extend-lvm2-filesystem.rst" id="sourcelink">Source</a>
 		</li>
                 </ul></div>
         </div>
@@ -58,46 +58,30 @@
           |  
 		
     </small>
-    <hr><p></p><p>Just self memo</p>
-<div class="code"><pre><span class="c"># Added new physical partition /dev/sda3</span>
-
-<span class="c"># create a physical volume out of it</span>
-
-&amp;gt; pvcreate /dev/sda3
-
+    <hr><p>Just self memo</p>
+<pre class="code bash literal-block">
+<span class="c"># Added new physical partition /dev/sda3
+# create a physical volume out of it
+</span><span class="nv">$ </span>pvcreate /dev/sda3
 
 
-<span class="c"># Now, add it to the volume group</span>
-
-<span class="c">#that my logical volume is on</span>
-
-&amp;gt; vgextend VolGroup00 /dev/sda3
+<span class="c"># Now, add it to the volume group
+#that my logical volume is on
+</span><span class="nv">$ </span>vgextend VolGroup00 /dev/sda3
 
 
-
-<span class="c"># Now that the volume group has more</span>
-
-<span class="c"># disk space, the logical volume can grow</span>
-
-&amp;gt; lvextend -L+11G /dev/VolGroup00/LogVol00
+<span class="c"># Now that the volume group has more
+# disk space, the logical volume can grow
+</span><span class="nv">$ </span>lvextend -L+11G /dev/VolGroup00/LogVol00
 
 
+<span class="c"># Ok, last of all, I want to filesystem to
+# recognize that more space is available
+</span><span class="nv">$ </span>fsadm resize /dev/VolGroup00/LogVol00
 
-<span class="c"># Ok, last of all, I want to filesystem to</span>
-
-<span class="c"># recognize that more space is available</span>
-
-&amp;gt; fsadm resize /dev/VolGroup00/LogVol00
-
-
-
-<span class="c"># sweet, I have more space now</span>
-
-&amp;gt; df -h
-</pre></div>
-
-
-<p></p>
+<span class="c"># sweet, I have more space now
+</span><span class="nv">$ </span>df -h
+</pre>
     
     <ul class="pager"><li class="previous">
             <a href="blog20120314vim-vundle-plugin-manager-programming.html">← Previous post</a>

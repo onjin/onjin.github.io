@@ -29,7 +29,7 @@
                 </li></ul><span class="navbar-form pull-left">
 <input type="text" id="tipue_search_input"></span>
                 <ul class="nav pull-right"><li>
-			<a href="blog20120705rescan-scsi-bus-no-reboot.wp" id="sourcelink">Source</a>
+			<a href="blog20120705rescan-scsi-bus-no-reboot.rst" id="sourcelink">Source</a>
 		</li>
                 </ul></div>
         </div>
@@ -58,28 +58,19 @@
           |  
 		
     </small>
-    <hr><p></p><p>Just self memo. How to attach new SCSI disk without reboot (debian):</p>
-<div class="code"><pre><span class="c"># check what hosts do you have</span>
+    <hr><p>Just self memo. How to attach new SCSI disk without reboot (debian):</p>
+<pre class="code bash literal-block">
+<span class="c"># check what hosts do you have
+</span>ls /sys/class/scsi_host
+host0 host1 host2 host3
 
-ls /sys/class/scsi_host
-  host0 host1 host2 host3
-
-
-<span class="c"># choose your host f.e. 'host0', </span>
-
-<span class="c"># change 'host0' to 'host1' or any next number that you need</span>
-
-<span class="nb">echo</span> <span class="s2">"- - -"</span> &amp;gt; /sys/class/scsi_host/host0/scan
-
-
-
-<span class="c"># and done</span>
-
+<span class="c"># change 'host0' to 'host1' or any next number that you need
+</span><span class="nb">echo</span> <span class="s2">"- - -"</span> &amp;gt; /sys/class/scsi_host/host0/scan
+</pre>
+<p># and done</p>
+<pre class="code bash literal-block">
 fdisk -l
-</pre></div>
-
-
-<p></p>
+</pre>
     
     <ul class="pager"><li class="previous">
             <a href="blog20120427extend-lvm2-filesystem.html">← Previous post</a>

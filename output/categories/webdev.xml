@@ -1,46 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (webdev)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now</description><atom:link href="http://marekwywial.name/categories/webdev.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Thu, 03 Oct 2013 23:09:52 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Python SOAP server (flask) + wsdl generation</title><link>http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;h4&gt;Install&lt;/h4&gt;
-[bash]
-&lt;p&gt;$ pip install Flask-Enterprise&lt;/p&gt;
-&lt;p&gt;[/bash]&lt;/p&gt;
-&lt;h4&gt;file: soap.py&lt;/h4&gt;
-
-&lt;p&gt;[python]&lt;/p&gt;
-&lt;p&gt;from time import ctime&lt;/p&gt;
-&lt;p&gt;from flask import Flask&lt;/p&gt;
-&lt;p&gt;from flaskext.enterprise import Enterprise&lt;/p&gt;
-&lt;p&gt;app = Flask(&lt;strong&gt;name&lt;/strong&gt;)&lt;/p&gt;
-&lt;p&gt;enterprise = Enterprise(app)&lt;/p&gt;
-&lt;p&gt;class DemoService(enterprise.SOAPService):
-    &lt;strong&gt;soap_server_address&lt;/strong&gt; = '/soap'
-    &lt;strong&gt;soap_target_namespace&lt;/strong&gt; = 'ns'&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;enterprise&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;soap&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_returns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;enterprise&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;_sp&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;get_time&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;self&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;ctime&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;if &lt;strong&gt;name&lt;/strong&gt; == '&lt;strong&gt;main&lt;/strong&gt;':
-    app.run(host='127.0.0.1', port=5555)
-[/python]&lt;/p&gt;
-&lt;h4&gt;Run service&lt;/h4&gt;
-
-&lt;p&gt;[bash]&lt;/p&gt;
-&lt;p&gt;$ python soap.py&lt;/p&gt;
-&lt;p&gt;[/bash]&lt;/p&gt;
-&lt;h4&gt;file: client.py&lt;/h4&gt;
-
-&lt;p&gt;[python]&lt;/p&gt;
-&lt;p&gt;from suds.client import Client&lt;/p&gt;
-&lt;p&gt;c = Client('http://127.0.0.1:5555/soap?wsdl')&lt;/p&gt;
-&lt;p&gt;print c.service.get_time()&lt;/p&gt;
-&lt;p&gt;[/python]&lt;/p&gt;
-&lt;h4&gt;Run test&lt;/h4&gt;
-
-&lt;p&gt;[bash]&lt;/p&gt;
-&lt;p&gt;$ python client.py&lt;/p&gt;
-&lt;p&gt;Tue Aug 13 19:49:53 2013&lt;/p&gt;
-&lt;p&gt;[/bash]&lt;/p&gt;</description><category>onjin</category><category>programowanie</category><category>python</category><category>webdev</category><guid>http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html</guid><pubDate>Tue, 13 Aug 2013 16:53:49 GMT</pubDate></item><item><title>ftpmount v1.1.0 - github</title><link>http://marekwywial.name/posts/blog20090622ftpmount-v110-github.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;div style="text-align: center; border-bottom: solid 1px gray; background: orange"&gt;sprawdź najnowszą wersję &lt;a href="http://onjin.net/index.php/category/ftpmount"&gt;ftpmount&lt;/a&gt;&lt;/div&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (webdev)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now</description><atom:link href="http://marekwywial.name/categories/webdev.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Thu, 03 Oct 2013 23:43:17 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Python SOAP server (flask) + wsdl generation</title><link>http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html</link><description>&lt;div class="section" id="install"&gt;
+&lt;h2&gt;Install&lt;/h2&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;pip install Flask-Enterprise
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="file-soap-py"&gt;
+&lt;h2&gt;file: soap.py&lt;/h2&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="ln"&gt; 1 &lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;ctime&lt;/span&gt;
+&lt;span class="ln"&gt; 2 &lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;
+&lt;span class="ln"&gt; 3 &lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flaskext.enterprise&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Enterprise&lt;/span&gt;
+&lt;span class="ln"&gt; 4 &lt;/span&gt;
+&lt;span class="ln"&gt; 5 &lt;/span&gt;&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="ln"&gt; 6 &lt;/span&gt;
+&lt;span class="ln"&gt; 7 &lt;/span&gt;&lt;span class="n"&gt;enterprise&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Enterprise&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="ln"&gt; 8 &lt;/span&gt;
+&lt;span class="ln"&gt; 9 &lt;/span&gt;
+&lt;span class="ln"&gt;10 &lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;DemoService&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;enterprise&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SOAPService&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="ln"&gt;11 &lt;/span&gt;    &lt;span class="n"&gt;__soap_server_address__&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'/soap'&lt;/span&gt;
+&lt;span class="ln"&gt;12 &lt;/span&gt;    &lt;span class="n"&gt;__soap_target_namespace__&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'ns'&lt;/span&gt;
+&lt;span class="ln"&gt;13 &lt;/span&gt;
+&lt;span class="ln"&gt;14 &lt;/span&gt;    &lt;span class="nd"&gt;@enterprise.soap&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_returns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;enterprise&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;_sp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="ln"&gt;15 &lt;/span&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_time&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="ln"&gt;16 &lt;/span&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;ctime&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="ln"&gt;17 &lt;/span&gt;
+&lt;span class="ln"&gt;18 &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;'__main__'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="ln"&gt;19 &lt;/span&gt;    &lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;host&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'127.0.0.1'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;5555&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="run-service"&gt;
+&lt;h2&gt;Run service&lt;/h2&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;python soap.py
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="file-client-py"&gt;
+&lt;h2&gt;file: client.py&lt;/h2&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="ln"&gt;1 &lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;suds.client&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Client&lt;/span&gt;
+&lt;span class="ln"&gt;2 &lt;/span&gt;
+&lt;span class="ln"&gt;3 &lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Client&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'http://127.0.0.1:5555/soap?wsdl'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="ln"&gt;4 &lt;/span&gt;&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;service&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_time&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="run-test"&gt;
+&lt;h2&gt;Run test&lt;/h2&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;python client.py
+Tue Aug 13 19:49:53 2013
+&lt;/pre&gt;
+&lt;/div&gt;</description><category>onjin</category><category>programowanie</category><category>python</category><category>webdev</category><guid>http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html</guid><pubDate>Tue, 13 Aug 2013 16:53:49 GMT</pubDate></item><item><title>ftpmount v1.1.0 - github</title><link>http://marekwywial.name/posts/blog20090622ftpmount-v110-github.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;div style="text-align: center; border-bottom: solid 1px gray; background: orange"&gt;sprawdź najnowszą wersję &lt;a href="http://onjin.net/index.php/category/ftpmount"&gt;ftpmount&lt;/a&gt;&lt;/div&gt;
 &lt;p&gt;Przeniosłem skrypt ftpmount do github'a:&lt;/p&gt;
 &lt;ul&gt;&lt;li&gt;&lt;a href="http://wiki.github.com/onjin/ftpmount"&gt;ftpmount&lt;/a&gt;&lt;/li&gt;
 

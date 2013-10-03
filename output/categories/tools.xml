@@ -1,65 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (tools)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now</description><atom:link href="http://marekwywial.name/categories/tools.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Thu, 03 Oct 2013 22:47:18 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Rescan SCSI bus (no reboot)</title><link>http://marekwywial.name/posts/blog20120705rescan-scsi-bus-no-reboot.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Just self memo. How to attach new SCSI disk without reboot (debian):&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;# check what hosts do you have&lt;/span&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (tools)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now</description><atom:link href="http://marekwywial.name/categories/tools.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Thu, 03 Oct 2013 23:50:20 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Rescan SCSI bus (no reboot)</title><link>http://marekwywial.name/posts/blog20120705rescan-scsi-bus-no-reboot.html</link><description>&lt;p&gt;Just self memo. How to attach new SCSI disk without reboot (debian):&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="c"&gt;# check what hosts do you have
+&lt;/span&gt;ls /sys/class/scsi_host
+host0 host1 host2 host3
 
-ls /sys/class/scsi_host
-  host0 host1 host2 host3
-
-
-&lt;span class="c"&gt;# choose your host f.e. 'host0', &lt;/span&gt;
-
-&lt;span class="c"&gt;# change 'host0' to 'host1' or any next number that you need&lt;/span&gt;
-
-&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"- - -"&lt;/span&gt; &amp;amp;gt; /sys/class/scsi_host/host0/scan
-
-
-
-&lt;span class="c"&gt;# and done&lt;/span&gt;
-
+&lt;span class="c"&gt;# change 'host0' to 'host1' or any next number that you need
+&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"- - -"&lt;/span&gt; &amp;amp;gt; /sys/class/scsi_host/host0/scan
+&lt;/pre&gt;
+&lt;p&gt;# and done&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
 fdisk -l
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/pre&gt;</description><category>linux</category><category>tools</category><guid>http://marekwywial.name/posts/blog20120705rescan-scsi-bus-no-reboot.html</guid><pubDate>Thu, 05 Jul 2012 06:16:42 GMT</pubDate></item><item><title>extend lvm2 filesystem</title><link>http://marekwywial.name/posts/blog20120427extend-lvm2-filesystem.html</link><description>&lt;p&gt;Just self memo&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="c"&gt;# Added new physical partition /dev/sda3
+# create a physical volume out of it
+&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pvcreate /dev/sda3
 
 
-&lt;p&gt;&lt;/p&gt;</description><category>linux</category><category>tools</category><guid>http://marekwywial.name/posts/blog20120705rescan-scsi-bus-no-reboot.html</guid><pubDate>Thu, 05 Jul 2012 06:16:42 GMT</pubDate></item><item><title>extend lvm2 filesystem</title><link>http://marekwywial.name/posts/blog20120427extend-lvm2-filesystem.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Just self memo&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;# Added new physical partition /dev/sda3&lt;/span&gt;
-
-&lt;span class="c"&gt;# create a physical volume out of it&lt;/span&gt;
-
-&amp;amp;gt; pvcreate /dev/sda3
+&lt;span class="c"&gt;# Now, add it to the volume group
+#that my logical volume is on
+&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;vgextend VolGroup00 /dev/sda3
 
 
-
-&lt;span class="c"&gt;# Now, add it to the volume group&lt;/span&gt;
-
-&lt;span class="c"&gt;#that my logical volume is on&lt;/span&gt;
-
-&amp;amp;gt; vgextend VolGroup00 /dev/sda3
+&lt;span class="c"&gt;# Now that the volume group has more
+# disk space, the logical volume can grow
+&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;lvextend -L+11G /dev/VolGroup00/LogVol00
 
 
+&lt;span class="c"&gt;# Ok, last of all, I want to filesystem to
+# recognize that more space is available
+&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;fsadm resize /dev/VolGroup00/LogVol00
 
-&lt;span class="c"&gt;# Now that the volume group has more&lt;/span&gt;
-
-&lt;span class="c"&gt;# disk space, the logical volume can grow&lt;/span&gt;
-
-&amp;amp;gt; lvextend -L+11G /dev/VolGroup00/LogVol00
-
-
-
-&lt;span class="c"&gt;# Ok, last of all, I want to filesystem to&lt;/span&gt;
-
-&lt;span class="c"&gt;# recognize that more space is available&lt;/span&gt;
-
-&amp;amp;gt; fsadm resize /dev/VolGroup00/LogVol00
-
-
-
-&lt;span class="c"&gt;# sweet, I have more space now&lt;/span&gt;
-
-&amp;amp;gt; df -h
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;/p&gt;</description><category>hosting</category><category>tools</category><guid>http://marekwywial.name/posts/blog20120427extend-lvm2-filesystem.html</guid><pubDate>Fri, 27 Apr 2012 08:30:44 GMT</pubDate></item><item><title>Grooveshark currentSong.txt + gajim status</title><link>http://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Przy okazji szukania API do &lt;a href="http://grooveshark.com"&gt;grooveshark'a&lt;/a&gt; odkryłem plik &lt;b&gt;currentSong.txt&lt;/b&gt;, który jest tworzony przez &lt;em&gt;Grooveshark Desktop&lt;/em&gt;.&lt;/p&gt;
+&lt;span class="c"&gt;# sweet, I have more space now
+&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;df -h
+&lt;/pre&gt;</description><category>hosting</category><category>tools</category><guid>http://marekwywial.name/posts/blog20120427extend-lvm2-filesystem.html</guid><pubDate>Fri, 27 Apr 2012 08:30:44 GMT</pubDate></item><item><title>Grooveshark currentSong.txt + gajim status</title><link>http://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Przy okazji szukania API do &lt;a href="http://grooveshark.com"&gt;grooveshark'a&lt;/a&gt; odkryłem plik &lt;b&gt;currentSong.txt&lt;/b&gt;, który jest tworzony przez &lt;em&gt;Grooveshark Desktop&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Kilka minut z vim'em i mamy skrypt napisany w python'ie, który odczytuje w/w plik i wrzuca informację o aktualnie odtwarzanym utworze jako status wybranego konta w &lt;a href="http://gajim.org"&gt;gajim'a&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wymana &lt;b&gt;pyinotify&lt;/b&gt;). Wtedy nasz status będzie zmieniany w chwili (chwilę potem :) ) zmiany utworu w Grooveshark Desktop.&lt;/p&gt;
 &lt;p&gt;Całość można dowolnie używać/modyfikować, a pobrać można z serwiu &lt;a href="http://github.com"&gt;github.com&lt;/a&gt;:&lt;/p&gt;

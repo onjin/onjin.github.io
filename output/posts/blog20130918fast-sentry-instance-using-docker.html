@@ -29,7 +29,7 @@
                 </li></ul><span class="navbar-form pull-left">
 <input type="text" id="tipue_search_input"></span>
                 <ul class="nav pull-right"><li>
-			<a href="blog20130918fast-sentry-instance-using-docker.wp" id="sourcelink">Source</a>
+			<a href="blog20130918fast-sentry-instance-using-docker.rst" id="sourcelink">Source</a>
 		</li>
                 </ul></div>
         </div>
@@ -59,33 +59,25 @@
           |  
 		
     </small>
-    <hr><p></p><p>You need docker and postgresql database
-</p><ul><li><a href="http://docker.io/">docker.io</a></li>
-</ul><p>If you have docker installed and postgres database created you can:</p>
-<pre>
+    <hr><p>You need docker and postgresql database</p>
+<blockquote>
+<ul class="simple"><li><a class="reference external" href="http://docker.io/">docker.io</a></li>
+</ul></blockquote>
+<p>If you have docker installed and postgres database created you can:</p>
+<pre class="code bash literal-block">
+<span class="c"># pull sentry image
+</span>docker pull onjin/sentry
 
-# pull sentry image
+<span class="c"># install sentry database
+</span>docker run  -e <span class="nv">SENTRY_DBHOST</span><span class="o">=</span>your.db.address -e <span class="nv">SENTRY_DBNAME</span><span class="o">=</span>sentrydbname -e <span class="nv">SENTRY_DBUSER</span><span class="o">=</span>dbuser -e <span class="nv">SENTRY_DBPASS</span><span class="o">=</span>dbpass -p :7365 onjin/sentry upgrade
 
-docker pull onjin/sentry
-
-
-
-# install sentry database
-
-docker run  -e SENTRY_DBHOST=your.db.address -e SENTRY_DBNAME=sentrydbname -e SENTRY_DBUSER=dbuser -e SENTRY_DBPASS=dbpass -p :7365 onjin/sentry upgrade
-
-
-
-# run sentry instance
-
-docker run -d -e SENTRY_DBHOST=your.db.address -e SENTRY_DBNAME=sentrydbname -e SENTRY_DBUSER=dbuser -e SENTRY_DBPASS=dbpass -p :7365 onjin/sentry start
-
+<span class="c"># run sentry instance
+</span>docker run -d -e <span class="nv">SENTRY_DBHOST</span><span class="o">=</span>your.db.address -e <span class="nv">SENTRY_DBNAME</span><span class="o">=</span>sentrydbname -e <span class="nv">SENTRY_DBUSER</span><span class="o">=</span>dbuser -e <span class="nv">SENTRY_DBPASS</span><span class="o">=</span>dbpass -p :7365 onjin/sentry start
 </pre>
-
 <p>and open browser at address:</p>
-<ul><li><a href="http://localhost:7365/">http://localhost:7365</a></li>
-
-</ul><p></p>
+<blockquote>
+<ul class="simple"><li><a class="reference external" href="http://localhost:7365/">localhost</a></li>
+</ul></blockquote>
     
     <ul class="pager"><li class="previous">
             <a href="blog20130813python-soap-server-flask-wsdl-generation.html">← Previous post</a>

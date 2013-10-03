@@ -61,10 +61,14 @@ TRANSLATIONS = {
 # You should provide a key-value pair for each used language.
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('/archive.html', 'Archives'),
-        ('/categories/index.html', 'Tags'),
-        ('/rss.xml', 'RSS'),
-    ),
+        ('/index.html', 'Home', 'icon-home'),
+        ('/archive.html', 'Archives', 'icon-folder-open-alt'),
+        ('/categories/index.html', 'Tags', 'icon-tags'),
+        ('/rss.xml', 'RSS', 'icon-rss'),
+        ('http://marekwywial.name', 'About me', 'icon-user'),
+        ('https://twitter.com/onjin', 'My Twitter', 'icon-twitter'),
+        ('https://github.com/onjin', 'My Github', 'icon-github'),
+    )
 }
 
 # Below this point, everything is optional
@@ -207,7 +211,7 @@ REDIRECTIONS = [
 # DEPLOY_COMMANDS = []
 DEPLOY_COMMANDS = [
     "git add .",
-    "git commit -am 'Update'",
+    #"git commit -am 'Update'",
     "git push origin website",
     "git subtree split --prefix output -b master",
     "git push -f origin master:master",
@@ -279,6 +283,7 @@ OUTPUT_FOLDER = 'output'
 # Name of the theme to use.
 THEME = "bootstrap3"
 THEME = "blogtxt"
+THEME = "zen"
 
 # Color scheme to be used for code blocks. If your theme provides
 # "assets/css/code.css" this is ignored.

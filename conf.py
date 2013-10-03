@@ -278,6 +278,7 @@ OUTPUT_FOLDER = 'output'
 
 # Name of the theme to use.
 THEME = "bootstrap3"
+THEME = "blogtxt"
 
 # Color scheme to be used for code blocks. If your theme provides
 # "assets/css/code.css" this is ignored.

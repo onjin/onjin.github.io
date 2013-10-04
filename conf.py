@@ -61,13 +61,13 @@ TRANSLATIONS = {
 # You should provide a key-value pair for each used language.
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('/index.html', 'Home'),
-        ('/archive.html', 'Archives'),
-        ('/categories/index.html', 'Tags'),
-        ('/rss.xml', 'RSS'),
-        ('/stories/about-me.html', 'About me'),
-        ('https://twitter.com/onjin', 'My Twitter'),
-        ('https://github.com/onjin', 'My Github'),
+        ('/index.html', 'Home', 'icon-home'),
+        ('/archive.html', 'Archives', 'icon-foler-open-alt'),
+        ('/categories/index.html', 'Tags', 'icon-tags'),
+        ('/rss.xml', 'RSS', 'icon-rss'),
+        ('/stories/about-me.html', 'About me', 'icon-user'),
+        ('https://twitter.com/onjin', 'My Twitter', 'icon-twitter'),
+        ('https://github.com/onjin', 'My Github', 'icon-github'),
     )
 }
 
@@ -283,8 +283,7 @@ OUTPUT_FOLDER = 'output'
 # translated
 
 # Name of the theme to use.
-THEME = "bootstrap3"
-THEME = "zen-ipython"
+THEME = "zen-onjin"
 
 # Color scheme to be used for code blocks. If your theme provides
 # "assets/css/code.css" this is ignored.

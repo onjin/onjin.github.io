@@ -10,8 +10,8 @@ About me
 
 **DRY**:
 
- * linkedin_ (English)
- * goldenline_ (Polski)
+ * `linkedin.com`_ (English)
+ * `goldenline.pl`_ (Polski)
 
-.. _linkedin: http://linkedin.com/in/onjin/
-.. _goldenline: http://goldenline.pl/marek-wywial/
+.. _`linkedin.com`: http://linkedin.com/in/onjin/
+.. _`goldenline.pl`: http://goldenline.pl/marek-wywial/

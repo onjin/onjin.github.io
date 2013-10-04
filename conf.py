@@ -494,7 +494,7 @@ src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798">
 # custom search (http://www.google.com/cse/)
 # Or a duckduckgo search: https://duckduckgo.com/search_box.html
 # Default is no search form.
-# SEARCH_FORM = ""
+SEARCH_FORM = ""
 #
 # This search form works for any site and looks good in the "site" theme where
 # it appears on the navigation bar:
@@ -528,10 +528,10 @@ src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798">
 # Also, there is a local search plugin you can use, based on Tipue,
 # but it requires setting several options:
 
-SEARCH_FORM = """
-<span class="navbar-form pull-left">
-<input type="text" id="tipue_search_input">
-</span>"""
+#SEARCH_FORM = """
+#<span class="navbar-form pull-left">
+#<input type="text" id="tipue_search_input">
+#</span>"""
 
 #BODY_END = """
 #<script type="text/javascript" src="/assets/js/tipuesearch_set.js"></script>

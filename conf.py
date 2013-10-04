@@ -65,7 +65,7 @@ NAVIGATION_LINKS = {
         ('/archive.html', 'Archives'),
         ('/categories/index.html', 'Tags'),
         ('/rss.xml', 'RSS'),
-        ('http://marekwywial.name', 'About me'),
+        ('/stories/about-me.html', 'About me'),
         ('https://twitter.com/onjin', 'My Twitter'),
         ('https://github.com/onjin', 'My Github'),
     )
@@ -102,6 +102,7 @@ POSTS = (
 )
 PAGES = (
     ("stories/*.wp", "stories", "story.tmpl"),
+    ("stories/*.rst", "stories", "story.tmpl"),
 )
 
 # One or more folders containing files to be copied as-is into the output.

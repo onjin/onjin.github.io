@@ -1,23 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (develop)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now</description><atom:link href="http://marekwywial.name/categories/develop.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Thu, 03 Oct 2013 23:39:52 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Fast sentry instance using docker</title><link>http://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker.html</link><description>&lt;p&gt;You need docker and postgresql database&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;&lt;a class="reference external" href="http://docker.io/"&gt;docker.io&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
-&lt;p&gt;If you have docker installed and postgres database created you can:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="c"&gt;# pull sentry image
-&lt;/span&gt;docker pull onjin/sentry
-
-&lt;span class="c"&gt;# install sentry database
-&lt;/span&gt;docker run  -e &lt;span class="nv"&gt;SENTRY_DBHOST&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;your.db.address -e &lt;span class="nv"&gt;SENTRY_DBNAME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;sentrydbname -e &lt;span class="nv"&gt;SENTRY_DBUSER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;dbuser -e &lt;span class="nv"&gt;SENTRY_DBPASS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;dbpass -p :7365 onjin/sentry upgrade
-
-&lt;span class="c"&gt;# run sentry instance
-&lt;/span&gt;docker run -d -e &lt;span class="nv"&gt;SENTRY_DBHOST&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;your.db.address -e &lt;span class="nv"&gt;SENTRY_DBNAME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;sentrydbname -e &lt;span class="nv"&gt;SENTRY_DBUSER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;dbuser -e &lt;span class="nv"&gt;SENTRY_DBPASS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;dbpass -p :7365 onjin/sentry start
-&lt;/pre&gt;
-&lt;p&gt;and open browser at address:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;&lt;a class="reference external" href="http://localhost:7365/"&gt;localhost&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;</description><category>develop</category><category>docker</category><category>linux</category><guid>http://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker.html</guid><pubDate>Wed, 18 Sep 2013 11:36:39 GMT</pubDate></item><item><title>Fast sentry instance using docker</title><link>http://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker.html</link><description>&lt;p&gt;You need docker and postgresql database&lt;/p&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (develop)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now</description><atom:link href="http://marekwywial.name/categories/develop.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Fri, 04 Oct 2013 09:31:56 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Fast sentry instance using docker</title><link>http://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker.html</link><description>&lt;p&gt;You need docker and postgresql database&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ul class="simple"&gt;&lt;li&gt;&lt;a class="reference external" href="http://docker.io/"&gt;docker.io&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/blockquote&gt;

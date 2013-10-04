@@ -62,7 +62,7 @@ TRANSLATIONS = {
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ('/index.html', 'Home', 'icon-home'),
-        ('/archive.html', 'Archives', 'icon-foler-open-alt'),
+        ('/archive.html', 'Archives', 'icon-folder-open-alt'),
         ('/categories/index.html', 'Tags', 'icon-tags'),
         ('/rss.xml', 'RSS', 'icon-rss'),
         ('/stories/about-me.html', 'About me', 'icon-user'),

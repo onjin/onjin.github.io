@@ -34,10 +34,9 @@
         
     
 
-<!--        
+        
 <span class="navbar-form pull-left">
-<input type="text" id="tipue_search_input">
-</span> -->
+<input type="text" id="tipue_search_input"></span>
         </ul></section><section class="page-content"><div class="content" rel="main">
             
     <div class="post">
@@ -127,7 +126,15 @@ addthis_default_style addthis_label_style addthis_32x32_style">
             $(function(){
                 $('.timeago').timeago();
             });
-        </script><script type="text/javascript">
+        </script><script type="text/javascript" src="../assets/js/tipuesearch_set.js"></script><script type="text/javascript" src="../assets/js/tipuesearch.js"></script><script type="text/javascript">
+$(document).ready(function() {
+   $('#tipue_search_input').tipuesearch({
+       'mode': 'json',
+       'contentLocation': '/assets/js/tipuesearch_content.json',
+       'showUrl': false
+   });
+});
+</script><script type="text/javascript">
 /* <![CDATA[ */
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-151457-1']);

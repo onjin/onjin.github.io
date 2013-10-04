@@ -533,19 +533,19 @@ SEARCH_FORM = """
 <input type="text" id="tipue_search_input">
 </span>"""
 
-BODY_END = """
-<script type="text/javascript" src="/assets/js/tipuesearch_set.js"></script>
-<script type="text/javascript" src="/assets/js/tipuesearch.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-   $('#tipue_search_input').tipuesearch({
-       'mode': 'json',
-       'contentLocation': '/assets/js/tipuesearch_content.json',
-       'showUrl': false
-   });
-});
-</script>
-"""
+#BODY_END = """
+#<script type="text/javascript" src="/assets/js/tipuesearch_set.js"></script>
+#<script type="text/javascript" src="/assets/js/tipuesearch.js"></script>
+#<script type="text/javascript">
+#$(document).ready(function() {
+#   $('#tipue_search_input').tipuesearch({
+#       'mode': 'json',
+#       'contentLocation': '/assets/js/tipuesearch_content.json',
+#       'showUrl': false
+#   });
+#});
+#</script>
+#"""
 
 # EXTRA_HEAD_DATA = """
 # <link rel="stylesheet" type="text/css" href="/assets/css/tipuesearch.css">
@@ -569,6 +569,18 @@ ENABLED_EXTRAS = ['local_search']
 # Google analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
 BODY_END = """
+<script type="text/javascript" src="/assets/js/tipuesearch_set.js"></script>
+<script type="text/javascript" src="/assets/js/tipuesearch.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+   $('#tipue_search_input').tipuesearch({
+       'mode': 'json',
+       'contentLocation': '/assets/js/tipuesearch_content.json',
+       'showUrl': false
+   });
+});
+</script>
+
 <script type="text/javascript">
 /* <![CDATA[ */
 var _gaq = _gaq || [];

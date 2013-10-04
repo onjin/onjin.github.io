@@ -1,1 +1,1 @@
-<!DOCTYPE html><head><title>Redirecting...</title><meta http-equiv="refresh" content="0; url=/blog/posts/blog20090226homepl-django-pierwsza-potyczka.html"></head>
+<!DOCTYPE html><head><title>Redirecting...</title><meta http-equiv="refresh" content="0; url=/posts/blog20090226homepl-django-pierwsza-potyczka.html"></head>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (cli)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now</description><atom:link href="http://marekwywial.name/categories/cli.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Sat, 12 Oct 2013 01:42:20 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Telewizja N (nc+) i python</title><link>http://marekwywial.name/posts/telewizja-n-nc-i-python.html</link><description>&lt;p&gt;Aby się przeklikać przez program na &lt;a class="reference external" href="http://n.pl/"&gt;http://n.pl/&lt;/a&gt; i jeszcze znaleźć interesujący program, to jest ponad moje siły.&lt;/p&gt;
+&lt;p&gt;Napisałem więc na szybko narzędzie działające w shellu, które pozwala przeglądać oraz przeszukiwać program ze strony
+n.pl &lt;a class="reference external" href="https://github.com/onjin/ntv/"&gt;https://github.com/onjin/ntv/&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="section" id="instalacja"&gt;
+&lt;h2&gt;Instalacja&lt;/h2&gt;
+&lt;p&gt;Program napisany jest w &lt;strong&gt;Pythonie&lt;/strong&gt; i dystrybuowany jako &lt;strong&gt;egg&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;pip install ntv
+&lt;span class="nv"&gt;$ &lt;/span&gt;ntv-cli --help
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="kanaly"&gt;
+&lt;h2&gt;Kanały&lt;/h2&gt;
+&lt;p&gt;Lista wszystkich kanałów nadających dzisiaj:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;&lt;li&gt;ntv-cli channels&lt;/li&gt;
+&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;p&gt;Lista kanałów zawierających w nazie 'filmbox' (obojętne czy małe czy duże litery):&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;&lt;li&gt;ntv-cli channels filmbox&lt;/li&gt;
+&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;p&gt;Wyszukanie kanałów na wybrany dzień:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;&lt;li&gt;ntv-cli channels -d 2013-10-13&lt;/li&gt;
+&lt;li&gt;ntv-cli channels filmbox -d 2013-10-13&lt;/li&gt;
+&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="programy"&gt;
+&lt;h2&gt;Programy&lt;/h2&gt;
+&lt;p&gt;Lista wszystkich programów nadawanych dzisiaj:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;&lt;li&gt;ntv-cli movies&lt;/li&gt;
+&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;p&gt;Lista programów nadawanych na kanałach mający w nazie 'polsat':&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;&lt;li&gt;ntv-cli movies polsat&lt;/li&gt;
+&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;p&gt;Lista programów nadawanych na kanałach 'polsta' zawierająca w nazie słowo 'mecz':&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;&lt;li&gt;ntv-cli movies polsat -t mecz&lt;/li&gt;
+&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;p&gt;Wyszukanie programów na inny dzień:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;&lt;li&gt;ntv-cli movies polsat -t mecz -d 2013-10-13&lt;/li&gt;
+&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;/div&gt;</description><category>python</category><category>github</category><category>cli</category><guid>http://marekwywial.name/posts/telewizja-n-nc-i-python.html</guid><pubDate>Fri, 11 Oct 2013 23:26:16 GMT</pubDate></item></channel></rss>

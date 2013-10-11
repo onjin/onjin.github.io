@@ -1,6 +1,12 @@
 {
   "pages": [
     {
+      "text": "Aby si\u0119 przeklika\u0107 przez program na n.pl i jeszcze znale\u017a\u0107 interesuj\u0105cy program, to jest ponad moje si\u0142y.\nNapisa\u0142em wi\u0119c na szybko narz\u0119dzie dzia\u0142aj\u0105ce w shellu, kt\u00f3re pozwala przegl\u0105da\u0107 oraz przeszukiwa\u0107 program ze strony\nn.pl ntvgithub.\n\nInstalacja\nProgram napisany jest w Pythonie i dystrybuowany jako egg\n\n$ pip install ntv\n$ ntv-cli --help\n\n\n\nKana\u0142y\nLista wszystkich kana\u0142\u00f3w nadaj\u0105cych dzi\u015biaj:\n\nntv-cli channels\n\nLista kana\u0142\u00f3w zawieraj\u0105cych w nazie 'filmbox' (oboj\u0119tne czy ma\u0142e czy du\u017ce litery):\n\nntv-cli channels filmbox\n\nWy\u015bwietlenie wszystkich pozycji nadawanych dzisiaj:\n\nntv-cli moveis", 
+      "tags": "python,github,cli", 
+      "loc": "/posts/telewizja-n-nc-i-python.html", 
+      "title": "Telewizja N (nc+) i python"
+    }, 
+    {
       "text": "DRY:\n\nlinkedin.com (English)\ngoldenline.pl (Polski)", 
       "tags": "marekwywial,about", 
       "loc": "/stories/about-me.html", 

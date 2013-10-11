@@ -1221,182 +1221,192 @@
  </url>
  <url>
   <loc>http://marekwywial.name/categories/</loc>
-  <lastmod>2013-10-04</lastmod>
+  <lastmod>2013-10-12</lastmod>
+  <priority>0.5000</priority>
+ </url>
+ <url>
+  <loc>http://marekwywial.name/categories/cli.html</loc>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/css.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/desktop.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/develop.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/devhelp.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/django.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/docker.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/ftpmount.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/games.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/git-python-php.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/git.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
+  <priority>0.5000</priority>
+ </url>
+ <url>
+  <loc>http://marekwywial.name/categories/github.html</loc>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/gnome.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/google.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/homepl.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/hosting.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/index.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/jabber.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/linux.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/memo.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/mud.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/muzyka.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/onjin.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/php.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/pozycjonowanie.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/programowanie.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/python.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/security.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/server-linux.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/sztuki-walki.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/tools.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/ubuntu.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/video.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/vim.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/webdev.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/wmanager.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/categories/www.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
@@ -1406,57 +1416,57 @@
  </url>
  <url>
   <loc>http://marekwywial.name/index-1.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/index-10.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/index-2.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/index-3.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/index-4.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/index-5.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/index-6.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/index-7.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/index-8.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/index-9.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>http://marekwywial.name/index.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
@@ -1996,7 +2006,7 @@
  </url>
  <url>
   <loc>http://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker.html</loc>
-  <lastmod>2013-10-05</lastmod>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
@@ -2007,6 +2017,11 @@
  <url>
   <loc>http://marekwywial.name/posts/blogfirefox.html</loc>
   <lastmod>2013-10-04</lastmod>
+  <priority>0.5000</priority>
+ </url>
+ <url>
+  <loc>http://marekwywial.name/posts/telewizja-n-nc-i-python.html</loc>
+  <lastmod>2013-10-12</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>

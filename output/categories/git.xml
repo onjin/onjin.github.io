@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (git)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now</description><atom:link href="http://marekwywial.name/categories/git.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Sat, 12 Oct 2013 01:35:36 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>ftpmount v1.1.0 - github</title><link>http://marekwywial.name/posts/blog20090622ftpmount-v110-github.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;div style="text-align: center; border-bottom: solid 1px gray; background: orange"&gt;sprawdź najnowszą wersję &lt;a href="http://onjin.net/index.php/category/ftpmount"&gt;ftpmount&lt;/a&gt;&lt;/div&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (git)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now</description><atom:link href="http://marekwywial.name/categories/git.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Sun, 27 Oct 2013 18:03:44 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>ftpmount v1.1.0 - github</title><link>http://marekwywial.name/posts/blog20090622ftpmount-v110-github.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;div style="text-align: center; border-bottom: solid 1px gray; background: orange"&gt;sprawdź najnowszą wersję &lt;a href="http://onjin.net/index.php/category/ftpmount"&gt;ftpmount&lt;/a&gt;&lt;/div&gt;
 &lt;p&gt;Przeniosłem skrypt ftpmount do github'a:&lt;/p&gt;
 &lt;ul&gt;&lt;li&gt;&lt;a href="http://wiki.github.com/onjin/ftpmount"&gt;ftpmount&lt;/a&gt;&lt;/li&gt;
 
-&lt;/ul&gt;&lt;p&gt;Równocześnie zmieniłem sposób konfiguracji, a raczej tylko domyślną nazwę pliku konfiguracyjnego. Teraz jest szukany plik:&lt;/p&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Równocześnie zmieniłem sposób konfiguracji, a raczej tylko domyślną nazwę pliku konfiguracyjnego. Teraz jest szukany plik:&lt;/p&gt;
 &lt;ul&gt;&lt;li&gt;.ftpmountrc w aktualnym katalogu&lt;/li&gt;
 
 &lt;li&gt;potem .ftpmountrc w katalogu domowym&lt;/li&gt;
 
-&lt;/ul&gt;&lt;p&gt;Wersje &lt;a href="http://github.com/onjin/ftpmount/downloads"&gt;do pobrania&lt;/a&gt;.&lt;/p&gt;</description><category>ftpmount</category><category>git</category><category>linux</category><category>tools</category><category>webdev</category><guid>http://marekwywial.name/posts/blog20090622ftpmount-v110-github.html</guid><pubDate>Mon, 22 Jun 2009 09:30:35 GMT</pubDate></item><item><title>git pre-commit hook - symfony / php</title><link>http://marekwywial.name/posts/blog20090511git-pre-commit-hook-symfony-php.html</link><description>&lt;p&gt;Mam jeszcze tą nieprzyjemnośc pracy z PHP (w tym przypadku z symfony framework) i aby była przyjemniejsza dodałem sobie hook na &lt;strong&gt;pre-commit&lt;/strong&gt; do git'a.
+&lt;/ul&gt;
+
+&lt;p&gt;Wersje &lt;a href="http://github.com/onjin/ftpmount/downloads"&gt;do pobrania&lt;/a&gt;.&lt;/p&gt;</description><category>ftpmount</category><category>git</category><category>linux</category><category>tools</category><category>webdev</category><guid>http://marekwywial.name/posts/blog20090622ftpmount-v110-github.html</guid><pubDate>Mon, 22 Jun 2009 09:30:35 GMT</pubDate></item><item><title>git pre-commit hook - symfony / php</title><link>http://marekwywial.name/posts/blog20090511git-pre-commit-hook-symfony-php.html</link><description>&lt;p&gt;Mam jeszcze tą nieprzyjemnośc pracy z PHP (w tym przypadku z symfony framework) i aby była przyjemniejsza dodałem sobie hook na &lt;strong&gt;pre-commit&lt;/strong&gt; do git'a.
  * &lt;a href="http://dl.getdropbox.com/u/185133/git/pre-commit"&gt;http://dl.getdropbox.com/u/185133/git/pre-commit&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;by zadziałało przerywanie commit'a gdy '&lt;em&gt;symfony unit-test&lt;/em&gt;' się nie udadzą, potrzebna jest łatka na symfony (przynajmniej na moją wersję 1.0.17)
  * &lt;a href="http://dl.getdropbox.com/u/185133/git/symfony_return_code.diff"&gt;http://dl.getdropbox.com/u/185133/git/symfony_return_code.diff&lt;/a&gt;&lt;/p&gt;

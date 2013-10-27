@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (gnome)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now</description><atom:link href="http://marekwywial.name/categories/gnome.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Sat, 12 Oct 2013 01:35:36 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>lekkie gnome, openbox zamiast metacity</title><link>http://marekwywial.name/posts/blog20081001lekkie-gnome-openbox-zamiast-metacity.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Lubię gnome, choć niektóre rzeczy mogły by być lepsze np:&lt;/p&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (gnome)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now</description><atom:link href="http://marekwywial.name/categories/gnome.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Sun, 27 Oct 2013 18:03:45 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>lekkie gnome, openbox zamiast metacity</title><link>http://marekwywial.name/posts/blog20081001lekkie-gnome-openbox-zamiast-metacity.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Lubię gnome, choć niektóre rzeczy mogły by być lepsze np:&lt;/p&gt;
 &lt;ul&gt;&lt;li&gt;szybszy start/działania&lt;/li&gt;
 &lt;li&gt;i brakuje mi kombinacji ALT+prawy klawisz myszy do zmiany rozmiarów okien (naleciałość od używania przez lata windowmakera)&lt;/li&gt;
 
@@ -24,6 +24,8 @@ apt-get install openbox obconf
 
 &lt;ul&gt;&lt;li&gt;&lt;a href="http://marekwywial.name/files/rc.xml"&gt;rc.xml&lt;/a&gt;&lt;/li&gt;
 
-&lt;/ul&gt;&lt;p&gt;Wystarczy umieścić go w ~/config/opebox/ i zalogować się do Gnome/openbox. &lt;br&gt;&lt;strong&gt;Uwaga:&lt;/strong&gt; jeżeli włączycie efekty pulpitu, wtedy openbox zostanie zamieniony na powrót na Metacity (don't do it)&lt;/p&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Wystarczy umieścić go w ~/config/opebox/ i zalogować się do Gnome/openbox. &lt;br&gt;&lt;strong&gt;Uwaga:&lt;/strong&gt; jeżeli włączycie efekty pulpitu, wtedy openbox zostanie zamieniony na powrót na Metacity (don't do it)&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description><category>desktop</category><category>gnome</category><category>ubuntu</category><category>wmanager</category><guid>http://marekwywial.name/posts/blog20081001lekkie-gnome-openbox-zamiast-metacity.html</guid><pubDate>Wed, 01 Oct 2008 17:35:16 GMT</pubDate></item></channel></rss>

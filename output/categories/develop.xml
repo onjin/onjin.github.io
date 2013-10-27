@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (develop)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now</description><atom:link href="http://marekwywial.name/categories/develop.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Sat, 12 Oct 2013 01:35:35 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Fast sentry instance using docker</title><link>http://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker.html</link><description>&lt;p&gt;You need docker and postgresql database&lt;/p&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (develop)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now</description><atom:link href="http://marekwywial.name/categories/develop.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Sun, 27 Oct 2013 18:03:44 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Fast sentry instance using docker</title><link>http://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker.html</link><description>&lt;p&gt;You need docker and postgresql database&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;&lt;a class="reference external" href="http://docker.io/"&gt;docker.io&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://docker.io/"&gt;docker.io&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;If you have docker installed and postgres database created you can:&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 &lt;span class="c"&gt;# pull sentry image
@@ -16,8 +18,10 @@
 &lt;/pre&gt;
 &lt;p&gt;and open browser at address:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;&lt;a class="reference external" href="http://localhost:7365/"&gt;localhost&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;</description><category>develop</category><category>docker</category><category>linux</category><guid>http://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker.html</guid><pubDate>Wed, 18 Sep 2013 11:36:39 GMT</pubDate></item><item><title>public google wave - test ;)</title><link>http://marekwywial.name/posts/blog20091021public-google-wave-test.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;div id="wave" style="width: 450px;height: 800px;padding-bottom:20px; margin-bottom:20px;"&gt;&lt;/div&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://localhost:7365/"&gt;localhost&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;</description><category>develop</category><category>docker</category><category>linux</category><guid>http://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker.html</guid><pubDate>Wed, 18 Sep 2013 11:36:39 GMT</pubDate></item><item><title>public google wave - test ;)</title><link>http://marekwywial.name/posts/blog20091021public-google-wave-test.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;div id="wave" style="width: 450px;height: 800px;padding-bottom:20px; margin-bottom:20px;"&gt;&lt;/div&gt;
 &lt;script type="text/javascript" src="http://wave-api.appspot.com/public/embed.js"&gt;
 &lt;/script&gt;&lt;script type="text/javascript"&gt;
   var wave =
@@ -33,6 +37,8 @@
 
 &lt;li&gt;do README dodałem informację, że 'curlftpfs' jest potrzebny do działania skryptu&lt;/li&gt;
 
-&lt;/ul&gt;&lt;p&gt;Wersje &lt;a href="http://github.com/onjin/ftpmount/downloads"&gt;do pobrania&lt;/a&gt;.&lt;/p&gt;</description><category>develop</category><category>ftpmount</category><category>linux</category><category>python</category><guid>http://marekwywial.name/posts/blog20090625ftpmount-v120.html</guid><pubDate>Thu, 25 Jun 2009 10:44:36 GMT</pubDate></item><item><title>git cheatsheet</title><link>http://marekwywial.name/posts/blog20081001git-cheatsheet.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Kontynuując serię, kolejny cheatsheet tym razem do systemu kontroli wersji &lt;a href="http://git.or.cz/"&gt;git&lt;/a&gt;.&lt;/p&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Wersje &lt;a href="http://github.com/onjin/ftpmount/downloads"&gt;do pobrania&lt;/a&gt;.&lt;/p&gt;</description><category>develop</category><category>ftpmount</category><category>linux</category><category>python</category><guid>http://marekwywial.name/posts/blog20090625ftpmount-v120.html</guid><pubDate>Thu, 25 Jun 2009 10:44:36 GMT</pubDate></item><item><title>git cheatsheet</title><link>http://marekwywial.name/posts/blog20081001git-cheatsheet.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Kontynuując serię, kolejny cheatsheet tym razem do systemu kontroli wersji &lt;a href="http://git.or.cz/"&gt;git&lt;/a&gt;.&lt;/p&gt;
 &lt;ul&gt;&lt;li&gt;&lt;a href="http://git.or.cz/gitwiki/GitCheatSheet"&gt;GitCheatSheet&lt;/a&gt;&lt;/li&gt;
 &lt;p&gt;&lt;/p&gt;&lt;/ul&gt;&lt;p&gt;I jest git ... :)&lt;/p&gt;</description><category>develop</category><guid>http://marekwywial.name/posts/blog20081001git-cheatsheet.html</guid><pubDate>Wed, 01 Oct 2008 18:14:59 GMT</pubDate></item></channel></rss>

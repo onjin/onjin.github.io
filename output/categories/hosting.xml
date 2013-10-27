@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (hosting)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now</description><atom:link href="http://marekwywial.name/categories/hosting.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Sat, 12 Oct 2013 01:35:35 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>extend lvm2 filesystem</title><link>http://marekwywial.name/posts/blog20120427extend-lvm2-filesystem.html</link><description>&lt;p&gt;Just self memo&lt;/p&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (hosting)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now</description><atom:link href="http://marekwywial.name/categories/hosting.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Sun, 27 Oct 2013 18:03:45 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>extend lvm2 filesystem</title><link>http://marekwywial.name/posts/blog20120427extend-lvm2-filesystem.html</link><description>&lt;p&gt;Just self memo&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 &lt;span class="c"&gt;# Added new physical partition /dev/sda3
 # create a physical volume out of it
@@ -127,8 +127,10 @@
 &lt;h2&gt;do pobrania&lt;/h2&gt;
 &lt;p&gt;Dokładam paczkę z plikami do testu:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;&lt;a class="reference external" href="http://marekwywial.name/files/py.zip"&gt;pyzip&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://marekwywial.name/files/py.zip"&gt;pyzip&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 &lt;pre class="code bash literal-block"&gt;
 &lt;span class="nv"&gt;$ &lt;/span&gt;unzip py.zip
 &lt;/pre&gt;
@@ -137,9 +139,11 @@
 &lt;div class="section" id="dodatkowe-moje-narzedzia"&gt;
 &lt;h2&gt;Dodatkowe moje narzędzia&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;&lt;a class="reference external" href="https://github.com/onjin/django-buildout-template"&gt;django-buildout-template&lt;/a&gt; - szablon startowy dla projektów django z monitoringiem procesów, itp.&lt;/li&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/onjin/django-buildout-template"&gt;django-buildout-template&lt;/a&gt; - szablon startowy dla projektów django z monitoringiem procesów, itp.&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://github.com/onjin/vim-startup"&gt;vim-startup&lt;/a&gt; - vim dostosowany do edycji python'a&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 &lt;/div&gt;</description><category>hosting</category><category>python</category><category>webdev</category><category>django</category><category>home.pl</category><guid>http://marekwywial.name/posts/blog20090226homepl-django-pierwsza-potyczka.html</guid><pubDate>Thu, 26 Feb 2009 20:59:38 GMT</pubDate></item><item><title>rośnie prezent ... na gmailu</title><link>http://marekwywial.name/posts/blog20071025rosnie-prezent-na-gmailu.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Bezpłatne konta pocztowe &lt;a href="http://gmail.com/"&gt;Gmail&lt;/a&gt; w ostatnich dniach trochę spuchły i teraz mają ok &lt;strong&gt;4,3GB&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="http://marekwywial.name/img/gmail_4.jpg" alt="gmail"&gt;&lt;/p&gt;
 &lt;p&gt;Skrzynki w &lt;a href="http://google.com/a/"&gt;Google Apps&lt;/a&gt; także mają urosnąć. Można o tym przeczytać na &lt;a href="http://googlepolska.blogspot.com/2007/10/gmail-ronie-jak-na-drodach.html"&gt;blogu Google Polska&lt;/a&gt;&lt;/p&gt;
@@ -170,7 +174,8 @@
 &lt;p&gt;przeczesywać internet i kasować wszystkie dane, które znajdą.&lt;/p&gt;
 &lt;p&gt;W celu ochrony swoich cennych danych przed usunięcie, prosimy o &lt;/p&gt;
 &lt;p&gt;dokonanie następujących czynności:&lt;/p&gt;
-&lt;ol&gt;&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;
 &lt;p&gt;Odłącz wszystkie terminale i sieci LAN od internetu.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -181,10 +186,13 @@
 &lt;p&gt;Odłącz wszystkie dyski, pendrivy, mp3 playery oraz dyski 
 przenośne od jakichkolwiek urządzeń, które mogą mieć styczność z &lt;/p&gt;
 &lt;/li&gt;
-&lt;/ol&gt;&lt;p&gt;internetem.&lt;/p&gt;
-&lt;ol&gt;&lt;li&gt;Unikaj połączenia jakiegokolwiek komputera czy komórki z 
+&lt;/ol&gt;
+&lt;p&gt;internetem.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Unikaj połączenia jakiegokolwiek komputera czy komórki z 
 internetem.&lt;/li&gt;
-&lt;/ol&gt;&lt;p&gt;Zdajemy sobie sprawę, jak wielką niewygodę może to sprawić wielu &lt;/p&gt;
+&lt;/ol&gt;
+&lt;p&gt;Zdajemy sobie sprawę, jak wielką niewygodę może to sprawić wielu &lt;/p&gt;
 &lt;p&gt;użytkownikom internetu, bardzo przepraszamy za to. Jednakże jesteśmy &lt;/p&gt;
 &lt;p&gt;pewnie, że wszystkie te dolegliwości, co najmniej wynagrodzone zostaną &lt;/p&gt;
 &lt;p&gt;przez zwiększenie prędkości i efektywności Internetu, jak tylko zostanie &lt;/p&gt;
@@ -206,7 +214,9 @@ internetem.&lt;/li&gt;
 
 &lt;li&gt;dodatkowe adresy ip (1-3 adresów, oprócz standardowego)&lt;/li&gt;
 
-&lt;/ul&gt;&lt;p&gt;Tworząc kod promocyjny masz teraz większe pole do popisu. Na przykład kod &lt;strong&gt;onjin50&lt;/strong&gt; daje zniżkę $50 na dowolny plan hostingowy, natomiast kod &lt;strong&gt;onjin1ip&lt;/strong&gt; łączy &lt;strong&gt;dodatkowy adres ip&lt;/strong&gt; wraz ze zniżką $20.&lt;/p&gt;</description><category>hosting</category><guid>http://marekwywial.name/posts/blog20070314dreamhost-dodatkowy-adres-ip.html</guid><pubDate>Tue, 13 Mar 2007 23:22:11 GMT</pubDate></item><item><title>Picasa Web Albums puchnie</title><link>http://marekwywial.name/posts/blog20070312picasa-web-albums-puchnie.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Dzień prezentów dziś się jeszcze nie skończył. Tym razem &lt;strong&gt;Google&lt;/strong&gt; w &lt;a href="http://picasaweb.google.pl/"&gt;Picasa Web Albums&lt;/a&gt; zwiekszyła pojemność konta (na fotki oczywiście)  z 250MB do 1GB oraz dodana została wyszukiwarka by łatwiej odnajdywać albumy.&lt;/p&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tworząc kod promocyjny masz teraz większe pole do popisu. Na przykład kod &lt;strong&gt;onjin50&lt;/strong&gt; daje zniżkę $50 na dowolny plan hostingowy, natomiast kod &lt;strong&gt;onjin1ip&lt;/strong&gt; łączy &lt;strong&gt;dodatkowy adres ip&lt;/strong&gt; wraz ze zniżką $20.&lt;/p&gt;</description><category>hosting</category><guid>http://marekwywial.name/posts/blog20070314dreamhost-dodatkowy-adres-ip.html</guid><pubDate>Tue, 13 Mar 2007 23:22:11 GMT</pubDate></item><item><title>Picasa Web Albums puchnie</title><link>http://marekwywial.name/posts/blog20070312picasa-web-albums-puchnie.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Dzień prezentów dziś się jeszcze nie skończył. Tym razem &lt;strong&gt;Google&lt;/strong&gt; w &lt;a href="http://picasaweb.google.pl/"&gt;Picasa Web Albums&lt;/a&gt; zwiekszyła pojemność konta (na fotki oczywiście)  z 250MB do 1GB oraz dodana została wyszukiwarka by łatwiej odnajdywać albumy.&lt;/p&gt;
 &lt;p&gt;Picasa Web Albums - jeżeli jeszcze ktoś nie wiem - jest bezpłatną, internetową galerią zdjęć zintegrowaną z programem &lt;a href="http://picasa.google.pl/"&gt;Picasa&lt;/a&gt; do katalogowania i obróbki zdjęć dostarczanym (tu niespodzianka: także bezpłatnie :) ) przez Google.&lt;/p&gt;
 &lt;p&gt;Picasa integruje się także z &lt;a href="http://blogger.com/"&gt;Bloggerem&lt;/a&gt; oraz &lt;a href="http://gmail.com"&gt;Gmailem&lt;/a&gt;.&lt;/p&gt;</description><category>hosting</category><category>tools</category><category>www</category><guid>http://marekwywial.name/posts/blog20070312picasa-web-albums-puchnie.html</guid><pubDate>Mon, 12 Mar 2007 11:45:53 GMT</pubDate></item><item><title>Dreamhost szybciej</title><link>http://marekwywial.name/posts/blog20070312dreamhost-szybciej.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;9-tego marca &lt;a href="http://www.dreamhost.com/r.cgi?235192onjin50"&gt;Dreamhost&lt;/a&gt; poinformował o wykonanym upgrade ich sieci, co zaowocowało około 3-krotym przyśpieszeniem komunikacji z ich serwerami.&lt;/p&gt;
 &lt;p&gt;Właśnie połączenie z dreamhost oraz ich panel były jak dla mnie elementami odstającymi od reszty ich oferty. Na początku miesiąca panel także doświadczył upgrade (choć wiele mu jeszcze brakuje do ideału) i wraz ze zwiększeniem prędkości połączenia stanowi to o tym, że Dreamhost nie śpi i ciągle się rozwija.&lt;/p&gt;</description><category>hosting</category><category>www</category><guid>http://marekwywial.name/posts/blog20070312dreamhost-szybciej.html</guid><pubDate>Mon, 12 Mar 2007 07:27:22 GMT</pubDate></item></channel></rss>

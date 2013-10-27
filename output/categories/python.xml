@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (python)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now</description><atom:link href="http://marekwywial.name/categories/python.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Sat, 12 Oct 2013 01:42:20 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Telewizja N (nc+) i python</title><link>http://marekwywial.name/posts/telewizja-n-nc-i-python.html</link><description>&lt;p&gt;Aby się przeklikać przez program na &lt;a class="reference external" href="http://n.pl/"&gt;http://n.pl/&lt;/a&gt; i jeszcze znaleźć interesujący program, to jest ponad moje siły.&lt;/p&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (python)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now</description><atom:link href="http://marekwywial.name/categories/python.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Sun, 27 Oct 2013 18:03:44 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Telewizja N (nc+) i python</title><link>http://marekwywial.name/posts/telewizja-n-nc-i-python.html</link><description>&lt;p&gt;Aby się przeklikać przez program na &lt;a class="reference external" href="http://n.pl/"&gt;http://n.pl/&lt;/a&gt; i jeszcze znaleźć interesujący program, to jest ponad moje siły.&lt;/p&gt;
 &lt;p&gt;Napisałem więc na szybko narzędzie działające w shellu, które pozwala przeglądać oraz przeszukiwać program ze strony
 n.pl &lt;a class="reference external" href="https://github.com/onjin/ntv/"&gt;https://github.com/onjin/ntv/&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="section" id="instalacja"&gt;
@@ -14,36 +14,50 @@ n.pl &lt;a class="reference external" href="https://github.com/onjin/ntv/"&gt;ht
 &lt;h2&gt;Kanały&lt;/h2&gt;
 &lt;p&gt;Lista wszystkich kanałów nadających dzisiaj:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;ntv-cli channels&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;ntv-cli channels&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Lista kanałów zawierających w nazie 'filmbox' (obojętne czy małe czy duże litery):&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;ntv-cli channels filmbox&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;ntv-cli channels filmbox&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Wyszukanie kanałów na wybrany dzień:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;ntv-cli channels -d 2013-10-13&lt;/li&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;ntv-cli channels -d 2013-10-13&lt;/li&gt;
 &lt;li&gt;ntv-cli channels filmbox -d 2013-10-13&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;div class="section" id="programy"&gt;
 &lt;h2&gt;Programy&lt;/h2&gt;
 &lt;p&gt;Lista wszystkich programów nadawanych dzisiaj:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;ntv-cli movies&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;ntv-cli movies&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Lista programów nadawanych na kanałach mający w nazie 'polsat':&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;ntv-cli movies polsat&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;ntv-cli movies polsat&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Lista programów nadawanych na kanałach 'polsta' zawierająca w nazie słowo 'mecz':&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;ntv-cli movies polsat -t mecz&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;ntv-cli movies polsat -t mecz&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Wyszukanie programów na inny dzień:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;ntv-cli movies polsat -t mecz -d 2013-10-13&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;ntv-cli movies polsat -t mecz -d 2013-10-13&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 &lt;/div&gt;</description><category>python</category><category>github</category><category>cli</category><guid>http://marekwywial.name/posts/telewizja-n-nc-i-python.html</guid><pubDate>Fri, 11 Oct 2013 23:26:16 GMT</pubDate></item><item><title>Python SOAP server (flask) + wsdl generation</title><link>http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html</link><description>&lt;div class="section" id="install"&gt;
 &lt;h2&gt;Install&lt;/h2&gt;
 &lt;pre class="code bash literal-block"&gt;
@@ -99,8 +113,10 @@ Tue Aug 13 19:49:53 2013
 &lt;p&gt;Niedawno poznałem i zacząłem używać plugin manager'a &lt;a class="reference external" href="https://github.com/gmarik/vundle"&gt;https://github.com/gmarik/vundle&lt;/a&gt; i sam potrzebowałem szybko przenieść konfigurację na drugi komputer i na laptopa. Zazwyczaj używałem dropbox'a i podlinkowanego pliku .vimrc oraz całego katalogu .vim ze wszystkimi pluginami.&lt;/p&gt;
 &lt;p&gt;Jednak używając plugin managera, którego konfiguracja znajduje się w .vimrc pozwala teraz posługiwać się jedynie plikiem .vimrc. Zgodnie z programistyczną zasadą 'jak masz coś zrobić więcej niż 2 razy, napisz program' powstał mały skrypt + podstawowy .vimrc pozwalający szybko uruchomić vim'a skonfigurowanego pod programowanie w ciągu kilku minut.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;&lt;a class="reference external" href="https://github.com/onjin/vim-startup"&gt;https://github.com/onjin/vim-startup&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/onjin/vim-startup"&gt;https://github.com/onjin/vim-startup&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Jak na razie przydało się mi i kilku innym osobom :) . Plik .vimrc jest oczywiście przykładowy i jak już sobie poużywasz vim'a i zdecydujesz się go poznać lepiej wtedy po kolei skonfigurujesz go pod siebie.&lt;/p&gt;</description><category>onjin</category><category>python</category><category>vim</category><category>vim</category><guid>http://marekwywial.name/posts/blog20120314vim-vundle-plugin-manager-programming.html</guid><pubDate>Wed, 14 Mar 2012 21:50:36 GMT</pubDate></item><item><title>Grooveshark currentSong.txt + gajim status</title><link>http://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Przy okazji szukania API do &lt;a href="http://grooveshark.com"&gt;grooveshark'a&lt;/a&gt; odkryłem plik &lt;b&gt;currentSong.txt&lt;/b&gt;, który jest tworzony przez &lt;em&gt;Grooveshark Desktop&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Kilka minut z vim'em i mamy skrypt napisany w python'ie, który odczytuje w/w plik i wrzuca informację o aktualnie odtwarzanym utworze jako status wybranego konta w &lt;a href="http://gajim.org"&gt;gajim'a&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wymana &lt;b&gt;pyinotify&lt;/b&gt;). Wtedy nasz status będzie zmieniany w chwili (chwilę potem :) ) zmiany utworu w Grooveshark Desktop.&lt;/p&gt;
@@ -108,7 +124,9 @@ Tue Aug 13 19:49:53 2013
 &lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="https://github.com/onjin/grooveshark2gajim"&gt;https://github.com/onjin/grooveshark2gajim&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://onjin.github.com/grooveshark2gajim/"&gt;http://onjin.github.com/grooveshark2gajim/&lt;/a&gt;&lt;/li&gt;
 
-&lt;/ul&gt;&lt;p&gt;Do działania wystarczy nam plik &lt;a href="https://github.com/onjin/grooveshark2gajim/raw/master/grov2gajim.py"&gt;grov2gajim.py&lt;/a&gt;. Umieszczamy go gdzieś na dysku i możemy używać.&lt;/p&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Do działania wystarczy nam plik &lt;a href="https://github.com/onjin/grooveshark2gajim/raw/master/grov2gajim.py"&gt;grov2gajim.py&lt;/a&gt;. Umieszczamy go gdzieś na dysku i możemy używać.&lt;/p&gt;
 &lt;div style="display: none"&gt;&lt;a href="http://www.atotaldetox.com/thc-marijuana-detox-kits/"&gt;&lt;b&gt;thc/marijuana detox kits&lt;/b&gt;&lt;/a&gt;.&lt;/div&gt;
 
 &lt;p&gt;&lt;/p&gt;</description><category>desktop</category><category>linux</category><category>muzyka</category><category>python</category><category>tools</category><guid>http://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</guid><pubDate>Sat, 19 Mar 2011 12:03:04 GMT</pubDate></item><item><title>best vim plugins</title><link>http://marekwywial.name/posts/blog20100729best-vim-plugins.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Dziś robiłem porządki w ~/.vim/ . Aktualizacje do nowych wersji pluginów, wyrzucanie nieużywanych, porządki w ~/.vimrc. W trakcie tej pracy powstała lista pluginów, dzięki którym miło mi się pracuje&lt;/p&gt;
@@ -171,7 +189,9 @@ Tue Aug 13 19:49:53 2013
 
 &lt;li&gt;do README dodałem informację, że 'curlftpfs' jest potrzebny do działania skryptu&lt;/li&gt;
 
-&lt;/ul&gt;&lt;p&gt;Wersje &lt;a href="http://github.com/onjin/ftpmount/downloads"&gt;do pobrania&lt;/a&gt;.&lt;/p&gt;</description><category>develop</category><category>ftpmount</category><category>linux</category><category>python</category><guid>http://marekwywial.name/posts/blog20090625ftpmount-v120.html</guid><pubDate>Thu, 25 Jun 2009 10:44:36 GMT</pubDate></item><item><title>git pre-commit hook - symfony / php</title><link>http://marekwywial.name/posts/blog20090511git-pre-commit-hook-symfony-php.html</link><description>&lt;p&gt;Mam jeszcze tą nieprzyjemnośc pracy z PHP (w tym przypadku z symfony framework) i aby była przyjemniejsza dodałem sobie hook na &lt;strong&gt;pre-commit&lt;/strong&gt; do git'a.
+&lt;/ul&gt;
+
+&lt;p&gt;Wersje &lt;a href="http://github.com/onjin/ftpmount/downloads"&gt;do pobrania&lt;/a&gt;.&lt;/p&gt;</description><category>develop</category><category>ftpmount</category><category>linux</category><category>python</category><guid>http://marekwywial.name/posts/blog20090625ftpmount-v120.html</guid><pubDate>Thu, 25 Jun 2009 10:44:36 GMT</pubDate></item><item><title>git pre-commit hook - symfony / php</title><link>http://marekwywial.name/posts/blog20090511git-pre-commit-hook-symfony-php.html</link><description>&lt;p&gt;Mam jeszcze tą nieprzyjemnośc pracy z PHP (w tym przypadku z symfony framework) i aby była przyjemniejsza dodałem sobie hook na &lt;strong&gt;pre-commit&lt;/strong&gt; do git'a.
  * &lt;a href="http://dl.getdropbox.com/u/185133/git/pre-commit"&gt;http://dl.getdropbox.com/u/185133/git/pre-commit&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;by zadziałało przerywanie commit'a gdy '&lt;em&gt;symfony unit-test&lt;/em&gt;' się nie udadzą, potrzebna jest łatka na symfony (przynajmniej na moją wersję 1.0.17)
  * &lt;a href="http://dl.getdropbox.com/u/185133/git/symfony_return_code.diff"&gt;http://dl.getdropbox.com/u/185133/git/symfony_return_code.diff&lt;/a&gt;&lt;/p&gt;
@@ -281,8 +301,10 @@ Tue Aug 13 19:49:53 2013
 &lt;h2&gt;do pobrania&lt;/h2&gt;
 &lt;p&gt;Dokładam paczkę z plikami do testu:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;&lt;a class="reference external" href="http://marekwywial.name/files/py.zip"&gt;pyzip&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://marekwywial.name/files/py.zip"&gt;pyzip&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 &lt;pre class="code bash literal-block"&gt;
 &lt;span class="nv"&gt;$ &lt;/span&gt;unzip py.zip
 &lt;/pre&gt;
@@ -291,7 +313,9 @@ Tue Aug 13 19:49:53 2013
 &lt;div class="section" id="dodatkowe-moje-narzedzia"&gt;
 &lt;h2&gt;Dodatkowe moje narzędzia&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;&lt;a class="reference external" href="https://github.com/onjin/django-buildout-template"&gt;django-buildout-template&lt;/a&gt; - szablon startowy dla projektów django z monitoringiem procesów, itp.&lt;/li&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/onjin/django-buildout-template"&gt;django-buildout-template&lt;/a&gt; - szablon startowy dla projektów django z monitoringiem procesów, itp.&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://github.com/onjin/vim-startup"&gt;vim-startup&lt;/a&gt; - vim dostosowany do edycji python'a&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 &lt;/div&gt;</description><category>hosting</category><category>python</category><category>webdev</category><category>django</category><category>home.pl</category><guid>http://marekwywial.name/posts/blog20090226homepl-django-pierwsza-potyczka.html</guid><pubDate>Thu, 26 Feb 2009 20:59:38 GMT</pubDate></item></channel></rss>

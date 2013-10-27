@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (tools)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now</description><atom:link href="http://marekwywial.name/categories/tools.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Sat, 12 Oct 2013 01:35:36 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Rescan SCSI bus (no reboot)</title><link>http://marekwywial.name/posts/blog20120705rescan-scsi-bus-no-reboot.html</link><description>&lt;p&gt;Just self memo. How to attach new SCSI disk without reboot (debian):&lt;/p&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (tools)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now</description><atom:link href="http://marekwywial.name/categories/tools.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Sun, 27 Oct 2013 18:03:44 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Rescan SCSI bus (no reboot)</title><link>http://marekwywial.name/posts/blog20120705rescan-scsi-bus-no-reboot.html</link><description>&lt;p&gt;Just self memo. How to attach new SCSI disk without reboot (debian):&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 &lt;span class="c"&gt;# check what hosts do you have
 &lt;/span&gt;ls /sys/class/scsi_host
@@ -41,7 +41,9 @@ fdisk -l
 &lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="https://github.com/onjin/grooveshark2gajim"&gt;https://github.com/onjin/grooveshark2gajim&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://onjin.github.com/grooveshark2gajim/"&gt;http://onjin.github.com/grooveshark2gajim/&lt;/a&gt;&lt;/li&gt;
 
-&lt;/ul&gt;&lt;p&gt;Do działania wystarczy nam plik &lt;a href="https://github.com/onjin/grooveshark2gajim/raw/master/grov2gajim.py"&gt;grov2gajim.py&lt;/a&gt;. Umieszczamy go gdzieś na dysku i możemy używać.&lt;/p&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Do działania wystarczy nam plik &lt;a href="https://github.com/onjin/grooveshark2gajim/raw/master/grov2gajim.py"&gt;grov2gajim.py&lt;/a&gt;. Umieszczamy go gdzieś na dysku i możemy używać.&lt;/p&gt;
 &lt;div style="display: none"&gt;&lt;a href="http://www.atotaldetox.com/thc-marijuana-detox-kits/"&gt;&lt;b&gt;thc/marijuana detox kits&lt;/b&gt;&lt;/a&gt;.&lt;/div&gt;
 
 &lt;p&gt;&lt;/p&gt;</description><category>desktop</category><category>linux</category><category>muzyka</category><category>python</category><category>tools</category><guid>http://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</guid><pubDate>Sat, 19 Mar 2011 12:03:04 GMT</pubDate></item><item><title>vim snippetsemu i liquibase</title><link>http://marekwywial.name/posts/blog20100811vim-snippetsemu-i-liquibase.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;W &lt;a href="http://onjin.net/blog/2010/07/29/best-vim-plugins/"&gt;ostatnim wpisie&lt;/a&gt; pisałem o &lt;a href="http://www.vim.org/scripts/script.php?script_id=1318"&gt;snippetsEmu&lt;/a&gt; dla &lt;a href="http://www.vim.org/"&gt;vim&lt;/a&gt;'a, a dziś załączam &lt;a href="http://marekwywial.name/files/xml_snippets.vim"&gt;zestaw snippetów&lt;/a&gt;, których używam przy pracy z &lt;a href="http://www.liquibase.org/"&gt;liquibase&lt;/a&gt;.&lt;/p&gt;
@@ -100,12 +102,16 @@ Najprościej zacząć otwierając np. &lt;em&gt;migration.xml&lt;/em&gt;, wpisuj
 &lt;p&gt;Przeniosłem skrypt ftpmount do github'a:&lt;/p&gt;
 &lt;ul&gt;&lt;li&gt;&lt;a href="http://wiki.github.com/onjin/ftpmount"&gt;ftpmount&lt;/a&gt;&lt;/li&gt;
 
-&lt;/ul&gt;&lt;p&gt;Równocześnie zmieniłem sposób konfiguracji, a raczej tylko domyślną nazwę pliku konfiguracyjnego. Teraz jest szukany plik:&lt;/p&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Równocześnie zmieniłem sposób konfiguracji, a raczej tylko domyślną nazwę pliku konfiguracyjnego. Teraz jest szukany plik:&lt;/p&gt;
 &lt;ul&gt;&lt;li&gt;.ftpmountrc w aktualnym katalogu&lt;/li&gt;
 
 &lt;li&gt;potem .ftpmountrc w katalogu domowym&lt;/li&gt;
 
-&lt;/ul&gt;&lt;p&gt;Wersje &lt;a href="http://github.com/onjin/ftpmount/downloads"&gt;do pobrania&lt;/a&gt;.&lt;/p&gt;</description><category>ftpmount</category><category>git</category><category>linux</category><category>tools</category><category>webdev</category><guid>http://marekwywial.name/posts/blog20090622ftpmount-v110-github.html</guid><pubDate>Mon, 22 Jun 2009 09:30:35 GMT</pubDate></item><item><title>fuse ftp mount - curlftpfs</title><link>http://marekwywial.name/posts/blog20090621fuse-ftp-mount-curlftpfs.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;div style="text-align: center; border-bottom: solid 1px gray; background: orange"&gt;sprawdź najnowszą wersję &lt;a href="http://onjin.net/index.php/category/ftpmount"&gt;ftpmount&lt;/a&gt;&lt;/div&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Wersje &lt;a href="http://github.com/onjin/ftpmount/downloads"&gt;do pobrania&lt;/a&gt;.&lt;/p&gt;</description><category>ftpmount</category><category>git</category><category>linux</category><category>tools</category><category>webdev</category><guid>http://marekwywial.name/posts/blog20090622ftpmount-v110-github.html</guid><pubDate>Mon, 22 Jun 2009 09:30:35 GMT</pubDate></item><item><title>fuse ftp mount - curlftpfs</title><link>http://marekwywial.name/posts/blog20090621fuse-ftp-mount-curlftpfs.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;div style="text-align: center; border-bottom: solid 1px gray; background: orange"&gt;sprawdź najnowszą wersję &lt;a href="http://onjin.net/index.php/category/ftpmount"&gt;ftpmount&lt;/a&gt;&lt;/div&gt;
 &lt;p&gt;Do pracy z hostingiem gdzie mamy tylko '''ftp''' przydaje się montowanie dysku poprzez właśnie ftp. Służy do tego program '''curlftpfs''' (np apt-get install curlftpfs).&lt;/p&gt;
 &lt;p&gt;Odpalamy go jako:&lt;/p&gt;
 &lt;pre&gt;

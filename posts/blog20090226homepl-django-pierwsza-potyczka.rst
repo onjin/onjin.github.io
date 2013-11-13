@@ -145,4 +145,4 @@ Dodatkowe moje narzędzia
 
 .. _django-buildout-template: https://github.com/onjin/django-buildout-template
 .. _vim-startup: https://github.com/onjin/vim-startup
-.. _pyzip: /files/py.zip
+.. _pyzip: https://dl.dropboxusercontent.com/u/185133/marekwywial.name/files/py.zip

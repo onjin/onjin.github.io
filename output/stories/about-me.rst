@@ -22,6 +22,7 @@ You can found more projects on my github page:
 My websites
 -----------
 
+* `nopic`_ - online images generator
 * `gettoknowit`_ - portal to learn any language
 * `tani-ebook`_ - portal to get or buy e-books (Polski)
 
@@ -40,6 +41,7 @@ Other sites
 
 .. _`Liquibase`: http://www.liquibase.org/
 
+.. _`nopic`: http://nopic.herokuapp.com/
 .. _`gettoknowit`: http://gettoknow.it/
 .. _`tani-ebook`: http://tani-ebook.pl/
 

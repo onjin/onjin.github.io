@@ -6,6 +6,13 @@
 .. slug: about-me
 
 
+.. image:: /images/gravatar.png
+
+Hi. My name is Marek Wywiał. I work for company `i-dotcom`_ located at souther Poland building e-commerce B2B
+software.
+
+.. _`i-dotcom`: http://www.i-dotcom.com/
+
 My projects
 -----------
 

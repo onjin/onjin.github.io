@@ -60,6 +60,10 @@ header h3 {
     margin-top: 1em;
     margin-bottom: 1em;
 }
+.page-content > .content h2  {
+    font-size: 160%;
+    color: #888389;
+}
 div.footer {
     padding-top: 2em;
     font-size: 80%;

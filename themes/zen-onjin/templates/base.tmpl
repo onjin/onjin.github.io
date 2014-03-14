@@ -17,7 +17,9 @@
     <section class="page-content">
         <div class="content" rel="main">
             {% block content %}{% endblock %}
+            <div class="footer">
             {{ content_footer }}
+            </div>
             {{ base.html_social() }}
         </div>
     </section>

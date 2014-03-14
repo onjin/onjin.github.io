@@ -61,13 +61,12 @@ TRANSLATIONS = {
 # You should provide a key-value pair for each used language.
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('/index.html', 'Home', 'icon-home'),
+        ('/stories/about-me.html', 'About me', 'icon-user'),
+        ('https://twitter.com/onjin', '@onjin', 'icon-twitter'),
+        ('https://github.com/onjin', 'github.com/onjin', 'icon-github'),
+        ('/rss.xml', 'RSS', 'icon-rss'),
         ('/archive.html', 'Archives', 'icon-folder-open-alt'),
         ('/categories/index.html', 'Tags', 'icon-tags'),
-        ('/rss.xml', 'RSS', 'icon-rss'),
-        ('/stories/about-me.html', 'About me', 'icon-user'),
-        ('https://twitter.com/onjin', 'My Twitter', 'icon-twitter'),
-        ('https://github.com/onjin', 'My Github', 'icon-github'),
     )
 }
 

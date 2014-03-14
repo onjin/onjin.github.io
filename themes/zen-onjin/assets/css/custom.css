@@ -1,0 +1,62 @@
+header {
+    max-width: 890px;
+    margin-left: 180px;
+    margin-top: 0;
+    text-align: center;
+
+}
+header nav {
+}
+header nav ul {
+    margin: 0 auto 1em;
+    padding: 0;
+    list-style: none outside none;
+    text-align: center;
+}
+header nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+header nav ul li a {
+    color: #bbb6ac;
+}
+header nav ul li a:hover,
+header nav ul li a:active
+{
+    color: #888389;
+    border-top: 1px solid #888389;
+    text-decoration: none;
+}
+header a.avatar {
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+    background-position: 0 0;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    outline: 0;
+    display: block;
+    background-image: url(/images/gravatar.png);
+
+    z-index: -1000;
+}
+header h1 {
+    color: #434343;
+    margin: 0;
+    font-size: 1.5em;
+    margin-top: 1em;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+    margin-bottom: .25em;
+    font-weight: 700px;
+}
+header h3 {
+    color: #bbb6ac;
+    margin: 0;
+    font-size: 1em;
+    font-weight: 500;
+}
+.post h1.title {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}

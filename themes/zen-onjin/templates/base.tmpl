@@ -13,8 +13,8 @@
 
 <body>
         {{ search_form }}
-    {% include "header.tmpl" %}
     <section class="page-content">
+        {% include "header.tmpl" %}
         <div class="content" rel="main">
             {% block content %}{% endblock %}
             <div class="footer">

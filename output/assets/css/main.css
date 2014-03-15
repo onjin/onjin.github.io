@@ -155,16 +155,12 @@ sub {
 }
 img {
   /* Responsive images (ensure images don't scale beyond their parents) */
-
   max-width: 100%;
   /* Part 1: Set a maxium relative to the parent */
-
   width: auto\9;
   /* IE7-8 need help adjusting responsive images */
-
   height: auto;
   /* Part 2: Scale the height according to the width, otherwise you get stretching */
-
   vertical-align: middle;
   border: 0;
   -ms-interpolation-mode: bicubic;
@@ -210,7 +206,7 @@ img {
   img {
     max-width: 100% !important;
   }
-  @page  {
+  @page {
     margin: 0.5cm;
   }
   p,
@@ -236,89 +232,13 @@ section {
   margin: 0;
   padding: 0;
 }
-.social {
-  float: left;
-  min-height: 100%;
-  background: url('../images/blue-mocha-grunge.jpg') #192029;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 180px;
-}
-@media (max-width: 773px) {
-  .social {
-    position: relative;
-  }
-}
-@media (min-width: 774px) and (max-width: 1047px) {
-  .social {
-    width: 210px;
-  }
-}
-@media (max-width: 773px) {
-  .social {
-    width: 100%;
-  }
-}
-.social ul {
-  position: fixed;
-  margin: 0;
-  top: 50px;
-  display: table;
-  width: 180px;
-}
-@media (max-width: 773px) {
-  .social ul {
-    position: relative;
-  }
-}
-@media (max-width: 773px) {
-  .social ul {
-    display: block;
-    top: 0px;
-  }
-}
-@media (min-width: 774px) and (max-width: 1047px) {
-  .social ul {
-    width: 210px;
-  }
-}
-.social ul li {
-  display: block;
-  text-align: center;
-  margin-top: 10px;
-}
-@media (max-width: 773px) {
-  .social ul li {
-    padding-top: 5%;
-    padding-left: 3%;
-    text-align: left;
-    display: table-cell;
-  }
-}
-.social ul li a {
-  display: block;
-}
-.social ul li a .label {
-  display: none;
-}
-@media (max-width: 773px) {
-  .social ul li a .label {
-    display: inline;
-    padding-left: 0.5em;
-  }
-}
 .page-content {
   min-height: 100%;
   padding: 48px 0 60px 42px;
-  margin-left: 180px;
 }
 @media (min-width: 774px) and (max-width: 1047px) {
   .page-content {
     padding-left: 24px;
-    margin-left: 214px;
   }
 }
 @media (max-width: 773px) {
@@ -399,7 +319,7 @@ section {
 /* makes the font 33% larger relative to the icon container */
 .icon-large:before {
   vertical-align: -10%;
-  font-size: 1.3333333333333333em;
+  font-size: 1.33333333em;
 }
 /* makes sure icons active on rollover in links */
 a [class^="icon-"],
@@ -410,16 +330,16 @@ a [class*=" icon-"] {
 [class^="icon-"].icon-fixed-width,
 [class*=" icon-"].icon-fixed-width {
   display: inline-block;
-  width: 1.1428571428571428em;
+  width: 1.14285714em;
   text-align: right;
-  padding-right: 0.2857142857142857em;
+  padding-right: 0.28571429em;
 }
 [class^="icon-"].icon-fixed-width.icon-large,
 [class*=" icon-"].icon-fixed-width.icon-large {
-  width: 1.4285714285714286em;
+  width: 1.42857143em;
 }
 .icons-ul {
-  margin-left: 2.142857142857143em;
+  margin-left: 2.14285714em;
   list-style-type: none;
 }
 .icons-ul > li {
@@ -427,8 +347,8 @@ a [class*=" icon-"] {
 }
 .icons-ul .icon-li {
   position: absolute;
-  left: -2.142857142857143em;
-  width: 2.142857142857143em;
+  left: -2.14285714em;
+  width: 2.14285714em;
   text-align: center;
   line-height: inherit;
 }
@@ -604,7 +524,7 @@ a [class*=" icon-"] {
   width: 2em;
   height: 2em;
   line-height: 2em;
-  vertical-align: -35%;
+  vertical-align: -34.99999999%;
 }
 .icon-stack [class^="icon-"],
 .icon-stack [class*=" icon-"] {
@@ -1853,7 +1773,6 @@ ol.inline > li {
   display: inline-block;
   *display: inline;
   /* IE7 inline-block hack */
-
   *zoom: 1;
   padding-left: 5px;
   padding-right: 5px;
@@ -1902,7 +1821,6 @@ dd {
   display: inline-block;
   *display: inline;
   /* IE7 inline-block hack */
-
   *zoom: 1;
   margin-left: 0;
   margin-bottom: 0;
@@ -2091,7 +2009,7 @@ a:focus {
 }
 .social a {
   color: #ffffff;
-  line-height: 44.400000000000006px;
+  line-height: 44.4px;
   -webkit-transition: text-shadow 0.5s;
   -moz-transition: text-shadow 0.5s;
   -o-transition: text-shadow 0.5s;
@@ -2527,7 +2445,6 @@ pre.code {
   display: inline-block;
   *display: inline;
   /* IE7 inline-block hack */
-
   *zoom: 1;
   margin-right: 10px;
 }

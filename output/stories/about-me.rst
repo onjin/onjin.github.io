@@ -12,7 +12,7 @@ My projects
 * `ejpiaj`_ - declarative way API testing suite (small python package)
 * `vim-startup`_ - quick way to start with vim & python
 * `liquimigrate`_ - django integration for `Liquibase`_ migrations
-* `docker-php-oracle`_ - docker image for php with oracle db support (truster image)
+* `docker-php-oracle`_ - docker image for php with oracle db support (trusted image)
 *  `docker`_ - other docker images
 
 You can found more projects on my github page:

@@ -57,6 +57,11 @@ header h3 {
     margin-top: 1em;
     margin-bottom: 1em;
 }
+.page-content > .content {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .page-content > .content h2  {
     font-size: 160%;
     color: #888389;

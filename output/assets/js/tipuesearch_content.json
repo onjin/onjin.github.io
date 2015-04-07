@@ -7,7 +7,7 @@
       "title": "Telewizja N (nc+) i python"
     }, 
     {
-      "text": "DRY:\n\n\nlinkedin.com (English)\ngoldenline.pl (Polski)", 
+      "text": "My projects\n\nejpiaj - declarative way API testing suite (small python package)\nvim-startup - quick way to start with vim & python\nliquimigrate - django integration for Liquibase migrations\ndocker-php-oracle - docker image for php with oracle db support (trusted image)\ndocker - other docker images\n\nYou can found more projects on my github page:\n\ngithub\n\n\n\nMy websites\n\nnopic - online images generator\ngettoknowit - portal to learn any language\ntani-ebook - portal to get or buy e-books (Polski)\n\n\n\nOther sites\n\nlinkedin.com (English)\ngoldenline.pl (Polski)", 
       "tags": "marekwywial,about", 
       "loc": "/stories/about-me.html", 
       "title": "About me"

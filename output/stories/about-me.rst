@@ -35,7 +35,7 @@ Other sites
 
 .. _`ejpiaj`: http://ejpiaj.readthedocs.org/
 .. _`vim-startup`: https://github.com/onjin/vim-startup
-.. _`liquimigrate`: https://github.com/i-dotcom/liquimigrate
+.. _`liquimigrate`: https://github.com/onjin/liquimigrate
 .. _`docker-php-oracle`: https://github.com/onjin/docker-php-oracle
 .. _`docker`: https://github.com/onjin/docker
 

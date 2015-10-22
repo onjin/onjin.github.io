@@ -9,6 +9,7 @@
 My projects
 -----------
 
+* `runenv`_ - Wrapper to run programs with different env or load env from `.env` file
 * `ejpiaj`_ - declarative way API testing suite (small python package)
 * `vim-startup`_ - quick way to start with vim & python
 * `liquimigrate`_ - django integration for `Liquibase`_ migrations
@@ -33,6 +34,7 @@ Other sites
 * `goldenline.pl`_ (Polski)
 
 
+.. _`runenv`: https://runenv.readthedocs.org/
 .. _`ejpiaj`: http://ejpiaj.readthedocs.org/
 .. _`vim-startup`: https://github.com/onjin/vim-startup
 .. _`liquimigrate`: https://github.com/onjin/liquimigrate

@@ -10,10 +10,11 @@ My projects
 -----------
 
 * `runenv`_ - Wrapper to run programs with different env or load env from `.env` file
-* `ejpiaj`_ - declarative way API testing suite (small python package)
 * `vim-startup`_ - quick way to start with vim & python
 * `liquimigrate`_ - django integration for `Liquibase`_ migrations
+* `docker-alpine-postgres`_ - Small PostgreSQL images (~58MB) for versions 9.1 - 9.5
 * `docker-php-oracle`_ - docker image for php with oracle db support (trusted image)
+* `ejpiaj`_ - declarative way API testing suite (small python package)
 *  `docker`_ - other docker images
 
 You can found more projects on my github page:

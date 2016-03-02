@@ -1,0 +1,4 @@
+Sitemap: http://marekwywial.name/sitemapindex.xml
+
+User-Agent: *
+Host: marekwywial.name

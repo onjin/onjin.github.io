@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (develop)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now</description><atom:link href="http://marekwywial.name/categories/develop.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Thu, 11 Feb 2016 22:34:13 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Fast sentry instance using docker</title><link>http://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker.html</link><description>&lt;p&gt;You need docker and postgresql database&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>marekwywial (develop)</title><link>http://marekwywial.name/</link><description></description><atom:link href="http://marekwywial.name/categories/develop.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 02 Mar 2016 09:41:51 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Fast sentry instance using docker</title><link>http://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker.html</link><dc:creator>Marek Wywiał</dc:creator><description>&lt;div&gt;&lt;p&gt;You need docker and postgresql database&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://docker.io/"&gt;docker.io&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;If you have docker installed and postgres database created you can:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="c"&gt;# pull sentry image
-&lt;/span&gt;docker pull onjin/sentry
-
-&lt;span class="c"&gt;# install sentry database
-&lt;/span&gt;docker run  -e &lt;span class="nv"&gt;SENTRY_DBHOST&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;your.db.address -e &lt;span class="nv"&gt;SENTRY_DBNAME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;sentrydbname -e &lt;span class="nv"&gt;SENTRY_DBUSER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;dbuser -e &lt;span class="nv"&gt;SENTRY_DBPASS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;dbpass -p :7365 onjin/sentry upgrade
-
-&lt;span class="c"&gt;# run sentry instance
-&lt;/span&gt;docker run -d -e &lt;span class="nv"&gt;SENTRY_DBHOST&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;your.db.address -e &lt;span class="nv"&gt;SENTRY_DBNAME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;sentrydbname -e &lt;span class="nv"&gt;SENTRY_DBUSER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;dbuser -e &lt;span class="nv"&gt;SENTRY_DBPASS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;dbpass -p :7365 onjin/sentry start
-&lt;/pre&gt;
-&lt;p&gt;and open browser at address:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_2205d6c6ab7a4bd2b9d684115638eba8-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# pull sentry image&lt;/span&gt;
+&lt;a name="rest_code_2205d6c6ab7a4bd2b9d684115638eba8-2"&gt;&lt;/a&gt;docker pull onjin/sentry
+&lt;a name="rest_code_2205d6c6ab7a4bd2b9d684115638eba8-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_2205d6c6ab7a4bd2b9d684115638eba8-4"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# install sentry database&lt;/span&gt;
+&lt;a name="rest_code_2205d6c6ab7a4bd2b9d684115638eba8-5"&gt;&lt;/a&gt;docker run  -e &lt;span class="nv"&gt;SENTRY_DBHOST&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;your.db.address -e &lt;span class="nv"&gt;SENTRY_DBNAME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;sentrydbname -e &lt;span class="nv"&gt;SENTRY_DBUSER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;dbuser -e &lt;span class="nv"&gt;SENTRY_DBPASS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;dbpass -p :7365 onjin/sentry upgrade
+&lt;a name="rest_code_2205d6c6ab7a4bd2b9d684115638eba8-6"&gt;&lt;/a&gt;
+&lt;a name="rest_code_2205d6c6ab7a4bd2b9d684115638eba8-7"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# run sentry instance&lt;/span&gt;
+&lt;a name="rest_code_2205d6c6ab7a4bd2b9d684115638eba8-8"&gt;&lt;/a&gt;docker run -d -e &lt;span class="nv"&gt;SENTRY_DBHOST&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;your.db.address -e &lt;span class="nv"&gt;SENTRY_DBNAME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;sentrydbname -e &lt;span class="nv"&gt;SENTRY_DBUSER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;dbuser -e &lt;span class="nv"&gt;SENTRY_DBPASS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;dbpass -p :7365 onjin/sentry start
+&lt;/pre&gt;&lt;p&gt;and open browser at address:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://localhost:7365/"&gt;localhost&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/blockquote&gt;</description><category>develop</category><category>docker</category><category>linux</category><guid>http://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker.html</guid><pubDate>Wed, 18 Sep 2013 11:36:39 GMT</pubDate></item><item><title>public google wave - test ;)</title><link>http://marekwywial.name/posts/blog20091021public-google-wave-test.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;div id="wave" style="width: 450px;height: 800px;padding-bottom:20px; margin-bottom:20px;"&gt;&lt;/div&gt;
+&lt;/blockquote&gt;&lt;/div&gt;</description><category>develop</category><category>docker</category><category>linux</category><guid>http://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker.html</guid><pubDate>Wed, 18 Sep 2013 11:36:39 GMT</pubDate></item><item><title>public google wave - test ;)</title><link>http://marekwywial.name/posts/blog20091021public-google-wave-test.html</link><dc:creator>Marek Wywiał</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;div id="wave" style="width: 450px;height: 800px;padding-bottom:20px; margin-bottom:20px;"&gt;&lt;/div&gt;
 &lt;script type="text/javascript" src="http://wave-api.appspot.com/public/embed.js"&gt;
 &lt;/script&gt;&lt;script type="text/javascript"&gt;
   var wave =
@@ -29,7 +27,7 @@
   wave.setUIConfig('white', 'black', 'Arial', '13px');
   wave.loadWave('googlewave.com!w+iYp8HmpCE');
   wave.init(document.getElementById('wave'));
-&lt;/script&gt;</description><category>develop</category><category>google</category><category>www</category><guid>http://marekwywial.name/posts/blog20091021public-google-wave-test.html</guid><pubDate>Wed, 21 Oct 2009 07:25:33 GMT</pubDate></item><item><title>ftpmount v1.2.0</title><link>http://marekwywial.name/posts/blog20090625ftpmount-v120.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;div style="text-align: center; border-bottom: solid 1px gray; background: orange"&gt;sprawdź najnowszą wersję &lt;a href="http://onjin.net/index.php/category/ftpmount"&gt;ftpmount&lt;/a&gt;&lt;/div&gt;
+&lt;/script&gt;&lt;/div&gt;</description><category>develop</category><category>google</category><category>www</category><guid>http://marekwywial.name/posts/blog20091021public-google-wave-test.html</guid><pubDate>Wed, 21 Oct 2009 07:25:33 GMT</pubDate></item><item><title>ftpmount v1.2.0</title><link>http://marekwywial.name/posts/blog20090625ftpmount-v120.html</link><dc:creator>Marek Wywiał</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;div style="text-align: center; border-bottom: solid 1px gray; background: orange"&gt;sprawdź najnowszą wersję &lt;a href="http://onjin.net/index.php/category/ftpmount"&gt;ftpmount&lt;/a&gt;&lt;/div&gt;
 &lt;p&gt;Kilka poprawek do ftpmount:&lt;/p&gt;
 &lt;ul&gt;&lt;li&gt;poprawiony przykładowy .ftpmountrc - w .ini komentrze to ';' a nie '#' :)&lt;/li&gt;
 
@@ -39,6 +37,6 @@
 
 &lt;/ul&gt;
 
-&lt;p&gt;Wersje &lt;a href="http://github.com/onjin/ftpmount/downloads"&gt;do pobrania&lt;/a&gt;.&lt;/p&gt;</description><category>develop</category><category>ftpmount</category><category>linux</category><category>python</category><guid>http://marekwywial.name/posts/blog20090625ftpmount-v120.html</guid><pubDate>Thu, 25 Jun 2009 10:44:36 GMT</pubDate></item><item><title>git cheatsheet</title><link>http://marekwywial.name/posts/blog20081001git-cheatsheet.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Kontynuując serię, kolejny cheatsheet tym razem do systemu kontroli wersji &lt;a href="http://git.or.cz/"&gt;git&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Wersje &lt;a href="http://github.com/onjin/ftpmount/downloads"&gt;do pobrania&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;</description><category>develop</category><category>ftpmount</category><category>linux</category><category>python</category><guid>http://marekwywial.name/posts/blog20090625ftpmount-v120.html</guid><pubDate>Thu, 25 Jun 2009 10:44:36 GMT</pubDate></item><item><title>git cheatsheet</title><link>http://marekwywial.name/posts/blog20081001git-cheatsheet.html</link><dc:creator>Marek Wywiał</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Kontynuując serię, kolejny cheatsheet tym razem do systemu kontroli wersji &lt;a href="http://git.or.cz/"&gt;git&lt;/a&gt;.&lt;/p&gt;
 &lt;ul&gt;&lt;li&gt;&lt;a href="http://git.or.cz/gitwiki/GitCheatSheet"&gt;GitCheatSheet&lt;/a&gt;&lt;/li&gt;
-&lt;p&gt;&lt;/p&gt;&lt;/ul&gt;&lt;p&gt;I jest git ... :)&lt;/p&gt;</description><category>develop</category><guid>http://marekwywial.name/posts/blog20081001git-cheatsheet.html</guid><pubDate>Wed, 01 Oct 2008 18:14:59 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;/p&gt;&lt;/ul&gt;&lt;p&gt;I jest git ... :)&lt;/p&gt;&lt;/div&gt;</description><category>develop</category><guid>http://marekwywial.name/posts/blog20081001git-cheatsheet.html</guid><pubDate>Wed, 01 Oct 2008 18:14:59 GMT</pubDate></item></channel></rss>

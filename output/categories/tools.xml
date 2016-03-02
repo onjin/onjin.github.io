@@ -1,40 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (tools)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now</description><atom:link href="http://marekwywial.name/categories/tools.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Thu, 11 Feb 2016 22:34:13 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Rescan SCSI bus (no reboot)</title><link>http://marekwywial.name/posts/blog20120705rescan-scsi-bus-no-reboot.html</link><description>&lt;p&gt;Just self memo. How to attach new SCSI disk without reboot (debian):&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="c"&gt;# check what hosts do you have
-&lt;/span&gt;ls /sys/class/scsi_host
-host0 host1 host2 host3
-
-&lt;span class="c"&gt;# change 'host0' to 'host1' or any next number that you need
-&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"- - -"&lt;/span&gt; &amp;amp;gt; /sys/class/scsi_host/host0/scan
-&lt;/pre&gt;
-&lt;p&gt;# and done&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-fdisk -l
-&lt;/pre&gt;</description><category>linux</category><category>tools</category><guid>http://marekwywial.name/posts/blog20120705rescan-scsi-bus-no-reboot.html</guid><pubDate>Thu, 05 Jul 2012 06:16:42 GMT</pubDate></item><item><title>extend lvm2 filesystem</title><link>http://marekwywial.name/posts/blog20120427extend-lvm2-filesystem.html</link><description>&lt;p&gt;Just self memo&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="c"&gt;# Added new physical partition /dev/sda3
-# create a physical volume out of it
-&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pvcreate /dev/sda3
-
-
-&lt;span class="c"&gt;# Now, add it to the volume group
-#that my logical volume is on
-&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;vgextend VolGroup00 /dev/sda3
-
-
-&lt;span class="c"&gt;# Now that the volume group has more
-# disk space, the logical volume can grow
-&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;lvextend -L+11G /dev/VolGroup00/LogVol00
-
-
-&lt;span class="c"&gt;# Ok, last of all, I want to filesystem to
-# recognize that more space is available
-&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;fsadm resize /dev/VolGroup00/LogVol00
-
-&lt;span class="c"&gt;# sweet, I have more space now
-&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;df -h
-&lt;/pre&gt;</description><category>hosting</category><category>tools</category><guid>http://marekwywial.name/posts/blog20120427extend-lvm2-filesystem.html</guid><pubDate>Fri, 27 Apr 2012 08:30:44 GMT</pubDate></item><item><title>Grooveshark currentSong.txt + gajim status</title><link>http://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Przy okazji szukania API do &lt;a href="http://grooveshark.com"&gt;grooveshark'a&lt;/a&gt; odkryłem plik &lt;b&gt;currentSong.txt&lt;/b&gt;, który jest tworzony przez &lt;em&gt;Grooveshark Desktop&lt;/em&gt;.&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>marekwywial (tools)</title><link>http://marekwywial.name/</link><description></description><atom:link href="http://marekwywial.name/categories/tools.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 02 Mar 2016 09:41:51 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Rescan SCSI bus (no reboot)</title><link>http://marekwywial.name/posts/blog20120705rescan-scsi-bus-no-reboot.html</link><dc:creator>Marek Wywiał</dc:creator><description>&lt;div&gt;&lt;p&gt;Just self memo. How to attach new SCSI disk without reboot (debian):&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_83903d1ccad9431b8fce028a9b71fa9e-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# check what hosts do you have&lt;/span&gt;
+&lt;a name="rest_code_83903d1ccad9431b8fce028a9b71fa9e-2"&gt;&lt;/a&gt;ls /sys/class/scsi_host
+&lt;a name="rest_code_83903d1ccad9431b8fce028a9b71fa9e-3"&gt;&lt;/a&gt;host0 host1 host2 host3
+&lt;a name="rest_code_83903d1ccad9431b8fce028a9b71fa9e-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_83903d1ccad9431b8fce028a9b71fa9e-5"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# change 'host0' to 'host1' or any next number that you need&lt;/span&gt;
+&lt;a name="rest_code_83903d1ccad9431b8fce028a9b71fa9e-6"&gt;&lt;/a&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"- - -"&lt;/span&gt; &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;gt&lt;span class="p"&gt;;&lt;/span&gt; /sys/class/scsi_host/host0/scan
+&lt;/pre&gt;&lt;p&gt;# and done&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_7af1b20d8f454d6c86cfe21409260ea6-1"&gt;&lt;/a&gt;fdisk -l
+&lt;/pre&gt;&lt;/div&gt;</description><category>linux</category><category>tools</category><guid>http://marekwywial.name/posts/blog20120705rescan-scsi-bus-no-reboot.html</guid><pubDate>Thu, 05 Jul 2012 06:16:42 GMT</pubDate></item><item><title>extend lvm2 filesystem</title><link>http://marekwywial.name/posts/blog20120427extend-lvm2-filesystem.html</link><dc:creator>Marek Wywiał</dc:creator><description>&lt;div&gt;&lt;p&gt;Just self memo&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_6fd31997c9d54094a49b3b8d8a7f5b09-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# Added new physical partition /dev/sda3&lt;/span&gt;
+&lt;a name="rest_code_6fd31997c9d54094a49b3b8d8a7f5b09-2"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# create a physical volume out of it&lt;/span&gt;
+&lt;a name="rest_code_6fd31997c9d54094a49b3b8d8a7f5b09-3"&gt;&lt;/a&gt;$ pvcreate /dev/sda3
+&lt;a name="rest_code_6fd31997c9d54094a49b3b8d8a7f5b09-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_6fd31997c9d54094a49b3b8d8a7f5b09-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_6fd31997c9d54094a49b3b8d8a7f5b09-6"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# Now, add it to the volume group&lt;/span&gt;
+&lt;a name="rest_code_6fd31997c9d54094a49b3b8d8a7f5b09-7"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#that my logical volume is on&lt;/span&gt;
+&lt;a name="rest_code_6fd31997c9d54094a49b3b8d8a7f5b09-8"&gt;&lt;/a&gt;$ vgextend VolGroup00 /dev/sda3
+&lt;a name="rest_code_6fd31997c9d54094a49b3b8d8a7f5b09-9"&gt;&lt;/a&gt;
+&lt;a name="rest_code_6fd31997c9d54094a49b3b8d8a7f5b09-10"&gt;&lt;/a&gt;
+&lt;a name="rest_code_6fd31997c9d54094a49b3b8d8a7f5b09-11"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# Now that the volume group has more&lt;/span&gt;
+&lt;a name="rest_code_6fd31997c9d54094a49b3b8d8a7f5b09-12"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# disk space, the logical volume can grow&lt;/span&gt;
+&lt;a name="rest_code_6fd31997c9d54094a49b3b8d8a7f5b09-13"&gt;&lt;/a&gt;$ lvextend -L+11G /dev/VolGroup00/LogVol00
+&lt;a name="rest_code_6fd31997c9d54094a49b3b8d8a7f5b09-14"&gt;&lt;/a&gt;
+&lt;a name="rest_code_6fd31997c9d54094a49b3b8d8a7f5b09-15"&gt;&lt;/a&gt;
+&lt;a name="rest_code_6fd31997c9d54094a49b3b8d8a7f5b09-16"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# Ok, last of all, I want to filesystem to&lt;/span&gt;
+&lt;a name="rest_code_6fd31997c9d54094a49b3b8d8a7f5b09-17"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# recognize that more space is available&lt;/span&gt;
+&lt;a name="rest_code_6fd31997c9d54094a49b3b8d8a7f5b09-18"&gt;&lt;/a&gt;$ fsadm resize /dev/VolGroup00/LogVol00
+&lt;a name="rest_code_6fd31997c9d54094a49b3b8d8a7f5b09-19"&gt;&lt;/a&gt;
+&lt;a name="rest_code_6fd31997c9d54094a49b3b8d8a7f5b09-20"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# sweet, I have more space now&lt;/span&gt;
+&lt;a name="rest_code_6fd31997c9d54094a49b3b8d8a7f5b09-21"&gt;&lt;/a&gt;$ df -h
+&lt;/pre&gt;&lt;/div&gt;</description><category>hosting</category><category>tools</category><guid>http://marekwywial.name/posts/blog20120427extend-lvm2-filesystem.html</guid><pubDate>Fri, 27 Apr 2012 08:30:44 GMT</pubDate></item><item><title>Grooveshark currentSong.txt + gajim status</title><link>http://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</link><dc:creator>Marek Wywiał</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Przy okazji szukania API do &lt;a href="http://grooveshark.com"&gt;grooveshark'a&lt;/a&gt; odkryłem plik &lt;b&gt;currentSong.txt&lt;/b&gt;, który jest tworzony przez &lt;em&gt;Grooveshark Desktop&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Kilka minut z vim'em i mamy skrypt napisany w python'ie, który odczytuje w/w plik i wrzuca informację o aktualnie odtwarzanym utworze jako status wybranego konta w &lt;a href="http://gajim.org"&gt;gajim'a&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wymana &lt;b&gt;pyinotify&lt;/b&gt;). Wtedy nasz status będzie zmieniany w chwili (chwilę potem :) ) zmiany utworu w Grooveshark Desktop.&lt;/p&gt;
 &lt;p&gt;Całość można dowolnie używać/modyfikować, a pobrać można z serwiu &lt;a href="http://github.com"&gt;github.com&lt;/a&gt;:&lt;/p&gt;
@@ -46,7 +42,7 @@ fdisk -l
 &lt;p&gt;Do działania wystarczy nam plik &lt;a href="https://github.com/onjin/grooveshark2gajim/raw/master/grov2gajim.py"&gt;grov2gajim.py&lt;/a&gt;. Umieszczamy go gdzieś na dysku i możemy używać.&lt;/p&gt;
 &lt;div style="display: none"&gt;&lt;a href="http://www.atotaldetox.com/thc-marijuana-detox-kits/"&gt;&lt;b&gt;thc/marijuana detox kits&lt;/b&gt;&lt;/a&gt;.&lt;/div&gt;
 
-&lt;p&gt;&lt;/p&gt;</description><category>desktop</category><category>linux</category><category>muzyka</category><category>python</category><category>tools</category><guid>http://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</guid><pubDate>Sat, 19 Mar 2011 12:03:04 GMT</pubDate></item><item><title>vim snippetsemu i liquibase</title><link>http://marekwywial.name/posts/blog20100811vim-snippetsemu-i-liquibase.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;W &lt;a href="http://onjin.net/blog/2010/07/29/best-vim-plugins/"&gt;ostatnim wpisie&lt;/a&gt; pisałem o &lt;a href="http://www.vim.org/scripts/script.php?script_id=1318"&gt;snippetsEmu&lt;/a&gt; dla &lt;a href="http://www.vim.org/"&gt;vim&lt;/a&gt;'a, a dziś załączam &lt;a href="http://marekwywial.name/files/xml_snippets.vim"&gt;zestaw snippetów&lt;/a&gt;, których używam przy pracy z &lt;a href="http://www.liquibase.org/"&gt;liquibase&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/div&gt;</description><category>desktop</category><category>linux</category><category>muzyka</category><category>python</category><category>tools</category><guid>http://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</guid><pubDate>Sat, 19 Mar 2011 12:03:04 GMT</pubDate></item><item><title>vim snippetsemu i liquibase</title><link>http://marekwywial.name/posts/blog20100811vim-snippetsemu-i-liquibase.html</link><dc:creator>Marek Wywiał</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;W &lt;a href="http://onjin.net/blog/2010/07/29/best-vim-plugins/"&gt;ostatnim wpisie&lt;/a&gt; pisałem o &lt;a href="http://www.vim.org/scripts/script.php?script_id=1318"&gt;snippetsEmu&lt;/a&gt; dla &lt;a href="http://www.vim.org/"&gt;vim&lt;/a&gt;'a, a dziś załączam &lt;a href="http://marekwywial.name/files/xml_snippets.vim"&gt;zestaw snippetów&lt;/a&gt;, których używam przy pracy z &lt;a href="http://www.liquibase.org/"&gt;liquibase&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Liquibase&lt;/strong&gt; to całkiem miłe narzędzie napisane w Javie do śledzenia, zarządzania i wprowadzania zmian w bazach danych. Zmiany opisuje się w pliku (plikach) xml i wpisywanie oraz pamiętanie tej składni można sobie uprościć przy pomocy vim'a i snippetów.&lt;/p&gt;
 
 &lt;p&gt;Snippet umieszczamy razem z pozostałymi, najczęściej w &lt;strong&gt;.vim/after/ftplugin/&lt;/strong&gt;.
@@ -55,7 +51,7 @@ Najprościej zacząć otwierając np. &lt;em&gt;migration.xml&lt;/em&gt;, wpisuj
 
 &lt;p&gt; » &lt;a href="http://marekwywial.name/files/xml_snippets.vim"&gt;xml_snippets.vim&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description><category>programowanie</category><category>tools</category><category>vim</category><guid>http://marekwywial.name/posts/blog20100811vim-snippetsemu-i-liquibase.html</guid><pubDate>Wed, 11 Aug 2010 16:45:35 GMT</pubDate></item><item><title>best vim plugins</title><link>http://marekwywial.name/posts/blog20100729best-vim-plugins.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Dziś robiłem porządki w ~/.vim/ . Aktualizacje do nowych wersji pluginów, wyrzucanie nieużywanych, porządki w ~/.vimrc. W trakcie tej pracy powstała lista pluginów, dzięki którym miło mi się pracuje&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/div&gt;</description><category>programowanie</category><category>tools</category><category>vim</category><guid>http://marekwywial.name/posts/blog20100811vim-snippetsemu-i-liquibase.html</guid><pubDate>Wed, 11 Aug 2010 16:45:35 GMT</pubDate></item><item><title>best vim plugins</title><link>http://marekwywial.name/posts/blog20100729best-vim-plugins.html</link><dc:creator>Marek Wywiał</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Dziś robiłem porządki w ~/.vim/ . Aktualizacje do nowych wersji pluginów, wyrzucanie nieużywanych, porządki w ~/.vimrc. W trakcie tej pracy powstała lista pluginów, dzięki którym miło mi się pracuje&lt;/p&gt;
 &lt;h4&gt;vimball&lt;/h4&gt;
 
 &lt;p&gt;Plugin zajmujący się pluginami dostarczanymi w paczkach .vba i pozwalający też takie paczki tworzyć, w praktyce potrzeby mi by instalować paczki .vba&lt;br&gt;
@@ -94,11 +90,11 @@ Najprościej zacząć otwierając np. &lt;em&gt;migration.xml&lt;/em&gt;, wpisuj
 
  » &lt;a href="http://www.vim.org/scripts/script.php?script_id=90"&gt;vcscommand&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;Niewiele tego, ale te pluginy, git (post/pre hooki), bash + zestaw skryptów wystarcza mi do pracy :)&lt;/p&gt;</description><category>programowanie</category><category>python</category><category>tools</category><category>vim</category><guid>http://marekwywial.name/posts/blog20100729best-vim-plugins.html</guid><pubDate>Thu, 29 Jul 2010 18:34:19 GMT</pubDate></item><item><title>Przydatne narzędzia do monitoringu obciążenia serwera ...</title><link>http://marekwywial.name/posts/blog20100103przydatne-narzedzia-do-monitoringu-obciazenia-serwera.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;... zamieścił &lt;a href="http://mekk.waw.pl/mk/" rel="nofollow"&gt;mekk&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Niewiele tego, ale te pluginy, git (post/pre hooki), bash + zestaw skryptów wystarcza mi do pracy :)&lt;/p&gt;&lt;/div&gt;</description><category>programowanie</category><category>python</category><category>tools</category><category>vim</category><guid>http://marekwywial.name/posts/blog20100729best-vim-plugins.html</guid><pubDate>Thu, 29 Jul 2010 18:34:19 GMT</pubDate></item><item><title>Przydatne narzędzia do monitoringu obciążenia serwera ...</title><link>http://marekwywial.name/posts/blog20100103przydatne-narzedzia-do-monitoringu-obciazenia-serwera.html</link><dc:creator>Marek Wywiał</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;... zamieścił &lt;a href="http://mekk.waw.pl/mk/" rel="nofollow"&gt;mekk&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;&lt;li&gt;&lt;a href="http://notatnik.mekk.waw.pl/archives/200-Oprocz_top.html" rel="nofollow"&gt;nie tylko top&lt;/a&gt;&lt;/li&gt;
-&lt;p&gt;&lt;/p&gt;&lt;/ul&gt;</description><category>server linux</category><category>tools</category><guid>http://marekwywial.name/posts/blog20100103przydatne-narzedzia-do-monitoringu-obciazenia-serwera.html</guid><pubDate>Sun, 03 Jan 2010 12:01:26 GMT</pubDate></item><item><title>awesome3 wm mouse/key bindings</title><link>http://marekwywial.name/posts/blog20091019awesome2-wm-mousekey-bindings.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Tak na szybko z manuala do pdf'a do szybkiego wydruku cheatsheet dla window managera awesome 3 (it's awesome ;) ):&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/ul&gt;&lt;/div&gt;</description><category>server linux</category><category>tools</category><guid>http://marekwywial.name/posts/blog20100103przydatne-narzedzia-do-monitoringu-obciazenia-serwera.html</guid><pubDate>Sun, 03 Jan 2010 12:01:26 GMT</pubDate></item><item><title>awesome3 wm mouse/key bindings</title><link>http://marekwywial.name/posts/blog20091019awesome2-wm-mousekey-bindings.html</link><dc:creator>Marek Wywiał</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Tak na szybko z manuala do pdf'a do szybkiego wydruku cheatsheet dla window managera awesome 3 (it's awesome ;) ):&lt;/p&gt;
 &lt;ul&gt;&lt;li&gt;&lt;a href="https://dl.dropboxusercontent.com/u/185133/marekwywial.name/files/awesome3_bindings.pdf"&gt;awesome3_bindings.pdf&lt;/a&gt;&lt;/li&gt;
-&lt;p&gt;&lt;/p&gt;&lt;/ul&gt;</description><category>desktop</category><category>onjin</category><category>tools</category><category>wmanager</category><guid>http://marekwywial.name/posts/blog20091019awesome2-wm-mousekey-bindings.html</guid><pubDate>Mon, 19 Oct 2009 06:18:27 GMT</pubDate></item><item><title>ftpmount v1.1.0 - github</title><link>http://marekwywial.name/posts/blog20090622ftpmount-v110-github.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;div style="text-align: center; border-bottom: solid 1px gray; background: orange"&gt;sprawdź najnowszą wersję &lt;a href="http://onjin.net/index.php/category/ftpmount"&gt;ftpmount&lt;/a&gt;&lt;/div&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/ul&gt;&lt;/div&gt;</description><category>desktop</category><category>onjin</category><category>tools</category><category>wmanager</category><guid>http://marekwywial.name/posts/blog20091019awesome2-wm-mousekey-bindings.html</guid><pubDate>Mon, 19 Oct 2009 06:18:27 GMT</pubDate></item><item><title>ftpmount v1.1.0 - github</title><link>http://marekwywial.name/posts/blog20090622ftpmount-v110-github.html</link><dc:creator>Marek Wywiał</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;div style="text-align: center; border-bottom: solid 1px gray; background: orange"&gt;sprawdź najnowszą wersję &lt;a href="http://onjin.net/index.php/category/ftpmount"&gt;ftpmount&lt;/a&gt;&lt;/div&gt;
 &lt;p&gt;Przeniosłem skrypt ftpmount do github'a:&lt;/p&gt;
 &lt;ul&gt;&lt;li&gt;&lt;a href="http://wiki.github.com/onjin/ftpmount"&gt;ftpmount&lt;/a&gt;&lt;/li&gt;
 
@@ -111,7 +107,7 @@ Najprościej zacząć otwierając np. &lt;em&gt;migration.xml&lt;/em&gt;, wpisuj
 
 &lt;/ul&gt;
 
-&lt;p&gt;Wersje &lt;a href="http://github.com/onjin/ftpmount/downloads"&gt;do pobrania&lt;/a&gt;.&lt;/p&gt;</description><category>ftpmount</category><category>git</category><category>linux</category><category>tools</category><category>webdev</category><guid>http://marekwywial.name/posts/blog20090622ftpmount-v110-github.html</guid><pubDate>Mon, 22 Jun 2009 09:30:35 GMT</pubDate></item><item><title>fuse ftp mount - curlftpfs</title><link>http://marekwywial.name/posts/blog20090621fuse-ftp-mount-curlftpfs.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;div style="text-align: center; border-bottom: solid 1px gray; background: orange"&gt;sprawdź najnowszą wersję &lt;a href="http://onjin.net/index.php/category/ftpmount"&gt;ftpmount&lt;/a&gt;&lt;/div&gt;
+&lt;p&gt;Wersje &lt;a href="http://github.com/onjin/ftpmount/downloads"&gt;do pobrania&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;</description><category>ftpmount</category><category>git</category><category>linux</category><category>tools</category><category>webdev</category><guid>http://marekwywial.name/posts/blog20090622ftpmount-v110-github.html</guid><pubDate>Mon, 22 Jun 2009 09:30:35 GMT</pubDate></item><item><title>fuse ftp mount - curlftpfs</title><link>http://marekwywial.name/posts/blog20090621fuse-ftp-mount-curlftpfs.html</link><dc:creator>Marek Wywiał</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;div style="text-align: center; border-bottom: solid 1px gray; background: orange"&gt;sprawdź najnowszą wersję &lt;a href="http://onjin.net/index.php/category/ftpmount"&gt;ftpmount&lt;/a&gt;&lt;/div&gt;
 &lt;p&gt;Do pracy z hostingiem gdzie mamy tylko '''ftp''' przydaje się montowanie dysku poprzez właśnie ftp. Służy do tego program '''curlftpfs''' (np apt-get install curlftpfs).&lt;/p&gt;
 &lt;p&gt;Odpalamy go jako:&lt;/p&gt;
 &lt;pre&gt;
@@ -152,7 +148,7 @@ mountpoint=hosttwo.pl
  * ./ftpmount hostone.pl   # montujemy połączenie
  * ./ftpmount -u hostone.pl   #odmontowywujemy połączenie
  * ./ftpmount -l   # lista dostępnych konfiguracji połączeń&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;</description><category>ftpmount</category><category>linux</category><category>tools</category><category>webdev</category><guid>http://marekwywial.name/posts/blog20090621fuse-ftp-mount-curlftpfs.html</guid><pubDate>Sun, 21 Jun 2009 17:11:10 GMT</pubDate></item><item><title>mutt &amp; firefox (by urlview)</title><link>http://marekwywial.name/posts/blog20090605mutt-firefox-by-urlview.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;w ubuntu wystarczyło:
+&lt;p&gt;&lt;/p&gt;&lt;/div&gt;</description><category>ftpmount</category><category>linux</category><category>tools</category><category>webdev</category><guid>http://marekwywial.name/posts/blog20090621fuse-ftp-mount-curlftpfs.html</guid><pubDate>Sun, 21 Jun 2009 17:11:10 GMT</pubDate></item><item><title>mutt &amp; firefox (by urlview)</title><link>http://marekwywial.name/posts/blog20090605mutt-firefox-by-urlview.html</link><dc:creator>Marek Wywiał</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;w ubuntu wystarczyło:
 &lt;/p&gt;&lt;pre&gt;
 &lt;p&gt;apt-get install urlview&lt;/p&gt;
 &lt;/pre&gt;
@@ -174,4 +170,4 @@ COMMAND /usr/bin/nohup firefox -remote "openURL("%s", new-tab)" &amp;gt;/dev/nul
 &lt;/pre&gt;
 
 &lt;p&gt;teraz ctrl+b zbiera linki z treści wiadomości, które otwieramy w wybranej przeglądarce ;)&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;</description><category>linux</category><category>tools</category><guid>http://marekwywial.name/posts/blog20090605mutt-firefox-by-urlview.html</guid><pubDate>Fri, 05 Jun 2009 08:53:55 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;/p&gt;&lt;/div&gt;</description><category>linux</category><category>tools</category><guid>http://marekwywial.name/posts/blog20090605mutt-firefox-by-urlview.html</guid><pubDate>Fri, 05 Jun 2009 08:53:55 GMT</pubDate></item></channel></rss>

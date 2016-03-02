@@ -1,56 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>marekwywial (programowanie)</title><link>http://marekwywial.name/</link><description>never is often better than *right* now</description><atom:link href="http://marekwywial.name/categories/programowanie.xml" type="application/rss+xml" rel="self"></atom:link><lastBuildDate>Thu, 11 Feb 2016 22:34:13 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Python SOAP server (flask) + wsdl generation</title><link>http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html</link><description>&lt;div class="section" id="install"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>marekwywial (programowanie)</title><link>http://marekwywial.name/</link><description></description><atom:link href="http://marekwywial.name/categories/programowanie.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 02 Mar 2016 09:41:50 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Python SOAP server (flask) + wsdl generation</title><link>http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html</link><dc:creator>Marek Wywiał</dc:creator><description>&lt;div&gt;&lt;div class="section" id="install"&gt;
 &lt;h2&gt;Install&lt;/h2&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;pip install Flask-Enterprise
-&lt;/pre&gt;
-&lt;/div&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_a3628fdd33f947ae984e52d6ab4abc76-1"&gt;&lt;/a&gt;$ pip install Flask-Enterprise
+&lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="file-soap-py"&gt;
 &lt;h2&gt;file: soap.py&lt;/h2&gt;
-&lt;pre class="code python literal-block"&gt;
-&lt;span class="ln"&gt; 1 &lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;ctime&lt;/span&gt;
-&lt;span class="ln"&gt; 2 &lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;
-&lt;span class="ln"&gt; 3 &lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flaskext.enterprise&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Enterprise&lt;/span&gt;
-&lt;span class="ln"&gt; 4 &lt;/span&gt;
-&lt;span class="ln"&gt; 5 &lt;/span&gt;&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="ln"&gt; 6 &lt;/span&gt;
-&lt;span class="ln"&gt; 7 &lt;/span&gt;&lt;span class="n"&gt;enterprise&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Enterprise&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="ln"&gt; 8 &lt;/span&gt;
-&lt;span class="ln"&gt; 9 &lt;/span&gt;
-&lt;span class="ln"&gt;10 &lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;DemoService&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;enterprise&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SOAPService&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;span class="ln"&gt;11 &lt;/span&gt;    &lt;span class="n"&gt;__soap_server_address__&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'/soap'&lt;/span&gt;
-&lt;span class="ln"&gt;12 &lt;/span&gt;    &lt;span class="n"&gt;__soap_target_namespace__&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'ns'&lt;/span&gt;
-&lt;span class="ln"&gt;13 &lt;/span&gt;
-&lt;span class="ln"&gt;14 &lt;/span&gt;    &lt;span class="nd"&gt;@enterprise.soap&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_returns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;enterprise&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;_sp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="ln"&gt;15 &lt;/span&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_time&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;span class="ln"&gt;16 &lt;/span&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;ctime&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="ln"&gt;17 &lt;/span&gt;
-&lt;span class="ln"&gt;18 &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;'__main__'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;span class="ln"&gt;19 &lt;/span&gt;    &lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;host&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'127.0.0.1'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;5555&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;
-&lt;/div&gt;
+&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html#rest_code_dc375c0172c049c4adf42e97cdf94024-1"&gt; 1&lt;/a&gt;
+&lt;a href="http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html#rest_code_dc375c0172c049c4adf42e97cdf94024-2"&gt; 2&lt;/a&gt;
+&lt;a href="http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html#rest_code_dc375c0172c049c4adf42e97cdf94024-3"&gt; 3&lt;/a&gt;
+&lt;a href="http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html#rest_code_dc375c0172c049c4adf42e97cdf94024-4"&gt; 4&lt;/a&gt;
+&lt;a href="http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html#rest_code_dc375c0172c049c4adf42e97cdf94024-5"&gt; 5&lt;/a&gt;
+&lt;a href="http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html#rest_code_dc375c0172c049c4adf42e97cdf94024-6"&gt; 6&lt;/a&gt;
+&lt;a href="http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html#rest_code_dc375c0172c049c4adf42e97cdf94024-7"&gt; 7&lt;/a&gt;
+&lt;a href="http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html#rest_code_dc375c0172c049c4adf42e97cdf94024-8"&gt; 8&lt;/a&gt;
+&lt;a href="http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html#rest_code_dc375c0172c049c4adf42e97cdf94024-9"&gt; 9&lt;/a&gt;
+&lt;a href="http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html#rest_code_dc375c0172c049c4adf42e97cdf94024-10"&gt;10&lt;/a&gt;
+&lt;a href="http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html#rest_code_dc375c0172c049c4adf42e97cdf94024-11"&gt;11&lt;/a&gt;
+&lt;a href="http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html#rest_code_dc375c0172c049c4adf42e97cdf94024-12"&gt;12&lt;/a&gt;
+&lt;a href="http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html#rest_code_dc375c0172c049c4adf42e97cdf94024-13"&gt;13&lt;/a&gt;
+&lt;a href="http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html#rest_code_dc375c0172c049c4adf42e97cdf94024-14"&gt;14&lt;/a&gt;
+&lt;a href="http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html#rest_code_dc375c0172c049c4adf42e97cdf94024-15"&gt;15&lt;/a&gt;
+&lt;a href="http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html#rest_code_dc375c0172c049c4adf42e97cdf94024-16"&gt;16&lt;/a&gt;
+&lt;a href="http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html#rest_code_dc375c0172c049c4adf42e97cdf94024-17"&gt;17&lt;/a&gt;
+&lt;a href="http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html#rest_code_dc375c0172c049c4adf42e97cdf94024-18"&gt;18&lt;/a&gt;
+&lt;a href="http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html#rest_code_dc375c0172c049c4adf42e97cdf94024-19"&gt;19&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_dc375c0172c049c4adf42e97cdf94024-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;ctime&lt;/span&gt;
+&lt;a name="rest_code_dc375c0172c049c4adf42e97cdf94024-2"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;
+&lt;a name="rest_code_dc375c0172c049c4adf42e97cdf94024-3"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flaskext.enterprise&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Enterprise&lt;/span&gt;
+&lt;a name="rest_code_dc375c0172c049c4adf42e97cdf94024-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_dc375c0172c049c4adf42e97cdf94024-5"&gt;&lt;/a&gt;&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_dc375c0172c049c4adf42e97cdf94024-6"&gt;&lt;/a&gt;
+&lt;a name="rest_code_dc375c0172c049c4adf42e97cdf94024-7"&gt;&lt;/a&gt;&lt;span class="n"&gt;enterprise&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Enterprise&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_dc375c0172c049c4adf42e97cdf94024-8"&gt;&lt;/a&gt;
+&lt;a name="rest_code_dc375c0172c049c4adf42e97cdf94024-9"&gt;&lt;/a&gt;
+&lt;a name="rest_code_dc375c0172c049c4adf42e97cdf94024-10"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;DemoService&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;enterprise&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SOAPService&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_dc375c0172c049c4adf42e97cdf94024-11"&gt;&lt;/a&gt;    &lt;span class="n"&gt;__soap_server_address__&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'/soap'&lt;/span&gt;
+&lt;a name="rest_code_dc375c0172c049c4adf42e97cdf94024-12"&gt;&lt;/a&gt;    &lt;span class="n"&gt;__soap_target_namespace__&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'ns'&lt;/span&gt;
+&lt;a name="rest_code_dc375c0172c049c4adf42e97cdf94024-13"&gt;&lt;/a&gt;
+&lt;a name="rest_code_dc375c0172c049c4adf42e97cdf94024-14"&gt;&lt;/a&gt;    &lt;span class="nd"&gt;@enterprise.soap&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_returns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;enterprise&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;_sp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_dc375c0172c049c4adf42e97cdf94024-15"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_time&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_dc375c0172c049c4adf42e97cdf94024-16"&gt;&lt;/a&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;ctime&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_dc375c0172c049c4adf42e97cdf94024-17"&gt;&lt;/a&gt;
+&lt;a name="rest_code_dc375c0172c049c4adf42e97cdf94024-18"&gt;&lt;/a&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;'__main__'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_dc375c0172c049c4adf42e97cdf94024-19"&gt;&lt;/a&gt;    &lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;host&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'127.0.0.1'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;5555&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
 &lt;div class="section" id="run-service"&gt;
 &lt;h2&gt;Run service&lt;/h2&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;python soap.py
-&lt;/pre&gt;
-&lt;/div&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_d3b98635c93640879e1e7fb6891ba926-1"&gt;&lt;/a&gt;$ python soap.py
+&lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="file-client-py"&gt;
 &lt;h2&gt;file: client.py&lt;/h2&gt;
-&lt;pre class="code python literal-block"&gt;
-&lt;span class="ln"&gt;1 &lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;suds.client&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Client&lt;/span&gt;
-&lt;span class="ln"&gt;2 &lt;/span&gt;
-&lt;span class="ln"&gt;3 &lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Client&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'http://127.0.0.1:5555/soap?wsdl'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="ln"&gt;4 &lt;/span&gt;&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;service&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_time&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;
-&lt;/div&gt;
+&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html#rest_code_c68c9e3bcfb849aab8864e5bf43948ea-1"&gt;1&lt;/a&gt;
+&lt;a href="http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html#rest_code_c68c9e3bcfb849aab8864e5bf43948ea-2"&gt;2&lt;/a&gt;
+&lt;a href="http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html#rest_code_c68c9e3bcfb849aab8864e5bf43948ea-3"&gt;3&lt;/a&gt;
+&lt;a href="http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html#rest_code_c68c9e3bcfb849aab8864e5bf43948ea-4"&gt;4&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_c68c9e3bcfb849aab8864e5bf43948ea-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;suds.client&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Client&lt;/span&gt;
+&lt;a name="rest_code_c68c9e3bcfb849aab8864e5bf43948ea-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_c68c9e3bcfb849aab8864e5bf43948ea-3"&gt;&lt;/a&gt;&lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Client&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'http://127.0.0.1:5555/soap?wsdl'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_c68c9e3bcfb849aab8864e5bf43948ea-4"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;service&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_time&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
 &lt;div class="section" id="run-test"&gt;
 &lt;h2&gt;Run test&lt;/h2&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;python client.py
-Tue Aug 13 19:49:53 2013
-&lt;/pre&gt;
-&lt;/div&gt;</description><category>onjin</category><category>programowanie</category><category>python</category><category>webdev</category><guid>http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html</guid><pubDate>Tue, 13 Aug 2013 16:53:49 GMT</pubDate></item><item><title>vim snippetsemu i liquibase</title><link>http://marekwywial.name/posts/blog20100811vim-snippetsemu-i-liquibase.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;W &lt;a href="http://onjin.net/blog/2010/07/29/best-vim-plugins/"&gt;ostatnim wpisie&lt;/a&gt; pisałem o &lt;a href="http://www.vim.org/scripts/script.php?script_id=1318"&gt;snippetsEmu&lt;/a&gt; dla &lt;a href="http://www.vim.org/"&gt;vim&lt;/a&gt;'a, a dziś załączam &lt;a href="http://marekwywial.name/files/xml_snippets.vim"&gt;zestaw snippetów&lt;/a&gt;, których używam przy pracy z &lt;a href="http://www.liquibase.org/"&gt;liquibase&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_78e9f4b7bb704497a18230fbc8170bae-1"&gt;&lt;/a&gt;$ python client.py
+&lt;a name="rest_code_78e9f4b7bb704497a18230fbc8170bae-2"&gt;&lt;/a&gt;Tue Aug &lt;span class="m"&gt;13&lt;/span&gt; 19:49:53 2013
+&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><category>onjin</category><category>programowanie</category><category>python</category><category>webdev</category><guid>http://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html</guid><pubDate>Tue, 13 Aug 2013 16:53:49 GMT</pubDate></item><item><title>vim snippetsemu i liquibase</title><link>http://marekwywial.name/posts/blog20100811vim-snippetsemu-i-liquibase.html</link><dc:creator>Marek Wywiał</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;W &lt;a href="http://onjin.net/blog/2010/07/29/best-vim-plugins/"&gt;ostatnim wpisie&lt;/a&gt; pisałem o &lt;a href="http://www.vim.org/scripts/script.php?script_id=1318"&gt;snippetsEmu&lt;/a&gt; dla &lt;a href="http://www.vim.org/"&gt;vim&lt;/a&gt;'a, a dziś załączam &lt;a href="http://marekwywial.name/files/xml_snippets.vim"&gt;zestaw snippetów&lt;/a&gt;, których używam przy pracy z &lt;a href="http://www.liquibase.org/"&gt;liquibase&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Liquibase&lt;/strong&gt; to całkiem miłe narzędzie napisane w Javie do śledzenia, zarządzania i wprowadzania zmian w bazach danych. Zmiany opisuje się w pliku (plikach) xml i wpisywanie oraz pamiętanie tej składni można sobie uprościć przy pomocy vim'a i snippetów.&lt;/p&gt;
 
 &lt;p&gt;Snippet umieszczamy razem z pozostałymi, najczęściej w &lt;strong&gt;.vim/after/ftplugin/&lt;/strong&gt;.
@@ -59,7 +70,7 @@ Najprościej zacząć otwierając np. &lt;em&gt;migration.xml&lt;/em&gt;, wpisuj
 
 &lt;p&gt; » &lt;a href="http://marekwywial.name/files/xml_snippets.vim"&gt;xml_snippets.vim&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description><category>programowanie</category><category>tools</category><category>vim</category><guid>http://marekwywial.name/posts/blog20100811vim-snippetsemu-i-liquibase.html</guid><pubDate>Wed, 11 Aug 2010 16:45:35 GMT</pubDate></item><item><title>best vim plugins</title><link>http://marekwywial.name/posts/blog20100729best-vim-plugins.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Dziś robiłem porządki w ~/.vim/ . Aktualizacje do nowych wersji pluginów, wyrzucanie nieużywanych, porządki w ~/.vimrc. W trakcie tej pracy powstała lista pluginów, dzięki którym miło mi się pracuje&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/div&gt;</description><category>programowanie</category><category>tools</category><category>vim</category><guid>http://marekwywial.name/posts/blog20100811vim-snippetsemu-i-liquibase.html</guid><pubDate>Wed, 11 Aug 2010 16:45:35 GMT</pubDate></item><item><title>best vim plugins</title><link>http://marekwywial.name/posts/blog20100729best-vim-plugins.html</link><dc:creator>Marek Wywiał</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Dziś robiłem porządki w ~/.vim/ . Aktualizacje do nowych wersji pluginów, wyrzucanie nieużywanych, porządki w ~/.vimrc. W trakcie tej pracy powstała lista pluginów, dzięki którym miło mi się pracuje&lt;/p&gt;
 &lt;h4&gt;vimball&lt;/h4&gt;
 
 &lt;p&gt;Plugin zajmujący się pluginami dostarczanymi w paczkach .vba i pozwalający też takie paczki tworzyć, w praktyce potrzeby mi by instalować paczki .vba&lt;br&gt;
@@ -98,7 +109,7 @@ Najprościej zacząć otwierając np. &lt;em&gt;migration.xml&lt;/em&gt;, wpisuj
 
  » &lt;a href="http://www.vim.org/scripts/script.php?script_id=90"&gt;vcscommand&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;Niewiele tego, ale te pluginy, git (post/pre hooki), bash + zestaw skryptów wystarcza mi do pracy :)&lt;/p&gt;</description><category>programowanie</category><category>python</category><category>tools</category><category>vim</category><guid>http://marekwywial.name/posts/blog20100729best-vim-plugins.html</guid><pubDate>Thu, 29 Jul 2010 18:34:19 GMT</pubDate></item><item><title>lint dla php</title><link>http://marekwywial.name/posts/blog20080902lint-dla-php.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Za dnia piszę najczęściej w &lt;a href="http://php.net"&gt;php&lt;/a&gt; i zazdroszczę &lt;a href="http://python.org/"&gt;pythonowi&lt;/a&gt; &lt;a href="http://www.logilab.org/857"&gt;pylinta&lt;/a&gt;.&lt;br&gt;
+&lt;p&gt;Niewiele tego, ale te pluginy, git (post/pre hooki), bash + zestaw skryptów wystarcza mi do pracy :)&lt;/p&gt;&lt;/div&gt;</description><category>programowanie</category><category>python</category><category>tools</category><category>vim</category><guid>http://marekwywial.name/posts/blog20100729best-vim-plugins.html</guid><pubDate>Thu, 29 Jul 2010 18:34:19 GMT</pubDate></item><item><title>lint dla php</title><link>http://marekwywial.name/posts/blog20080902lint-dla-php.html</link><dc:creator>Marek Wywiał</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Za dnia piszę najczęściej w &lt;a href="http://php.net"&gt;php&lt;/a&gt; i zazdroszczę &lt;a href="http://python.org/"&gt;pythonowi&lt;/a&gt; &lt;a href="http://www.logilab.org/857"&gt;pylinta&lt;/a&gt;.&lt;br&gt;
 Z ciekawości zagooglałem i znalazłem rozwiązanie dla PHP sprawdzające Coding Standard:&lt;/p&gt;
 &lt;pre&gt;
 
@@ -126,4 +137,4 @@ phpcs --standard=Zend SomeTest.class.php
 
 &lt;p&gt;phpcs pozwala także tworzyć swoje &lt;a href="http://pear.php.net/manual/en/package.php.php-codesniffer.coding-standard-tutorial.php"&gt;własne standardy kodowanie&lt;/a&gt; oraz - co bardzo mnie cieszy - podpiąć go jako &lt;a href="http://pear.php.net/manual/en/package.php.php-codesniffer.svn-pre-commit.php"&gt;precommit hook&lt;/a&gt; do &lt;a href="http://subversion.tigris.org/"&gt;svn'a&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description><category>php</category><category>programowanie</category><category>tools</category><category>webdev</category><guid>http://marekwywial.name/posts/blog20080902lint-dla-php.html</guid><pubDate>Tue, 02 Sep 2008 19:01:02 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;/p&gt;&lt;/div&gt;</description><category>php</category><category>programowanie</category><category>tools</category><category>webdev</category><guid>http://marekwywial.name/posts/blog20080902lint-dla-php.html</guid><pubDate>Tue, 02 Sep 2008 19:01:02 GMT</pubDate></item></channel></rss>

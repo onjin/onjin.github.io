@@ -227,14 +227,16 @@ REDIRECTIONS = [
 # And then do a backup, or ping pingomatic.
 # To do manual deployment, set it to []
 # DEPLOY_COMMANDS = []
-DEPLOY_COMMANDS = [
-    "git add .",
-    #"git commit -am 'Update'",
-    "git push origin website",
-    "git subtree split --prefix output -b master",
-    "git push -f origin master:master",
-    "git branch -D master",
-]
+DEPLOY_COMMANDS = {
+    'default': [
+        "git add .",
+        #"git commit -am 'Update'",
+        "git push origin website",
+        "git subtree split --prefix output -b master",
+        "git push -f origin master:master",
+        "git branch -D master",
+    ]
+}
 
 # Where the output site should be located
 # If you don't use an absolute path, it will be considered as relative
@@ -341,14 +343,10 @@ THEME = "zen-onjin"
 # }}            A literal } (U+007D RIGHT CURLY BRACKET)
 # READ_MORE_LINK = '<p class="more"><a href="{link}">{read_more}…</a></p>'
 
-# A HTML fragment describing the license, for the sidebar.
-LICENSE = ""
-# I recommend using the Creative Commons' wizard:
-# http://creativecommons.org/choose/
 LICENSE = """
 <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">
 <img alt="Creative Commons License" style="border-width:0"
-    src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br />
+    src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>
 This work is licensed under a <a rel="license"
 href="http://creativecommons.org/licenses/by/3.0/deed.en_US">
 Creative Commons Attribution 3.0 Unported License</a>.
@@ -358,7 +356,7 @@ Creative Commons Attribution 3.0 Unported License</a>.
 # Default is ''
 CONTENT_FOOTER = '''Contents &copy; {date}         <a href="mailto:{email}">
 {author}</a> - Powered by         <a href="http://getnikola.com">Nikola</a>
-{license}'''
+<br/>{license}'''
 CONTENT_FOOTER = CONTENT_FOOTER.format(email=BLOG_EMAIL,
                                        author=BLOG_AUTHOR,
                                        date=time.gmtime().tm_year,
@@ -455,20 +453,8 @@ INDEX_FILE = "index.html"
 # Social buttons. This is sample code for AddThis (which was the default for a
 # long time). Insert anything you want here, or even make it empty.
 SOCIAL_BUTTONS_CODE = """
-<!-- Social buttons -->
-<div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style
-addthis_default_style addthis_label_style addthis_32x32_style">
-<a class="addthis_button_more">Share</a>
-<ul><li><a class="addthis_button_facebook"></a>
-<li><a class="addthis_button_google_plusone_share"></a>
-<li><a class="addthis_button_linkedin"></a>
-<li><a class="addthis_button_twitter"></a>
-</ul>
-</div>
-<script type="text/javascript"
-src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798">
-</script>
-<!-- End of social buttons -->
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_native_toolbox"></div>
 """
 
 # Hide link to source for the posts?
@@ -532,19 +518,6 @@ SEARCH_FORM = ""
 #<input type="text" id="tipue_search_input">
 #</span>"""
 
-#BODY_END = """
-#<script type="text/javascript" src="/assets/js/tipuesearch_set.js"></script>
-#<script type="text/javascript" src="/assets/js/tipuesearch.js"></script>
-#<script type="text/javascript">
-#$(document).ready(function() {
-#   $('#tipue_search_input').tipuesearch({
-#       'mode': 'json',
-#       'contentLocation': '/assets/js/tipuesearch_content.json',
-#       'showUrl': false
-#   });
-#});
-#</script>
-#"""
 
 # EXTRA_HEAD_DATA = """
 # <link rel="stylesheet" type="text/css" href="/assets/css/tipuesearch.css">
@@ -595,6 +568,12 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 (function(b){(function(a){"__CF"in b&&"DJS"in b.__CF?b.__CF.DJS.push(a):"addEventListener"in b?b.addEventListener("load",a,!1):b.attachEvent("onload",a)})(function(){"FB"in b&&"Event"in FB&&"subscribe"in FB.Event&&(FB.Event.subscribe("edge.create",function(a){_gaq.push(["_trackSocial","facebook","like",a])}),FB.Event.subscribe("edge.remove",function(a){_gaq.push(["_trackSocial","facebook","unlike",a])}),FB.Event.subscribe("message.send",function(a){_gaq.push(["_trackSocial","facebook","send",a])}));"twttr"in b&&"events"in twttr&&"bind"in twttr.events&&twttr.events.bind("tweet",function(a){if(a){var b;if(a.target&&a.target.nodeName=="IFRAME")a:{if(a=a.target.src){a=a.split("#")[0].match(/[^?=&]+=([^&]*)?/g);b=0;for(var c;c=a[b];++b)if(c.indexOf("url")===0){b=unescape(c.split("=")[1]);break a}}b=void 0}_gaq.push(["_trackSocial","twitter","tweet",b])}})})})(window);
 /* ]]> */
 </script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script
+type="text/javascript"
+src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56d6b7300a9fec43"
+></script>
 """
 
 # The possibility to extract metadata from the filename by using a
@@ -677,3 +656,4 @@ ENABLED_EXTRAS = [
 # It can be anything, data, functions, modules, etc.
 
 GLOBAL_CONTEXT = {}
+WRITE_TAG_CLOUD = True

@@ -1,6 +1,12 @@
 {
   "pages": [
     {
+      "text": "Write your post here.", 
+      "tags": "docker,postgresql,alpine,linux,github", 
+      "loc": "/posts/tiny-postgresql-docker-images-based-on-alpine-linux.html", 
+      "title": "Tiny PostgreSQL Docker images based on Alpine linux"
+    }, 
+    {
       "text": "Aby si\u0119 przeklika\u0107 przez program na http://n.pl/ i jeszcze znale\u017a\u0107 interesuj\u0105cy program, to jest ponad moje si\u0142y.\nNapisa\u0142em wi\u0119c na szybko narz\u0119dzie dzia\u0142aj\u0105ce w shellu, kt\u00f3re pozwala przegl\u0105da\u0107 oraz przeszukiwa\u0107 program ze strony\nn.pl https://github.com/onjin/ntv/.\n\nInstalacja\nProgram napisany jest w Pythonie i dystrybuowany jako egg\n\n$ pip install ntv\n$ ntv-cli --help\n\n\n\nKana\u0142y\nLista wszystkich kana\u0142\u00f3w nadaj\u0105cych dzisiaj:\n\n\nntv-cli channels\n\n\nLista kana\u0142\u00f3w zawieraj\u0105cych w nazie 'filmbox' (oboj\u0119tne czy ma\u0142e czy du\u017ce litery):\n\n\nntv-cli channels filmbox\n\n\nWyszukanie kana\u0142\u00f3w na wybrany dzie\u0144:\n\n\nntv-cli channels -d 2013-10-13\nntv-cli channels filmbox -d 2013-10-13\n\n\n\n\nProgramy\nLista wszystkich program\u00f3w nadawanych dzisiaj:\n\n\nntv-cli movies\n\n\nLista program\u00f3w nadawanych na kana\u0142ach maj\u0105cy w nazie 'polsat':\n\n\nntv-cli movies polsat\n\n\nLista program\u00f3w nadawanych na kana\u0142ach 'polsta' zawieraj\u0105ca w nazie s\u0142owo 'mecz':\n\n\nntv-cli movies polsat -t mecz\n\n\nWyszukanie program\u00f3w na inny dzie\u0144:\n\n\nntv-cli movies polsat -t mecz -d 2013-10-13", 
       "tags": "python,github,cli", 
       "loc": "/posts/telewizja-n-nc-i-python.html", 

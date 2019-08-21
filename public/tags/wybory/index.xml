@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wybory on Marek Wywiał</title>
+    <link>https://marekwywial.name/tags/wybory/</link>
+    <description>Recent content in wybory on Marek Wywiał</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 21 Oct 2007 22:38:11 +0000</lastBuildDate>
+    
+	<atom:link href="https://marekwywial.name/tags/wybory/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>wyniki wyborów - sondaż</title>
+      <link>https://marekwywial.name/posts/blog20071021wyniki-wyborow-sondaz/</link>
+      <pubDate>Sun, 21 Oct 2007 22:38:11 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20071021wyniki-wyborow-sondaz/</guid>
+      <description>PBS DGA dla TVN24: frekwencja wyniosła 54,9%. To najlepszy wynik po 1989 roku TNS OBOP dla TVP: stosunkowo wysoka frekwencja najmłodszych wyborców - 52,4% głosująych w wieku 18-24 lat.  Dodajmy do tego akcję z zabieraniem dowodów ;) i zaraz widać kto na kogo głosował :D</description>
+    </item>
+    
+  </channel>
+</rss>

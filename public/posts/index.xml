@@ -1,0 +1,1102 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Marek Wywiał</title>
+    <link>https://marekwywial.name/posts/</link>
+    <description>Recent content in Posts on Marek Wywiał</description>
+    <meta name="generator" content="Hugo 0.57.2" />
+    <lastBuildDate>Sat, 12 Oct 2013 01:26:16 +0000</lastBuildDate>
+    
+        <atom:link href="https://marekwywial.name/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Telewizja N (nc&#43;) i python</title>
+      <link>https://marekwywial.name/posts/telewizja-n-nc-i-python/</link>
+      <pubDate>Sat, 12 Oct 2013 01:26:16 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/telewizja-n-nc-i-python/</guid>
+      <description>Aby się przeklikać przez program na http://n.pl/ i jeszcze znaleźć interesujący program, to jest ponad moje siły.
+Napisałem więc na szybko narzędzie działające w shellu, które pozwala przeglądać oraz przeszukiwać program ze strony n.pl https://github.com/onjin/ntv/.
+Instalacja Program napisany jest w Pythonie i dystrybuowany jako egg
+1 2  $ pip install ntv $ ntv-cli --help   Kanały Lista wszystkich kanałów nadających dzisiaj:
+ ntv-cli channels  Lista kanałów zawierających w nazie &amp;lsquo;filmbox&amp;rsquo; (obojętne czy małe czy duże litery):</description>
+    </item>
+    
+    <item>
+      <title>Fast sentry instance using docker</title>
+      <link>https://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker/</link>
+      <pubDate>Wed, 18 Sep 2013 13:36:39 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker/</guid>
+      <description>Requirements You need docker and postgresql database
+ https://www.docker.com/  Running If you have docker installed and postgres database created you can:
+1 2 3 4 5 6 7 8  # pull sentry image docker pull onjin/sentry # install sentry database docker run -e SENTRY_DBHOST=your.db.address -e SENTRY_DBNAME=sentrydbname -e SENTRY_DBUSER=dbuser -e SENTRY_DBPASS=dbpass -p :7365 onjin/sentry upgrade # run sentry instance docker run -d -e SENTRY_DBHOST=your.db.address -e SENTRY_DBNAME=sentrydbname -e SENTRY_DBUSER=dbuser -e SENTRY_DBPASS=dbpass -p :7365 onjin/sentry start   and open browser at address:</description>
+    </item>
+    
+    <item>
+      <title>Python SOAP server (flask) &#43; wsdl generation</title>
+      <link>https://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html</link>
+      <pubDate>Tue, 13 Aug 2013 18:53:49 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html</guid>
+      <description>Install 1  $ pip install Flask-Enterprise   file: soap.py 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  from time import ctime from flask import Flask from flaskext.enterprise import Enterprise app = Flask(__name__) enterprise = Enterprise(app) class DemoService(enterprise.SOAPService): __soap_server_address__ = &amp;#39;/soap&amp;#39; __soap_target_namespace__ = &amp;#39;ns&amp;#39; @enterprise.soap(_returns=enterprise._sp.String) def get_time(self): return ctime() if __name__ == &amp;#39;__main__&amp;#39;: app.run(host=&amp;#39;127.0.0.1&amp;#39;, port=5555)   Run service 1  $ python soap.</description>
+    </item>
+    
+    <item>
+      <title>quiet please !! disable audio bell in gvim</title>
+      <link>https://marekwywial.name/posts/blog20120730quiet-please-disable-audio-bell-in-gvim/</link>
+      <pubDate>Mon, 30 Jul 2012 21:27:26 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20120730quiet-please-disable-audio-bell-in-gvim/</guid>
+      <description>I don&amp;rsquo;t want to hear it any more, so I&amp;rsquo;ve put this into .vimrc
+1 2 3 4 5  &amp;#34; quiet pleeeeeease if has(&amp;#39;autocmd&amp;#39;) autocmd GUIEnter * set visualbell t_vb= endif   </description>
+    </item>
+    
+    <item>
+      <title>Rescan SCSI bus (no reboot)</title>
+      <link>https://marekwywial.name/posts/blog20120705rescan-scsi-bus-no-reboot/</link>
+      <pubDate>Thu, 05 Jul 2012 08:16:42 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20120705rescan-scsi-bus-no-reboot/</guid>
+      <description> Just self memo. How to attach new SCSI disk without reboot (debian):
+1 2 3 4 5 6  # check what hosts do you have ls /sys/class/scsi_host host0 host1 host2 host3 # change &amp;#39;host0&amp;#39; to &amp;#39;host1&amp;#39; or any next number that you need echo &amp;#34;- - -&amp;#34; &amp;gt; /sys/class/scsi_host/host0/scan   and done 1  fdisk -l   </description>
+    </item>
+    
+    <item>
+      <title>extend lvm2 filesystem</title>
+      <link>https://marekwywial.name/posts/blog20120427extend-lvm2-filesystem/</link>
+      <pubDate>Fri, 27 Apr 2012 10:30:44 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20120427extend-lvm2-filesystem/</guid>
+      <description>Just self memo 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  # Added new physical partition /dev/sda3 # create a physical volume out of it $ pvcreate /dev/sda3 # Now, add it to the volume group #that my logical volume is on $ vgextend VolGroup00 /dev/sda3 # Now that the volume group has more # disk space, the logical volume can grow $ lvextend -L+11G /dev/VolGroup00/LogVol00 # Ok, last of all, I want to filesystem to # recognize that more space is available $ fsadm resize /dev/VolGroup00/LogVol00 # sweet, I have more space now $ df -h</description>
+    </item>
+    
+    <item>
+      <title>vim &#43; vundle plugin manager &#43; programming</title>
+      <link>https://marekwywial.name/posts/blog20120314vim-vundle-plugin-manager-programming.html</link>
+      <pubDate>Wed, 14 Mar 2012 22:50:36 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20120314vim-vundle-plugin-manager-programming.html</guid>
+      <description>Kilku znajomych chciało zacząć używać vim&amp;rsquo;a. Ale konfigurowanie go na starcie, dobieranie pluginów, instalowanie ich, gdy się jeszcze nic nie wie tylko chce się spróbować zazwyczaj powodowało przełożenie tej próby na &amp;lsquo;kiedy indziej&amp;rsquo;.
+Niedawno poznałem i zacząłem używać plugin manager&amp;rsquo;a https://github.com/gmarik/vundle i sam potrzebowałem szybko przenieść konfigurację na drugi komputer i na laptopa. Zazwyczaj używałem dropbox&amp;rsquo;a i podlinkowanego pliku .vimrc oraz całego katalogu .vim ze wszystkimi pluginami.
+Jednak używając plugin managera, którego konfiguracja znajduje się w .</description>
+    </item>
+    
+    <item>
+      <title>vim note plugin - easy note management</title>
+      <link>https://marekwywial.name/posts/vim-note-plugin.html</link>
+      <pubDate>Wed, 12 Oct 2011 09:24:18 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/vim-note-plugin.html</guid>
+      <description> http://github.com/xolox/vim-notes/ http://peterodding.com/code/vim/notes/  </description>
+    </item>
+    
+    <item>
+      <title>Grooveshark currentSong.txt &#43; gajim status</title>
+      <link>https://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</link>
+      <pubDate>Sat, 19 Mar 2011 13:03:04 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</guid>
+      <description>Przy okazji szukania API do grooveshark&amp;rsquo;a odkryłem plik currentSong.txt, który jest tworzony przez Grooveshark Desktop.
+Kilka minut z vim&amp;rsquo;em i mamy skrypt napisany w python&amp;rsquo;ie, który odczytuje w/w plik i wrzuca informację o aktualnie odtwarzanym utworze jako status wybranego konta w gajim&amp;rsquo;a.
+Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wymana pyinotify). Wtedy nasz status będzie zmieniany w chwili (chwilę potem :) ) zmiany utworu w Grooveshark Desktop.</description>
+    </item>
+    
+    <item>
+      <title>vim snippetsemu i liquibase</title>
+      <link>https://marekwywial.name/posts/blog20100811vim-snippetsemu-i-liquibase.html</link>
+      <pubDate>Wed, 11 Aug 2010 18:45:35 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20100811vim-snippetsemu-i-liquibase.html</guid>
+      <description>W ostatnim wpisie pisałem o snippetsEmu dla vim&amp;lsquo;a, a dziś załączam zestaw snippetów, których używam przy pracy z liquibase.
+Liquibase to całkiem miłe narzędzie napisane w Javie do śledzenia, zarządzania i wprowadzania zmian w bazach danych. Zmiany opisuje się w pliku (plikach) xml i wpisywanie oraz pamiętanie tej składni można sobie uprościć przy pomocy vim&amp;rsquo;a i snippetów.
+Snippet umieszczamy razem z pozostałymi, najczęściej w .vim/after/ftplugin/.
+Najprościej zacząć otwierając np. migration.xml, wpisując lhelp i wcisnąć TAB.</description>
+    </item>
+    
+    <item>
+      <title>best vim plugins</title>
+      <link>https://marekwywial.name/posts/blog20100729best-vim-plugins.html</link>
+      <pubDate>Thu, 29 Jul 2010 20:34:19 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20100729best-vim-plugins.html</guid>
+      <description>Dziś robiłem porządki w ~/.vim/ . Aktualizacje do nowych wersji pluginów, wyrzucanie nieużywanych, porządki w ~/.vimrc. W trakcie tej pracy powstała lista pluginów, dzięki którym miło mi się pracuje
+vimball Plugin zajmujący się pluginami dostarczanymi w paczkach .vba i pozwalający też takie paczki tworzyć, w praktyce potrzeby mi by instalować paczki .vba
+ http://www.vim.org/scripts/script.php?script_id=1502  snippetsEmu Emuluje zachowanie snippetów z TextMate. Na przykład w pliku sometest.py wpisujesz &amp;lsquo;for&amp;lt;tab&amp;gt;&amp;rsquo;, uzupełniasz brakujące miejsca poruszając się klawiszem &amp;lt;tab&amp;gt; i otrzymujesz pełną pętle.</description>
+    </item>
+    
+    <item>
+      <title>git php syntax check pre-commit</title>
+      <link>https://marekwywial.name/posts/blog20100504git-php-syntax-check-pre-commit/</link>
+      <pubDate>Tue, 04 May 2010 07:52:53 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20100504git-php-syntax-check-pre-commit/</guid>
+      <description>Załączam używany przeze mnie i sprawdzający się pre-commit dla git&amp;lsquo;a sprawdzający commitowane pliki .php.
+Przy wykonaniu commit w repozytorium skrypt dla każdego commitowanego pliku &amp;lsquo;.php&amp;rsquo; wykonuje &amp;lsquo;php -l&amp;rsquo; w pętli, aż otrzyma odpowiedź, że składnia jest ok lub nie ok. Przypadku wystąpienia błędy przerywa commit. Sam skrypt napisany jest w python&amp;lsquo;ie
+Dlaczego w pętli? Dlatego, że &amp;lsquo;php -l&amp;rsquo; losowo się urywa zwracając SIGFAULT i należy wtedy powtórzyć próbę z &amp;lsquo;-l&amp;rsquo;</description>
+    </item>
+    
+    <item>
+      <title>devhelp &#43; django 1.1</title>
+      <link>https://marekwywial.name/posts/blog20100426devhelp-django-1-1/</link>
+      <pubDate>Mon, 26 Apr 2010 19:51:34 +0100</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20100426devhelp-django-1-1/</guid>
+      <description>Ostatnio biegałem z lapkiem po centrum handlowym i łapałem wifi, żeby spojrzeć do dokumentacji django. I tylko się nabiegałem :).
+Aby drugi raz pracować nie biegać w domu szybko podłączyłem dokumentację django do devhelp i tak na szybko procedura:
+1 2 3 4 5 6 7 8  apt-get install devhelp mkdir -p ~/bin; cd ~/bin wget http://htmlhelp.googlecode.com/svn/trunk/misc/devhelp-install chmod +x devhelp-install cd ~/; wget http://onjin.net/files/django1.1-doc.tgz /bin/devhelp-install ./django1.1-doc.tgz   Teraz wystarczy uruchomić devhelp&amp;rsquo;a i cieszyć się offline :)</description>
+    </item>
+    
+    <item>
+      <title>Przydatne narzędzia do monitoringu obciążenia serwera ...</title>
+      <link>https://marekwywial.name/posts/blog20100103przydatne-narzedzia-do-monitoringu-obciazenia-serwera/</link>
+      <pubDate>Sun, 03 Jan 2010 13:01:26 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20100103przydatne-narzedzia-do-monitoringu-obciazenia-serwera/</guid>
+      <description>&amp;hellip; zamieścił mekk
+ http://notatnik.mekk.waw.pl/archives/200-Oprocz_top.html  </description>
+    </item>
+    
+    <item>
+      <title>awesome3 wm mouse/key bindings</title>
+      <link>https://marekwywial.name/posts/blog20091019awesome2-wm-mousekey-bindings/</link>
+      <pubDate>Mon, 19 Oct 2009 08:18:27 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20091019awesome2-wm-mousekey-bindings/</guid>
+      <description>Tak na szybko z manuala do pdf&amp;rsquo;a do szybkiego wydruku cheatsheet dla window managera awesome 3 (it&amp;rsquo;s awesome ;) ):
+ awesome3_bindings.pdf  </description>
+    </item>
+    
+    <item>
+      <title>memo: mysql &#43; Incorrect file format dla tabeli</title>
+      <link>https://marekwywial.name/posts/blog20090810memo-mysql-incorrect-file-format-dla-tabeli/</link>
+      <pubDate>Mon, 10 Aug 2009 12:56:57 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20090810memo-mysql-incorrect-file-format-dla-tabeli/</guid>
+      <description>Gdy zwykły repair nie pomaga można zarzucić:
+1  repair table TABLENAME use_frm   </description>
+    </item>
+    
+    <item>
+      <title>ftpmount v1.2.0</title>
+      <link>https://marekwywial.name/posts/blog20090625ftpmount-v120/</link>
+      <pubDate>Thu, 25 Jun 2009 12:44:36 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20090625ftpmount-v120/</guid>
+      <description>sprawdź najnowszą wersję ftpmount
+Kilka poprawek do ftpmount:
+ poprawiony przykładowy .ftpmountrc - w .ini komentrze to &amp;lsquo;;&amp;rsquo; a nie &amp;lsquo;#&amp;rsquo; :) tryb &amp;lsquo;verbose&amp;rsquo; (-v) pokazuje teraz jakie parametry zostały przekazane do curlftpfs do README dodałem informację, że &amp;lsquo;curlftpfs&amp;rsquo; jest potrzebny do działania skryptu  Wersje do pobrania.</description>
+    </item>
+    
+    <item>
+      <title>ftpmount v1.1.0 - github</title>
+      <link>https://marekwywial.name/posts/blog20090622ftpmount-v110-github/</link>
+      <pubDate>Mon, 22 Jun 2009 11:30:35 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20090622ftpmount-v110-github/</guid>
+      <description>sprawdź najnowszą wersję ftpmount Przeniosłem skrypt ftpmount do github&amp;rsquo;a:
+ ftpmount  Równocześnie zmieniłem sposób konfiguracji, a raczej tylko domyślną nazwę pliku konfiguracyjnego. Teraz jest szukany plik:
+ .ftpmountrc w aktualnym katalogu potem .ftpmountrc w katalogu domowym  Wersje do pobrania.</description>
+    </item>
+    
+    <item>
+      <title>fuse ftp mount - curlftpfs</title>
+      <link>https://marekwywial.name/posts/blog20090621fuse-ftp-mount-curlftpfs/</link>
+      <pubDate>Sun, 21 Jun 2009 19:11:10 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20090621fuse-ftp-mount-curlftpfs/</guid>
+      <description>sprawdź najnowszą wersję ftpmount Do pracy z hostingiem gdzie mamy tylko &amp;ldquo;&amp;lsquo;ftp&amp;rdquo;&amp;rsquo; przydaje się montowanie dysku poprzez właśnie ftp. Służy do tego program &amp;ldquo;&amp;lsquo;curlftpfs&amp;rdquo;&amp;rsquo; (np apt-get install curlftpfs).
+Odpalamy go jako:
+1  $ curlftpfs ftp://user:pass@host/ ./mountpoint   Do tego potrzebujemy uprawnienia grupy fuse więć jako root musimy sobie ją dodać od naszego użytkownika.
+Jeżeli mamy dużo połączeń do zarządzania przyda się mały skrypt:
+ ftpmount  sterowany konfiguracją w pliku config.</description>
+    </item>
+    
+    <item>
+      <title>mutt &amp; firefox (by urlview)</title>
+      <link>https://marekwywial.name/posts/blog20090605mutt-firefox-by-urlview.html</link>
+      <pubDate>Fri, 05 Jun 2009 10:53:55 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20090605mutt-firefox-by-urlview.html</guid>
+      <description>w ubuntu wystarczyło: 
+apt-get install urlview
+
+w ~/.muttrc dodane makro
+ macro pager \\cb &amp;lt;pipe-entry&amp;gt;urlview&amp;lt;enter&amp;gt; &#39;Follow links with urlview&#39;  orac plik ~/.urlview:
+ REGEXP ((http|https|ftp|gopher):(//)?[^ &amp;lt;&amp;gt;&#34;\\t]*|www\\.[-a-z0-9.]+)[^ .,;\\t&amp;lt;&#34;&amp;gt;\\):] COMMAND /usr/bin/nohup firefox -remote &#34;openURL(&#34;%s&#34;, new-tab)&#34; &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 &amp;amp;  teraz ctrl+b zbiera linki z treści wiadomości, które otwieramy w wybranej przeglądarce ;)</description>
+    </item>
+    
+    <item>
+      <title>google apps (gmail) i mutt</title>
+      <link>https://marekwywial.name/posts/blog20090526google-apps-gmail-i-mutt/</link>
+      <pubDate>Tue, 26 May 2009 10:31:04 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20090526google-apps-gmail-i-mutt/</guid>
+      <description>Znalezione na sieci i przystosowane do google apps:
+
+set imap_user = &amp;ldquo;user@domena.pl&amp;rdquo;
+set imap_pass = &amp;ldquo;password&amp;rdquo;
+set smtp_url = &amp;ldquo;smtp://users\@domena.pl@smtp.gmail.com:587/&amp;rdquo;
+set smtp_pass = &amp;ldquo;password&amp;rdquo;
+set from = &amp;ldquo;user@domena.pl&amp;rdquo;
+set realname = &amp;ldquo;My ql user&amp;rdquo;
+set folder = &amp;ldquo;imaps://imap.gmail.com:993&amp;rdquo;
+set spoolfile = &amp;ldquo;+INBOX&amp;rdquo;
+set postponed=&amp;ldquo;+[Google Mail]/Drafts&amp;rdquo;
+set header_cache=~/.mutt/cache/headers
+set message_cachedir=~/.mutt/cache/bodies
+set certificate_file=~/.mutt/certificates
+set move = no</description>
+    </item>
+    
+    <item>
+      <title>porządki na dysku, czyli mv, ln, mount i bind</title>
+      <link>https://marekwywial.name/posts/blog20090512porzadki-na-dysku-czyli-mv-ln-mount-i-bind/</link>
+      <pubDate>Tue, 12 May 2009 22:46:59 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20090512porzadki-na-dysku-czyli-mv-ln-mount-i-bind/</guid>
+      <description>Robiąc ostatnio trochę miejsca pomiędzy partycjami przeniosłem /usr/lib do /opt/usr/lib i zrobiłem symlink ln -s /opt/usr/lib /usr/lib. Problemem okazało się np /usr/lib/cups/filter/foomatic-rip, który jest linkiem relatywnym do ../../../bin/foomatic-rip i w ten sposób pozbyłem się możliwości drukowania.
+Nie mam miejsca by zrobić/użyć partycji, którą bym zamontował pod /usr/lib ale chwila w necie pozoliła znaleść mi rozwiązanie odpowiednie dla mnie :)
+
+
+mount &amp;ndash;bind /opt/usr/lib /usr/lib
+
+lub w /etc/fstab
+ /opt/usr/lib /usr/lib none bind  i teraz jest ok :)</description>
+    </item>
+    
+    <item>
+      <title>git pre-commit hook - symfony / php</title>
+      <link>https://marekwywial.name/posts/blog20090511git-pre-commit-hook-symfony-php/</link>
+      <pubDate>Mon, 11 May 2009 10:25:43 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20090511git-pre-commit-hook-symfony-php/</guid>
+      <description>Mam jeszcze tą nieprzyjemnośc pracy z PHP (w tym przypadku z symfony framework) i aby była przyjemniejsza dodałem sobie hook na pre-commit do git&amp;rsquo;a. * http://dl.getdropbox.com/u/185133/git/pre-commit
+by zadziałało przerywanie commit&amp;rsquo;a gdy &amp;lsquo;symfony unit-test&amp;rsquo; się nie udadzą, potrzebna jest łatka na symfony (przynajmniej na moją wersję 1.0.17) * http://dl.getdropbox.com/u/185133/git/symfony_return_code.diff
+Hook zakłada, że commit jest robiony w katalogu projektu (tak mam najczęsciej) i znajduje sie w nim plik &amp;lsquo;symfony&amp;rsquo;
+btw: hook wymaga pythona.</description>
+    </item>
+    
+    <item>
+      <title>home.pl &amp; django - pierwsza potyczka</title>
+      <link>https://marekwywial.name/posts/blog20090226homepl-django-pierwsza-potyczka.html</link>
+      <pubDate>Thu, 26 Feb 2009 21:59:38 +0100</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20090226homepl-django-pierwsza-potyczka.html</guid>
+      <description>home.pl obsługuje pythona jako cgi (pliki .py) więc tego będziemy się trzymać. Instalację wykonamy w katalogu /py
+instalacja django hardcoded ale działa ;) wrzucamy to do /py i ruchamiamy poprzez www (plik install.py)
+1 2 3 4 5 6 7 8 9  #!/usr/bin/env python import os os.system(&amp;#34;wget http://www.djangoproject.com/download/1.0.2/tarball/&amp;#34;) os.system(&amp;#34;tar zxf Django-1.0.2-final.tar.gz&amp;#34;) os.system(&amp;#34;rm Django-1.0.2-final.tar.gz&amp;#34;) os.system(&amp;#34;mv Django-1.0.2-final tmp&amp;#34;) os.system(&amp;#34;mv tmp/django django&amp;#34;)   nasz projekt Lokalnie wołamy
+1  $ django-admin.</description>
+    </item>
+    
+    <item>
+      <title>git, svn i puste katalogi</title>
+      <link>https://marekwywial.name/posts/blog20090112git-svn-i-puste-katalogi/</link>
+      <pubDate>Mon, 12 Jan 2009 20:47:59 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20090112git-svn-i-puste-katalogi/</guid>
+      <description>Importując repozytorium svn&amp;rsquo;a poprzez git-svn tracimy puste katalogi, co czasem nie jest przyjemne. W dodatku to przecież nasze katalogi i chcemy je mieć ;)
+Dziś mnie trochę to przycisnęło więc, pogadałem chwilę z google i znalazłem użyteczny skrypt git-me-up.
+Wystarczy pobrać sam plik git-me-up, nadać mu prawa wykonywania i wykonać:
+ git-me-up http://svn.somerepo.com/path/to/project ./project  a skrypt sam stworzy repozytorium git, zaimportuje wszystkoz repozytorium svn, utworzy brakujące puste katalogi i stworzy w razie potrzeby plik .</description>
+    </item>
+    
+    <item>
+      <title>mud Astral Dominion</title>
+      <link>https://marekwywial.name/posts/blog20081019mud-astral-dominion/</link>
+      <pubDate>Sun, 19 Oct 2008 20:20:03 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20081019mud-astral-dominion/</guid>
+      <description>W 1999 roku było kilka popularnych gier typu mud i wraz ze znajomymi ze studiów także prowadziliśmy jednen o nazwie Astral Dominion.
+Jakiś czas temu odzyskałem kod mud&amp;rsquo;a i kilka dni temu uruchomiłem go online.
+Jak znajdą się chętni do gry (starzy gracze, których pełny backup także posiadam :) ) to zapraszam:
+telnet direct.onjin.net 4000</description>
+    </item>
+    
+    <item>
+      <title>git cheatsheet</title>
+      <link>https://marekwywial.name/posts/blog20081001git-cheatsheet/</link>
+      <pubDate>Wed, 01 Oct 2008 20:14:59 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20081001git-cheatsheet/</guid>
+      <description>Kontynuując serię, kolejny cheatsheet tym razem do systemu kontroli wersji git.
+GitCheatSheet
+I jest git &amp;hellip; :)</description>
+    </item>
+    
+    <item>
+      <title>lint dla php</title>
+      <link>https://marekwywial.name/posts/blog20080902lint-dla-php/</link>
+      <pubDate>Tue, 02 Sep 2008 21:01:02 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20080902lint-dla-php/</guid>
+      <description>Za dnia piszę najczęściej w php i zazdroszczę pythonowi pylinta.
+Z ciekawości zagooglałem i znalazłem rozwiązanie dla PHP sprawdzające Coding Standard:
+ pear install PHP_CodeSniffer phpcs --standard=Zend SomeTest.class.php  phpcs -i podaje dostępne standardy:
+PEAR
+MySource
+PHPCS
+Squiz
+Zend
+Mi najbardzie odpowiada Zend co widać po wynikach lintowania, najczęściej 0 ostrzeżeń i błędów ;).
+phpcs pozwala także tworzyć swoje własne standardy kodowanie oraz - co bardzo mnie cieszy - podpiąć go jako precommit hook do svn&amp;rsquo;a.</description>
+    </item>
+    
+    <item>
+      <title>virtualbox brakujący vboxdrv kernel &#43; ubuntu</title>
+      <link>https://marekwywial.name/posts/blog20080829virtualbox-brakujacy-vboxdrv-kernel-ubuntu/</link>
+      <pubDate>Fri, 29 Aug 2008 08:26:16 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20080829virtualbox-brakujacy-vboxdrv-kernel-ubuntu/</guid>
+      <description>Czasem w Ubuntu (np przy pakietach proposal) przychodzi wyższa wersja kernela bez upgrade drivera do virtualbox&amp;rsquo;a
+Wtedy pomaga mi taka kombinacja
+ sudo apt-get install virtualbox-ose-source sudo m-a update sudo m-a prepare sudo m-a a-i virtualbox-ose sudo /etc/init.d/vboxdrv restart  Restart virtualbox&amp;rsquo;a i gotow. Back to work.</description>
+    </item>
+    
+    <item>
+      <title>netbeans 6.5 &#43; php5 &#43; symfony &#43; xdebug</title>
+      <link>https://marekwywial.name/posts/blog20080824netbeans-65-php5-symfony-xdebug/</link>
+      <pubDate>Sun, 24 Aug 2008 14:17:12 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20080824netbeans-65-php5-symfony-xdebug/</guid>
+      <description>W Netbeans 6.5 pojawia się support dla php5. W/g informacji na stronie netbeans oznacza to:
+ PHP Editor (Code completion, syntactic and semantic code highlighting) Support for heredoc notation and PHTML Debugging using Xdebug Generators for MySQL database code snippets  Temat, który najbardziej mnie interesował to jak zadziała debugging przy pomocy Xdebug. Postanowiłem sprawdzić to z istniejącym projektem bazującym na frameworku Symfony.
+ Zainstalowałem netbeans pobierając odpowiednią paczkę ze strony netbeans Zainstalowałem Xdebug poprzez pecl install xdebug i dodaniu do konfiguracji php wierszy:  1 2 3  # xdebug, jako zend_extension.</description>
+    </item>
+    
+    <item>
+      <title>gwiezdne wojny by telnet</title>
+      <link>https://marekwywial.name/posts/blog20080710gwiezdne-wojny-by-telnet/</link>
+      <pubDate>Thu, 10 Jul 2008 11:35:17 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20080710gwiezdne-wojny-by-telnet/</guid>
+      <description>Episod IV Gwiezdnych Wojen transmitowany przez telnet:
+ telnet towel.blinkenlights.nl  :D</description>
+    </item>
+    
+    <item>
+      <title>Ahmed powraca ;)</title>
+      <link>https://marekwywial.name/posts/blog20080320ahmed-powraca/</link>
+      <pubDate>Thu, 20 Mar 2008 23:18:06 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20080320ahmed-powraca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nowe google maps</title>
+      <link>https://marekwywial.name/posts/blog20080127nowe-google-maps/</link>
+      <pubDate>Sun, 27 Jan 2008 18:13:33 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20080127nowe-google-maps/</guid>
+      <description>Google Maps on FunnyOrDie.com</description>
+    </item>
+    
+    <item>
+      <title>gwiazdy tańczą na lodzie &amp; umbrella</title>
+      <link>https://marekwywial.name/posts/blog20071030gwiazdy-tancza-na-lodzie-umbrella/</link>
+      <pubDate>Tue, 30 Oct 2007 23:23:47 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20071030gwiazdy-tancza-na-lodzie-umbrella/</guid>
+      <description>Ten występ naprawdę warto zobaczyć :)</description>
+    </item>
+    
+    <item>
+      <title>Remember The Milk &amp; Google Gears</title>
+      <link>https://marekwywial.name/posts/blog20071029remember-the-milk-google-gears/</link>
+      <pubDate>Mon, 29 Oct 2007 20:59:33 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20071029remember-the-milk-google-gears/</guid>
+      <description>Serwisu Remember The Milk używam zazwyczaj za pomocą Gadgetu na google.com/ig.
+Dziś jednak zdażyło mi się zalogować bezpośrednio na stronie i &amp;hellip; zostałem poproszony o pozwolenie użycia pluginu Google Gears.
+Google Gears to testowa technologia Google pozwalająca aplikacją webowym na pracę w trybie offline.
+Pierwszy raz z jej użyciem spotkałem się podczas Google Reader&amp;rsquo;a ale jak widać już się propaguje poprzez sieć na kolejne serwisy.</description>
+    </item>
+    
+    <item>
+      <title>rośnie prezent ... na gmailu</title>
+      <link>https://marekwywial.name/posts/blog20071025rosnie-prezent-na-gmailu/</link>
+      <pubDate>Thu, 25 Oct 2007 21:20:37 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20071025rosnie-prezent-na-gmailu/</guid>
+      <description>Bezpłatne konta pocztowe Gmail w ostatnich dniach trochę spuchły i teraz mają ok 4,3GB
+Skrzynki w Google Apps także mają urosnąć. Można o tym przeczytać na blogu Google Polska</description>
+    </item>
+    
+    <item>
+      <title>Achmed, martwy terrorysta</title>
+      <link>https://marekwywial.name/posts/blog20071024achmed-martwy-terrorysta/</link>
+      <pubDate>Wed, 24 Oct 2007 10:19:30 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20071024achmed-martwy-terrorysta/</guid>
+      <description>aj, kil ju :)</description>
+    </item>
+    
+    <item>
+      <title>wyniki wyborów - sondaż</title>
+      <link>https://marekwywial.name/posts/blog20071021wyniki-wyborow-sondaz/</link>
+      <pubDate>Sun, 21 Oct 2007 22:38:11 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20071021wyniki-wyborow-sondaz/</guid>
+      <description>PBS DGA dla TVN24: frekwencja wyniosła 54,9%. To najlepszy wynik po 1989 roku TNS OBOP dla TVP: stosunkowo wysoka frekwencja najmłodszych wyborców - 52,4% głosująych w wieku 18-24 lat.  Dodajmy do tego akcję z zabieraniem dowodów ;) i zaraz widać kto na kogo głosował :D</description>
+    </item>
+    
+    <item>
+      <title>Jak prawidłowo przydzielić obowiązki nowym pracownikom</title>
+      <link>https://marekwywial.name/posts/blog20070827jak-prawidlowo-przydzielic-obowiazki-nowym-pracownikom/</link>
+      <pubDate>Mon, 27 Aug 2007 07:40:52 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20070827jak-prawidlowo-przydzielic-obowiazki-nowym-pracownikom/</guid>
+      <description>W zamkniętym pokoju umieścić 400 cegieł. Wpuścić nowo zatrudnionych do pokoju z cegłami, zamknąć drzwi Zostawić ich samych sobie, wrócić po 6 godzinach. Ocenić sytuację:
+ Jeżeli liczą cegły, dać ich do księgowości. Jak liczą po raz drugi, dać ich do audytu. Jak porozrzucali cegły po całym pokoju, dać ich do działu inżynieryjnego. Jak układają cegły w przedziwnym porządku, dać ich do planowania. Jak rzucają w siebie cegłami, dać ich do działu obsługi.</description>
+    </item>
+    
+    <item>
+      <title>Sprzątanie internetu</title>
+      <link>https://marekwywial.name/posts/blog20070401sprzatanie-internetu/</link>
+      <pubDate>Sun, 01 Apr 2007 12:43:20 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20070401sprzatanie-internetu/</guid>
+      <description>Dostałem własnie informację o sprzątaniu nieaktualnych danych z zasobów internetu.
+Nie będę się rozpisywał tylko zamieszczę otrzymaną od NASK wiadomość (wiadomość otrzymałem dzięki uprzejmości administratorów http://chrome.pl.
+--- Forwarded message --- From: NASK Polska &amp;lt;nask&amp;gt; To: postmaster@xiaoka.com Message-Id: &amp;lt;e1hvuz&amp;gt; Date: Sun, 30 Mar 2007 23:12:66 +0200 Subject: Ważna informacja NASK POLSKA Informacja Poufna UWAGA! NIE ŁĄCZ SIĘ Z INTERNETEM MIĘDZY 23:59 31 MARCA 2007 (GMT) AŻ DO 00:01 2 KWIETNIA 2007 (GMT) *** Uwaga *** Uwaga *** Uwaga *** Uwaga *** Jak wszyscy wiemy internet jest coraz bardziej wypełniony śmieciami.</description>
+    </item>
+    
+    <item>
+      <title>Beryl vs Vista</title>
+      <link>https://marekwywial.name/posts/blog20070320beryl-vs-vista/</link>
+      <pubDate>Tue, 20 Mar 2007 10:16:35 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20070320beryl-vs-vista/</guid>
+      <description>Ktoś widział pulpit Visty ? (ja sie nie skusiłem)
+To popatrzy niech teraz na Beryla:
+  </description>
+    </item>
+    
+    <item>
+      <title>Jabber google firefox itp</title>
+      <link>https://marekwywial.name/posts/blog20070315jabber-google-firefox-itp/</link>
+      <pubDate>Thu, 15 Mar 2007 08:32:24 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20070315jabber-google-firefox-itp/</guid>
+      <description>Ostatnio wpadł mi do Firefox&amp;rsquo;a ciekawie zapowiadający się plugin SamePlace. Używając sieci Jabber (więc także Google Talk) pozwala on oprócz komunikacji tekstowej (zwykły chat) na: używanie wspólnej tablicy do rysowania (Whiteboard),
+wspólnego widoku wskaźnika myszy (po otwarciu tej samej strony przez obie strony konwersacji można wskazywać rózne elementy na ekranie)
+współdzielić oglądanie prezentacji,zsynchronizowanych map Google,
+wysłać link do aktualnie oglądanej strony przy pomocy funkcji &amp;lsquo;Send link to&amp;hellip;&amp;rsquo;,
+przeciągać obrazki z oglądanej strony bezpośrednio do okna rozmowy,</description>
+    </item>
+    
+    <item>
+      <title>Dreamhost &#43; dodatkowy adres ip</title>
+      <link>https://marekwywial.name/posts/blog20070314dreamhost-dodatkowy-adres-ip/</link>
+      <pubDate>Wed, 14 Mar 2007 00:22:11 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20070314dreamhost-dodatkowy-adres-ip/</guid>
+      <description>W trakcie ostatnich zmian Dreamhost umożliwił tworzenie kodów promocyjnych, które oprócz zniżki na zakup planu hostingowego, dają także: dodatkowe miejsce na dysku (10-100% więcej)
+dodatkowy transfer miesięczny (10-100% więcej)
+dodatkowe bezpłatne domeny (1-5 domen)
+dodatkowe adresy ip (1-3 adresów, oprócz standardowego)
+
+Tworząc kod promocyjny masz teraz większe pole do popisu. Na przykład kod onjin50 daje zniżkę $50 na dowolny plan hostingowy, natomiast kod onjin1ip łączy dodatkowy adres ip wraz ze zniżką $20.</description>
+    </item>
+    
+    <item>
+      <title>Picasa Web Albums puchnie</title>
+      <link>https://marekwywial.name/posts/blog20070312picasa-web-albums-puchnie/</link>
+      <pubDate>Mon, 12 Mar 2007 12:45:53 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20070312picasa-web-albums-puchnie/</guid>
+      <description>Dzień prezentów dziś się jeszcze nie skończył. Tym razem Google w Picasa Web Albums zwiekszyła pojemność konta (na fotki oczywiście) z 250MB do 1GB oraz dodana została wyszukiwarka by łatwiej odnajdywać albumy.
+Picasa Web Albums - jeżeli jeszcze ktoś nie wiem - jest bezpłatną, internetową galerią zdjęć zintegrowaną z programem Picasa do katalogowania i obróbki zdjęć dostarczanym (tu niespodzianka: także bezpłatnie :) ) przez Google.
+Picasa integruje się także z Bloggerem oraz Gmailem.</description>
+    </item>
+    
+    <item>
+      <title>Dreamhost szybciej</title>
+      <link>https://marekwywial.name/posts/blog20070312dreamhost-szybciej/</link>
+      <pubDate>Mon, 12 Mar 2007 08:27:22 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20070312dreamhost-szybciej/</guid>
+      <description>9-tego marca Dreamhost poinformował o wykonanym upgrade ich sieci, co zaowocowało około 3-krotym przyśpieszeniem komunikacji z ich serwerami.
+Właśnie połączenie z dreamhost oraz ich panel były jak dla mnie elementami odstającymi od reszty ich oferty. Na początku miesiąca panel także doświadczył upgrade (choć wiele mu jeszcze brakuje do ideału) i wraz ze zwiększeniem prędkości połączenia stanowi to o tym, że Dreamhost nie śpi i ciągle się rozwija.</description>
+    </item>
+    
+    <item>
+      <title>Jamendo gra</title>
+      <link>https://marekwywial.name/posts/blog20070223jamendo-gra/</link>
+      <pubDate>Fri, 23 Feb 2007 08:29:20 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20070223jamendo-gra/</guid>
+      <description>W sam raz na poranek przed kodowaniem.</description>
+    </item>
+    
+    <item>
+      <title>iPhone w akcji</title>
+      <link>https://marekwywial.name/posts/blog20070117iphone-w-akcji/</link>
+      <pubDate>Wed, 17 Jan 2007 08:42:59 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20070117iphone-w-akcji/</guid>
+      <description>Nawet nic nie będę pisał, zobaczcie sami jak działa.</description>
+    </item>
+    
+    <item>
+      <title>automatyzacja pracy z svn - svnauto</title>
+      <link>https://marekwywial.name/posts/blog20070107automatyzacja-pracy-z-svn-svnauto/</link>
+      <pubDate>Sun, 07 Jan 2007 00:00:57 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20070107automatyzacja-pracy-z-svn-svnauto/</guid>
+      <description>Svnauto jest wrapperem konsolowej komendy &amp;lsquo;svn&amp;rsquo;, który automatyzuje i standaryzuje wykonywanie rozgałęzień (branches) i złączeń (merge).
+SC jest skryptem napisanym w języku Ruby i jest dostępny poprzez RubyGems:
+gem install svnauto --include-dependencies  Hmm, ale czemu to nie działa? Skrypt sc bazuje na komunikatach zwracanych przez komendę svn w języku angielskim, więc nie będzie działać poprawnie w innych lokalizacjach. Można to rozwiązać np. tak:
+mv /usr/bin/sc /usr/bin/sc.orig  stworzyć nowy plik /usr/bin/sc:</description>
+    </item>
+    
+    <item>
+      <title>aardvark 2.0</title>
+      <link>https://marekwywial.name/posts/blog20061221aardvark-20/</link>
+      <pubDate>Thu, 21 Dec 2006 09:21:03 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20061221aardvark-20/</guid>
+      <description>Może jestem spóźniony ale znalazłem nowego aardvark&amp;rsquo;a na http://addons.mozilla.org/ w wersji 2.0 działający z firefox&amp;rsquo;em 2, więc mój fix na wersję 1.1 dla firefox&amp;rsquo;a 2 przestał być potrzebny.</description>
+    </item>
+    
+    <item>
+      <title>aardvark i firefox2.0</title>
+      <link>https://marekwywial.name/posts/blog20061103aardvark-i-firefox20/</link>
+      <pubDate>Fri, 03 Nov 2006 08:36:30 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20061103aardvark-i-firefox20/</guid>
+      <description>Aardvark to świetne narzędzia dla developera stron internetowych.
+Niestety po aktualizacji firefox&amp;rsquo;a do wersji 2.0 przestało się instalować, zgłaszając, że najwyższa wersja firefox&amp;rsquo;a, z którą współpracuje to 1.6.
+Unzip -&amp;gt; vim -&amp;gt; zip i mamy wersję działającą w firefox&amp;rsquo;ie 2.0 :)
+» aardvark dla firefox&amp;rsquo;a 2.0
+aktualizacja: jest juz oficjalna wersja dla firefox&amp;rsquo;a 2
+» aardvark dla firefox&amp;rsquo;a 2.0</description>
+    </item>
+    
+    <item>
+      <title>linux flash player 9</title>
+      <link>https://marekwywial.name/posts/blog20061019linux-flash-player-9/</link>
+      <pubDate>Thu, 19 Oct 2006 10:27:36 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20061019linux-flash-player-9/</guid>
+      <description>Czyżby &amp;lsquo;ktoś&amp;rsquo; w końcu zainteresował się zdesperowanymi użytkownikami Linuksa ? I dobrze, bo choć beta to mamy już flash player&amp;rsquo;a 9.
+I co tu więcej pisać :) pozostaje potestować.</description>
+    </item>
+    
+    <item>
+      <title>jamendo - muzyka, słuchanie, promocja</title>
+      <link>https://marekwywial.name/posts/blog20060928muzyka-sluchanie-promocja/</link>
+      <pubDate>Thu, 28 Sep 2006 07:33:05 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060928muzyka-sluchanie-promocja/</guid>
+      <description>Jamendo to serwis internetowy pozwalający artystom na udostępnianie swojej twórczości w internecie na zasasach licencji Creative Commons. W ten sposób można zaistnieć, dotrzeć do szerokiego grona słuchaczy, informować ich o koncertach.
+Słuchacze udostępnione utwory mogą odsłuchać (w praktycznie dowolnych odtwarzaczu muzyki w formacie Ogg lub MP3), legalnie pobrać za pomocą BitTorrenta lub eMula (programy P2P), napisać rezencję. Jeżeli artysta nam się spodoba możemy kupić jego płytę lub wpłacić dla niego pieniądzę.</description>
+    </item>
+    
+    <item>
+      <title>prototype cheat sheet</title>
+      <link>https://marekwywial.name/posts/blog20060809prototype-cheat-sheet/</link>
+      <pubDate>Wed, 09 Aug 2006 07:38:08 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060809prototype-cheat-sheet/</guid>
+      <description>Kolejna tablica informatyczna, tym razem dla frameworka JavaScript prototype.
+
+prototype cheat sheet</description>
+    </item>
+    
+    <item>
+      <title>gentoo dbf2csv ebuild</title>
+      <link>https://marekwywial.name/posts/blog20060731gentoo-dbf2csv-ebuild/</link>
+      <pubDate>Mon, 31 Jul 2006 19:56:49 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060731gentoo-dbf2csv-ebuild/</guid>
+      <description>Potrzebowałem zamienić .dbf na .csv. Znalazłem odpowiedni skrypt ale &amp;hellip; aby był porządek w dystrybucji zmontowałem do niego .ebuild (gdyż takowego nie znalazłem).
+Może komuś też się przyda (wersja dbf2csv to 5.0).</description>
+    </item>
+    
+    <item>
+      <title>Google Code Free Hosting</title>
+      <link>https://marekwywial.name/posts/blog20060728google-code-free-hosting/</link>
+      <pubDate>Fri, 28 Jul 2006 21:39:10 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060728google-code-free-hosting/</guid>
+      <description>Google jak zawsze do przodu i w kierunku OpenSource (czy też raczej w kierunku programistów, z którymi stara się żyć dobrze) otwarło wczoraj hosting projektów.
+W prezencie dostajemy Issue Tracker nie odbiegający zbytnio od przyjętych standardów funkcjonalności tego typo programów, dostęp do repozytorium SVN poprzez HTTPS z dostępem anonimowym (tylko do odczytu) oraz dla nas (za pomocą wygenerowanego hasła).
+W części administracyjnej możemy zmienić nazwę projektu, jego opis, licencję (od Apache, Artistic, GNU General/Lesser, MIT, Mozilla Public oraz BSD) oraz pola dodatkowe (dowolne), zestaw odnośników do strony projektu, forum i bloga.</description>
+    </item>
+    
+    <item>
+      <title>Zrozumieć czyjąś drogę</title>
+      <link>https://marekwywial.name/posts/blog20060628zrozumiec-czyjas-droge/</link>
+      <pubDate>Wed, 28 Jun 2006 12:11:22 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060628zrozumiec-czyjas-droge/</guid>
+      <description>Istnieją dwa sposoby projektowania oprogramowania. Można napisać je tak prosto, że w oczywisty sposób nie będzie w nim niedoskonałości; można też uczynić je tak skomplikowanym, że nie bedzie w nim żadnych oczywistych niedociągnięć. Pierwsza metoda jest znacznie trudniejsza.
+The Emperor&amp;rsquo;s Old Clothes. CACM luty 1981 - C.A.R Hoare</description>
+    </item>
+    
+    <item>
+      <title>firefox &amp; google = synchronizacja</title>
+      <link>https://marekwywial.name/posts/blog20060609firefox-google-synchronizacja/</link>
+      <pubDate>Fri, 09 Jun 2006 10:51:25 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060609firefox-google-synchronizacja/</guid>
+      <description>Google Browser Sync jest rozszerzeniem dla Firefox&amp;rsquo;a, które synchronizuje ustawienia przeglądarki (bookmarki, historię, ciasteczka, zapisane hasła) pomiędzy komputerami (np. Twój Firefox w domu i pracy). Pozwala także odtworzyć otwarte panele i okna przeglądarki.
+Rozszerzenie to wymaga posiadania konta w Google (GMail). Po zainstalowaniu mamy do wyboru konfigurację standardową (synchronizacja wszystkiego i szyfrowanie przechowywanych haseł oraz ciasteczek) oraz zaawansowaną, w której sami wybieramy co ma być synchronizowane czy też szyfrowane. Podajemy PIN chroniący dodatkowo nasze dane i zaczyna się proces synchronizacji.</description>
+    </item>
+    
+    <item>
+      <title>darmowe mp3 od ... Sony BMG</title>
+      <link>https://marekwywial.name/posts/blog20060606darmowe-mp3-od-sony-bmg/</link>
+      <pubDate>Tue, 06 Jun 2006 08:18:27 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060606darmowe-mp3-od-sony-bmg/</guid>
+      <description>Kto by się spodziewał ;). Ale ze strony Sony BMG nie był to krok świadomy.
+Nie będę się rozpisywał. Wszystkie konkrety są w artykule na nowej stronie http://www.hack.pl/</description>
+    </item>
+    
+    <item>
+      <title>Ryu Narujima</title>
+      <link>https://marekwywial.name/posts/blog20060525ryu-narujima/</link>
+      <pubDate>Thu, 25 May 2006 08:41:17 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060525ryu-narujima/</guid>
+      <description>Dynamika, technika, taktyka i psychika. Nic dodać nic ująć.
+Miałem okazję brać udział w treningu prowadzonym przez Narujime (Obóz Letni Kraków - Karate Kyokushin). Robi wrażenie, niezapomniane.
+  </description>
+    </item>
+    
+    <item>
+      <title>vim - cheat sheet</title>
+      <link>https://marekwywial.name/posts/blog20060523vim-cheat-sheet/</link>
+      <pubDate>Tue, 23 May 2006 11:51:17 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060523vim-cheat-sheet/</guid>
+      <description>Jak już jestem przy tym temacie do podobny zestaw dla fanów VIM&amp;rsquo;a (m.in. mnie ;) )
+
+http://viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html</description>
+    </item>
+    
+    <item>
+      <title>Konsola jak w Quake</title>
+      <link>https://marekwywial.name/posts/blog20060404konsola-jak-w-quake/</link>
+      <pubDate>Tue, 04 Apr 2006 07:39:38 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060404konsola-jak-w-quake/</guid>
+      <description>Czy zdaża Wam się szukać jakiejś wolnej konsoli, na którymś pulpicie ? Można też do paska w Gnome lub KDE przypiąć minikonsole (brr).
+Wygodnym rozwiązaniem byłaby podręczna konsola, pojawiająca się kiedy jest potrzebna - podobnie jak w grach typu Quake.
+Osobiście znam trzy tego typu rozwiązania:
+ yakuake - konsola z KDE (działa we fluxboxie, więc inne WM pewnie też dadzą radę kuake - także konsola z KDE tilda - samodzielna konsola  Mi osobiście najmniej podobała się tilda, zaś na biurku ciągle używam yakuake.</description>
+    </item>
+    
+    <item>
+      <title>Teoria względności</title>
+      <link>https://marekwywial.name/posts/blog20060330teoria-wzglednosci/</link>
+      <pubDate>Thu, 30 Mar 2006 09:48:28 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060330teoria-wzglednosci/</guid>
+      <description>Znalezione w stopce:
+Pracownik jest zbędny w firmie gdy prosi o podwyżkę, lecz niezastąpiony gdy prosi o urlop</description>
+    </item>
+    
+    <item>
+      <title>Tworzenie strony internetowej.</title>
+      <link>https://marekwywial.name/posts/blog20060322tworzenie-strony-internetowej/</link>
+      <pubDate>Wed, 22 Mar 2006 09:27:20 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060322tworzenie-strony-internetowej/</guid>
+      <description>Po co tworzymy stronę ? By pisać blog. Umieszczać informacje o sobie, o naszych zainteresowaniach, itp. Co by to nie było, strona nasza będzie zawierać treść i z jej uwzględnieniem powinna zostać ona zbudowana.
+Ukierunkowanie na treść oznacza prawidłowe stosowanie znaczników &amp;lt;h1&amp;gt;, &amp;lt;h2&amp;gt; dla odpowiednich nagłówków, &amp;lt;ul&amp;gt;, &amp;lt;ol&amp;gt; dla list w tym także menu, &amp;lt;p&amp;gt; dla naszej treści oraz &amp;lt;div&amp;gt; dla podziału logicznego strony (np. budowy layout).
+Oczywiście znaczniki te nie wyczerpują listy możliwych i potrzebnych do zastosowania w naszym przypadku.</description>
+    </item>
+    
+    <item>
+      <title>Własna strona startowa</title>
+      <link>https://marekwywial.name/posts/blog20060223wlasna-strona-startowa/</link>
+      <pubDate>Thu, 23 Feb 2006 11:13:14 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060223wlasna-strona-startowa/</guid>
+      <description>Popularne (choć chyba powoli) stają się serwisy oferujące osobiste strony startowe. Strona taka zawiera często newsy z interesujących nas serwisów, okienko logowanie się do naszego serwisu pocztowego, pogodę, kursy walut, notatki i wiele innych.
+Z polskich serwisów kojarzę jedynie startowy.com. Ostatnio dużo słychać także o witrynie Microsoftu live.com. Wczoraj natomiast wpadł mi do Firefox&amp;rsquo;a taki adres jak www.netvibes.com/.
+Cechą wspólną tych serwisów jest wygodna edycja swojej strony oraz wygodnie przemieszczanie jej elementów.</description>
+    </item>
+    
+    <item>
+      <title>słownik wyrazów obcych</title>
+      <link>https://marekwywial.name/posts/blog20060210slownik-wyrazow-obcych/</link>
+      <pubDate>Fri, 10 Feb 2006 16:32:20 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060210slownik-wyrazow-obcych/</guid>
+      <description>Do strony z wyszukiwarkami dla Firefox&amp;rsquo;a dodałem wyszukiwarkę do Słownika Wyrazów Obcych Kopalińskiego
+Wystarczy kliknąć na dodaj obok opisu w tabelce, przełączyć w prawym górnym rogu Firefox&amp;rsquo;a wyszukiwarkę z Google na Kopaliński i szukać :D</description>
+    </item>
+    
+    <item>
+      <title>skracanie formularzy &#43; java script</title>
+      <link>https://marekwywial.name/posts/blog20060209skracanie-formularzy-java-script/</link>
+      <pubDate>Thu, 09 Feb 2006 08:28:54 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060209skracanie-formularzy-java-script/</guid>
+      <description>Długie formularze, podzielone na kilka sekcji ciągnące się w dół strony, nie są zbyt czytelne. Formularz taki można zmodyfikować dzieląć go na klikalne etapy lub wizualne zakładki. Ale jeżeli mamy wiele takich formularzy napisanych na dodatek w samym HTML&amp;rsquo;u ?
+Możemy to sobie uprościć za pomocą JavaScript. Odpowiednia funkcja wywołana po załadowaniu się strony [body onLoad=&amp;ldquo;funkcja();&amp;rdquo;] może wyszukać sekcje naszego formularza i zwinąć je do ciekawszych wizualnie zakładek.
+Żeby funkcja wiedziała co jest sekcją, należy je odpowiednio oznaczyć np.</description>
+    </item>
+    
+    <item>
+      <title>Ciekawe gadżety</title>
+      <link>https://marekwywial.name/posts/blog20060202ciekawe-gadzety/</link>
+      <pubDate>Thu, 02 Feb 2006 09:05:50 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060202ciekawe-gadzety/</guid>
+      <description>Skarbnicą dziwnych i ciekawych gadżetów jak dla mnie jest ThinkGeek. Serwis działa już parę ładnych lat i jak na razie nie znalazłem jego polskiego odpowiednika (choć specjalnie go też nie szukałem).
+Niedawno w Firefox&amp;lsquo;a wpadł mi link do Gadzet.net - katalog rzeczy fajnych. Jak piszą sami autorzy serwisu, jest on &amp;ldquo;[&amp;hellip;] magazynem/blogiem/(zwij jak chcesz) wypatrującym wszelkiej maści nowinek gadżetowych, ale także tych starych, mało znanych.[&amp;hellip;]&amp;rdquo; i jest polskim projektem.
+Mi spodobał się latający budzik ;)</description>
+    </item>
+    
+    <item>
+      <title>Proces tworzenia strony internetowej</title>
+      <link>https://marekwywial.name/posts/blog20060123proces-tworzenia-strony-internetowej/</link>
+      <pubDate>Mon, 23 Jan 2006 12:01:50 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060123proces-tworzenia-strony-internetowej/</guid>
+      <description>Tworzenie strony internetowej jest procesem wymagającym odpowiedniego projektu oraz zarządzania.
+Zanim napiszemy setki linii wspaniałego kodu HTML, CSS czy PHP należy się upewnić:
+czego naprawdę chce klient
+czy możemy sprostać jego oczekiwaniom terminu wykonania, kosztu oraz działania ostatecznego produktu
+czy stać nas na wykonanie projektu na zadanych warunkach
+czy klienta stać na postawione przez nas warunki (np. cenowe)
+Klienci często nie do końca wiedzą czego potrzebują i dlaczego. Możemy otrzymać zlecenie na &amp;lsquo;zwykłą statyczną stronę&amp;rsquo;, materiały podeślą nam później, jak przygotujemy szablony, itp.</description>
+    </item>
+    
+    <item>
+      <title>Trochę śmiechu na weekend</title>
+      <link>https://marekwywial.name/posts/blog20060120troche-smiechu-na-weekend/</link>
+      <pubDate>Fri, 20 Jan 2006 18:27:25 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060120troche-smiechu-na-weekend/</guid>
+      <description>Dziś dostałem linka do historii o Chuck&amp;rsquo;u Norris&amp;rsquo;ie. Po przeczytaniu odpowiedniej ilości ubaw zapewniony :D.
+Podpowiedź: w Firefox&amp;rsquo;ie w menu widok-&amp;gt;kodowanie znaków pomaga ustawienie na WINDOWS-CP-1250.
+I jeszcze kilka w tym temacie:
+ http://www.joemonster.org/article.php?sid=5534 http://www.joemonster.org/article.php?sid=5525 http://www.chucknorrisfacts.com/ http://www.4q.cc/chuck/  Miłego weekendu.</description>
+    </item>
+    
+    <item>
+      <title>Google Talk</title>
+      <link>https://marekwywial.name/posts/blog20060118google-talk/</link>
+      <pubDate>Wed, 18 Jan 2006 07:44:01 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060118google-talk/</guid>
+      <description>17 stycznia Google otworzyło połączenia między serwerowe pomiędzy swoim serwisem Google Talk, a resztą świata XMPP. Tak więc każdy kto posiada konto pocztowe w domenie @gmail.com, może teraz komunikować się używając identycznego JID
+Do pełni szczęścia mogłoby brakować jedynie komunikatora Google Talk dostępnego na inne platformy niż Windows. Ale udostępnienie przez Google libjingle oraz ich współpraca z twórcami komunikatora Psi wróży na dobre.</description>
+    </item>
+    
+    <item>
+      <title>aktualizacja</title>
+      <link>https://marekwywial.name/posts/blog20060112aktualizacja/</link>
+      <pubDate>Thu, 12 Jan 2006 09:24:32 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060112aktualizacja/</guid>
+      <description>Niedawno pojawił się Wordpress 2.0. Jest znacznie szybszy od poprzednich wersji (wysyłanie, edytowanie, oglądanie), wykorzystuje technologię AJAX i ma nowy panel admina.
+I z racji tych i innych onjin.net też posiada już wersję 2.0. Witamy, witamy ;)</description>
+    </item>
+    
+    <item>
+      <title>Psi-0.10</title>
+      <link>https://marekwywial.name/posts/blog20060112psi-010/</link>
+      <pubDate>Thu, 12 Jan 2006 08:28:38 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060112psi-010/</guid>
+      <description>Jak możemy przeczytać na blogu Kevina, pojawiła się wersja Psi sygnowana numerem 0.10.
+Zmiany nastąpiły głównie w interfejscie komunikatora. Pojawiły się m.in. rozmowy w zakładkach, automatycznie zmieniający się rozmiar listy kontaktów, ustawienia przeźroczystości dla okien programu, itp.
+Mac binary
+Source tarball 
+Windows binary (with installer)
+Windows binary (zipped)</description>
+    </item>
+    
+    <item>
+      <title>Masakazu Imanari</title>
+      <link>https://marekwywial.name/posts/blog20060111masakazu-imanari/</link>
+      <pubDate>Wed, 11 Jan 2006 08:32:24 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060111masakazu-imanari/</guid>
+      <description>Leglock - czyli blokowanie nogi (nogami). Brzmi zwyczajnie ale jak wygląda. Nic dodać nic ująć.
+
+Dzięki BratQ za podesłanie.</description>
+    </item>
+    
+    <item>
+      <title>Sortowanie tabel</title>
+      <link>https://marekwywial.name/posts/blog20060110sortowanie-tabel/</link>
+      <pubDate>Tue, 10 Jan 2006 10:04:48 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060110sortowanie-tabel/</guid>
+      <description>Chyba każdy wyrzucił kiedyś na ekran tabelkę w HTML&amp;rsquo;u. Jeśli danych dużo i dynamiczne, to użył do tego PHP. Aby lepiej ogarnąć dane, nagłówki kolumn zostały odnośnikami z końcówką mniej więcej taką:
+1 2  &amp;lt;ht&amp;gt;&amp;lt;a href=&amp;#34;?order=data&amp;#34;&amp;gt;data&amp;lt;/a&amp;gt; &amp;lt;th&amp;gt;&amp;lt;a href=&amp;#34;?order=ilosc&amp;#34;&amp;gt;ilość&amp;lt;/a&amp;gt;&amp;lt;/th&amp;gt;   Ta sama tabelka, te same dane. Ale aby ją posortować trzeba znów odwoływać się do serwera. Wygodniej by było gdyby tabelka mogła się sortować po stronie klienta (np. JavaScript). Tu z pomoca przychodzi nam biblioteka sorttable napisana właśnie w JavaScript.</description>
+    </item>
+    
+    <item>
+      <title>psi-0.10-test4</title>
+      <link>https://marekwywial.name/posts/blog20060104psi-010-test4/</link>
+      <pubDate>Wed, 04 Jan 2006 09:23:48 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060104psi-010-test4/</guid>
+      <description>Pojawiła się czwarta wersja testowa komunikatora Psi. Poza poprawkami znalezionych błędów, zostały też usunięte niektóre zestawy ikon, co do których były wątpliwości w sprawie praw użytkowania.
+Jak tylko wersja psi 0.10 zostanie wydana, prace mają się skoncentrować na portowaniu aplikacji na Qt4 oraz na współpracy z Jingle.
+Dostępne aktualne pakiety Psi to:
+źródła (.tar.bz2)
+Mac (.dmg)
+Windows (.zip)</description>
+    </item>
+    
+    <item>
+      <title>psi &amp; jingle</title>
+      <link>https://marekwywial.name/posts/blog20051229psi-jingle/</link>
+      <pubDate>Thu, 29 Dec 2005 08:51:53 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20051229psi-jingle/</guid>
+      <description>Kilka dni temu można było przeczytać o bibliotece libjingle (VoIP dla Jabber/XMPP) wydaną przez Google.
+A zaraz potem okazuje się, że Psi nie śpi lecz też pracuje czy też współpracuje  z libjingle o czym możemy przeczytać na PsiWiki.
+Wkrótce sobie pogadamy :D</description>
+    </item>
+    
+    <item>
+      <title>Świąteczne chwile</title>
+      <link>https://marekwywial.name/posts/blog20051223swinteczne-chwile/</link>
+      <pubDate>Fri, 23 Dec 2005 15:35:17 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20051223swinteczne-chwile/</guid>
+      <description>Przez te kilka świątecznych dni, postaram się zapomnieć kim jestem - w te zwykłe dni.
+Ucieknę z mej mrówczej ścieżki wijącej się między zmęczonymi ludzmi, zmasowanymi w środkach komunikacji.
+Zobaczę niebo, słońce. Poczuję wiatr. Przez głowe przemknie mgliste wspomnienie człowieczeństwa. I się uśmiechnę. Szeroko, prawdziwie, tak po prostu. Zacisnę dłonie by zatrzymać ten czas jak najdłużej.
+A za kilka dni znów stanę się maszyną, z rzadkimi przebłyskami świadomości.
+Z najlepszymi życzeniami pięknych, długich chwil dla wszystkich.</description>
+    </item>
+    
+    <item>
+      <title>Murphy ma rację ... niestety</title>
+      <link>https://marekwywial.name/posts/blog20051219murphy-ma-racje-niestety/</link>
+      <pubDate>Mon, 19 Dec 2005 15:03:47 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20051219murphy-ma-racje-niestety/</guid>
+      <description>Pracując, można wiele dowiedzieć się o ludziach, a szczególnie o klientach. Jacy są, czego chcą, itp. Z czasem wiemy coraz więcej, a czasem wystarczy przeczytać kilka praw Murphy&amp;rsquo;ego i wszystko staje się jasne.
+Osiem praw szanownego klienta.
+ Klientowi nigdy nie przyjdzie na myśl ile kosztuje projekt, tylko ile można na tym projekcie zaoszczędzić. Jeżeli udało Ci się wprowadzić w programie, wymagane przez klienta poprawki, wtedy on z nich zrezygnuje. Żaden klient nie wie czego właściwie chce.</description>
+    </item>
+    
+    <item>
+      <title>Świąteczne szaleństwo</title>
+      <link>https://marekwywial.name/posts/blog20051208swinteczne-szalenstwo/</link>
+      <pubDate>Thu, 08 Dec 2005 09:18:02 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20051208swinteczne-szalenstwo/</guid>
+      <description>Carson Williams z Ohio, inżynier elektroniki trochę zaszalał. Do dekoracji domu użył w 2004 roku 16.000 lampek, a w 2005 zwiększył ich ilość do 25.000. Montowanie oświetlenia zajeło mu blisko 2 miesiące. Udekorowany jest dom, ogródek i garaż.
+Mało tego, błyskaniem lamp zarządza oprogramowanie Light-o-rama. Synchronizuje ono efekty świetlne wraz z muzyką. W tym przypadku jest to &amp;ldquo;Wizard in Winter&amp;rdquo; w wykonaniu Orkiestry Trans-Syberyjskiej (z albumu The Lost Christmas Eve).</description>
+    </item>
+    
+    <item>
+      <title>Google i polityka</title>
+      <link>https://marekwywial.name/posts/blog20051207google-i-polityka/</link>
+      <pubDate>Wed, 07 Dec 2005 18:01:19 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20051207google-i-polityka/</guid>
+      <description>PO kontra PiS. Każdy wie jakie jest jego zdanie i wszyscy wiemy jak to się skończyło. Ale co na to google?
+Na stronie Google Fight możemy sprawdzić wyniki pojedynku PO vs. PiS :D
+Wygrywa ten (to słowo lub fraza) kto ma większą ilość rezultatów w Google. Proste i prawdziwe.</description>
+    </item>
+    
+    <item>
+      <title>Przyśpieszyć firefox&#39;a - fasterfox</title>
+      <link>https://marekwywial.name/posts/blog20051206przyspieszyn-firefoxa-fasterfox/</link>
+      <pubDate>Tue, 06 Dec 2005 14:06:16 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20051206przyspieszyn-firefoxa-fasterfox/</guid>
+      <description>W opisie Firefox&amp;rsquo;a pisałem o tym jak można tą przeglądarkę jeszcze bardziej przyśpieszyć. Trochę opcji, ustawień, ręcznego wpisywania danych, itp.
+Ale nie każdy lubi (i nie musi) grzebać w plikach, zaawansowanych opcjach i innych takich &amp;lsquo;czarach&amp;rsquo;. Instalując rozszerzenie fasterfox możemy wszystkie odpowiednie opcje wybrać z predefiniowanych zestawów ( domyślnie, szybciej, turbo) lub nadal ustawiać je ręcznie. Przy czym pomaga nam w tym opis każdej opcji, którą możemy zmienić.
+Tak więc, instalujmy i przyśśśśśśśśśpieszajmy&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>I co ty na to ?</title>
+      <link>https://marekwywial.name/posts/blog20051201i-co-ty-na-to/</link>
+      <pubDate>Thu, 01 Dec 2005 11:45:30 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20051201i-co-ty-na-to/</guid>
+      <description>Bdanaia na agnilesikm uiwnerstyecie dodowzą, iż nie ma zanczinea w jikaej kelojności znujdają się ltiery w wyazrie, wnaże jest jydenie aby pirwesza i ostitana ltiera była na włiścawym miejscu. Rszeta może być zepułnie pozemianiana ale wcąiż mżona cztyać bez żydnach preblomów.
+ Dzeije się tak dletago, że nie czatymy kelojno letiry po letirze, ale od razu całe sołwo.  :D</description>
+    </item>
+    
+    <item>
+      <title>Skype &amp; koledzy</title>
+      <link>https://marekwywial.name/posts/blog20051125skype-koledzy/</link>
+      <pubDate>Fri, 25 Nov 2005 11:26:26 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20051125skype-koledzy/</guid>
+      <description>Skype coraz szerzej i mocniej rozchodzi się po świecie. Ale konkurencja jak zwykle nie śpi ;)
+Jako pierwszy niech będzie Gizmo Project. Program ten posiada podobną funkcjonalność jak Skype, a dodatkowo
+ z Gizmo można połączyć się z dowolnego telefonu SIPowego w sieci VOIP od razu można do nas dzwonić z tradycyjnych telefonów ( numer-dostępowy + nasz numer), minusem jest iż numer dostępowy jest w stanach &amp;hellip; statusom można nadawać opisy ;) dzwoniąć do kogoś można nadać rozmowie temat ( np.</description>
+    </item>
+    
+    <item>
+      <title>RoboMatic X11</title>
+      <link>https://marekwywial.name/posts/blog20051118robomatic-x11/</link>
+      <pubDate>Fri, 18 Nov 2005 10:23:10 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20051118robomatic-x11/</guid>
+      <description>RoboMatic X11 jest chatbotem, z którym można porozumiewać się przy pomocy klawiatury lub głosu (Text to Speech). Posiada wygląd (twarz), który możesz zmienić. Możesz uzupełniać jego wiedzę.
+Nazwa tego modelu to &amp;ldquo;Operating System Assistant&amp;rdquo; (Asystent Systemu Operacyjnego). Dlaczego ? Otóż X11 ma zaimplementowanych ponad 80 funcji systemowych, między innymi:
+ przeglądanie i zarządzanie folderami oraz plikami zatrzymywanie, usypianie i restartowanie systemu odtwarzanie muzyki  X11 działa jedynia na platformie Windows XP z zainstalowanym frameworkiem .</description>
+    </item>
+    
+    <item>
+      <title>Pożegnanie z doc&#39;em ?</title>
+      <link>https://marekwywial.name/posts/blog20051117pozegnanie-z-docem/</link>
+      <pubDate>Thu, 17 Nov 2005 09:17:28 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20051117pozegnanie-z-docem/</guid>
+      <description>Z Rozporządzenia Rady Ministrów w sprawie minimalnych wymagań dla systemów teleinformatycznych (Dz. U. Nr 212, poz. 1766) dowiadujemy się, że format OpenDocument został oficjalnie uznany jako obowiązujący standard do wymiany dokumentów tekstowych lub tekstowo-graficznych pomiędzy systemami informatycznymi używanymi przez podmioty publiczne.
+OpenDocument jest oczywiście obsługiwany przez znany już, bezpłatny pakiet OpenOffice. Jego polską wersję 2.0 można pobrać ze strony firmy Ux Systems w dziale download.
+Znajdziemy tu wersję zarówna dla systemu Windows jaki i Linux (tgz, rpm, deb).</description>
+    </item>
+    
+    <item>
+      <title>badania.net</title>
+      <link>https://marekwywial.name/posts/blog20051116badanianet/</link>
+      <pubDate>Wed, 16 Nov 2005 09:20:07 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20051116badanianet/</guid>
+      <description>Jeżeli interesują Cię różnego typu badania naukowe, ich wyniki, itp, a literatura fachowa w tym temacie jest zbyt &amp;ldquo;ciężka&amp;rdquo;, poza tym wolisz przeglądać internet (google), &amp;hellip; to powinieneś wpisać w swojej przeglądarce adres badania.net.
+badania.net jest niekomercyjną witryną internetową prowadzoną przez psychologa Michała Parzuchowskiego. Strona zawiera &amp;ldquo;[&amp;hellip;] szczególnie bogate archiwum materiałów na temat metodologii i rezultatów badań empirycznych prowadzonych w Polsce i na Świecie&amp;rdquo;. Wszystko pisane w możliwie przystępnym języku.</description>
+    </item>
+    
+    <item>
+      <title>Canvas i Firefox 1.5</title>
+      <link>https://marekwywial.name/posts/blog20051115canvas-i-firefox-15/</link>
+      <pubDate>Tue, 15 Nov 2005 13:15:32 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20051115canvas-i-firefox-15/</guid>
+      <description>Wraz z nowym Firefox&amp;rsquo;em w świecie stron internetowych pojawi się wiele ciekawych udogodnień.
+Jednym z nich jest obsługa znacznika &amp;lt;canvas&amp;gt; czyli grafiki bitmapowej. Za jego pomocą możemy wstawić do treści strony pole graficzne, na którym można operować przy pomocy JavaScript&amp;rsquo;u
+Możemy rysować linie, prostokąty, łuki, krzywe Beizera, gradienty, regulować szerekość, styl i kolor lini, kolor wypełnienia (można użyć do tego gradientu), wstawiać oraz manipulować obrazkami (gif, jpg, png) i wiele innych.</description>
+    </item>
+    
+    <item>
+      <title>Is MS Windows ready for the desktop?</title>
+      <link>https://marekwywial.name/posts/blog20051110is-ms-windows-ready-for-the-desktop/</link>
+      <pubDate>Thu, 10 Nov 2005 12:46:50 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20051110is-ms-windows-ready-for-the-desktop/</guid>
+      <description>Ostatnio wielu (??) użytkowników komputerów, próbuje przesiąść się z systemu MS Windows na Linuksa.
+Mają przy tym mniejsze lub większe problemy. Wynikaja one często z niechęci do zmiany przyzwyczajeń, złym wyobrażaniu sobie systemów typu Linux i pracy z nimi, braku czasu na zdobycie dodatkowej wiedzy, z powodu używania specjalistycznego oprogramowania nie działającego w tym systemie, itp.
+Stron i treści opisujących te problemy oraz jak sobie z nimi radzić jest wiele (google)</description>
+    </item>
+    
+    <item>
+      <title>Pixele na sprzedarz</title>
+      <link>https://marekwywial.name/posts/blog20051108pixele-na-sprzedarz/</link>
+      <pubDate>Tue, 08 Nov 2005 10:52:45 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20051108pixele-na-sprzedarz/</guid>
+      <description>Sprzedawanie powierzchni reklamowej na stronach internetowych - liczonej w pikselach - wydaje się w jakiś sposób prosperować całkiem dobrze. Powstały już sieci takich rozwiązań, dedykowane skrypty (np. phpMyPixelpage).
+To kilka pierwszych linków z google:
+ www.milliondollarhomepage.com www.milliondollarwebpage.com www.millionpenny.com  Nie jestem pewien pobudek jakie kierują zamawiającymi te reklamy. Cena jedengo piksela to 1 dolar ( waluta zmienia się w zależności od kraju danej strony ), ale miminalny rozmiar zamówienia - cóż nam po jednym piskelu - to 10 x 10 pikseli.</description>
+    </item>
+    
+    <item>
+      <title>Linux Standard Base</title>
+      <link>https://marekwywial.name/posts/blog20051104linux-standard-base/</link>
+      <pubDate>Fri, 04 Nov 2005 08:57:02 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20051104linux-standard-base/</guid>
+      <description>Jak przeczytałem dzis na linuxnews.pl, w oświadczeniu prasowym z 1 listopada Free Standards Group ogłosiła, że komitety normalizacyjne ISO i IEC zaakceptowały Linux Standard Base Core Specification 2.0.1 i opublikują tą specyfikację jako standard ISO 23360.
+Czy będzie to prawdziwy standard ? Czy tylko wizytówka dla firm by mówić &amp;ldquo;my się na tym znamy, mamy to na piśmie&amp;rdquo;.
+Czy skończy się jak w pewnej firmie, która &amp;ldquo;oferowała&amp;rdquo; wsparcie dla systemów Linux, a dział techniczny próbował postawić RedHat&amp;rsquo;a (byle tylko chodził) przez 1-2 tygodni ?</description>
+    </item>
+    
+    <item>
+      <title>Psi-0.10-test3</title>
+      <link>https://marekwywial.name/posts/blog20051103psi-010-test3/</link>
+      <pubDate>Thu, 03 Nov 2005 09:51:03 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20051103psi-010-test3/</guid>
+      <description>Kevin Smith ogłosił na liście dyskusyjne iż mamy wersję test3.
+Źródła (tar.bz2, zip oraz dmg) można pobraź z serwera sourceforge.net
+
+Przy okazji: zmienił się adres strony projektu z psi.affinix.com na psi-im.org.</description>
+    </item>
+    
+    <item>
+      <title>cssReboot</title>
+      <link>https://marekwywial.name/posts/blog20051028cssreboot/</link>
+      <pubDate>Fri, 28 Oct 2005 18:05:50 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20051028cssreboot/</guid>
+      <description>Już za 4 dni nastąpi kolejny CssReboot.
+Jest to wydarzenie polegające na zbiorowym i masowym reboocie design&amp;rsquo;u swojej strony internetowej. Każdy może zostać uczestnikem. Firma, osoba lub grupa osób zajmująca się webdesignem, ktoś prowadzący własny portal lub stronkę.
+Nie ma nagród, nie ma zwycięzców. Celem jest rozwój i propagacja nowych technologi internetowych (CSS) oraz dobra zabawa.</description>
+    </item>
+    
+    <item>
+      <title>Osłodzić sobie życie</title>
+      <link>https://marekwywial.name/posts/blog20051011osodziae-sobie-ycie/</link>
+      <pubDate>Tue, 11 Oct 2005 12:43:23 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20051011osodziae-sobie-ycie/</guid>
+      <description>Tak, kto używa Vim&amp;rsquo;a, ten zazwyczaj do szczęścia wiele nie potrzebuje. Ale by sobie trochę osłodzić pracę, można zainstalować sobie Cream.
+Jest to zestaw gotowej, łatwej w użyciu i rozbudowanej konfiguracji dla Vim&amp;rsquo;a ( czy też raczej dla GVim&amp;rsquo;a ). Tak wygląda to cudo w akcji. W domyślnej konfiguracji brakowało mi trybu wprowadzania komend, ale po przełączeniu w tryb eksperta tryb ten stał się dostępny.
+Trochę iritujący jest fakt, iż klawisz ESCAPE działa w tym przypadku jak przełącznik.</description>
+    </item>
+    
+    <item>
+      <title>Msnbetter Thangoogle</title>
+      <link>https://marekwywial.name/posts/blog20051005msnbetter-thangoogle-2/</link>
+      <pubDate>Wed, 05 Oct 2005 08:33:29 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20051005msnbetter-thangoogle-2/</guid>
+      <description>Konkurs SEO został rozstrzygnięty. 22 października w Warszawie nastąpi rozdanie prezentów ( tym co się należą ;) ). Moja kariera skończyła się na zrobieniu stronki gdzieś w lipcu, dodanie AdGoogle + linkor. Potem był urlop (Kanada, 4 tygodnie), po powrocie kilka projektów w pracy i &amp;hellip;. zdążyłem już tylko zobaczyć iż pozycja ma to 91 wśród uczestników ( w google 150 ). Pozdrawiam zwycięzców i uczestników.</description>
+    </item>
+    
+    <item>
+      <title>Jabber roster</title>
+      <link>https://marekwywial.name/posts/blog20050907jabber-roster/</link>
+      <pubDate>Wed, 07 Sep 2005 15:55:12 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20050907jabber-roster/</guid>
+      <description>Migrowałem ostatnio pomiędzy dwoma serwerami Jabber&amp;rsquo;a. Próbowałem przenieść kontakty przy pomocy Jabber Tools, niestety strony oferujące tą usługę nie były dostępne, lub po podaniu danych do pierwszego formularza &amp;lsquo;zacinały się&amp;rsquo;.
+Chcąc, nie chcąc byłem zmuszony zmajstrować szybko jakieś narzędzie. Na razie tylko działa ;) . Jak znajdę czas, oczyszczę kod, dodam trochę komentarzy i takie tam. Jak ktoś się nie boi można spróbować poużywać lub pobrać kod źródłowy w celach własnych.</description>
+    </item>
+    
+    <item>
+      <title>Security Days</title>
+      <link>https://marekwywial.name/posts/blog20050907security-days/</link>
+      <pubDate>Wed, 07 Sep 2005 10:45:42 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20050907security-days/</guid>
+      <description>12 września 2005 rozpoczyna się rejestracja uczestników do trzeciej edycji ogólnopolskiego Turnieju SECURITY DAYS organizowanego przez Młodzieżowe Towarzystwo Informatyczne.</description>
+    </item>
+    
+    <item>
+      <title>Dzień Administratora</title>
+      <link>https://marekwywial.name/posts/blog20050729dzien-administratora/</link>
+      <pubDate>Fri, 29 Jul 2005 13:42:44 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20050729dzien-administratora/</guid>
+      <description>Dziś, czyli 29 lipca wypada Dzień Administratora. Jeśli znasz jakiegoś możesz złożyc mu życzenia lub nawet kupić prezent ;).
+Więcej o tym szczególnym dniu oraz o zwyczajach i ulubionych prezentach Administratorów możecie przeczytać na stronie http://www.sysadminday.com/</description>
+    </item>
+    
+    <item>
+      <title>msnbetter thangoogle</title>
+      <link>https://marekwywial.name/posts/blog20050708msnbetter-thangoogle/</link>
+      <pubDate>Fri, 08 Jul 2005 18:34:00 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20050708msnbetter-thangoogle/</guid>
+      <description>SEO pl ogłosiło konkurs na pozycjonowanie stron
+Konkurs ma jasne, przejrzyste zasady. Wygra ten z Uczestników, którego strona zajmie pierwszą lokatę w wynikach wyszukiwania na frazę
+msnbetter thangoogle w wyszukiwarce google.pl w dniu 1 października 2005 o godzinie 14.00.
+Warto sprawdzić co człowiek wie o świecie dlatego złożyłem w parę minut mikro stronkę ( zanim DNS&amp;rsquo;y się rozpropagują jest też dostępna tutaj). Jeżeli pragniecie nowych doświadczeń też spróbujcie :)</description>
+    </item>
+    
+  </channel>
+</rss>

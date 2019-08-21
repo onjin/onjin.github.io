@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on Marek Wywiał</title>
+    <link>https://marekwywial.name/tags/docker/</link>
+    <description>Recent content in docker on Marek Wywiał</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 18 Sep 2013 13:36:39 +0000</lastBuildDate>
+    
+	<atom:link href="https://marekwywial.name/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fast sentry instance using docker</title>
+      <link>https://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker/</link>
+      <pubDate>Wed, 18 Sep 2013 13:36:39 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker/</guid>
+      <description>Requirements You need docker and postgresql database
+ https://www.docker.com/  Running If you have docker installed and postgres database created you can:
+1 2 3 4 5 6 7 8  # pull sentry image docker pull onjin/sentry # install sentry database docker run -e SENTRY_DBHOST=your.db.address -e SENTRY_DBNAME=sentrydbname -e SENTRY_DBUSER=dbuser -e SENTRY_DBPASS=dbpass -p :7365 onjin/sentry upgrade # run sentry instance docker run -d -e SENTRY_DBHOST=your.db.address -e SENTRY_DBNAME=sentrydbname -e SENTRY_DBUSER=dbuser -e SENTRY_DBPASS=dbpass -p :7365 onjin/sentry start   and open browser at address:</description>
+    </item>
+    
+  </channel>
+</rss>

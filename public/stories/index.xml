@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Stories on Marek Wywiał</title>
+    <link>https://marekwywial.name/stories/</link>
+    <description>Recent content in Stories on Marek Wywiał</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://marekwywial.name/stories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About me</title>
+      <link>https://marekwywial.name/stories/about-me/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/stories/about-me/</guid>
+      <description>My projects runenv - Wrapper to run programs with different env or load env from .env file vim-startup - quick way to start with vim &amp;amp; python liquimigrate - django integration for Liquibase migrations docker-alpine-postgres - Small PostgreSQL images (~58MB) for versions 9.1 - 9.5 docker-php-oracle - docker image for php with oracle db support (trusted image) ejpiaj - declarative way API testing suite (small python package) docker - other docker images  You can found more projects on my github page:</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>css on Marek Wywiał</title>
+    <link>https://marekwywial.name/tags/css/</link>
+    <description>Recent content in css on Marek Wywiał</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 28 Oct 2005 18:05:50 +0000</lastBuildDate>
+    
+	<atom:link href="https://marekwywial.name/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>cssReboot</title>
+      <link>https://marekwywial.name/posts/blog20051028cssreboot/</link>
+      <pubDate>Fri, 28 Oct 2005 18:05:50 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20051028cssreboot/</guid>
+      <description>Już za 4 dni nastąpi kolejny CssReboot.
+Jest to wydarzenie polegające na zbiorowym i masowym reboocie design&amp;rsquo;u swojej strony internetowej. Każdy może zostać uczestnikem. Firma, osoba lub grupa osób zajmująca się webdesignem, ktoś prowadzący własny portal lub stronkę.
+Nie ma nagród, nie ma zwycięzców. Celem jest rozwój i propagacja nowych technologi internetowych (CSS) oraz dobra zabawa.</description>
+    </item>
+    
+  </channel>
+</rss>

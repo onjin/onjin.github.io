@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on Marek Wywiał</title>
+    <link>https://marekwywial.name/tags/linux/</link>
+    <description>Recent content in linux on Marek Wywiał</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 18 Sep 2013 13:36:39 +0000</lastBuildDate>
+    
+	<atom:link href="https://marekwywial.name/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fast sentry instance using docker</title>
+      <link>https://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker/</link>
+      <pubDate>Wed, 18 Sep 2013 13:36:39 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker/</guid>
+      <description>Requirements You need docker and postgresql database
+ https://www.docker.com/  Running If you have docker installed and postgres database created you can:
+1 2 3 4 5 6 7 8  # pull sentry image docker pull onjin/sentry # install sentry database docker run -e SENTRY_DBHOST=your.db.address -e SENTRY_DBNAME=sentrydbname -e SENTRY_DBUSER=dbuser -e SENTRY_DBPASS=dbpass -p :7365 onjin/sentry upgrade # run sentry instance docker run -d -e SENTRY_DBHOST=your.db.address -e SENTRY_DBNAME=sentrydbname -e SENTRY_DBUSER=dbuser -e SENTRY_DBPASS=dbpass -p :7365 onjin/sentry start   and open browser at address:</description>
+    </item>
+    
+    <item>
+      <title>Rescan SCSI bus (no reboot)</title>
+      <link>https://marekwywial.name/posts/blog20120705rescan-scsi-bus-no-reboot/</link>
+      <pubDate>Thu, 05 Jul 2012 08:16:42 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20120705rescan-scsi-bus-no-reboot/</guid>
+      <description> Just self memo. How to attach new SCSI disk without reboot (debian):
+1 2 3 4 5 6  # check what hosts do you have ls /sys/class/scsi_host host0 host1 host2 host3 # change &amp;#39;host0&amp;#39; to &amp;#39;host1&amp;#39; or any next number that you need echo &amp;#34;- - -&amp;#34; &amp;gt; /sys/class/scsi_host/host0/scan   and done 1  fdisk -l   </description>
+    </item>
+    
+    <item>
+      <title>Grooveshark currentSong.txt &#43; gajim status</title>
+      <link>https://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</link>
+      <pubDate>Sat, 19 Mar 2011 13:03:04 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</guid>
+      <description>Przy okazji szukania API do grooveshark&amp;rsquo;a odkryłem plik currentSong.txt, który jest tworzony przez Grooveshark Desktop.
+Kilka minut z vim&amp;rsquo;em i mamy skrypt napisany w python&amp;rsquo;ie, który odczytuje w/w plik i wrzuca informację o aktualnie odtwarzanym utworze jako status wybranego konta w gajim&amp;rsquo;a.
+Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wymana pyinotify). Wtedy nasz status będzie zmieniany w chwili (chwilę potem :) ) zmiany utworu w Grooveshark Desktop.</description>
+    </item>
+    
+    <item>
+      <title>Przydatne narzędzia do monitoringu obciążenia serwera ...</title>
+      <link>https://marekwywial.name/posts/blog20100103przydatne-narzedzia-do-monitoringu-obciazenia-serwera/</link>
+      <pubDate>Sun, 03 Jan 2010 13:01:26 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20100103przydatne-narzedzia-do-monitoringu-obciazenia-serwera/</guid>
+      <description>&amp;hellip; zamieścił mekk
+ http://notatnik.mekk.waw.pl/archives/200-Oprocz_top.html  </description>
+    </item>
+    
+    <item>
+      <title>ftpmount v1.2.0</title>
+      <link>https://marekwywial.name/posts/blog20090625ftpmount-v120/</link>
+      <pubDate>Thu, 25 Jun 2009 12:44:36 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20090625ftpmount-v120/</guid>
+      <description>sprawdź najnowszą wersję ftpmount
+Kilka poprawek do ftpmount:
+ poprawiony przykładowy .ftpmountrc - w .ini komentrze to &amp;lsquo;;&amp;rsquo; a nie &amp;lsquo;#&amp;rsquo; :) tryb &amp;lsquo;verbose&amp;rsquo; (-v) pokazuje teraz jakie parametry zostały przekazane do curlftpfs do README dodałem informację, że &amp;lsquo;curlftpfs&amp;rsquo; jest potrzebny do działania skryptu  Wersje do pobrania.</description>
+    </item>
+    
+    <item>
+      <title>ftpmount v1.1.0 - github</title>
+      <link>https://marekwywial.name/posts/blog20090622ftpmount-v110-github/</link>
+      <pubDate>Mon, 22 Jun 2009 11:30:35 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20090622ftpmount-v110-github/</guid>
+      <description>sprawdź najnowszą wersję ftpmount Przeniosłem skrypt ftpmount do github&amp;rsquo;a:
+ ftpmount  Równocześnie zmieniłem sposób konfiguracji, a raczej tylko domyślną nazwę pliku konfiguracyjnego. Teraz jest szukany plik:
+ .ftpmountrc w aktualnym katalogu potem .ftpmountrc w katalogu domowym  Wersje do pobrania.</description>
+    </item>
+    
+    <item>
+      <title>fuse ftp mount - curlftpfs</title>
+      <link>https://marekwywial.name/posts/blog20090621fuse-ftp-mount-curlftpfs/</link>
+      <pubDate>Sun, 21 Jun 2009 19:11:10 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20090621fuse-ftp-mount-curlftpfs/</guid>
+      <description>sprawdź najnowszą wersję ftpmount Do pracy z hostingiem gdzie mamy tylko &amp;ldquo;&amp;lsquo;ftp&amp;rdquo;&amp;rsquo; przydaje się montowanie dysku poprzez właśnie ftp. Służy do tego program &amp;ldquo;&amp;lsquo;curlftpfs&amp;rdquo;&amp;rsquo; (np apt-get install curlftpfs).
+Odpalamy go jako:
+1  $ curlftpfs ftp://user:pass@host/ ./mountpoint   Do tego potrzebujemy uprawnienia grupy fuse więć jako root musimy sobie ją dodać od naszego użytkownika.
+Jeżeli mamy dużo połączeń do zarządzania przyda się mały skrypt:
+ ftpmount  sterowany konfiguracją w pliku config.</description>
+    </item>
+    
+    <item>
+      <title>mutt &amp; firefox (by urlview)</title>
+      <link>https://marekwywial.name/posts/blog20090605mutt-firefox-by-urlview.html</link>
+      <pubDate>Fri, 05 Jun 2009 10:53:55 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20090605mutt-firefox-by-urlview.html</guid>
+      <description>w ubuntu wystarczyło: 
+apt-get install urlview
+
+w ~/.muttrc dodane makro
+ macro pager \\cb &amp;lt;pipe-entry&amp;gt;urlview&amp;lt;enter&amp;gt; &#39;Follow links with urlview&#39;  orac plik ~/.urlview:
+ REGEXP ((http|https|ftp|gopher):(//)?[^ &amp;lt;&amp;gt;&#34;\\t]*|www\\.[-a-z0-9.]+)[^ .,;\\t&amp;lt;&#34;&amp;gt;\\):] COMMAND /usr/bin/nohup firefox -remote &#34;openURL(&#34;%s&#34;, new-tab)&#34; &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 &amp;amp;  teraz ctrl+b zbiera linki z treści wiadomości, które otwieramy w wybranej przeglądarce ;)</description>
+    </item>
+    
+    <item>
+      <title>google apps (gmail) i mutt</title>
+      <link>https://marekwywial.name/posts/blog20090526google-apps-gmail-i-mutt/</link>
+      <pubDate>Tue, 26 May 2009 10:31:04 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20090526google-apps-gmail-i-mutt/</guid>
+      <description>Znalezione na sieci i przystosowane do google apps:
+
+set imap_user = &amp;ldquo;user@domena.pl&amp;rdquo;
+set imap_pass = &amp;ldquo;password&amp;rdquo;
+set smtp_url = &amp;ldquo;smtp://users\@domena.pl@smtp.gmail.com:587/&amp;rdquo;
+set smtp_pass = &amp;ldquo;password&amp;rdquo;
+set from = &amp;ldquo;user@domena.pl&amp;rdquo;
+set realname = &amp;ldquo;My ql user&amp;rdquo;
+set folder = &amp;ldquo;imaps://imap.gmail.com:993&amp;rdquo;
+set spoolfile = &amp;ldquo;+INBOX&amp;rdquo;
+set postponed=&amp;ldquo;+[Google Mail]/Drafts&amp;rdquo;
+set header_cache=~/.mutt/cache/headers
+set message_cachedir=~/.mutt/cache/bodies
+set certificate_file=~/.mutt/certificates
+set move = no</description>
+    </item>
+    
+    <item>
+      <title>porządki na dysku, czyli mv, ln, mount i bind</title>
+      <link>https://marekwywial.name/posts/blog20090512porzadki-na-dysku-czyli-mv-ln-mount-i-bind/</link>
+      <pubDate>Tue, 12 May 2009 22:46:59 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20090512porzadki-na-dysku-czyli-mv-ln-mount-i-bind/</guid>
+      <description>Robiąc ostatnio trochę miejsca pomiędzy partycjami przeniosłem /usr/lib do /opt/usr/lib i zrobiłem symlink ln -s /opt/usr/lib /usr/lib. Problemem okazało się np /usr/lib/cups/filter/foomatic-rip, który jest linkiem relatywnym do ../../../bin/foomatic-rip i w ten sposób pozbyłem się możliwości drukowania.
+Nie mam miejsca by zrobić/użyć partycji, którą bym zamontował pod /usr/lib ale chwila w necie pozoliła znaleść mi rozwiązanie odpowiednie dla mnie :)
+
+
+mount &amp;ndash;bind /opt/usr/lib /usr/lib
+
+lub w /etc/fstab
+ /opt/usr/lib /usr/lib none bind  i teraz jest ok :)</description>
+    </item>
+    
+    <item>
+      <title>virtualbox brakujący vboxdrv kernel &#43; ubuntu</title>
+      <link>https://marekwywial.name/posts/blog20080829virtualbox-brakujacy-vboxdrv-kernel-ubuntu/</link>
+      <pubDate>Fri, 29 Aug 2008 08:26:16 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20080829virtualbox-brakujacy-vboxdrv-kernel-ubuntu/</guid>
+      <description>Czasem w Ubuntu (np przy pakietach proposal) przychodzi wyższa wersja kernela bez upgrade drivera do virtualbox&amp;rsquo;a
+Wtedy pomaga mi taka kombinacja
+ sudo apt-get install virtualbox-ose-source sudo m-a update sudo m-a prepare sudo m-a a-i virtualbox-ose sudo /etc/init.d/vboxdrv restart  Restart virtualbox&amp;rsquo;a i gotow. Back to work.</description>
+    </item>
+    
+    <item>
+      <title>gentoo dbf2csv ebuild</title>
+      <link>https://marekwywial.name/posts/blog20060731gentoo-dbf2csv-ebuild/</link>
+      <pubDate>Mon, 31 Jul 2006 19:56:49 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060731gentoo-dbf2csv-ebuild/</guid>
+      <description>Potrzebowałem zamienić .dbf na .csv. Znalazłem odpowiedni skrypt ale &amp;hellip; aby był porządek w dystrybucji zmontowałem do niego .ebuild (gdyż takowego nie znalazłem).
+Może komuś też się przyda (wersja dbf2csv to 5.0).</description>
+    </item>
+    
+    <item>
+      <title>Is MS Windows ready for the desktop?</title>
+      <link>https://marekwywial.name/posts/blog20051110is-ms-windows-ready-for-the-desktop/</link>
+      <pubDate>Thu, 10 Nov 2005 12:46:50 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20051110is-ms-windows-ready-for-the-desktop/</guid>
+      <description>Ostatnio wielu (??) użytkowników komputerów, próbuje przesiąść się z systemu MS Windows na Linuksa.
+Mają przy tym mniejsze lub większe problemy. Wynikaja one często z niechęci do zmiany przyzwyczajeń, złym wyobrażaniu sobie systemów typu Linux i pracy z nimi, braku czasu na zdobycie dodatkowej wiedzy, z powodu używania specjalistycznego oprogramowania nie działającego w tym systemie, itp.
+Stron i treści opisujących te problemy oraz jak sobie z nimi radzić jest wiele (google)</description>
+    </item>
+    
+    <item>
+      <title>Linux Standard Base</title>
+      <link>https://marekwywial.name/posts/blog20051104linux-standard-base/</link>
+      <pubDate>Fri, 04 Nov 2005 08:57:02 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20051104linux-standard-base/</guid>
+      <description>Jak przeczytałem dzis na linuxnews.pl, w oświadczeniu prasowym z 1 listopada Free Standards Group ogłosiła, że komitety normalizacyjne ISO i IEC zaakceptowały Linux Standard Base Core Specification 2.0.1 i opublikują tą specyfikację jako standard ISO 23360.
+Czy będzie to prawdziwy standard ? Czy tylko wizytówka dla firm by mówić &amp;ldquo;my się na tym znamy, mamy to na piśmie&amp;rdquo;.
+Czy skończy się jak w pewnej firmie, która &amp;ldquo;oferowała&amp;rdquo; wsparcie dla systemów Linux, a dział techniczny próbował postawić RedHat&amp;rsquo;a (byle tylko chodził) przez 1-2 tygodni ?</description>
+    </item>
+    
+  </channel>
+</rss>

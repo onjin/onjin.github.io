@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<title>
+	google apps (gmail) i mutt
+</title>
+		<style>
+	body, body.pushable {
+		background-repeat: no-repeat;
+	  	background-attachment: fixed;
+	  	background-size: cover !important;
+	}
+</style>
+
+		<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+	
+	
+	
+	<meta name="author" content="Marek Wywiał" />
+	<meta name="description" content="Znalezione na sieci i przystosowane do google apps:
+
+set imap_user = &amp;ldquo;user@domena.pl&amp;rdquo;
+set imap_pass = &amp;ldquo;password&amp;rdquo;
+set smtp_url = &amp;ldquo;smtp://users\@domena.pl@smtp.gmail.com:587/&amp;rdquo;
+set smtp_pass = &amp;ldquo;password&amp;rdquo;
+set from = &amp;ldquo;user@domena.pl&amp;rdquo;
+set realname = &amp;ldquo;My ql user&amp;rdquo;
+set folder = &amp;ldquo;imaps://imap.gmail.com:993&amp;rdquo;
+set spoolfile = &amp;ldquo;&#43;INBOX&amp;rdquo;
+set postponed=&amp;ldquo;&#43;[Google Mail]/Drafts&amp;rdquo;
+set header_cache=~/.mutt/cache/headers
+set message_cachedir=~/.mutt/cache/bodies
+set certificate_file=~/.mutt/certificates
+set move = no" />
+
+
+
+<meta name="generator" content="Hugo 0.57.2" />
+
+
+<link rel="shortcut icon" href="/img/defaultFav.ico">
+
+
+
+
+		
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+<script
+	src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+
+ <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Inconsolata" rel="stylesheet">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/site.css">
+
+
+
+	<link rel="stylesheet" type="text/css" href="/css/highlight.css">
+
+
+
+
+
+
+<style>
+	body.pushable {
+		display: block;
+		
+			background-image: var(--bgImage) !important;
+		 ;
+	}
+</style>
+
+
+
+<script>
+	
+	var isMobile = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
+	console.log("The client device is a "+(isMobile?"mobile":"PC")+".")
+</script>
+
+	</head>
+
+	<body>
+		<script>
+var prevBgIndex = 0;
+var bodyBgSwitchIndex = 0;
+
+
+
+
+
+
+	
+		document.body.style.backgroundColor = "#13547A";
+	
+
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  var random;
+  while (1) {
+    random = Math.floor(Math.random() * (max - min)) + min;
+    if (random !== prevBgIndex) {
+      prevBgIndex = random;
+      break;
+    }
+  }
+  return random;
+}
+</script>
+
+
+
+
+		<div id="sidebar" class="ui sidebar inverted vertical menu">
+	
+	<section id="author" class="ui top attached center aligned inverted segment">
+		
+<div class="ui small circular image">
+	
+		<img src="https://secure.gravatar.com/avatar/82c0ae52543d7865dac4bbe1b61cf11c?s=256">
+	
+</div>
+
+
+<h3 class="ui header">
+	Marek Wywiał
+	<div class="sub header">Python software developer.</div>
+</h3>
+
+	</section>
+
+	
+	
+		<section class="ui attached center aligned inverted segment sidebar-dream-tags">
+			
+			
+			
+			
+
+
+
+
+	
+	
+		
+			
+			<a class="ui label teal " href="/tags/tools" title="tools">tools</a>
+		
+			
+			<a class="ui label orange " href="/tags/www" title="www">www</a>
+		
+			
+			<a class="ui label pink " href="/tags/linux" title="linux">linux</a>
+		
+			
+			<a class="ui label red " href="/tags/fun" title="fun">fun</a>
+		
+			
+			<a class="ui label brown " href="/tags/python" title="python">python</a>
+		
+			
+			<a class="ui label teal " href="/tags/hosting" title="hosting">hosting</a>
+		
+	
+
+
+		</section>
+	
+
+	
+	
+
+	
+	<section id="footer" class="ui bottom attached center aligned inverted segment">
+		
+
+	<p>© 2005 - 2019 Marek Wywiał</p>
+
+
+<p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with <a href="https://github.com/UtkarshVerma/hugo-dream-plus" target="_blank">Dream Plus</a> theme.</p>
+
+	</section>
+</div>
+
+
+		<div class="pusher">
+			<div class="flipper">
+				<div class="front">
+					
+	<nav class="ui top secondary menu bar">
+	
+	<div class="item">
+		<i class="inverted big link bullseye icon dream-flip-toggle" title="About Me"></i>
+	</div>
+
+	
+	
+		<div class="item">
+			<a href="/">
+				<i class="inverted big link home icon" title="Home"></i>
+			</a>
+		</div>
+	
+
+	
+	
+
+	
+	
+		<div class="item">
+			<a href="/tags">
+				<i class="inverted big link tags icon" title="All Tags"></i>
+			</a>
+		</div>
+	
+
+	
+	
+
+	
+	
+
+	
+	
+		<div class="ui container tablet computer only grid">
+			<div class="item" onClick="$('.ui.sidebar').sidebar('setting', 'transition', 'overlay').sidebar('toggle');">
+				<i class="inverted big link sidebar icon" title="Show Sidebar"></i>
+			</div>
+		</div>
+	
+
+	
+	
+		<div class="item right">
+			<a href="/posts/index.xml">
+				<i class="inverted big link rss icon" title="RSS Feed"></i>
+			</a>
+		</div>
+	
+</nav>
+
+
+	<div class="ui centered grid">
+		
+		<div class="sixteen wide mobile only column">
+				<div class="ui inverted accordion">
+	<div id="header" class="ui inverted segment column box">		
+		
+		<header id="author" class="ui top attached center aligned inverted segment">
+			
+<div class="ui small circular image">
+	
+		<img src="https://secure.gravatar.com/avatar/82c0ae52543d7865dac4bbe1b61cf11c?s=256">
+	
+</div>
+
+
+<h3 class="ui header">
+	Marek Wywiał
+	<div class="sub header">Python software developer.</div>
+</h3>
+
+		</header>
+
+		
+		<div class=" title header-title">
+			
+				<div id="tag-category-pop" class="ui red right corner label">
+					<i class="hand point icon down" title="Show/hide tags and categories"></i>
+				</div>
+			
+		</div>
+		
+		
+		<div id="tag-category" class=" content">
+			
+				<section class="ui attached center aligned inverted segment dream-tags none flexbox">
+					
+					
+					
+
+
+
+
+	
+	
+		
+			
+			<a class="ui label orange " href="/tags/tools" title="tools">tools</a>
+		
+			
+			<a class="ui label pink " href="/tags/www" title="www">www</a>
+		
+			
+			<a class="ui label purple " href="/tags/linux" title="linux">linux</a>
+		
+			
+			<a class="ui label orange " href="/tags/fun" title="fun">fun</a>
+		
+			
+			<a class="ui label yellow " href="/tags/python" title="python">python</a>
+		
+			
+			<a class="ui label brown " href="/tags/hosting" title="hosting">hosting</a>
+		
+	
+
+
+				</section>
+			
+
+			
+		</div>
+
+		
+		<footer class="ui bottom attached center aligned inverted segment">
+			
+
+	<p>© 2005 - 2019 Marek Wywiał</p>
+
+
+<p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with <a href="https://github.com/UtkarshVerma/hugo-dream-plus" target="_blank">Dream Plus</a> theme.</p>
+
+		</footer>
+	</div>
+</div>
+
+		</div>
+
+		<div class="sixteen wide mobile fifteen wide tablet twelve wide computer column post-list">
+			
+			<section class="ui secondary top attached black segment post-head">
+				<h1 class="post-title">
+					google apps (gmail) i mutt
+				</h1>
+
+				<div class="sub header">
+					<div><span><i class="calendar outline icon"></i>May 26, 2009</span></div>
+					
+					<div><span class="disqusComment"><i class="comment outline icon"></i><a href="https://marekwywial.name/posts/blog20090526google-apps-gmail-i-mutt/#disqus_thread" class="disqus-comment-count" data-disqus-identifier="1f75d7052ac22ce45c68f5fedcccafcc"></a></span></div>
+					<div><span><i class="clock outline icon"></i>1 min read</span></div>
+					<div><span><i class="angle double up icon"></i>Last updated on May 26, 2009</span></div>
+				</div>
+				<hr>
+
+				
+
+				<article class="post-content twemoji">
+					<p><html><body><p>Znalezione na sieci i przystosowane do google apps:</p>
+<pre></p>
+
+<p>set imap_user = &ldquo;user@domena.pl&rdquo;</p>
+
+<p>set imap_pass = &ldquo;password&rdquo;</p>
+
+<p>set smtp_url = &ldquo;smtp://users\@domena.pl@smtp.gmail.com:587/&rdquo;</p>
+
+<p>set smtp_pass = &ldquo;password&rdquo;</p>
+
+<p>set from = &ldquo;user@domena.pl&rdquo;</p>
+
+<p>set realname = &ldquo;My ql user&rdquo;</p>
+
+<p>set folder = &ldquo;imaps://imap.gmail.com:993&rdquo;</p>
+
+<p>set spoolfile = &ldquo;+INBOX&rdquo;</p>
+
+<p>set postponed=&ldquo;+[Google Mail]/Drafts&rdquo;</p>
+
+<p>set header_cache=~/.mutt/cache/headers</p>
+
+<p>set message_cachedir=~/.mutt/cache/bodies</p>
+
+<p>set certificate_file=~/.mutt/certificates</p>
+
+<p>set move = no</p>
+
+<p></pre></body></html></p>
+
+				</article>				
+			</section>
+
+			
+			<section class="ui secondary attached segment dream-tags">
+				
+					
+
+
+
+
+	
+		<a class="ui label olive " href="/tags/linux" title="linux">linux</a>
+	
+		<a class="ui label teal " href="/tags/tools" title="tools">tools</a>
+	
+
+
+				
+			</section>
+
+			
+			
+				<section class="ui secondary  attached segment share row box">
+					
+
+
+
+
+
+
+
+
+<div class="author">
+	
+	<img class="avatar" src="https://secure.gravatar.com/avatar/82c0ae52543d7865dac4bbe1b61cf11c?s=256">
+	
+</div>
+<div class="info grow flexbox">
+	<a href="https://twitter.com/onjin">
+	<p class="name">Marek Wywiał</p>
+	</a>
+	<p class="desc">Python software developer.</p>
+</div>
+
+
+<section class="buttons row box">
+	<div class="facebook none flexbox" href="#" onclick="window.open(
+			'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+			'facebook-share-dialog',
+			'width=626,height=436'); return false;">
+		<button class="ui facebook button"><i class="facebook icon"></i>Share</button>
+	</div>
+	<div class="twitter none flexbox" onclick="window.open('https://twitter.com/intent/tweet?text=Read &quot;google apps (gmail) i mutt &quot; by @onjin https:\/\/marekwywial.name\/posts\/blog20090526google-apps-gmail-i-mutt\/','_self')">
+		<button class="ui twitter button"><i class="twitter icon"></i>Tweet</button>
+	</div>
+</section>
+
+				</section>
+			
+
+			
+			
+			
+
+			
+			
+				<div class="ui secondary bottom attached stacked segment disqus">
+					
+<div id="disqus_thread"></div>
+<script>
+	var disqus_config = function () {
+		this.page.url = 'https:\/\/marekwywial.name\/posts\/blog20090526google-apps-gmail-i-mutt\/';
+		this.page.identifier = '1f75d7052ac22ce45c68f5fedcccafcc';
+	};
+	(function() {
+   	var d = document, s = d.createElement('script');
+   	s.src = 'https://' + 'marekwywial' + '.disqus.com/embed.js';
+   	s.setAttribute('data-timestamp', +new Date());
+   	(d.head || d.body).appendChild(s);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+				</div>
+			
+		</div>
+	</div>
+
+				</div>
+				<div class="back">
+					
+<nav class="ui top secondary menu bar">
+	<div class="item">
+		<i class="inverted big link bullseye icon dream-flip-toggle" title="About Me"></i>
+	</div>
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+
+	
+	
+	
+	
+	
+	
+	
+		
+		
+			<div class="item">
+				<a href="https://github.com/onjin" target="	_blank">
+					<i id="ico" class="inverted big link github icon" title="GitHub"></i>
+				</a>
+			</div>
+		
+	
+		
+		
+			<div class="item">
+				<a href="mailto:onjinx@gmail.com" target="	_blank">
+					<i id="ico" class="inverted big link mail icon" title="Email"></i>
+				</a>
+			</div>
+		
+	
+		
+		
+			<div class="item">
+				<a href="https://twitter.com/onjin" target="	_blank">
+					<i id="ico" class="inverted big link twitter icon" title="Twitter"></i>
+				</a>
+			</div>
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+			<div class="item">
+				<a href="https://www.linkedin.com/in/onjin" target="	_blank">
+					<i id="ico" class="inverted big link linkedin icon" title="LinkedIn"></i>
+				</a>
+			</div>
+		
+	
+		
+		
+			<div class="item">
+				<a href="https://www.stackoverflow.com/users/418359/marek-wywia%c5%82" target="	_blank">
+					<i id="ico" class="inverted big link stack overflow icon" title="Stack Overflow"></i>
+				</a>
+			</div>
+		
+	
+		
+		
+	
+		
+		
+	
+</nav>
+
+
+
+<div class="ui centered grid about">
+	<div class="sixteen wide mobile fifteen wide tablet fifteen wide computer column about">
+		<section class="ui stacked segments">
+			<div class="ui inverted segment">
+				<article class="twemoji">
+					<h1 id="marek-wywiał">Marek Wywiał</h1>
+
+<hr />
+
+<h2 id="my-projects">My projects</h2>
+
+<ul>
+<li><a href="http://ejpiaj.readthedocs.org/">runenv</a> - Wrapper to run programs with different env or load env from <span class="title-ref">.env</span> file</li>
+<li><a href="https://github.com/onjin/vim-startup">vim-startup</a> - quick way to start with vim &amp; python</li>
+<li><a href="https://github.com/onjin/liquimigrate">liquimigrate</a> - django integration for <a href="http://www.liquibase.org/">Liquibase</a> migrations</li>
+<li><a href="https://github.com/onjin/docker-alpine-postgres">docker-alpine-postgres</a> - Small PostgreSQL images (~58MB) for versions 9.1 - 9.5</li>
+<li><a href="https://github.com/onjin/docker-php-oracle">docker-php-oracle</a> - docker image for php with oracle db support (trusted image)</li>
+<li><a href="http://ejpiaj.readthedocs.org/">ejpiaj</a> - declarative way API testing suite (small python package)</li>
+<li><a href="https://github.com/onjin/docker">docker</a> - other docker images</li>
+</ul>
+
+<p>You can found more projects on my github page:</p>
+
+<ul>
+<li><a href="https://github.com/onjin">github</a></li>
+</ul>
+
+<h2 id="my-websites">My websites</h2>
+
+<ul>
+<li><a href="http://nopic.herokuapp.com/">nopic</a> - online images generator</li>
+<li><a href="http://gettoknow.it/">gettoknowit</a> - portal to learn any language</li>
+<li><a href="http://tani-ebook.pl/">tani-ebook</a> - portal to get or buy e-books (Polski)</li>
+</ul>
+
+<h2 id="other-sites">Other sites</h2>
+
+<ul>
+<li><a href="English">linkedin.com</a></li>
+<li><a href="Polski">goldenline.pl</a></li>
+</ul>
+				</article>
+			</div>
+		</section>
+	</div>
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+	
+	
+		<script id="dsq-count-scr" src="//marekwywial.disqus.com/count.js" async></script>
+	
+
+		
+
+<script src="/js/site.js"></script>
+
+
+
+	<script src="https://twemoji.maxcdn.com/2/twemoji.min.js?2.6"></script>
+
+
+
+
+
+
+
+
+	
+	<script>
+		window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+		ga('create', 'UA-151457-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+	<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+		
+
+
+		
+
+	<script>
+		(function () {
+		  console.log("Twemoji up and making stuff colourful!");
+		  for (var b = document.getElementsByClassName("twemoji"), a = 0; a < b.length; a++) {
+			twemoji.parse(b[a]);
+		  }
+		})();
+	</script>
+
+
+	</body>
+</html>

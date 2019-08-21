@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>music on Marek Wywiał</title>
+    <link>https://marekwywial.name/tags/music/</link>
+    <description>Recent content in music on Marek Wywiał</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 19 Mar 2011 13:03:04 +0000</lastBuildDate>
+    
+	<atom:link href="https://marekwywial.name/tags/music/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Grooveshark currentSong.txt &#43; gajim status</title>
+      <link>https://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</link>
+      <pubDate>Sat, 19 Mar 2011 13:03:04 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</guid>
+      <description>Przy okazji szukania API do grooveshark&amp;rsquo;a odkryłem plik currentSong.txt, który jest tworzony przez Grooveshark Desktop.
+Kilka minut z vim&amp;rsquo;em i mamy skrypt napisany w python&amp;rsquo;ie, który odczytuje w/w plik i wrzuca informację o aktualnie odtwarzanym utworze jako status wybranego konta w gajim&amp;rsquo;a.
+Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wymana pyinotify). Wtedy nasz status będzie zmieniany w chwili (chwilę potem :) ) zmiany utworu w Grooveshark Desktop.</description>
+    </item>
+    
+    <item>
+      <title>jamendo - muzyka, słuchanie, promocja</title>
+      <link>https://marekwywial.name/posts/blog20060928muzyka-sluchanie-promocja/</link>
+      <pubDate>Thu, 28 Sep 2006 07:33:05 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060928muzyka-sluchanie-promocja/</guid>
+      <description>Jamendo to serwis internetowy pozwalający artystom na udostępnianie swojej twórczości w internecie na zasasach licencji Creative Commons. W ten sposób można zaistnieć, dotrzeć do szerokiego grona słuchaczy, informować ich o koncertach.
+Słuchacze udostępnione utwory mogą odsłuchać (w praktycznie dowolnych odtwarzaczu muzyki w formacie Ogg lub MP3), legalnie pobrać za pomocą BitTorrenta lub eMula (programy P2P), napisać rezencję. Jeżeli artysta nam się spodoba możemy kupić jego płytę lub wpłacić dla niego pieniądzę.</description>
+    </item>
+    
+    <item>
+      <title>darmowe mp3 od ... Sony BMG</title>
+      <link>https://marekwywial.name/posts/blog20060606darmowe-mp3-od-sony-bmg/</link>
+      <pubDate>Tue, 06 Jun 2006 08:18:27 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060606darmowe-mp3-od-sony-bmg/</guid>
+      <description>Kto by się spodziewał ;). Ale ze strony Sony BMG nie był to krok świadomy.
+Nie będę się rozpisywał. Wszystkie konkrety są w artykule na nowej stronie http://www.hack.pl/</description>
+    </item>
+    
+  </channel>
+</rss>

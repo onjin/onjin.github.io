@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vim on Marek Wywiał</title>
+    <link>https://marekwywial.name/tags/vim/</link>
+    <description>Recent content in vim on Marek Wywiał</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 30 Jul 2012 21:27:26 +0000</lastBuildDate>
+    
+	<atom:link href="https://marekwywial.name/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>quiet please !! disable audio bell in gvim</title>
+      <link>https://marekwywial.name/posts/blog20120730quiet-please-disable-audio-bell-in-gvim/</link>
+      <pubDate>Mon, 30 Jul 2012 21:27:26 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20120730quiet-please-disable-audio-bell-in-gvim/</guid>
+      <description>I don&amp;rsquo;t want to hear it any more, so I&amp;rsquo;ve put this into .vimrc
+1 2 3 4 5  &amp;#34; quiet pleeeeeease if has(&amp;#39;autocmd&amp;#39;) autocmd GUIEnter * set visualbell t_vb= endif   </description>
+    </item>
+    
+    <item>
+      <title>vim &#43; vundle plugin manager &#43; programming</title>
+      <link>https://marekwywial.name/posts/blog20120314vim-vundle-plugin-manager-programming.html</link>
+      <pubDate>Wed, 14 Mar 2012 22:50:36 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20120314vim-vundle-plugin-manager-programming.html</guid>
+      <description>Kilku znajomych chciało zacząć używać vim&amp;rsquo;a. Ale konfigurowanie go na starcie, dobieranie pluginów, instalowanie ich, gdy się jeszcze nic nie wie tylko chce się spróbować zazwyczaj powodowało przełożenie tej próby na &amp;lsquo;kiedy indziej&amp;rsquo;.
+Niedawno poznałem i zacząłem używać plugin manager&amp;rsquo;a https://github.com/gmarik/vundle i sam potrzebowałem szybko przenieść konfigurację na drugi komputer i na laptopa. Zazwyczaj używałem dropbox&amp;rsquo;a i podlinkowanego pliku .vimrc oraz całego katalogu .vim ze wszystkimi pluginami.
+Jednak używając plugin managera, którego konfiguracja znajduje się w .</description>
+    </item>
+    
+    <item>
+      <title>vim note plugin - easy note management</title>
+      <link>https://marekwywial.name/posts/vim-note-plugin.html</link>
+      <pubDate>Wed, 12 Oct 2011 09:24:18 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/vim-note-plugin.html</guid>
+      <description> http://github.com/xolox/vim-notes/ http://peterodding.com/code/vim/notes/  </description>
+    </item>
+    
+    <item>
+      <title>vim snippetsemu i liquibase</title>
+      <link>https://marekwywial.name/posts/blog20100811vim-snippetsemu-i-liquibase.html</link>
+      <pubDate>Wed, 11 Aug 2010 18:45:35 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20100811vim-snippetsemu-i-liquibase.html</guid>
+      <description>W ostatnim wpisie pisałem o snippetsEmu dla vim&amp;lsquo;a, a dziś załączam zestaw snippetów, których używam przy pracy z liquibase.
+Liquibase to całkiem miłe narzędzie napisane w Javie do śledzenia, zarządzania i wprowadzania zmian w bazach danych. Zmiany opisuje się w pliku (plikach) xml i wpisywanie oraz pamiętanie tej składni można sobie uprościć przy pomocy vim&amp;rsquo;a i snippetów.
+Snippet umieszczamy razem z pozostałymi, najczęściej w .vim/after/ftplugin/.
+Najprościej zacząć otwierając np. migration.xml, wpisując lhelp i wcisnąć TAB.</description>
+    </item>
+    
+    <item>
+      <title>best vim plugins</title>
+      <link>https://marekwywial.name/posts/blog20100729best-vim-plugins.html</link>
+      <pubDate>Thu, 29 Jul 2010 20:34:19 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20100729best-vim-plugins.html</guid>
+      <description>Dziś robiłem porządki w ~/.vim/ . Aktualizacje do nowych wersji pluginów, wyrzucanie nieużywanych, porządki w ~/.vimrc. W trakcie tej pracy powstała lista pluginów, dzięki którym miło mi się pracuje
+vimball Plugin zajmujący się pluginami dostarczanymi w paczkach .vba i pozwalający też takie paczki tworzyć, w praktyce potrzeby mi by instalować paczki .vba
+ http://www.vim.org/scripts/script.php?script_id=1502  snippetsEmu Emuluje zachowanie snippetów z TextMate. Na przykład w pliku sometest.py wpisujesz &amp;lsquo;for&amp;lt;tab&amp;gt;&amp;rsquo;, uzupełniasz brakujące miejsca poruszając się klawiszem &amp;lt;tab&amp;gt; i otrzymujesz pełną pętle.</description>
+    </item>
+    
+  </channel>
+</rss>

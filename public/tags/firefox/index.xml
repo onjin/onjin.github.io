@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>firefox on Marek Wywiał</title>
+    <link>https://marekwywial.name/tags/firefox/</link>
+    <description>Recent content in firefox on Marek Wywiał</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 10 Feb 2006 16:32:20 +0000</lastBuildDate>
+    
+	<atom:link href="https://marekwywial.name/tags/firefox/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>słownik wyrazów obcych</title>
+      <link>https://marekwywial.name/posts/blog20060210slownik-wyrazow-obcych/</link>
+      <pubDate>Fri, 10 Feb 2006 16:32:20 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060210slownik-wyrazow-obcych/</guid>
+      <description>Do strony z wyszukiwarkami dla Firefox&amp;rsquo;a dodałem wyszukiwarkę do Słownika Wyrazów Obcych Kopalińskiego
+Wystarczy kliknąć na dodaj obok opisu w tabelce, przełączyć w prawym górnym rogu Firefox&amp;rsquo;a wyszukiwarkę z Google na Kopaliński i szukać :D</description>
+    </item>
+    
+    <item>
+      <title>Przyśpieszyć firefox&#39;a - fasterfox</title>
+      <link>https://marekwywial.name/posts/blog20051206przyspieszyn-firefoxa-fasterfox/</link>
+      <pubDate>Tue, 06 Dec 2005 14:06:16 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20051206przyspieszyn-firefoxa-fasterfox/</guid>
+      <description>W opisie Firefox&amp;rsquo;a pisałem o tym jak można tą przeglądarkę jeszcze bardziej przyśpieszyć. Trochę opcji, ustawień, ręcznego wpisywania danych, itp.
+Ale nie każdy lubi (i nie musi) grzebać w plikach, zaawansowanych opcjach i innych takich &amp;lsquo;czarach&amp;rsquo;. Instalując rozszerzenie fasterfox możemy wszystkie odpowiednie opcje wybrać z predefiniowanych zestawów ( domyślnie, szybciej, turbo) lub nadal ustawiać je ręcznie. Przy czym pomaga nam w tym opis każdej opcji, którą możemy zmienić.
+Tak więc, instalujmy i przyśśśśśśśśśpieszajmy&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Canvas i Firefox 1.5</title>
+      <link>https://marekwywial.name/posts/blog20051115canvas-i-firefox-15/</link>
+      <pubDate>Tue, 15 Nov 2005 13:15:32 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20051115canvas-i-firefox-15/</guid>
+      <description>Wraz z nowym Firefox&amp;rsquo;em w świecie stron internetowych pojawi się wiele ciekawych udogodnień.
+Jednym z nich jest obsługa znacznika &amp;lt;canvas&amp;gt; czyli grafiki bitmapowej. Za jego pomocą możemy wstawić do treści strony pole graficzne, na którym można operować przy pomocy JavaScript&amp;rsquo;u
+Możemy rysować linie, prostokąty, łuki, krzywe Beizera, gradienty, regulować szerekość, styl i kolor lini, kolor wypełnienia (można użyć do tego gradientu), wstawiać oraz manipulować obrazkami (gif, jpg, png) i wiele innych.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<title>
+	skracanie formularzy &#43; java script
+</title>
+		<style>
+	body, body.pushable {
+		background-repeat: no-repeat;
+	  	background-attachment: fixed;
+	  	background-size: cover !important;
+	}
+</style>
+
+		<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+	
+	
+	
+	<meta name="author" content="Marek Wywiał" />
+	<meta name="description" content="Długie formularze, podzielone na kilka sekcji ciągnące się w dół strony, nie są zbyt czytelne. Formularz taki można zmodyfikować dzieląć go na klikalne etapy lub wizualne zakładki. Ale jeżeli mamy wiele takich formularzy napisanych na dodatek w samym HTML&amp;rsquo;u ?
+Możemy to sobie uprościć za pomocą JavaScript. Odpowiednia funkcja wywołana po załadowaniu się strony [body onLoad=&amp;ldquo;funkcja();&amp;rdquo;] może wyszukać sekcje naszego formularza i zwinąć je do ciekawszych wizualnie zakładek.
+Żeby funkcja wiedziała co jest sekcją, należy je odpowiednio oznaczyć np." />
+
+
+
+<meta name="generator" content="Hugo 0.57.2" />
+
+
+<link rel="shortcut icon" href="/img/defaultFav.ico">
+
+
+
+
+		
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+<script
+	src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+
+ <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Inconsolata" rel="stylesheet">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/site.css">
+
+
+
+	<link rel="stylesheet" type="text/css" href="/css/highlight.css">
+
+
+
+
+
+
+<style>
+	body.pushable {
+		display: block;
+		
+			background-image: var(--bgImage) !important;
+		 ;
+	}
+</style>
+
+
+
+<script>
+	
+	var isMobile = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
+	console.log("The client device is a "+(isMobile?"mobile":"PC")+".")
+</script>
+
+	</head>
+
+	<body>
+		<script>
+var prevBgIndex = 0;
+var bodyBgSwitchIndex = 0;
+
+
+
+
+
+
+	
+		document.body.style.backgroundColor = "#13547A";
+	
+
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  var random;
+  while (1) {
+    random = Math.floor(Math.random() * (max - min)) + min;
+    if (random !== prevBgIndex) {
+      prevBgIndex = random;
+      break;
+    }
+  }
+  return random;
+}
+</script>
+
+
+
+
+		<div id="sidebar" class="ui sidebar inverted vertical menu">
+	
+	<section id="author" class="ui top attached center aligned inverted segment">
+		
+<div class="ui small circular image">
+	
+		<img src="https://secure.gravatar.com/avatar/82c0ae52543d7865dac4bbe1b61cf11c?s=256">
+	
+</div>
+
+
+<h3 class="ui header">
+	Marek Wywiał
+	<div class="sub header">Python software developer.</div>
+</h3>
+
+	</section>
+
+	
+	
+		<section class="ui attached center aligned inverted segment sidebar-dream-tags">
+			
+			
+			
+			
+
+
+
+
+	
+	
+		
+			
+			<a class="ui label orange " href="/tags/tools" title="tools">tools</a>
+		
+			
+			<a class="ui label olive " href="/tags/www" title="www">www</a>
+		
+			
+			<a class="ui label green " href="/tags/linux" title="linux">linux</a>
+		
+			
+			<a class="ui label yellow " href="/tags/fun" title="fun">fun</a>
+		
+			
+			<a class="ui label brown " href="/tags/python" title="python">python</a>
+		
+			
+			<a class="ui label blue " href="/tags/hosting" title="hosting">hosting</a>
+		
+	
+
+
+		</section>
+	
+
+	
+	
+
+	
+	<section id="footer" class="ui bottom attached center aligned inverted segment">
+		
+
+	<p>© 2005 - 2019 Marek Wywiał</p>
+
+
+<p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with <a href="https://github.com/UtkarshVerma/hugo-dream-plus" target="_blank">Dream Plus</a> theme.</p>
+
+	</section>
+</div>
+
+
+		<div class="pusher">
+			<div class="flipper">
+				<div class="front">
+					
+	<nav class="ui top secondary menu bar">
+	
+	<div class="item">
+		<i class="inverted big link bullseye icon dream-flip-toggle" title="About Me"></i>
+	</div>
+
+	
+	
+		<div class="item">
+			<a href="/">
+				<i class="inverted big link home icon" title="Home"></i>
+			</a>
+		</div>
+	
+
+	
+	
+
+	
+	
+		<div class="item">
+			<a href="/tags">
+				<i class="inverted big link tags icon" title="All Tags"></i>
+			</a>
+		</div>
+	
+
+	
+	
+
+	
+	
+
+	
+	
+		<div class="ui container tablet computer only grid">
+			<div class="item" onClick="$('.ui.sidebar').sidebar('setting', 'transition', 'overlay').sidebar('toggle');">
+				<i class="inverted big link sidebar icon" title="Show Sidebar"></i>
+			</div>
+		</div>
+	
+
+	
+	
+		<div class="item right">
+			<a href="/posts/index.xml">
+				<i class="inverted big link rss icon" title="RSS Feed"></i>
+			</a>
+		</div>
+	
+</nav>
+
+
+	<div class="ui centered grid">
+		
+		<div class="sixteen wide mobile only column">
+				<div class="ui inverted accordion">
+	<div id="header" class="ui inverted segment column box">		
+		
+		<header id="author" class="ui top attached center aligned inverted segment">
+			
+<div class="ui small circular image">
+	
+		<img src="https://secure.gravatar.com/avatar/82c0ae52543d7865dac4bbe1b61cf11c?s=256">
+	
+</div>
+
+
+<h3 class="ui header">
+	Marek Wywiał
+	<div class="sub header">Python software developer.</div>
+</h3>
+
+		</header>
+
+		
+		<div class=" title header-title">
+			
+				<div id="tag-category-pop" class="ui red right corner label">
+					<i class="hand point icon down" title="Show/hide tags and categories"></i>
+				</div>
+			
+		</div>
+		
+		
+		<div id="tag-category" class=" content">
+			
+				<section class="ui attached center aligned inverted segment dream-tags none flexbox">
+					
+					
+					
+
+
+
+
+	
+	
+		
+			
+			<a class="ui label purple " href="/tags/tools" title="tools">tools</a>
+		
+			
+			<a class="ui label green " href="/tags/www" title="www">www</a>
+		
+			
+			<a class="ui label brown " href="/tags/linux" title="linux">linux</a>
+		
+			
+			<a class="ui label teal " href="/tags/fun" title="fun">fun</a>
+		
+			
+			<a class="ui label orange " href="/tags/python" title="python">python</a>
+		
+			
+			<a class="ui label teal " href="/tags/hosting" title="hosting">hosting</a>
+		
+	
+
+
+				</section>
+			
+
+			
+		</div>
+
+		
+		<footer class="ui bottom attached center aligned inverted segment">
+			
+
+	<p>© 2005 - 2019 Marek Wywiał</p>
+
+
+<p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with <a href="https://github.com/UtkarshVerma/hugo-dream-plus" target="_blank">Dream Plus</a> theme.</p>
+
+		</footer>
+	</div>
+</div>
+
+		</div>
+
+		<div class="sixteen wide mobile fifteen wide tablet twelve wide computer column post-list">
+			
+			<section class="ui secondary top attached black segment post-head">
+				<h1 class="post-title">
+					skracanie formularzy &#43; java script
+				</h1>
+
+				<div class="sub header">
+					<div><span><i class="calendar outline icon"></i>Feb 9, 2006</span></div>
+					
+					<div><span class="disqusComment"><i class="comment outline icon"></i><a href="https://marekwywial.name/posts/blog20060209skracanie-formularzy-java-script/#disqus_thread" class="disqus-comment-count" data-disqus-identifier="87d92165c37d66eb01557174b732848f"></a></span></div>
+					<div><span><i class="clock outline icon"></i>4 min read</span></div>
+					<div><span><i class="angle double up icon"></i>Last updated on Feb 9, 2006</span></div>
+				</div>
+				<hr>
+
+				
+
+				<article class="post-content twemoji">
+					<p>Długie formularze, podzielone na kilka sekcji ciągnące się w dół strony, nie są zbyt czytelne. Formularz taki można zmodyfikować dzieląć go na klikalne etapy lub wizualne zakładki. Ale jeżeli mamy wiele takich formularzy napisanych na dodatek w samym HTML&rsquo;u ?</p>
+
+<p><img src="/screenshots/opanels/normal.jpg" width="273" height="334" alt="widok normalny"></p>
+
+<p>Możemy to sobie uprościć za pomocą JavaScript. Odpowiednia funkcja wywołana po załadowaniu się strony [<em>body onLoad=&ldquo;funkcja();&rdquo;</em>] może wyszukać sekcje naszego formularza i zwinąć je do ciekawszych wizualnie zakładek.</p>
+
+<p><img src="/screenshots/opanels/panels.jpg" width="316" height="200" alt="widok z zakładkami"></p>
+
+<p>Żeby funkcja wiedziała co jest sekcją, należy je odpowiednio oznaczyć np. poprzez odpowiednią klasę <em>CSS</em> &lsquo;subpanel&rsquo;</p>
+
+<p>Druga ważna rzecz, skrypt musi wiedzieć jak nazwać zakładki. Do tego wykorzystałem atrybut <em>title</em>. Nasz kod wygląda teraz tak:</p>
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;subpanel&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;zakładka 1&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>sekcja 1<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;subpanel&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;zakładka 2&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>sekcja 2<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
+
+<p>Teraz za pomocą JavaScript możemy odnaleźć wszystkie znaczniki <em>DIV</em>.</p>
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span>
+    <span class="o">||</span> <span class="o">!</span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span>
+    <span class="o">||</span> <span class="o">!</span><span class="nb">document</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+
+
+<span class="cm">/* pobieramy wszystkie div&#39;y */</span>
+
+<span class="kd">var</span> <span class="nx">divs</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&#34;div&#34;</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>Następnie przygotowywujemy dodatkowy element <em>DIV</em>, w którym umieścimy stworzone zakładki.</p>
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="cm">/*  nr. pierwszego div&#39;a z klasą subpanel */</span>
+
+<span class="kd">var</span> <span class="nx">firstDiv</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+
+
+
+<span class="cm">/* tworzymy div na nasze menu */</span>
+
+<span class="kd">var</span> <span class="nx">menu</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&#34;div&#34;</span><span class="p">);</span>
+
+<span class="nx">menu</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s2">&#34;panels_menu&#34;</span><span class="p">;</span>
+
+<span class="nx">menu</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">&#34;id&#34;</span><span class="p">,</span><span class="s2">&#34;panels_menu&#34;</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>Pozostaje nam przejść się pętlą po wszystkich znalezionych <em>DIV</em>&lsquo;ach i wybrać te, które posiadają klasę &lsquo;subpanel&rsquo;. Z każdego z nich pobieramy wartość atrybutu <em>title</em> i naszym &lsquo;menu&rsquo; tworzymy odpowiedni odnośnik:</p>
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">source</span> <span class="o">=</span> <span class="nx">divs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">&#34;title&#34;</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">source</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">link</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&#34;a&#34;</span><span class="p">);</span>
+
+<span class="nx">link</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">&#34;href&#34;</span><span class="p">,</span><span class="s2">&#34;#&#34;</span><span class="o">+</span><span class="nx">source</span><span class="p">);</span>
+
+<span class="nx">link</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">&#34;onclick&#34;</span><span class="p">,</span><span class="s2">&#34;activMenu(this); &#34;</span><span class="p">);</span>
+
+<span class="nx">link</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Function</span><span class="p">(</span><span class="s1">&#39;activMenu(this);&#39;</span><span class="p">);</span> <span class="c1">// dla IE
+</span><span class="c1"></span>
+<span class="nx">link</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">&#34;id&#34;</span><span class="p">,</span><span class="s2">&#34;menu_&#34;</span><span class="o">+</span><span class="nx">divs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">id</span><span class="p">);</span> <span class="c1">// dla wywołań zewnętrznych
+</span><span class="c1"></span>
+<span class="nx">link</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="nx">source</span><span class="p">));</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>Aktywujemy pierwszą naszą zakładkę i dodajemy je do naszego nowego menu:</p>
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="k">if</span><span class="p">(</span><span class="nx">firstDiv</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="nx">firstDiv</span> <span class="o">=</span> <span class="nx">i</span><span class="p">;</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nx">i</span> <span class="o">==</span> <span class="nx">firstDiv</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">divs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span><span class="o">=</span><span class="s1">&#39;block&#39;</span><span class="p">;</span>
+    <span class="nx">link</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;class&#39;</span><span class="p">,</span><span class="s1">&#39;active&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/* dodajemy odnośnik do menu */</span>
+
+<span class="nx">menu</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">link</span><span class="p">);</span>
+
+<span class="nx">link</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s2">&#34;active&#34;</span><span class="p">;</span> <span class="c1">// dla IE
+</span></code></pre></td></tr></table>
+</div>
+</div>
+
+<p>A po zakończeniu całej pętli wklejamy nasze zakładki przed pierwszego <em>DIV</em>&lsquo;a z klasą &lsquo;subpanel&rsquo;:</p>
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="cm">/* wklejamy stworzone menu nad pierwszym div&#39;em */</span>
+
+<span class="nx">divs</span><span class="p">[</span><span class="nx">firstDiv</span><span class="p">].</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">menu</span><span class="p">,</span><span class="nx">divs</span><span class="p">[</span><span class="nx">firstDiv</span><span class="p">]);</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>Tyle w temacie stworzenia zakładek. Pozostaje nam stworzyć funkcję <em>activeMenu(this)</em>, którą wywołujemy po kliknięciu w odpowiednią zakładkę.</p>
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">activMenu</span><span class="p">(</span><span class="nx">menu</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">menubox</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;panels_menu&#39;</span><span class="p">);</span>
+  <span class="nx">links</span> <span class="o">=</span> <span class="nx">menubox</span><span class="p">.</span><span class="nx">childNodes</span><span class="p">;</span>
+
+  <span class="cm">/* ustalamy clasę &#39;active&#39; dla naszego
+</span><span class="cm">    odnośnika, a reszcie null */</span>
+  <span class="k">for</span><span class="p">(</span><span class="nx">x</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">x</span><span class="o">&lt;</span><span class="nx">links</span><span class="p">.</span><span class="nx">length</span> <span class="nx">x</span> <span class="k">if</span> <span class="nx">links</span> <span class="nx">menu</span><span class="p">.</span><span class="nx">classname</span><span class="o">=</span><span class="s2">&#34;active&#34;</span> <span class="nx">menu</span><span class="p">.</span><span class="nx">blur</span> <span class="kd">var</span> <span class="nx">divs</span><span class="o">=</span><span class="s1">&#39;document.getElementsByTagName(&#34;div&#34;);&#39;</span> <span class="nx">chowamy</span> <span class="nx">wszystkie</span> <span class="nx">div</span> <span class="nx">pr</span> <span class="nx">aktualnego</span> <span class="k">for</span> <span class="nx">i</span><span class="o">=</span><span class="s2">&#34;0;&#34;</span> <span class="nx">menu</span><span class="p">.</span><span class="nx">innerhtml</span> <span class="k">else</span> <span class="k">return</span> <span class="kc">false</span> <span class="nx">ca</span> <span class="nx">zwie</span> <span class="nx">drobny</span><span class="o">&gt;</span><span class="nx">CSS</span><span class="o">:</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css">   <span class="p">.</span><span class="nc">panels_menu</span> <span class="nt">a</span> <span class="p">{</span>
+        <span class="k">color</span><span class="p">:</span> <span class="mh">#eee</span><span class="p">;</span>
+        <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+        <span class="k">background</span><span class="p">:</span> <span class="mh">#666</span><span class="p">;</span>
+        <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span><span class="kt">px</span> <span class="mi">2</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">border</span><span class="p">:</span> <span class="kc">solid</span> <span class="mi">1</span><span class="kt">px</span> <span class="mh">#333</span><span class="p">;</span>
+     <span class="p">}</span>
+    <span class="p">.</span><span class="nc">panels_menu</span> <span class="nt">a</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
+        <span class="k">background</span><span class="p">:</span> <span class="mh">#ccc</span><span class="p">;</span>
+        <span class="k">color</span><span class="p">:</span> <span class="mh">#f33</span><span class="p">;</span>
+        <span class="k">border-bottom</span><span class="p">:</span> <span class="kc">solid</span> <span class="mi">1</span><span class="kt">px</span> <span class="mh">#ccc</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="p">.</span><span class="nc">panels_menu</span> <span class="nt">a</span><span class="p">.</span><span class="nc">active</span> <span class="p">{</span>
+        <span class="k">background</span><span class="p">:</span> <span class="mh">#eee</span><span class="p">;</span>
+        <span class="k">color</span><span class="p">:</span> <span class="mh">#333</span><span class="p">;</span>
+        <span class="k">border-bottom</span><span class="p">:</span> <span class="kc">solid</span> <span class="mi">1</span><span class="kt">px</span> <span class="mh">#eee</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="p">.</span><span class="nc">subpanel</span> <span class="p">{</span>
+                <span class="k">border</span><span class="p">:</span> <span class="kc">solid</span> <span class="mi">1</span><span class="kt">px</span> <span class="mh">#333</span><span class="p">;</span>
+        <span class="k">padding</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+    <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+
+<p>Wystarczy teraz do <em>&lt;body&gt;</em> dodać <strong>onLoad=&ldquo;preparePanels()&rdquo;</strong> i to już wszystko.</p>
+
+<p>Poniżej jest pełen kod funkcji preparePanels():</p>
+
+<p><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">preparePanels</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span>
+    <span class="o">||</span> <span class="o">!</span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span>
+    <span class="o">||</span> <span class="o">!</span><span class="nb">document</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+  <span class="cm">/* pobieramy wszystkie div&#39;y */</span>
+  <span class="kd">var</span> <span class="nx">divs</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&#34;div&#34;</span><span class="p">);</span>
+
+  <span class="cm">/* nr. pierwsze div&#39;a z klasą subpanel */</span>
+  <span class="kd">var</span> <span class="nx">firstDiv</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+
+  <span class="cm">/* tworzymy div na nasze menu */</span>
+  <span class="kd">var</span> <span class="nx">menu</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&#34;div&#34;</span><span class="p">);</span>
+  <span class="nx">menu</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s2">&#34;panels_menu&#34;</span><span class="p">;</span>
+  <span class="nx">menu</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">&#34;id&#34;</span><span class="p">,</span><span class="s2">&#34;panels_menu&#34;</span><span class="p">);</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">divs</span><span class="p">.</span><span class="nx">length</span> <span class="nx">i</span> <span class="nx">je</span> <span class="nx">klasa</span> <span class="nx">div</span> <span class="nx">to</span> <span class="nx">subpanel</span> <span class="nx">to</span><span class="o">:</span>
+  <span class="k">if</span> <span class="nx">firstdiv</span><span class="o">=</span><span class="s2">&#34;i;&#34;</span> <span class="nx">sprawdzamy</span> <span class="nx">istnienie</span> <span class="nx">atrybutu</span>
+  <span class="kd">var</span> <span class="nx">source</span><span class="o">=</span><span class="s1">&#39;divs[i].getAttribute(&#34;title&#34;);&#39;</span>
+  <span class="k">continue</span> <span class="nx">chowamy</span> <span class="nx">divs</span> <span class="nx">tworzymi</span> <span class="nx">odno</span> <span class="k">do</span> <span class="nx">w</span> <span class="nx">naszym</span> <span class="nx">menu</span> <span class="nx">link</span><span class="o">=</span><span class="s1">&#39;document.createElement(&#34;a&#34;);&#39;</span> <span class="nx">link</span><span class="p">.</span><span class="nx">setattribute</span> <span class="nx">link</span><span class="p">.</span><span class="nx">appendchild</span> <span class="nx">jest</span> <span class="nx">pierwszym</span> <span class="nx">go</span> <span class="nx">aktywujemy</span> <span class="nx">dodajemy</span> <span class="nx">menu</span><span class="p">.</span><span class="nx">appendchild</span> <span class="nx">wklejamy</span> <span class="nx">stworzone</span> <span class="nx">nad</span> <span class="nx">dzia</span> <span class="nx">przyk</span> <span class="nx">znajduje</span> <span class="nx">si</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;http://onjin.net/misc/opanels/menu.php&#34;</span><span class="o">&gt;</span><span class="nx">tutaj</span><span class="p">.</span> <span class="nx">Odnośniki</span> <span class="nx">w</span> <span class="nx">lewym</span> <span class="nx">górnym</span> <span class="nx">rogu</span> <span class="nx">strony</span> <span class="nx">uruchamiają</span> <span class="nx">wersję</span> <span class="nx">kolejno</span> <span class="nx">z</span> <span class="nx">i</span> <span class="nx">bez</span> <span class="nx">preparePanels</span><span class="p">().</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+Jeżeli komuś się ta wiedza przyda, to miło mi będzie :)</divs.length></links.length></body></html></p>
+
+				</article>				
+			</section>
+
+			
+			<section class="ui secondary attached segment dream-tags">
+				
+					
+
+
+
+
+	
+		<a class="ui label brown " href="/tags/www" title="www">www</a>
+	
+		<a class="ui label violet " href="/tags/html" title="html">html</a>
+	
+		<a class="ui label purple " href="/tags/javascript" title="javascript">javascript</a>
+	
+
+
+				
+			</section>
+
+			
+			
+				<section class="ui secondary  attached segment share row box">
+					
+
+
+
+
+
+
+
+
+<div class="author">
+	
+	<img class="avatar" src="https://secure.gravatar.com/avatar/82c0ae52543d7865dac4bbe1b61cf11c?s=256">
+	
+</div>
+<div class="info grow flexbox">
+	<a href="https://twitter.com/onjin">
+	<p class="name">Marek Wywiał</p>
+	</a>
+	<p class="desc">Python software developer.</p>
+</div>
+
+
+<section class="buttons row box">
+	<div class="facebook none flexbox" href="#" onclick="window.open(
+			'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+			'facebook-share-dialog',
+			'width=626,height=436'); return false;">
+		<button class="ui facebook button"><i class="facebook icon"></i>Share</button>
+	</div>
+	<div class="twitter none flexbox" onclick="window.open('https://twitter.com/intent/tweet?text=Read &quot;skracanie formularzy \x2b java script &quot; by @onjin https:\/\/marekwywial.name\/posts\/blog20060209skracanie-formularzy-java-script\/','_self')">
+		<button class="ui twitter button"><i class="twitter icon"></i>Tweet</button>
+	</div>
+</section>
+
+				</section>
+			
+
+			
+			
+			
+
+			
+			
+				<div class="ui secondary bottom attached stacked segment disqus">
+					
+<div id="disqus_thread"></div>
+<script>
+	var disqus_config = function () {
+		this.page.url = 'https:\/\/marekwywial.name\/posts\/blog20060209skracanie-formularzy-java-script\/';
+		this.page.identifier = '87d92165c37d66eb01557174b732848f';
+	};
+	(function() {
+   	var d = document, s = d.createElement('script');
+   	s.src = 'https://' + 'marekwywial' + '.disqus.com/embed.js';
+   	s.setAttribute('data-timestamp', +new Date());
+   	(d.head || d.body).appendChild(s);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+				</div>
+			
+		</div>
+	</div>
+
+				</div>
+				<div class="back">
+					
+<nav class="ui top secondary menu bar">
+	<div class="item">
+		<i class="inverted big link bullseye icon dream-flip-toggle" title="About Me"></i>
+	</div>
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+
+	
+	
+	
+	
+	
+	
+	
+		
+		
+			<div class="item">
+				<a href="https://github.com/onjin" target="	_blank">
+					<i id="ico" class="inverted big link github icon" title="GitHub"></i>
+				</a>
+			</div>
+		
+	
+		
+		
+			<div class="item">
+				<a href="mailto:onjinx@gmail.com" target="	_blank">
+					<i id="ico" class="inverted big link mail icon" title="Email"></i>
+				</a>
+			</div>
+		
+	
+		
+		
+			<div class="item">
+				<a href="https://twitter.com/onjin" target="	_blank">
+					<i id="ico" class="inverted big link twitter icon" title="Twitter"></i>
+				</a>
+			</div>
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+			<div class="item">
+				<a href="https://www.linkedin.com/in/onjin" target="	_blank">
+					<i id="ico" class="inverted big link linkedin icon" title="LinkedIn"></i>
+				</a>
+			</div>
+		
+	
+		
+		
+			<div class="item">
+				<a href="https://www.stackoverflow.com/users/418359/marek-wywia%c5%82" target="	_blank">
+					<i id="ico" class="inverted big link stack overflow icon" title="Stack Overflow"></i>
+				</a>
+			</div>
+		
+	
+		
+		
+	
+		
+		
+	
+</nav>
+
+
+
+<div class="ui centered grid about">
+	<div class="sixteen wide mobile fifteen wide tablet fifteen wide computer column about">
+		<section class="ui stacked segments">
+			<div class="ui inverted segment">
+				<article class="twemoji">
+					<h1 id="marek-wywiał">Marek Wywiał</h1>
+
+<hr />
+
+<h2 id="my-projects">My projects</h2>
+
+<ul>
+<li><a href="http://ejpiaj.readthedocs.org/">runenv</a> - Wrapper to run programs with different env or load env from <span class="title-ref">.env</span> file</li>
+<li><a href="https://github.com/onjin/vim-startup">vim-startup</a> - quick way to start with vim &amp; python</li>
+<li><a href="https://github.com/onjin/liquimigrate">liquimigrate</a> - django integration for <a href="http://www.liquibase.org/">Liquibase</a> migrations</li>
+<li><a href="https://github.com/onjin/docker-alpine-postgres">docker-alpine-postgres</a> - Small PostgreSQL images (~58MB) for versions 9.1 - 9.5</li>
+<li><a href="https://github.com/onjin/docker-php-oracle">docker-php-oracle</a> - docker image for php with oracle db support (trusted image)</li>
+<li><a href="http://ejpiaj.readthedocs.org/">ejpiaj</a> - declarative way API testing suite (small python package)</li>
+<li><a href="https://github.com/onjin/docker">docker</a> - other docker images</li>
+</ul>
+
+<p>You can found more projects on my github page:</p>
+
+<ul>
+<li><a href="https://github.com/onjin">github</a></li>
+</ul>
+
+<h2 id="my-websites">My websites</h2>
+
+<ul>
+<li><a href="http://nopic.herokuapp.com/">nopic</a> - online images generator</li>
+<li><a href="http://gettoknow.it/">gettoknowit</a> - portal to learn any language</li>
+<li><a href="http://tani-ebook.pl/">tani-ebook</a> - portal to get or buy e-books (Polski)</li>
+</ul>
+
+<h2 id="other-sites">Other sites</h2>
+
+<ul>
+<li><a href="English">linkedin.com</a></li>
+<li><a href="Polski">goldenline.pl</a></li>
+</ul>
+				</article>
+			</div>
+		</section>
+	</div>
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+	
+	
+		<script id="dsq-count-scr" src="//marekwywial.disqus.com/count.js" async></script>
+	
+
+		
+
+<script src="/js/site.js"></script>
+
+
+
+	<script src="https://twemoji.maxcdn.com/2/twemoji.min.js?2.6"></script>
+
+
+
+
+
+
+
+
+	
+	<script>
+		window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+		ga('create', 'UA-151457-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+	<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+		
+
+
+		
+
+	<script>
+		(function () {
+		  console.log("Twemoji up and making stuff colourful!");
+		  for (var b = document.getElementsByClassName("twemoji"), a = 0; a < b.length; a++) {
+			twemoji.parse(b[a]);
+		  }
+		})();
+	</script>
+
+
+	</body>
+</html>

@@ -1,0 +1,67 @@
+baseURL = "https://marekwywial.name"
+title = "Marek Wywiał"
+theme = "dream-plus"
+paginate = 64
+enableRobotsTXT = true
+disqusShortname = "marekwywial"
+
+#Skip building these files
+ignoreFiles = ["content/404.md", "content/about.md", "content/cards/\\.*"]
+
+#Syntax highlighting
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+pygmentsOptions = "linenos=table"
+GoogleAnalytics = "UA-151457-1"
+
+#Enable Hugo Emoji Conversion
+enableEmoji=true
+
+[params]
+	#Favicon for site
+	favicon = "/img/defaultFav.ico"
+
+	#Set whether you're hosting "cards" or "post"
+	contentType = "posts"
+
+	siteStartYear = 2005
+
+	[params.author]
+		name = "Marek Wywiał"
+		description = ""
+		avatar = "https://secure.gravatar.com/avatar/82c0ae52543d7865dac4bbe1b61cf11c?s=256"
+		motto = "Python software developer."
+
+	[params.features]
+		#Enable Twitter Emoji
+		twitterEmoji = true
+
+		#Enable Table of Contents
+		toc = true
+
+		#Enable share card
+		shareCard = true
+
+		#Use custom CSS
+		# customCSS = ["https://cdn.rawgit.com/UtkarshVerma/hugo-dream-plus/ae11561d/exampleSite/static/css/highlight.css"]
+
+	#Tags settings
+	[params.tags]
+		enabled = true
+	  tagLimit = 6
+
+
+	#Categories settings
+	[params.categories]
+		enabled = false
+  [params.background]
+    color = "#13547A"
+
+[social]
+	email = "onjinx@gmail.com"
+	github = "onjin"
+	stackoverflow = "418359/marek-wywiał"
+	# medium = "onjin"
+	twitter = "onjin"
+  facebook = "marek.wywial"
+  linkedin = "onjin"

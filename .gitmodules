@@ -1,0 +1,8 @@
+[submodule "public"]
+	path = public
+	url = git@github.com:onjin/onjin.github.io.git
+	branch = master
+[submodule "themes/dream-plus"]
+	path = themes/dream-plus
+	url = https://github.com/UtkarshVerma/hugo-dream-plus
+	branch = master

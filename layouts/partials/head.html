@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+{{ if eq .Section "posts" }}
+	{{/*Page Author & Description*/}}
+	{{ $authorName := .Params.author.name | default $.Site.Params.author.name }}
+	{{ $description := .Params.description | default (.Summary | plainify) }}
+	<meta name="author" content="{{ $authorName }}" />
+	<meta name="description" content="{{ $description }}" />
+{{ else }}
+	{{/*Site Author & Description*/}}
+	<meta name="author" content="{{ $.Site.Params.author.name }}" />
+	<meta name="description" content="{{ $.Site.Params.description }}" />
+{{ end }}
+
+{{/*Site generator*/}}
+{{ hugo.Generator }}
+
+{{/*Favicon*/}}
+<link rel="shortcut icon" href="{{ if $.Site.Params.favicon }}{{ $.Site.Params.favicon }}{{- else }}/img/defaultFav.ico{{ end }}">
+
+<!-- Permalink & RSSlink -->
+{{ range .AlternativeOutputFormats }}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{ end }}

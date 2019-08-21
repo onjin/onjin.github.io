@@ -2,8 +2,11 @@
 title: "Telewizja N (nc+) i python"
 date: 2013-10-12T01:26:16
 slug: telewizja-n-nc-i-python
+url: /posts/telewizja-n-nc-i-python.html
 tags: ["python","github","cli"]
 cover: /img/cover-python1.jpg
+aliases:
+    - /posts/telewizja-n-nc-i-python/index.html
 ---
 
 Aby się przeklikać przez program na http://n.pl/ i jeszcze znaleźć interesujący program, to jest ponad moje siły.

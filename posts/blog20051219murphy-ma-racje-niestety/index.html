@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<title>
+	Murphy ma rację ... niestety
+</title>
+		<style>
+	body, body.pushable {
+		background-repeat: no-repeat;
+	  	background-attachment: fixed;
+	  	background-size: cover !important;
+	}
+</style>
+
+		<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+	
+	
+	
+	<meta name="author" content="Marek Wywiał" />
+	<meta name="description" content="Pracując, można wiele dowiedzieć się o ludziach, a szczególnie o klientach. Jacy są, czego chcą, itp. Z czasem wiemy coraz więcej, a czasem wystarczy przeczytać kilka praw Murphy&amp;rsquo;ego i wszystko staje się jasne.
+Osiem praw szanownego klienta.
+ Klientowi nigdy nie przyjdzie na myśl ile kosztuje projekt, tylko ile można na tym projekcie zaoszczędzić. Jeżeli udało Ci się wprowadzić w programie, wymagane przez klienta poprawki, wtedy on z nich zrezygnuje. Żaden klient nie wie czego właściwie chce." />
+
+
+
+<meta name="generator" content="Hugo 0.57.2" />
+
+
+<link rel="shortcut icon" href="/img/defaultFav.ico">
+
+
+
+
+		
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+<script
+	src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+
+ <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Inconsolata" rel="stylesheet">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/site.css">
+
+
+
+	<link rel="stylesheet" type="text/css" href="/css/highlight.css">
+
+
+
+
+
+
+<style>
+	body.pushable {
+		display: block;
+		
+			background-image: var(--bgImage) !important;
+		 ;
+	}
+</style>
+
+
+
+<script>
+	
+	var isMobile = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
+	console.log("The client device is a "+(isMobile?"mobile":"PC")+".")
+</script>
+
+	</head>
+
+	<body>
+		<script>
+var prevBgIndex = 0;
+var bodyBgSwitchIndex = 0;
+
+
+
+
+
+
+	
+		document.body.style.backgroundColor = "#13547A";
+	
+
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  var random;
+  while (1) {
+    random = Math.floor(Math.random() * (max - min)) + min;
+    if (random !== prevBgIndex) {
+      prevBgIndex = random;
+      break;
+    }
+  }
+  return random;
+}
+</script>
+
+
+
+
+		<div id="sidebar" class="ui sidebar inverted vertical menu">
+	
+	<section id="author" class="ui top attached center aligned inverted segment">
+		
+<div class="ui small circular image">
+	
+		<img src="https://secure.gravatar.com/avatar/82c0ae52543d7865dac4bbe1b61cf11c?s=256">
+	
+</div>
+
+
+<h3 class="ui header">
+	Marek Wywiał
+	<div class="sub header">Python software developer.</div>
+</h3>
+
+	</section>
+
+	
+	
+		<section class="ui attached center aligned inverted segment sidebar-dream-tags">
+			
+			
+			
+			
+
+
+
+
+	
+	
+		
+			
+			<a class="ui label violet " href="/tags/tools" title="tools">tools</a>
+		
+			
+			<a class="ui label red " href="/tags/www" title="www">www</a>
+		
+			
+			<a class="ui label blue " href="/tags/linux" title="linux">linux</a>
+		
+			
+			<a class="ui label red " href="/tags/fun" title="fun">fun</a>
+		
+			
+			<a class="ui label green " href="/tags/python" title="python">python</a>
+		
+			
+			<a class="ui label teal " href="/tags/hosting" title="hosting">hosting</a>
+		
+	
+
+
+		</section>
+	
+
+	
+	
+
+	
+	<section id="footer" class="ui bottom attached center aligned inverted segment">
+		
+
+	<p>© 2005 - 2019 Marek Wywiał</p>
+
+
+<p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with <a href="https://github.com/UtkarshVerma/hugo-dream-plus" target="_blank">Dream Plus</a> theme.</p>
+
+	</section>
+</div>
+
+
+		<div class="pusher">
+			<div class="flipper">
+				<div class="front">
+					
+	<nav class="ui top secondary menu bar">
+	
+	<div class="item">
+		<i class="inverted big link bullseye icon dream-flip-toggle" title="About Me"></i>
+	</div>
+
+	
+	
+		<div class="item">
+			<a href="/">
+				<i class="inverted big link home icon" title="Home"></i>
+			</a>
+		</div>
+	
+
+	
+	
+
+	
+	
+		<div class="item">
+			<a href="/tags">
+				<i class="inverted big link tags icon" title="All Tags"></i>
+			</a>
+		</div>
+	
+
+	
+	
+
+	
+	
+
+	
+	
+		<div class="ui container tablet computer only grid">
+			<div class="item" onClick="$('.ui.sidebar').sidebar('setting', 'transition', 'overlay').sidebar('toggle');">
+				<i class="inverted big link sidebar icon" title="Show Sidebar"></i>
+			</div>
+		</div>
+	
+
+	
+	
+		<div class="item right">
+			<a href="/posts/index.xml">
+				<i class="inverted big link rss icon" title="RSS Feed"></i>
+			</a>
+		</div>
+	
+</nav>
+
+
+	<div class="ui centered grid">
+		
+		<div class="sixteen wide mobile only column">
+				<div class="ui inverted accordion">
+	<div id="header" class="ui inverted segment column box">		
+		
+		<header id="author" class="ui top attached center aligned inverted segment">
+			
+<div class="ui small circular image">
+	
+		<img src="https://secure.gravatar.com/avatar/82c0ae52543d7865dac4bbe1b61cf11c?s=256">
+	
+</div>
+
+
+<h3 class="ui header">
+	Marek Wywiał
+	<div class="sub header">Python software developer.</div>
+</h3>
+
+		</header>
+
+		
+		<div class=" title header-title">
+			
+				<div id="tag-category-pop" class="ui red right corner label">
+					<i class="hand point icon down" title="Show/hide tags and categories"></i>
+				</div>
+			
+		</div>
+		
+		
+		<div id="tag-category" class=" content">
+			
+				<section class="ui attached center aligned inverted segment dream-tags none flexbox">
+					
+					
+					
+
+
+
+
+	
+	
+		
+			
+			<a class="ui label olive " href="/tags/tools" title="tools">tools</a>
+		
+			
+			<a class="ui label green " href="/tags/www" title="www">www</a>
+		
+			
+			<a class="ui label red " href="/tags/linux" title="linux">linux</a>
+		
+			
+			<a class="ui label brown " href="/tags/fun" title="fun">fun</a>
+		
+			
+			<a class="ui label teal " href="/tags/python" title="python">python</a>
+		
+			
+			<a class="ui label green " href="/tags/hosting" title="hosting">hosting</a>
+		
+	
+
+
+				</section>
+			
+
+			
+		</div>
+
+		
+		<footer class="ui bottom attached center aligned inverted segment">
+			
+
+	<p>© 2005 - 2019 Marek Wywiał</p>
+
+
+<p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with <a href="https://github.com/UtkarshVerma/hugo-dream-plus" target="_blank">Dream Plus</a> theme.</p>
+
+		</footer>
+	</div>
+</div>
+
+		</div>
+
+		<div class="sixteen wide mobile fifteen wide tablet twelve wide computer column post-list">
+			
+			<section class="ui secondary top attached black segment post-head">
+				<h1 class="post-title">
+					Murphy ma rację ... niestety
+				</h1>
+
+				<div class="sub header">
+					<div><span><i class="calendar outline icon"></i>Dec 19, 2005</span></div>
+					
+					<div><span class="disqusComment"><i class="comment outline icon"></i><a href="https://marekwywial.name/posts/blog20051219murphy-ma-racje-niestety/#disqus_thread" class="disqus-comment-count" data-disqus-identifier="e9fddcdf8cc156fff583bd33484f460e"></a></span></div>
+					<div><span><i class="clock outline icon"></i>2 min read</span></div>
+					<div><span><i class="angle double up icon"></i>Last updated on Dec 19, 2005</span></div>
+				</div>
+				<hr>
+
+				
+
+				<article class="post-content twemoji">
+					<p>Pracując, można wiele dowiedzieć się o ludziach, a szczególnie o klientach. Jacy są, czego chcą, itp. Z czasem wiemy coraz więcej, a czasem wystarczy przeczytać kilka <a href="http://pl.wikipedia.org/wiki/Prawo_Murphy%27ego">praw Murphy&rsquo;ego</a> i wszystko staje się jasne.</p>
+
+<p><strong>Osiem praw szanownego klienta.</strong></p>
+
+<ol>
+<li>Klientowi nigdy nie przyjdzie na myśl ile kosztuje projekt, tylko ile można na tym projekcie zaoszczędzić.</li>
+<li>Jeżeli udało Ci się wprowadzić w programie, wymagane przez klienta poprawki, wtedy on z nich zrezygnuje.</li>
+<li>Żaden klient nie wie czego właściwie chce.</li>
+<li>Każdy klient wie dokładnie czego nie chce.</li>
+<li>Żaden klient nie chce tego co masz już gotowe.</li>
+<li>Nie wie także co chciałby mieć zamiast tego.</li>
+<li>Klient, który najmniej płaci marudzi najwięcej.</li>
+<li>Klient żąda największych zmian dokładnie wtedy, kiedy produkt jest już gotowy.</li>
+</ol>
+
+<p><strong>Prawa ogólne.</strong></p>
+
+<ul>
+<li>Na polecenie &ldquo;Napisz Tak lub Nie&rdquo; użytkownik wpisuje &ldquo;Tak lub Nie&rdquo;.</li>
+<li>Na polecenie &ldquo;Wciśnij ENTER&rdquo; użytkownik wpisuje &ldquo;ENTER&rdquo;.</li>
+<li>Na polecenie &ldquo;Naciśnij dowolny klawisz&rdquo; użytkownik naciska klawisz SHIFT, ESCAPE, albo przycisk zasilania.</li>
+<li>Jeżeli napiszesz procedurę, która zapobiega pojawianiu się błędnych wartości, to zawsze znajdzie się użytkownik, który ją pominie.</li>
+<li>Jeżeli istnieją 4 różne możliwości doprowadzenia programu do krachu i wszystkie 4 zablokujesz, wtedy użytkownik znajdzie piątą metodę.</li>
+<li>Nie ma programów całkowicie idiotoodpornych.</li>
+<li>Program oddany użytkownikowi w piątek wraca do autora w poniedziałek.</li>
+<li>Na pierwsze 90% programu potrzeba 10% przeznaczonego na jego realizację czasu.</li>
+<li>Pozostałe 10% programu wymaga 90% przeznaczonego na jego realizację czasu.</li>
+<li>Rozpoczynasz zawsze od pozostałych 10%.</li>
+<li>10%, od których rozpoczynasz pracę stanowią te procedury, które w ostatecznym rozrachunku zostaną usunięte na życzenie klienta.</li>
+<li>Jeżeli nie wiesz co czynisz, rób to w sposób elegancki.</li>
+<li>W zespole programistów każdy ma genialny plan rozwiązania problemu. Wszystkie plany się wzajemnie wykluczają i żaden nie prowadzi do poprawnego rozwiązania.</li>
+<li>Liczba osób w zespole programistycznym ma tendencje wzrastające niezależnie od ilości pracy.</li>
+<li>W każdym programie błędy wykazują skłonność do występowania w tym miejscu, które sprawdzasz jako ostatnie.</li>
+<li>Każdy program, który się dobrze zaczyna, kończy się źle.</li>
+<li>Program, który zaczyna się źle, kończy się przerażająco.</li>
+<li>To co wygląda łatwo jest trudne.</li>
+<li>To co wygląda trudno jest niemożliwe.</li>
+<li>To co wygląda na niemożliwe potrafi rozwiązać nawet twoja teściowa i to bez pomocy komputera.</li>
+<li>Każdy programista przybywający z innego miasta jest fachowcem.</li>
+<li>Idealny fachowiec wie absolutnie wszystko o niczym.</li>
+<li>Nie wierz w cuda - zdaj się na nie.</li>
+<li>Każda formuła i każda stała muszą być traktowane jako zmienne.</li>
+<li>Prawdopodobieństwo wydarzenia jest odwrotnie proporcjonalne do życzenia.</li>
+</ul>
+
+				</article>				
+			</section>
+
+			
+			<section class="ui secondary attached segment dream-tags">
+				
+					
+
+
+
+
+	
+		<a class="ui label blue " href="/tags/fun" title="fun">fun</a>
+	
+
+
+				
+			</section>
+
+			
+			
+				<section class="ui secondary  attached segment share row box">
+					
+
+
+
+
+
+
+
+
+<div class="author">
+	
+	<img class="avatar" src="https://secure.gravatar.com/avatar/82c0ae52543d7865dac4bbe1b61cf11c?s=256">
+	
+</div>
+<div class="info grow flexbox">
+	<a href="https://twitter.com/onjin">
+	<p class="name">Marek Wywiał</p>
+	</a>
+	<p class="desc">Python software developer.</p>
+</div>
+
+
+<section class="buttons row box">
+	<div class="facebook none flexbox" href="#" onclick="window.open(
+			'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+			'facebook-share-dialog',
+			'width=626,height=436'); return false;">
+		<button class="ui facebook button"><i class="facebook icon"></i>Share</button>
+	</div>
+	<div class="twitter none flexbox" onclick="window.open('https://twitter.com/intent/tweet?text=Read &quot;Murphy ma rację ... niestety &quot; by @onjin https:\/\/marekwywial.name\/posts\/blog20051219murphy-ma-racje-niestety\/','_self')">
+		<button class="ui twitter button"><i class="twitter icon"></i>Tweet</button>
+	</div>
+</section>
+
+				</section>
+			
+
+			
+			
+			
+
+			
+			
+				<div class="ui secondary bottom attached stacked segment disqus">
+					
+<div id="disqus_thread"></div>
+<script>
+	var disqus_config = function () {
+		this.page.url = 'https:\/\/marekwywial.name\/posts\/blog20051219murphy-ma-racje-niestety\/';
+		this.page.identifier = 'e9fddcdf8cc156fff583bd33484f460e';
+	};
+	(function() {
+   	var d = document, s = d.createElement('script');
+   	s.src = 'https://' + 'marekwywial' + '.disqus.com/embed.js';
+   	s.setAttribute('data-timestamp', +new Date());
+   	(d.head || d.body).appendChild(s);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+				</div>
+			
+		</div>
+	</div>
+
+				</div>
+				<div class="back">
+					
+<nav class="ui top secondary menu bar">
+	<div class="item">
+		<i class="inverted big link bullseye icon dream-flip-toggle" title="About Me"></i>
+	</div>
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+
+	
+	
+	
+	
+	
+	
+	
+		
+		
+			<div class="item">
+				<a href="https://github.com/onjin" target="	_blank">
+					<i id="ico" class="inverted big link github icon" title="GitHub"></i>
+				</a>
+			</div>
+		
+	
+		
+		
+			<div class="item">
+				<a href="mailto:onjinx@gmail.com" target="	_blank">
+					<i id="ico" class="inverted big link mail icon" title="Email"></i>
+				</a>
+			</div>
+		
+	
+		
+		
+			<div class="item">
+				<a href="https://twitter.com/onjin" target="	_blank">
+					<i id="ico" class="inverted big link twitter icon" title="Twitter"></i>
+				</a>
+			</div>
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+			<div class="item">
+				<a href="https://www.linkedin.com/in/onjin" target="	_blank">
+					<i id="ico" class="inverted big link linkedin icon" title="LinkedIn"></i>
+				</a>
+			</div>
+		
+	
+		
+		
+			<div class="item">
+				<a href="https://www.stackoverflow.com/users/418359/marek-wywia%c5%82" target="	_blank">
+					<i id="ico" class="inverted big link stack overflow icon" title="Stack Overflow"></i>
+				</a>
+			</div>
+		
+	
+		
+		
+	
+		
+		
+	
+</nav>
+
+
+
+<div class="ui centered grid about">
+	<div class="sixteen wide mobile fifteen wide tablet fifteen wide computer column about">
+		<section class="ui stacked segments">
+			<div class="ui inverted segment">
+				<article class="twemoji">
+					<h1 id="marek-wywiał">Marek Wywiał</h1>
+
+<hr />
+
+<h2 id="my-projects">My projects</h2>
+
+<ul>
+<li><a href="http://ejpiaj.readthedocs.org/">runenv</a> - Wrapper to run programs with different env or load env from <span class="title-ref">.env</span> file</li>
+<li><a href="https://github.com/onjin/vim-startup">vim-startup</a> - quick way to start with vim &amp; python</li>
+<li><a href="https://github.com/onjin/liquimigrate">liquimigrate</a> - django integration for <a href="http://www.liquibase.org/">Liquibase</a> migrations</li>
+<li><a href="https://github.com/onjin/docker-alpine-postgres">docker-alpine-postgres</a> - Small PostgreSQL images (~58MB) for versions 9.1 - 9.5</li>
+<li><a href="https://github.com/onjin/docker-php-oracle">docker-php-oracle</a> - docker image for php with oracle db support (trusted image)</li>
+<li><a href="http://ejpiaj.readthedocs.org/">ejpiaj</a> - declarative way API testing suite (small python package)</li>
+<li><a href="https://github.com/onjin/docker">docker</a> - other docker images</li>
+</ul>
+
+<p>You can found more projects on my github page:</p>
+
+<ul>
+<li><a href="https://github.com/onjin">github</a></li>
+</ul>
+
+<h2 id="my-websites">My websites</h2>
+
+<ul>
+<li><a href="http://nopic.herokuapp.com/">nopic</a> - online images generator</li>
+<li><a href="http://gettoknow.it/">gettoknowit</a> - portal to learn any language</li>
+<li><a href="http://tani-ebook.pl/">tani-ebook</a> - portal to get or buy e-books (Polski)</li>
+</ul>
+
+<h2 id="other-sites">Other sites</h2>
+
+<ul>
+<li><a href="English">linkedin.com</a></li>
+<li><a href="Polski">goldenline.pl</a></li>
+</ul>
+				</article>
+			</div>
+		</section>
+	</div>
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+	
+	
+		<script id="dsq-count-scr" src="//marekwywial.disqus.com/count.js" async></script>
+	
+
+		
+
+<script src="/js/site.js"></script>
+
+
+
+	<script src="https://twemoji.maxcdn.com/2/twemoji.min.js?2.6"></script>
+
+
+
+
+
+
+
+
+	
+	<script>
+		window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+		ga('create', 'UA-151457-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+	<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+		
+
+
+		
+
+	<script>
+		(function () {
+		  console.log("Twemoji up and making stuff colourful!");
+		  for (var b = document.getElementsByClassName("twemoji"), a = 0; a < b.length; a++) {
+			twemoji.parse(b[a]);
+		  }
+		})();
+	</script>
+
+
+	</body>
+</html>

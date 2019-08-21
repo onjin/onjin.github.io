@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>webdev on Marek Wywiał</title>
+    <link>https://marekwywial.name/tags/webdev/</link>
+    <description>Recent content in webdev on Marek Wywiał</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 13 Aug 2013 18:53:49 +0000</lastBuildDate>
+    
+	<atom:link href="https://marekwywial.name/tags/webdev/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python SOAP server (flask) &#43; wsdl generation</title>
+      <link>https://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html</link>
+      <pubDate>Tue, 13 Aug 2013 18:53:49 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html</guid>
+      <description>Install 1  $ pip install Flask-Enterprise   file: soap.py 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  from time import ctime from flask import Flask from flaskext.enterprise import Enterprise app = Flask(__name__) enterprise = Enterprise(app) class DemoService(enterprise.SOAPService): __soap_server_address__ = &amp;#39;/soap&amp;#39; __soap_target_namespace__ = &amp;#39;ns&amp;#39; @enterprise.soap(_returns=enterprise._sp.String) def get_time(self): return ctime() if __name__ == &amp;#39;__main__&amp;#39;: app.run(host=&amp;#39;127.0.0.1&amp;#39;, port=5555)   Run service 1  $ python soap.</description>
+    </item>
+    
+    <item>
+      <title>home.pl &amp; django - pierwsza potyczka</title>
+      <link>https://marekwywial.name/posts/blog20090226homepl-django-pierwsza-potyczka.html</link>
+      <pubDate>Thu, 26 Feb 2009 21:59:38 +0100</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20090226homepl-django-pierwsza-potyczka.html</guid>
+      <description>home.pl obsługuje pythona jako cgi (pliki .py) więc tego będziemy się trzymać. Instalację wykonamy w katalogu /py
+instalacja django hardcoded ale działa ;) wrzucamy to do /py i ruchamiamy poprzez www (plik install.py)
+1 2 3 4 5 6 7 8 9  #!/usr/bin/env python import os os.system(&amp;#34;wget http://www.djangoproject.com/download/1.0.2/tarball/&amp;#34;) os.system(&amp;#34;tar zxf Django-1.0.2-final.tar.gz&amp;#34;) os.system(&amp;#34;rm Django-1.0.2-final.tar.gz&amp;#34;) os.system(&amp;#34;mv Django-1.0.2-final tmp&amp;#34;) os.system(&amp;#34;mv tmp/django django&amp;#34;)   nasz projekt Lokalnie wołamy
+1  $ django-admin.</description>
+    </item>
+    
+    <item>
+      <title>lint dla php</title>
+      <link>https://marekwywial.name/posts/blog20080902lint-dla-php/</link>
+      <pubDate>Tue, 02 Sep 2008 21:01:02 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20080902lint-dla-php/</guid>
+      <description>Za dnia piszę najczęściej w php i zazdroszczę pythonowi pylinta.
+Z ciekawości zagooglałem i znalazłem rozwiązanie dla PHP sprawdzające Coding Standard:
+ pear install PHP_CodeSniffer phpcs --standard=Zend SomeTest.class.php  phpcs -i podaje dostępne standardy:
+PEAR
+MySource
+PHPCS
+Squiz
+Zend
+Mi najbardzie odpowiada Zend co widać po wynikach lintowania, najczęściej 0 ostrzeżeń i błędów ;).
+phpcs pozwala także tworzyć swoje własne standardy kodowanie oraz - co bardzo mnie cieszy - podpiąć go jako precommit hook do svn&amp;rsquo;a.</description>
+    </item>
+    
+    <item>
+      <title>netbeans 6.5 &#43; php5 &#43; symfony &#43; xdebug</title>
+      <link>https://marekwywial.name/posts/blog20080824netbeans-65-php5-symfony-xdebug/</link>
+      <pubDate>Sun, 24 Aug 2008 14:17:12 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20080824netbeans-65-php5-symfony-xdebug/</guid>
+      <description>W Netbeans 6.5 pojawia się support dla php5. W/g informacji na stronie netbeans oznacza to:
+ PHP Editor (Code completion, syntactic and semantic code highlighting) Support for heredoc notation and PHTML Debugging using Xdebug Generators for MySQL database code snippets  Temat, który najbardziej mnie interesował to jak zadziała debugging przy pomocy Xdebug. Postanowiłem sprawdzić to z istniejącym projektem bazującym na frameworku Symfony.
+ Zainstalowałem netbeans pobierając odpowiednią paczkę ze strony netbeans Zainstalowałem Xdebug poprzez pecl install xdebug i dodaniu do konfiguracji php wierszy:  1 2 3  # xdebug, jako zend_extension.</description>
+    </item>
+    
+  </channel>
+</rss>

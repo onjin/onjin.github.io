@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>github on Marek Wywiał</title>
+    <link>https://marekwywial.name/tags/github/</link>
+    <description>Recent content in github on Marek Wywiał</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 12 Oct 2013 01:26:16 +0000</lastBuildDate>
+    
+	<atom:link href="https://marekwywial.name/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Telewizja N (nc&#43;) i python</title>
+      <link>https://marekwywial.name/posts/telewizja-n-nc-i-python/</link>
+      <pubDate>Sat, 12 Oct 2013 01:26:16 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/telewizja-n-nc-i-python/</guid>
+      <description>Aby się przeklikać przez program na http://n.pl/ i jeszcze znaleźć interesujący program, to jest ponad moje siły.
+Napisałem więc na szybko narzędzie działające w shellu, które pozwala przeglądać oraz przeszukiwać program ze strony n.pl https://github.com/onjin/ntv/.
+Instalacja Program napisany jest w Pythonie i dystrybuowany jako egg
+1 2  $ pip install ntv $ ntv-cli --help   Kanały Lista wszystkich kanałów nadających dzisiaj:
+ ntv-cli channels  Lista kanałów zawierających w nazie &amp;lsquo;filmbox&amp;rsquo; (obojętne czy małe czy duże litery):</description>
+    </item>
+    
+  </channel>
+</rss>

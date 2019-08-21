@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hosting on Marek Wywiał</title>
+    <link>https://marekwywial.name/tags/hosting/</link>
+    <description>Recent content in hosting on Marek Wywiał</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 27 Apr 2012 10:30:44 +0000</lastBuildDate>
+    
+	<atom:link href="https://marekwywial.name/tags/hosting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>extend lvm2 filesystem</title>
+      <link>https://marekwywial.name/posts/blog20120427extend-lvm2-filesystem/</link>
+      <pubDate>Fri, 27 Apr 2012 10:30:44 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20120427extend-lvm2-filesystem/</guid>
+      <description>Just self memo 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  # Added new physical partition /dev/sda3 # create a physical volume out of it $ pvcreate /dev/sda3 # Now, add it to the volume group #that my logical volume is on $ vgextend VolGroup00 /dev/sda3 # Now that the volume group has more # disk space, the logical volume can grow $ lvextend -L+11G /dev/VolGroup00/LogVol00 # Ok, last of all, I want to filesystem to # recognize that more space is available $ fsadm resize /dev/VolGroup00/LogVol00 # sweet, I have more space now $ df -h</description>
+    </item>
+    
+    <item>
+      <title>home.pl &amp; django - pierwsza potyczka</title>
+      <link>https://marekwywial.name/posts/blog20090226homepl-django-pierwsza-potyczka.html</link>
+      <pubDate>Thu, 26 Feb 2009 21:59:38 +0100</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20090226homepl-django-pierwsza-potyczka.html</guid>
+      <description>home.pl obsługuje pythona jako cgi (pliki .py) więc tego będziemy się trzymać. Instalację wykonamy w katalogu /py
+instalacja django hardcoded ale działa ;) wrzucamy to do /py i ruchamiamy poprzez www (plik install.py)
+1 2 3 4 5 6 7 8 9  #!/usr/bin/env python import os os.system(&amp;#34;wget http://www.djangoproject.com/download/1.0.2/tarball/&amp;#34;) os.system(&amp;#34;tar zxf Django-1.0.2-final.tar.gz&amp;#34;) os.system(&amp;#34;rm Django-1.0.2-final.tar.gz&amp;#34;) os.system(&amp;#34;mv Django-1.0.2-final tmp&amp;#34;) os.system(&amp;#34;mv tmp/django django&amp;#34;)   nasz projekt Lokalnie wołamy
+1  $ django-admin.</description>
+    </item>
+    
+    <item>
+      <title>rośnie prezent ... na gmailu</title>
+      <link>https://marekwywial.name/posts/blog20071025rosnie-prezent-na-gmailu/</link>
+      <pubDate>Thu, 25 Oct 2007 21:20:37 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20071025rosnie-prezent-na-gmailu/</guid>
+      <description>Bezpłatne konta pocztowe Gmail w ostatnich dniach trochę spuchły i teraz mają ok 4,3GB
+Skrzynki w Google Apps także mają urosnąć. Można o tym przeczytać na blogu Google Polska</description>
+    </item>
+    
+    <item>
+      <title>Sprzątanie internetu</title>
+      <link>https://marekwywial.name/posts/blog20070401sprzatanie-internetu/</link>
+      <pubDate>Sun, 01 Apr 2007 12:43:20 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20070401sprzatanie-internetu/</guid>
+      <description>Dostałem własnie informację o sprzątaniu nieaktualnych danych z zasobów internetu.
+Nie będę się rozpisywał tylko zamieszczę otrzymaną od NASK wiadomość (wiadomość otrzymałem dzięki uprzejmości administratorów http://chrome.pl.
+--- Forwarded message --- From: NASK Polska &amp;lt;nask&amp;gt; To: postmaster@xiaoka.com Message-Id: &amp;lt;e1hvuz&amp;gt; Date: Sun, 30 Mar 2007 23:12:66 +0200 Subject: Ważna informacja NASK POLSKA Informacja Poufna UWAGA! NIE ŁĄCZ SIĘ Z INTERNETEM MIĘDZY 23:59 31 MARCA 2007 (GMT) AŻ DO 00:01 2 KWIETNIA 2007 (GMT) *** Uwaga *** Uwaga *** Uwaga *** Uwaga *** Jak wszyscy wiemy internet jest coraz bardziej wypełniony śmieciami.</description>
+    </item>
+    
+    <item>
+      <title>Dreamhost &#43; dodatkowy adres ip</title>
+      <link>https://marekwywial.name/posts/blog20070314dreamhost-dodatkowy-adres-ip/</link>
+      <pubDate>Wed, 14 Mar 2007 00:22:11 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20070314dreamhost-dodatkowy-adres-ip/</guid>
+      <description>W trakcie ostatnich zmian Dreamhost umożliwił tworzenie kodów promocyjnych, które oprócz zniżki na zakup planu hostingowego, dają także: dodatkowe miejsce na dysku (10-100% więcej)
+dodatkowy transfer miesięczny (10-100% więcej)
+dodatkowe bezpłatne domeny (1-5 domen)
+dodatkowe adresy ip (1-3 adresów, oprócz standardowego)
+
+Tworząc kod promocyjny masz teraz większe pole do popisu. Na przykład kod onjin50 daje zniżkę $50 na dowolny plan hostingowy, natomiast kod onjin1ip łączy dodatkowy adres ip wraz ze zniżką $20.</description>
+    </item>
+    
+    <item>
+      <title>Picasa Web Albums puchnie</title>
+      <link>https://marekwywial.name/posts/blog20070312picasa-web-albums-puchnie/</link>
+      <pubDate>Mon, 12 Mar 2007 12:45:53 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20070312picasa-web-albums-puchnie/</guid>
+      <description>Dzień prezentów dziś się jeszcze nie skończył. Tym razem Google w Picasa Web Albums zwiekszyła pojemność konta (na fotki oczywiście) z 250MB do 1GB oraz dodana została wyszukiwarka by łatwiej odnajdywać albumy.
+Picasa Web Albums - jeżeli jeszcze ktoś nie wiem - jest bezpłatną, internetową galerią zdjęć zintegrowaną z programem Picasa do katalogowania i obróbki zdjęć dostarczanym (tu niespodzianka: także bezpłatnie :) ) przez Google.
+Picasa integruje się także z Bloggerem oraz Gmailem.</description>
+    </item>
+    
+    <item>
+      <title>Dreamhost szybciej</title>
+      <link>https://marekwywial.name/posts/blog20070312dreamhost-szybciej/</link>
+      <pubDate>Mon, 12 Mar 2007 08:27:22 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20070312dreamhost-szybciej/</guid>
+      <description>9-tego marca Dreamhost poinformował o wykonanym upgrade ich sieci, co zaowocowało około 3-krotym przyśpieszeniem komunikacji z ich serwerami.
+Właśnie połączenie z dreamhost oraz ich panel były jak dla mnie elementami odstającymi od reszty ich oferty. Na początku miesiąca panel także doświadczył upgrade (choć wiele mu jeszcze brakuje do ideału) i wraz ze zwiększeniem prędkości połączenia stanowi to o tym, że Dreamhost nie śpi i ciągle się rozwija.</description>
+    </item>
+    
+  </channel>
+</rss>

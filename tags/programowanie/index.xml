@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>programowanie on Marek Wywiał</title>
+    <link>https://marekwywial.name/tags/programowanie/</link>
+    <description>Recent content in programowanie on Marek Wywiał</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 13 Aug 2013 18:53:49 +0000</lastBuildDate>
+    
+	<atom:link href="https://marekwywial.name/tags/programowanie/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python SOAP server (flask) &#43; wsdl generation</title>
+      <link>https://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html</link>
+      <pubDate>Tue, 13 Aug 2013 18:53:49 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html</guid>
+      <description>Install 1  $ pip install Flask-Enterprise   file: soap.py 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  from time import ctime from flask import Flask from flaskext.enterprise import Enterprise app = Flask(__name__) enterprise = Enterprise(app) class DemoService(enterprise.SOAPService): __soap_server_address__ = &amp;#39;/soap&amp;#39; __soap_target_namespace__ = &amp;#39;ns&amp;#39; @enterprise.soap(_returns=enterprise._sp.String) def get_time(self): return ctime() if __name__ == &amp;#39;__main__&amp;#39;: app.run(host=&amp;#39;127.0.0.1&amp;#39;, port=5555)   Run service 1  $ python soap.</description>
+    </item>
+    
+    <item>
+      <title>vim snippetsemu i liquibase</title>
+      <link>https://marekwywial.name/posts/blog20100811vim-snippetsemu-i-liquibase.html</link>
+      <pubDate>Wed, 11 Aug 2010 18:45:35 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20100811vim-snippetsemu-i-liquibase.html</guid>
+      <description>W ostatnim wpisie pisałem o snippetsEmu dla vim&amp;lsquo;a, a dziś załączam zestaw snippetów, których używam przy pracy z liquibase.
+Liquibase to całkiem miłe narzędzie napisane w Javie do śledzenia, zarządzania i wprowadzania zmian w bazach danych. Zmiany opisuje się w pliku (plikach) xml i wpisywanie oraz pamiętanie tej składni można sobie uprościć przy pomocy vim&amp;rsquo;a i snippetów.
+Snippet umieszczamy razem z pozostałymi, najczęściej w .vim/after/ftplugin/.
+Najprościej zacząć otwierając np. migration.xml, wpisując lhelp i wcisnąć TAB.</description>
+    </item>
+    
+    <item>
+      <title>best vim plugins</title>
+      <link>https://marekwywial.name/posts/blog20100729best-vim-plugins.html</link>
+      <pubDate>Thu, 29 Jul 2010 20:34:19 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20100729best-vim-plugins.html</guid>
+      <description>Dziś robiłem porządki w ~/.vim/ . Aktualizacje do nowych wersji pluginów, wyrzucanie nieużywanych, porządki w ~/.vimrc. W trakcie tej pracy powstała lista pluginów, dzięki którym miło mi się pracuje
+vimball Plugin zajmujący się pluginami dostarczanymi w paczkach .vba i pozwalający też takie paczki tworzyć, w praktyce potrzeby mi by instalować paczki .vba
+ http://www.vim.org/scripts/script.php?script_id=1502  snippetsEmu Emuluje zachowanie snippetów z TextMate. Na przykład w pliku sometest.py wpisujesz &amp;lsquo;for&amp;lt;tab&amp;gt;&amp;rsquo;, uzupełniasz brakujące miejsca poruszając się klawiszem &amp;lt;tab&amp;gt; i otrzymujesz pełną pętle.</description>
+    </item>
+    
+    <item>
+      <title>lint dla php</title>
+      <link>https://marekwywial.name/posts/blog20080902lint-dla-php/</link>
+      <pubDate>Tue, 02 Sep 2008 21:01:02 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20080902lint-dla-php/</guid>
+      <description>Za dnia piszę najczęściej w php i zazdroszczę pythonowi pylinta.
+Z ciekawości zagooglałem i znalazłem rozwiązanie dla PHP sprawdzające Coding Standard:
+ pear install PHP_CodeSniffer phpcs --standard=Zend SomeTest.class.php  phpcs -i podaje dostępne standardy:
+PEAR
+MySource
+PHPCS
+Squiz
+Zend
+Mi najbardzie odpowiada Zend co widać po wynikach lintowania, najczęściej 0 ostrzeżeń i błędów ;).
+phpcs pozwala także tworzyć swoje własne standardy kodowanie oraz - co bardzo mnie cieszy - podpiąć go jako precommit hook do svn&amp;rsquo;a.</description>
+    </item>
+    
+  </channel>
+</rss>

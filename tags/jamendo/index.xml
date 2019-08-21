@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jamendo on Marek Wywiał</title>
+    <link>https://marekwywial.name/tags/jamendo/</link>
+    <description>Recent content in jamendo on Marek Wywiał</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 28 Sep 2006 07:33:05 +0000</lastBuildDate>
+    
+	<atom:link href="https://marekwywial.name/tags/jamendo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>jamendo - muzyka, słuchanie, promocja</title>
+      <link>https://marekwywial.name/posts/blog20060928muzyka-sluchanie-promocja/</link>
+      <pubDate>Thu, 28 Sep 2006 07:33:05 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060928muzyka-sluchanie-promocja/</guid>
+      <description>Jamendo to serwis internetowy pozwalający artystom na udostępnianie swojej twórczości w internecie na zasasach licencji Creative Commons. W ten sposób można zaistnieć, dotrzeć do szerokiego grona słuchaczy, informować ich o koncertach.
+Słuchacze udostępnione utwory mogą odsłuchać (w praktycznie dowolnych odtwarzaczu muzyki w formacie Ogg lub MP3), legalnie pobrać za pomocą BitTorrenta lub eMula (programy P2P), napisać rezencję. Jeżeli artysta nam się spodoba możemy kupić jego płytę lub wpłacić dla niego pieniądzę.</description>
+    </item>
+    
+  </channel>
+</rss>

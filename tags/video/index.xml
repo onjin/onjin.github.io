@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>video on Marek Wywiał</title>
+    <link>https://marekwywial.name/tags/video/</link>
+    <description>Recent content in video on Marek Wywiał</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 20 Mar 2008 23:18:06 +0000</lastBuildDate>
+    
+	<atom:link href="https://marekwywial.name/tags/video/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ahmed powraca ;)</title>
+      <link>https://marekwywial.name/posts/blog20080320ahmed-powraca/</link>
+      <pubDate>Thu, 20 Mar 2008 23:18:06 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20080320ahmed-powraca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nowe google maps</title>
+      <link>https://marekwywial.name/posts/blog20080127nowe-google-maps/</link>
+      <pubDate>Sun, 27 Jan 2008 18:13:33 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20080127nowe-google-maps/</guid>
+      <description>Google Maps on FunnyOrDie.com</description>
+    </item>
+    
+    <item>
+      <title>gwiazdy tańczą na lodzie &amp; umbrella</title>
+      <link>https://marekwywial.name/posts/blog20071030gwiazdy-tancza-na-lodzie-umbrella/</link>
+      <pubDate>Tue, 30 Oct 2007 23:23:47 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20071030gwiazdy-tancza-na-lodzie-umbrella/</guid>
+      <description>Ten występ naprawdę warto zobaczyć :)</description>
+    </item>
+    
+    <item>
+      <title>Achmed, martwy terrorysta</title>
+      <link>https://marekwywial.name/posts/blog20071024achmed-martwy-terrorysta/</link>
+      <pubDate>Wed, 24 Oct 2007 10:19:30 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20071024achmed-martwy-terrorysta/</guid>
+      <description>aj, kil ju :)</description>
+    </item>
+    
+  </channel>
+</rss>

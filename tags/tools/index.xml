@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tools on Marek Wywiał</title>
+    <link>https://marekwywial.name/tags/tools/</link>
+    <description>Recent content in tools on Marek Wywiał</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 05 Jul 2012 08:16:42 +0000</lastBuildDate>
+    
+	<atom:link href="https://marekwywial.name/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Rescan SCSI bus (no reboot)</title>
+      <link>https://marekwywial.name/posts/blog20120705rescan-scsi-bus-no-reboot/</link>
+      <pubDate>Thu, 05 Jul 2012 08:16:42 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20120705rescan-scsi-bus-no-reboot/</guid>
+      <description> Just self memo. How to attach new SCSI disk without reboot (debian):
+1 2 3 4 5 6  # check what hosts do you have ls /sys/class/scsi_host host0 host1 host2 host3 # change &amp;#39;host0&amp;#39; to &amp;#39;host1&amp;#39; or any next number that you need echo &amp;#34;- - -&amp;#34; &amp;gt; /sys/class/scsi_host/host0/scan   and done 1  fdisk -l   </description>
+    </item>
+    
+    <item>
+      <title>extend lvm2 filesystem</title>
+      <link>https://marekwywial.name/posts/blog20120427extend-lvm2-filesystem/</link>
+      <pubDate>Fri, 27 Apr 2012 10:30:44 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20120427extend-lvm2-filesystem/</guid>
+      <description>Just self memo 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  # Added new physical partition /dev/sda3 # create a physical volume out of it $ pvcreate /dev/sda3 # Now, add it to the volume group #that my logical volume is on $ vgextend VolGroup00 /dev/sda3 # Now that the volume group has more # disk space, the logical volume can grow $ lvextend -L+11G /dev/VolGroup00/LogVol00 # Ok, last of all, I want to filesystem to # recognize that more space is available $ fsadm resize /dev/VolGroup00/LogVol00 # sweet, I have more space now $ df -h</description>
+    </item>
+    
+    <item>
+      <title>Grooveshark currentSong.txt &#43; gajim status</title>
+      <link>https://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</link>
+      <pubDate>Sat, 19 Mar 2011 13:03:04 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</guid>
+      <description>Przy okazji szukania API do grooveshark&amp;rsquo;a odkryłem plik currentSong.txt, który jest tworzony przez Grooveshark Desktop.
+Kilka minut z vim&amp;rsquo;em i mamy skrypt napisany w python&amp;rsquo;ie, który odczytuje w/w plik i wrzuca informację o aktualnie odtwarzanym utworze jako status wybranego konta w gajim&amp;rsquo;a.
+Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wymana pyinotify). Wtedy nasz status będzie zmieniany w chwili (chwilę potem :) ) zmiany utworu w Grooveshark Desktop.</description>
+    </item>
+    
+    <item>
+      <title>vim snippetsemu i liquibase</title>
+      <link>https://marekwywial.name/posts/blog20100811vim-snippetsemu-i-liquibase.html</link>
+      <pubDate>Wed, 11 Aug 2010 18:45:35 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20100811vim-snippetsemu-i-liquibase.html</guid>
+      <description>W ostatnim wpisie pisałem o snippetsEmu dla vim&amp;lsquo;a, a dziś załączam zestaw snippetów, których używam przy pracy z liquibase.
+Liquibase to całkiem miłe narzędzie napisane w Javie do śledzenia, zarządzania i wprowadzania zmian w bazach danych. Zmiany opisuje się w pliku (plikach) xml i wpisywanie oraz pamiętanie tej składni można sobie uprościć przy pomocy vim&amp;rsquo;a i snippetów.
+Snippet umieszczamy razem z pozostałymi, najczęściej w .vim/after/ftplugin/.
+Najprościej zacząć otwierając np. migration.xml, wpisując lhelp i wcisnąć TAB.</description>
+    </item>
+    
+    <item>
+      <title>best vim plugins</title>
+      <link>https://marekwywial.name/posts/blog20100729best-vim-plugins.html</link>
+      <pubDate>Thu, 29 Jul 2010 20:34:19 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20100729best-vim-plugins.html</guid>
+      <description>Dziś robiłem porządki w ~/.vim/ . Aktualizacje do nowych wersji pluginów, wyrzucanie nieużywanych, porządki w ~/.vimrc. W trakcie tej pracy powstała lista pluginów, dzięki którym miło mi się pracuje
+vimball Plugin zajmujący się pluginami dostarczanymi w paczkach .vba i pozwalający też takie paczki tworzyć, w praktyce potrzeby mi by instalować paczki .vba
+ http://www.vim.org/scripts/script.php?script_id=1502  snippetsEmu Emuluje zachowanie snippetów z TextMate. Na przykład w pliku sometest.py wpisujesz &amp;lsquo;for&amp;lt;tab&amp;gt;&amp;rsquo;, uzupełniasz brakujące miejsca poruszając się klawiszem &amp;lt;tab&amp;gt; i otrzymujesz pełną pętle.</description>
+    </item>
+    
+    <item>
+      <title>Przydatne narzędzia do monitoringu obciążenia serwera ...</title>
+      <link>https://marekwywial.name/posts/blog20100103przydatne-narzedzia-do-monitoringu-obciazenia-serwera/</link>
+      <pubDate>Sun, 03 Jan 2010 13:01:26 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20100103przydatne-narzedzia-do-monitoringu-obciazenia-serwera/</guid>
+      <description>&amp;hellip; zamieścił mekk
+ http://notatnik.mekk.waw.pl/archives/200-Oprocz_top.html  </description>
+    </item>
+    
+    <item>
+      <title>awesome3 wm mouse/key bindings</title>
+      <link>https://marekwywial.name/posts/blog20091019awesome2-wm-mousekey-bindings/</link>
+      <pubDate>Mon, 19 Oct 2009 08:18:27 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20091019awesome2-wm-mousekey-bindings/</guid>
+      <description>Tak na szybko z manuala do pdf&amp;rsquo;a do szybkiego wydruku cheatsheet dla window managera awesome 3 (it&amp;rsquo;s awesome ;) ):
+ awesome3_bindings.pdf  </description>
+    </item>
+    
+    <item>
+      <title>mutt &amp; firefox (by urlview)</title>
+      <link>https://marekwywial.name/posts/blog20090605mutt-firefox-by-urlview.html</link>
+      <pubDate>Fri, 05 Jun 2009 10:53:55 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20090605mutt-firefox-by-urlview.html</guid>
+      <description>w ubuntu wystarczyło: 
+apt-get install urlview
+
+w ~/.muttrc dodane makro
+ macro pager \\cb &amp;lt;pipe-entry&amp;gt;urlview&amp;lt;enter&amp;gt; &#39;Follow links with urlview&#39;  orac plik ~/.urlview:
+ REGEXP ((http|https|ftp|gopher):(//)?[^ &amp;lt;&amp;gt;&#34;\\t]*|www\\.[-a-z0-9.]+)[^ .,;\\t&amp;lt;&#34;&amp;gt;\\):] COMMAND /usr/bin/nohup firefox -remote &#34;openURL(&#34;%s&#34;, new-tab)&#34; &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 &amp;amp;  teraz ctrl+b zbiera linki z treści wiadomości, które otwieramy w wybranej przeglądarce ;)</description>
+    </item>
+    
+    <item>
+      <title>google apps (gmail) i mutt</title>
+      <link>https://marekwywial.name/posts/blog20090526google-apps-gmail-i-mutt/</link>
+      <pubDate>Tue, 26 May 2009 10:31:04 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20090526google-apps-gmail-i-mutt/</guid>
+      <description>Znalezione na sieci i przystosowane do google apps:
+
+set imap_user = &amp;ldquo;user@domena.pl&amp;rdquo;
+set imap_pass = &amp;ldquo;password&amp;rdquo;
+set smtp_url = &amp;ldquo;smtp://users\@domena.pl@smtp.gmail.com:587/&amp;rdquo;
+set smtp_pass = &amp;ldquo;password&amp;rdquo;
+set from = &amp;ldquo;user@domena.pl&amp;rdquo;
+set realname = &amp;ldquo;My ql user&amp;rdquo;
+set folder = &amp;ldquo;imaps://imap.gmail.com:993&amp;rdquo;
+set spoolfile = &amp;ldquo;+INBOX&amp;rdquo;
+set postponed=&amp;ldquo;+[Google Mail]/Drafts&amp;rdquo;
+set header_cache=~/.mutt/cache/headers
+set message_cachedir=~/.mutt/cache/bodies
+set certificate_file=~/.mutt/certificates
+set move = no</description>
+    </item>
+    
+    <item>
+      <title>git pre-commit hook - symfony / php</title>
+      <link>https://marekwywial.name/posts/blog20090511git-pre-commit-hook-symfony-php/</link>
+      <pubDate>Mon, 11 May 2009 10:25:43 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20090511git-pre-commit-hook-symfony-php/</guid>
+      <description>Mam jeszcze tą nieprzyjemnośc pracy z PHP (w tym przypadku z symfony framework) i aby była przyjemniejsza dodałem sobie hook na pre-commit do git&amp;rsquo;a. * http://dl.getdropbox.com/u/185133/git/pre-commit
+by zadziałało przerywanie commit&amp;rsquo;a gdy &amp;lsquo;symfony unit-test&amp;rsquo; się nie udadzą, potrzebna jest łatka na symfony (przynajmniej na moją wersję 1.0.17) * http://dl.getdropbox.com/u/185133/git/symfony_return_code.diff
+Hook zakłada, że commit jest robiony w katalogu projektu (tak mam najczęsciej) i znajduje sie w nim plik &amp;lsquo;symfony&amp;rsquo;
+btw: hook wymaga pythona.</description>
+    </item>
+    
+    <item>
+      <title>git, svn i puste katalogi</title>
+      <link>https://marekwywial.name/posts/blog20090112git-svn-i-puste-katalogi/</link>
+      <pubDate>Mon, 12 Jan 2009 20:47:59 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20090112git-svn-i-puste-katalogi/</guid>
+      <description>Importując repozytorium svn&amp;rsquo;a poprzez git-svn tracimy puste katalogi, co czasem nie jest przyjemne. W dodatku to przecież nasze katalogi i chcemy je mieć ;)
+Dziś mnie trochę to przycisnęło więc, pogadałem chwilę z google i znalazłem użyteczny skrypt git-me-up.
+Wystarczy pobrać sam plik git-me-up, nadać mu prawa wykonywania i wykonać:
+ git-me-up http://svn.somerepo.com/path/to/project ./project  a skrypt sam stworzy repozytorium git, zaimportuje wszystkoz repozytorium svn, utworzy brakujące puste katalogi i stworzy w razie potrzeby plik .</description>
+    </item>
+    
+    <item>
+      <title>lint dla php</title>
+      <link>https://marekwywial.name/posts/blog20080902lint-dla-php/</link>
+      <pubDate>Tue, 02 Sep 2008 21:01:02 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20080902lint-dla-php/</guid>
+      <description>Za dnia piszę najczęściej w php i zazdroszczę pythonowi pylinta.
+Z ciekawości zagooglałem i znalazłem rozwiązanie dla PHP sprawdzające Coding Standard:
+ pear install PHP_CodeSniffer phpcs --standard=Zend SomeTest.class.php  phpcs -i podaje dostępne standardy:
+PEAR
+MySource
+PHPCS
+Squiz
+Zend
+Mi najbardzie odpowiada Zend co widać po wynikach lintowania, najczęściej 0 ostrzeżeń i błędów ;).
+phpcs pozwala także tworzyć swoje własne standardy kodowanie oraz - co bardzo mnie cieszy - podpiąć go jako precommit hook do svn&amp;rsquo;a.</description>
+    </item>
+    
+    <item>
+      <title>virtualbox brakujący vboxdrv kernel &#43; ubuntu</title>
+      <link>https://marekwywial.name/posts/blog20080829virtualbox-brakujacy-vboxdrv-kernel-ubuntu/</link>
+      <pubDate>Fri, 29 Aug 2008 08:26:16 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20080829virtualbox-brakujacy-vboxdrv-kernel-ubuntu/</guid>
+      <description>Czasem w Ubuntu (np przy pakietach proposal) przychodzi wyższa wersja kernela bez upgrade drivera do virtualbox&amp;rsquo;a
+Wtedy pomaga mi taka kombinacja
+ sudo apt-get install virtualbox-ose-source sudo m-a update sudo m-a prepare sudo m-a a-i virtualbox-ose sudo /etc/init.d/vboxdrv restart  Restart virtualbox&amp;rsquo;a i gotow. Back to work.</description>
+    </item>
+    
+    <item>
+      <title>nowe google maps</title>
+      <link>https://marekwywial.name/posts/blog20080127nowe-google-maps/</link>
+      <pubDate>Sun, 27 Jan 2008 18:13:33 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20080127nowe-google-maps/</guid>
+      <description>Google Maps on FunnyOrDie.com</description>
+    </item>
+    
+    <item>
+      <title>Remember The Milk &amp; Google Gears</title>
+      <link>https://marekwywial.name/posts/blog20071029remember-the-milk-google-gears/</link>
+      <pubDate>Mon, 29 Oct 2007 20:59:33 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20071029remember-the-milk-google-gears/</guid>
+      <description>Serwisu Remember The Milk używam zazwyczaj za pomocą Gadgetu na google.com/ig.
+Dziś jednak zdażyło mi się zalogować bezpośrednio na stronie i &amp;hellip; zostałem poproszony o pozwolenie użycia pluginu Google Gears.
+Google Gears to testowa technologia Google pozwalająca aplikacją webowym na pracę w trybie offline.
+Pierwszy raz z jej użyciem spotkałem się podczas Google Reader&amp;rsquo;a ale jak widać już się propaguje poprzez sieć na kolejne serwisy.</description>
+    </item>
+    
+    <item>
+      <title>rośnie prezent ... na gmailu</title>
+      <link>https://marekwywial.name/posts/blog20071025rosnie-prezent-na-gmailu/</link>
+      <pubDate>Thu, 25 Oct 2007 21:20:37 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20071025rosnie-prezent-na-gmailu/</guid>
+      <description>Bezpłatne konta pocztowe Gmail w ostatnich dniach trochę spuchły i teraz mają ok 4,3GB
+Skrzynki w Google Apps także mają urosnąć. Można o tym przeczytać na blogu Google Polska</description>
+    </item>
+    
+    <item>
+      <title>Beryl vs Vista</title>
+      <link>https://marekwywial.name/posts/blog20070320beryl-vs-vista/</link>
+      <pubDate>Tue, 20 Mar 2007 10:16:35 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20070320beryl-vs-vista/</guid>
+      <description>Ktoś widział pulpit Visty ? (ja sie nie skusiłem)
+To popatrzy niech teraz na Beryla:
+  </description>
+    </item>
+    
+    <item>
+      <title>Jabber google firefox itp</title>
+      <link>https://marekwywial.name/posts/blog20070315jabber-google-firefox-itp/</link>
+      <pubDate>Thu, 15 Mar 2007 08:32:24 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20070315jabber-google-firefox-itp/</guid>
+      <description>Ostatnio wpadł mi do Firefox&amp;rsquo;a ciekawie zapowiadający się plugin SamePlace. Używając sieci Jabber (więc także Google Talk) pozwala on oprócz komunikacji tekstowej (zwykły chat) na: używanie wspólnej tablicy do rysowania (Whiteboard),
+wspólnego widoku wskaźnika myszy (po otwarciu tej samej strony przez obie strony konwersacji można wskazywać rózne elementy na ekranie)
+współdzielić oglądanie prezentacji,zsynchronizowanych map Google,
+wysłać link do aktualnie oglądanej strony przy pomocy funkcji &amp;lsquo;Send link to&amp;hellip;&amp;rsquo;,
+przeciągać obrazki z oglądanej strony bezpośrednio do okna rozmowy,</description>
+    </item>
+    
+    <item>
+      <title>Picasa Web Albums puchnie</title>
+      <link>https://marekwywial.name/posts/blog20070312picasa-web-albums-puchnie/</link>
+      <pubDate>Mon, 12 Mar 2007 12:45:53 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20070312picasa-web-albums-puchnie/</guid>
+      <description>Dzień prezentów dziś się jeszcze nie skończył. Tym razem Google w Picasa Web Albums zwiekszyła pojemność konta (na fotki oczywiście) z 250MB do 1GB oraz dodana została wyszukiwarka by łatwiej odnajdywać albumy.
+Picasa Web Albums - jeżeli jeszcze ktoś nie wiem - jest bezpłatną, internetową galerią zdjęć zintegrowaną z programem Picasa do katalogowania i obróbki zdjęć dostarczanym (tu niespodzianka: także bezpłatnie :) ) przez Google.
+Picasa integruje się także z Bloggerem oraz Gmailem.</description>
+    </item>
+    
+    <item>
+      <title>automatyzacja pracy z svn - svnauto</title>
+      <link>https://marekwywial.name/posts/blog20070107automatyzacja-pracy-z-svn-svnauto/</link>
+      <pubDate>Sun, 07 Jan 2007 00:00:57 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20070107automatyzacja-pracy-z-svn-svnauto/</guid>
+      <description>Svnauto jest wrapperem konsolowej komendy &amp;lsquo;svn&amp;rsquo;, który automatyzuje i standaryzuje wykonywanie rozgałęzień (branches) i złączeń (merge).
+SC jest skryptem napisanym w języku Ruby i jest dostępny poprzez RubyGems:
+gem install svnauto --include-dependencies  Hmm, ale czemu to nie działa? Skrypt sc bazuje na komunikatach zwracanych przez komendę svn w języku angielskim, więc nie będzie działać poprawnie w innych lokalizacjach. Można to rozwiązać np. tak:
+mv /usr/bin/sc /usr/bin/sc.orig  stworzyć nowy plik /usr/bin/sc:</description>
+    </item>
+    
+    <item>
+      <title>aardvark 2.0</title>
+      <link>https://marekwywial.name/posts/blog20061221aardvark-20/</link>
+      <pubDate>Thu, 21 Dec 2006 09:21:03 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20061221aardvark-20/</guid>
+      <description>Może jestem spóźniony ale znalazłem nowego aardvark&amp;rsquo;a na http://addons.mozilla.org/ w wersji 2.0 działający z firefox&amp;rsquo;em 2, więc mój fix na wersję 1.1 dla firefox&amp;rsquo;a 2 przestał być potrzebny.</description>
+    </item>
+    
+    <item>
+      <title>aardvark i firefox2.0</title>
+      <link>https://marekwywial.name/posts/blog20061103aardvark-i-firefox20/</link>
+      <pubDate>Fri, 03 Nov 2006 08:36:30 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20061103aardvark-i-firefox20/</guid>
+      <description>Aardvark to świetne narzędzia dla developera stron internetowych.
+Niestety po aktualizacji firefox&amp;rsquo;a do wersji 2.0 przestało się instalować, zgłaszając, że najwyższa wersja firefox&amp;rsquo;a, z którą współpracuje to 1.6.
+Unzip -&amp;gt; vim -&amp;gt; zip i mamy wersję działającą w firefox&amp;rsquo;ie 2.0 :)
+» aardvark dla firefox&amp;rsquo;a 2.0
+aktualizacja: jest juz oficjalna wersja dla firefox&amp;rsquo;a 2
+» aardvark dla firefox&amp;rsquo;a 2.0</description>
+    </item>
+    
+    <item>
+      <title>linux flash player 9</title>
+      <link>https://marekwywial.name/posts/blog20061019linux-flash-player-9/</link>
+      <pubDate>Thu, 19 Oct 2006 10:27:36 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20061019linux-flash-player-9/</guid>
+      <description>Czyżby &amp;lsquo;ktoś&amp;rsquo; w końcu zainteresował się zdesperowanymi użytkownikami Linuksa ? I dobrze, bo choć beta to mamy już flash player&amp;rsquo;a 9.
+I co tu więcej pisać :) pozostaje potestować.</description>
+    </item>
+    
+    <item>
+      <title>jamendo - muzyka, słuchanie, promocja</title>
+      <link>https://marekwywial.name/posts/blog20060928muzyka-sluchanie-promocja/</link>
+      <pubDate>Thu, 28 Sep 2006 07:33:05 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060928muzyka-sluchanie-promocja/</guid>
+      <description>Jamendo to serwis internetowy pozwalający artystom na udostępnianie swojej twórczości w internecie na zasasach licencji Creative Commons. W ten sposób można zaistnieć, dotrzeć do szerokiego grona słuchaczy, informować ich o koncertach.
+Słuchacze udostępnione utwory mogą odsłuchać (w praktycznie dowolnych odtwarzaczu muzyki w formacie Ogg lub MP3), legalnie pobrać za pomocą BitTorrenta lub eMula (programy P2P), napisać rezencję. Jeżeli artysta nam się spodoba możemy kupić jego płytę lub wpłacić dla niego pieniądzę.</description>
+    </item>
+    
+    <item>
+      <title>prototype cheat sheet</title>
+      <link>https://marekwywial.name/posts/blog20060809prototype-cheat-sheet/</link>
+      <pubDate>Wed, 09 Aug 2006 07:38:08 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060809prototype-cheat-sheet/</guid>
+      <description>Kolejna tablica informatyczna, tym razem dla frameworka JavaScript prototype.
+
+prototype cheat sheet</description>
+    </item>
+    
+    <item>
+      <title>gentoo dbf2csv ebuild</title>
+      <link>https://marekwywial.name/posts/blog20060731gentoo-dbf2csv-ebuild/</link>
+      <pubDate>Mon, 31 Jul 2006 19:56:49 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060731gentoo-dbf2csv-ebuild/</guid>
+      <description>Potrzebowałem zamienić .dbf na .csv. Znalazłem odpowiedni skrypt ale &amp;hellip; aby był porządek w dystrybucji zmontowałem do niego .ebuild (gdyż takowego nie znalazłem).
+Może komuś też się przyda (wersja dbf2csv to 5.0).</description>
+    </item>
+    
+    <item>
+      <title>Google Code Free Hosting</title>
+      <link>https://marekwywial.name/posts/blog20060728google-code-free-hosting/</link>
+      <pubDate>Fri, 28 Jul 2006 21:39:10 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060728google-code-free-hosting/</guid>
+      <description>Google jak zawsze do przodu i w kierunku OpenSource (czy też raczej w kierunku programistów, z którymi stara się żyć dobrze) otwarło wczoraj hosting projektów.
+W prezencie dostajemy Issue Tracker nie odbiegający zbytnio od przyjętych standardów funkcjonalności tego typo programów, dostęp do repozytorium SVN poprzez HTTPS z dostępem anonimowym (tylko do odczytu) oraz dla nas (za pomocą wygenerowanego hasła).
+W części administracyjnej możemy zmienić nazwę projektu, jego opis, licencję (od Apache, Artistic, GNU General/Lesser, MIT, Mozilla Public oraz BSD) oraz pola dodatkowe (dowolne), zestaw odnośników do strony projektu, forum i bloga.</description>
+    </item>
+    
+    <item>
+      <title>firefox &amp; google = synchronizacja</title>
+      <link>https://marekwywial.name/posts/blog20060609firefox-google-synchronizacja/</link>
+      <pubDate>Fri, 09 Jun 2006 10:51:25 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060609firefox-google-synchronizacja/</guid>
+      <description>Google Browser Sync jest rozszerzeniem dla Firefox&amp;rsquo;a, które synchronizuje ustawienia przeglądarki (bookmarki, historię, ciasteczka, zapisane hasła) pomiędzy komputerami (np. Twój Firefox w domu i pracy). Pozwala także odtworzyć otwarte panele i okna przeglądarki.
+Rozszerzenie to wymaga posiadania konta w Google (GMail). Po zainstalowaniu mamy do wyboru konfigurację standardową (synchronizacja wszystkiego i szyfrowanie przechowywanych haseł oraz ciasteczek) oraz zaawansowaną, w której sami wybieramy co ma być synchronizowane czy też szyfrowane. Podajemy PIN chroniący dodatkowo nasze dane i zaczyna się proces synchronizacji.</description>
+    </item>
+    
+    <item>
+      <title>vim - cheat sheet</title>
+      <link>https://marekwywial.name/posts/blog20060523vim-cheat-sheet/</link>
+      <pubDate>Tue, 23 May 2006 11:51:17 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060523vim-cheat-sheet/</guid>
+      <description>Jak już jestem przy tym temacie do podobny zestaw dla fanów VIM&amp;rsquo;a (m.in. mnie ;) )
+
+http://viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html</description>
+    </item>
+    
+    <item>
+      <title>Konsola jak w Quake</title>
+      <link>https://marekwywial.name/posts/blog20060404konsola-jak-w-quake/</link>
+      <pubDate>Tue, 04 Apr 2006 07:39:38 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060404konsola-jak-w-quake/</guid>
+      <description>Czy zdaża Wam się szukać jakiejś wolnej konsoli, na którymś pulpicie ? Można też do paska w Gnome lub KDE przypiąć minikonsole (brr).
+Wygodnym rozwiązaniem byłaby podręczna konsola, pojawiająca się kiedy jest potrzebna - podobnie jak w grach typu Quake.
+Osobiście znam trzy tego typu rozwiązania:
+ yakuake - konsola z KDE (działa we fluxboxie, więc inne WM pewnie też dadzą radę kuake - także konsola z KDE tilda - samodzielna konsola  Mi osobiście najmniej podobała się tilda, zaś na biurku ciągle używam yakuake.</description>
+    </item>
+    
+    <item>
+      <title>Własna strona startowa</title>
+      <link>https://marekwywial.name/posts/blog20060223wlasna-strona-startowa/</link>
+      <pubDate>Thu, 23 Feb 2006 11:13:14 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20060223wlasna-strona-startowa/</guid>
+      <description>Popularne (choć chyba powoli) stają się serwisy oferujące osobiste strony startowe. Strona taka zawiera często newsy z interesujących nas serwisów, okienko logowanie się do naszego serwisu pocztowego, pogodę, kursy walut, notatki i wiele innych.
+Z polskich serwisów kojarzę jedynie startowy.com. Ostatnio dużo słychać także o witrynie Microsoftu live.com. Wczoraj natomiast wpadł mi do Firefox&amp;rsquo;a taki adres jak www.netvibes.com/.
+Cechą wspólną tych serwisów jest wygodna edycja swojej strony oraz wygodnie przemieszczanie jej elementów.</description>
+    </item>
+    
+    <item>
+      <title>Osłodzić sobie życie</title>
+      <link>https://marekwywial.name/posts/blog20051011osodziae-sobie-ycie/</link>
+      <pubDate>Tue, 11 Oct 2005 12:43:23 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20051011osodziae-sobie-ycie/</guid>
+      <description>Tak, kto używa Vim&amp;rsquo;a, ten zazwyczaj do szczęścia wiele nie potrzebuje. Ale by sobie trochę osłodzić pracę, można zainstalować sobie Cream.
+Jest to zestaw gotowej, łatwej w użyciu i rozbudowanej konfiguracji dla Vim&amp;rsquo;a ( czy też raczej dla GVim&amp;rsquo;a ). Tak wygląda to cudo w akcji. W domyślnej konfiguracji brakowało mi trybu wprowadzania komend, ale po przełączeniu w tryb eksperta tryb ten stał się dostępny.
+Trochę iritujący jest fakt, iż klawisz ESCAPE działa w tym przypadku jak przełącznik.</description>
+    </item>
+    
+    <item>
+      <title>Jabber roster</title>
+      <link>https://marekwywial.name/posts/blog20050907jabber-roster/</link>
+      <pubDate>Wed, 07 Sep 2005 15:55:12 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20050907jabber-roster/</guid>
+      <description>Migrowałem ostatnio pomiędzy dwoma serwerami Jabber&amp;rsquo;a. Próbowałem przenieść kontakty przy pomocy Jabber Tools, niestety strony oferujące tą usługę nie były dostępne, lub po podaniu danych do pierwszego formularza &amp;lsquo;zacinały się&amp;rsquo;.
+Chcąc, nie chcąc byłem zmuszony zmajstrować szybko jakieś narzędzie. Na razie tylko działa ;) . Jak znajdę czas, oczyszczę kod, dodam trochę komentarzy i takie tam. Jak ktoś się nie boi można spróbować poużywać lub pobrać kod źródłowy w celach własnych.</description>
+    </item>
+    
+  </channel>
+</rss>

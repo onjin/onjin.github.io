@@ -11,10 +11,10 @@
     
     <item>
       <title>Telewizja N (nc&#43;) i python</title>
-      <link>https://marekwywial.name/posts/telewizja-n-nc-i-python/</link>
+      <link>https://marekwywial.name/posts/telewizja-n-nc-i-python.html</link>
       <pubDate>Sat, 12 Oct 2013 01:26:16 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/telewizja-n-nc-i-python/</guid>
+      <guid>https://marekwywial.name/posts/telewizja-n-nc-i-python.html</guid>
       <description>Aby się przeklikać przez program na http://n.pl/ i jeszcze znaleźć interesujący program, to jest ponad moje siły.
 Napisałem więc na szybko narzędzie działające w shellu, które pozwala przeglądać oraz przeszukiwać program ze strony n.pl https://github.com/onjin/ntv/.
 Instalacja Program napisany jest w Pythonie i dystrybuowany jako egg

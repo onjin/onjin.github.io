@@ -16,7 +16,7 @@ msg="rebuilding site $(date)"
 if [ -n "$*" ]; then
 	msg="$*"
 fi
-git commit -m "$msg"
+git commit -am "$msg"
 
 git push origin website-2.0
 git subtree split --prefix public -b master

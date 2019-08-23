@@ -125,7 +125,7 @@ do pobrania
 
 Dokładam paczkę z plikami do testu:
 
- * pyzip_
+ * [pyzip]
 
 {{< highlight bash >}}
     $ unzip py.zip
@@ -137,10 +137,10 @@ ftp na home.pl; open http://server.home.pl/py/dispatch.py/admin
 
 Dodatkowe moje narzędzia
 ------------------------
- * django-buildout-template_ - szablon startowy dla projektów django z monitoringiem procesów, itp.
- * vim-startup_ - vim dostosowany do edycji python'a
+ * [django-buildout-template] - szablon startowy dla projektów django z monitoringiem procesów, itp.
+ * [vim-startup] - vim dostosowany do edycji python'a
 
 
-.. _django-buildout-template: https://github.com/onjin/django-buildout-template
-.. _vim-startup: https://github.com/onjin/vim-startup
-.. _pyzip: https://dl.dropboxusercontent.com/u/185133/marekwywial.name/files/py.zip
+[django-buildout-template]: https://github.com/onjin/django-buildout-template
+[vim-startup]: https://github.com/onjin/vim-startup
+[pyzip]: https://dl.dropboxusercontent.com/u/185133/marekwywial.name/files/py.zip

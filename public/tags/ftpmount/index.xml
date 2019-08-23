@@ -5,32 +5,10 @@
     <link>https://marekwywial.name/tags/ftpmount/</link>
     <description>Recent content in ftpmount on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 25 Jun 2009 12:44:36 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 21 Jun 2009 19:11:10 +0000</lastBuildDate>
     
 	<atom:link href="https://marekwywial.name/tags/ftpmount/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>ftpmount v1.2.0</title>
-      <link>https://marekwywial.name/posts/blog20090625ftpmount-v120/</link>
-      <pubDate>Thu, 25 Jun 2009 12:44:36 +0000</pubDate>
-      
-      <guid>https://marekwywial.name/posts/blog20090625ftpmount-v120/</guid>
-      <description>sprawdź najnowszą wersję ftpmount
-Kilka poprawek do ftpmount:
- poprawiony przykładowy .ftpmountrc - w .ini komentrze to &amp;lsquo;;&amp;rsquo; a nie &amp;lsquo;#&amp;rsquo; :) tryb &amp;lsquo;verbose&amp;rsquo; (-v) pokazuje teraz jakie parametry zostały przekazane do curlftpfs do README dodałem informację, że &amp;lsquo;curlftpfs&amp;rsquo; jest potrzebny do działania skryptu  Wersje do pobrania.</description>
-    </item>
-    
-    <item>
-      <title>ftpmount v1.1.0 - github</title>
-      <link>https://marekwywial.name/posts/blog20090622ftpmount-v110-github/</link>
-      <pubDate>Mon, 22 Jun 2009 11:30:35 +0000</pubDate>
-      
-      <guid>https://marekwywial.name/posts/blog20090622ftpmount-v110-github/</guid>
-      <description>sprawdź najnowszą wersję ftpmount Przeniosłem skrypt ftpmount do github&amp;rsquo;a:
- ftpmount  Równocześnie zmieniłem sposób konfiguracji, a raczej tylko domyślną nazwę pliku konfiguracyjnego. Teraz jest szukany plik:
- .ftpmountrc w aktualnym katalogu potem .ftpmountrc w katalogu domowym  Wersje do pobrania.</description>
-    </item>
     
     <item>
       <title>fuse ftp mount - curlftpfs</title>

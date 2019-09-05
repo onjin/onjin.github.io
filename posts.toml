@@ -55,7 +55,7 @@ enableEmoji=true
 	[params.categories]
 		enabled = false
   [params.background]
-    color = "#13547A"
+    color = "#ffffff"
 
 [social]
 	email = "onjinx@gmail.com"

@@ -36,8 +36,10 @@ enableEmoji=true
 		customCSS = ["https://cdn.rawgit.com/UtkarshVerma/hugo-dream-plus/ae11561d/exampleSite/static/css/highlight.css"]
 
 [social]
-	email = "utkarshverma@pm.me"
-	github = "UtkarshVerma"
-	stackoverflow = "9271608/utkarsh-verma"
-	medium = "UtkarshVerma_"
-	twitter = "UtkarshVerma_"
+	email = "onjinx@gmail.com"
+	github = "onjin"
+	stackoverflow = "418359/marek-wywiał"
+	# medium = "onjin"
+	twitter = "onjin"
+  facebook = "marek.wywial"
+  linkedin = "onjin"

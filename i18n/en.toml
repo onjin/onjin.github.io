@@ -1,0 +1,53 @@
+[home]
+other = "Home"
+
+[showSidebar]
+other = "Show Sidebar"
+
+[rssFeed]
+other = "RSS Feed"
+
+[prevPage]
+other = "Previous page"
+
+[nextPage]
+other = "Next page"
+
+[flip]
+other = "About Me"
+
+[popTagsCategories]
+other =  "Show/hide tags and categories"
+
+[lastUpdate]
+other = "Last updated on"
+
+[returnHome]
+other = "Return to Homepage"
+
+[archive]
+other = "Archive"
+
+[allCards]
+other = "All Cards"
+
+[noTag]
+other = "No tag"
+
+[tag]
+one = "All Tags"
+other = "Tag"
+
+[category]
+one = "All Categories"
+other = "Category"
+
+[article]
+one = "1 article"
+other = "{{ .Count }} articles"
+
+[TOC]
+other = "TOC"
+
+[tocLong]
+other = "Table of contents"

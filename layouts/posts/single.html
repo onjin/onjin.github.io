@@ -1,0 +1,82 @@
+{{/*Title*/}}
+{{ define "title" }}
+	{{ .Title }}
+{{ end }}
+
+{{/*Content*/}}
+{{ define "content" }}
+	{{ partial "nav.html" (dict "context" . "rssButton" true "contentType" "posts") }}
+
+	<div class="ui centered grid">
+		{{/*Header*/}}
+		<div class="sixteen wide mobile only column">
+				{{ partial "header.html" . }}
+		</div>
+
+		<div class="sixteen wide mobile fifteen wide tablet twelve wide computer column post-list">
+			{{/*Article*/}}
+			<section class="ui secondary top attached post-head">
+				<h1 class="post-title">
+					{{ .Title }}
+				</h1>
+
+				<div class="sub header">
+					<div><span><i class="calendar outline icon"></i>{{ .Date.Format "Jan 2, 2006" }}</span></div>
+					{{ if $.Site.DisqusShortname }}
+					<div><span class="disqusComment"><i class="comment outline icon"></i><a href="{{ .Permalink }}#disqus_thread" class="disqus-comment-count" data-disqus-identifier="{{ .UniqueID }}"></a></span></div>{{ end }}
+					<div><span><i class="clock outline icon"></i>{{ .ReadingTime }} min read</span></div>
+					<div><span><i class="angle double up icon"></i>{{ i18n "lastUpdate" }} {{ dateFormat "Jan 2, 2006" .Lastmod }}</span></div>
+				</div>
+
+				{{ if and $.Site.Params.features.toc .TableOfContents }}
+        <h2>{{ i18n "tocLong" }}</h2>
+					<div class="toc">
+						{{ .TableOfContents }}
+					</div>
+				{{ end }}
+
+				<article class="post-content twemoji">
+					{{ .Content | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" `${1}&nbsp;<a class="anchor" href="#${2}"><i class="small linkify icon"></i></a> ${3}` | safeHTML }}
+				</article>				
+			</section>
+
+			{{/*Tags*/}}
+			<section class="ui secondary attached dream-tags">
+				{{ if isset .Params "tags" }}
+					{{ partial "tags.html" (dict "context" . "isPost" true "limit" 0) }}
+				{{ else }}
+					<span>{{ i18n "noTag" }}</span>
+				{{ end }}
+			</section>
+
+			{{/*Share card*/}}
+			{{ if $.Site.Params.features.shareCard }}
+				<section class="ui secondary {{ if not $.Site.DisqusShortname }}bottom{{ end }} attached share row box">
+					{{ partial "share.html" . }}
+				</section>
+			{{ end }}
+
+			{{/*Licensing*/}}
+			{{ $license := lower .Params.license }}
+			{{ with $license }}					
+				<section class="ui secondary attached copyright">
+					{{ partial "license.html" (dict "license" $license ) }}
+				</section>
+			{{ end }}
+
+			{{/*Disqus comments*/}}
+			{{ if $.Site.DisqusShortname }}
+				<div class="ui secondary bottom attached stacked disqus">
+					{{ partial "disqus.html" . }}
+				</div>
+			{{ end }}
+		</div>
+	</div>
+{{ end }}
+
+{{ define "bodyEnd" }}
+	{{/*Load Disqus Count JS*/}}
+	{{ with $.Site.DisqusShortname }}
+		<script id="dsq-count-scr" src="//{{ $.Site.DisqusShortname }}.disqus.com/count.js" async></script>
+	{{ end }}
+{{ end }}

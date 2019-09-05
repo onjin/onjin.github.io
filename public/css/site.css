@@ -254,7 +254,7 @@ li:not('.toc') {
 }
 
 .ui.secondary.segment {
-  background-color: #ececece8;
+  background-color: #ffffff;
   padding: auto 1.5em 0 1.5em;
 }
 
@@ -296,11 +296,13 @@ ul > li {
   color: black;
   font: bold 3rem 'Bebas Neue';
   margin-bottom: 1px;
+  padding: 1em 0 0.1em;
 }
 
 .post-head .sub.header {
   letter-spacing: 0.05em;
   font: 1.4rem 'Bebas Neue';
+  padding-bottom: 0.8em;
 }
 
 .sub.header div {
@@ -323,8 +325,6 @@ ul > li {
   font-size: 1.1rem;
   line-height: 1rem;
   background-color: #ffffff70;
-  border: 1px solid #8a8a8a6b;
-  border-radius: 5px;
   margin-bottom: 10px;
   overflow-x: auto;
 }
@@ -453,11 +453,12 @@ p > img:not(.emoji), li > img {
   align-items: center;
   width: 100%;
   flex-wrap: wrap;
+  padding: 3em 0;
 }
 
 .author .avatar {
-  height: 5em;
-  width: 5em;
+  height: 10em;
+  width: 10em;
   margin: auto;
   border-radius: 50%;
   box-shadow: 0 0 0 0.1em #fff, 0 0 0 0.4rem #eee;
@@ -472,7 +473,7 @@ p > img:not(.emoji), li > img {
   margin-bottom: 1px;
   display: block;
   color: #3e3e3e;
-  font: bold 1.2em 'Lato';
+  font: bold 2.2em 'Lato';
   -webkit-transition: 1s;
   -o-transition: 1s;
   transition: 1s;
@@ -485,7 +486,7 @@ p > img:not(.emoji), li > img {
 .share .desc {
   display: block;
   color: #3e3e3e;
-  font-size: 0.9em;
+  font-size: 1.5em;
 }
 
 .spacer {

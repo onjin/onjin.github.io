@@ -8,7 +8,7 @@ cover: /img/cover-containers1.jpg
 
 
 Requirements
-------------
+============
 
 You need docker and postgresql database
 
@@ -16,7 +16,7 @@ You need docker and postgresql database
 
 
 Running
--------
+=======
 
 If you have docker installed and postgres database created you can:
 

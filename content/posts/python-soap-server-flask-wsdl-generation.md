@@ -11,7 +11,7 @@ aliases:
 
 
 Install
--------
+=======
 {{< highlight bash >}}
 
     $ pip install Flask-Enterprise
@@ -21,10 +21,11 @@ Install
 
 
 file: soap.py
--------------
+=============
 
 
 {{< highlight python "linenos=table" >}}
+
     from time import ctime
     from flask import Flask
     from flaskext.enterprise import Enterprise
@@ -49,7 +50,7 @@ file: soap.py
 
 
 Run service
------------
+===========
 
 {{< highlight bash >}}
 
@@ -59,7 +60,7 @@ Run service
 
 
 file: client.py
----------------
+===============
 
 {{< highlight python "linenos=table" >}}
 
@@ -72,7 +73,7 @@ file: client.py
 
 
 Run test
---------
+========
 
 {{< highlight bash >}}
 

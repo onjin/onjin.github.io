@@ -222,7 +222,7 @@ li:not('.toc') {
 }
 
 .pusher {
-  background-color: transparent !important;
+  /* background-color: transparent !important; */
   -webkit-perspective: 100rem;
   -moz-perspective: 100rem;
   -o-perspective: 100rem;
@@ -322,8 +322,8 @@ ul > li {
 }
 
 .toc {
-  font-size: 1.1rem;
-  line-height: 1rem;
+  font-size: 1.3rem;
+  line-height: 1.5rem;
   background-color: #ffffff70;
   margin-bottom: 10px;
   overflow-x: auto;

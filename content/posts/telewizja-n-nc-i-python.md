@@ -15,7 +15,7 @@ Napisałem więc na szybko narzędzie działające w shellu, które pozwala prze
 n.pl https://github.com/onjin/ntv/.
 
 Instalacja
-----------
+==========
 Program napisany jest w **Pythonie** i dystrybuowany jako **egg**
 
 {{< highlight bash >}}
@@ -26,7 +26,7 @@ Program napisany jest w **Pythonie** i dystrybuowany jako **egg**
 
 
 Kanały
-------
+======
 
 Lista wszystkich kanałów nadających dzisiaj:
 
@@ -42,7 +42,7 @@ Wyszukanie kanałów na wybrany dzień:
  * ntv-cli channels filmbox -d 2013-10-13
 
 Programy
---------
+========
 
 Lista wszystkich programów nadawanych dzisiaj:
 

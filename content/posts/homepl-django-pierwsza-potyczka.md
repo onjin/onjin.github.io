@@ -10,7 +10,7 @@ tags: ["hosting", "webdev", "django", "home.pl", "python"]
 
 
 instalacja django
------------------
+=================
 
 hardcoded ale działa ;) wrzucamy to do /py i ruchamiamy poprzez www (plik install.py)
 
@@ -27,7 +27,7 @@ hardcoded ale działa ;) wrzucamy to do /py i ruchamiamy poprzez www (plik insta
 {{< /highlight >}}
 
 nasz projekt
-------------
+============
 
 Lokalnie wołamy
 
@@ -40,7 +40,7 @@ i wrzucamy katalog *pytest* przez ftp na home do katalogu /py .
 
 
 dispatch.py
------------
+===========
 
 {{< highlight python "linenos=table" >}}
     #!/usr/bin/env python
@@ -121,7 +121,7 @@ i odpalamy to by www :D na razie tyle ...
 
 
 do pobrania
------------
+===========
 
 Dokładam paczkę z plikami do testu:
 
@@ -135,8 +135,8 @@ Dokładam paczkę z plikami do testu:
 ftp na home.pl; open http://server.home.pl/py/dispatch.py/admin
 
 
-Dodatkowe moje narzędzia
-------------------------
+dodatkowe moje narzędzia
+========================
  * [django-buildout-template] - szablon startowy dla projektów django z monitoringiem procesów, itp.
  * [vim-startup] - vim dostosowany do edycji python'a
 

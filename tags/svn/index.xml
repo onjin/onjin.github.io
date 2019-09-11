@@ -5,6 +5,7 @@
     <link>https://marekwywial.name/tags/svn/</link>
     <description>Recent content in svn on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>pl</language>
     <lastBuildDate>Sun, 07 Jan 2007 00:00:57 +0000</lastBuildDate>
     
 	<atom:link href="https://marekwywial.name/tags/svn/index.xml" rel="self" type="application/rss+xml" />
@@ -19,7 +20,14 @@
       <description>Svnauto jest wrapperem konsolowej komendy &amp;lsquo;svn&amp;rsquo;, który automatyzuje i standaryzuje wykonywanie rozgałęzień (branches) i złączeń (merge).
 SC jest skryptem napisanym w języku Ruby i jest dostępny poprzez RubyGems:
 gem install svnauto --include-dependencies  Hmm, ale czemu to nie działa? Skrypt sc bazuje na komunikatach zwracanych przez komendę svn w języku angielskim, więc nie będzie działać poprawnie w innych lokalizacjach. Można to rozwiązać np. tak:
-mv /usr/bin/sc /usr/bin/sc.orig  stworzyć nowy plik /usr/bin/sc:</description>
+mv /usr/bin/sc /usr/bin/sc.orig  stworzyć nowy plik /usr/bin/sc:
+#!/bin/bash  LC_ALL=C /usr/bin/sc.orig $* i nadać mu prawa do wykonywania (w przypadku systemów Linux):
+chmod 755 /usr/bin/sc  Podstawy na początek Standardowa praca z SC wygląda mniej więcej tak:
+Konfigurujemy dostęp do naszego repozytorium (SC obsługuje ich wiele)
+sc config --add  Tworzymy nowy projekt (zostaniemy zapytani o repozytorium, którego chcemy użyc)
+sc create my-new-project  W naszym repozytorium zostanie dodany katalog my-new-project wraz ze strukturą:
+myproject: | +--trunk | | | +--project-files | +--branches | | | +--rel | +--bug | +--exp | +--tags | +--rel +--bug +--exp Do katalogu ze zródłami lokalnymi (domyślnie ~/src, ale możemy to zmienić podczas konfigurowania repozytorium w SC) zostanie wyciągnięty trunk naszego nowego projektu do katalogu ~/src/nazwa_repozytorium/my-new-project-trunk.
+W przypadku kolejnych pobrań projektu (np, na inną maszynę, dla innego użytkownika) wywołujemy komendę:</description>
     </item>
     
   </channel>

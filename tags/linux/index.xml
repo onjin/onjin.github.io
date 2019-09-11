@@ -5,6 +5,7 @@
     <link>https://marekwywial.name/tags/linux/</link>
     <description>Recent content in linux on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>pl</language>
     <lastBuildDate>Wed, 18 Sep 2013 13:36:39 +0000</lastBuildDate>
     
 	<atom:link href="https://marekwywial.name/tags/linux/index.xml" rel="self" type="application/rss+xml" />
@@ -16,9 +17,7 @@
       <pubDate>Wed, 18 Sep 2013 13:36:39 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker/</guid>
-      <description>Requirements You need docker and postgresql database
- https://www.docker.com/  Running If you have docker installed and postgres database created you can:
-1 2 3 4 5 6 7 8  # pull sentry image docker pull onjin/sentry # install sentry database docker run -e SENTRY_DBHOST=your.db.address -e SENTRY_DBNAME=sentrydbname -e SENTRY_DBUSER=dbuser -e SENTRY_DBPASS=dbpass -p :7365 onjin/sentry upgrade # run sentry instance docker run -d -e SENTRY_DBHOST=your.db.address -e SENTRY_DBNAME=sentrydbname -e SENTRY_DBUSER=dbuser -e SENTRY_DBPASS=dbpass -p :7365 onjin/sentry start   and open browser at address:</description>
+      <description>&lt;p&gt;How to quickly spin up private &lt;a href=&#34;https://sentry.io&#34;&gt;Sentry&lt;/a&gt; instance using only docker.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -28,7 +27,7 @@
       
       <guid>https://marekwywial.name/posts/blog20120705rescan-scsi-bus-no-reboot/</guid>
       <description> Just self memo. How to attach new SCSI disk without reboot (debian):
-1 2 3 4 5 6  # check what hosts do you have ls /sys/class/scsi_host host0 host1 host2 host3 # change &amp;#39;host0&amp;#39; to &amp;#39;host1&amp;#39; or any next number that you need echo &amp;#34;- - -&amp;#34; &amp;gt; /sys/class/scsi_host/host0/scan   and done 1  fdisk -l   </description>
+# check what hosts do you have ls /sys/class/scsi_host host0 host1 host2 host3 # change &amp;#39;host0&amp;#39; to &amp;#39;host1&amp;#39; or any next number that you need echo &amp;#34;- - -&amp;#34; &amp;gt; /sys/class/scsi_host/host0/scan and done fdisk -l </description>
     </item>
     
     <item>
@@ -39,7 +38,9 @@
       <guid>https://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</guid>
       <description>Przy okazji szukania API do grooveshark&amp;rsquo;a odkryłem plik currentSong.txt, który jest tworzony przez Grooveshark Desktop.
 Kilka minut z vim&amp;rsquo;em i mamy skrypt napisany w python&amp;rsquo;ie, który odczytuje w/w plik i wrzuca informację o aktualnie odtwarzanym utworze jako status wybranego konta w gajim&amp;rsquo;a.
-Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wymana pyinotify). Wtedy nasz status będzie zmieniany w chwili (chwilę potem :) ) zmiany utworu w Grooveshark Desktop.</description>
+Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wymana pyinotify). Wtedy nasz status będzie zmieniany w chwili (chwilę potem :) ) zmiany utworu w Grooveshark Desktop.
+Całość można dowolnie używać/modyfikować, a pobrać można z serwisu github.com:
+ https://github.com/onjin/grooveshark2gajim http://onjin.github.com/grooveshark2gajim/  Do działania wystarczy nam plik grov2gajim.py. Umieszczamy go gdzieś na dysku i możemy używać.</description>
     </item>
     
     <item>
@@ -60,9 +61,11 @@ Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wyman
       <guid>https://marekwywial.name/posts/blog20090621fuse-ftp-mount-curlftpfs/</guid>
       <description>sprawdź najnowszą wersję ftpmount Do pracy z hostingiem gdzie mamy tylko &amp;ldquo;&amp;lsquo;ftp&amp;rdquo;&amp;rsquo; przydaje się montowanie dysku poprzez właśnie ftp. Służy do tego program &amp;ldquo;&amp;lsquo;curlftpfs&amp;rdquo;&amp;rsquo; (np apt-get install curlftpfs).
 Odpalamy go jako:
-1  $ curlftpfs ftp://user:pass@host/ ./mountpoint   Do tego potrzebujemy uprawnienia grupy fuse więć jako root musimy sobie ją dodać od naszego użytkownika.
+$ curlftpfs ftp://user:pass@host/ ./mountpoint Do tego potrzebujemy uprawnienia grupy fuse więć jako root musimy sobie ją dodać od naszego użytkownika.
 Jeżeli mamy dużo połączeń do zarządzania przyda się mały skrypt:
- ftpmount  sterowany konfiguracją w pliku config.</description>
+ ftpmount  sterowany konfiguracją w pliku config.ini:
+[hostone.pl] host=ftp.hostone.pl user=userone pass=passone # jak nie podamy tego wpisu, program się zapyta o hasło mountpoint=hostone.pl [hosttwo.pl] host=ftp.hosttwo.pl user=usertwo mountpoint=hosttwo.pl Wtedy wystarczy nam:
+ ./ftpmount hostone.pl # montujemy połączenie ./ftpmount -u hostone.pl #odmontowywujemy połączenie ./ftpmount -l # lista dostępnych konfiguracji połączeń  </description>
     </item>
     
     <item>
@@ -147,7 +150,9 @@ Może komuś też się przyda (wersja dbf2csv to 5.0).</description>
       <guid>https://marekwywial.name/posts/blog20051110is-ms-windows-ready-for-the-desktop/</guid>
       <description>Ostatnio wielu (??) użytkowników komputerów, próbuje przesiąść się z systemu MS Windows na Linuksa.
 Mają przy tym mniejsze lub większe problemy. Wynikaja one często z niechęci do zmiany przyzwyczajeń, złym wyobrażaniu sobie systemów typu Linux i pracy z nimi, braku czasu na zdobycie dodatkowej wiedzy, z powodu używania specjalistycznego oprogramowania nie działającego w tym systemie, itp.
-Stron i treści opisujących te problemy oraz jak sobie z nimi radzić jest wiele (google)</description>
+Stron i treści opisujących te problemy oraz jak sobie z nimi radzić jest wiele (google)
+Ale czy ktoś próbował kiedys w drugą stronę ? Praktycznie nie używam systemu Windows od ok 9 lat. Pracuję, uczę się i bawię przy pomocy Linuksa.
+Is MS Windows ready for the desktop? jest odpowiedzią na problemy, które spotkać może osoba, próbująca przesiąść się z Linuxa na Windows ;)</description>
     </item>
     
     <item>
@@ -158,7 +163,8 @@ Stron i treści opisujących te problemy oraz jak sobie z nimi radzić jest wiel
       <guid>https://marekwywial.name/posts/blog20051104linux-standard-base/</guid>
       <description>Jak przeczytałem dzis na linuxnews.pl, w oświadczeniu prasowym z 1 listopada Free Standards Group ogłosiła, że komitety normalizacyjne ISO i IEC zaakceptowały Linux Standard Base Core Specification 2.0.1 i opublikują tą specyfikację jako standard ISO 23360.
 Czy będzie to prawdziwy standard ? Czy tylko wizytówka dla firm by mówić &amp;ldquo;my się na tym znamy, mamy to na piśmie&amp;rdquo;.
-Czy skończy się jak w pewnej firmie, która &amp;ldquo;oferowała&amp;rdquo; wsparcie dla systemów Linux, a dział techniczny próbował postawić RedHat&amp;rsquo;a (byle tylko chodził) przez 1-2 tygodni ?</description>
+Czy skończy się jak w pewnej firmie, która &amp;ldquo;oferowała&amp;rdquo; wsparcie dla systemów Linux, a dział techniczny próbował postawić RedHat&amp;rsquo;a (byle tylko chodził) przez 1-2 tygodni ?
+Zobaczymy ..</description>
     </item>
     
   </channel>

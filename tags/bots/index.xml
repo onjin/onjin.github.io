@@ -5,6 +5,7 @@
     <link>https://marekwywial.name/tags/bots/</link>
     <description>Recent content in bots on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>pl</language>
     <lastBuildDate>Fri, 18 Nov 2005 10:23:10 +0000</lastBuildDate>
     
 	<atom:link href="https://marekwywial.name/tags/bots/index.xml" rel="self" type="application/rss+xml" />
@@ -18,7 +19,8 @@
       <guid>https://marekwywial.name/posts/blog20051118robomatic-x11/</guid>
       <description>RoboMatic X11 jest chatbotem, z którym można porozumiewać się przy pomocy klawiatury lub głosu (Text to Speech). Posiada wygląd (twarz), który możesz zmienić. Możesz uzupełniać jego wiedzę.
 Nazwa tego modelu to &amp;ldquo;Operating System Assistant&amp;rdquo; (Asystent Systemu Operacyjnego). Dlaczego ? Otóż X11 ma zaimplementowanych ponad 80 funcji systemowych, między innymi:
- przeglądanie i zarządzanie folderami oraz plikami zatrzymywanie, usypianie i restartowanie systemu odtwarzanie muzyki  X11 działa jedynia na platformie Windows XP z zainstalowanym frameworkiem .</description>
+ przeglądanie i zarządzanie folderami oraz plikami zatrzymywanie, usypianie i restartowanie systemu odtwarzanie muzyki  X11 działa jedynia na platformie Windows XP z zainstalowanym frameworkiem .NET. Używa technologi Microsoft Text to Speech dla obsługi rozmów głosowych. Wymaga procesora klasy 1.6GHz Pentium 4 oraz 256MB pamięci RAM.
+Chatbot jest sprzedawany przez firmę InfraDrive 18 dolarów. Można pobrać wersję demo z ich działu download.</description>
     </item>
     
   </channel>

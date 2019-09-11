@@ -5,6 +5,7 @@
     <link>https://marekwywial.name/tags/devhelp/</link>
     <description>Recent content in devhelp on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>pl</language>
     <lastBuildDate>Mon, 26 Apr 2010 19:51:34 +0100</lastBuildDate>
     
 	<atom:link href="https://marekwywial.name/tags/devhelp/index.xml" rel="self" type="application/rss+xml" />
@@ -18,7 +19,8 @@
       <guid>https://marekwywial.name/posts/blog20100426devhelp-django-1-1/</guid>
       <description>Ostatnio biegałem z lapkiem po centrum handlowym i łapałem wifi, żeby spojrzeć do dokumentacji django. I tylko się nabiegałem :).
 Aby drugi raz pracować nie biegać w domu szybko podłączyłem dokumentację django do devhelp i tak na szybko procedura:
-1 2 3 4 5 6 7 8  apt-get install devhelp mkdir -p ~/bin; cd ~/bin wget http://htmlhelp.googlecode.com/svn/trunk/misc/devhelp-install chmod +x devhelp-install cd ~/; wget http://onjin.net/files/django1.1-doc.tgz /bin/devhelp-install ./django1.1-doc.tgz   Teraz wystarczy uruchomić devhelp&amp;rsquo;a i cieszyć się offline :)</description>
+apt-get install devhelp mkdir -p ~/bin; cd ~/bin wget http://htmlhelp.googlecode.com/svn/trunk/misc/devhelp-install chmod +x devhelp-install cd ~/; wget http://onjin.net/files/django1.1-doc.tgz /bin/devhelp-install ./django1.1-doc.tgz Teraz wystarczy uruchomić devhelp&amp;rsquo;a i cieszyć się offline :)
+django1.1-doc jest ściągnięte z .chm i potraktowana hhconvert.py do formatu devhelp&amp;rsquo;a)</description>
     </item>
     
   </channel>

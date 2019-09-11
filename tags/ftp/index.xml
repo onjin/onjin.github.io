@@ -5,6 +5,7 @@
     <link>https://marekwywial.name/tags/ftp/</link>
     <description>Recent content in ftp on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>pl</language>
     <lastBuildDate>Sun, 21 Jun 2009 19:11:10 +0000</lastBuildDate>
     
 	<atom:link href="https://marekwywial.name/tags/ftp/index.xml" rel="self" type="application/rss+xml" />
@@ -18,9 +19,11 @@
       <guid>https://marekwywial.name/posts/blog20090621fuse-ftp-mount-curlftpfs/</guid>
       <description>sprawdź najnowszą wersję ftpmount Do pracy z hostingiem gdzie mamy tylko &amp;ldquo;&amp;lsquo;ftp&amp;rdquo;&amp;rsquo; przydaje się montowanie dysku poprzez właśnie ftp. Służy do tego program &amp;ldquo;&amp;lsquo;curlftpfs&amp;rdquo;&amp;rsquo; (np apt-get install curlftpfs).
 Odpalamy go jako:
-1  $ curlftpfs ftp://user:pass@host/ ./mountpoint   Do tego potrzebujemy uprawnienia grupy fuse więć jako root musimy sobie ją dodać od naszego użytkownika.
+$ curlftpfs ftp://user:pass@host/ ./mountpoint Do tego potrzebujemy uprawnienia grupy fuse więć jako root musimy sobie ją dodać od naszego użytkownika.
 Jeżeli mamy dużo połączeń do zarządzania przyda się mały skrypt:
- ftpmount  sterowany konfiguracją w pliku config.</description>
+ ftpmount  sterowany konfiguracją w pliku config.ini:
+[hostone.pl] host=ftp.hostone.pl user=userone pass=passone # jak nie podamy tego wpisu, program się zapyta o hasło mountpoint=hostone.pl [hosttwo.pl] host=ftp.hosttwo.pl user=usertwo mountpoint=hosttwo.pl Wtedy wystarczy nam:
+ ./ftpmount hostone.pl # montujemy połączenie ./ftpmount -u hostone.pl #odmontowywujemy połączenie ./ftpmount -l # lista dostępnych konfiguracji połączeń  </description>
     </item>
     
   </channel>

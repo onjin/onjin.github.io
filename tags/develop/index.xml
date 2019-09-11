@@ -5,6 +5,7 @@
     <link>https://marekwywial.name/tags/develop/</link>
     <description>Recent content in develop on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>pl</language>
     <lastBuildDate>Wed, 18 Sep 2013 13:36:39 +0000</lastBuildDate>
     
 	<atom:link href="https://marekwywial.name/tags/develop/index.xml" rel="self" type="application/rss+xml" />
@@ -16,9 +17,7 @@
       <pubDate>Wed, 18 Sep 2013 13:36:39 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker/</guid>
-      <description>Requirements You need docker and postgresql database
- https://www.docker.com/  Running If you have docker installed and postgres database created you can:
-1 2 3 4 5 6 7 8  # pull sentry image docker pull onjin/sentry # install sentry database docker run -e SENTRY_DBHOST=your.db.address -e SENTRY_DBNAME=sentrydbname -e SENTRY_DBUSER=dbuser -e SENTRY_DBPASS=dbpass -p :7365 onjin/sentry upgrade # run sentry instance docker run -d -e SENTRY_DBHOST=your.db.address -e SENTRY_DBNAME=sentrydbname -e SENTRY_DBUSER=dbuser -e SENTRY_DBPASS=dbpass -p :7365 onjin/sentry start   and open browser at address:</description>
+      <description>&lt;p&gt;How to quickly spin up private &lt;a href=&#34;https://sentry.io&#34;&gt;Sentry&lt;/a&gt; instance using only docker.&lt;/p&gt;</description>
     </item>
     
     <item>

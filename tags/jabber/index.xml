@@ -5,6 +5,7 @@
     <link>https://marekwywial.name/tags/jabber/</link>
     <description>Recent content in jabber on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>pl</language>
     <lastBuildDate>Thu, 15 Mar 2007 08:32:24 +0000</lastBuildDate>
     
 	<atom:link href="https://marekwywial.name/tags/jabber/index.xml" rel="self" type="application/rss+xml" />
@@ -20,7 +21,12 @@
 wspólnego widoku wskaźnika myszy (po otwarciu tej samej strony przez obie strony konwersacji można wskazywać rózne elementy na ekranie)
 współdzielić oglądanie prezentacji,zsynchronizowanych map Google,
 wysłać link do aktualnie oglądanej strony przy pomocy funkcji &amp;lsquo;Send link to&amp;hellip;&amp;rsquo;,
-przeciągać obrazki z oglądanej strony bezpośrednio do okna rozmowy,</description>
+przeciągać obrazki z oglądanej strony bezpośrednio do okna rozmowy,
+otwierać odnośniki na stronach w formacie xmpp:,
+grać w szachy (wersja alfa ;) ),
+
+Wersja stabilna to w tej chwili 0.6.0 ale już teraz pozwala na przyspieszenie współpracy z naszymi znajomymi/ współpracownikami.
+Co do samego Google Talk to do swojej strony startowej http://www.google.pl/ig można dodać sobie odpowiedni Google Talk Gadget.</description>
     </item>
     
     <item>
@@ -81,7 +87,8 @@ Przy okazji: zmienił się adres strony projektu z psi.affinix.com na psi-im.org
       
       <guid>https://marekwywial.name/posts/blog20050907jabber-roster/</guid>
       <description>Migrowałem ostatnio pomiędzy dwoma serwerami Jabber&amp;rsquo;a. Próbowałem przenieść kontakty przy pomocy Jabber Tools, niestety strony oferujące tą usługę nie były dostępne, lub po podaniu danych do pierwszego formularza &amp;lsquo;zacinały się&amp;rsquo;.
-Chcąc, nie chcąc byłem zmuszony zmajstrować szybko jakieś narzędzie. Na razie tylko działa ;) . Jak znajdę czas, oczyszczę kod, dodam trochę komentarzy i takie tam. Jak ktoś się nie boi można spróbować poużywać lub pobrać kod źródłowy w celach własnych.</description>
+Chcąc, nie chcąc byłem zmuszony zmajstrować szybko jakieś narzędzie. Na razie tylko działa ;) . Jak znajdę czas, oczyszczę kod, dodam trochę komentarzy i takie tam. Jak ktoś się nie boi można spróbować poużywać lub pobrać kod źródłowy w celach własnych. Na pewno się nie obrażę :)
+ Jabber import / export  </description>
     </item>
     
   </channel>

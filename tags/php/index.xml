@@ -5,6 +5,7 @@
     <link>https://marekwywial.name/tags/php/</link>
     <description>Recent content in php on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>pl</language>
     <lastBuildDate>Tue, 04 May 2010 07:52:53 +0000</lastBuildDate>
     
 	<atom:link href="https://marekwywial.name/tags/php/index.xml" rel="self" type="application/rss+xml" />
@@ -18,7 +19,9 @@
       <guid>https://marekwywial.name/posts/blog20100504git-php-syntax-check-pre-commit/</guid>
       <description>Załączam używany przeze mnie i sprawdzający się pre-commit dla git&amp;lsquo;a sprawdzający commitowane pliki .php.
 Przy wykonaniu commit w repozytorium skrypt dla każdego commitowanego pliku &amp;lsquo;.php&amp;rsquo; wykonuje &amp;lsquo;php -l&amp;rsquo; w pętli, aż otrzyma odpowiedź, że składnia jest ok lub nie ok. Przypadku wystąpienia błędy przerywa commit. Sam skrypt napisany jest w python&amp;lsquo;ie
-Dlaczego w pętli? Dlatego, że &amp;lsquo;php -l&amp;rsquo; losowo się urywa zwracając SIGFAULT i należy wtedy powtórzyć próbę z &amp;lsquo;-l&amp;rsquo;</description>
+Dlaczego w pętli? Dlatego, że &amp;lsquo;php -l&amp;rsquo; losowo się urywa zwracając SIGFAULT i należy wtedy powtórzyć próbę z &amp;lsquo;-l&amp;rsquo;
+Plik do pobrania:
+ pre-commit  </description>
     </item>
     
     <item>
@@ -59,7 +62,9 @@ phpcs pozwala także tworzyć swoje własne standardy kodowanie oraz - co bardzo
       <guid>https://marekwywial.name/posts/blog20080824netbeans-65-php5-symfony-xdebug/</guid>
       <description>W Netbeans 6.5 pojawia się support dla php5. W/g informacji na stronie netbeans oznacza to:
  PHP Editor (Code completion, syntactic and semantic code highlighting) Support for heredoc notation and PHTML Debugging using Xdebug Generators for MySQL database code snippets  Temat, który najbardziej mnie interesował to jak zadziała debugging przy pomocy Xdebug. Postanowiłem sprawdzić to z istniejącym projektem bazującym na frameworku Symfony.
- Zainstalowałem netbeans pobierając odpowiednią paczkę ze strony netbeans Zainstalowałem Xdebug poprzez pecl install xdebug i dodaniu do konfiguracji php wierszy:  1 2 3  # xdebug, jako zend_extension.</description>
+ Zainstalowałem netbeans pobierając odpowiednią paczkę ze strony netbeans Zainstalowałem Xdebug poprzez pecl install xdebug i dodaniu do konfiguracji php wierszy:  # xdebug, jako zend_extension. ścieżke zmienić należy oczywiście na odpowiednią dla Twojej instalacji zend_extension=/usr/lib/php5/20060613+lfs/xdebug.so xdebug.remote_enable=on  dodałem w netbeans nowy projekt php z istniejącymi źródłami (projekt już mam uruchomiony), podając podaczas konfiguracji:
+ ścieżkę do źródeł projektu adres url do projektu katalog zawierający dane web (dostępne poprzez podany url projektu) w tym przypadku podkatalog &amp;lsquo;web&amp;rsquo; w katalogu projektu punkt startowy czyli domyślny kontroler dla projektu, w tym przypadku &amp;lsquo;frontend.php&amp;rsquo; w podkatalogu &amp;lsquo;web&amp;rsquo;  następnie wystarczyło otworzyć plik projektu (np podany wyżej kontroler) z toolbar&amp;rsquo;a wybrać &amp;lsquo;debug project&amp;rsquo; lub wciśnąć ctrl+F5
+  W tym momencie w uruchomionej przeglądarce (u mnie firefox 3.x netbeans otwarł główny kontroler projektu wraz z parameterm XDEBUG_SESSION_START=netbeans-xdebug. W tym samym momencie w edytorze netbeans podświetlony został pierwszy wiersz kontrolera &amp;hellip; i już.</description>
     </item>
     
   </channel>

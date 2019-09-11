@@ -5,6 +5,7 @@
     <link>https://marekwywial.name/tags/tools/</link>
     <description>Recent content in tools on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>pl</language>
     <lastBuildDate>Thu, 05 Jul 2012 08:16:42 +0000</lastBuildDate>
     
 	<atom:link href="https://marekwywial.name/tags/tools/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +18,7 @@
       
       <guid>https://marekwywial.name/posts/blog20120705rescan-scsi-bus-no-reboot/</guid>
       <description> Just self memo. How to attach new SCSI disk without reboot (debian):
-1 2 3 4 5 6  # check what hosts do you have ls /sys/class/scsi_host host0 host1 host2 host3 # change &amp;#39;host0&amp;#39; to &amp;#39;host1&amp;#39; or any next number that you need echo &amp;#34;- - -&amp;#34; &amp;gt; /sys/class/scsi_host/host0/scan   and done 1  fdisk -l   </description>
+# check what hosts do you have ls /sys/class/scsi_host host0 host1 host2 host3 # change &amp;#39;host0&amp;#39; to &amp;#39;host1&amp;#39; or any next number that you need echo &amp;#34;- - -&amp;#34; &amp;gt; /sys/class/scsi_host/host0/scan and done fdisk -l </description>
     </item>
     
     <item>
@@ -26,7 +27,7 @@
       <pubDate>Fri, 27 Apr 2012 10:30:44 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20120427extend-lvm2-filesystem/</guid>
-      <description>Just self memo 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  # Added new physical partition /dev/sda3 # create a physical volume out of it $ pvcreate /dev/sda3 # Now, add it to the volume group #that my logical volume is on $ vgextend VolGroup00 /dev/sda3 # Now that the volume group has more # disk space, the logical volume can grow $ lvextend -L+11G /dev/VolGroup00/LogVol00 # Ok, last of all, I want to filesystem to # recognize that more space is available $ fsadm resize /dev/VolGroup00/LogVol00 # sweet, I have more space now $ df -h</description>
+      <description>Just self memo # Added new physical partition /dev/sda3 # create a physical volume out of it $ pvcreate /dev/sda3 # Now, add it to the volume group #that my logical volume is on $ vgextend VolGroup00 /dev/sda3 # Now that the volume group has more # disk space, the logical volume can grow $ lvextend -L+11G /dev/VolGroup00/LogVol00 # Ok, last of all, I want to filesystem to # recognize that more space is available $ fsadm resize /dev/VolGroup00/LogVol00 # sweet, I have more space now $ df -h</description>
     </item>
     
     <item>
@@ -37,7 +38,9 @@
       <guid>https://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</guid>
       <description>Przy okazji szukania API do grooveshark&amp;rsquo;a odkryłem plik currentSong.txt, który jest tworzony przez Grooveshark Desktop.
 Kilka minut z vim&amp;rsquo;em i mamy skrypt napisany w python&amp;rsquo;ie, który odczytuje w/w plik i wrzuca informację o aktualnie odtwarzanym utworze jako status wybranego konta w gajim&amp;rsquo;a.
-Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wymana pyinotify). Wtedy nasz status będzie zmieniany w chwili (chwilę potem :) ) zmiany utworu w Grooveshark Desktop.</description>
+Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wymana pyinotify). Wtedy nasz status będzie zmieniany w chwili (chwilę potem :) ) zmiany utworu w Grooveshark Desktop.
+Całość można dowolnie używać/modyfikować, a pobrać można z serwisu github.com:
+ https://github.com/onjin/grooveshark2gajim http://onjin.github.com/grooveshark2gajim/  Do działania wystarczy nam plik grov2gajim.py. Umieszczamy go gdzieś na dysku i możemy używać.</description>
     </item>
     
     <item>
@@ -49,7 +52,8 @@ Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wyman
       <description>W ostatnim wpisie pisałem o snippetsEmu dla vim&amp;lsquo;a, a dziś załączam zestaw snippetów, których używam przy pracy z liquibase.
 Liquibase to całkiem miłe narzędzie napisane w Javie do śledzenia, zarządzania i wprowadzania zmian w bazach danych. Zmiany opisuje się w pliku (plikach) xml i wpisywanie oraz pamiętanie tej składni można sobie uprościć przy pomocy vim&amp;rsquo;a i snippetów.
 Snippet umieszczamy razem z pozostałymi, najczęściej w .vim/after/ftplugin/.
-Najprościej zacząć otwierając np. migration.xml, wpisując lhelp i wcisnąć TAB.</description>
+Najprościej zacząć otwierając np. migration.xml, wpisując lhelp i wcisnąć TAB. Otrzymamy małą pomoc i możemy zaczynać wpisywać kolejną migrację :)
+ xml_snippets.vim  </description>
     </item>
     
     <item>
@@ -60,7 +64,10 @@ Najprościej zacząć otwierając np. migration.xml, wpisując lhelp i wcisnąć
       <guid>https://marekwywial.name/posts/blog20100729best-vim-plugins.html</guid>
       <description>Dziś robiłem porządki w ~/.vim/ . Aktualizacje do nowych wersji pluginów, wyrzucanie nieużywanych, porządki w ~/.vimrc. W trakcie tej pracy powstała lista pluginów, dzięki którym miło mi się pracuje
 vimball Plugin zajmujący się pluginami dostarczanymi w paczkach .vba i pozwalający też takie paczki tworzyć, w praktyce potrzeby mi by instalować paczki .vba
- http://www.vim.org/scripts/script.php?script_id=1502  snippetsEmu Emuluje zachowanie snippetów z TextMate. Na przykład w pliku sometest.py wpisujesz &amp;lsquo;for&amp;lt;tab&amp;gt;&amp;rsquo;, uzupełniasz brakujące miejsca poruszając się klawiszem &amp;lt;tab&amp;gt; i otrzymujesz pełną pętle.</description>
+ http://www.vim.org/scripts/script.php?script_id=1502  snippetsEmu Emuluje zachowanie snippetów z TextMate. Na przykład w pliku sometest.py wpisujesz &amp;lsquo;for&amp;lt;tab&amp;gt;&amp;rsquo;, uzupełniasz brakujące miejsca poruszając się klawiszem &amp;lt;tab&amp;gt; i otrzymujesz pełną pętle. Inne użyteczne snippety dla pythona to:
+ prop - property get - def get_.. set - def set_.. def - def .. cm - classmethod cl - class ifn, ifmain, sb, sbu, sbl1, trye, tryf, tryef, unittest  Domyślnie dostarczone są 32 zestawy snippetów dla wielu języków programowania, opisu oraz frameworków (django, rails, symfony)
+ http://www.vim.org/scripts/script.php?script_id=1318  neocomplcache System tzw &amp;lsquo;dopełniania&amp;rsquo; (podpowiadania) i to właśnie robi. Dopełnia nazwy metod, funkcji, atrybuty html, nazwy plików, itp. Trzeba po prostu zobaczyć i używać.
+ http://www.vim.org/scripts/script.php?script_id=2620  project Bardzo prosty i skuteczny system pozwalający w bocznym oknie przeglądać wybrane lub wszystkie pliki z jednego lub wielu projektów. Każdy projekt ma zdefiniowany katalog, dzięki czemu otwarcie pliku z projektu (wciskamy &amp;lsquo;enter&amp;rsquo; bedąc &amp;lsquo;nad&amp;rsquo; plikiem) nastąpi równocześnie z przejściem do katalogu projektu.</description>
     </item>
     
     <item>
@@ -141,7 +148,8 @@ btw: hook wymaga pythona.</description>
       <description>Importując repozytorium svn&amp;rsquo;a poprzez git-svn tracimy puste katalogi, co czasem nie jest przyjemne. W dodatku to przecież nasze katalogi i chcemy je mieć ;)
 Dziś mnie trochę to przycisnęło więc, pogadałem chwilę z google i znalazłem użyteczny skrypt git-me-up.
 Wystarczy pobrać sam plik git-me-up, nadać mu prawa wykonywania i wykonać:
- git-me-up http://svn.somerepo.com/path/to/project ./project  a skrypt sam stworzy repozytorium git, zaimportuje wszystkoz repozytorium svn, utworzy brakujące puste katalogi i stworzy w razie potrzeby plik .</description>
+ git-me-up http://svn.somerepo.com/path/to/project ./project  a skrypt sam stworzy repozytorium git, zaimportuje wszystkoz repozytorium svn, utworzy brakujące puste katalogi i stworzy w razie potrzeby plik .gitignore na podstawie svn:ignore.
+i już&amp;hellip;</description>
     </item>
     
     <item>
@@ -225,7 +233,12 @@ To popatrzy niech teraz na Beryla:
 wspólnego widoku wskaźnika myszy (po otwarciu tej samej strony przez obie strony konwersacji można wskazywać rózne elementy na ekranie)
 współdzielić oglądanie prezentacji,zsynchronizowanych map Google,
 wysłać link do aktualnie oglądanej strony przy pomocy funkcji &amp;lsquo;Send link to&amp;hellip;&amp;rsquo;,
-przeciągać obrazki z oglądanej strony bezpośrednio do okna rozmowy,</description>
+przeciągać obrazki z oglądanej strony bezpośrednio do okna rozmowy,
+otwierać odnośniki na stronach w formacie xmpp:,
+grać w szachy (wersja alfa ;) ),
+
+Wersja stabilna to w tej chwili 0.6.0 ale już teraz pozwala na przyspieszenie współpracy z naszymi znajomymi/ współpracownikami.
+Co do samego Google Talk to do swojej strony startowej http://www.google.pl/ig można dodać sobie odpowiedni Google Talk Gadget.</description>
     </item>
     
     <item>
@@ -248,7 +261,14 @@ Picasa integruje się także z Bloggerem oraz Gmailem.</description>
       <description>Svnauto jest wrapperem konsolowej komendy &amp;lsquo;svn&amp;rsquo;, który automatyzuje i standaryzuje wykonywanie rozgałęzień (branches) i złączeń (merge).
 SC jest skryptem napisanym w języku Ruby i jest dostępny poprzez RubyGems:
 gem install svnauto --include-dependencies  Hmm, ale czemu to nie działa? Skrypt sc bazuje na komunikatach zwracanych przez komendę svn w języku angielskim, więc nie będzie działać poprawnie w innych lokalizacjach. Można to rozwiązać np. tak:
-mv /usr/bin/sc /usr/bin/sc.orig  stworzyć nowy plik /usr/bin/sc:</description>
+mv /usr/bin/sc /usr/bin/sc.orig  stworzyć nowy plik /usr/bin/sc:
+#!/bin/bash  LC_ALL=C /usr/bin/sc.orig $* i nadać mu prawa do wykonywania (w przypadku systemów Linux):
+chmod 755 /usr/bin/sc  Podstawy na początek Standardowa praca z SC wygląda mniej więcej tak:
+Konfigurujemy dostęp do naszego repozytorium (SC obsługuje ich wiele)
+sc config --add  Tworzymy nowy projekt (zostaniemy zapytani o repozytorium, którego chcemy użyc)
+sc create my-new-project  W naszym repozytorium zostanie dodany katalog my-new-project wraz ze strukturą:
+myproject: | +--trunk | | | +--project-files | +--branches | | | +--rel | +--bug | +--exp | +--tags | +--rel +--bug +--exp Do katalogu ze zródłami lokalnymi (domyślnie ~/src, ale możemy to zmienić podczas konfigurowania repozytorium w SC) zostanie wyciągnięty trunk naszego nowego projektu do katalogu ~/src/nazwa_repozytorium/my-new-project-trunk.
+W przypadku kolejnych pobrań projektu (np, na inną maszynę, dla innego użytkownika) wywołujemy komendę:</description>
     </item>
     
     <item>
@@ -291,7 +311,9 @@ I co tu więcej pisać :) pozostaje potestować.</description>
       
       <guid>https://marekwywial.name/posts/blog20060928muzyka-sluchanie-promocja/</guid>
       <description>Jamendo to serwis internetowy pozwalający artystom na udostępnianie swojej twórczości w internecie na zasasach licencji Creative Commons. W ten sposób można zaistnieć, dotrzeć do szerokiego grona słuchaczy, informować ich o koncertach.
-Słuchacze udostępnione utwory mogą odsłuchać (w praktycznie dowolnych odtwarzaczu muzyki w formacie Ogg lub MP3), legalnie pobrać za pomocą BitTorrenta lub eMula (programy P2P), napisać rezencję. Jeżeli artysta nam się spodoba możemy kupić jego płytę lub wpłacić dla niego pieniądzę.</description>
+Słuchacze udostępnione utwory mogą odsłuchać (w praktycznie dowolnych odtwarzaczu muzyki w formacie Ogg lub MP3), legalnie pobrać za pomocą BitTorrenta lub eMula (programy P2P), napisać rezencję. Jeżeli artysta nam się spodoba możemy kupić jego płytę lub wpłacić dla niego pieniądzę.
+Podczas słuchania, dzięki systemowi iRATE system będzie dobierał dla nas muzykę wegług naszych gustów.
+Cała platforma jest oczywiście bezpłatna.</description>
     </item>
     
     <item>
@@ -323,7 +345,10 @@ Może komuś też się przyda (wersja dbf2csv to 5.0).</description>
       <guid>https://marekwywial.name/posts/blog20060728google-code-free-hosting/</guid>
       <description>Google jak zawsze do przodu i w kierunku OpenSource (czy też raczej w kierunku programistów, z którymi stara się żyć dobrze) otwarło wczoraj hosting projektów.
 W prezencie dostajemy Issue Tracker nie odbiegający zbytnio od przyjętych standardów funkcjonalności tego typo programów, dostęp do repozytorium SVN poprzez HTTPS z dostępem anonimowym (tylko do odczytu) oraz dla nas (za pomocą wygenerowanego hasła).
-W części administracyjnej możemy zmienić nazwę projektu, jego opis, licencję (od Apache, Artistic, GNU General/Lesser, MIT, Mozilla Public oraz BSD) oraz pola dodatkowe (dowolne), zestaw odnośników do strony projektu, forum i bloga.</description>
+W części administracyjnej możemy zmienić nazwę projektu, jego opis, licencję (od Apache, Artistic, GNU General/Lesser, MIT, Mozilla Public oraz BSD) oraz pola dodatkowe (dowolne), zestaw odnośników do strony projektu, forum i bloga. Możemy też podać adresy email, na które zostaną wysłane powiadomienia o zmianach w repozytorium kodu.
+Kolejne opcje administracyjne to zarządzanie właścicielami i członkami zespołu projektowego, ustawienia Issue Trackera oraz opcja usunięcia projektu.
+Z poziomu przeglądarki mamy też możliwość przeglądania zasobów repozytorium.
+Dziś serwis choci powoooli, lecz zapewnie spowodowane jest to obciążeniem wywołanym przez rzesze zainteresowanych ;)</description>
     </item>
     
     <item>
@@ -333,7 +358,8 @@ W części administracyjnej możemy zmienić nazwę projektu, jego opis, licencj
       
       <guid>https://marekwywial.name/posts/blog20060609firefox-google-synchronizacja/</guid>
       <description>Google Browser Sync jest rozszerzeniem dla Firefox&amp;rsquo;a, które synchronizuje ustawienia przeglądarki (bookmarki, historię, ciasteczka, zapisane hasła) pomiędzy komputerami (np. Twój Firefox w domu i pracy). Pozwala także odtworzyć otwarte panele i okna przeglądarki.
-Rozszerzenie to wymaga posiadania konta w Google (GMail). Po zainstalowaniu mamy do wyboru konfigurację standardową (synchronizacja wszystkiego i szyfrowanie przechowywanych haseł oraz ciasteczek) oraz zaawansowaną, w której sami wybieramy co ma być synchronizowane czy też szyfrowane. Podajemy PIN chroniący dodatkowo nasze dane i zaczyna się proces synchronizacji.</description>
+Rozszerzenie to wymaga posiadania konta w Google (GMail). Po zainstalowaniu mamy do wyboru konfigurację standardową (synchronizacja wszystkiego i szyfrowanie przechowywanych haseł oraz ciasteczek) oraz zaawansowaną, w której sami wybieramy co ma być synchronizowane czy też szyfrowane. Podajemy PIN chroniący dodatkowo nasze dane i zaczyna się proces synchronizacji.
+Start przeglądarki będzie spowolniony o czas potrzebny do synchronizacji danych z sewerami google. Ale za to po otwarciu kilku ciekawych stron w panelach, założeniu kilku kont z zapamiętaniem haseł i zamknięciu przeglądarki w pracy &amp;hellip; wracamy do domu, otwieramy przeglądarkę i mamy stan przeglądarki z chwili zamknięcia jej w pracy (hasła, panele, itp)</description>
     </item>
     
     <item>
@@ -356,7 +382,7 @@ http://viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html</description>
       <description>Czy zdaża Wam się szukać jakiejś wolnej konsoli, na którymś pulpicie ? Można też do paska w Gnome lub KDE przypiąć minikonsole (brr).
 Wygodnym rozwiązaniem byłaby podręczna konsola, pojawiająca się kiedy jest potrzebna - podobnie jak w grach typu Quake.
 Osobiście znam trzy tego typu rozwiązania:
- yakuake - konsola z KDE (działa we fluxboxie, więc inne WM pewnie też dadzą radę kuake - także konsola z KDE tilda - samodzielna konsola  Mi osobiście najmniej podobała się tilda, zaś na biurku ciągle używam yakuake.</description>
+ yakuake - konsola z KDE (działa we fluxboxie, więc inne WM pewnie też dadzą radę kuake - także konsola z KDE tilda - samodzielna konsola  Mi osobiście najmniej podobała się tilda, zaś na biurku ciągle używam yakuake. Domyślny skrót klawiszowy dla yakuake to F12, który szybko zamieniłem na CTRL+~. Do tego kolory zwykłej konsoli, mniejsze fonty i gotowe. Jak to w KDE możliwe jest uruchamianie w ramach Yakuake kilku zakładek. Konsola ładnie się chowa gdy na pulpicie wyskoczy na okienko, lub wystąpi inna akcja pragnąca focusa.</description>
     </item>
     
     <item>
@@ -367,7 +393,10 @@ Osobiście znam trzy tego typu rozwiązania:
       <guid>https://marekwywial.name/posts/blog20060223wlasna-strona-startowa/</guid>
       <description>Popularne (choć chyba powoli) stają się serwisy oferujące osobiste strony startowe. Strona taka zawiera często newsy z interesujących nas serwisów, okienko logowanie się do naszego serwisu pocztowego, pogodę, kursy walut, notatki i wiele innych.
 Z polskich serwisów kojarzę jedynie startowy.com. Ostatnio dużo słychać także o witrynie Microsoftu live.com. Wczoraj natomiast wpadł mi do Firefox&amp;rsquo;a taki adres jak www.netvibes.com/.
-Cechą wspólną tych serwisów jest wygodna edycja swojej strony oraz wygodnie przemieszczanie jej elementów.</description>
+Cechą wspólną tych serwisów jest wygodna edycja swojej strony oraz wygodnie przemieszczanie jej elementów. Aby korzystać z startowy.com należy się zarejestrować. Otrzymujemy wtedy swój osobisty adres np. mojastrona.startowy.com, który możemy propagować wśród naszych znajomych (dokładając np. do niej własny blog). Serwis ten odbiega więc od funkcji tylko naszej osobistej strony startowej.
+live.com oraz www.netvibes.com natomiast nie dają możliwości stworzenia własnego zewnętrznego adresu. Zapamiętują Twoje ustawienia za pomocą ciasteczek (cookies) lub po zarejestrowaniu swojego adresu email i ustawieniu hasła, możemy uzyskać dostęp do swojej strony z dowolnego komputera i przeglądarki.
+Pod względem różnorodności box&amp;rsquo;ów (funkcji) www.netvibes.com pozostaje na topie, natomiast live.com umożliwia nam dodatkowo sterowanie layoutem (ilość kolumn, język strony).
+Oczywiście live.com (domyślnie) oraz www.netvibes.com są serwisami anglojęzycznymi.</description>
     </item>
     
     <item>
@@ -378,7 +407,8 @@ Cechą wspólną tych serwisów jest wygodna edycja swojej strony oraz wygodnie 
       <guid>https://marekwywial.name/posts/blog20051011osodziae-sobie-ycie/</guid>
       <description>Tak, kto używa Vim&amp;rsquo;a, ten zazwyczaj do szczęścia wiele nie potrzebuje. Ale by sobie trochę osłodzić pracę, można zainstalować sobie Cream.
 Jest to zestaw gotowej, łatwej w użyciu i rozbudowanej konfiguracji dla Vim&amp;rsquo;a ( czy też raczej dla GVim&amp;rsquo;a ). Tak wygląda to cudo w akcji. W domyślnej konfiguracji brakowało mi trybu wprowadzania komend, ale po przełączeniu w tryb eksperta tryb ten stał się dostępny.
-Trochę iritujący jest fakt, iż klawisz ESCAPE działa w tym przypadku jak przełącznik.</description>
+Trochę iritujący jest fakt, iż klawisz ESCAPE działa w tym przypadku jak przełącznik. Raz tryb komend, raz tryb wprowadzania. Mam zwyczaj wciskać ESC prawie przed każdą komendą (tak dla pewności) i w przypadku Cream&#39;a często wprowadzam te komendy do treści pliku ;). Zapewne można zmienić przypisania klawiszy i będzie OK. Poza tym używa się całkiem przyjemnie.
+ » cream.sourceforge.net</description>
     </item>
     
     <item>
@@ -388,7 +418,8 @@ Trochę iritujący jest fakt, iż klawisz ESCAPE działa w tym przypadku jak prz
       
       <guid>https://marekwywial.name/posts/blog20050907jabber-roster/</guid>
       <description>Migrowałem ostatnio pomiędzy dwoma serwerami Jabber&amp;rsquo;a. Próbowałem przenieść kontakty przy pomocy Jabber Tools, niestety strony oferujące tą usługę nie były dostępne, lub po podaniu danych do pierwszego formularza &amp;lsquo;zacinały się&amp;rsquo;.
-Chcąc, nie chcąc byłem zmuszony zmajstrować szybko jakieś narzędzie. Na razie tylko działa ;) . Jak znajdę czas, oczyszczę kod, dodam trochę komentarzy i takie tam. Jak ktoś się nie boi można spróbować poużywać lub pobrać kod źródłowy w celach własnych.</description>
+Chcąc, nie chcąc byłem zmuszony zmajstrować szybko jakieś narzędzie. Na razie tylko działa ;) . Jak znajdę czas, oczyszczę kod, dodam trochę komentarzy i takie tam. Jak ktoś się nie boi można spróbować poużywać lub pobrać kod źródłowy w celach własnych. Na pewno się nie obrażę :)
+ Jabber import / export  </description>
     </item>
     
   </channel>

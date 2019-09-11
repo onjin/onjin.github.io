@@ -5,6 +5,7 @@
     <link>https://marekwywial.name/tags/www/</link>
     <description>Recent content in www on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>pl</language>
     <lastBuildDate>Mon, 29 Oct 2007 20:59:33 +0000</lastBuildDate>
     
 	<atom:link href="https://marekwywial.name/tags/www/index.xml" rel="self" type="application/rss+xml" />
@@ -94,7 +95,8 @@ prototype cheat sheet</description>
       
       <guid>https://marekwywial.name/posts/blog20060609firefox-google-synchronizacja/</guid>
       <description>Google Browser Sync jest rozszerzeniem dla Firefox&amp;rsquo;a, które synchronizuje ustawienia przeglądarki (bookmarki, historię, ciasteczka, zapisane hasła) pomiędzy komputerami (np. Twój Firefox w domu i pracy). Pozwala także odtworzyć otwarte panele i okna przeglądarki.
-Rozszerzenie to wymaga posiadania konta w Google (GMail). Po zainstalowaniu mamy do wyboru konfigurację standardową (synchronizacja wszystkiego i szyfrowanie przechowywanych haseł oraz ciasteczek) oraz zaawansowaną, w której sami wybieramy co ma być synchronizowane czy też szyfrowane. Podajemy PIN chroniący dodatkowo nasze dane i zaczyna się proces synchronizacji.</description>
+Rozszerzenie to wymaga posiadania konta w Google (GMail). Po zainstalowaniu mamy do wyboru konfigurację standardową (synchronizacja wszystkiego i szyfrowanie przechowywanych haseł oraz ciasteczek) oraz zaawansowaną, w której sami wybieramy co ma być synchronizowane czy też szyfrowane. Podajemy PIN chroniący dodatkowo nasze dane i zaczyna się proces synchronizacji.
+Start przeglądarki będzie spowolniony o czas potrzebny do synchronizacji danych z sewerami google. Ale za to po otwarciu kilku ciekawych stron w panelach, założeniu kilku kont z zapamiętaniem haseł i zamknięciu przeglądarki w pracy &amp;hellip; wracamy do domu, otwieramy przeglądarkę i mamy stan przeglądarki z chwili zamknięcia jej w pracy (hasła, panele, itp)</description>
     </item>
     
     <item>
@@ -105,7 +107,9 @@ Rozszerzenie to wymaga posiadania konta w Google (GMail). Po zainstalowaniu mamy
       <guid>https://marekwywial.name/posts/blog20060322tworzenie-strony-internetowej/</guid>
       <description>Po co tworzymy stronę ? By pisać blog. Umieszczać informacje o sobie, o naszych zainteresowaniach, itp. Co by to nie było, strona nasza będzie zawierać treść i z jej uwzględnieniem powinna zostać ona zbudowana.
 Ukierunkowanie na treść oznacza prawidłowe stosowanie znaczników &amp;lt;h1&amp;gt;, &amp;lt;h2&amp;gt; dla odpowiednich nagłówków, &amp;lt;ul&amp;gt;, &amp;lt;ol&amp;gt; dla list w tym także menu, &amp;lt;p&amp;gt; dla naszej treści oraz &amp;lt;div&amp;gt; dla podziału logicznego strony (np. budowy layout).
-Oczywiście znaczniki te nie wyczerpują listy możliwych i potrzebnych do zastosowania w naszym przypadku.</description>
+Oczywiście znaczniki te nie wyczerpują listy możliwych i potrzebnych do zastosowania w naszym przypadku.
+Na stronie http://www.latenightrabbit.com/ znajduje się proste i skuteczne wprowadzenie do prawidłowej budowy strony internetowej przy pomocy oczywiście HTML oraz CSS i PHP
+Polecam tą lekturę każdemu. Materiał jest napisany w języku angielskim ale najważniejszy i tak jest kod. Więc jeśli widziałeś kiedyś HTML, CSS lub przypadkiem PHP to powinno wystarczyć.</description>
     </item>
     
     <item>
@@ -116,7 +120,10 @@ Oczywiście znaczniki te nie wyczerpują listy możliwych i potrzebnych do zasto
       <guid>https://marekwywial.name/posts/blog20060223wlasna-strona-startowa/</guid>
       <description>Popularne (choć chyba powoli) stają się serwisy oferujące osobiste strony startowe. Strona taka zawiera często newsy z interesujących nas serwisów, okienko logowanie się do naszego serwisu pocztowego, pogodę, kursy walut, notatki i wiele innych.
 Z polskich serwisów kojarzę jedynie startowy.com. Ostatnio dużo słychać także o witrynie Microsoftu live.com. Wczoraj natomiast wpadł mi do Firefox&amp;rsquo;a taki adres jak www.netvibes.com/.
-Cechą wspólną tych serwisów jest wygodna edycja swojej strony oraz wygodnie przemieszczanie jej elementów.</description>
+Cechą wspólną tych serwisów jest wygodna edycja swojej strony oraz wygodnie przemieszczanie jej elementów. Aby korzystać z startowy.com należy się zarejestrować. Otrzymujemy wtedy swój osobisty adres np. mojastrona.startowy.com, który możemy propagować wśród naszych znajomych (dokładając np. do niej własny blog). Serwis ten odbiega więc od funkcji tylko naszej osobistej strony startowej.
+live.com oraz www.netvibes.com natomiast nie dają możliwości stworzenia własnego zewnętrznego adresu. Zapamiętują Twoje ustawienia za pomocą ciasteczek (cookies) lub po zarejestrowaniu swojego adresu email i ustawieniu hasła, możemy uzyskać dostęp do swojej strony z dowolnego komputera i przeglądarki.
+Pod względem różnorodności box&amp;rsquo;ów (funkcji) www.netvibes.com pozostaje na topie, natomiast live.com umożliwia nam dodatkowo sterowanie layoutem (ilość kolumn, język strony).
+Oczywiście live.com (domyślnie) oraz www.netvibes.com są serwisami anglojęzycznymi.</description>
     </item>
     
     <item>
@@ -137,7 +144,11 @@ Wystarczy kliknąć na dodaj obok opisu w tabelce, przełączyć w prawym górny
       <guid>https://marekwywial.name/posts/blog20060209skracanie-formularzy-java-script/</guid>
       <description>Długie formularze, podzielone na kilka sekcji ciągnące się w dół strony, nie są zbyt czytelne. Formularz taki można zmodyfikować dzieląć go na klikalne etapy lub wizualne zakładki. Ale jeżeli mamy wiele takich formularzy napisanych na dodatek w samym HTML&amp;rsquo;u ?
 Możemy to sobie uprościć za pomocą JavaScript. Odpowiednia funkcja wywołana po załadowaniu się strony [body onLoad=&amp;ldquo;funkcja();&amp;rdquo;] może wyszukać sekcje naszego formularza i zwinąć je do ciekawszych wizualnie zakładek.
-Żeby funkcja wiedziała co jest sekcją, należy je odpowiednio oznaczyć np.</description>
+Żeby funkcja wiedziała co jest sekcją, należy je odpowiednio oznaczyć np. poprzez odpowiednią klasę CSS &amp;lsquo;subpanel&amp;rsquo;
+Druga ważna rzecz, skrypt musi wiedzieć jak nazwać zakładki. Do tego wykorzystałem atrybut title. Nasz kod wygląda teraz tak:
+&amp;lt;div class=&amp;#34;subpanel&amp;#34; title=&amp;#34;zakładka 1&amp;#34;&amp;gt; &amp;lt;h2&amp;gt;sekcja 1&amp;lt;/h2&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;subpanel&amp;#34; title=&amp;#34;zakładka 2&amp;#34;&amp;gt; &amp;lt;h2&amp;gt;sekcja 2&amp;lt;/h2&amp;gt; &amp;lt;/div&amp;gt; Teraz za pomocą JavaScript możemy odnaleźć wszystkie znaczniki DIV.
+if (!document.getElementsByTagName || !document.createElement || !document.appendChild) return; /* pobieramy wszystkie div&amp;#39;y */ var divs = document.getElementsByTagName(&amp;#34;div&amp;#34;);  Następnie przygotowywujemy dodatkowy element DIV, w którym umieścimy stworzone zakładki.
+/* nr. pierwszego div&amp;#39;a z klasą subpanel */ var firstDiv = -1; /* tworzymy div na nasze menu */ var menu = document.createElement(&amp;#34;div&amp;#34;); menu.className = &amp;#34;panels_menu&amp;#34;; menu.setAttribute(&amp;#34;id&amp;#34;,&amp;#34;panels_menu&amp;#34;);  Pozostaje nam przejść się pętlą po wszystkich znalezionych DIV&amp;lsquo;ach i wybrać te, które posiadają klasę &amp;lsquo;subpanel&amp;rsquo;. Z każdego z nich pobieramy wartość atrybutu title i naszym &amp;lsquo;menu&amp;rsquo; tworzymy odpowiedni odnośnik:</description>
     </item>
     
     <item>
@@ -152,7 +163,10 @@ czego naprawdę chce klient
 czy możemy sprostać jego oczekiwaniom terminu wykonania, kosztu oraz działania ostatecznego produktu
 czy stać nas na wykonanie projektu na zadanych warunkach
 czy klienta stać na postawione przez nas warunki (np. cenowe)
-Klienci często nie do końca wiedzą czego potrzebują i dlaczego. Możemy otrzymać zlecenie na &amp;lsquo;zwykłą statyczną stronę&amp;rsquo;, materiały podeślą nam później, jak przygotujemy szablony, itp.</description>
+Klienci często nie do końca wiedzą czego potrzebują i dlaczego. Możemy otrzymać zlecenie na &amp;lsquo;zwykłą statyczną stronę&amp;rsquo;, materiały podeślą nam później, jak przygotujemy szablony, itp. Potem otrzymujemy materiały w formie listy 200 produktów, które powinny być na stronie podzielone na grupy towarowe, edytowalne z panelu administratora, z możliwością ich zamawiania przez różne grupy klientów (detalista, partner, dystrybutor), przydała by się możliwość importu oraz exportu danych z XLS (CSV) i oczywiście system newsów także byłby wskazany.
+Jeżeli w tym momencie jesteśmy na etapie gotowych szablonów (X)HTML/CSS oraz zaplanowaliśmy 5 dni roboczych na złożenie za ich pomocą dostarczonych treści &amp;hellip; to może być źle. Nie mówiąc już na ile wyceniliśmy nasze statyczne strony.
+Krótka historia obrazująca prosty, modelowy przebieg procesu tworzenie strony, przedstawiona jest na stronie PingMan&#39;a.
+Jest krótka, wyrazista i &amp;hellip; często jedynie modelowa :D</description>
     </item>
     
     <item>
@@ -172,7 +186,8 @@ I z racji tych i innych onjin.net też posiada już wersję 2.0. Witamy, witamy 
       
       <guid>https://marekwywial.name/posts/blog20060110sortowanie-tabel/</guid>
       <description>Chyba każdy wyrzucił kiedyś na ekran tabelkę w HTML&amp;rsquo;u. Jeśli danych dużo i dynamiczne, to użył do tego PHP. Aby lepiej ogarnąć dane, nagłówki kolumn zostały odnośnikami z końcówką mniej więcej taką:
-1 2  &amp;lt;ht&amp;gt;&amp;lt;a href=&amp;#34;?order=data&amp;#34;&amp;gt;data&amp;lt;/a&amp;gt; &amp;lt;th&amp;gt;&amp;lt;a href=&amp;#34;?order=ilosc&amp;#34;&amp;gt;ilość&amp;lt;/a&amp;gt;&amp;lt;/th&amp;gt;   Ta sama tabelka, te same dane. Ale aby ją posortować trzeba znów odwoływać się do serwera. Wygodniej by było gdyby tabelka mogła się sortować po stronie klienta (np. JavaScript). Tu z pomoca przychodzi nam biblioteka sorttable napisana właśnie w JavaScript.</description>
+&amp;lt;ht&amp;gt;&amp;lt;a href=&amp;#34;?order=data&amp;#34;&amp;gt;data&amp;lt;/a&amp;gt; &amp;lt;th&amp;gt;&amp;lt;a href=&amp;#34;?order=ilosc&amp;#34;&amp;gt;ilość&amp;lt;/a&amp;gt;&amp;lt;/th&amp;gt; Ta sama tabelka, te same dane. Ale aby ją posortować trzeba znów odwoływać się do serwera. Wygodniej by było gdyby tabelka mogła się sortować po stronie klienta (np. JavaScript). Tu z pomoca przychodzi nam biblioteka sorttable napisana właśnie w JavaScript. Skuteczna i prosta w użyciu. Spójrzcie na mały przykład z opisem.
+I nie lepiej tak ?</description>
     </item>
     
   </channel>

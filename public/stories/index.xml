@@ -5,6 +5,7 @@
     <link>https://marekwywial.name/stories/</link>
     <description>Recent content in Stories on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>pl</language>
     
 	<atom:link href="https://marekwywial.name/stories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +16,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://marekwywial.name/stories/about-me/</guid>
-      <description>My projects runenv - Wrapper to run programs with different env or load env from .env file vim-startup - quick way to start with vim &amp;amp; python liquimigrate - django integration for Liquibase migrations docker-alpine-postgres - Small PostgreSQL images (~58MB) for versions 9.1 - 9.5 docker-php-oracle - docker image for php with oracle db support (trusted image) ejpiaj - declarative way API testing suite (small python package) docker - other docker images  You can found more projects on my github page:</description>
+      <description>My projects runenv - Wrapper to run programs with different env or load env from .env file vim-startup - quick way to start with vim &amp;amp; python liquimigrate - django integration for Liquibase migrations docker-alpine-postgres - Small PostgreSQL images (~58MB) for versions 9.1 - 9.5 docker-php-oracle - docker image for php with oracle db support (trusted image) ejpiaj - declarative way API testing suite (small python package) docker - other docker images  You can found more projects on my github page:
+github   My websites nopic - online images generator gettoknowit - portal to learn any language tani-ebook - portal to get or buy e-books (Polski)   Other sites linkedin.com (English) goldenline.pl (Polski)   </description>
     </item>
     
   </channel>

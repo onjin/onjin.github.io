@@ -5,6 +5,7 @@
     <link>https://marekwywial.name/tags/music/</link>
     <description>Recent content in music on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>pl</language>
     <lastBuildDate>Sat, 19 Mar 2011 13:03:04 +0000</lastBuildDate>
     
 	<atom:link href="https://marekwywial.name/tags/music/index.xml" rel="self" type="application/rss+xml" />
@@ -18,7 +19,9 @@
       <guid>https://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</guid>
       <description>Przy okazji szukania API do grooveshark&amp;rsquo;a odkryłem plik currentSong.txt, który jest tworzony przez Grooveshark Desktop.
 Kilka minut z vim&amp;rsquo;em i mamy skrypt napisany w python&amp;rsquo;ie, który odczytuje w/w plik i wrzuca informację o aktualnie odtwarzanym utworze jako status wybranego konta w gajim&amp;rsquo;a.
-Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wymana pyinotify). Wtedy nasz status będzie zmieniany w chwili (chwilę potem :) ) zmiany utworu w Grooveshark Desktop.</description>
+Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wymana pyinotify). Wtedy nasz status będzie zmieniany w chwili (chwilę potem :) ) zmiany utworu w Grooveshark Desktop.
+Całość można dowolnie używać/modyfikować, a pobrać można z serwisu github.com:
+ https://github.com/onjin/grooveshark2gajim http://onjin.github.com/grooveshark2gajim/  Do działania wystarczy nam plik grov2gajim.py. Umieszczamy go gdzieś na dysku i możemy używać.</description>
     </item>
     
     <item>
@@ -28,7 +31,9 @@ Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wyman
       
       <guid>https://marekwywial.name/posts/blog20060928muzyka-sluchanie-promocja/</guid>
       <description>Jamendo to serwis internetowy pozwalający artystom na udostępnianie swojej twórczości w internecie na zasasach licencji Creative Commons. W ten sposób można zaistnieć, dotrzeć do szerokiego grona słuchaczy, informować ich o koncertach.
-Słuchacze udostępnione utwory mogą odsłuchać (w praktycznie dowolnych odtwarzaczu muzyki w formacie Ogg lub MP3), legalnie pobrać za pomocą BitTorrenta lub eMula (programy P2P), napisać rezencję. Jeżeli artysta nam się spodoba możemy kupić jego płytę lub wpłacić dla niego pieniądzę.</description>
+Słuchacze udostępnione utwory mogą odsłuchać (w praktycznie dowolnych odtwarzaczu muzyki w formacie Ogg lub MP3), legalnie pobrać za pomocą BitTorrenta lub eMula (programy P2P), napisać rezencję. Jeżeli artysta nam się spodoba możemy kupić jego płytę lub wpłacić dla niego pieniądzę.
+Podczas słuchania, dzięki systemowi iRATE system będzie dobierał dla nas muzykę wegług naszych gustów.
+Cała platforma jest oczywiście bezpłatna.</description>
     </item>
     
     <item>

@@ -5,6 +5,7 @@
     <link>https://marekwywial.name/tags/desktop/</link>
     <description>Recent content in desktop on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>pl</language>
     <lastBuildDate>Sat, 19 Mar 2011 13:03:04 +0000</lastBuildDate>
     
 	<atom:link href="https://marekwywial.name/tags/desktop/index.xml" rel="self" type="application/rss+xml" />
@@ -18,7 +19,9 @@
       <guid>https://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</guid>
       <description>Przy okazji szukania API do grooveshark&amp;rsquo;a odkryłem plik currentSong.txt, który jest tworzony przez Grooveshark Desktop.
 Kilka minut z vim&amp;rsquo;em i mamy skrypt napisany w python&amp;rsquo;ie, który odczytuje w/w plik i wrzuca informację o aktualnie odtwarzanym utworze jako status wybranego konta w gajim&amp;rsquo;a.
-Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wymana pyinotify). Wtedy nasz status będzie zmieniany w chwili (chwilę potem :) ) zmiany utworu w Grooveshark Desktop.</description>
+Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wymana pyinotify). Wtedy nasz status będzie zmieniany w chwili (chwilę potem :) ) zmiany utworu w Grooveshark Desktop.
+Całość można dowolnie używać/modyfikować, a pobrać można z serwisu github.com:
+ https://github.com/onjin/grooveshark2gajim http://onjin.github.com/grooveshark2gajim/  Do działania wystarczy nam plik grov2gajim.py. Umieszczamy go gdzieś na dysku i możemy używać.</description>
     </item>
     
     <item>
@@ -50,7 +53,9 @@ To popatrzy niech teraz na Beryla:
       <guid>https://marekwywial.name/posts/blog20051110is-ms-windows-ready-for-the-desktop/</guid>
       <description>Ostatnio wielu (??) użytkowników komputerów, próbuje przesiąść się z systemu MS Windows na Linuksa.
 Mają przy tym mniejsze lub większe problemy. Wynikaja one często z niechęci do zmiany przyzwyczajeń, złym wyobrażaniu sobie systemów typu Linux i pracy z nimi, braku czasu na zdobycie dodatkowej wiedzy, z powodu używania specjalistycznego oprogramowania nie działającego w tym systemie, itp.
-Stron i treści opisujących te problemy oraz jak sobie z nimi radzić jest wiele (google)</description>
+Stron i treści opisujących te problemy oraz jak sobie z nimi radzić jest wiele (google)
+Ale czy ktoś próbował kiedys w drugą stronę ? Praktycznie nie używam systemu Windows od ok 9 lat. Pracuję, uczę się i bawię przy pomocy Linuksa.
+Is MS Windows ready for the desktop? jest odpowiedzią na problemy, które spotkać może osoba, próbująca przesiąść się z Linuxa na Windows ;)</description>
     </item>
     
   </channel>

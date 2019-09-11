@@ -4,7 +4,7 @@ date: 2010-08-11T18:45:35
 slug: blog20100811vim-snippetsemu-i-liquibase
 url: /posts/blog20100811vim-snippetsemu-i-liquibase.html
 tags: ["programowanie","tools","vim"]
-cover: /img/cover-code-editor.jpg
+img: /img/cover-code-editor.jpg
 aliases:
     - /posts/blog20100811vim-snippetsemu-i-liquibase/index.html
 ---

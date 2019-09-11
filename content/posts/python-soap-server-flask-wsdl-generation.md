@@ -9,6 +9,11 @@ aliases:
     - /posts/blog20130813python-soap-server-flask-wsdl-generation/index.html
 ---
 
+Simple tutorial how quickly create SOAP server using python "Flask-Enterprise" package for "flash" web framework.
+Example comes with basic client using "suds" package.
+
+
+<!--more-->
 
 Install
 =======

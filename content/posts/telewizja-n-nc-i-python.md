@@ -4,7 +4,6 @@ date: 2013-10-12T01:26:16
 slug: telewizja-n-nc-i-python
 url: /posts/telewizja-n-nc-i-python.html
 tags: ["python","github","cli"]
-cover: /img/cover-python1.jpg
 aliases:
     - /posts/telewizja-n-nc-i-python/index.html
 ---
@@ -13,6 +12,8 @@ Aby się przeklikać przez program na http://n.pl/ i jeszcze znaleźć interesuj
 
 Napisałem więc na szybko narzędzie działające w shellu, które pozwala przeglądać oraz przeszukiwać program ze strony
 n.pl https://github.com/onjin/ntv/.
+
+<!--more-->
 
 Instalacja
 ==========

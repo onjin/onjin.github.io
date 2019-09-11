@@ -4,8 +4,10 @@ date: 2010-07-29T20:34:19
 slug: blog20100729best-vim-plugins
 url: /posts/blog20100729best-vim-plugins.html
 tags: ["programowanie","python","tools","vim"]
-cover: /img/cover-code-editor.jpg
+img: /img/cover-code-editor.jpg
+toc: true
 ---
+
 Dziś robiłem porządki w ~/.vim/ . Aktualizacje do nowych wersji pluginów, wyrzucanie nieużywanych, porządki w ~/.vimrc. W trakcie tej pracy powstała lista pluginów, dzięki którym miło mi się pracuje
 
 vimball

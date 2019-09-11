@@ -4,6 +4,7 @@ date: 2009-02-26T21:59:38+01:00
 slug: blog20090226homepl-django-pierwsza-potyczka
 url: /posts/blog20090226homepl-django-pierwsza-potyczka.html
 tags: ["hosting", "webdev", "django", "home.pl", "python"]
+toc: true
 ---
 
 *home.pl* obsługuje **pythona** jako **cgi** (pliki .py) więc tego będziemy się trzymać. Instalację wykonamy w katalogu **/py**

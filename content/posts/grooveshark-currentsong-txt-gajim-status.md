@@ -4,7 +4,7 @@ date: 2011-03-19T13:03:04
 slug: blog20110319grooveshark-currentsong-txt-gajim-status
 url: /posts/blog20110319grooveshark-currentsong-txt-gajim-status.html
 tags: ["desktop","linux","music","python","tools"]
-cover: /img/cover-music1.jpg
+img: /img/cover-music1.jpg
 ---
 Przy okazji szukania API do <a href="http://grooveshark.com">grooveshark'a</a> odkryłem plik <b>currentSong.txt</b>, który jest tworzony przez <em>Grooveshark Desktop</em>.
 

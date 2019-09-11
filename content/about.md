@@ -1,3 +1,9 @@
+---
+date: 2005-07-08T21:49:28+01:00
+toc: true
+disable_disqus: true
+---
+
 Marek Wywiał
 ============
 

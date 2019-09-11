@@ -1,0 +1,90 @@
+baseURL                   = "https://marekwywial.name"
+builddrafts                = false
+languageCode               = "pl"
+canonifyurls               = true
+contentdir                 = "content"
+layoutdir                  = "layouts"
+publishdir                 = "public"
+enableEmoji                = true
+hasCJKLanguage             = true
+summaryLength              = 200
+Paginate                   = 10
+disqusShortname            = "marekwywial"
+
+theme                      = "AllinOne"
+title                      = "Marek Wywiał"
+
+pygmentsuseclasses         = true
+
+
+[permalinks]
+  # blog                     = "blog/:year-:month/:slug/"
+
+
+[taxonomies]
+  tag                      = "tags"
+  series                   = "series"
+  category                 = "categories"
+
+
+[menu]
+  [[menu.main]]
+    name                   = "Blog"
+    weight                 = -120
+    identifier             = "blog"
+    url                    = "posts/"  
+
+  #[[menu.main]]
+  #  name                   = "Moment"
+  #  weight                 = -110
+  #  identifier             = "moment"
+  #  url                    = "moment/" 
+
+  [[menu.main]]
+    name                   = "About"
+    weight                 = -100
+    identifier             = "about"
+    url                    = "about/"  
+
+ 
+
+[params]
+  # faviconfile              = "img/onjin_kanji.png"               # from static/
+  avatar                   = "https://secure.gravatar.com/avatar/82c0ae52543d7865dac4bbe1b61cf11c?s=256"
+  author                   = "Marek Wywiał"
+  description              = ["Python Software Developer", "In the face of ambiguity, refuse the temptation to guess.", "Nothing is an absolute reality, all is permitted."]
+  welcome_head             = "And Now"
+  welcome_word             = "~ for Something Completely Different ~"
+
+  latestpostscount         = 10                             # how many posts to display on the home page
+  bloggroupby              = 'month'
+  dateform                 = "Jan 2, 2006"
+  dateformfull             = "2006-01-02  Monday  15:04:05"
+  noshowreadtime           = false                         # if true, don't show "<x> minutes read" in posts
+
+  # slides
+  # slidesDirPath            = "themes/AllinOne/static/img/header-slides"    # path to image in local dir (path for hugo)
+  slidesDirPath            = "static/img/header-slides"    # path to image in local dir (path for hugo)
+  slidesDirPathURL         = "img/header-slides"    # path to image in static dir (for static pages)
+
+  # highlighting 
+  highlightjs              = true
+
+  # latex
+  katex                    = true
+
+  # links
+  email                    = "onjinx@gmail.com"
+  github                   = "//github.com/onjin"
+  linkedin                 = "//linkedin.com/in/onjin/"
+  facebook                 = "//facebook.com/marek.wywial"
+  # googleplus               = "//google.com/you"
+  twitter                  = "//twitter.com/onjin" 
+  #px500                    = "//px500"
+  instagram                = "//instagram.com/nazano"
+  include_rss              = true                          # include RSS <link> tag in <head> and show RSS icon
+  
+  # analytics
+  googleAnalytics          = "UA-151457-1"
+    
+    

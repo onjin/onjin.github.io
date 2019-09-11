@@ -4,7 +4,7 @@ date: 2012-03-14T22:50:36
 slug: blog20120314vim-vundle-plugin-manager-programming
 url: /posts/blog20120314vim-vundle-plugin-manager-programming.html
 tags: ["python","vim"]
-cover: /img/cover-code-editor.jpg
+img: /img/cover-code-editor.jpg
 ---
 
 Kilku znajomych chciało zacząć używać vim'a. Ale konfigurowanie go na starcie, dobieranie pluginów, instalowanie ich, gdy się jeszcze nic nie wie tylko chce się spróbować zazwyczaj powodowało przełożenie tej próby na 'kiedy indziej'.

@@ -1171,3 +1171,8 @@ toc-nav  scrollspy
   font-style: normal;
 }
 .highlight .lntable .lntd:first-child { width: 4em; }
+
+#site-header {
+  height: 50%;
+  min-height: 470px;
+}

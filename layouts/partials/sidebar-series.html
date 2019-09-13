@@ -7,7 +7,6 @@
 {{ $kind := .Kind }}
 
 {{ if or (gt (len $terms) 0) (eq $kind "home") }}
-  <hr>
   {{ with .Site.Taxonomies.series }}
     <div class="post-meta">
       <div class="mb-2">

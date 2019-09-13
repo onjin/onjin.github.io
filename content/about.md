@@ -32,12 +32,6 @@ My websites
 -   [tani-ebook] - portal to get or buy e-books (Polski)
 
 
-Other sites
------------
-
--   [linkedin.com] (English)
--   [goldenline.pl] (Polski)
-
   [runenv]: http://ejpiaj.readthedocs.org/
   [vim-startup]: https://github.com/onjin/vim-startup
   [liquimigrate]: https://github.com/onjin/liquimigrate
@@ -49,5 +43,3 @@ Other sites
   [nopic]: http://nopic.herokuapp.com/
   [gettoknowit]: http://gettoknow.it/
   [tani-ebook]: http://tani-ebook.pl/
-  [linkedin.com]: http://linkedin.com/in/onjin/
-  [goldenline.pl]: http://goldenline.pl/marek-wywial/

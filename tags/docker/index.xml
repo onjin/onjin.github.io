@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>Fast sentry instance using docker</title>
-      <link>https://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker/</link>
+      <title>Startujemy sentry przy pomocy dockera</title>
+      <link>https://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker-pl/</link>
       <pubDate>Wed, 18 Sep 2013 13:36:39 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker/</guid>
-      <description>&lt;p&gt;How to quickly spin up private &lt;a href=&#34;https://sentry.io&#34;&gt;Sentry&lt;/a&gt; instance using only docker.&lt;/p&gt;</description>
+      <guid>https://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker-pl/</guid>
+      <description>&lt;p&gt;Jak szybko uruchomić prywatną instancję &lt;a href=&#34;https://sentry.io&#34;&gt;Sentry&lt;/a&gt; używając dockera.&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -35,3 +35,12 @@
 
 - id: translations
   translation: "Translations"
+
+- id: cookiesInfo
+  translation: "We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies."
+
+- id: cookiesInfoMore
+  translation: "More info"
+
+- id: cookiesInfoMoreLink
+  translation: "https://wikipedia.org/wiki/HTTP_cookie"

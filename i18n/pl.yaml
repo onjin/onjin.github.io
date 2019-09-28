@@ -35,3 +35,12 @@
 
 - id: translations
   translation: "Tłumaczenia"
+
+- id: cookiesInfo
+  translation: "Nasza strona internetowa używa plików cookies (tzw. ciasteczka) w celach statystycznych, reklamowych oraz funkcjonalnych. Dzięki nim możemy indywidualnie dostosować stronę do twoich potrzeb. Każdy może zaakceptować pliki cookies albo ma możliwość wyłączenia ich w przeglądarce, dzięki czemu nie będą zbierane żadne informacje."
+
+- id: cookiesInfoMore
+  translation: "Dowiedz się jak je wyłączyć"
+
+- id: cookiesInfoMoreLink
+  translation: "http://ciasteczka.eu/#jak-wylaczyc-ciasteczka"

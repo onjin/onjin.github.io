@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on Marek Wywiał</title>
+    <link>https://marekwywial.name/en/tags/python/</link>
+    <description>Recent content in python on Marek Wywiał</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pl</language>
+    <lastBuildDate>Tue, 13 Aug 2013 18:53:49 +0000</lastBuildDate>
+    
+	<atom:link href="https://marekwywial.name/en/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python SOAP server (flask) &#43; wsdl generation</title>
+      <link>https://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html</link>
+      <pubDate>Tue, 13 Aug 2013 18:53:49 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html</guid>
+      <description>&lt;p&gt;Simple tutorial how quickly create SOAP server using python &amp;ldquo;Flask-Enterprise&amp;rdquo; package for &amp;ldquo;flash&amp;rdquo; web framework.
+Example comes with basic client using &amp;ldquo;suds&amp;rdquo; package.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

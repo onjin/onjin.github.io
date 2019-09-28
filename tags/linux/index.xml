@@ -21,16 +21,6 @@
     </item>
     
     <item>
-      <title>Rescan SCSI bus (no reboot)</title>
-      <link>https://marekwywial.name/posts/blog20120705rescan-scsi-bus-no-reboot/</link>
-      <pubDate>Thu, 05 Jul 2012 08:16:42 +0000</pubDate>
-      
-      <guid>https://marekwywial.name/posts/blog20120705rescan-scsi-bus-no-reboot/</guid>
-      <description> Just self memo. How to attach new SCSI disk without reboot (debian):
-# check what hosts do you have ls /sys/class/scsi_host host0 host1 host2 host3 # change &amp;#39;host0&amp;#39; to &amp;#39;host1&amp;#39; or any next number that you need echo &amp;#34;- - -&amp;#34; &amp;gt; /sys/class/scsi_host/host0/scan and done fdisk -l </description>
-    </item>
-    
-    <item>
       <title>Grooveshark currentSong.txt &#43; gajim status</title>
       <link>https://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</link>
       <pubDate>Sat, 19 Mar 2011 13:03:04 +0000</pubDate>

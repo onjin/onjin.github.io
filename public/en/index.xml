@@ -66,7 +66,7 @@ Example comes with basic client using &amp;ldquo;suds&amp;rdquo; package.&lt;/p&
       
       <guid>https://marekwywial.name/en/about/</guid>
       <description> Marek Wywiał My projects  runenv - Wrapper to run programs with different env or load env from .env file vim-startup - quick way to start with vim &amp;amp; python liquimigrate - django integration for Liquibase migrations docker-alpine-postgres - Small PostgreSQL images (~58MB) for versions 9.1 - 9.5 docker-php-oracle - docker image for php with oracle db support (trusted image) ejpiaj - declarative way API testing suite (small python package) docker - other docker images  You can found more projects on my github page:
- github  My websites  nopic - online images generator gettoknowit - portal to learn any language tani-ebook - portal to get or buy e-books (Polski)  </description>
+ github  My websites  nopic - online images generator tani-ebook - portal to get or buy e-books (Polski)  </description>
     </item>
     
   </channel>

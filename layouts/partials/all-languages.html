@@ -1,0 +1,7 @@
+{{ $lang:= .Lang }}
+<ul class="navbar-nav mr-auto pull-right">
+{{ range $.Site.Home.AllTranslations }}
+<li class="nav-item"><a class="nav-link waves-effect waves-light{{ if eq $lang .Language.Lang}} active{{ end }}" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
+{{ end }}
+<li>{{ .Lang }}</li>
+</ul>

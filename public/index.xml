@@ -43,35 +43,6 @@ Example comes with basic client using &amp;ldquo;suds&amp;rdquo; package.&lt;/p&
     </item>
     
     <item>
-      <title>quiet please !! disable audio bell in gvim</title>
-      <link>https://marekwywial.name/posts/blog20120730quiet-please-disable-audio-bell-in-gvim/</link>
-      <pubDate>Mon, 30 Jul 2012 21:27:26 +0000</pubDate>
-      
-      <guid>https://marekwywial.name/posts/blog20120730quiet-please-disable-audio-bell-in-gvim/</guid>
-      <description>I don&amp;rsquo;t want to hear it any more, so I&amp;rsquo;ve put this into .vimrc
-&amp;#34; quiet pleeeeeease if has(&amp;#39;autocmd&amp;#39;) autocmd GUIEnter * set visualbell t_vb= endif </description>
-    </item>
-    
-    <item>
-      <title>Rescan SCSI bus (no reboot)</title>
-      <link>https://marekwywial.name/posts/blog20120705rescan-scsi-bus-no-reboot/</link>
-      <pubDate>Thu, 05 Jul 2012 08:16:42 +0000</pubDate>
-      
-      <guid>https://marekwywial.name/posts/blog20120705rescan-scsi-bus-no-reboot/</guid>
-      <description> Just self memo. How to attach new SCSI disk without reboot (debian):
-# check what hosts do you have ls /sys/class/scsi_host host0 host1 host2 host3 # change &amp;#39;host0&amp;#39; to &amp;#39;host1&amp;#39; or any next number that you need echo &amp;#34;- - -&amp;#34; &amp;gt; /sys/class/scsi_host/host0/scan and done fdisk -l </description>
-    </item>
-    
-    <item>
-      <title>extend lvm2 filesystem</title>
-      <link>https://marekwywial.name/posts/blog20120427extend-lvm2-filesystem/</link>
-      <pubDate>Fri, 27 Apr 2012 10:30:44 +0000</pubDate>
-      
-      <guid>https://marekwywial.name/posts/blog20120427extend-lvm2-filesystem/</guid>
-      <description>Just self memo # Added new physical partition /dev/sda3 # create a physical volume out of it $ pvcreate /dev/sda3 # Now, add it to the volume group #that my logical volume is on $ vgextend VolGroup00 /dev/sda3 # Now that the volume group has more # disk space, the logical volume can grow $ lvextend -L+11G /dev/VolGroup00/LogVol00 # Ok, last of all, I want to filesystem to # recognize that more space is available $ fsadm resize /dev/VolGroup00/LogVol00 # sweet, I have more space now $ df -h</description>
-    </item>
-    
-    <item>
       <title>vim &#43; vundle plugin manager &#43; programming</title>
       <link>https://marekwywial.name/posts/blog20120314vim-vundle-plugin-manager-programming.html</link>
       <pubDate>Wed, 14 Mar 2012 22:50:36 +0000</pubDate>
@@ -1124,13 +1095,13 @@ Więcej o tym szczególnym dniu oraz o zwyczajach i ulubionych prezentach Admini
     </item>
     
     <item>
-      <title></title>
+      <title>O mnie</title>
       <link>https://marekwywial.name/about/</link>
       <pubDate>Fri, 08 Jul 2005 21:49:28 +0100</pubDate>
       
       <guid>https://marekwywial.name/about/</guid>
-      <description> Marek Wywiał My projects  runenv - Wrapper to run programs with different env or load env from .env file vim-startup - quick way to start with vim &amp;amp; python liquimigrate - django integration for Liquibase migrations docker-alpine-postgres - Small PostgreSQL images (~58MB) for versions 9.1 - 9.5 docker-php-oracle - docker image for php with oracle db support (trusted image) ejpiaj - declarative way API testing suite (small python package) docker - other docker images  You can found more projects on my github page:
- github  My websites  nopic - online images generator gettoknowit - portal to learn any language tani-ebook - portal to get or buy e-books (Polski)  </description>
+      <description> Marek Wywiał Moje projekty  runenv - Wrapper to run programs with different env or load env from .env file vim-startup - quick way to start with vim &amp;amp; python liquimigrate - django integration for Liquibase migrations docker-alpine-postgres - Small PostgreSQL images (~58MB) for versions 9.1 - 9.5 docker-php-oracle - docker image for php with oracle db support (trusted image) ejpiaj - declarative way API testing suite (small python package) docker - other docker images  Więcej programów znajdziesz na githubie:
+ github  Moje strony  nopic - online images generator gettoknowit - portal to learn any language tani-ebook - portal to get or buy e-books (Polski)  </description>
     </item>
     
     <item>
@@ -1143,16 +1114,6 @@ Więcej o tym szczególnym dniu oraz o zwyczajach i ulubionych prezentach Admini
 Konkurs ma jasne, przejrzyste zasady. Wygra ten z Uczestników, którego strona zajmie pierwszą lokatę w wynikach wyszukiwania na frazę
 msnbetter thangoogle w wyszukiwarce google.pl w dniu 1 października 2005 o godzinie 14.00.
 Warto sprawdzić co człowiek wie o świecie dlatego złożyłem w parę minut mikro stronkę ( zanim DNS&amp;rsquo;y się rozpropagują jest też dostępna tutaj). Jeżeli pragniecie nowych doświadczeń też spróbujcie :)</description>
-    </item>
-    
-    <item>
-      <title>About me</title>
-      <link>https://marekwywial.name/stories/about-me/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://marekwywial.name/stories/about-me/</guid>
-      <description>My projects runenv - Wrapper to run programs with different env or load env from .env file vim-startup - quick way to start with vim &amp;amp; python liquimigrate - django integration for Liquibase migrations docker-alpine-postgres - Small PostgreSQL images (~58MB) for versions 9.1 - 9.5 docker-php-oracle - docker image for php with oracle db support (trusted image) ejpiaj - declarative way API testing suite (small python package) docker - other docker images  You can found more projects on my github page:
-github   My websites nopic - online images generator gettoknowit - portal to learn any language tani-ebook - portal to get or buy e-books (Polski)   Other sites linkedin.com (English) goldenline.pl (Polski)   </description>
     </item>
     
   </channel>

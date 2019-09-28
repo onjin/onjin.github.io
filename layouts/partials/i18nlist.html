@@ -1,0 +1,12 @@
+{{ if .IsTranslated }}
+<div class="clearfix">
+<ul class="post-meta li-x pull-right">
+  <li><strong>{{ i18n "translations"}}:</strong></li>
+    {{ range .Translations }}
+    <li>
+      <a href="{{ .Permalink }}">{{ .Title }} ({{ .Lang }})</a>
+    </li>
+    {{ end }}
+</ul>
+</div>
+{{ end }}

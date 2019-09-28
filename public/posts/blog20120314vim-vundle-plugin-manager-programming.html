@@ -112,21 +112,28 @@ Jednak używając plugin managera, którego konfiguracja znajduje się w .vimrc 
 
         
         <ul class="navbar-nav mr-auto ">
-          <li class="nav-item ">
-            <a class="nav-link" href="https://marekwywial.name">Home</a>
-          </li>
-             
-            <li class="nav-item ">
-              <a class="nav-link" href="https://marekwywial.name/posts/" >Blog  </a>
-            </li>
           
              
             <li class="nav-item ">
-              <a class="nav-link" href="https://marekwywial.name/about/" >About  </a>
+              <a class="nav-link" href="https://marekwywial.name/posts/" >Blog  <span class="sr-only">(current)</span> </a>
             </li>
-          
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="https://marekwywial.name/about/" >O mnie  </a>
+            </li>
           
         </ul>
+        u
+        
+<ul class="navbar-nav mr-auto pull-right">
+
+<li class="nav-item"><a class="nav-link waves-effect waves-light active" href="https://marekwywial.name/">Polski</a></li>
+
+<li class="nav-item"><a class="nav-link waves-effect waves-light" href="https://marekwywial.name/en/">English</a></li>
+
+<li>pl</li>
+</ul>
+
 
       </div>
 
@@ -265,6 +272,8 @@ Jednak używając plugin managera, którego konfiguracja znajduje się w .vimrc 
     
     
   </ul>
+    
+
 
   <div class="px-4 post-heading">vim &#43; vundle plugin manager &#43; programming</div>
 
@@ -275,7 +284,7 @@ Jednak używając plugin managera, którego konfiguracja znajduje się w .vimrc 
 
     
       <li class="middot"></li>
-      <li>One minute read</li>
+      <li>jedna minuta czytania</li>
     
     
       
@@ -342,10 +351,6 @@ Jednak używając plugin managera, którego konfiguracja znajduje się w .vimrc 
               
 <div id="disqus_thread"></div>
 <script>
-	var disqus_config = function () {
-		this.page.url = 'https:\/\/marekwywial.name\/posts\/blog20120314vim-vundle-plugin-manager-programming.html';
-		this.page.identifier = '89b63f43005a3903b313bf68de2627e6';
-	};
 	(function() {
    	var d = document, s = d.createElement('script');
    	s.src = 'https://' + 'marekwywial' + '.disqus.com/embed.js';
@@ -365,7 +370,7 @@ Jednak używając plugin managera, którego konfiguracja znajduje się w .vimrc 
           <div class="row pt-3">
             <div class="col-md-6">
               
-                <a href=https://marekwywial.name/posts/vim-note-plugin.html class="post-meta">Previous
+                <a href=https://marekwywial.name/posts/vim-note-plugin.html class="post-meta">Wcześniej
                   <div class="pt-2 pb-5 d-flex">
                     <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
                     <span>vim note plugin - easy note management</span>
@@ -376,10 +381,10 @@ Jednak używając plugin managera, którego konfiguracja znajduje się w .vimrc 
             
             <div class="col-md-6 text-right" >
               
-                <a href=https://marekwywial.name/posts/blog20120427extend-lvm2-filesystem/ class="post-meta">Next
+                <a href=https://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html class="post-meta">Dalej
                   <div class="pt-2 pb-5 flex-reverse">
                     <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
-                    <span>extend lvm2 filesystem</span>
+                    <span>Python SOAP server (flask) &#43; wsdl generation</span>
                   </div>
                 </a>
               
@@ -500,6 +505,11 @@ Jednak używając plugin managera, którego konfiguracja znajduje się w .vimrc 
 
 
 
+<script>
+	var disqus_config = function () {
+    this.language = 'pl';
+	};
+</script>
   <script id="dsq-count-scr" src="//marekwywial.disqus.com/count.js" async></script>
 
 

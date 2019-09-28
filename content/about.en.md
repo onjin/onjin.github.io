@@ -1,4 +1,5 @@
 ---
+title: "About"
 date: 2005-07-08T21:49:28+01:00
 toc: true
 disable_disqus: true
@@ -28,7 +29,6 @@ My websites
 -----------
 
 -   [nopic] - online images generator
--   [gettoknowit] - portal to learn any language
 -   [tani-ebook] - portal to get or buy e-books (Polski)
 
 

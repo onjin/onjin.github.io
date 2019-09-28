@@ -1,6 +1,7 @@
 baseURL                   = "https://marekwywial.name"
 builddrafts                = false
 languageCode               = "pl"
+DefaultContentLanguage               = "pl"
 canonifyurls               = true
 contentdir                 = "content"
 layoutdir                  = "layouts"
@@ -17,6 +18,15 @@ title                      = "Marek Wywiał"
 pygmentsuseclasses         = true
 
 
+[languages]
+  [languages.pl]
+    weight = 1
+    languageName = "Polski"
+  [languages.en]
+    weight = 2
+    languageName = "English"
+
+
 [permalinks]
   # blog                     = "blog/:year-:month/:slug/"
 
@@ -27,24 +37,30 @@ pygmentsuseclasses         = true
   category                 = "categories"
 
 
-[menu]
-  [[menu.main]]
+
+[[languages.pl.menu.main]]
     name                   = "Blog"
     weight                 = -120
     identifier             = "blog"
-    url                    = "posts/"  
+    url                    = "/posts/"
 
-  #[[menu.main]]
-  #  name                   = "Moment"
-  #  weight                 = -110
-  #  identifier             = "moment"
-  #  url                    = "moment/" 
+[[languages.pl.menu.main]]
+    name                   = "O mnie"
+    weight                 = -100
+    identifier             = "about"
+    url                    = "/about/"
 
-  [[menu.main]]
+[[languages.en.menu.main]]
+    name                   = "Blog"
+    weight                 = -120
+    identifier             = "blog"
+    url                    = "/en/posts/"
+
+[[languages.en.menu.main]]
     name                   = "About"
     weight                 = -100
     identifier             = "about"
-    url                    = "about/"  
+    url                    = "/en/about/"
 
  
 
@@ -83,8 +99,6 @@ pygmentsuseclasses         = true
   #px500                    = "//px500"
   instagram                = "//instagram.com/nazano"
   include_rss              = true                          # include RSS <link> tag in <head> and show RSS icon
-  
+
   # analytics
   googleAnalytics          = "UA-151457-1"
-    
-    

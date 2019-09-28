@@ -1,0 +1,37 @@
+---
+- id: latestPosts
+  translation: "Ostatnie wpisy"
+
+- id: pageNotFound
+  translation: "Oops! Page Not Found..."
+
+- id: readingTime
+  translation:
+    one: "jedna minuta czytania"
+    other: "{{ .Count }} minut czytania"
+
+- id: return
+  translation: "Wróć"
+
+- id: previousPost
+  translation: "Wcześniej"
+
+- id: nextPost
+  translation: "Dalej"
+
+- id: postCount
+  translation: 
+    one: "Jeden wpis"
+    other: "{{ .Count }} wpisów"
+
+- id: featuredTags
+  translation: "Polecane Tagi"
+
+- id: recommendedSeries
+  translation: "Rekomendowane Serie"
+
+- id: tableOfContents
+  translation: "Spis treści"
+
+- id: translations
+  translation: "Tłumaczenia"

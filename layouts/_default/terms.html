@@ -32,11 +32,22 @@
           {{ range .Data.Terms.ByCount }}
 
             <li class="post-item">
-              
+              {{ if eq .Page.Type "series" }}
+                {{ $title := add .Name ( add (add " (" (.Count | string)) ")" ) | title }}
+                {{ $url := (.Name | urlize) }}
+                {{ $data :=  (where $.Site.Data.series.series ".name" .Name) }}
+                {{ if gt (len $data) 0 }}   
+                  {{ range $data }}
+                  {{ partial "sidebar-card.html" (dict "url" $url "title" $title "img_path" ( .img | absLangURL ) "text" .summary ) }}
+                  {{ end }}
+                {{ else }}
+                  {{ partial "sidebar-card.html" (dict "url" $url "title" $title "img_path" ( "img/default.jpg" | absLangURL ) "text" nil ) }}
+                {{ end  }}
+              {{ else }}
               <a href="{{ .Name | urlize }}"><span>{{ .Name }}</span></a>
               <!-- <span class="ml-3">{{ .Count }} posts</span> -->
-              
             </li>
+            {{ end }}
             
           {{ end }}
         </ul>

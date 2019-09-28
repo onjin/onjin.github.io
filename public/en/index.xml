@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Marek Wywiał</title>
+    <link>https://marekwywial.name/en/</link>
+    <description>Recent content on Marek Wywiał</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pl</language>
+    <lastBuildDate>Wed, 18 Sep 2013 13:36:39 +0000</lastBuildDate>
+    
+	<atom:link href="https://marekwywial.name/en/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fast sentry instance using docker</title>
+      <link>https://marekwywial.name/en/posts/blog20130918fast-sentry-instance-using-docker/</link>
+      <pubDate>Wed, 18 Sep 2013 13:36:39 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/en/posts/blog20130918fast-sentry-instance-using-docker/</guid>
+      <description>&lt;p&gt;How to quickly spin up private &lt;a href=&#34;https://sentry.io&#34;&gt;Sentry&lt;/a&gt; instance using only docker.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python SOAP server (flask) &#43; wsdl generation</title>
+      <link>https://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html</link>
+      <pubDate>Tue, 13 Aug 2013 18:53:49 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation.html</guid>
+      <description>&lt;p&gt;Simple tutorial how quickly create SOAP server using python &amp;ldquo;Flask-Enterprise&amp;rdquo; package for &amp;ldquo;flash&amp;rdquo; web framework.
+Example comes with basic client using &amp;ldquo;suds&amp;rdquo; package.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>quiet please !! disable audio bell in gvim</title>
+      <link>https://marekwywial.name/en/posts/blog20120730quiet-please-disable-audio-bell-in-gvim/</link>
+      <pubDate>Mon, 30 Jul 2012 21:27:26 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/en/posts/blog20120730quiet-please-disable-audio-bell-in-gvim/</guid>
+      <description>I don&amp;rsquo;t want to hear it any more, so I&amp;rsquo;ve put this into .vimrc
+&amp;#34; quiet pleeeeeease if has(&amp;#39;autocmd&amp;#39;) autocmd GUIEnter * set visualbell t_vb= endif </description>
+    </item>
+    
+    <item>
+      <title>Rescan SCSI bus (no reboot)</title>
+      <link>https://marekwywial.name/en/posts/blog20120705rescan-scsi-bus-no-reboot/</link>
+      <pubDate>Thu, 05 Jul 2012 08:16:42 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/en/posts/blog20120705rescan-scsi-bus-no-reboot/</guid>
+      <description> Just self memo. How to attach new SCSI disk without reboot (debian):
+# check what hosts do you have ls /sys/class/scsi_host host0 host1 host2 host3 # change &amp;#39;host0&amp;#39; to &amp;#39;host1&amp;#39; or any next number that you need echo &amp;#34;- - -&amp;#34; &amp;gt; /sys/class/scsi_host/host0/scan and done fdisk -l </description>
+    </item>
+    
+    <item>
+      <title>extend lvm2 filesystem</title>
+      <link>https://marekwywial.name/en/posts/blog20120427extend-lvm2-filesystem/</link>
+      <pubDate>Fri, 27 Apr 2012 10:30:44 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/en/posts/blog20120427extend-lvm2-filesystem/</guid>
+      <description>Just self memo # Added new physical partition /dev/sda3 # create a physical volume out of it $ pvcreate /dev/sda3 # Now, add it to the volume group #that my logical volume is on $ vgextend VolGroup00 /dev/sda3 # Now that the volume group has more # disk space, the logical volume can grow $ lvextend -L+11G /dev/VolGroup00/LogVol00 # Ok, last of all, I want to filesystem to # recognize that more space is available $ fsadm resize /dev/VolGroup00/LogVol00 # sweet, I have more space now $ df -h</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://marekwywial.name/en/about/</link>
+      <pubDate>Fri, 08 Jul 2005 21:49:28 +0100</pubDate>
+      
+      <guid>https://marekwywial.name/en/about/</guid>
+      <description> Marek Wywiał My projects  runenv - Wrapper to run programs with different env or load env from .env file vim-startup - quick way to start with vim &amp;amp; python liquimigrate - django integration for Liquibase migrations docker-alpine-postgres - Small PostgreSQL images (~58MB) for versions 9.1 - 9.5 docker-php-oracle - docker image for php with oracle db support (trusted image) ejpiaj - declarative way API testing suite (small python package) docker - other docker images  You can found more projects on my github page:
+ github  My websites  nopic - online images generator gettoknowit - portal to learn any language tani-ebook - portal to get or buy e-books (Polski)  </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,9 @@
+[[series]]
+name = "python-architektura"
+img = "img/snake-skeleton-head.jpg"
+summary = "Czysta architektura w pythonie"
+
+[[series]]
+name = "s.o.l.i.d."
+img = "img/close-up-concrete-dark.jpg"
+summary = "Zasady S.O.L.I.D. w programowaniu"

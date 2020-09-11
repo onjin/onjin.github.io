@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html lang="pl">
   <head>
+  
+  <script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+     
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//matomo.codefiber.pl/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '4']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Marek Wywiał">
-  <meta name="description" content="Przy okazji szukania API do grooveshark&rsquo;a odkryłem plik currentSong.txt, który jest tworzony przez Grooveshark Desktop.
+  <meta name="description" content="Przy okazji szukania API do grooveshark&rsquo;aodkryłem plik currentSong.txt, który jest tworzony przez Grooveshark Desktop.
 Kilka minut z vim&rsquo;em i mamy skrypt napisany w python&rsquo;ie, który odczytuje w/w plik i wrzuca informację o aktualnie odtwarzanym utworze jako status wybranego konta w gajim&rsquo;a.
 Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wymana pyinotify). Wtedy nasz status będzie zmieniany w chwili (chwilę potem :) ) zmiany utworu w Grooveshark Desktop.
 Całość można dowolnie używać/modyfikować, a pobrać można z serwisu github.com:
  https://github.com/onjin/grooveshark2gajim http://onjin.github.com/grooveshark2gajim/  Do działania wystarczy nam plik grov2gajim.py. Umieszczamy go gdzieś na dysku i możemy używać.">
   
   <meta property="og:title" content="Grooveshark currentSong.txt &#43; gajim status" />
-<meta property="og:description" content="Przy okazji szukania API do grooveshark&rsquo;a odkryłem plik currentSong.txt, który jest tworzony przez Grooveshark Desktop.
+<meta property="og:description" content="Przy okazji szukania API do grooveshark&rsquo;aodkryłem plik currentSong.txt, który jest tworzony przez Grooveshark Desktop.
 Kilka minut z vim&rsquo;em i mamy skrypt napisany w python&rsquo;ie, który odczytuje w/w plik i wrzuca informację o aktualnie odtwarzanym utworze jako status wybranego konta w gajim&rsquo;a.
 Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wymana pyinotify). Wtedy nasz status będzie zmieniany w chwili (chwilę potem :) ) zmiany utworu w Grooveshark Desktop.
 Całość można dowolnie używać/modyfikować, a pobrać można z serwisu github.com:
@@ -47,7 +62,7 @@ Całość można dowolnie używać/modyfikować, a pobrać można z serwisu gith
   <link href="https://marekwywial.name/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
   <link href="https://marekwywial.name/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet"> 
   <link href="https://marekwywial.name/css/vendors/mdb/style.min.css" rel="stylesheet"> 
-  <link href="https://marekwywial.name/css/main.css?1569701801" rel="stylesheet">
+  <link href="https://marekwywial.name/css/main.css?1599822646" rel="stylesheet">
 
 
   
@@ -306,20 +321,15 @@ Całość można dowolnie używać/modyfikować, a pobrać można z serwisu gith
 
 
           <div class="post-content markdown">
-            <p>Przy okazji szukania API do <a href="http://grooveshark.com">grooveshark&rsquo;a</a> odkryłem plik <b>currentSong.txt</b>, który jest tworzony przez <em>Grooveshark Desktop</em>.</p>
-
-<p>Kilka minut z vim&rsquo;em i mamy skrypt napisany w python&rsquo;ie, który odczytuje w/w plik i wrzuca informację o aktualnie odtwarzanym utworze jako status wybranego konta w <a href="http://gajim.org">gajim&rsquo;a</a>.</p>
-
-<p>Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wymana <b>pyinotify</b>). Wtedy nasz status będzie zmieniany w chwili (chwilę potem :) ) zmiany utworu w Grooveshark Desktop.</p>
-
-<p>Całość można dowolnie używać/modyfikować, a pobrać można z serwisu <a href="http://github.com">github.com</a>:</p>
-
+            <p>Przy okazji szukania API do <!-- raw HTML omitted -->grooveshark&rsquo;a<!-- raw HTML omitted --> odkryłem plik <!-- raw HTML omitted -->currentSong.txt<!-- raw HTML omitted -->, który jest tworzony przez <!-- raw HTML omitted -->Grooveshark Desktop<!-- raw HTML omitted -->.</p>
+<p>Kilka minut z vim&rsquo;em i mamy skrypt napisany w python&rsquo;ie, który odczytuje w/w plik i wrzuca informację o aktualnie odtwarzanym utworze jako status wybranego konta w <!-- raw HTML omitted -->gajim&rsquo;a<!-- raw HTML omitted -->.</p>
+<p>Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wymana <!-- raw HTML omitted -->pyinotify<!-- raw HTML omitted -->). Wtedy nasz status będzie zmieniany w chwili (chwilę potem :) ) zmiany utworu w Grooveshark Desktop.</p>
+<p>Całość można dowolnie używać/modyfikować, a pobrać można z serwisu <!-- raw HTML omitted -->github.com<!-- raw HTML omitted -->:</p>
 <ul>
-<li><a href="https://github.com/onjin/grooveshark2gajim">https://github.com/onjin/grooveshark2gajim</a></li>
-<li><a href="http://onjin.github.com/grooveshark2gajim/">http://onjin.github.com/grooveshark2gajim/</a></li>
+<li><!-- raw HTML omitted --><a href="https://github.com/onjin/grooveshark2gajim">https://github.com/onjin/grooveshark2gajim</a><!-- raw HTML omitted --></li>
+<li><!-- raw HTML omitted --><a href="http://onjin.github.com/grooveshark2gajim/">http://onjin.github.com/grooveshark2gajim/</a><!-- raw HTML omitted --></li>
 </ul>
-
-<p>Do działania wystarczy nam plik <a href="https://github.com/onjin/grooveshark2gajim/raw/master/grov2gajim.py">grov2gajim.py</a>. Umieszczamy go gdzieś na dysku i możemy używać.</p>
+<p>Do działania wystarczy nam plik <!-- raw HTML omitted -->grov2gajim.py<!-- raw HTML omitted -->. Umieszczamy go gdzieś na dysku i możemy używać.</p>
 
           </div>
 
@@ -469,7 +479,7 @@ Całość można dowolnie używać/modyfikować, a pobrać można z serwisu gith
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2019 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2020 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

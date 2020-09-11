@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html lang="pl">
   <head>
+  
+  <script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+     
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//matomo.codefiber.pl/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '4']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Marek Wywiał">
-  <meta name="description" content="W ostatnim wpisie pisałem o snippetsEmu dla vim&lsquo;a, a dziś załączam zestaw snippetów, których używam przy pracy z liquibase.
-Liquibase to całkiem miłe narzędzie napisane w Javie do śledzenia, zarządzania i wprowadzania zmian w bazach danych. Zmiany opisuje się w pliku (plikach) xml i wpisywanie oraz pamiętanie tej składni można sobie uprościć przy pomocy vim&rsquo;a i snippetów.
+  <meta name="description" content="W ostatnim wpisiepisałem o snippetsEmudla vim&#39;a, a dziś załączam zestaw snippetów, których używam przy pracy z liquibase.Liquibase to całkiem miłe narzędzie napisane w Javie do śledzenia, zarządzania i wprowadzania zmian w bazach danych. Zmiany opisuje się w pliku (plikach) xml i wpisywanie oraz pamiętanie tej składni można sobie uprościć przy pomocy vim&rsquo;a i snippetów.
 Snippet umieszczamy razem z pozostałymi, najczęściej w .vim/after/ftplugin/.
-Najprościej zacząć otwierając np. migration.xml, wpisując lhelp i wcisnąć TAB. Otrzymamy małą pomoc i możemy zaczynać wpisywać kolejną migrację :)
- xml_snippets.vim  ">
+Najprościej zacząć otwierając np. migration.xml, wpisując lhelpi wcisnąć TAB. Otrzymamy małą pomoc i możemy zaczynać wpisywać kolejną migrację :) xml_snippets.vim  ">
   
   <meta property="og:title" content="vim snippetsemu i liquibase" />
-<meta property="og:description" content="W ostatnim wpisie pisałem o snippetsEmu dla vim&lsquo;a, a dziś załączam zestaw snippetów, których używam przy pracy z liquibase.
-Liquibase to całkiem miłe narzędzie napisane w Javie do śledzenia, zarządzania i wprowadzania zmian w bazach danych. Zmiany opisuje się w pliku (plikach) xml i wpisywanie oraz pamiętanie tej składni można sobie uprościć przy pomocy vim&rsquo;a i snippetów.
+<meta property="og:description" content="W ostatnim wpisiepisałem o snippetsEmudla vim&#39;a, a dziś załączam zestaw snippetów, których używam przy pracy z liquibase.Liquibase to całkiem miłe narzędzie napisane w Javie do śledzenia, zarządzania i wprowadzania zmian w bazach danych. Zmiany opisuje się w pliku (plikach) xml i wpisywanie oraz pamiętanie tej składni można sobie uprościć przy pomocy vim&rsquo;a i snippetów.
 Snippet umieszczamy razem z pozostałymi, najczęściej w .vim/after/ftplugin/.
-Najprościej zacząć otwierając np. migration.xml, wpisując lhelp i wcisnąć TAB. Otrzymamy małą pomoc i możemy zaczynać wpisywać kolejną migrację :)
- xml_snippets.vim  " />
+Najprościej zacząć otwierając np. migration.xml, wpisując lhelpi wcisnąć TAB. Otrzymamy małą pomoc i możemy zaczynać wpisywać kolejną migrację :) xml_snippets.vim  " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://marekwywial.name/posts/blog20100811vim-snippetsemu-i-liquibase.html" />
 <meta property="article:published_time" content="2010-08-11T18:45:35+00:00" />
@@ -47,7 +58,7 @@ Najprościej zacząć otwierając np. migration.xml, wpisując lhelp i wcisnąć
   <link href="https://marekwywial.name/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
   <link href="https://marekwywial.name/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet"> 
   <link href="https://marekwywial.name/css/vendors/mdb/style.min.css" rel="stylesheet"> 
-  <link href="https://marekwywial.name/css/main.css?1569701801" rel="stylesheet">
+  <link href="https://marekwywial.name/css/main.css?1599822646" rel="stylesheet">
 
 
   
@@ -306,16 +317,12 @@ Najprościej zacząć otwierając np. migration.xml, wpisując lhelp i wcisnąć
 
 
           <div class="post-content markdown">
-            <p>W <a href="https://marekwywial.name/posts/blog20100729best-vim-plugins.html">ostatnim wpisie</a> pisałem o <a href="http://www.vim.org/scripts/script.php?script_id=1318">snippetsEmu</a> dla <a href="http://www.vim.org/">vim</a>&lsquo;a, a dziś załączam <a href="https://marekwywial.name/files/xml_snippets.vim">zestaw snippetów</a>, których używam przy pracy z <a href="http://www.liquibase.org/">liquibase</a>.</p></p>
-
+            <p>W <!-- raw HTML omitted -->ostatnim wpisie<!-- raw HTML omitted --> pisałem o <!-- raw HTML omitted -->snippetsEmu<!-- raw HTML omitted --> dla <!-- raw HTML omitted -->vim<!-- raw HTML omitted -->'a, a dziś załączam <!-- raw HTML omitted -->zestaw snippetów<!-- raw HTML omitted -->, których używam przy pracy z <!-- raw HTML omitted -->liquibase<!-- raw HTML omitted -->.<!-- raw HTML omitted --></p>
 <p><strong>Liquibase</strong> to całkiem miłe narzędzie napisane w Javie do śledzenia, zarządzania i wprowadzania zmian w bazach danych. Zmiany opisuje się w pliku (plikach) xml i wpisywanie oraz pamiętanie tej składni można sobie uprościć przy pomocy vim&rsquo;a i snippetów.</p>
-
-<p>Snippet umieszczamy razem z pozostałymi, najczęściej w <strong>.vim/after/ftplugin/</strong>.</p>
-
-<p>Najprościej zacząć otwierając np. <em>migration.xml</em>, wpisując <em>lhelp</em> i wcisnąć <em>TAB</em>. Otrzymamy małą pomoc i możemy zaczynać wpisywać kolejną migrację :)</p></p>
-
+<p>Snippet umieszczamy razem z pozostałymi, najczęściej w <!-- raw HTML omitted -->.vim/after/ftplugin/<!-- raw HTML omitted -->.</p>
+<p>Najprościej zacząć otwierając np. <!-- raw HTML omitted -->migration.xml<!-- raw HTML omitted -->, wpisując <!-- raw HTML omitted -->lhelp<!-- raw HTML omitted --> i wcisnąć <!-- raw HTML omitted -->TAB<!-- raw HTML omitted -->. Otrzymamy małą pomoc i możemy zaczynać wpisywać kolejną migrację :)<!-- raw HTML omitted --></p>
 <ul>
-<li><a href="https://marekwywial.name/files/xml_snippets.vim">xml_snippets.vim</a></li>
+<li><!-- raw HTML omitted -->xml_snippets.vim<!-- raw HTML omitted --></li>
 </ul>
 
           </div>
@@ -460,7 +467,7 @@ Najprościej zacząć otwierając np. migration.xml, wpisując lhelp i wcisnąć
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2019 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2020 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

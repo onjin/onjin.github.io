@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="pl">
   <head>
+  
+  <script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+     
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//matomo.codefiber.pl/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '4']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="HandheldFriendly" content="True">
@@ -8,13 +23,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Marek Wywiał">
   <meta name="description" content="Aby się przeklikać przez program na http://n.pl/ i jeszcze znaleźć interesujący program, to jest ponad moje siły.
-
 Napisałem więc na szybko narzędzie działające w shellu, które pozwala przeglądać oraz przeszukiwać program ze strony
 n.pl https://github.com/onjin/ntv/.">
   
   <meta property="og:title" content="Telewizja N (nc&#43;) i python" />
 <meta property="og:description" content="Aby się przeklikać przez program na http://n.pl/ i jeszcze znaleźć interesujący program, to jest ponad moje siły.
-
 Napisałem więc na szybko narzędzie działające w shellu, które pozwala przeglądać oraz przeszukiwać program ze strony
 n.pl https://github.com/onjin/ntv/." />
 <meta property="og:type" content="article" />
@@ -45,7 +58,7 @@ n.pl https://github.com/onjin/ntv/." />
   <link href="https://marekwywial.name/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
   <link href="https://marekwywial.name/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet"> 
   <link href="https://marekwywial.name/css/vendors/mdb/style.min.css" rel="stylesheet"> 
-  <link href="https://marekwywial.name/css/main.css?1569701801" rel="stylesheet">
+  <link href="https://marekwywial.name/css/main.css?1599822646" rel="stylesheet">
 
 
   
@@ -300,61 +313,41 @@ n.pl https://github.com/onjin/ntv/." />
 
 
           <div class="post-content markdown">
-            <p>Aby się przeklikać przez program na <a href="http://n.pl/">http://n.pl/</a> i jeszcze znaleźć interesujący program, to jest ponad moje siły.</p>
-
+            <p>Aby się przeklikać przez program na http://n.pl/ i jeszcze znaleźć interesujący program, to jest ponad moje siły.</p>
 <p>Napisałem więc na szybko narzędzie działające w shellu, które pozwala przeglądać oraz przeszukiwać program ze strony
 n.pl <a href="https://github.com/onjin/ntv/">https://github.com/onjin/ntv/</a>.</p>
-
 <h1 id="instalacja">Instalacja</h1>
-
 <p>Program napisany jest w <strong>Pythonie</strong> i dystrybuowany jako <strong>egg</strong></p>
-
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">    $ pip install ntv
     $ ntv-cli --help</code></pre></div>
-
 <h1 id="kanały">Kanały</h1>
-
 <p>Lista wszystkich kanałów nadających dzisiaj:</p>
-
 <ul>
 <li>ntv-cli channels</li>
 </ul>
-
 <p>Lista kanałów zawierających w nazie &lsquo;filmbox&rsquo; (obojętne czy małe czy duże litery):</p>
-
 <ul>
 <li>ntv-cli channels filmbox</li>
 </ul>
-
 <p>Wyszukanie kanałów na wybrany dzień:</p>
-
 <ul>
 <li>ntv-cli channels -d 2013-10-13</li>
 <li>ntv-cli channels filmbox -d 2013-10-13</li>
 </ul>
-
 <h1 id="programy">Programy</h1>
-
 <p>Lista wszystkich programów nadawanych dzisiaj:</p>
-
 <ul>
 <li>ntv-cli movies</li>
 </ul>
-
 <p>Lista programów nadawanych na kanałach mający w nazie &lsquo;polsat&rsquo;:</p>
-
 <ul>
 <li>ntv-cli movies polsat</li>
 </ul>
-
 <p>Lista programów nadawanych na kanałach &lsquo;polsta&rsquo; zawierająca w nazie słowo &lsquo;mecz&rsquo;:</p>
-
 <ul>
 <li>ntv-cli movies polsat -t mecz</li>
 </ul>
-
 <p>Wyszukanie programów na inny dzień:</p>
-
 <ul>
 <li>ntv-cli movies polsat -t mecz -d 2013-10-13</li>
 </ul>
@@ -493,7 +486,7 @@ n.pl <a href="https://github.com/onjin/ntv/">https://github.com/onjin/ntv/</a>.<
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2019 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2020 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

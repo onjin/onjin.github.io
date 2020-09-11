@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>psi on Marek Wywiał</title>
@@ -17,8 +17,7 @@
       <pubDate>Wed, 18 Jan 2006 07:44:01 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20060118google-talk/</guid>
-      <description>17 stycznia Google otworzyło połączenia między serwerowe pomiędzy swoim serwisem Google Talk, a resztą świata XMPP. Tak więc każdy kto posiada konto pocztowe w domenie @gmail.com, może teraz komunikować się używając identycznego JID
-Do pełni szczęścia mogłoby brakować jedynie komunikatora Google Talk dostępnego na inne platformy niż Windows. Ale udostępnienie przez Google libjingle oraz ich współpraca z twórcami komunikatora Psi wróży na dobre.</description>
+      <description>17 stycznia Google otworzyło połączenia między serwerowepomiędzy swoim serwisem Google Talk, a resztą świata XMPP. Tak więc każdy kto posiada konto pocztowe w domenie @gmail.com, może teraz komunikować się używając identycznego JIDDo pełni szczęścia mogłoby brakować jedynie komunikatora Google Talk dostępnego na inne platformy niż Windows. Ale udostępnienie przez Google libjingleoraz ich współpraca z twórcami komunikatora Psiwróży na dobre.</description>
     </item>
     
   </channel>

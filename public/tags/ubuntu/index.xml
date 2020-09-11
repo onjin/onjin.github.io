@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ubuntu on Marek Wywiał</title>
@@ -17,9 +17,7 @@
       <pubDate>Fri, 29 Aug 2008 08:26:16 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20080829virtualbox-brakujacy-vboxdrv-kernel-ubuntu/</guid>
-      <description>Czasem w Ubuntu (np przy pakietach proposal) przychodzi wyższa wersja kernela bez upgrade drivera do virtualbox&amp;rsquo;a
-Wtedy pomaga mi taka kombinacja
- sudo apt-get install virtualbox-ose-source sudo m-a update sudo m-a prepare sudo m-a a-i virtualbox-ose sudo /etc/init.d/vboxdrv restart  Restart virtualbox&amp;rsquo;a i gotow. Back to work.</description>
+      <description></description>
     </item>
     
   </channel>

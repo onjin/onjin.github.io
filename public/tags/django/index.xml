@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>django on Marek Wywiał</title>
@@ -18,9 +18,9 @@
       
       <guid>https://marekwywial.name/posts/blog20100426devhelp-django-1-1/</guid>
       <description>Ostatnio biegałem z lapkiem po centrum handlowym i łapałem wifi, żeby spojrzeć do dokumentacji django. I tylko się nabiegałem :).
-Aby drugi raz pracować nie biegać w domu szybko podłączyłem dokumentację django do devhelp i tak na szybko procedura:
+Aby drugi raz pracować nie biegać w domu szybko podłączyłem dokumentację django do devhelpi tak na szybko procedura:
 apt-get install devhelp mkdir -p ~/bin; cd ~/bin wget http://htmlhelp.googlecode.com/svn/trunk/misc/devhelp-install chmod +x devhelp-install cd ~/; wget http://onjin.net/files/django1.1-doc.tgz /bin/devhelp-install ./django1.1-doc.tgz Teraz wystarczy uruchomić devhelp&amp;rsquo;a i cieszyć się offline :)
-django1.1-doc jest ściągnięte z .chm i potraktowana hhconvert.py do formatu devhelp&amp;rsquo;a)</description>
+django1.1-doc jest ściągnięte z .chmi potraktowana hhconvert.pydo formatu devhelp&amp;rsquo;a)</description>
     </item>
     
     <item>

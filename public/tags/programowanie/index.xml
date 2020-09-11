@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>programowanie on Marek Wywiał</title>
@@ -17,11 +17,9 @@
       <pubDate>Wed, 11 Aug 2010 18:45:35 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20100811vim-snippetsemu-i-liquibase.html</guid>
-      <description>W ostatnim wpisie pisałem o snippetsEmu dla vim&amp;lsquo;a, a dziś załączam zestaw snippetów, których używam przy pracy z liquibase.
-Liquibase to całkiem miłe narzędzie napisane w Javie do śledzenia, zarządzania i wprowadzania zmian w bazach danych. Zmiany opisuje się w pliku (plikach) xml i wpisywanie oraz pamiętanie tej składni można sobie uprościć przy pomocy vim&amp;rsquo;a i snippetów.
+      <description>W ostatnim wpisiepisałem o snippetsEmudla vim&#39;a, a dziś załączam zestaw snippetów, których używam przy pracy z liquibase.Liquibase to całkiem miłe narzędzie napisane w Javie do śledzenia, zarządzania i wprowadzania zmian w bazach danych. Zmiany opisuje się w pliku (plikach) xml i wpisywanie oraz pamiętanie tej składni można sobie uprościć przy pomocy vim&amp;rsquo;a i snippetów.
 Snippet umieszczamy razem z pozostałymi, najczęściej w .vim/after/ftplugin/.
-Najprościej zacząć otwierając np. migration.xml, wpisując lhelp i wcisnąć TAB. Otrzymamy małą pomoc i możemy zaczynać wpisywać kolejną migrację :)
- xml_snippets.vim  </description>
+Najprościej zacząć otwierając np. migration.xml, wpisując lhelpi wcisnąć TAB. Otrzymamy małą pomoc i możemy zaczynać wpisywać kolejną migrację :) xml_snippets.vim  </description>
     </item>
     
     <item>
@@ -32,10 +30,10 @@ Najprościej zacząć otwierając np. migration.xml, wpisując lhelp i wcisnąć
       <guid>https://marekwywial.name/posts/blog20100729best-vim-plugins.html</guid>
       <description>Dziś robiłem porządki w ~/.vim/ . Aktualizacje do nowych wersji pluginów, wyrzucanie nieużywanych, porządki w ~/.vimrc. W trakcie tej pracy powstała lista pluginów, dzięki którym miło mi się pracuje
 vimball Plugin zajmujący się pluginami dostarczanymi w paczkach .vba i pozwalający też takie paczki tworzyć, w praktyce potrzeby mi by instalować paczki .vba
- http://www.vim.org/scripts/script.php?script_id=1502  snippetsEmu Emuluje zachowanie snippetów z TextMate. Na przykład w pliku sometest.py wpisujesz &amp;lsquo;for&amp;lt;tab&amp;gt;&amp;rsquo;, uzupełniasz brakujące miejsca poruszając się klawiszem &amp;lt;tab&amp;gt; i otrzymujesz pełną pętle. Inne użyteczne snippety dla pythona to:
- prop - property get - def get_.. set - def set_.. def - def .. cm - classmethod cl - class ifn, ifmain, sb, sbu, sbl1, trye, tryf, tryef, unittest  Domyślnie dostarczone są 32 zestawy snippetów dla wielu języków programowania, opisu oraz frameworków (django, rails, symfony)
+ http://www.vim.org/scripts/script.php?script_id=1502  snippetsEmu Emuluje zachowanie snippetów z TextMate. Na przykład w pliku sometest.py wpisujesz &amp;lsquo;for&amp;lt;tab&amp;gt;&#39;, uzupełniasz brakujące miejsca poruszając się klawiszem &amp;lt;tab&amp;gt; i otrzymujesz pełną pętle. Inne użyteczne snippety dla pythona to:
+ prop- property get- def get_.. set- def set_.. def- def .. cm- classmethod cl- class ifn, ifmain, sb, sbu, sbl1, trye, tryf, tryef, unittest  Domyślnie dostarczone są 32 zestawy snippetów dla wielu języków programowania, opisu oraz frameworków (django, rails, symfony)
  http://www.vim.org/scripts/script.php?script_id=1318  neocomplcache System tzw &amp;lsquo;dopełniania&amp;rsquo; (podpowiadania) i to właśnie robi. Dopełnia nazwy metod, funkcji, atrybuty html, nazwy plików, itp. Trzeba po prostu zobaczyć i używać.
- http://www.vim.org/scripts/script.php?script_id=2620  project Bardzo prosty i skuteczny system pozwalający w bocznym oknie przeglądać wybrane lub wszystkie pliki z jednego lub wielu projektów. Każdy projekt ma zdefiniowany katalog, dzięki czemu otwarcie pliku z projektu (wciskamy &amp;lsquo;enter&amp;rsquo; bedąc &amp;lsquo;nad&amp;rsquo; plikiem) nastąpi równocześnie z przejściem do katalogu projektu.</description>
+ http://www.vim.org/scripts/script.php?script_id=2620  project Bardzo prosty i skuteczny system pozwalający w bocznym oknie przeglądać wybrane lub wszystkie pliki z jednego lub wielu projektów. Każdy projekt ma zdefiniowany katalog, dzięki czemu otwarcie pliku z projektu (wciskamy &amp;lsquo;enter&amp;rsquo; bedąc &amp;lsquo;nad&amp;rsquo; plikiem) nastąpi równocześnie z przejściem do katalogu projektu. W ten sposób pliki projektu jak np &amp;lsquo;tags&amp;rsquo; (ctags) zostaną poprawnie wczytane.</description>
     </item>
     
     <item>
@@ -44,16 +42,7 @@ vimball Plugin zajmujący się pluginami dostarczanymi w paczkach .vba i pozwala
       <pubDate>Tue, 02 Sep 2008 21:01:02 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20080902lint-dla-php/</guid>
-      <description>Za dnia piszę najczęściej w php i zazdroszczę pythonowi pylinta.
-Z ciekawości zagooglałem i znalazłem rozwiązanie dla PHP sprawdzające Coding Standard:
- pear install PHP_CodeSniffer phpcs --standard=Zend SomeTest.class.php  phpcs -i podaje dostępne standardy:
-PEAR
-MySource
-PHPCS
-Squiz
-Zend
-Mi najbardzie odpowiada Zend co widać po wynikach lintowania, najczęściej 0 ostrzeżeń i błędów ;).
-phpcs pozwala także tworzyć swoje własne standardy kodowanie oraz - co bardzo mnie cieszy - podpiąć go jako precommit hook do svn&amp;rsquo;a.</description>
+      <description></description>
     </item>
     
   </channel>

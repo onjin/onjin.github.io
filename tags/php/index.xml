@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>php on Marek Wywiał</title>
@@ -17,9 +17,9 @@
       <pubDate>Tue, 04 May 2010 07:52:53 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20100504git-php-syntax-check-pre-commit/</guid>
-      <description>Załączam używany przeze mnie i sprawdzający się pre-commit dla git&amp;lsquo;a sprawdzający commitowane pliki .php.
-Przy wykonaniu commit w repozytorium skrypt dla każdego commitowanego pliku &amp;lsquo;.php&amp;rsquo; wykonuje &amp;lsquo;php -l&amp;rsquo; w pętli, aż otrzyma odpowiedź, że składnia jest ok lub nie ok. Przypadku wystąpienia błędy przerywa commit. Sam skrypt napisany jest w python&amp;lsquo;ie
-Dlaczego w pętli? Dlatego, że &amp;lsquo;php -l&amp;rsquo; losowo się urywa zwracając SIGFAULT i należy wtedy powtórzyć próbę z &amp;lsquo;-l&amp;rsquo;
+      <description>Załączam używany przeze mnie i sprawdzający się pre-commitdla git&#39;a sprawdzający commitowane pliki .php.
+Przy wykonaniu commit w repozytorium skrypt dla każdego commitowanego pliku &amp;lsquo;.php&amp;rsquo; wykonuje &amp;lsquo;php -l&amp;rsquo; w pętli, aż otrzyma odpowiedź, że składnia jest ok lub nie ok. Przypadku wystąpienia błędy przerywa commit. Sam skrypt napisany jest w python&#39;ie
+Dlaczego w pętli? Dlatego, że &amp;lsquo;php -l&amp;rsquo; losowo się urywa zwracając SIGFAULTi należy wtedy powtórzyć próbę z &amp;lsquo;-l&amp;rsquo;
 Plik do pobrania:
  pre-commit  </description>
     </item>
@@ -30,9 +30,9 @@ Plik do pobrania:
       <pubDate>Mon, 11 May 2009 10:25:43 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20090511git-pre-commit-hook-symfony-php/</guid>
-      <description>Mam jeszcze tą nieprzyjemnośc pracy z PHP (w tym przypadku z symfony framework) i aby była przyjemniejsza dodałem sobie hook na pre-commit do git&amp;rsquo;a. * http://dl.getdropbox.com/u/185133/git/pre-commit
-by zadziałało przerywanie commit&amp;rsquo;a gdy &amp;lsquo;symfony unit-test&amp;rsquo; się nie udadzą, potrzebna jest łatka na symfony (przynajmniej na moją wersję 1.0.17) * http://dl.getdropbox.com/u/185133/git/symfony_return_code.diff
-Hook zakłada, że commit jest robiony w katalogu projektu (tak mam najczęsciej) i znajduje sie w nim plik &amp;lsquo;symfony&amp;rsquo;
+      <description>Mam jeszcze tą nieprzyjemnośc pracy z PHP (w tym przypadku z symfony framework) i aby była przyjemniejsza dodałem sobie hook na pre-commit do git&amp;rsquo;a.
+ http://dl.getdropbox.com/u/185133/git/pre-commit  by zadziałało przerywanie commit&amp;rsquo;a gdy &amp;lsquo;symfony unit-test&amp;rsquo; się nie udadzą, potrzebna jest łatka na symfony (przynajmniej na moją wersję 1.0.17)
+ http://dl.getdropbox.com/u/185133/git/symfony_return_code.diff  Hook zakłada, że commit jest robiony w katalogu projektu (tak mam najczęsciej) i znajduje sie w nim plik &amp;lsquo;symfony&amp;rsquo;
 btw: hook wymaga pythona.</description>
     </item>
     
@@ -42,16 +42,7 @@ btw: hook wymaga pythona.</description>
       <pubDate>Tue, 02 Sep 2008 21:01:02 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20080902lint-dla-php/</guid>
-      <description>Za dnia piszę najczęściej w php i zazdroszczę pythonowi pylinta.
-Z ciekawości zagooglałem i znalazłem rozwiązanie dla PHP sprawdzające Coding Standard:
- pear install PHP_CodeSniffer phpcs --standard=Zend SomeTest.class.php  phpcs -i podaje dostępne standardy:
-PEAR
-MySource
-PHPCS
-Squiz
-Zend
-Mi najbardzie odpowiada Zend co widać po wynikach lintowania, najczęściej 0 ostrzeżeń i błędów ;).
-phpcs pozwala także tworzyć swoje własne standardy kodowanie oraz - co bardzo mnie cieszy - podpiąć go jako precommit hook do svn&amp;rsquo;a.</description>
+      <description></description>
     </item>
     
     <item>
@@ -60,11 +51,8 @@ phpcs pozwala także tworzyć swoje własne standardy kodowanie oraz - co bardzo
       <pubDate>Sun, 24 Aug 2008 14:17:12 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20080824netbeans-65-php5-symfony-xdebug/</guid>
-      <description>W Netbeans 6.5 pojawia się support dla php5. W/g informacji na stronie netbeans oznacza to:
- PHP Editor (Code completion, syntactic and semantic code highlighting) Support for heredoc notation and PHTML Debugging using Xdebug Generators for MySQL database code snippets  Temat, który najbardziej mnie interesował to jak zadziała debugging przy pomocy Xdebug. Postanowiłem sprawdzić to z istniejącym projektem bazującym na frameworku Symfony.
- Zainstalowałem netbeans pobierając odpowiednią paczkę ze strony netbeans Zainstalowałem Xdebug poprzez pecl install xdebug i dodaniu do konfiguracji php wierszy:  # xdebug, jako zend_extension. ścieżke zmienić należy oczywiście na odpowiednią dla Twojej instalacji zend_extension=/usr/lib/php5/20060613+lfs/xdebug.so xdebug.remote_enable=on  dodałem w netbeans nowy projekt php z istniejącymi źródłami (projekt już mam uruchomiony), podając podaczas konfiguracji:
- ścieżkę do źródeł projektu adres url do projektu katalog zawierający dane web (dostępne poprzez podany url projektu) w tym przypadku podkatalog &amp;lsquo;web&amp;rsquo; w katalogu projektu punkt startowy czyli domyślny kontroler dla projektu, w tym przypadku &amp;lsquo;frontend.php&amp;rsquo; w podkatalogu &amp;lsquo;web&amp;rsquo;  następnie wystarczyło otworzyć plik projektu (np podany wyżej kontroler) z toolbar&amp;rsquo;a wybrać &amp;lsquo;debug project&amp;rsquo; lub wciśnąć ctrl+F5
-  W tym momencie w uruchomionej przeglądarce (u mnie firefox 3.x netbeans otwarł główny kontroler projektu wraz z parameterm XDEBUG_SESSION_START=netbeans-xdebug. W tym samym momencie w edytorze netbeans podświetlony został pierwszy wiersz kontrolera &amp;hellip; i już.</description>
+      <description>W Netbeans 6.5pojawia się support dla php5. W/g informacji na stronie netbeans oznacza to:
+ PHP Editor (Code completion, syntactic and semantic code highlighting) Support for heredoc notation and PHTML Debugging using Xdebug Generators for MySQL database code snippets  Temat, który najbardziej mnie interesował to jak zadziała debugging przy pomocy Xdebug. Postanowiłem sprawdzić to z istniejącym projektem bazującym na frameworku Symfony. Zainstalowałem netbeans pobierając odpowiednią paczkę ze strony netbeans Zainstalowałem Xdebug poprzez pecl install xdebugi dodaniu do konfiguracji phpwierszy:  # xdebug, jako zend_extension. ścieżke zmienić należy oczywiście na odpowiednią dla Twojej instalacji zend_extension=/usr/lib/php5/20060613+lfs/xdebug.so xdebug.remote_enable=on dodałem w netbeans nowy projekt php z istniejącymi źródłami (projekt już mam uruchomiony), podając podaczas konfiguracji:   ścieżkę do źródeł projektu adres url do projektu katalog zawierający dane web (dostępne poprzez podany url projektu) w tym przypadku podkatalog &amp;lsquo;web&amp;rsquo; w katalogu projektu punkt startowy czyli domyślny kontroler dla projektu, w tym przypadku &amp;lsquo;frontend.php&amp;rsquo; w podkatalogu &amp;lsquo;web&amp;rsquo;  następnie wystarczyło otworzyć plik projektu (np podany wyżej kontroler) z toolbar&amp;rsquo;a wybrać &amp;lsquo;debug project&amp;rsquo; lub wciśnąć ctrl+F5  W tym momencie w uruchomionej przeglądarce (u mnie firefox 3.xnetbeans otwarł główny kontroler projektu wraz z parameterm XDEBUG_SESSION_START=netbeans-xdebug. W tym samym momencie w edytorze netbeans podświetlony został pierwszy wiersz kontrolera &amp;hellip; i już.</description>
     </item>
     
   </channel>

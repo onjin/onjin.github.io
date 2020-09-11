@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="pl">
   <head>
+  
+  <script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+     
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//matomo.codefiber.pl/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '4']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Marek Wywiał">
-  <meta name="description" content="Wraz z nowym Firefox&rsquo;em w świecie stron internetowych pojawi się wiele ciekawych udogodnień.
-Jednym z nich jest obsługa znacznika &lt;canvas&gt; czyli grafiki bitmapowej. Za jego pomocą możemy wstawić do treści strony pole graficzne, na którym można operować przy pomocy JavaScript&rsquo;u
-Możemy rysować linie, prostokąty, łuki, krzywe Beizera, gradienty, regulować szerekość, styl i kolor lini, kolor wypełnienia (można użyć do tego gradientu), wstawiać oraz manipulować obrazkami (gif, jpg, png) i wiele innych.
-Krótkie zestawienie podstawowych operacji zebrałem na odpowiedniej podstronce. Polecam też oryginalny tutorial ze strony developerów Mozilli.">
+  <meta name="description" content="Wraz z nowym Firefox&rsquo;emw świecie stron internetowych pojawi się wiele ciekawych udogodnień.
+Jednym z nich jest obsługa znacznika &lt;canvas&gt; czyli grafiki bitmapowej. Za jego pomocą możemy wstawić do treści strony pole graficzne, na którym można operować przy pomocy JavaScript&rsquo;uMożemy rysować linie, prostokąty, łuki, krzywe Beizera, gradienty, regulować szerekość, styl i kolor lini, kolor wypełnienia (można użyć do tego gradientu), wstawiać oraz manipulować obrazkami (gif, jpg, png) i wiele innych.
+Krótkie zestawienie podstawowych operacji zebrałem na odpowiedniej podstronce. Polecam też oryginalny tutorialze strony developerów Mozilli.">
   
   <meta property="og:title" content="Canvas i Firefox 1.5" />
-<meta property="og:description" content="Wraz z nowym Firefox&rsquo;em w świecie stron internetowych pojawi się wiele ciekawych udogodnień.
-Jednym z nich jest obsługa znacznika &lt;canvas&gt; czyli grafiki bitmapowej. Za jego pomocą możemy wstawić do treści strony pole graficzne, na którym można operować przy pomocy JavaScript&rsquo;u
-Możemy rysować linie, prostokąty, łuki, krzywe Beizera, gradienty, regulować szerekość, styl i kolor lini, kolor wypełnienia (można użyć do tego gradientu), wstawiać oraz manipulować obrazkami (gif, jpg, png) i wiele innych.
-Krótkie zestawienie podstawowych operacji zebrałem na odpowiedniej podstronce. Polecam też oryginalny tutorial ze strony developerów Mozilli." />
+<meta property="og:description" content="Wraz z nowym Firefox&rsquo;emw świecie stron internetowych pojawi się wiele ciekawych udogodnień.
+Jednym z nich jest obsługa znacznika &lt;canvas&gt; czyli grafiki bitmapowej. Za jego pomocą możemy wstawić do treści strony pole graficzne, na którym można operować przy pomocy JavaScript&rsquo;uMożemy rysować linie, prostokąty, łuki, krzywe Beizera, gradienty, regulować szerekość, styl i kolor lini, kolor wypełnienia (można użyć do tego gradientu), wstawiać oraz manipulować obrazkami (gif, jpg, png) i wiele innych.
+Krótkie zestawienie podstawowych operacji zebrałem na odpowiedniej podstronce. Polecam też oryginalny tutorialze strony developerów Mozilli." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://marekwywial.name/posts/blog20051115canvas-i-firefox-15/" />
 <meta property="article:published_time" content="2005-11-15T13:15:32+00:00" />
@@ -45,7 +58,7 @@ Krótkie zestawienie podstawowych operacji zebrałem na odpowiedniej podstronce.
   <link href="https://marekwywial.name/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
   <link href="https://marekwywial.name/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet"> 
   <link href="https://marekwywial.name/css/vendors/mdb/style.min.css" rel="stylesheet"> 
-  <link href="https://marekwywial.name/css/main.css?1569701801" rel="stylesheet">
+  <link href="https://marekwywial.name/css/main.css?1599822646" rel="stylesheet">
 
 
   
@@ -300,13 +313,10 @@ Krótkie zestawienie podstawowych operacji zebrałem na odpowiedniej podstronce.
 
 
           <div class="post-content markdown">
-            <p>Wraz z nowym <a href="http://www.firefox.pl/">Firefox&rsquo;em</a> w świecie stron internetowych pojawi się wiele <a href="http://www.mozilla.org/products/firefox/releases/1.5.html">ciekawych udogodnień</a>.</p>
-
-<p>Jednym z nich jest obsługa znacznika &lt;canvas&gt; czyli grafiki bitmapowej. <br>Za jego pomocą możemy wstawić do treści strony <em>pole graficzne</em>, na którym można operować przy pomocy <em>JavaScript&rsquo;u</em></p>
-
+            <p>Wraz z nowym <!-- raw HTML omitted -->Firefox&rsquo;em<!-- raw HTML omitted --> w świecie stron internetowych pojawi się wiele <!-- raw HTML omitted -->ciekawych udogodnień<!-- raw HTML omitted -->.</p>
+<p>Jednym z nich jest obsługa znacznika &lt;canvas&gt; czyli grafiki bitmapowej. <!-- raw HTML omitted -->Za jego pomocą możemy wstawić do treści strony <!-- raw HTML omitted -->pole graficzne<!-- raw HTML omitted -->, na którym można operować przy pomocy <!-- raw HTML omitted -->JavaScript&rsquo;u<!-- raw HTML omitted --></p>
 <p>Możemy rysować linie, prostokąty, łuki, krzywe Beizera, gradienty, regulować szerekość, styl i kolor lini, kolor wypełnienia (można użyć do tego gradientu), wstawiać oraz manipulować obrazkami (gif, jpg, png) i wiele innych.</p>
-
-<p>Krótkie zestawienie podstawowych operacji zebrałem na <a href="https://marekwywial.name/misc/canvas/">odpowiedniej podstronce</a>. Polecam też <a href="http://developer.mozilla.org/en/docs/Canvas_tutorial">oryginalny tutorial</a> ze strony developerów <a href="http://www.mozilla.org">Mozilli</a>.</p>
+<p>Krótkie zestawienie podstawowych operacji zebrałem na <!-- raw HTML omitted -->odpowiedniej podstronce<!-- raw HTML omitted -->. Polecam też <!-- raw HTML omitted -->oryginalny tutorial<!-- raw HTML omitted --> ze strony developerów <!-- raw HTML omitted -->Mozilli<!-- raw HTML omitted -->.</p>
 
           </div>
 
@@ -444,7 +454,7 @@ Krótkie zestawienie podstawowych operacji zebrałem na odpowiedniej podstronce.
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2019 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2020 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

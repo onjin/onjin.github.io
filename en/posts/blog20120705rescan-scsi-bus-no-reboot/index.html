@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html lang="pl">
   <head>
+  
+  <script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+     
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//matomo.codefiber.pl/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '4']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Marek Wywiał">
-  <meta name="description" content=" Just self memo. How to attach new SCSI disk without reboot (debian):
+  <meta name="description" content="Just self memo. How to attach new SCSI disk without reboot (debian):
 # check what hosts do you have ls /sys/class/scsi_host host0 host1 host2 host3 # change &#39;host0&#39; to &#39;host1&#39; or any next number that you need echo &#34;- - -&#34; &gt; /sys/class/scsi_host/host0/scan and done fdisk -l ">
   
   <meta property="og:title" content="Rescan SCSI bus (no reboot)" />
-<meta property="og:description" content=" Just self memo. How to attach new SCSI disk without reboot (debian):
+<meta property="og:description" content="Just self memo. How to attach new SCSI disk without reboot (debian):
 # check what hosts do you have ls /sys/class/scsi_host host0 host1 host2 host3 # change &#39;host0&#39; to &#39;host1&#39; or any next number that you need echo &#34;- - -&#34; &gt; /sys/class/scsi_host/host0/scan and done fdisk -l " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://marekwywial.name/en/posts/blog20120705rescan-scsi-bus-no-reboot/" />
@@ -41,7 +56,7 @@
   <link href="https://marekwywial.name/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
   <link href="https://marekwywial.name/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet"> 
   <link href="https://marekwywial.name/css/vendors/mdb/style.min.css" rel="stylesheet"> 
-  <link href="https://marekwywial.name/css/main.css?1569701801" rel="stylesheet">
+  <link href="https://marekwywial.name/css/main.css?1599822646" rel="stylesheet">
 
 
   
@@ -296,19 +311,14 @@
 
 
           <div class="post-content markdown">
-            
-
-<p>Just self memo. How to attach new SCSI disk without reboot (debian):</p>
-
+            <p>Just self memo. How to attach new SCSI disk without reboot (debian):</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">    <span class="c1"># check what hosts do you have</span>
     ls /sys/class/scsi_host
     host0 host1 host2 host3
 
     <span class="c1"># change &#39;host0&#39; to &#39;host1&#39; or any next number that you need</span>
     <span class="nb">echo</span> <span class="s2">&#34;- - -&#34;</span> &gt; /sys/class/scsi_host/host0/scan</code></pre></div>
-
 <h1 id="and-done">and done</h1>
-
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">    fdisk -l</code></pre></div>
 
           </div>
@@ -450,7 +460,7 @@
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2019 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2020 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

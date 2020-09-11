@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>linux on Marek Wywiał</title>
@@ -17,7 +17,7 @@
       <pubDate>Wed, 18 Sep 2013 13:36:39 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker-pl/</guid>
-      <description>&lt;p&gt;Jak szybko uruchomić prywatną instancję &lt;a href=&#34;https://sentry.io&#34;&gt;Sentry&lt;/a&gt; używając dockera.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Jak szybko uruchomić prywatną instancję &lt;!-- raw HTML omitted --&gt;Sentry&lt;!-- raw HTML omitted --&gt; używając dockera.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Sat, 19 Mar 2011 13:03:04 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</guid>
-      <description>Przy okazji szukania API do grooveshark&amp;rsquo;a odkryłem plik currentSong.txt, który jest tworzony przez Grooveshark Desktop.
+      <description>Przy okazji szukania API do grooveshark&amp;rsquo;aodkryłem plik currentSong.txt, który jest tworzony przez Grooveshark Desktop.
 Kilka minut z vim&amp;rsquo;em i mamy skrypt napisany w python&amp;rsquo;ie, który odczytuje w/w plik i wrzuca informację o aktualnie odtwarzanym utworze jako status wybranego konta w gajim&amp;rsquo;a.
 Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wymana pyinotify). Wtedy nasz status będzie zmieniany w chwili (chwilę potem :) ) zmiany utworu w Grooveshark Desktop.
 Całość można dowolnie używać/modyfikować, a pobrać można z serwisu github.com:
@@ -39,8 +39,7 @@ Całość można dowolnie używać/modyfikować, a pobrać można z serwisu gith
       <pubDate>Sun, 03 Jan 2010 13:01:26 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20100103przydatne-narzedzia-do-monitoringu-obciazenia-serwera/</guid>
-      <description>&amp;hellip; zamieścił mekk
- http://notatnik.mekk.waw.pl/archives/200-Oprocz_top.html  </description>
+      <description>&amp;hellip; zamieścił mekk http://notatnik.mekk.waw.pl/archives/200-Oprocz_top.html  </description>
     </item>
     
     <item>
@@ -49,7 +48,7 @@ Całość można dowolnie używać/modyfikować, a pobrać można z serwisu gith
       <pubDate>Sun, 21 Jun 2009 19:11:10 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20090621fuse-ftp-mount-curlftpfs/</guid>
-      <description>sprawdź najnowszą wersję ftpmount Do pracy z hostingiem gdzie mamy tylko &amp;ldquo;&amp;lsquo;ftp&amp;rdquo;&amp;rsquo; przydaje się montowanie dysku poprzez właśnie ftp. Służy do tego program &amp;ldquo;&amp;lsquo;curlftpfs&amp;rdquo;&amp;rsquo; (np apt-get install curlftpfs).
+      <description> Do pracy z hostingiem gdzie mamy tylko &amp;lsquo;&amp;lsquo;&amp;lsquo;ftp&amp;rsquo;&amp;rsquo;&amp;rsquo; przydaje się montowanie dysku poprzez właśnie ftp. Służy do tego program &amp;lsquo;&amp;lsquo;&amp;lsquo;curlftpfs&amp;rsquo;&amp;rsquo;&amp;rsquo; (np apt-get install curlftpfs).
 Odpalamy go jako:
 $ curlftpfs ftp://user:pass@host/ ./mountpoint Do tego potrzebujemy uprawnienia grupy fuse więć jako root musimy sobie ją dodać od naszego użytkownika.
 Jeżeli mamy dużo połączeń do zarządzania przyda się mały skrypt:
@@ -64,12 +63,10 @@ Jeżeli mamy dużo połączeń do zarządzania przyda się mały skrypt:
       <pubDate>Fri, 05 Jun 2009 10:53:55 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20090605mutt-firefox-by-urlview.html</guid>
-      <description>w ubuntu wystarczyło: 
-apt-get install urlview
-
+      <description>apt-get install urlview
 w ~/.muttrc dodane makro
- macro pager \\cb &amp;lt;pipe-entry&amp;gt;urlview&amp;lt;enter&amp;gt; &#39;Follow links with urlview&#39;  orac plik ~/.urlview:
- REGEXP ((http|https|ftp|gopher):(//)?[^ &amp;lt;&amp;gt;&#34;\\t]*|www\\.[-a-z0-9.]+)[^ .,;\\t&amp;lt;&#34;&amp;gt;\\):] COMMAND /usr/bin/nohup firefox -remote &#34;openURL(&#34;%s&#34;, new-tab)&#34; &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 &amp;amp;  teraz ctrl+b zbiera linki z treści wiadomości, które otwieramy w wybranej przeglądarce ;)</description>
+orac plik ~/.urlview:
+teraz ctrl+b zbiera linki z treści wiadomości, które otwieramy w wybranej przeglądarce ;)</description>
     </item>
     
     <item>
@@ -78,9 +75,7 @@ w ~/.muttrc dodane makro
       <pubDate>Tue, 26 May 2009 10:31:04 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20090526google-apps-gmail-i-mutt/</guid>
-      <description>Znalezione na sieci i przystosowane do google apps:
-
-set imap_user = &amp;ldquo;user@domena.pl&amp;rdquo;
+      <description>set imap_user = &amp;ldquo;user@domena.pl&amp;rdquo;
 set imap_pass = &amp;ldquo;password&amp;rdquo;
 set smtp_url = &amp;ldquo;smtp://users\@domena.pl@smtp.gmail.com:587/&amp;rdquo;
 set smtp_pass = &amp;ldquo;password&amp;rdquo;
@@ -88,7 +83,7 @@ set from = &amp;ldquo;user@domena.pl&amp;rdquo;
 set realname = &amp;ldquo;My ql user&amp;rdquo;
 set folder = &amp;ldquo;imaps://imap.gmail.com:993&amp;rdquo;
 set spoolfile = &amp;ldquo;+INBOX&amp;rdquo;
-set postponed=&amp;ldquo;+[Google Mail]/Drafts&amp;rdquo;
+set postponed=&amp;quot;+[Google Mail]/Drafts&amp;rdquo;
 set header_cache=~/.mutt/cache/headers
 set message_cachedir=~/.mutt/cache/bodies
 set certificate_file=~/.mutt/certificates
@@ -101,14 +96,10 @@ set move = no</description>
       <pubDate>Tue, 12 May 2009 22:46:59 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20090512porzadki-na-dysku-czyli-mv-ln-mount-i-bind/</guid>
-      <description>Robiąc ostatnio trochę miejsca pomiędzy partycjami przeniosłem /usr/lib do /opt/usr/lib i zrobiłem symlink ln -s /opt/usr/lib /usr/lib. Problemem okazało się np /usr/lib/cups/filter/foomatic-rip, który jest linkiem relatywnym do ../../../bin/foomatic-rip i w ten sposób pozbyłem się możliwości drukowania.
-Nie mam miejsca by zrobić/użyć partycji, którą bym zamontował pod /usr/lib ale chwila w necie pozoliła znaleść mi rozwiązanie odpowiednie dla mnie :)
-
-
+      <description>Nie mam miejsca by zrobić/użyć partycji, którą bym zamontował pod /usr/libale chwila w necie pozoliła znaleść mi rozwiązanie odpowiednie dla mnie :)
 mount &amp;ndash;bind /opt/usr/lib /usr/lib
-
-lub w /etc/fstab
- /opt/usr/lib /usr/lib none bind  i teraz jest ok :)</description>
+lub w /etc/fstab/opt/usr/lib /usr/lib none bind
+i teraz jest ok :)</description>
     </item>
     
     <item>
@@ -117,9 +108,7 @@ lub w /etc/fstab
       <pubDate>Fri, 29 Aug 2008 08:26:16 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20080829virtualbox-brakujacy-vboxdrv-kernel-ubuntu/</guid>
-      <description>Czasem w Ubuntu (np przy pakietach proposal) przychodzi wyższa wersja kernela bez upgrade drivera do virtualbox&amp;rsquo;a
-Wtedy pomaga mi taka kombinacja
- sudo apt-get install virtualbox-ose-source sudo m-a update sudo m-a prepare sudo m-a a-i virtualbox-ose sudo /etc/init.d/vboxdrv restart  Restart virtualbox&amp;rsquo;a i gotow. Back to work.</description>
+      <description></description>
     </item>
     
     <item>
@@ -128,7 +117,7 @@ Wtedy pomaga mi taka kombinacja
       <pubDate>Mon, 31 Jul 2006 19:56:49 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20060731gentoo-dbf2csv-ebuild/</guid>
-      <description>Potrzebowałem zamienić .dbf na .csv. Znalazłem odpowiedni skrypt ale &amp;hellip; aby był porządek w dystrybucji zmontowałem do niego .ebuild (gdyż takowego nie znalazłem).
+      <description>Potrzebowałem zamienić .dbf na .csv. Znalazłem odpowiedni skrypt ale &amp;hellip; aby był porządek w dystrybucji zmontowałem do niego .ebuild(gdyż takowego nie znalazłem).
 Może komuś też się przyda (wersja dbf2csv to 5.0).</description>
     </item>
     
@@ -140,9 +129,8 @@ Może komuś też się przyda (wersja dbf2csv to 5.0).</description>
       <guid>https://marekwywial.name/posts/blog20051110is-ms-windows-ready-for-the-desktop/</guid>
       <description>Ostatnio wielu (??) użytkowników komputerów, próbuje przesiąść się z systemu MS Windows na Linuksa.
 Mają przy tym mniejsze lub większe problemy. Wynikaja one często z niechęci do zmiany przyzwyczajeń, złym wyobrażaniu sobie systemów typu Linux i pracy z nimi, braku czasu na zdobycie dodatkowej wiedzy, z powodu używania specjalistycznego oprogramowania nie działającego w tym systemie, itp.
-Stron i treści opisujących te problemy oraz jak sobie z nimi radzić jest wiele (google)
-Ale czy ktoś próbował kiedys w drugą stronę ? Praktycznie nie używam systemu Windows od ok 9 lat. Pracuję, uczę się i bawię przy pomocy Linuksa.
-Is MS Windows ready for the desktop? jest odpowiedzią na problemy, które spotkać może osoba, próbująca przesiąść się z Linuxa na Windows ;)</description>
+Stron i treści opisujących te problemy oraz jak sobie z nimi radzić jest wiele (google)Ale czy ktoś próbował kiedys w drugą stronę ? Praktycznie nie używam systemu Windows od ok 9 lat. Pracuję, uczę się i bawię przy pomocy Linuksa.
+Is MS Windows ready for the desktop?jest odpowiedzią na problemy, które spotkać może osoba, próbująca przesiąść się z Linuxa na Windows ;)</description>
     </item>
     
     <item>
@@ -151,9 +139,7 @@ Is MS Windows ready for the desktop? jest odpowiedzią na problemy, które spotk
       <pubDate>Fri, 04 Nov 2005 08:57:02 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20051104linux-standard-base/</guid>
-      <description>Jak przeczytałem dzis na linuxnews.pl, w oświadczeniu prasowym z 1 listopada Free Standards Group ogłosiła, że komitety normalizacyjne ISO i IEC zaakceptowały Linux Standard Base Core Specification 2.0.1 i opublikują tą specyfikację jako standard ISO 23360.
-Czy będzie to prawdziwy standard ? Czy tylko wizytówka dla firm by mówić &amp;ldquo;my się na tym znamy, mamy to na piśmie&amp;rdquo;.
-Czy skończy się jak w pewnej firmie, która &amp;ldquo;oferowała&amp;rdquo; wsparcie dla systemów Linux, a dział techniczny próbował postawić RedHat&amp;rsquo;a (byle tylko chodził) przez 1-2 tygodni ?
+      <description>Jak przeczytałem dzis na linuxnews.pl, w oświadczeniu prasowymz 1 listopada Free Standards Group ogłosiła, że komitety normalizacyjne ISO i IEC zaakceptowały Linux Standard BaseCore Specification 2.0.1 i opublikują tą specyfikację jako standard ISO 23360.Czy będzie to prawdziwy standard ? Czy tylko wizytówka dla firm by mówić &amp;quot;my się na tym znamy, mamy to na piśmie&amp;quot;.Czy skończy się jak w pewnej firmie, która &amp;quot;oferowała&amp;quot;wsparcie dla systemów Linux, a dział techniczny próbował postawić RedHat&amp;rsquo;a (byle tylko chodził) przez 1-2 tygodni ?
 Zobaczymy ..</description>
     </item>
     

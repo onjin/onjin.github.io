@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>im on Marek Wywiał</title>
@@ -17,15 +17,7 @@
       <pubDate>Thu, 15 Mar 2007 08:32:24 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20070315jabber-google-firefox-itp/</guid>
-      <description>Ostatnio wpadł mi do Firefox&amp;rsquo;a ciekawie zapowiadający się plugin SamePlace. Używając sieci Jabber (więc także Google Talk) pozwala on oprócz komunikacji tekstowej (zwykły chat) na: używanie wspólnej tablicy do rysowania (Whiteboard),
-wspólnego widoku wskaźnika myszy (po otwarciu tej samej strony przez obie strony konwersacji można wskazywać rózne elementy na ekranie)
-współdzielić oglądanie prezentacji,zsynchronizowanych map Google,
-wysłać link do aktualnie oglądanej strony przy pomocy funkcji &amp;lsquo;Send link to&amp;hellip;&amp;rsquo;,
-przeciągać obrazki z oglądanej strony bezpośrednio do okna rozmowy,
-otwierać odnośniki na stronach w formacie xmpp:,
-grać w szachy (wersja alfa ;) ),
-
-Wersja stabilna to w tej chwili 0.6.0 ale już teraz pozwala na przyspieszenie współpracy z naszymi znajomymi/ współpracownikami.
+      <description>Wersja stabilnato w tej chwili 0.6.0ale już teraz pozwala na przyspieszenie współpracy z naszymi znajomymi/ współpracownikami.
 Co do samego Google Talk to do swojej strony startowej http://www.google.pl/ig można dodać sobie odpowiedni Google Talk Gadget.</description>
     </item>
     
@@ -35,8 +27,7 @@ Co do samego Google Talk to do swojej strony startowej http://www.google.pl/ig m
       <pubDate>Wed, 18 Jan 2006 07:44:01 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20060118google-talk/</guid>
-      <description>17 stycznia Google otworzyło połączenia między serwerowe pomiędzy swoim serwisem Google Talk, a resztą świata XMPP. Tak więc każdy kto posiada konto pocztowe w domenie @gmail.com, może teraz komunikować się używając identycznego JID
-Do pełni szczęścia mogłoby brakować jedynie komunikatora Google Talk dostępnego na inne platformy niż Windows. Ale udostępnienie przez Google libjingle oraz ich współpraca z twórcami komunikatora Psi wróży na dobre.</description>
+      <description>17 stycznia Google otworzyło połączenia między serwerowepomiędzy swoim serwisem Google Talk, a resztą świata XMPP. Tak więc każdy kto posiada konto pocztowe w domenie @gmail.com, może teraz komunikować się używając identycznego JIDDo pełni szczęścia mogłoby brakować jedynie komunikatora Google Talk dostępnego na inne platformy niż Windows. Ale udostępnienie przez Google libjingleoraz ich współpraca z twórcami komunikatora Psiwróży na dobre.</description>
     </item>
     
     <item>
@@ -45,10 +36,10 @@ Do pełni szczęścia mogłoby brakować jedynie komunikatora Google Talk dostę
       <pubDate>Fri, 25 Nov 2005 11:26:26 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20051125skype-koledzy/</guid>
-      <description>Skype coraz szerzej i mocniej rozchodzi się po świecie. Ale konkurencja jak zwykle nie śpi ;)
-Jako pierwszy niech będzie Gizmo Project. Program ten posiada podobną funkcjonalność jak Skype, a dodatkowo
+      <description>Skypecoraz szerzej i mocniej rozchodzi się po świecie. Ale konkurencja jak zwykle nie śpi ;)
+Jako pierwszy niech będzie Gizmo Project. Program ten posiada podobną funkcjonalnośćjak Skype, a dodatkowo
  z Gizmo można połączyć się z dowolnego telefonu SIPowego w sieci VOIP od razu można do nas dzwonić z tradycyjnych telefonów ( numer-dostępowy + nasz numer), minusem jest iż numer dostępowy jest w stanach &amp;hellip; statusom można nadawać opisy ;) dzwoniąć do kogoś można nadać rozmowie temat ( np. dzwonię bo mi się nudzi ), na podstawie którego możemy zadecydować czy warto odebrać ten telefon jednym kliknięciem możemy nagrać rozmowę lub zGEOlokalizować dzwoniącego dostajemy od razu pocztę głosową ( email z plikiem .wav na waszą skrzynkę [?] ) informację SMS o nieodebranych połączeniach ( po zalogowaniu się na stronie http://www.sipphone.com/ ) jest dostępny dla Windows, MacOs oraz Linux ( choć linux nie tak do końca [alpha] ) ładny interfejs :D droższe rozmowy callout niż w Skype :( .  Szczegółowy opis różnic i działania można przeczytać w artykule Piotra Koniecznego. Polecam przeczytać
- OpenWengo natomiast, w porównaniu ze Skype i Gizmo, będąc wspólnym projektem firm Wengo i Neuf Telecom jest wydawany na licencji GPL co może stanowić o jego szybkim rozwoju gdy zawiąże się wokół niego odpowiednio duża społeczność programistów i sympatyków.</description>
+ OpenWengonatomiast, w porównaniu ze Skype i Gizmo, będąc wspólnym projektem firm Wengo i Neuf Telecom jest wydawany na licencji GPLco może stanowić o jego szybkim rozwoju gdy zawiąże się wokół niego odpowiednio duża społeczność programistów i sympatyków.</description>
     </item>
     
     <item>

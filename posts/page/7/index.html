@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="pl">
   <head>
+  
+  <script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+     
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//matomo.codefiber.pl/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '4']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="HandheldFriendly" content="True">
@@ -13,7 +28,6 @@
 <meta property="og:description" content="[Python Software Developer In the face of ambiguity, refuse the temptation to guess. Nothing is an absolute reality, all is permitted.]" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://marekwywial.name/posts/" />
-
 <meta property="og:updated_time" content="2013-10-12T01:26:16+00:00" />
 
 
@@ -39,7 +53,7 @@
   <link href="https://marekwywial.name/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
   <link href="https://marekwywial.name/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet"> 
   <link href="https://marekwywial.name/css/vendors/mdb/style.min.css" rel="stylesheet"> 
-  <link href="https://marekwywial.name/css/main.css?1569701801" rel="stylesheet">
+  <link href="https://marekwywial.name/css/main.css?1599822646" rel="stylesheet">
 
 
   
@@ -742,12 +756,12 @@
 
     
       Długie formularze, podzielone na kilka sekcji ciągnące się w dół strony, nie są zbyt czytelne. Formularz taki można zmodyfikować dzieląć go na klikalne etapy lub wizualne zakładki. Ale jeżeli mamy wiele takich formularzy napisanych na dodatek w samym HTML’u ?
-Możemy to sobie uprościć za pomocą JavaScript. Odpowiednia funkcja wywołana po załadowaniu się strony [body onLoad=“funkcja();”] może wyszukać sekcje naszego formularza i zwinąć je do ciekawszych wizualnie zakładek.
-Żeby funkcja wiedziała co jest sekcją, należy je odpowiednio oznaczyć np. poprzez odpowiednią klasę CSS ‘subpanel’
+Możemy to sobie uprościć za pomocą JavaScript. Odpowiednia funkcja wywołana po załadowaniu się strony [body onLoad=&#34;funkcja();“] może wyszukać sekcje naszego formularza i zwinąć je do ciekawszych wizualnie zakładek.
+Żeby funkcja wiedziała co jest sekcją, należy je odpowiednio oznaczyć np. poprzez odpowiednią klasę CSS‘subpanel’
 Druga ważna rzecz, skrypt musi wiedzieć jak nazwać zakładki. Do tego wykorzystałem atrybut title. Nasz kod wygląda teraz tak:
 &lt;div class=&#34;subpanel&#34; title=&#34;zakładka 1&#34;&gt; &lt;h2&gt;sekcja 1&lt;/h2&gt; &lt;/div&gt; &lt;div class=&#34;subpanel&#34; title=&#34;zakładka 2&#34;&gt; &lt;h2&gt;sekcja 2&lt;/h2&gt; &lt;/div&gt; Teraz za pomocą JavaScript możemy odnaleźć wszystkie znaczniki DIV.
 if (!document.getElementsByTagName || !document.createElement || !document.appendChild) return; /* pobieramy wszystkie div&#39;y */ var divs = document.getElementsByTagName(&#34;div&#34;);  Następnie przygotowywujemy dodatkowy element DIV, w którym umieścimy stworzone zakładki.
-/* nr. pierwszego div&#39;a z klasą subpanel */ var firstDiv = -1; /* tworzymy div na nasze menu */ var menu = document.createElement(&#34;div&#34;); menu.className = &#34;panels_menu&#34;; menu.setAttribute(&#34;id&#34;,&#34;panels_menu&#34;);  Pozostaje nam przejść się pętlą po wszystkich znalezionych DIV‘ach i wybrać te, które posiadają klasę ‘subpanel’. Z każdego z nich pobieramy wartość atrybutu title i naszym ‘menu’ tworzymy odpowiedni odnośnik:......
+/* nr. pierwszego div&#39;a z klasą subpanel */ var firstDiv = -1; /* tworzymy div na nasze menu */ var menu = document.createElement(&#34;div&#34;); menu.className = &#34;panels_menu&#34;; menu.setAttribute(&#34;id&#34;,&#34;panels_menu&#34;);  Pozostaje nam przejść się pętlą po wszystkich znalezionych DIV&#39;ach i wybrać te, które posiadają klasę ‘subpanel’. Z każdego z nich pobieramy wartość atrybutu titlei naszym ‘menu’ tworzymy odpowiedni odnośnik:......
     
   </a>
 
@@ -813,8 +827,8 @@ if (!document.getElementsByTagName || !document.createElement || !document.appen
 
     
       Skarbnicą dziwnych i ciekawych gadżetów jak dla mnie jest ThinkGeek. Serwis działa już parę ładnych lat i jak na razie nie znalazłem jego polskiego odpowiednika (choć specjalnie go też nie szukałem).
-Niedawno w Firefox‘a wpadł mi link do Gadzet.net - katalog rzeczy fajnych. Jak piszą sami autorzy serwisu, jest on “[…] magazynem/blogiem/(zwij jak chcesz) wypatrującym wszelkiej maści nowinek gadżetowych, ale także tych starych, mało znanych.[…]” i jest polskim projektem.
-Mi spodobał się latający budzik ;)......
+Niedawno w Firefox&#39;a wpadł mi link do Gadzet.net- katalog rzeczy fajnych. Jak piszą sami autorzy serwisu, jest on “[…] magazynem/blogiem/(zwij jak chcesz) wypatrującym wszelkiej maści nowinek gadżetowych, ale także tych starych, mało znanych.[…]” i jest polskim projektem.
+Mi spodobał się latający budzik;)......
     
   </a>
 
@@ -873,16 +887,7 @@ Mi spodobał się latający budzik ;)......
     
 
     
-      Tworzenie strony internetowej jest procesem wymagającym odpowiedniego projektu oraz zarządzania.
-Zanim napiszemy setki linii wspaniałego kodu HTML, CSS czy PHP należy się upewnić:
-czego naprawdę chce klient
-czy możemy sprostać jego oczekiwaniom terminu wykonania, kosztu oraz działania ostatecznego produktu
-czy stać nas na wykonanie projektu na zadanych warunkach
-czy klienta stać na postawione przez nas warunki (np. cenowe)
-Klienci często nie do końca wiedzą czego potrzebują i dlaczego. Możemy otrzymać zlecenie na ‘zwykłą statyczną stronę’, materiały podeślą nam później, jak przygotujemy szablony, itp. Potem otrzymujemy materiały w formie listy 200 produktów, które powinny być na stronie podzielone na grupy towarowe, edytowalne z panelu administratora, z możliwością ich zamawiania przez różne grupy klientów (detalista, partner, dystrybutor), przydała by się możliwość importu oraz exportu danych z XLS (CSV) i oczywiście system newsów także byłby wskazany.
-Jeżeli w tym momencie jesteśmy na etapie gotowych szablonów (X)HTML/CSS oraz zaplanowaliśmy 5 dni roboczych na złożenie za ich pomocą dostarczonych treści … to może być źle. Nie mówiąc już na ile wyceniliśmy nasze statyczne strony.
-Krótka historia obrazująca prosty, modelowy przebieg procesu tworzenie strony, przedstawiona jest na stronie PingMan&#39;a.
-Jest krótka, wyrazista i … często jedynie modelowa :D......
+      Jeżeli w tym momencie jesteśmy na etapie gotowych szablonów (X)HTML/CSS oraz zaplanowaliśmy 5 dni roboczych na złożenie za ich pomocą dostarczonych treści … to może być źle. Nie mówiąc już na ile wyceniliśmy nasze statyczne strony.......
     
   </a>
 
@@ -942,7 +947,7 @@ Jest krótka, wyrazista i … często jedynie modelowa :D......
 
     
       Dziś dostałem linka do historii o Chuck’u Norris’ie. Po przeczytaniu odpowiedniej ilości ubaw zapewniony :D.
-Podpowiedź: w Firefox’ie w menu widok-&gt;kodowanie znaków pomaga ustawienie na WINDOWS-CP-1250.
+Podpowiedź:w Firefox’ie w menu widok-&gt;kodowanie znaków pomaga ustawienie na WINDOWS-CP-1250.
 I jeszcze kilka w tym temacie:
  http://www.joemonster.org/article.php?sid=5534 http://www.joemonster.org/article.php?sid=5525 http://www.chucknorrisfacts.com/ http://www.4q.cc/chuck/  Miłego weekendu.......
     
@@ -1003,8 +1008,7 @@ I jeszcze kilka w tym temacie:
     
 
     
-      17 stycznia Google otworzyło połączenia między serwerowe pomiędzy swoim serwisem Google Talk, a resztą świata XMPP. Tak więc każdy kto posiada konto pocztowe w domenie @gmail.com, może teraz komunikować się używając identycznego JID
-Do pełni szczęścia mogłoby brakować jedynie komunikatora Google Talk dostępnego na inne platformy niż Windows. Ale udostępnienie przez Google libjingle oraz ich współpraca z twórcami komunikatora Psi wróży na dobre.......
+      17 stycznia Google otworzyło połączenia między serwerowepomiędzy swoim serwisem Google Talk, a resztą świata XMPP. Tak więc każdy kto posiada konto pocztowe w domenie @gmail.com, może teraz komunikować się używając identycznego JIDDo pełni szczęścia mogłoby brakować jedynie komunikatora Google Talk dostępnego na inne platformy niż Windows. Ale udostępnienie przez Google libjingleoraz ich współpraca z twórcami komunikatora Psiwróży na dobre.......
     
   </a>
 
@@ -1069,8 +1073,8 @@ Do pełni szczęścia mogłoby brakować jedynie komunikatora Google Talk dostę
     
 
     
-      Niedawno pojawił się Wordpress 2.0. Jest znacznie szybszy od poprzednich wersji (wysyłanie, edytowanie, oglądanie), wykorzystuje technologię AJAX i ma nowy panel admina.
-I z racji tych i innych onjin.net też posiada już wersję 2.0. Witamy, witamy ;)......
+      Niedawno pojawił się Wordpress 2.0. Jest znacznie szybszy od poprzednich wersji (wysyłanie, edytowanie, oglądanie), wykorzystuje technologię AJAXi ma nowy panel admina.
+I z racji tych i innych onjin.netteż posiada już wersję 2.0. Witamy, witamy ;)......
     
   </a>
 
@@ -1113,7 +1117,7 @@ I z racji tych i innych onjin.net też posiada już wersję 2.0. Witamy, witamy 
     
         
           <li class="middot"></li>
-          <li>jedna minuta czytania</li>
+          <li>readingTime</li>
         
         
           
@@ -1129,12 +1133,7 @@ I z racji tych i innych onjin.net też posiada już wersję 2.0. Witamy, witamy 
     
 
     
-      Jak możemy przeczytać na blogu Kevina, pojawiła się wersja Psi sygnowana numerem 0.10.
-Zmiany nastąpiły głównie w interfejscie komunikatora. Pojawiły się m.in. rozmowy w zakładkach, automatycznie zmieniający się rozmiar listy kontaktów, ustawienia przeźroczystości dla okien programu, itp.
-Mac binary
-Source tarball 
-Windows binary (with installer)
-Windows binary (zipped)......
+      ......
     
   </a>
 
@@ -1177,7 +1176,7 @@ Windows binary (zipped)......
     
         
           <li class="middot"></li>
-          <li>jedna minuta czytania</li>
+          <li>readingTime</li>
         
         
           
@@ -1193,9 +1192,7 @@ Windows binary (zipped)......
     
 
     
-      Leglock - czyli blokowanie nogi (nogami). Brzmi zwyczajnie ale jak wygląda. Nic dodać nic ująć.
-
-Dzięki BratQ za podesłanie.......
+      ......
     
   </a>
 
@@ -1255,8 +1252,7 @@ Dzięki BratQ za podesłanie.......
 
     
       Chyba każdy wyrzucił kiedyś na ekran tabelkę w HTML’u. Jeśli danych dużo i dynamiczne, to użył do tego PHP. Aby lepiej ogarnąć dane, nagłówki kolumn zostały odnośnikami z końcówką mniej więcej taką:
-&lt;ht&gt;&lt;a href=&#34;?order=data&#34;&gt;data&lt;/a&gt; &lt;th&gt;&lt;a href=&#34;?order=ilosc&#34;&gt;ilość&lt;/a&gt;&lt;/th&gt; Ta sama tabelka, te same dane. Ale aby ją posortować trzeba znów odwoływać się do serwera. Wygodniej by było gdyby tabelka mogła się sortować po stronie klienta (np. JavaScript). Tu z pomoca przychodzi nam biblioteka sorttable napisana właśnie w JavaScript. Skuteczna i prosta w użyciu. Spójrzcie na mały przykład z opisem.
-I nie lepiej tak ?......
+&lt;ht&gt;&lt;a href=&#34;?order=data&#34;&gt;data&lt;/a&gt; &lt;th&gt;&lt;a href=&#34;?order=ilosc&#34;&gt;ilość&lt;/a&gt;&lt;/th&gt; Ta sama tabelka, te same dane. Ale aby ją posortować trzeba znów odwoływać się do serwera. Wygodniej by było gdyby tabelka mogła się sortować po stronie klienta (np. JavaScript). Tu z pomoca przychodzi nam biblioteka sorttablenapisana właśnie w JavaScript. Skuteczna i prosta w użyciu. Spójrzcie na mały przykład z opisem.I nie lepiej tak ?......
     
   </a>
 
@@ -1299,7 +1295,7 @@ I nie lepiej tak ?......
     
         
           <li class="middot"></li>
-          <li>jedna minuta czytania</li>
+          <li>readingTime</li>
         
         
           
@@ -1315,12 +1311,7 @@ I nie lepiej tak ?......
     
 
     
-      Pojawiła się czwarta wersja testowa komunikatora Psi. Poza poprawkami znalezionych błędów, zostały też usunięte niektóre zestawy ikon, co do których były wątpliwości w sprawie praw użytkowania.
-Jak tylko wersja psi 0.10 zostanie wydana, prace mają się skoncentrować na portowaniu aplikacji na Qt4 oraz na współpracy z Jingle.
-Dostępne aktualne pakiety Psi to:
-źródła (.tar.bz2)
-Mac (.dmg)
-Windows (.zip)......
+      ......
     
   </a>
 
@@ -1407,7 +1398,7 @@ Windows (.zip)......
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2019 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2020 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

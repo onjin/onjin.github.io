@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
@@ -8,23 +8,13 @@
   </url>
   
   <url>
-    <loc>https://marekwywial.name/tags/github/</loc>
+    <loc>https://marekwywial.name/tags/git/</loc>
     <lastmod>2013-10-12T01:26:16+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://marekwywial.name/</loc>
+    <loc>https://marekwywial.name/tags/github/</loc>
     <lastmod>2013-10-12T01:26:16+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://marekwywial.name/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pl"
-                href="https://marekwywial.name/"
-                />
   </url>
   
   <url>
@@ -265,11 +255,6 @@
   <url>
     <loc>https://marekwywial.name/posts/blog20100729best-vim-plugins.html</loc>
     <lastmod>2010-07-29T20:34:19+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marekwywial.name/tags/git/</loc>
-    <lastmod>2010-05-04T07:52:53+00:00</lastmod>
   </url>
   
   <url>
@@ -930,6 +915,21 @@
   <url>
     <loc>https://marekwywial.name/posts/blog20050729dzien-administratora/</loc>
     <lastmod>2005-07-29T13:42:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marekwywial.name/</loc>
+    <lastmod>2005-07-08T21:49:28+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://marekwywial.name/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pl"
+                href="https://marekwywial.name/"
+                />
   </url>
   
   <url>

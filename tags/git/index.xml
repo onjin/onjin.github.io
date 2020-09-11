@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git on Marek Wywiał</title>
@@ -6,7 +6,7 @@
     <description>Recent content in git on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl</language>
-    <lastBuildDate>Tue, 04 May 2010 07:52:53 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 12 Oct 2013 01:26:16 +0000</lastBuildDate>
     
 	<atom:link href="https://marekwywial.name/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,9 +17,9 @@
       <pubDate>Tue, 04 May 2010 07:52:53 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20100504git-php-syntax-check-pre-commit/</guid>
-      <description>Załączam używany przeze mnie i sprawdzający się pre-commit dla git&amp;lsquo;a sprawdzający commitowane pliki .php.
-Przy wykonaniu commit w repozytorium skrypt dla każdego commitowanego pliku &amp;lsquo;.php&amp;rsquo; wykonuje &amp;lsquo;php -l&amp;rsquo; w pętli, aż otrzyma odpowiedź, że składnia jest ok lub nie ok. Przypadku wystąpienia błędy przerywa commit. Sam skrypt napisany jest w python&amp;lsquo;ie
-Dlaczego w pętli? Dlatego, że &amp;lsquo;php -l&amp;rsquo; losowo się urywa zwracając SIGFAULT i należy wtedy powtórzyć próbę z &amp;lsquo;-l&amp;rsquo;
+      <description>Załączam używany przeze mnie i sprawdzający się pre-commitdla git&#39;a sprawdzający commitowane pliki .php.
+Przy wykonaniu commit w repozytorium skrypt dla każdego commitowanego pliku &amp;lsquo;.php&amp;rsquo; wykonuje &amp;lsquo;php -l&amp;rsquo; w pętli, aż otrzyma odpowiedź, że składnia jest ok lub nie ok. Przypadku wystąpienia błędy przerywa commit. Sam skrypt napisany jest w python&#39;ie
+Dlaczego w pętli? Dlatego, że &amp;lsquo;php -l&amp;rsquo; losowo się urywa zwracając SIGFAULTi należy wtedy powtórzyć próbę z &amp;lsquo;-l&amp;rsquo;
 Plik do pobrania:
  pre-commit  </description>
     </item>
@@ -30,9 +30,9 @@ Plik do pobrania:
       <pubDate>Mon, 11 May 2009 10:25:43 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20090511git-pre-commit-hook-symfony-php/</guid>
-      <description>Mam jeszcze tą nieprzyjemnośc pracy z PHP (w tym przypadku z symfony framework) i aby była przyjemniejsza dodałem sobie hook na pre-commit do git&amp;rsquo;a. * http://dl.getdropbox.com/u/185133/git/pre-commit
-by zadziałało przerywanie commit&amp;rsquo;a gdy &amp;lsquo;symfony unit-test&amp;rsquo; się nie udadzą, potrzebna jest łatka na symfony (przynajmniej na moją wersję 1.0.17) * http://dl.getdropbox.com/u/185133/git/symfony_return_code.diff
-Hook zakłada, że commit jest robiony w katalogu projektu (tak mam najczęsciej) i znajduje sie w nim plik &amp;lsquo;symfony&amp;rsquo;
+      <description>Mam jeszcze tą nieprzyjemnośc pracy z PHP (w tym przypadku z symfony framework) i aby była przyjemniejsza dodałem sobie hook na pre-commit do git&amp;rsquo;a.
+ http://dl.getdropbox.com/u/185133/git/pre-commit  by zadziałało przerywanie commit&amp;rsquo;a gdy &amp;lsquo;symfony unit-test&amp;rsquo; się nie udadzą, potrzebna jest łatka na symfony (przynajmniej na moją wersję 1.0.17)
+ http://dl.getdropbox.com/u/185133/git/symfony_return_code.diff  Hook zakłada, że commit jest robiony w katalogu projektu (tak mam najczęsciej) i znajduje sie w nim plik &amp;lsquo;symfony&amp;rsquo;
 btw: hook wymaga pythona.</description>
     </item>
     
@@ -42,11 +42,7 @@ btw: hook wymaga pythona.</description>
       <pubDate>Mon, 12 Jan 2009 20:47:59 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20090112git-svn-i-puste-katalogi/</guid>
-      <description>Importując repozytorium svn&amp;rsquo;a poprzez git-svn tracimy puste katalogi, co czasem nie jest przyjemne. W dodatku to przecież nasze katalogi i chcemy je mieć ;)
-Dziś mnie trochę to przycisnęło więc, pogadałem chwilę z google i znalazłem użyteczny skrypt git-me-up.
-Wystarczy pobrać sam plik git-me-up, nadać mu prawa wykonywania i wykonać:
- git-me-up http://svn.somerepo.com/path/to/project ./project  a skrypt sam stworzy repozytorium git, zaimportuje wszystkoz repozytorium svn, utworzy brakujące puste katalogi i stworzy w razie potrzeby plik .gitignore na podstawie svn:ignore.
-i już&amp;hellip;</description>
+      <description>git-me-up http://svn.somerepo.com/path/to/project ./project</description>
     </item>
     
   </channel>

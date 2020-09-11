@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>python on Marek Wywiał</title>
@@ -17,8 +17,7 @@
       <pubDate>Sat, 12 Oct 2013 01:26:16 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/telewizja-n-nc-i-python.html</guid>
-      <description>&lt;p&gt;Aby się przeklikać przez program na &lt;a href=&#34;http://n.pl/&#34;&gt;http://n.pl/&lt;/a&gt; i jeszcze znaleźć interesujący program, to jest ponad moje siły.&lt;/p&gt;
-
+      <description>&lt;p&gt;Aby się przeklikać przez program na http://n.pl/ i jeszcze znaleźć interesujący program, to jest ponad moje siły.&lt;/p&gt;
 &lt;p&gt;Napisałem więc na szybko narzędzie działające w shellu, które pozwala przeglądać oraz przeszukiwać program ze strony
 n.pl &lt;a href=&#34;https://github.com/onjin/ntv/&#34;&gt;https://github.com/onjin/ntv/&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
@@ -51,7 +50,7 @@ Jednak używając plugin managera, którego konfiguracja znajduje się w .vimrc 
       <pubDate>Sat, 19 Mar 2011 13:03:04 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</guid>
-      <description>Przy okazji szukania API do grooveshark&amp;rsquo;a odkryłem plik currentSong.txt, który jest tworzony przez Grooveshark Desktop.
+      <description>Przy okazji szukania API do grooveshark&amp;rsquo;aodkryłem plik currentSong.txt, który jest tworzony przez Grooveshark Desktop.
 Kilka minut z vim&amp;rsquo;em i mamy skrypt napisany w python&amp;rsquo;ie, który odczytuje w/w plik i wrzuca informację o aktualnie odtwarzanym utworze jako status wybranego konta w gajim&amp;rsquo;a.
 Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wymana pyinotify). Wtedy nasz status będzie zmieniany w chwili (chwilę potem :) ) zmiany utworu w Grooveshark Desktop.
 Całość można dowolnie używać/modyfikować, a pobrać można z serwisu github.com:
@@ -66,10 +65,10 @@ Całość można dowolnie używać/modyfikować, a pobrać można z serwisu gith
       <guid>https://marekwywial.name/posts/blog20100729best-vim-plugins.html</guid>
       <description>Dziś robiłem porządki w ~/.vim/ . Aktualizacje do nowych wersji pluginów, wyrzucanie nieużywanych, porządki w ~/.vimrc. W trakcie tej pracy powstała lista pluginów, dzięki którym miło mi się pracuje
 vimball Plugin zajmujący się pluginami dostarczanymi w paczkach .vba i pozwalający też takie paczki tworzyć, w praktyce potrzeby mi by instalować paczki .vba
- http://www.vim.org/scripts/script.php?script_id=1502  snippetsEmu Emuluje zachowanie snippetów z TextMate. Na przykład w pliku sometest.py wpisujesz &amp;lsquo;for&amp;lt;tab&amp;gt;&amp;rsquo;, uzupełniasz brakujące miejsca poruszając się klawiszem &amp;lt;tab&amp;gt; i otrzymujesz pełną pętle. Inne użyteczne snippety dla pythona to:
- prop - property get - def get_.. set - def set_.. def - def .. cm - classmethod cl - class ifn, ifmain, sb, sbu, sbl1, trye, tryf, tryef, unittest  Domyślnie dostarczone są 32 zestawy snippetów dla wielu języków programowania, opisu oraz frameworków (django, rails, symfony)
+ http://www.vim.org/scripts/script.php?script_id=1502  snippetsEmu Emuluje zachowanie snippetów z TextMate. Na przykład w pliku sometest.py wpisujesz &amp;lsquo;for&amp;lt;tab&amp;gt;&#39;, uzupełniasz brakujące miejsca poruszając się klawiszem &amp;lt;tab&amp;gt; i otrzymujesz pełną pętle. Inne użyteczne snippety dla pythona to:
+ prop- property get- def get_.. set- def set_.. def- def .. cm- classmethod cl- class ifn, ifmain, sb, sbu, sbl1, trye, tryf, tryef, unittest  Domyślnie dostarczone są 32 zestawy snippetów dla wielu języków programowania, opisu oraz frameworków (django, rails, symfony)
  http://www.vim.org/scripts/script.php?script_id=1318  neocomplcache System tzw &amp;lsquo;dopełniania&amp;rsquo; (podpowiadania) i to właśnie robi. Dopełnia nazwy metod, funkcji, atrybuty html, nazwy plików, itp. Trzeba po prostu zobaczyć i używać.
- http://www.vim.org/scripts/script.php?script_id=2620  project Bardzo prosty i skuteczny system pozwalający w bocznym oknie przeglądać wybrane lub wszystkie pliki z jednego lub wielu projektów. Każdy projekt ma zdefiniowany katalog, dzięki czemu otwarcie pliku z projektu (wciskamy &amp;lsquo;enter&amp;rsquo; bedąc &amp;lsquo;nad&amp;rsquo; plikiem) nastąpi równocześnie z przejściem do katalogu projektu.</description>
+ http://www.vim.org/scripts/script.php?script_id=2620  project Bardzo prosty i skuteczny system pozwalający w bocznym oknie przeglądać wybrane lub wszystkie pliki z jednego lub wielu projektów. Każdy projekt ma zdefiniowany katalog, dzięki czemu otwarcie pliku z projektu (wciskamy &amp;lsquo;enter&amp;rsquo; bedąc &amp;lsquo;nad&amp;rsquo; plikiem) nastąpi równocześnie z przejściem do katalogu projektu. W ten sposób pliki projektu jak np &amp;lsquo;tags&amp;rsquo; (ctags) zostaną poprawnie wczytane.</description>
     </item>
     
     <item>
@@ -78,9 +77,9 @@ vimball Plugin zajmujący się pluginami dostarczanymi w paczkach .vba i pozwala
       <pubDate>Tue, 04 May 2010 07:52:53 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20100504git-php-syntax-check-pre-commit/</guid>
-      <description>Załączam używany przeze mnie i sprawdzający się pre-commit dla git&amp;lsquo;a sprawdzający commitowane pliki .php.
-Przy wykonaniu commit w repozytorium skrypt dla każdego commitowanego pliku &amp;lsquo;.php&amp;rsquo; wykonuje &amp;lsquo;php -l&amp;rsquo; w pętli, aż otrzyma odpowiedź, że składnia jest ok lub nie ok. Przypadku wystąpienia błędy przerywa commit. Sam skrypt napisany jest w python&amp;lsquo;ie
-Dlaczego w pętli? Dlatego, że &amp;lsquo;php -l&amp;rsquo; losowo się urywa zwracając SIGFAULT i należy wtedy powtórzyć próbę z &amp;lsquo;-l&amp;rsquo;
+      <description>Załączam używany przeze mnie i sprawdzający się pre-commitdla git&#39;a sprawdzający commitowane pliki .php.
+Przy wykonaniu commit w repozytorium skrypt dla każdego commitowanego pliku &amp;lsquo;.php&amp;rsquo; wykonuje &amp;lsquo;php -l&amp;rsquo; w pętli, aż otrzyma odpowiedź, że składnia jest ok lub nie ok. Przypadku wystąpienia błędy przerywa commit. Sam skrypt napisany jest w python&#39;ie
+Dlaczego w pętli? Dlatego, że &amp;lsquo;php -l&amp;rsquo; losowo się urywa zwracając SIGFAULTi należy wtedy powtórzyć próbę z &amp;lsquo;-l&amp;rsquo;
 Plik do pobrania:
  pre-commit  </description>
     </item>
@@ -92,9 +91,9 @@ Plik do pobrania:
       
       <guid>https://marekwywial.name/posts/blog20100426devhelp-django-1-1/</guid>
       <description>Ostatnio biegałem z lapkiem po centrum handlowym i łapałem wifi, żeby spojrzeć do dokumentacji django. I tylko się nabiegałem :).
-Aby drugi raz pracować nie biegać w domu szybko podłączyłem dokumentację django do devhelp i tak na szybko procedura:
+Aby drugi raz pracować nie biegać w domu szybko podłączyłem dokumentację django do devhelpi tak na szybko procedura:
 apt-get install devhelp mkdir -p ~/bin; cd ~/bin wget http://htmlhelp.googlecode.com/svn/trunk/misc/devhelp-install chmod +x devhelp-install cd ~/; wget http://onjin.net/files/django1.1-doc.tgz /bin/devhelp-install ./django1.1-doc.tgz Teraz wystarczy uruchomić devhelp&amp;rsquo;a i cieszyć się offline :)
-django1.1-doc jest ściągnięte z .chm i potraktowana hhconvert.py do formatu devhelp&amp;rsquo;a)</description>
+django1.1-doc jest ściągnięte z .chmi potraktowana hhconvert.pydo formatu devhelp&amp;rsquo;a)</description>
     </item>
     
     <item>
@@ -103,7 +102,7 @@ django1.1-doc jest ściągnięte z .chm i potraktowana hhconvert.py do formatu d
       <pubDate>Sun, 21 Jun 2009 19:11:10 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20090621fuse-ftp-mount-curlftpfs/</guid>
-      <description>sprawdź najnowszą wersję ftpmount Do pracy z hostingiem gdzie mamy tylko &amp;ldquo;&amp;lsquo;ftp&amp;rdquo;&amp;rsquo; przydaje się montowanie dysku poprzez właśnie ftp. Służy do tego program &amp;ldquo;&amp;lsquo;curlftpfs&amp;rdquo;&amp;rsquo; (np apt-get install curlftpfs).
+      <description> Do pracy z hostingiem gdzie mamy tylko &amp;lsquo;&amp;lsquo;&amp;lsquo;ftp&amp;rsquo;&amp;rsquo;&amp;rsquo; przydaje się montowanie dysku poprzez właśnie ftp. Służy do tego program &amp;lsquo;&amp;lsquo;&amp;lsquo;curlftpfs&amp;rsquo;&amp;rsquo;&amp;rsquo; (np apt-get install curlftpfs).
 Odpalamy go jako:
 $ curlftpfs ftp://user:pass@host/ ./mountpoint Do tego potrzebujemy uprawnienia grupy fuse więć jako root musimy sobie ją dodać od naszego użytkownika.
 Jeżeli mamy dużo połączeń do zarządzania przyda się mały skrypt:
@@ -118,9 +117,9 @@ Jeżeli mamy dużo połączeń do zarządzania przyda się mały skrypt:
       <pubDate>Mon, 11 May 2009 10:25:43 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20090511git-pre-commit-hook-symfony-php/</guid>
-      <description>Mam jeszcze tą nieprzyjemnośc pracy z PHP (w tym przypadku z symfony framework) i aby była przyjemniejsza dodałem sobie hook na pre-commit do git&amp;rsquo;a. * http://dl.getdropbox.com/u/185133/git/pre-commit
-by zadziałało przerywanie commit&amp;rsquo;a gdy &amp;lsquo;symfony unit-test&amp;rsquo; się nie udadzą, potrzebna jest łatka na symfony (przynajmniej na moją wersję 1.0.17) * http://dl.getdropbox.com/u/185133/git/symfony_return_code.diff
-Hook zakłada, że commit jest robiony w katalogu projektu (tak mam najczęsciej) i znajduje sie w nim plik &amp;lsquo;symfony&amp;rsquo;
+      <description>Mam jeszcze tą nieprzyjemnośc pracy z PHP (w tym przypadku z symfony framework) i aby była przyjemniejsza dodałem sobie hook na pre-commit do git&amp;rsquo;a.
+ http://dl.getdropbox.com/u/185133/git/pre-commit  by zadziałało przerywanie commit&amp;rsquo;a gdy &amp;lsquo;symfony unit-test&amp;rsquo; się nie udadzą, potrzebna jest łatka na symfony (przynajmniej na moją wersję 1.0.17)
+ http://dl.getdropbox.com/u/185133/git/symfony_return_code.diff  Hook zakłada, że commit jest robiony w katalogu projektu (tak mam najczęsciej) i znajduje sie w nim plik &amp;lsquo;symfony&amp;rsquo;
 btw: hook wymaga pythona.</description>
     </item>
     

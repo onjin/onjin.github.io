@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ftpmount on Marek Wywiał</title>
@@ -17,7 +17,7 @@
       <pubDate>Sun, 21 Jun 2009 19:11:10 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20090621fuse-ftp-mount-curlftpfs/</guid>
-      <description>sprawdź najnowszą wersję ftpmount Do pracy z hostingiem gdzie mamy tylko &amp;ldquo;&amp;lsquo;ftp&amp;rdquo;&amp;rsquo; przydaje się montowanie dysku poprzez właśnie ftp. Służy do tego program &amp;ldquo;&amp;lsquo;curlftpfs&amp;rdquo;&amp;rsquo; (np apt-get install curlftpfs).
+      <description> Do pracy z hostingiem gdzie mamy tylko &amp;lsquo;&amp;lsquo;&amp;lsquo;ftp&amp;rsquo;&amp;rsquo;&amp;rsquo; przydaje się montowanie dysku poprzez właśnie ftp. Służy do tego program &amp;lsquo;&amp;lsquo;&amp;lsquo;curlftpfs&amp;rsquo;&amp;rsquo;&amp;rsquo; (np apt-get install curlftpfs).
 Odpalamy go jako:
 $ curlftpfs ftp://user:pass@host/ ./mountpoint Do tego potrzebujemy uprawnienia grupy fuse więć jako root musimy sobie ją dodać od naszego użytkownika.
 Jeżeli mamy dużo połączeń do zarządzania przyda się mały skrypt:

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Marek Wywiał</title>
@@ -6,7 +6,7 @@
     <description>Recent content on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl</language>
-    <lastBuildDate>Wed, 18 Sep 2013 13:36:39 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 Jul 2005 21:49:28 +0100</lastBuildDate>
     
 	<atom:link href="https://marekwywial.name/en/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,7 +17,7 @@
       <pubDate>Wed, 18 Sep 2013 13:36:39 +0000</pubDate>
       
       <guid>https://marekwywial.name/en/posts/blog20130918fast-sentry-instance-using-docker/</guid>
-      <description>&lt;p&gt;How to quickly spin up private &lt;a href=&#34;https://sentry.io&#34;&gt;Sentry&lt;/a&gt; instance using only docker.&lt;/p&gt;</description>
+      <description>&lt;p&gt;How to quickly spin up private &lt;!-- raw HTML omitted --&gt;Sentry&lt;!-- raw HTML omitted --&gt; instance using only docker.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -46,7 +46,7 @@ Example comes with basic client using &amp;ldquo;suds&amp;rdquo; package.&lt;/p&
       <pubDate>Thu, 05 Jul 2012 08:16:42 +0000</pubDate>
       
       <guid>https://marekwywial.name/en/posts/blog20120705rescan-scsi-bus-no-reboot/</guid>
-      <description> Just self memo. How to attach new SCSI disk without reboot (debian):
+      <description>Just self memo. How to attach new SCSI disk without reboot (debian):
 # check what hosts do you have ls /sys/class/scsi_host host0 host1 host2 host3 # change &amp;#39;host0&amp;#39; to &amp;#39;host1&amp;#39; or any next number that you need echo &amp;#34;- - -&amp;#34; &amp;gt; /sys/class/scsi_host/host0/scan and done fdisk -l </description>
     </item>
     
@@ -65,7 +65,7 @@ Example comes with basic client using &amp;ldquo;suds&amp;rdquo; package.&lt;/p&
       <pubDate>Fri, 08 Jul 2005 21:49:28 +0100</pubDate>
       
       <guid>https://marekwywial.name/en/about/</guid>
-      <description> Marek Wywiał My projects  runenv - Wrapper to run programs with different env or load env from .env file vim-startup - quick way to start with vim &amp;amp; python liquimigrate - django integration for Liquibase migrations docker-alpine-postgres - Small PostgreSQL images (~58MB) for versions 9.1 - 9.5 docker-php-oracle - docker image for php with oracle db support (trusted image) ejpiaj - declarative way API testing suite (small python package) docker - other docker images  You can found more projects on my github page:
+      <description>Marek Wywiał  My projects  runenv - Wrapper to run programs with different env or load env from .envfile vim-startup - quick way to start with vim &amp;amp; python liquimigrate - django integration for Liquibase migrations docker-alpine-postgres - Small PostgreSQL images (~58MB) for versions 9.1 - 9.5 docker-php-oracle - docker image for php with oracle db support (trusted image) ejpiaj - declarative way API testing suite (small python package) docker - other docker images  You can found more projects on my github page:
  github  My websites  nopic - online images generator tani-ebook - portal to get or buy e-books (Polski)  </description>
     </item>
     

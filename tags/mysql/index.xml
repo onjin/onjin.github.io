@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mysql on Marek Wywiał</title>
@@ -17,7 +17,7 @@
       <pubDate>Mon, 10 Aug 2009 12:56:57 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20090810memo-mysql-incorrect-file-format-dla-tabeli/</guid>
-      <description>Gdy zwykły repair nie pomaga można zarzucić:
+      <description>Gdy zwykły repairnie pomaga można zarzucić:
 repair table TABLENAME use_frm </description>
     </item>
     

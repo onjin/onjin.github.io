@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html lang="pl">
   <head>
+  
+  <script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+     
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//matomo.codefiber.pl/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '4']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Marek Wywiał">
-  <meta name="description" content="Po co tworzymy stronę ? By pisać blog. Umieszczać informacje o sobie, o naszych zainteresowaniach, itp. Co by to nie było, strona nasza będzie zawierać treść i z jej uwzględnieniem powinna zostać ona zbudowana.
-Ukierunkowanie na treść oznacza prawidłowe stosowanie znaczników &lt;h1&gt;, &lt;h2&gt; dla odpowiednich nagłówków, &lt;ul&gt;, &lt;ol&gt; dla list w tym także menu, &lt;p&gt; dla naszej treści oraz &lt;div&gt; dla podziału logicznego strony (np. budowy layout).
+  <meta name="description" content="Ukierunkowanie na treść oznacza prawidłowe stosowanie znaczników &lt;h1&gt;, &lt;h2&gt;dla odpowiednich nagłówków, &lt;ul&gt;, &lt;ol&gt;dla list w tym także menu, &lt;p&gt;dla naszej treści oraz &lt;div&gt;dla podziału logicznego strony (np. budowy layout).
 Oczywiście znaczniki te nie wyczerpują listy możliwych i potrzebnych do zastosowania w naszym przypadku.
-Na stronie http://www.latenightrabbit.com/ znajduje się proste i skuteczne wprowadzenie do prawidłowej budowy strony internetowej przy pomocy oczywiście HTML oraz CSS i PHP
-Polecam tą lekturę każdemu. Materiał jest napisany w języku angielskim ale najważniejszy i tak jest kod. Więc jeśli widziałeś kiedyś HTML, CSS lub przypadkiem PHP to powinno wystarczyć.">
+Na stronie http://www.latenightrabbit.com/znajduje się proste i skuteczne wprowadzeniedo prawidłowej budowy strony internetowej przy pomocy oczywiście HTMLoraz CSSi PHPPolecam tą lekturę każdemu. Materiał jest napisany w języku angielskim ale najważniejszy i tak jest kod. Więc jeśli widziałeś kiedyś HTML, CSS lub przypadkiem PHP to powinno wystarczyć.">
   
   <meta property="og:title" content="Tworzenie strony internetowej." />
-<meta property="og:description" content="Po co tworzymy stronę ? By pisać blog. Umieszczać informacje o sobie, o naszych zainteresowaniach, itp. Co by to nie było, strona nasza będzie zawierać treść i z jej uwzględnieniem powinna zostać ona zbudowana.
-Ukierunkowanie na treść oznacza prawidłowe stosowanie znaczników &lt;h1&gt;, &lt;h2&gt; dla odpowiednich nagłówków, &lt;ul&gt;, &lt;ol&gt; dla list w tym także menu, &lt;p&gt; dla naszej treści oraz &lt;div&gt; dla podziału logicznego strony (np. budowy layout).
+<meta property="og:description" content="Ukierunkowanie na treść oznacza prawidłowe stosowanie znaczników &lt;h1&gt;, &lt;h2&gt;dla odpowiednich nagłówków, &lt;ul&gt;, &lt;ol&gt;dla list w tym także menu, &lt;p&gt;dla naszej treści oraz &lt;div&gt;dla podziału logicznego strony (np. budowy layout).
 Oczywiście znaczniki te nie wyczerpują listy możliwych i potrzebnych do zastosowania w naszym przypadku.
-Na stronie http://www.latenightrabbit.com/ znajduje się proste i skuteczne wprowadzenie do prawidłowej budowy strony internetowej przy pomocy oczywiście HTML oraz CSS i PHP
-Polecam tą lekturę każdemu. Materiał jest napisany w języku angielskim ale najważniejszy i tak jest kod. Więc jeśli widziałeś kiedyś HTML, CSS lub przypadkiem PHP to powinno wystarczyć." />
+Na stronie http://www.latenightrabbit.com/znajduje się proste i skuteczne wprowadzeniedo prawidłowej budowy strony internetowej przy pomocy oczywiście HTMLoraz CSSi PHPPolecam tą lekturę każdemu. Materiał jest napisany w języku angielskim ale najważniejszy i tak jest kod. Więc jeśli widziałeś kiedyś HTML, CSS lub przypadkiem PHP to powinno wystarczyć." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://marekwywial.name/posts/blog20060322tworzenie-strony-internetowej/" />
 <meta property="article:published_time" content="2006-03-22T09:27:20+00:00" />
@@ -47,7 +58,7 @@ Polecam tą lekturę każdemu. Materiał jest napisany w języku angielskim ale 
   <link href="https://marekwywial.name/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
   <link href="https://marekwywial.name/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet"> 
   <link href="https://marekwywial.name/css/vendors/mdb/style.min.css" rel="stylesheet"> 
-  <link href="https://marekwywial.name/css/main.css?1569701801" rel="stylesheet">
+  <link href="https://marekwywial.name/css/main.css?1599822646" rel="stylesheet">
 
 
   
@@ -302,17 +313,12 @@ Polecam tą lekturę każdemu. Materiał jest napisany w języku angielskim ale 
 
 
           <div class="post-content markdown">
-            <p><html><body><p>Po co tworzymy stronę ? By pisać blog. Umieszczać informacje o sobie, o naszych zainteresowaniach, itp. Co by to nie było, strona nasza będzie zawierać treść i z jej uwzględnieniem powinna zostać ona zbudowana.</p>
-
-<p>Ukierunkowanie na treść oznacza prawidłowe stosowanie znaczników <em>&lt;h1&gt;, &lt;h2&gt;</em> dla odpowiednich nagłówków, <em>&lt;ul&gt;, &lt;ol&gt;</em> dla list w tym także menu, <em>&lt;p&gt;</em> dla naszej treści oraz <em>&lt;div&gt;</em> dla podziału logicznego strony (np. budowy layout).</p>
-
+            <!-- raw HTML omitted -->
+<p>Ukierunkowanie na treść oznacza prawidłowe stosowanie znaczników <!-- raw HTML omitted -->&lt;h1&gt;, &lt;h2&gt;<!-- raw HTML omitted --> dla odpowiednich nagłówków, <!-- raw HTML omitted -->&lt;ul&gt;, &lt;ol&gt;<!-- raw HTML omitted --> dla list w tym także menu, <!-- raw HTML omitted -->&lt;p&gt;<!-- raw HTML omitted --> dla naszej treści oraz <!-- raw HTML omitted -->&lt;div&gt;<!-- raw HTML omitted --> dla podziału logicznego strony (np. budowy layout).</p>
 <p>Oczywiście znaczniki te nie wyczerpują listy możliwych i potrzebnych do zastosowania w naszym przypadku.</p>
-
-<p>Na stronie <a href="http://www.latenightrabbit.com/">http://www.latenightrabbit.com/</a> znajduje się proste i skuteczne <a href="http://www.latenightrabbit.com/simple-organism/">wprowadzenie</a> do prawidłowej budowy strony internetowej przy pomocy oczywiście <em>HTML</em> oraz <em>CSS</em> i <em>PHP</em></p>
-
+<p>Na stronie <!-- raw HTML omitted --><a href="http://www.latenightrabbit.com/">http://www.latenightrabbit.com/</a><!-- raw HTML omitted --> znajduje się proste i skuteczne <!-- raw HTML omitted -->wprowadzenie<!-- raw HTML omitted --> do prawidłowej budowy strony internetowej przy pomocy oczywiście <!-- raw HTML omitted -->HTML<!-- raw HTML omitted --> oraz <!-- raw HTML omitted -->CSS<!-- raw HTML omitted --> i <!-- raw HTML omitted -->PHP<!-- raw HTML omitted --></p>
 <p>Polecam tą lekturę każdemu. Materiał jest napisany w języku angielskim ale najważniejszy i tak jest kod. Więc jeśli widziałeś kiedyś HTML, CSS lub przypadkiem PHP to powinno wystarczyć.</p>
-
-<p></p></body></html></p>
+<!-- raw HTML omitted -->
 
           </div>
 
@@ -450,7 +456,7 @@ Polecam tą lekturę każdemu. Materiał jest napisany w języku angielskim ale 
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2019 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2020 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

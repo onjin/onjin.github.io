@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>github on Marek Wywiał</title>
@@ -17,8 +17,7 @@
       <pubDate>Sat, 12 Oct 2013 01:26:16 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/telewizja-n-nc-i-python.html</guid>
-      <description>&lt;p&gt;Aby się przeklikać przez program na &lt;a href=&#34;http://n.pl/&#34;&gt;http://n.pl/&lt;/a&gt; i jeszcze znaleźć interesujący program, to jest ponad moje siły.&lt;/p&gt;
-
+      <description>&lt;p&gt;Aby się przeklikać przez program na http://n.pl/ i jeszcze znaleźć interesujący program, to jest ponad moje siły.&lt;/p&gt;
 &lt;p&gt;Napisałem więc na szybko narzędzie działające w shellu, które pozwala przeglądać oraz przeszukiwać program ze strony
 n.pl &lt;a href=&#34;https://github.com/onjin/ntv/&#34;&gt;https://github.com/onjin/ntv/&lt;/a&gt;.&lt;/p&gt;</description>
     </item>

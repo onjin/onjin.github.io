@@ -1,21 +1,36 @@
 <!DOCTYPE html>
 <html lang="pl">
   <head>
+  
+  <script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+     
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//matomo.codefiber.pl/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '4']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Marek Wywiał">
-  <meta name="description" content="Mam jeszcze tą nieprzyjemnośc pracy z PHP (w tym przypadku z symfony framework) i aby była przyjemniejsza dodałem sobie hook na pre-commit do git&rsquo;a. * http://dl.getdropbox.com/u/185133/git/pre-commit
-by zadziałało przerywanie commit&rsquo;a gdy &lsquo;symfony unit-test&rsquo; się nie udadzą, potrzebna jest łatka na symfony (przynajmniej na moją wersję 1.0.17) * http://dl.getdropbox.com/u/185133/git/symfony_return_code.diff
-Hook zakłada, że commit jest robiony w katalogu projektu (tak mam najczęsciej) i znajduje sie w nim plik &lsquo;symfony&rsquo;
+  <meta name="description" content="Mam jeszcze tą nieprzyjemnośc pracy z PHP (w tym przypadku z symfony framework) i aby była przyjemniejsza dodałem sobie hook na pre-commit do git&rsquo;a.
+ http://dl.getdropbox.com/u/185133/git/pre-commit  by zadziałało przerywanie commit&rsquo;a gdy &lsquo;symfony unit-test&rsquo; się nie udadzą, potrzebna jest łatka na symfony (przynajmniej na moją wersję 1.0.17)
+ http://dl.getdropbox.com/u/185133/git/symfony_return_code.diff  Hook zakłada, że commit jest robiony w katalogu projektu (tak mam najczęsciej) i znajduje sie w nim plik &lsquo;symfony&rsquo;
 btw: hook wymaga pythona.">
   
   <meta property="og:title" content="git pre-commit hook - symfony / php" />
-<meta property="og:description" content="Mam jeszcze tą nieprzyjemnośc pracy z PHP (w tym przypadku z symfony framework) i aby była przyjemniejsza dodałem sobie hook na pre-commit do git&rsquo;a. * http://dl.getdropbox.com/u/185133/git/pre-commit
-by zadziałało przerywanie commit&rsquo;a gdy &lsquo;symfony unit-test&rsquo; się nie udadzą, potrzebna jest łatka na symfony (przynajmniej na moją wersję 1.0.17) * http://dl.getdropbox.com/u/185133/git/symfony_return_code.diff
-Hook zakłada, że commit jest robiony w katalogu projektu (tak mam najczęsciej) i znajduje sie w nim plik &lsquo;symfony&rsquo;
+<meta property="og:description" content="Mam jeszcze tą nieprzyjemnośc pracy z PHP (w tym przypadku z symfony framework) i aby była przyjemniejsza dodałem sobie hook na pre-commit do git&rsquo;a.
+ http://dl.getdropbox.com/u/185133/git/pre-commit  by zadziałało przerywanie commit&rsquo;a gdy &lsquo;symfony unit-test&rsquo; się nie udadzą, potrzebna jest łatka na symfony (przynajmniej na moją wersję 1.0.17)
+ http://dl.getdropbox.com/u/185133/git/symfony_return_code.diff  Hook zakłada, że commit jest robiony w katalogu projektu (tak mam najczęsciej) i znajduje sie w nim plik &lsquo;symfony&rsquo;
 btw: hook wymaga pythona." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://marekwywial.name/posts/blog20090511git-pre-commit-hook-symfony-php/" />
@@ -45,7 +60,7 @@ btw: hook wymaga pythona." />
   <link href="https://marekwywial.name/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
   <link href="https://marekwywial.name/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet"> 
   <link href="https://marekwywial.name/css/vendors/mdb/style.min.css" rel="stylesheet"> 
-  <link href="https://marekwywial.name/css/main.css?1569701801" rel="stylesheet">
+  <link href="https://marekwywial.name/css/main.css?1599822646" rel="stylesheet">
 
 
   
@@ -300,14 +315,15 @@ btw: hook wymaga pythona." />
 
 
           <div class="post-content markdown">
-            <p>Mam jeszcze tą nieprzyjemnośc pracy z PHP (w tym przypadku z symfony framework) i aby była przyjemniejsza dodałem sobie hook na <strong>pre-commit</strong> do git&rsquo;a.
- * <a href="http://dl.getdropbox.com/u/185133/git/pre-commit">http://dl.getdropbox.com/u/185133/git/pre-commit</a></p>
-
-<p>by zadziałało przerywanie commit&rsquo;a gdy &lsquo;<em>symfony unit-test</em>&rsquo; się nie udadzą, potrzebna jest łatka na symfony (przynajmniej na moją wersję 1.0.17)
- * <a href="http://dl.getdropbox.com/u/185133/git/symfony_return_code.diff">http://dl.getdropbox.com/u/185133/git/symfony_return_code.diff</a></p>
-
+            <p>Mam jeszcze tą nieprzyjemnośc pracy z PHP (w tym przypadku z symfony framework) i aby była przyjemniejsza dodałem sobie hook na <strong>pre-commit</strong> do git&rsquo;a.</p>
+<ul>
+<li><!-- raw HTML omitted --><a href="http://dl.getdropbox.com/u/185133/git/pre-commit">http://dl.getdropbox.com/u/185133/git/pre-commit</a><!-- raw HTML omitted --></li>
+</ul>
+<p>by zadziałało przerywanie commit&rsquo;a gdy &lsquo;<em>symfony unit-test</em>&rsquo; się nie udadzą, potrzebna jest łatka na symfony (przynajmniej na moją wersję 1.0.17)</p>
+<ul>
+<li><!-- raw HTML omitted --><a href="http://dl.getdropbox.com/u/185133/git/symfony_return_code.diff">http://dl.getdropbox.com/u/185133/git/symfony_return_code.diff</a><!-- raw HTML omitted --></li>
+</ul>
 <p>Hook zakłada, że commit jest robiony w katalogu projektu (tak mam najczęsciej) i znajduje sie w nim plik &lsquo;symfony&rsquo;</p>
-
 <p>btw: hook wymaga pythona.</p>
 
           </div>
@@ -455,7 +471,7 @@ btw: hook wymaga pythona." />
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2019 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2020 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

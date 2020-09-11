@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>quake on Marek Wywiał</title>
@@ -20,7 +20,7 @@
       <description>Czy zdaża Wam się szukać jakiejś wolnej konsoli, na którymś pulpicie ? Można też do paska w Gnome lub KDE przypiąć minikonsole (brr).
 Wygodnym rozwiązaniem byłaby podręczna konsola, pojawiająca się kiedy jest potrzebna - podobnie jak w grach typu Quake.
 Osobiście znam trzy tego typu rozwiązania:
- yakuake - konsola z KDE (działa we fluxboxie, więc inne WM pewnie też dadzą radę kuake - także konsola z KDE tilda - samodzielna konsola  Mi osobiście najmniej podobała się tilda, zaś na biurku ciągle używam yakuake. Domyślny skrót klawiszowy dla yakuake to F12, który szybko zamieniłem na CTRL+~. Do tego kolory zwykłej konsoli, mniejsze fonty i gotowe. Jak to w KDE możliwe jest uruchamianie w ramach Yakuake kilku zakładek. Konsola ładnie się chowa gdy na pulpicie wyskoczy na okienko, lub wystąpi inna akcja pragnąca focusa.</description>
+ yakuake- konsola z KDE (działa we fluxboxie, więc inne WM pewnie też dadzą radę kuake- także konsola z KDE tilda- samodzielna konsola  Mi osobiście najmniej podobała się tilda, zaś na biurku ciągle używam yakuake. Domyślny skrót klawiszowy dla yakuake to F12, który szybko zamieniłem na CTRL+~. Do tego kolory zwykłej konsoli, mniejsze fonty i gotowe. Jak to w KDE możliwe jest uruchamianie w ramach Yakuake kilku zakładek. Konsola ładnie się chowa gdy na pulpicie wyskoczy na okienko, lub wystąpi inna akcja pragnąca focusa.</description>
     </item>
     
   </channel>

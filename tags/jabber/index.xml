@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>jabber on Marek Wywiał</title>
@@ -17,15 +17,7 @@
       <pubDate>Thu, 15 Mar 2007 08:32:24 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20070315jabber-google-firefox-itp/</guid>
-      <description>Ostatnio wpadł mi do Firefox&amp;rsquo;a ciekawie zapowiadający się plugin SamePlace. Używając sieci Jabber (więc także Google Talk) pozwala on oprócz komunikacji tekstowej (zwykły chat) na: używanie wspólnej tablicy do rysowania (Whiteboard),
-wspólnego widoku wskaźnika myszy (po otwarciu tej samej strony przez obie strony konwersacji można wskazywać rózne elementy na ekranie)
-współdzielić oglądanie prezentacji,zsynchronizowanych map Google,
-wysłać link do aktualnie oglądanej strony przy pomocy funkcji &amp;lsquo;Send link to&amp;hellip;&amp;rsquo;,
-przeciągać obrazki z oglądanej strony bezpośrednio do okna rozmowy,
-otwierać odnośniki na stronach w formacie xmpp:,
-grać w szachy (wersja alfa ;) ),
-
-Wersja stabilna to w tej chwili 0.6.0 ale już teraz pozwala na przyspieszenie współpracy z naszymi znajomymi/ współpracownikami.
+      <description>Wersja stabilnato w tej chwili 0.6.0ale już teraz pozwala na przyspieszenie współpracy z naszymi znajomymi/ współpracownikami.
 Co do samego Google Talk to do swojej strony startowej http://www.google.pl/ig można dodać sobie odpowiedni Google Talk Gadget.</description>
     </item>
     
@@ -35,12 +27,7 @@ Co do samego Google Talk to do swojej strony startowej http://www.google.pl/ig m
       <pubDate>Thu, 12 Jan 2006 08:28:38 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20060112psi-010/</guid>
-      <description>Jak możemy przeczytać na blogu Kevina, pojawiła się wersja Psi sygnowana numerem 0.10.
-Zmiany nastąpiły głównie w interfejscie komunikatora. Pojawiły się m.in. rozmowy w zakładkach, automatycznie zmieniający się rozmiar listy kontaktów, ustawienia przeźroczystości dla okien programu, itp.
-Mac binary
-Source tarball 
-Windows binary (with installer)
-Windows binary (zipped)</description>
+      <description></description>
     </item>
     
     <item>
@@ -49,12 +36,7 @@ Windows binary (zipped)</description>
       <pubDate>Wed, 04 Jan 2006 09:23:48 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20060104psi-010-test4/</guid>
-      <description>Pojawiła się czwarta wersja testowa komunikatora Psi. Poza poprawkami znalezionych błędów, zostały też usunięte niektóre zestawy ikon, co do których były wątpliwości w sprawie praw użytkowania.
-Jak tylko wersja psi 0.10 zostanie wydana, prace mają się skoncentrować na portowaniu aplikacji na Qt4 oraz na współpracy z Jingle.
-Dostępne aktualne pakiety Psi to:
-źródła (.tar.bz2)
-Mac (.dmg)
-Windows (.zip)</description>
+      <description></description>
     </item>
     
     <item>
@@ -63,9 +45,7 @@ Windows (.zip)</description>
       <pubDate>Thu, 29 Dec 2005 08:51:53 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20051229psi-jingle/</guid>
-      <description>Kilka dni temu można było przeczytać o bibliotece libjingle (VoIP dla Jabber/XMPP) wydaną przez Google.
-A zaraz potem okazuje się, że Psi nie śpi lecz też pracuje czy też współpracuje  z libjingle o czym możemy przeczytać na PsiWiki.
-Wkrótce sobie pogadamy :D</description>
+      <description></description>
     </item>
     
     <item>
@@ -74,10 +54,7 @@ Wkrótce sobie pogadamy :D</description>
       <pubDate>Thu, 03 Nov 2005 09:51:03 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20051103psi-010-test3/</guid>
-      <description>Kevin Smith ogłosił na liście dyskusyjne iż mamy wersję test3.
-Źródła (tar.bz2, zip oraz dmg) można pobraź z serwera sourceforge.net
-
-Przy okazji: zmienił się adres strony projektu z psi.affinix.com na psi-im.org.</description>
+      <description></description>
     </item>
     
     <item>

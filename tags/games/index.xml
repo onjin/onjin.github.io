@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>games on Marek Wywiał</title>
@@ -17,7 +17,7 @@
       <pubDate>Sun, 19 Oct 2008 20:20:03 +0000</pubDate>
       
       <guid>https://marekwywial.name/posts/blog20081019mud-astral-dominion/</guid>
-      <description>W 1999 roku było kilka popularnych gier typu mud i wraz ze znajomymi ze studiów także prowadziliśmy jednen o nazwie Astral Dominion.
+      <description>W 1999 roku było kilka popularnych gier typu mudi wraz ze znajomymi ze studiów także prowadziliśmy jednen o nazwie Astral Dominion.
 Jakiś czas temu odzyskałem kod mud&amp;rsquo;a i kilka dni temu uruchomiłem go online.
 Jak znajdą się chętni do gry (starzy gracze, których pełny backup także posiadam :) ) to zapraszam:
 telnet direct.onjin.net 4000</description>

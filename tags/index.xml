@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Marek Wywiał</title>
@@ -17,6 +17,15 @@
       <pubDate>Sat, 12 Oct 2013 01:26:16 +0000</pubDate>
       
       <guid>https://marekwywial.name/tags/cli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://marekwywial.name/tags/git/</link>
+      <pubDate>Sat, 12 Oct 2013 01:26:16 +0000</pubDate>
+      
+      <guid>https://marekwywial.name/tags/git/</guid>
       <description></description>
     </item>
     
@@ -134,15 +143,6 @@
       <pubDate>Wed, 11 Aug 2010 18:45:35 +0000</pubDate>
       
       <guid>https://marekwywial.name/tags/programowanie/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>git</title>
-      <link>https://marekwywial.name/tags/git/</link>
-      <pubDate>Tue, 04 May 2010 07:52:53 +0000</pubDate>
-      
-      <guid>https://marekwywial.name/tags/git/</guid>
       <description></description>
     </item>
     

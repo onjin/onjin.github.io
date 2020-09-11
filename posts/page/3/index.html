@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="pl">
   <head>
+  
+  <script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+     
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//matomo.codefiber.pl/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '4']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="HandheldFriendly" content="True">
@@ -13,7 +28,6 @@
 <meta property="og:description" content="[Python Software Developer In the face of ambiguity, refuse the temptation to guess. Nothing is an absolute reality, all is permitted.]" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://marekwywial.name/posts/" />
-
 <meta property="og:updated_time" content="2013-10-12T01:26:16+00:00" />
 
 
@@ -39,7 +53,7 @@
   <link href="https://marekwywial.name/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
   <link href="https://marekwywial.name/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet"> 
   <link href="https://marekwywial.name/css/vendors/mdb/style.min.css" rel="stylesheet"> 
-  <link href="https://marekwywial.name/css/main.css?1569701801" rel="stylesheet">
+  <link href="https://marekwywial.name/css/main.css?1599822646" rel="stylesheet">
 
 
   
@@ -735,7 +749,7 @@
     
 
     
-      W 1999 roku było kilka popularnych gier typu mud i wraz ze znajomymi ze studiów także prowadziliśmy jednen o nazwie Astral Dominion.
+      W 1999 roku było kilka popularnych gier typu mudi wraz ze znajomymi ze studiów także prowadziliśmy jednen o nazwie Astral Dominion.
 Jakiś czas temu odzyskałem kod mud’a i kilka dni temu uruchomiłem go online.
 Jak znajdą się chętni do gry (starzy gracze, których pełny backup także posiadam :) ) to zapraszam:
 telnet direct.onjin.net 4000......
@@ -784,7 +798,7 @@ telnet direct.onjin.net 4000......
     
         
           <li class="middot"></li>
-          <li>jedna minuta czytania</li>
+          <li>readingTime</li>
         
         
           
@@ -800,9 +814,7 @@ telnet direct.onjin.net 4000......
     
 
     
-      Kontynuując serię, kolejny cheatsheet tym razem do systemu kontroli wersji git.
-GitCheatSheet
-I jest git … :)......
+      ......
     
   </a>
 
@@ -845,7 +857,7 @@ I jest git … :)......
     
         
           <li class="middot"></li>
-          <li>jedna minuta czytania</li>
+          <li>readingTime</li>
         
         
           
@@ -861,16 +873,7 @@ I jest git … :)......
     
 
     
-      Za dnia piszę najczęściej w php i zazdroszczę pythonowi pylinta.
-Z ciekawości zagooglałem i znalazłem rozwiązanie dla PHP sprawdzające Coding Standard:
- pear install PHP_CodeSniffer phpcs --standard=Zend SomeTest.class.php  phpcs -i podaje dostępne standardy:
-PEAR
-MySource
-PHPCS
-Squiz
-Zend
-Mi najbardzie odpowiada Zend co widać po wynikach lintowania, najczęściej 0 ostrzeżeń i błędów ;).
-phpcs pozwala także tworzyć swoje własne standardy kodowanie oraz - co bardzo mnie cieszy - podpiąć go jako precommit hook do svn’a.......
+      ......
     
   </a>
 
@@ -922,7 +925,7 @@ phpcs pozwala także tworzyć swoje własne standardy kodowanie oraz - co bardzo
     
         
           <li class="middot"></li>
-          <li>jedna minuta czytania</li>
+          <li>readingTime</li>
         
         
           
@@ -938,9 +941,7 @@ phpcs pozwala także tworzyć swoje własne standardy kodowanie oraz - co bardzo
     
 
     
-      Czasem w Ubuntu (np przy pakietach proposal) przychodzi wyższa wersja kernela bez upgrade drivera do virtualbox’a
-Wtedy pomaga mi taka kombinacja
- sudo apt-get install virtualbox-ose-source sudo m-a update sudo m-a prepare sudo m-a a-i virtualbox-ose sudo /etc/init.d/vboxdrv restart  Restart virtualbox’a i gotow. Back to work.......
+      ......
     
   </a>
 
@@ -1005,11 +1006,8 @@ Wtedy pomaga mi taka kombinacja
     
 
     
-      W Netbeans 6.5 pojawia się support dla php5. W/g informacji na stronie netbeans oznacza to:
- PHP Editor (Code completion, syntactic and semantic code highlighting) Support for heredoc notation and PHTML Debugging using Xdebug Generators for MySQL database code snippets  Temat, który najbardziej mnie interesował to jak zadziała debugging przy pomocy Xdebug. Postanowiłem sprawdzić to z istniejącym projektem bazującym na frameworku Symfony.
- Zainstalowałem netbeans pobierając odpowiednią paczkę ze strony netbeans Zainstalowałem Xdebug poprzez pecl install xdebug i dodaniu do konfiguracji php wierszy:  # xdebug, jako zend_extension. ścieżke zmienić należy oczywiście na odpowiednią dla Twojej instalacji zend_extension=/usr/lib/php5/20060613&#43;lfs/xdebug.so xdebug.remote_enable=on  dodałem w netbeans nowy projekt php z istniejącymi źródłami (projekt już mam uruchomiony), podając podaczas konfiguracji:
- ścieżkę do źródeł projektu adres url do projektu katalog zawierający dane web (dostępne poprzez podany url projektu) w tym przypadku podkatalog ‘web’ w katalogu projektu punkt startowy czyli domyślny kontroler dla projektu, w tym przypadku ‘frontend.php’ w podkatalogu ‘web’  następnie wystarczyło otworzyć plik projektu (np podany wyżej kontroler) z toolbar’a wybrać ‘debug project’ lub wciśnąć ctrl&#43;F5
-  W tym momencie w uruchomionej przeglądarce (u mnie firefox 3.x netbeans otwarł główny kontroler projektu wraz z parameterm XDEBUG_SESSION_START=netbeans-xdebug. W tym samym momencie w edytorze netbeans podświetlony został pierwszy wiersz kontrolera … i już.......
+      W Netbeans 6.5pojawia się support dla php5. W/g informacji na stronie netbeans oznacza to:
+ PHP Editor (Code completion, syntactic and semantic code highlighting) Support for heredoc notation and PHTML Debugging using Xdebug Generators for MySQL database code snippets  Temat, który najbardziej mnie interesował to jak zadziała debugging przy pomocy Xdebug. Postanowiłem sprawdzić to z istniejącym projektem bazującym na frameworku Symfony. Zainstalowałem netbeans pobierając odpowiednią paczkę ze strony netbeans Zainstalowałem Xdebug poprzez pecl install xdebugi dodaniu do konfiguracji phpwierszy:  # xdebug, jako zend_extension. ścieżke zmienić należy oczywiście na odpowiednią dla Twojej instalacji zend_extension=/usr/lib/php5/20060613&#43;lfs/xdebug.so xdebug.remote_enable=on dodałem w netbeans nowy projekt php z istniejącymi źródłami (projekt już mam uruchomiony), podając podaczas konfiguracji:   ścieżkę do źródeł projektu adres url do projektu katalog zawierający dane web (dostępne poprzez podany url projektu) w tym przypadku podkatalog ‘web’ w katalogu projektu punkt startowy czyli domyślny kontroler dla projektu, w tym przypadku ‘frontend.php’ w podkatalogu ‘web’  następnie wystarczyło otworzyć plik projektu (np podany wyżej kontroler) z toolbar’a wybrać ‘debug project’ lub wciśnąć ctrl&#43;F5  W tym momencie w uruchomionej przeglądarce (u mnie firefox 3.xnetbeans otwarł główny kontroler projektu wraz z parameterm XDEBUG_SESSION_START=netbeans-xdebug. W tym samym momencie w edytorze netbeans podświetlony został pierwszy wiersz kontrolera … i już.......
     
   </a>
 
@@ -1075,7 +1073,8 @@ Wtedy pomaga mi taka kombinacja
 
     
       Episod IV Gwiezdnych Wojen transmitowany przez telnet:
- telnet towel.blinkenlights.nl  :D......
+telnet towel.blinkenlights.nl
+:D......
     
   </a>
 
@@ -1180,7 +1179,7 @@ Wtedy pomaga mi taka kombinacja
     
         
           <li class="middot"></li>
-          <li>jedna minuta czytania</li>
+          <li>readingTime</li>
         
         
           
@@ -1196,7 +1195,7 @@ Wtedy pomaga mi taka kombinacja
     
 
     
-      Google Maps on FunnyOrDie.com......
+      ......
     
   </a>
 
@@ -1242,7 +1241,7 @@ Wtedy pomaga mi taka kombinacja
     
         
           <li class="middot"></li>
-          <li>jedna minuta czytania</li>
+          <li>readingTime</li>
         
         
           
@@ -1258,7 +1257,7 @@ Wtedy pomaga mi taka kombinacja
     
 
     
-      Ten występ naprawdę warto zobaczyć :)......
+      ......
     
   </a>
 
@@ -1317,10 +1316,10 @@ Wtedy pomaga mi taka kombinacja
     
 
     
-      Serwisu Remember The Milk używam zazwyczaj za pomocą Gadgetu na google.com/ig.
+      Serwisu Remember The Milkużywam zazwyczaj za pomocą Gadgetu na google.com/ig.
 Dziś jednak zdażyło mi się zalogować bezpośrednio na stronie i … zostałem poproszony o pozwolenie użycia pluginu Google Gears.
-Google Gears to testowa technologia Google pozwalająca aplikacją webowym na pracę w trybie offline.
-Pierwszy raz z jej użyciem spotkałem się podczas Google Reader’a ale jak widać już się propaguje poprzez sieć na kolejne serwisy.......
+Google Gears to testowa technologia Googlepozwalająca aplikacją webowym na pracę w trybie offline.
+Pierwszy raz z jej użyciem spotkałem się podczas Google Reader’aale jak widać już się propaguje poprzez sieć na kolejne serwisy.......
     
   </a>
 
@@ -1413,7 +1412,7 @@ Pierwszy raz z jej użyciem spotkałem się podczas Google Reader’a ale jak wi
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2019 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2020 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

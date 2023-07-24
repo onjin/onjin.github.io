@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>programming on Marek Wywiał</title>
-    <link>https://marekwywial.name/tags/programming/</link>
+    <link>https://marek.wywiał.pl/tags/programming/</link>
     <description>Recent content in programming on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl</language>
     <lastBuildDate>Tue, 13 Aug 2013 18:53:49 +0000</lastBuildDate>
     
-	<atom:link href="https://marekwywial.name/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://marek.wywiał.pl/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Python SOAP server (flask) &#43; generowanie wsdl</title>
-      <link>https://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation-pl.html</link>
+      <link>https://marek.wywiał.pl/posts/blog20130813python-soap-server-flask-wsdl-generation-pl.html</link>
       <pubDate>Tue, 13 Aug 2013 18:53:49 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation-pl.html</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20130813python-soap-server-flask-wsdl-generation-pl.html</guid>
       <description>&lt;p&gt;Krótkie wprowadzenie jak uruchomić prosty serwer SOAP przy pomocy pakietu &amp;ldquo;Flask-Enterprise&amp;rdquo;.
 Do przetestowania połączenia do serwera użyjemy klienta z pakietu &amp;ldquo;suds&amp;rdquo;.&lt;/p&gt;</description>
     </item>

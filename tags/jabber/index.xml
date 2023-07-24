@@ -2,67 +2,67 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>jabber on Marek Wywiał</title>
-    <link>https://marekwywial.name/tags/jabber/</link>
+    <link>https://marek.wywiał.pl/tags/jabber/</link>
     <description>Recent content in jabber on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl</language>
     <lastBuildDate>Thu, 15 Mar 2007 08:32:24 +0000</lastBuildDate>
     
-	<atom:link href="https://marekwywial.name/tags/jabber/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://marek.wywiał.pl/tags/jabber/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Jabber google firefox itp</title>
-      <link>https://marekwywial.name/posts/blog20070315jabber-google-firefox-itp/</link>
+      <link>https://marek.wywiał.pl/posts/blog20070315jabber-google-firefox-itp/</link>
       <pubDate>Thu, 15 Mar 2007 08:32:24 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20070315jabber-google-firefox-itp/</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20070315jabber-google-firefox-itp/</guid>
       <description>Wersja stabilnato w tej chwili 0.6.0ale już teraz pozwala na przyspieszenie współpracy z naszymi znajomymi/ współpracownikami.
 Co do samego Google Talk to do swojej strony startowej http://www.google.pl/ig można dodać sobie odpowiedni Google Talk Gadget.</description>
     </item>
     
     <item>
       <title>Psi-0.10</title>
-      <link>https://marekwywial.name/posts/blog20060112psi-010/</link>
+      <link>https://marek.wywiał.pl/posts/blog20060112psi-010/</link>
       <pubDate>Thu, 12 Jan 2006 08:28:38 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20060112psi-010/</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20060112psi-010/</guid>
       <description></description>
     </item>
     
     <item>
       <title>psi-0.10-test4</title>
-      <link>https://marekwywial.name/posts/blog20060104psi-010-test4/</link>
+      <link>https://marek.wywiał.pl/posts/blog20060104psi-010-test4/</link>
       <pubDate>Wed, 04 Jan 2006 09:23:48 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20060104psi-010-test4/</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20060104psi-010-test4/</guid>
       <description></description>
     </item>
     
     <item>
       <title>psi &amp; jingle</title>
-      <link>https://marekwywial.name/posts/blog20051229psi-jingle/</link>
+      <link>https://marek.wywiał.pl/posts/blog20051229psi-jingle/</link>
       <pubDate>Thu, 29 Dec 2005 08:51:53 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20051229psi-jingle/</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20051229psi-jingle/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Psi-0.10-test3</title>
-      <link>https://marekwywial.name/posts/blog20051103psi-010-test3/</link>
+      <link>https://marek.wywiał.pl/posts/blog20051103psi-010-test3/</link>
       <pubDate>Thu, 03 Nov 2005 09:51:03 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20051103psi-010-test3/</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20051103psi-010-test3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Jabber roster</title>
-      <link>https://marekwywial.name/posts/blog20050907jabber-roster/</link>
+      <link>https://marek.wywiał.pl/posts/blog20050907jabber-roster/</link>
       <pubDate>Wed, 07 Sep 2005 15:55:12 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20050907jabber-roster/</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20050907jabber-roster/</guid>
       <description>Migrowałem ostatnio pomiędzy dwoma serwerami Jabber&amp;rsquo;a. Próbowałem przenieść kontakty przy pomocy Jabber Tools, niestety strony oferujące tą usługę nie były dostępne, lub po podaniu danych do pierwszego formularza &amp;lsquo;zacinały się&amp;rsquo;.
 Chcąc, nie chcąc byłem zmuszony zmajstrować szybko jakieś narzędzie. Na razie tylko działa ;) . Jak znajdę czas, oczyszczę kod, dodam trochę komentarzy i takie tam. Jak ktoś się nie boi można spróbować poużywać lub pobrać kod źródłowy w celach własnych. Na pewno się nie obrażę :)
  Jabber import / export  </description>

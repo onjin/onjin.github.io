@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>netbeans on Marek Wywiał</title>
-    <link>https://marekwywial.name/tags/netbeans/</link>
+    <link>https://marek.wywiał.pl/tags/netbeans/</link>
     <description>Recent content in netbeans on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl</language>
     <lastBuildDate>Sun, 24 Aug 2008 14:17:12 +0000</lastBuildDate>
     
-	<atom:link href="https://marekwywial.name/tags/netbeans/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://marek.wywiał.pl/tags/netbeans/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>netbeans 6.5 &#43; php5 &#43; symfony &#43; xdebug</title>
-      <link>https://marekwywial.name/posts/blog20080824netbeans-65-php5-symfony-xdebug/</link>
+      <link>https://marek.wywiał.pl/posts/blog20080824netbeans-65-php5-symfony-xdebug/</link>
       <pubDate>Sun, 24 Aug 2008 14:17:12 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20080824netbeans-65-php5-symfony-xdebug/</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20080824netbeans-65-php5-symfony-xdebug/</guid>
       <description>W Netbeans 6.5pojawia się support dla php5. W/g informacji na stronie netbeans oznacza to:
  PHP Editor (Code completion, syntactic and semantic code highlighting) Support for heredoc notation and PHTML Debugging using Xdebug Generators for MySQL database code snippets  Temat, który najbardziej mnie interesował to jak zadziała debugging przy pomocy Xdebug. Postanowiłem sprawdzić to z istniejącym projektem bazującym na frameworku Symfony. Zainstalowałem netbeans pobierając odpowiednią paczkę ze strony netbeans Zainstalowałem Xdebug poprzez pecl install xdebugi dodaniu do konfiguracji phpwierszy:  # xdebug, jako zend_extension. ścieżke zmienić należy oczywiście na odpowiednią dla Twojej instalacji zend_extension=/usr/lib/php5/20060613+lfs/xdebug.so xdebug.remote_enable=on dodałem w netbeans nowy projekt php z istniejącymi źródłami (projekt już mam uruchomiony), podając podaczas konfiguracji:   ścieżkę do źródeł projektu adres url do projektu katalog zawierający dane web (dostępne poprzez podany url projektu) w tym przypadku podkatalog &amp;lsquo;web&amp;rsquo; w katalogu projektu punkt startowy czyli domyślny kontroler dla projektu, w tym przypadku &amp;lsquo;frontend.php&amp;rsquo; w podkatalogu &amp;lsquo;web&amp;rsquo;  następnie wystarczyło otworzyć plik projektu (np podany wyżej kontroler) z toolbar&amp;rsquo;a wybrać &amp;lsquo;debug project&amp;rsquo; lub wciśnąć ctrl+F5  W tym momencie w uruchomionej przeglądarce (u mnie firefox 3.xnetbeans otwarł główny kontroler projektu wraz z parameterm XDEBUG_SESSION_START=netbeans-xdebug. W tym samym momencie w edytorze netbeans podświetlony został pierwszy wiersz kontrolera &amp;hellip; i już.</description>
     </item>

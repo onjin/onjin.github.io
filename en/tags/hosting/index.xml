@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hosting on Marek Wywiał</title>
-    <link>https://marekwywial.name/en/tags/hosting/</link>
+    <link>https://marek.wywiał.pl/en/tags/hosting/</link>
     <description>Recent content in hosting on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl</language>
     <lastBuildDate>Fri, 27 Apr 2012 10:30:44 +0000</lastBuildDate>
     
-	<atom:link href="https://marekwywial.name/en/tags/hosting/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://marek.wywiał.pl/en/tags/hosting/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>extend lvm2 filesystem</title>
-      <link>https://marekwywial.name/en/posts/blog20120427extend-lvm2-filesystem/</link>
+      <link>https://marek.wywiał.pl/en/posts/blog20120427extend-lvm2-filesystem/</link>
       <pubDate>Fri, 27 Apr 2012 10:30:44 +0000</pubDate>
       
-      <guid>https://marekwywial.name/en/posts/blog20120427extend-lvm2-filesystem/</guid>
+      <guid>https://marek.wywiał.pl/en/posts/blog20120427extend-lvm2-filesystem/</guid>
       <description>Just self memo # Added new physical partition /dev/sda3 # create a physical volume out of it $ pvcreate /dev/sda3 # Now, add it to the volume group #that my logical volume is on $ vgextend VolGroup00 /dev/sda3 # Now that the volume group has more # disk space, the logical volume can grow $ lvextend -L+11G /dev/VolGroup00/LogVol00 # Ok, last of all, I want to filesystem to # recognize that more space is available $ fsadm resize /dev/VolGroup00/LogVol00 # sweet, I have more space now $ df -h</description>
     </item>
     

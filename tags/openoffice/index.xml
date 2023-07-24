@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>openoffice on Marek Wywiał</title>
-    <link>https://marekwywial.name/tags/openoffice/</link>
+    <link>https://marek.wywiał.pl/tags/openoffice/</link>
     <description>Recent content in openoffice on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl</language>
     <lastBuildDate>Thu, 17 Nov 2005 09:17:28 +0000</lastBuildDate>
     
-	<atom:link href="https://marekwywial.name/tags/openoffice/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://marek.wywiał.pl/tags/openoffice/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Pożegnanie z doc&#39;em ?</title>
-      <link>https://marekwywial.name/posts/blog20051117pozegnanie-z-docem/</link>
+      <link>https://marek.wywiał.pl/posts/blog20051117pozegnanie-z-docem/</link>
       <pubDate>Thu, 17 Nov 2005 09:17:28 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20051117pozegnanie-z-docem/</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20051117pozegnanie-z-docem/</guid>
       <description>Z Rozporządzenia Rady Ministróww sprawie minimalnych wymagań dla systemów teleinformatycznych (Dz. U. Nr 212, poz. 1766)dowiadujemy się, że format OpenDocumentzostał oficjalnie uznany jako obowiązujący standard do wymiany dokumentów tekstowych lub tekstowo-graficznych pomiędzy systemami informatycznymi używanymi przez podmioty publiczne.
 OpenDocument jest oczywiście obsługiwany przez znany już, bezpłatny pakiet OpenOffice. Jego polską wersję 2.0można pobrać ze strony firmy Ux Systemsw dziale download.
 Znajdziemy tu wersję zarówna dla systemu Windowsjaki i Linux(tgz, rpm, deb).</description>

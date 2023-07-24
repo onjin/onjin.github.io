@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>python on Marek Wywiał</title>
-    <link>https://marekwywial.name/tags/python/</link>
+    <link>https://marek.wywiał.pl/tags/python/</link>
     <description>Recent content in python on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl</language>
     <lastBuildDate>Sat, 12 Oct 2013 01:26:16 +0000</lastBuildDate>
     
-	<atom:link href="https://marekwywial.name/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://marek.wywiał.pl/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Telewizja N (nc&#43;) i python</title>
-      <link>https://marekwywial.name/posts/telewizja-n-nc-i-python.html</link>
+      <link>https://marek.wywiał.pl/posts/telewizja-n-nc-i-python.html</link>
       <pubDate>Sat, 12 Oct 2013 01:26:16 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/telewizja-n-nc-i-python.html</guid>
+      <guid>https://marek.wywiał.pl/posts/telewizja-n-nc-i-python.html</guid>
       <description>&lt;p&gt;Aby się przeklikać przez program na http://n.pl/ i jeszcze znaleźć interesujący program, to jest ponad moje siły.&lt;/p&gt;
 &lt;p&gt;Napisałem więc na szybko narzędzie działające w shellu, które pozwala przeglądać oraz przeszukiwać program ze strony
 n.pl &lt;a href=&#34;https://github.com/onjin/ntv/&#34;&gt;https://github.com/onjin/ntv/&lt;/a&gt;.&lt;/p&gt;</description>
@@ -24,20 +24,20 @@ n.pl &lt;a href=&#34;https://github.com/onjin/ntv/&#34;&gt;https://github.com/on
     
     <item>
       <title>Python SOAP server (flask) &#43; generowanie wsdl</title>
-      <link>https://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation-pl.html</link>
+      <link>https://marek.wywiał.pl/posts/blog20130813python-soap-server-flask-wsdl-generation-pl.html</link>
       <pubDate>Tue, 13 Aug 2013 18:53:49 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20130813python-soap-server-flask-wsdl-generation-pl.html</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20130813python-soap-server-flask-wsdl-generation-pl.html</guid>
       <description>&lt;p&gt;Krótkie wprowadzenie jak uruchomić prosty serwer SOAP przy pomocy pakietu &amp;ldquo;Flask-Enterprise&amp;rdquo;.
 Do przetestowania połączenia do serwera użyjemy klienta z pakietu &amp;ldquo;suds&amp;rdquo;.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>vim &#43; vundle plugin manager &#43; programming</title>
-      <link>https://marekwywial.name/posts/blog20120314vim-vundle-plugin-manager-programming.html</link>
+      <link>https://marek.wywiał.pl/posts/blog20120314vim-vundle-plugin-manager-programming.html</link>
       <pubDate>Wed, 14 Mar 2012 22:50:36 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20120314vim-vundle-plugin-manager-programming.html</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20120314vim-vundle-plugin-manager-programming.html</guid>
       <description>Kilku znajomych chciało zacząć używać vim&amp;rsquo;a. Ale konfigurowanie go na starcie, dobieranie pluginów, instalowanie ich, gdy się jeszcze nic nie wie tylko chce się spróbować zazwyczaj powodowało przełożenie tej próby na &amp;lsquo;kiedy indziej&amp;rsquo;.
 Niedawno poznałem i zacząłem używać plugin manager&amp;rsquo;a https://github.com/gmarik/vundle i sam potrzebowałem szybko przenieść konfigurację na drugi komputer i na laptopa. Zazwyczaj używałem dropbox&amp;rsquo;a i podlinkowanego pliku .vimrc oraz całego katalogu .vim ze wszystkimi pluginami.
 Jednak używając plugin managera, którego konfiguracja znajduje się w .vimrc pozwala teraz posługiwać się jedynie plikiem .vimrc. Zgodnie z programistyczną zasadą &amp;lsquo;jak masz coś zrobić więcej niż 2 razy, napisz program&amp;rsquo; powstał mały skrypt + podstawowy .vimrc pozwalający szybko uruchomić vim&amp;rsquo;a skonfigurowanego pod programowanie w ciągu kilku minut.
@@ -46,10 +46,10 @@ Jednak używając plugin managera, którego konfiguracja znajduje się w .vimrc 
     
     <item>
       <title>Grooveshark currentSong.txt &#43; gajim status</title>
-      <link>https://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</link>
+      <link>https://marek.wywiał.pl/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</link>
       <pubDate>Sat, 19 Mar 2011 13:03:04 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</guid>
       <description>Przy okazji szukania API do grooveshark&amp;rsquo;aodkryłem plik currentSong.txt, który jest tworzony przez Grooveshark Desktop.
 Kilka minut z vim&amp;rsquo;em i mamy skrypt napisany w python&amp;rsquo;ie, który odczytuje w/w plik i wrzuca informację o aktualnie odtwarzanym utworze jako status wybranego konta w gajim&amp;rsquo;a.
 Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wymana pyinotify). Wtedy nasz status będzie zmieniany w chwili (chwilę potem :) ) zmiany utworu w Grooveshark Desktop.
@@ -59,10 +59,10 @@ Całość można dowolnie używać/modyfikować, a pobrać można z serwisu gith
     
     <item>
       <title>best vim plugins</title>
-      <link>https://marekwywial.name/posts/blog20100729best-vim-plugins.html</link>
+      <link>https://marek.wywiał.pl/posts/blog20100729best-vim-plugins.html</link>
       <pubDate>Thu, 29 Jul 2010 20:34:19 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20100729best-vim-plugins.html</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20100729best-vim-plugins.html</guid>
       <description>Dziś robiłem porządki w ~/.vim/ . Aktualizacje do nowych wersji pluginów, wyrzucanie nieużywanych, porządki w ~/.vimrc. W trakcie tej pracy powstała lista pluginów, dzięki którym miło mi się pracuje
 vimball Plugin zajmujący się pluginami dostarczanymi w paczkach .vba i pozwalający też takie paczki tworzyć, w praktyce potrzeby mi by instalować paczki .vba
  http://www.vim.org/scripts/script.php?script_id=1502  snippetsEmu Emuluje zachowanie snippetów z TextMate. Na przykład w pliku sometest.py wpisujesz &amp;lsquo;for&amp;lt;tab&amp;gt;&#39;, uzupełniasz brakujące miejsca poruszając się klawiszem &amp;lt;tab&amp;gt; i otrzymujesz pełną pętle. Inne użyteczne snippety dla pythona to:
@@ -73,10 +73,10 @@ vimball Plugin zajmujący się pluginami dostarczanymi w paczkach .vba i pozwala
     
     <item>
       <title>git php syntax check pre-commit</title>
-      <link>https://marekwywial.name/posts/blog20100504git-php-syntax-check-pre-commit/</link>
+      <link>https://marek.wywiał.pl/posts/blog20100504git-php-syntax-check-pre-commit/</link>
       <pubDate>Tue, 04 May 2010 07:52:53 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20100504git-php-syntax-check-pre-commit/</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20100504git-php-syntax-check-pre-commit/</guid>
       <description>Załączam używany przeze mnie i sprawdzający się pre-commitdla git&#39;a sprawdzający commitowane pliki .php.
 Przy wykonaniu commit w repozytorium skrypt dla każdego commitowanego pliku &amp;lsquo;.php&amp;rsquo; wykonuje &amp;lsquo;php -l&amp;rsquo; w pętli, aż otrzyma odpowiedź, że składnia jest ok lub nie ok. Przypadku wystąpienia błędy przerywa commit. Sam skrypt napisany jest w python&#39;ie
 Dlaczego w pętli? Dlatego, że &amp;lsquo;php -l&amp;rsquo; losowo się urywa zwracając SIGFAULTi należy wtedy powtórzyć próbę z &amp;lsquo;-l&amp;rsquo;
@@ -86,10 +86,10 @@ Plik do pobrania:
     
     <item>
       <title>devhelp &#43; django 1.1</title>
-      <link>https://marekwywial.name/posts/blog20100426devhelp-django-1-1/</link>
+      <link>https://marek.wywiał.pl/posts/blog20100426devhelp-django-1-1/</link>
       <pubDate>Mon, 26 Apr 2010 19:51:34 +0100</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20100426devhelp-django-1-1/</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20100426devhelp-django-1-1/</guid>
       <description>Ostatnio biegałem z lapkiem po centrum handlowym i łapałem wifi, żeby spojrzeć do dokumentacji django. I tylko się nabiegałem :).
 Aby drugi raz pracować nie biegać w domu szybko podłączyłem dokumentację django do devhelpi tak na szybko procedura:
 apt-get install devhelp mkdir -p ~/bin; cd ~/bin wget http://htmlhelp.googlecode.com/svn/trunk/misc/devhelp-install chmod +x devhelp-install cd ~/; wget http://onjin.net/files/django1.1-doc.tgz /bin/devhelp-install ./django1.1-doc.tgz Teraz wystarczy uruchomić devhelp&amp;rsquo;a i cieszyć się offline :)
@@ -98,10 +98,10 @@ django1.1-doc jest ściągnięte z .chmi potraktowana hhconvert.pydo formatu dev
     
     <item>
       <title>fuse ftp mount - curlftpfs</title>
-      <link>https://marekwywial.name/posts/blog20090621fuse-ftp-mount-curlftpfs/</link>
+      <link>https://marek.wywiał.pl/posts/blog20090621fuse-ftp-mount-curlftpfs/</link>
       <pubDate>Sun, 21 Jun 2009 19:11:10 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20090621fuse-ftp-mount-curlftpfs/</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20090621fuse-ftp-mount-curlftpfs/</guid>
       <description> Do pracy z hostingiem gdzie mamy tylko &amp;lsquo;&amp;lsquo;&amp;lsquo;ftp&amp;rsquo;&amp;rsquo;&amp;rsquo; przydaje się montowanie dysku poprzez właśnie ftp. Służy do tego program &amp;lsquo;&amp;lsquo;&amp;lsquo;curlftpfs&amp;rsquo;&amp;rsquo;&amp;rsquo; (np apt-get install curlftpfs).
 Odpalamy go jako:
 $ curlftpfs ftp://user:pass@host/ ./mountpoint Do tego potrzebujemy uprawnienia grupy fuse więć jako root musimy sobie ją dodać od naszego użytkownika.
@@ -113,10 +113,10 @@ Jeżeli mamy dużo połączeń do zarządzania przyda się mały skrypt:
     
     <item>
       <title>git pre-commit hook - symfony / php</title>
-      <link>https://marekwywial.name/posts/blog20090511git-pre-commit-hook-symfony-php/</link>
+      <link>https://marek.wywiał.pl/posts/blog20090511git-pre-commit-hook-symfony-php/</link>
       <pubDate>Mon, 11 May 2009 10:25:43 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20090511git-pre-commit-hook-symfony-php/</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20090511git-pre-commit-hook-symfony-php/</guid>
       <description>Mam jeszcze tą nieprzyjemnośc pracy z PHP (w tym przypadku z symfony framework) i aby była przyjemniejsza dodałem sobie hook na pre-commit do git&amp;rsquo;a.
  http://dl.getdropbox.com/u/185133/git/pre-commit  by zadziałało przerywanie commit&amp;rsquo;a gdy &amp;lsquo;symfony unit-test&amp;rsquo; się nie udadzą, potrzebna jest łatka na symfony (przynajmniej na moją wersję 1.0.17)
  http://dl.getdropbox.com/u/185133/git/symfony_return_code.diff  Hook zakłada, że commit jest robiony w katalogu projektu (tak mam najczęsciej) i znajduje sie w nim plik &amp;lsquo;symfony&amp;rsquo;
@@ -125,10 +125,10 @@ btw: hook wymaga pythona.</description>
     
     <item>
       <title>home.pl &amp; django - pierwsza potyczka</title>
-      <link>https://marekwywial.name/posts/blog20090226homepl-django-pierwsza-potyczka.html</link>
+      <link>https://marek.wywiał.pl/posts/blog20090226homepl-django-pierwsza-potyczka.html</link>
       <pubDate>Thu, 26 Feb 2009 21:59:38 +0100</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20090226homepl-django-pierwsza-potyczka.html</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20090226homepl-django-pierwsza-potyczka.html</guid>
       <description>home.pl obsługuje pythona jako cgi (pliki .py) więc tego będziemy się trzymać. Instalację wykonamy w katalogu /py
 instalacja django hardcoded ale działa ;) wrzucamy to do /py i ruchamiamy poprzez www (plik install.py)
 1 2 3 4 5 6 7 8 9  #!/usr/bin/env python import os os.system(&amp;#34;wget http://www.djangoproject.com/download/1.0.2/tarball/&amp;#34;) os.system(&amp;#34;tar zxf Django-1.0.2-final.tar.gz&amp;#34;) os.system(&amp;#34;rm Django-1.0.2-final.tar.gz&amp;#34;) os.system(&amp;#34;mv Django-1.0.2-final tmp&amp;#34;) os.system(&amp;#34;mv tmp/django django&amp;#34;)   nasz projekt Lokalnie wołamy

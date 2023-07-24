@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>develop on Marek Wywiał</title>
-    <link>https://marekwywial.name/tags/develop/</link>
+    <link>https://marek.wywiał.pl/tags/develop/</link>
     <description>Recent content in develop on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl</language>
     <lastBuildDate>Wed, 18 Sep 2013 13:36:39 +0000</lastBuildDate>
     
-	<atom:link href="https://marekwywial.name/tags/develop/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://marek.wywiał.pl/tags/develop/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Startujemy sentry przy pomocy dockera</title>
-      <link>https://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker-pl/</link>
+      <link>https://marek.wywiał.pl/posts/blog20130918fast-sentry-instance-using-docker-pl/</link>
       <pubDate>Wed, 18 Sep 2013 13:36:39 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker-pl/</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20130918fast-sentry-instance-using-docker-pl/</guid>
       <description>&lt;p&gt;Jak szybko uruchomić prywatną instancję &lt;!-- raw HTML omitted --&gt;Sentry&lt;!-- raw HTML omitted --&gt; używając dockera.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>git cheatsheet</title>
-      <link>https://marekwywial.name/posts/blog20081001git-cheatsheet/</link>
+      <link>https://marek.wywiał.pl/posts/blog20081001git-cheatsheet/</link>
       <pubDate>Wed, 01 Oct 2008 20:14:59 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20081001git-cheatsheet/</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20081001git-cheatsheet/</guid>
       <description></description>
     </item>
     

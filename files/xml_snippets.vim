@@ -1,6 +1,6 @@
 " liquibase snippets
 "  * use lhelp snippet for help
-"  author: Marek Wywial <marek@marekwywial.name>
+"  author: Marek Wywial <marek@marek.wywiał.pl>
 "  
 if !exists('loaded_snippet') || &cp
     finish

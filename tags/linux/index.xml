@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>linux on Marek Wywiał</title>
-    <link>https://marekwywial.name/tags/linux/</link>
+    <link>https://marek.wywiał.pl/tags/linux/</link>
     <description>Recent content in linux on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl</language>
     <lastBuildDate>Wed, 18 Sep 2013 13:36:39 +0000</lastBuildDate>
     
-	<atom:link href="https://marekwywial.name/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://marek.wywiał.pl/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Startujemy sentry przy pomocy dockera</title>
-      <link>https://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker-pl/</link>
+      <link>https://marek.wywiał.pl/posts/blog20130918fast-sentry-instance-using-docker-pl/</link>
       <pubDate>Wed, 18 Sep 2013 13:36:39 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20130918fast-sentry-instance-using-docker-pl/</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20130918fast-sentry-instance-using-docker-pl/</guid>
       <description>&lt;p&gt;Jak szybko uruchomić prywatną instancję &lt;!-- raw HTML omitted --&gt;Sentry&lt;!-- raw HTML omitted --&gt; używając dockera.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Grooveshark currentSong.txt &#43; gajim status</title>
-      <link>https://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</link>
+      <link>https://marek.wywiał.pl/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</link>
       <pubDate>Sat, 19 Mar 2011 13:03:04 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20110319grooveshark-currentsong-txt-gajim-status.html</guid>
       <description>Przy okazji szukania API do grooveshark&amp;rsquo;aodkryłem plik currentSong.txt, który jest tworzony przez Grooveshark Desktop.
 Kilka minut z vim&amp;rsquo;em i mamy skrypt napisany w python&amp;rsquo;ie, który odczytuje w/w plik i wrzuca informację o aktualnie odtwarzanym utworze jako status wybranego konta w gajim&amp;rsquo;a.
 Skrypt umożliwia także uruchomienie go w trybie monitorowania w/w pliku (wymana pyinotify). Wtedy nasz status będzie zmieniany w chwili (chwilę potem :) ) zmiany utworu w Grooveshark Desktop.
@@ -35,19 +35,19 @@ Całość można dowolnie używać/modyfikować, a pobrać można z serwisu gith
     
     <item>
       <title>Przydatne narzędzia do monitoringu obciążenia serwera ...</title>
-      <link>https://marekwywial.name/posts/blog20100103przydatne-narzedzia-do-monitoringu-obciazenia-serwera/</link>
+      <link>https://marek.wywiał.pl/posts/blog20100103przydatne-narzedzia-do-monitoringu-obciazenia-serwera/</link>
       <pubDate>Sun, 03 Jan 2010 13:01:26 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20100103przydatne-narzedzia-do-monitoringu-obciazenia-serwera/</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20100103przydatne-narzedzia-do-monitoringu-obciazenia-serwera/</guid>
       <description>&amp;hellip; zamieścił mekk http://notatnik.mekk.waw.pl/archives/200-Oprocz_top.html  </description>
     </item>
     
     <item>
       <title>fuse ftp mount - curlftpfs</title>
-      <link>https://marekwywial.name/posts/blog20090621fuse-ftp-mount-curlftpfs/</link>
+      <link>https://marek.wywiał.pl/posts/blog20090621fuse-ftp-mount-curlftpfs/</link>
       <pubDate>Sun, 21 Jun 2009 19:11:10 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20090621fuse-ftp-mount-curlftpfs/</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20090621fuse-ftp-mount-curlftpfs/</guid>
       <description> Do pracy z hostingiem gdzie mamy tylko &amp;lsquo;&amp;lsquo;&amp;lsquo;ftp&amp;rsquo;&amp;rsquo;&amp;rsquo; przydaje się montowanie dysku poprzez właśnie ftp. Służy do tego program &amp;lsquo;&amp;lsquo;&amp;lsquo;curlftpfs&amp;rsquo;&amp;rsquo;&amp;rsquo; (np apt-get install curlftpfs).
 Odpalamy go jako:
 $ curlftpfs ftp://user:pass@host/ ./mountpoint Do tego potrzebujemy uprawnienia grupy fuse więć jako root musimy sobie ją dodać od naszego użytkownika.
@@ -59,10 +59,10 @@ Jeżeli mamy dużo połączeń do zarządzania przyda się mały skrypt:
     
     <item>
       <title>mutt &amp; firefox (by urlview)</title>
-      <link>https://marekwywial.name/posts/blog20090605mutt-firefox-by-urlview.html</link>
+      <link>https://marek.wywiał.pl/posts/blog20090605mutt-firefox-by-urlview.html</link>
       <pubDate>Fri, 05 Jun 2009 10:53:55 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20090605mutt-firefox-by-urlview.html</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20090605mutt-firefox-by-urlview.html</guid>
       <description>apt-get install urlview
 w ~/.muttrc dodane makro
 orac plik ~/.urlview:
@@ -71,10 +71,10 @@ teraz ctrl+b zbiera linki z treści wiadomości, które otwieramy w wybranej prz
     
     <item>
       <title>google apps (gmail) i mutt</title>
-      <link>https://marekwywial.name/posts/blog20090526google-apps-gmail-i-mutt/</link>
+      <link>https://marek.wywiał.pl/posts/blog20090526google-apps-gmail-i-mutt/</link>
       <pubDate>Tue, 26 May 2009 10:31:04 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20090526google-apps-gmail-i-mutt/</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20090526google-apps-gmail-i-mutt/</guid>
       <description>set imap_user = &amp;ldquo;user@domena.pl&amp;rdquo;
 set imap_pass = &amp;ldquo;password&amp;rdquo;
 set smtp_url = &amp;ldquo;smtp://users\@domena.pl@smtp.gmail.com:587/&amp;rdquo;
@@ -92,10 +92,10 @@ set move = no</description>
     
     <item>
       <title>porządki na dysku, czyli mv, ln, mount i bind</title>
-      <link>https://marekwywial.name/posts/blog20090512porzadki-na-dysku-czyli-mv-ln-mount-i-bind/</link>
+      <link>https://marek.wywiał.pl/posts/blog20090512porzadki-na-dysku-czyli-mv-ln-mount-i-bind/</link>
       <pubDate>Tue, 12 May 2009 22:46:59 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20090512porzadki-na-dysku-czyli-mv-ln-mount-i-bind/</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20090512porzadki-na-dysku-czyli-mv-ln-mount-i-bind/</guid>
       <description>Nie mam miejsca by zrobić/użyć partycji, którą bym zamontował pod /usr/libale chwila w necie pozoliła znaleść mi rozwiązanie odpowiednie dla mnie :)
 mount &amp;ndash;bind /opt/usr/lib /usr/lib
 lub w /etc/fstab/opt/usr/lib /usr/lib none bind
@@ -104,29 +104,29 @@ i teraz jest ok :)</description>
     
     <item>
       <title>virtualbox brakujący vboxdrv kernel &#43; ubuntu</title>
-      <link>https://marekwywial.name/posts/blog20080829virtualbox-brakujacy-vboxdrv-kernel-ubuntu/</link>
+      <link>https://marek.wywiał.pl/posts/blog20080829virtualbox-brakujacy-vboxdrv-kernel-ubuntu/</link>
       <pubDate>Fri, 29 Aug 2008 08:26:16 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20080829virtualbox-brakujacy-vboxdrv-kernel-ubuntu/</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20080829virtualbox-brakujacy-vboxdrv-kernel-ubuntu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gentoo dbf2csv ebuild</title>
-      <link>https://marekwywial.name/posts/blog20060731gentoo-dbf2csv-ebuild/</link>
+      <link>https://marek.wywiał.pl/posts/blog20060731gentoo-dbf2csv-ebuild/</link>
       <pubDate>Mon, 31 Jul 2006 19:56:49 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20060731gentoo-dbf2csv-ebuild/</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20060731gentoo-dbf2csv-ebuild/</guid>
       <description>Potrzebowałem zamienić .dbf na .csv. Znalazłem odpowiedni skrypt ale &amp;hellip; aby był porządek w dystrybucji zmontowałem do niego .ebuild(gdyż takowego nie znalazłem).
 Może komuś też się przyda (wersja dbf2csv to 5.0).</description>
     </item>
     
     <item>
       <title>Is MS Windows ready for the desktop?</title>
-      <link>https://marekwywial.name/posts/blog20051110is-ms-windows-ready-for-the-desktop/</link>
+      <link>https://marek.wywiał.pl/posts/blog20051110is-ms-windows-ready-for-the-desktop/</link>
       <pubDate>Thu, 10 Nov 2005 12:46:50 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20051110is-ms-windows-ready-for-the-desktop/</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20051110is-ms-windows-ready-for-the-desktop/</guid>
       <description>Ostatnio wielu (??) użytkowników komputerów, próbuje przesiąść się z systemu MS Windows na Linuksa.
 Mają przy tym mniejsze lub większe problemy. Wynikaja one często z niechęci do zmiany przyzwyczajeń, złym wyobrażaniu sobie systemów typu Linux i pracy z nimi, braku czasu na zdobycie dodatkowej wiedzy, z powodu używania specjalistycznego oprogramowania nie działającego w tym systemie, itp.
 Stron i treści opisujących te problemy oraz jak sobie z nimi radzić jest wiele (google)Ale czy ktoś próbował kiedys w drugą stronę ? Praktycznie nie używam systemu Windows od ok 9 lat. Pracuję, uczę się i bawię przy pomocy Linuksa.
@@ -135,10 +135,10 @@ Is MS Windows ready for the desktop?jest odpowiedzią na problemy, które spotka
     
     <item>
       <title>Linux Standard Base</title>
-      <link>https://marekwywial.name/posts/blog20051104linux-standard-base/</link>
+      <link>https://marek.wywiał.pl/posts/blog20051104linux-standard-base/</link>
       <pubDate>Fri, 04 Nov 2005 08:57:02 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20051104linux-standard-base/</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20051104linux-standard-base/</guid>
       <description>Jak przeczytałem dzis na linuxnews.pl, w oświadczeniu prasowymz 1 listopada Free Standards Group ogłosiła, że komitety normalizacyjne ISO i IEC zaakceptowały Linux Standard BaseCore Specification 2.0.1 i opublikują tą specyfikację jako standard ISO 23360.Czy będzie to prawdziwy standard ? Czy tylko wizytówka dla firm by mówić &amp;quot;my się na tym znamy, mamy to na piśmie&amp;quot;.Czy skończy się jak w pewnej firmie, która &amp;quot;oferowała&amp;quot;wsparcie dla systemów Linux, a dział techniczny próbował postawić RedHat&amp;rsquo;a (byle tylko chodził) przez 1-2 tygodni ?
 Zobaczymy ..</description>
     </item>

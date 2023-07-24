@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>gtd on Marek Wywiał</title>
-    <link>https://marekwywial.name/tags/gtd/</link>
+    <link>https://marek.wywiał.pl/tags/gtd/</link>
     <description>Recent content in gtd on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl</language>
     <lastBuildDate>Mon, 29 Oct 2007 20:59:33 +0000</lastBuildDate>
     
-	<atom:link href="https://marekwywial.name/tags/gtd/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://marek.wywiał.pl/tags/gtd/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Remember The Milk &amp; Google Gears</title>
-      <link>https://marekwywial.name/posts/blog20071029remember-the-milk-google-gears/</link>
+      <link>https://marek.wywiał.pl/posts/blog20071029remember-the-milk-google-gears/</link>
       <pubDate>Mon, 29 Oct 2007 20:59:33 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20071029remember-the-milk-google-gears/</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20071029remember-the-milk-google-gears/</guid>
       <description>Serwisu Remember The Milkużywam zazwyczaj za pomocą Gadgetu na google.com/ig.
 Dziś jednak zdażyło mi się zalogować bezpośrednio na stronie i &amp;hellip; zostałem poproszony o pozwolenie użycia pluginu Google Gears.
 Google Gears to testowa technologia Googlepozwalająca aplikacją webowym na pracę w trybie offline.

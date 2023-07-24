@@ -2,102 +2,102 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Marek Wywiał</title>
-    <link>https://marekwywial.name/en/tags/</link>
+    <link>https://marek.wywiał.pl/en/tags/</link>
     <description>Recent content in Tags on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl</language>
     <lastBuildDate>Wed, 18 Sep 2013 13:36:39 +0000</lastBuildDate>
     
-	<atom:link href="https://marekwywial.name/en/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://marek.wywiał.pl/en/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>develop</title>
-      <link>https://marekwywial.name/en/tags/develop/</link>
+      <link>https://marek.wywiał.pl/en/tags/develop/</link>
       <pubDate>Wed, 18 Sep 2013 13:36:39 +0000</pubDate>
       
-      <guid>https://marekwywial.name/en/tags/develop/</guid>
+      <guid>https://marek.wywiał.pl/en/tags/develop/</guid>
       <description></description>
     </item>
     
     <item>
       <title>docker</title>
-      <link>https://marekwywial.name/en/tags/docker/</link>
+      <link>https://marek.wywiał.pl/en/tags/docker/</link>
       <pubDate>Wed, 18 Sep 2013 13:36:39 +0000</pubDate>
       
-      <guid>https://marekwywial.name/en/tags/docker/</guid>
+      <guid>https://marek.wywiał.pl/en/tags/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>linux</title>
-      <link>https://marekwywial.name/en/tags/linux/</link>
+      <link>https://marek.wywiał.pl/en/tags/linux/</link>
       <pubDate>Wed, 18 Sep 2013 13:36:39 +0000</pubDate>
       
-      <guid>https://marekwywial.name/en/tags/linux/</guid>
+      <guid>https://marek.wywiał.pl/en/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>flask</title>
-      <link>https://marekwywial.name/en/tags/flask/</link>
+      <link>https://marek.wywiał.pl/en/tags/flask/</link>
       <pubDate>Tue, 13 Aug 2013 18:53:49 +0000</pubDate>
       
-      <guid>https://marekwywial.name/en/tags/flask/</guid>
+      <guid>https://marek.wywiał.pl/en/tags/flask/</guid>
       <description></description>
     </item>
     
     <item>
       <title>programming</title>
-      <link>https://marekwywial.name/en/tags/programming/</link>
+      <link>https://marek.wywiał.pl/en/tags/programming/</link>
       <pubDate>Tue, 13 Aug 2013 18:53:49 +0000</pubDate>
       
-      <guid>https://marekwywial.name/en/tags/programming/</guid>
+      <guid>https://marek.wywiał.pl/en/tags/programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>python</title>
-      <link>https://marekwywial.name/en/tags/python/</link>
+      <link>https://marek.wywiał.pl/en/tags/python/</link>
       <pubDate>Tue, 13 Aug 2013 18:53:49 +0000</pubDate>
       
-      <guid>https://marekwywial.name/en/tags/python/</guid>
+      <guid>https://marek.wywiał.pl/en/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>webdev</title>
-      <link>https://marekwywial.name/en/tags/webdev/</link>
+      <link>https://marek.wywiał.pl/en/tags/webdev/</link>
       <pubDate>Tue, 13 Aug 2013 18:53:49 +0000</pubDate>
       
-      <guid>https://marekwywial.name/en/tags/webdev/</guid>
+      <guid>https://marek.wywiał.pl/en/tags/webdev/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vim</title>
-      <link>https://marekwywial.name/en/tags/vim/</link>
+      <link>https://marek.wywiał.pl/en/tags/vim/</link>
       <pubDate>Mon, 30 Jul 2012 21:27:26 +0000</pubDate>
       
-      <guid>https://marekwywial.name/en/tags/vim/</guid>
+      <guid>https://marek.wywiał.pl/en/tags/vim/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tools</title>
-      <link>https://marekwywial.name/en/tags/tools/</link>
+      <link>https://marek.wywiał.pl/en/tags/tools/</link>
       <pubDate>Thu, 05 Jul 2012 08:16:42 +0000</pubDate>
       
-      <guid>https://marekwywial.name/en/tags/tools/</guid>
+      <guid>https://marek.wywiał.pl/en/tags/tools/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hosting</title>
-      <link>https://marekwywial.name/en/tags/hosting/</link>
+      <link>https://marek.wywiał.pl/en/tags/hosting/</link>
       <pubDate>Fri, 27 Apr 2012 10:30:44 +0000</pubDate>
       
-      <guid>https://marekwywial.name/en/tags/hosting/</guid>
+      <guid>https://marek.wywiał.pl/en/tags/hosting/</guid>
       <description></description>
     </item>
     

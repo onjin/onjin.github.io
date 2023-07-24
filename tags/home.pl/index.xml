@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>home.pl on Marek Wywiał</title>
-    <link>https://marekwywial.name/tags/home.pl/</link>
+    <link>https://marek.wywiał.pl/tags/home.pl/</link>
     <description>Recent content in home.pl on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl</language>
     <lastBuildDate>Thu, 26 Feb 2009 21:59:38 +0100</lastBuildDate>
     
-	<atom:link href="https://marekwywial.name/tags/home.pl/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://marek.wywiał.pl/tags/home.pl/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>home.pl &amp; django - pierwsza potyczka</title>
-      <link>https://marekwywial.name/posts/blog20090226homepl-django-pierwsza-potyczka.html</link>
+      <link>https://marek.wywiał.pl/posts/blog20090226homepl-django-pierwsza-potyczka.html</link>
       <pubDate>Thu, 26 Feb 2009 21:59:38 +0100</pubDate>
       
-      <guid>https://marekwywial.name/posts/blog20090226homepl-django-pierwsza-potyczka.html</guid>
+      <guid>https://marek.wywiał.pl/posts/blog20090226homepl-django-pierwsza-potyczka.html</guid>
       <description>home.pl obsługuje pythona jako cgi (pliki .py) więc tego będziemy się trzymać. Instalację wykonamy w katalogu /py
 instalacja django hardcoded ale działa ;) wrzucamy to do /py i ruchamiamy poprzez www (plik install.py)
 1 2 3 4 5 6 7 8 9  #!/usr/bin/env python import os os.system(&amp;#34;wget http://www.djangoproject.com/download/1.0.2/tarball/&amp;#34;) os.system(&amp;#34;tar zxf Django-1.0.2-final.tar.gz&amp;#34;) os.system(&amp;#34;rm Django-1.0.2-final.tar.gz&amp;#34;) os.system(&amp;#34;mv Django-1.0.2-final tmp&amp;#34;) os.system(&amp;#34;mv tmp/django django&amp;#34;)   nasz projekt Lokalnie wołamy

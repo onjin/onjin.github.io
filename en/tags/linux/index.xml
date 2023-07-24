@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>linux on Marek Wywiał</title>
-    <link>https://marekwywial.name/en/tags/linux/</link>
+    <link>https://marek.wywiał.pl/en/tags/linux/</link>
     <description>Recent content in linux on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl</language>
     <lastBuildDate>Wed, 18 Sep 2013 13:36:39 +0000</lastBuildDate>
     
-	<atom:link href="https://marekwywial.name/en/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://marek.wywiał.pl/en/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Fast sentry instance using docker</title>
-      <link>https://marekwywial.name/en/posts/blog20130918fast-sentry-instance-using-docker/</link>
+      <link>https://marek.wywiał.pl/en/posts/blog20130918fast-sentry-instance-using-docker/</link>
       <pubDate>Wed, 18 Sep 2013 13:36:39 +0000</pubDate>
       
-      <guid>https://marekwywial.name/en/posts/blog20130918fast-sentry-instance-using-docker/</guid>
+      <guid>https://marek.wywiał.pl/en/posts/blog20130918fast-sentry-instance-using-docker/</guid>
       <description>&lt;p&gt;How to quickly spin up private &lt;!-- raw HTML omitted --&gt;Sentry&lt;!-- raw HTML omitted --&gt; instance using only docker.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Rescan SCSI bus (no reboot)</title>
-      <link>https://marekwywial.name/en/posts/blog20120705rescan-scsi-bus-no-reboot/</link>
+      <link>https://marek.wywiał.pl/en/posts/blog20120705rescan-scsi-bus-no-reboot/</link>
       <pubDate>Thu, 05 Jul 2012 08:16:42 +0000</pubDate>
       
-      <guid>https://marekwywial.name/en/posts/blog20120705rescan-scsi-bus-no-reboot/</guid>
+      <guid>https://marek.wywiał.pl/en/posts/blog20120705rescan-scsi-bus-no-reboot/</guid>
       <description>Just self memo. How to attach new SCSI disk without reboot (debian):
 # check what hosts do you have ls /sys/class/scsi_host host0 host1 host2 host3 # change &amp;#39;host0&amp;#39; to &amp;#39;host1&amp;#39; or any next number that you need echo &amp;#34;- - -&amp;#34; &amp;gt; /sys/class/scsi_host/host0/scan and done fdisk -l </description>
     </item>

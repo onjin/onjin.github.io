@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>cli on Marek Wywiał</title>
-    <link>https://marekwywial.name/tags/cli/</link>
+    <link>https://marek.wywiał.pl/tags/cli/</link>
     <description>Recent content in cli on Marek Wywiał</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl</language>
     <lastBuildDate>Sat, 12 Oct 2013 01:26:16 +0000</lastBuildDate>
     
-	<atom:link href="https://marekwywial.name/tags/cli/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://marek.wywiał.pl/tags/cli/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Telewizja N (nc&#43;) i python</title>
-      <link>https://marekwywial.name/posts/telewizja-n-nc-i-python.html</link>
+      <link>https://marek.wywiał.pl/posts/telewizja-n-nc-i-python.html</link>
       <pubDate>Sat, 12 Oct 2013 01:26:16 +0000</pubDate>
       
-      <guid>https://marekwywial.name/posts/telewizja-n-nc-i-python.html</guid>
+      <guid>https://marek.wywiał.pl/posts/telewizja-n-nc-i-python.html</guid>
       <description>&lt;p&gt;Aby się przeklikać przez program na http://n.pl/ i jeszcze znaleźć interesujący program, to jest ponad moje siły.&lt;/p&gt;
 &lt;p&gt;Napisałem więc na szybko narzędzie działające w shellu, które pozwala przeglądać oraz przeszukiwać program ze strony
 n.pl &lt;a href=&#34;https://github.com/onjin/ntv/&#34;&gt;https://github.com/onjin/ntv/&lt;/a&gt;.&lt;/p&gt;</description>

@@ -1,0 +1,13 @@
+INHERIT: base.yaml
+
+site_url: https://marek.xn--wywia-o7a.pl/pl
+docs_dir: 'docs/pl/'
+site_dir: 'site/pl/'
+
+theme:
+  language: pl
+
+plugins:
+  search:
+    lang: pl
+

@@ -1,0 +1,92 @@
+site_name: Marek Wywiał
+site_description: In the face of ambiguity, refuse the temptation to guess. Nothing is an absolute reality, all is permitted.
+site_url: https://marek.xn--wywia-o7a.pl/blog/pl
+docs_dir: 'docs/pl/'
+site_dir: 'site/pl/'
+
+nav:
+  - Home: index.md
+  - Blog: 
+      - blog/index.md 
+      - Tags: blog/tags.md
+
+plugins:
+  search: {}
+  tags:
+    tags_file: blog/tags.md
+  blog:
+    blog_dir: blog
+    archive: true
+    categories: true
+    post_url_format: "{slug}"
+  # - rss:
+  #     match_path: "blog/posts/.*"
+  #     date_from_meta:
+  #       as_creation: date.created
+  #       as_update: date.updated
+
+theme:
+  logo: https://secure.gravatar.com/avatar/82c0ae52543d7865dac4bbe1b61cf11c?s=64
+  favicon: https://secure.gravatar.com/avatar/82c0ae52543d7865dac4bbe1b61cf11c?s=32
+  custom_dir: overrides
+  name: material
+  language: pl
+  palette:
+  - media: '(prefers-color-scheme: dark)'
+    scheme: default
+    primary: teal
+    toggle:
+      icon: material/brightness-7 
+      name: dark mode
+  - media: '(prefers-color-scheme: light)'
+    scheme: slate
+    primary: blue-grey
+    toggle:
+      icon: material/brightness-4
+      name: light mode
+  features:
+  - navigation.indexes
+  - navigation.tabs
+  - navigation.tabs.sticky
+  - navigation.top
+  - toc.integrate
+  - content.code.copy
+  - content.code.annotate
+  - search.suggest
+  - search.highlight
+  - navigation.path
+  - content.tooltips
+
+extra:
+  alternate:
+    - name: Polski
+      link: /pl/
+      lang: pl
+    - name: English 
+      link: /en/
+      lang: en
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - md_in_html
+  - pymdownx.blocks.caption
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - toc:
+      permalink: true
+
+hooks:
+  - overrides/scripts/blogs.py

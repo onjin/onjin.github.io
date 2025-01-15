@@ -1,0 +1,118 @@
+<!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Post excerpt -->
+<article class="md-post md-post--excerpt">
+    <header class="md-post__header">
+
+        <!-- Post authors -->
+        {% if post.authors %}
+        <nav class="md-post__authors md-typeset">
+            {% for author in post.authors %}
+            <span class="md-author">
+                <img src="{{ author.avatar | url }}" alt="{{ author.name }}" />
+            </span>
+            {% endfor %}
+        </nav>
+        {% endif %}
+
+        <!-- Post metadata -->
+        <div class="md-post__meta md-meta">
+            <ul class="md-meta__list">
+
+                <!-- Post date -->
+                <li class="md-meta__item">
+                    <time datetime="{{ post.config.date.created }}">
+                        {{- post.config.date.created | date -}}
+                    </time>
+                    {#- Collapse whitespace -#}
+                </li>
+
+                <!-- Post categories -->
+                {% if post.categories %}
+                <li class="md-meta__item">
+                    {{ lang.t("blog.categories.in") }}
+                    {% for category in post.categories %}
+                    <a href="{{ category.url | url }}" class="md-meta__link">
+                        {{- category.title -}}
+                    </a>
+                    {%- if loop.revindex > 1 %}, {% endif -%}
+                    {% endfor -%}
+                </li>
+                {% endif %}
+
+                <!-- Post readtime -->
+                {% if post.config.readtime %}
+                {% set time = post.config.readtime %}
+                <li class="md-meta__item">
+                    {% if time == 1 %}
+                    {{ lang.t("readtime.one") }}
+                    {% else %}
+                    {{ lang.t("readtime.other") | replace("#", time) }}
+                    {% endif %}
+                </li>
+                {% endif %}
+                <li class="md-meta__item">
+                    <a
+                        href="https://www.facebook.com/sharer/sharer.php?text={{post.title}}&url={{config.site_url + post.url}}">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M 7.5 1 C 3.9160714 1 1 3.9160714 1 7.5 C 1 11.083929 3.9160714 14 7.5 14 C 11.083929 14 14 11.083929 14 7.5 C 14 3.9160714 11.083929 1 7.5 1 z M 7.5 2 C 10.543488 2 13 4.4565116 13 7.5 C 13 10.266333 10.967571 12.541024 8.3125 12.933594 L 8.3125 9.0898438 L 9.8652344 9.0898438 L 10.109375 7.5136719 L 8.3125 7.5136719 L 8.3125 6.6503906 C 8.3125 5.9953906 8.5256719 5.4140625 9.1386719 5.4140625 L 10.123047 5.4140625 L 10.123047 4.0371094 C 9.9500469 4.0141094 9.5845781 3.9628906 8.8925781 3.9628906 C 7.4485781 3.9628906 6.6015625 4.7258906 6.6015625 6.4628906 L 6.6015625 7.5117188 L 5.1171875 7.5117188 L 5.1171875 9.0898438 L 6.6035156 9.0898438 L 6.6035156 12.919922 C 3.9897868 12.492118 2 10.237066 2 7.5 C 2 4.4565116 4.4565116 2 7.5 2 z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?u={{config.site_url + post.url}}">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M 2.296875 2 C 2.052875 2 1.9117344 2.2756094 2.0527344 2.4746094 L 6.4882812 8.7050781 L 2.0136719 14 L 3.3457031 14 L 7.09375 9.5527344 L 9.9609375 13.580078 C 10.148938 13.844078 10.452391 14 10.775391 14 L 13.703125 14 C 13.947125 14 14.088266 13.724391 13.947266 13.525391 L 9.2753906 6.9628906 L 13.457031 2 L 12.154297 2 L 8.6738281 6.1191406 L 6.0390625 2.4199219 C 5.8510625 2.1559219 5.5476094 2 5.2246094 2 L 2.296875 2 z M 3.6542969 3 L 5.2246094 3 L 12.345703 13 L 10.775391 13 L 3.6542969 3 z">
+                            </path>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Draft marker -->
+            {% if post.config.draft %}
+            <span class="md-draft">
+                {{ lang.t("blog.draft") }}
+            </span>
+            {% endif %}
+        </div>
+    </header>
+
+    <!-- Post content -->
+    <div class="md-post__content md-typeset">
+        <!-- Post social -->
+        {{ post.content }}
+
+        <!-- Continue reading link -->
+        {% if post.more %}
+        <nav class="md-post__action">
+            <a href="{{ post.url | url }}">
+                {{ lang.t("blog.continue") }}
+            </a>
+        </nav>
+        {% endif %}
+    </div>
+</article>

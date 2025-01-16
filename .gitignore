@@ -1,0 +1,8 @@
+/.direnv
+/.venv
+__pycache__
+.envrc
+
+# project
+/site/en
+/site/pl

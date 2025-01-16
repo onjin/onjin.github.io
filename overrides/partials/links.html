@@ -1,0 +1,13 @@
+{% if links %}
+<nav class="md-nav md-nav--secondary" aria-label="links" style="margin-top: 1em;">
+    <label class="md-nav__title" for="__links">
+        <span class="md-nav__icon md-icon"></span>
+        Links
+    </label>
+    <ul class="md-nav__list" data-md-component="links" data-md-scrollfix>
+        {% for link_item in links %}
+        {% include "partials/link-item.html" %}
+        {% endfor %}
+    </ul>
+</nav>
+{% endif %}

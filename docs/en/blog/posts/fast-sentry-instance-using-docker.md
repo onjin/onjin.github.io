@@ -1,7 +1,6 @@
 ---
 title: "Fast sentry instance using docker"
 date: 2013-09-18T13:36:39
-slug: blog20130918fast-sentry-instance-using-docker
 tags: ["develop","docker","linux"]
 language: en
 ---

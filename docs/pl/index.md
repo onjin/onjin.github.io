@@ -30,8 +30,7 @@ icon: material/home
 -   [docker] - inne projekty związane z dockerem
 
 
-Moje strony
------------
+## Moje strony
 
 -   [tani-ebook] - portal z e-bookami
 

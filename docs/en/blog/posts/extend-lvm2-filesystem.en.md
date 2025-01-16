@@ -1,7 +1,6 @@
 ---
 title: "extend lvm2 filesystem"
 date: 2012-04-27T10:30:44
-slug: blog20120427extend-lvm2-filesystem
 tags: ["hosting","tools"]
 ---
 

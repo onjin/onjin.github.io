@@ -34,28 +34,32 @@ theme:
   palette:
   - media: '(prefers-color-scheme: dark)'
     scheme: default
-    primary: teal
+    primary: black
+    accent: red
     toggle:
       icon: material/brightness-7 
       name: dark mode
   - media: '(prefers-color-scheme: light)'
     scheme: slate
-    primary: blue-grey
+    primary: black
+    accent: red
     toggle:
       icon: material/brightness-4
       name: light mode
   features:
+  - content.code.annotate
+  - content.code.copy
+  - content.tooltips
+  - custom.links
+  - navigation.footer
   - navigation.indexes
+  - navigation.path
   - navigation.tabs
   - navigation.tabs.sticky
   - navigation.top
-  - toc.integrate
-  - content.code.copy
-  - content.code.annotate
-  - search.suggest
   - search.highlight
-  - navigation.path
-  - content.tooltips
+  - search.suggest
+  # - toc.integrate
 
 extra:
   alternate:
@@ -65,6 +69,12 @@ extra:
     - name: English 
       link: /en/
       lang: en
+  copyright: Copyright &copy; 2007 - 2025 Marek Wywiał
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/onjin
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/onjin/
 
 extra_css:
   - assets/stylesheets/extra.css

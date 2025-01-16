@@ -1,7 +1,6 @@
 ---
 title: "Python SOAP server (flask) + wsdl generation"
 date: 2013-08-13T18:53:49
-slug: blog20130813python-soap-server-flask-wsdl-generation
 url: /posts/blog20130813python-soap-server-flask-wsdl-generation.html
 tags: ["programming","python","webdev","flask"]
 ---

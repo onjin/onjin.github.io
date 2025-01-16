@@ -1,11 +1,11 @@
 ---
 title: "Startujemy sentry przy pomocy dockera"
 date: 2013-09-18T13:36:39
-slug: blog20130918fast-sentry-instance-using-docker
 tags: ["develop","docker","linux"]
 language: pl
 links:
-    - http://some.pl/
+    - https://sentry.io/
+    - https://www.docker.com/
 ---
 
 ![Cover](../../assets/images/cover-containers1.jpg)

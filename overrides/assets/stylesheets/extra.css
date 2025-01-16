@@ -1,19 +1,20 @@
 /* light scheme */
 [data-md-color-scheme="default"] {
-  --md-primary-fg-color: #DCAE81; /* Latte - Peach */
-  --md-primary-fg-color--light: #DCAE81; /* Latte - Peach */
-  --md-primary-fg-color--dark: #B06568; /* Latte - Flamingo */
-  --md-accent-fg-color: #B06568; /* Latte - Flamingo */
-  --md-header-bg-color: #EFF1F5; /* Latte - Base */
-  --md-footer-bg-color: #C6D0F5; /* Latte - Overlay0 */
-  --md-default-fg-color: #4C4F69; /* Latte - Text */
-  --md-default-fg-color--light: #B06568; /* Latte - Flamingo */
+  --md-primary-fg-color: #fe640b; /* Latte - Peach */
+  --md-primary-fg-color--light: #fe640b; /* Latte - Peach */
+  --md-primary-fg-color--dark: #dd7878; /* Latte - Flamingo */
+  --md-accent-fg-color: #dd7878; /* Latte - Flamingo */
+  --md-header-bg-color: #eff1f5; /* Latte - Base */
+  --md-footer-bg-color: #9ca0b0; /* Latte - Overlay0 */
+  --md-footer-bg-color--dark: #000000; /* Latte - Overlay0 */
+  --md-default-fg-color: #4c4f69; /* Latte - Text */
+  --md-default-fg-color--light: #dd7878; /* Latte - Flamingo */
 }
 
 /* dark scheme as set in .yaml */
 [data-md-color-scheme="slate"] {
-  --md-primary-fg-color: #FAB387; /* Mocha - Peach */
-  --md-typeset-color: #D9E0EE !important; /* Mocha - Text */
-  --md-default-fg-color: #D9E0EE; /* Mocha - Text */
-  --md-typeset-a-color: #F9E2AF !important; /* Mocha - Yellow */
+  --md-primary-fg-color: #fab387; /* Mocha - Peach */
+  --md-typeset-color: #cdd6f4 !important; /* Mocha - Text */
+  --md-default-fg-color: #cdd6f4; /* Mocha - Text */
+  --md-typeset-a-color: #f9e2af !important; /* Mocha - Yellow */
 }

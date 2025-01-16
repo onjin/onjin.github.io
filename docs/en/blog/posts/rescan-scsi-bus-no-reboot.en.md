@@ -1,7 +1,6 @@
 ---
 title: "Rescan SCSI bus (no reboot)"
 date: 2012-07-05T08:16:42
-slug: blog20120705rescan-scsi-bus-no-reboot
 tags: ["linux","tools"]
 ---
 

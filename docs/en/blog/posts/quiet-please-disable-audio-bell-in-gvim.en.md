@@ -1,7 +1,6 @@
 ---
 title: "quiet please !! disable audio bell in gvim"
 date: 2012-07-30T21:27:26
-slug: blog20120730quiet-please-disable-audio-bell-in-gvim
 tags: ["vim"]
 ---
 

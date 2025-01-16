@@ -16,8 +16,7 @@ icon: material/home
 
 <hr style="clear: both">
 
-My projects
------------
+## My projects
 
 -   [mkchangelog] - Generate `CHANGELOG.md` from `git log` using [conventional commits]
 -   [runenv] - Wrapper to run programs with different env or load env from <span class="title-ref">.env</span> file
@@ -31,8 +30,7 @@ My projects
 -   [docker] - other docker images
 
 
-My websites
------------
+## My websites
 
 -   [tani-ebook] - portal to get or buy e-books (Polish)
 

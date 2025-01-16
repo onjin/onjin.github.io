@@ -2,7 +2,11 @@
 title: "Python SOAP server (flask) + generowanie wsdl"
 date: 2013-08-13T18:53:49
 tags: ["programming","python","webdev","flask"]
-toc: true
+language: pl
+links:
+    - url: /en/blog/python-soap-server-flask--wsdl-generation/
+      title: Przeczytaj po angielsku
+      section: Alternatywy
 ---
 
 Krótkie wprowadzenie jak uruchomić prosty serwer SOAP przy pomocy pakietu "Flask-Enterprise".

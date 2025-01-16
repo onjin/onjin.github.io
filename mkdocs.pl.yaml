@@ -1,8 +1,8 @@
 INHERIT: base.yaml
 
 site_url: https://marek.xn--wywia-o7a.pl/pl
-docs_dir: 'docs/pl/'
-site_dir: 'site/pl/'
+docs_dir: 'src/pl/'
+site_dir: 'docs/pl/'
 
 theme:
   language: pl

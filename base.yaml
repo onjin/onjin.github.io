@@ -1,8 +1,6 @@
 site_name: Marek Wywiał
 site_description: In the face of ambiguity, refuse the temptation to guess. Nothing is an absolute reality, all is permitted.
 site_url: https://marek.xn--wywia-o7a.pl/blog/pl
-docs_dir: 'docs/pl/'
-site_dir: 'site/pl/'
 
 nav:
   - Home: index.md

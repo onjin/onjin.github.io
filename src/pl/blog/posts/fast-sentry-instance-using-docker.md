@@ -6,6 +6,9 @@ language: pl
 links:
     - https://sentry.io/
     - https://www.docker.com/
+    - url: /en/blog/fast-sentry-instance-using-docker/
+      title: Przeczytaj po angielsku
+      section: Alternatywy
 ---
 
 ![Cover](../../assets/images/cover-containers1.jpg)

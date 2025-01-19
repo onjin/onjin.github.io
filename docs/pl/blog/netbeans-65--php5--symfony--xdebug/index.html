@@ -842,14 +842,14 @@
 
   <h1>netbeans 6.5 + php5 + symfony + xdebug</h1>
 
-<p>W <a href="http://www.netbeans.org/community/releases/65/" title="Netbeasn 6.5 features">Netbeans 6.5</a> pojawia się support dla <a title="PHP - główna strona" href="http://www.php.net/">php5</a>. W/g informacji na stronie netbeans oznacza to:</p>
+<p>W <a href="http://www.netbeans.org/community/releases/65/" title="Netbeasn 6.5 features">Netbeans 6.5&nbsp;⧉</a> pojawia się support dla <a title="PHP - główna strona" href="http://www.php.net/">php5</a>. W/g informacji na stronie netbeans oznacza to:</p>
 <ul>
 <li>PHP Editor (Code completion, syntactic and semantic code highlighting)</li></li>
 <li>Support for heredoc notation and PHTML</li></li>
 <li>Debugging using Xdebug</li></li>
 <li>Generators for MySQL database code snippets</li></li>
 </ul>
-<p>Temat, który najbardziej mnie interesował to jak zadziała debugging przy pomocy Xdebug. Postanowiłem sprawdzić to z istniejącym projektem bazującym na frameworku <a href="http://www.symfony-project.com/" title="php5 framework">Symfony</a>.</p></p>
+<p>Temat, który najbardziej mnie interesował to jak zadziała debugging przy pomocy Xdebug. Postanowiłem sprawdzić to z istniejącym projektem bazującym na frameworku <a href="http://www.symfony-project.com/" title="php5 framework">Symfony&nbsp;⧉</a>.</p></p>
 <ol>
 <li>Zainstalowałem netbeans pobierając odpowiednią paczkę ze strony <a title="Netbeans 6.5 beta download" href="http://download.netbeans.org/netbeans/6.5/beta/">netbeans</a></li>
 <li>Zainstalowałem Xdebug poprzez <strong>pecl install xdebug</strong> i dodaniu do konfiguracji <em>php</em> wierszy:</li>
@@ -874,7 +874,7 @@
 <p>następnie wystarczyło otworzyć plik projektu (np podany wyżej kontroler) z toolbar'a wybrać 'debug project' lub wciśnąć <strong>ctrl+F5</strong></p>
 </li>
 </ol>
-<p>W tym momencie w uruchomionej przeglądarce (u mnie <a href="http://www.firefox.pl/">firefox 3.x</a> netbeans otwarł główny kontroler projektu wraz z parameterm XDEBUG_SESSION_START=netbeans-xdebug. W tym samym momencie w edytorze netbeans podświetlony został pierwszy wiersz kontrolera ... i już.</p>
+<p>W tym momencie w uruchomionej przeglądarce (u mnie <a href="http://www.firefox.pl/">firefox 3.x&nbsp;⧉</a> netbeans otwarł główny kontroler projektu wraz z parameterm XDEBUG_SESSION_START=netbeans-xdebug. W tym samym momencie w edytorze netbeans podświetlony został pierwszy wiersz kontrolera ... i już.</p>
 <p>Możemy teraz ustawiać watche, breakpointy, poruszać się step out, step in, step up wybierając opcje z menu 'debug' lub używająć skrótów klawiszowych.</p>
 <p>Dzięki krótkiemu testowi widać, że podstawowy debug działa i można sobie poużywać. Oczywiście jeżeli lubimy php5 i lubimy netbeans lub któreś z nich musimy używać ;)</p>
 
@@ -910,6 +910,7 @@
         
       </main>
       
+
         <footer class="md-footer">
   
     
@@ -996,13 +997,33 @@
   </div>
 </footer>
       
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//matomo.codefiber.pl/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '4']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
+
+
     </div>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.tooltips", "custom.links", "navigation.footer", "navigation.indexes", "navigation.path", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.suggest"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Skopiowano do schowka", "clipboard.copy": "Kopiuj do schowka", "search.result.more.one": "1 wi\u0119cej na tej stronie", "search.result.more.other": "# wi\u0119cej na tej stronie", "search.result.none": "Brak wynik\u00f3w wyszukiwania", "search.result.one": "Wyniki wyszukiwania: 1", "search.result.other": "Wyniki wyszukiwania: #", "search.result.placeholder": "Zacznij pisa\u0107, aby szuka\u0107", "search.result.term.missing": "Brak", "select.version": "Wybierz wersj\u0119"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.tooltips", "custom.links", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.suggest"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Skopiowano do schowka", "clipboard.copy": "Kopiuj do schowka", "search.result.more.one": "1 wi\u0119cej na tej stronie", "search.result.more.other": "# wi\u0119cej na tej stronie", "search.result.none": "Brak wynik\u00f3w wyszukiwania", "search.result.one": "Wyniki wyszukiwania: 1", "search.result.other": "Wyniki wyszukiwania: #", "search.result.placeholder": "Zacznij pisa\u0107, aby szuka\u0107", "search.result.term.missing": "Brak", "select.version": "Wybierz wersj\u0119"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>

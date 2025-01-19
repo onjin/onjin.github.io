@@ -1,3 +1,4 @@
 mkdocs>=1.5.0
 mkdocs-material>=9.2.6
 mkdocs-static-i18n[material]
+mkdocs-link-marker

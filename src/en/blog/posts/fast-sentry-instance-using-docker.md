@@ -1,8 +1,14 @@
 ---
 title: "Fast sentry instance using docker"
-date: 2013-09-18T13:36:39
+date: 2013-09-18
 tags: ["develop","docker","linux"]
 language: en
+links:
+    - https://sentry.io/
+    - https://www.docker.com/
+    - url: /pl/blog/startujemy-sentry-przy-pomocy-dockera/
+      title: Read in Polish
+      section: Alternatives
 ---
 
 ![Cover](../../assets/images/cover-containers1.jpg)

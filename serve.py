@@ -48,9 +48,9 @@ def main():
     current_dir = Path(__file__).parent.resolve()
     config_pl = current_dir / "mkdocs.pl.yaml"
     config_en = current_dir / "mkdocs.en.yaml"
-    docs_pl = current_dir / "docs/pl"
-    docs_en = current_dir / "docs/en"
-    site_dir = current_dir / "site"
+    docs_pl = current_dir / "src/pl"
+    docs_en = current_dir / "src/en"
+    site_dir = current_dir / "docs"
     overrides_dir = current_dir / "overrides"
     port = 8000
 

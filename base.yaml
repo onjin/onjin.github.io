@@ -7,6 +7,7 @@ nav:
   - Blog: 
       - blog/index.md 
       - Tags: blog/tags.md
+  # - TIL: blog/category/til/index.md
 
 plugins:
   search: {}
@@ -16,12 +17,14 @@ plugins:
     blog_dir: blog
     archive: true
     categories: true
+    blog_toc: true
     post_url_format: "{slug}"
   # - rss:
   #     match_path: "blog/posts/.*"
   #     date_from_meta:
   #       as_creation: date.created
   #       as_update: date.updated
+  link-marker: {}
 
 theme:
   logo: https://secure.gravatar.com/avatar/82c0ae52543d7865dac4bbe1b61cf11c?s=64
@@ -51,10 +54,13 @@ theme:
   - custom.links
   - navigation.footer
   - navigation.indexes
+  - navigation.instant
+  - navigation.instant.progress
   - navigation.path
   - navigation.tabs
   - navigation.tabs.sticky
   - navigation.top
+  - navigation.tracking
   - search.highlight
   - search.suggest
   # - toc.integrate
@@ -97,4 +103,4 @@ markdown_extensions:
       permalink: true
 
 hooks:
-  - overrides/scripts/blogs.py
+  - overrides/scripts/links_plugin.py

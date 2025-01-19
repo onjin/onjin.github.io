@@ -602,6 +602,50 @@
     </ul>
     
 </nav>
+<nav class="md-nav md-nav--secondary" aria-label="links" style="margin-top: 1em;">
+    <label class="md-nav__title" for="__links">
+        <span class="md-nav__icon md-icon"></span>
+        Alternatives
+    </label>
+    <ul class="md-nav__list" data-md-component="links" data-md-scrollfix>
+    
+<li class="md-nav__item md-nav--secondary">
+    <a href="/pl/blog/startujemy-sentry-przy-pomocy-dockera/" class="md-nav__link">
+        <span class="md-ellipsis">
+            Read in Polish
+        </span>
+    </a>
+</li>
+
+    </ul>
+</nav>
+
+<nav class="md-nav md-nav--secondary" aria-label="links" style="margin-top: 1em;">
+    <label class="md-nav__title" for="__links">
+        <span class="md-nav__icon md-icon"></span>
+        Links
+    </label>
+    <ul class="md-nav__list" data-md-component="links" data-md-scrollfix>
+    
+<li class="md-nav__item md-nav--secondary">
+    <a href="https://sentry.io/" class="md-nav__link">
+        <span class="md-ellipsis">
+            https://sentry.io/
+        </span>
+    </a>
+</li>
+
+<li class="md-nav__item md-nav--secondary">
+    <a href="https://www.docker.com/" class="md-nav__link">
+        <span class="md-ellipsis">
+            https://www.docker.com/
+        </span>
+    </a>
+</li>
+
+    </ul>
+</nav>
+
 
                   </div>
                 </div>
@@ -637,7 +681,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2013-09-18 13:36:39+00:00" class="md-ellipsis">September 18, 2013</time>
+                        <time datetime="2013-09-18 00:00:00+00:00" class="md-ellipsis">September 18, 2013</time>
                       </div>
                     </li>
                     
@@ -697,7 +741,7 @@
   <h1>Fast sentry instance using docker</h1>
 
 <p><img alt="Cover" src="../../assets/images/cover-containers1.jpg" /></p>
-<p>How to quickly spin up private <a href="https://sentry.io">Sentry</a> instance using only docker.</p>
+<p>How to quickly spin up private <a href="https://sentry.io">Sentry&nbsp;⧉</a> instance using only docker.</p>
 <!-- more -->
 
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
@@ -763,6 +807,7 @@
         
       </main>
       
+
         <footer class="md-footer">
   
     
@@ -833,13 +878,33 @@
   </div>
 </footer>
       
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//matomo.codefiber.pl/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '4']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
+
+
     </div>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.tooltips", "custom.links", "navigation.footer", "navigation.indexes", "navigation.path", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.suggest"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.tooltips", "custom.links", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.suggest"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>

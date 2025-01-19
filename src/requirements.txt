@@ -17,6 +17,7 @@ idna==3.10
 jinja2==3.1.5
     # via
     #   mkdocs
+    #   mkdocs-link-marker
     #   mkdocs-material
 markdown==3.7
     # via
@@ -34,10 +35,13 @@ mergedeep==1.3.4
 mkdocs==1.6.1
     # via
     #   -r src/requirements.in
+    #   mkdocs-link-marker
     #   mkdocs-material
     #   mkdocs-static-i18n
 mkdocs-get-deps==0.2.0
     # via mkdocs
+mkdocs-link-marker==0.1.3
+    # via -r src/requirements.in
 mkdocs-material==9.5.49
     # via
     #   -r src/requirements.in

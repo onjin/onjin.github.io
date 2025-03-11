@@ -1,5 +1,5 @@
 serve-en:
-	mkdocs serve \
+	uv run mkdocs serve \
 		--config-file mkdocs.en.yaml \
 		--watch ./src/en \
 		--watch ./overrides \
@@ -7,7 +7,7 @@ serve-en:
 		--watch ./base.yaml
 
 serve-pl:
-	mkdocs serve \
+	uv run mkdocs serve \
 		--config-file mkdocs.pl.yaml \
 		--watch ./src/pl \
 		--watch ./overrides \
@@ -15,15 +15,8 @@ serve-pl:
 		--watch ./base.yaml
 
 build: install
-	mkdocs build -f mkdocs.pl.yaml
-	mkdocs build -f mkdocs.en.yaml
+	uv run mkdocs build -f mkdocs.pl.yaml
+	uv run mkdocs build -f mkdocs.en.yaml
 	
 serve:
-	./serve.py
-
-install: src/requirements.txt
-	pip install -r src/requirements.txt
-
-.PHONY: src/requirements.txt
-src/requirements.txt:
-	uv pip compile -q --no-strip-markers -o src/requirements.txt src/requirements.in
+	uv run python ./serve.py

@@ -14,7 +14,7 @@ serve-pl:
 		--watch ./mkdocs.pl.yaml \
 		--watch ./base.yaml
 
-build: install
+build:
 	uv run mkdocs build -f mkdocs.pl.yaml
 	uv run mkdocs build -f mkdocs.en.yaml
 	
